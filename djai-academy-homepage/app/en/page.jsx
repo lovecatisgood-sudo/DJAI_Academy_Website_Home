@@ -109,7 +109,7 @@ function DevelopmentDropdown() {
   return (
     <div className="nav-dropdown">
       <a className="nav-dropdown-trigger" href={links.development}>
-        Development <span aria-hidden="true">&gt;</span>
+        Development
       </a>
       <div className="dropdown-panel" aria-label="Development links">
         {developmentLinks.map(([label, href]) => (

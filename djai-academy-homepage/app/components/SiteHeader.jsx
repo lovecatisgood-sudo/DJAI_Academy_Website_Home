@@ -43,7 +43,7 @@ function DevelopmentDropdown({ copy, locale }) {
   return (
     <div className="nav-dropdown">
       <a className="nav-dropdown-trigger" href={urlFor("development", locale)}>
-        {copy.development} <span aria-hidden="true">&gt;</span>
+        {copy.development}
       </a>
       <div className="dropdown-panel" aria-label="Development links">
         {developmentLinks.map(([label, href]) => (

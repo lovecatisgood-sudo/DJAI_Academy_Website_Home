@@ -68,7 +68,7 @@ function DevelopmentDropdown({ links, copy }) {
   return (
     <div className="nav-dropdown">
       <a className="nav-dropdown-trigger" href={links.development}>
-        {copy.development} <span aria-hidden="true">&gt;</span>
+        {copy.development}
       </a>
       <div className="dropdown-panel" aria-label={copy.developmentAria}>
         {[

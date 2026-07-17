@@ -145,16 +145,6 @@ textarea {
   gap: 5px;
 }
 
-.nav-dropdown-trigger span {
-  transform: rotate(90deg);
-  transition: transform 180ms ease;
-}
-
-.nav-dropdown:hover .nav-dropdown-trigger span,
-.nav-dropdown:focus-within .nav-dropdown-trigger span {
-  transform: rotate(-90deg);
-}
-
 .dropdown-panel {
   position: absolute;
   top: 42px;

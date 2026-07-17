@@ -165,16 +165,6 @@ img {
   gap: 5px;
 }
 
-.site-header .nav-dropdown-trigger span {
-  transform: rotate(90deg);
-  transition: transform 180ms ease;
-}
-
-.site-header .nav-dropdown:hover .nav-dropdown-trigger span,
-.site-header .nav-dropdown:focus-within .nav-dropdown-trigger span {
-  transform: rotate(-90deg);
-}
-
 .dropdown-panel {
   position: absolute;
   top: 42px;
