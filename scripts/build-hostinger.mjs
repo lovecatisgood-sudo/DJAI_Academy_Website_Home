@@ -23,7 +23,7 @@ const projects = [
     name: "DJAI QR generator",
     dir: "DJayTools-Free-QR-Generator-Source",
     install: "ci",
-    build: ["run", "build:hostinger"],
+    build: ["run", "build:app"],
     outputs: ["out/index.html", "out/en/index.html"]
   },
   {

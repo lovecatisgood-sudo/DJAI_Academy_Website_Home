@@ -3,6 +3,14 @@ import { request } from "node:http";
 
 const port = Number(process.env.DJAI_AUDIT_PORT || 3147);
 const origin = `http://127.0.0.1:${port}`;
+const repositoryRoot = new URL("..", import.meta.url).pathname;
+const useQrCompatibilityEntry = process.env.DJAI_AUDIT_ENTRY === "qr";
+const serverEntry = useQrCompatibilityEntry
+  ? "scripts/start-root-hostinger.mjs"
+  : "server.js";
+const serverDirectory = useQrCompatibilityEntry
+  ? new URL("../DJayTools-Free-QR-Generator-Source/", import.meta.url).pathname
+  : repositoryRoot;
 const publicRoutes = [
   "/",
   "/en/",
@@ -42,8 +50,8 @@ const redirects = [
 ];
 const auditPassword = "djai-local-deployment-audit";
 
-const server = spawn(process.execPath, ["server.js"], {
-  cwd: new URL("..", import.meta.url).pathname,
+const server = spawn(process.execPath, [serverEntry], {
+  cwd: serverDirectory,
   env: {
     ...process.env,
     HOST: "127.0.0.1",

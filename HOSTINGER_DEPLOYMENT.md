@@ -26,7 +26,9 @@ Do not configure any of these folders as the application root:
 
 If only `/tools/qrgen/` works while `/` returns a QR-branded Next.js 404 page, Hostinger is running
 `DJayTools-Free-QR-Generator-Source` as the website. Reconnect or recreate the Node.js web app from
-the repository root and redeploy the `main` branch.
+the repository root and redeploy the `main` branch. The QR subproject also contains guarded
+compatibility build/start scripts that launch the root application when Hostinger remains anchored
+to that folder.
 
 ## Why the root entry point exists
 
