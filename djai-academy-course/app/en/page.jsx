@@ -13,7 +13,7 @@ import {
   Sparkles,
   Users
 } from "lucide-react";
-import NewsletterSignup from "../NewsletterSignup";
+import SiteFooter from "../SiteFooter";
 import SiteHeader from "../SiteHeader";
 
 export const metadata = {
@@ -31,61 +31,13 @@ export const metadata = {
 };
 
 const reserveHref =
-  "https://buy.stripe.com/dRm5kD2F2ahD1BP2ufgIo00";
+  "https://buy.stripe.com/aFa28r2F21L7dkxb0LgIo01";
+const detailHref = "https://www.djai.academy/course/detail/en/";
 const mapHref =
   "https://www.google.com/maps/search/?api=1&query=House%2C%2046%2F27%20Bangna-Trad%20Road%2C%20Bang%20Kaeo%2C%20Bang%20Phli%20District%2C%20Samut%20Prakan%2010540";
 
 const BASE_PATH = "/course";
 const assetPath = (path) => `${BASE_PATH}/assets/${path}`;
-
-const siteLinks = {
-  academy: "https://www.djai.academy/en/",
-  tools: "https://www.djai.academy/tools/en/",
-  services: "https://www.djai.academy/service/en/",
-  courses: "https://www.djai.academy/course/en/",
-  community: "https://www.djai.academy/course/en/#community",
-  portfolio: "https://www.djai.academy/portfolio/en/",
-  promo: "https://www.djai.academy/course/en/#pricing",
-  development: "https://www.djai.academy/development/en/",
-  blog: "https://www.djai.academy/blog/en/"
-};
-
-const footerColumns = [
-  {
-    title: "Learn",
-    links: [
-      ["Join Offline Course", siteLinks.courses],
-      ["Upcoming Courses", siteLinks.courses],
-      ["Blog", siteLinks.blog]
-    ]
-  },
-  {
-    title: "Build",
-    links: [
-      ["Development", siteLinks.development],
-      ["Services", siteLinks.services],
-      ["Portfolio", siteLinks.portfolio],
-      ["Current Promo", siteLinks.promo]
-    ]
-  },
-  {
-    title: "Community",
-    links: [
-      ["Join Online Community", siteLinks.community],
-      ["Tools", siteLinks.tools],
-      ["Open-source Projects", null]
-    ]
-  }
-];
-
-const contactChannels = [
-  "WhatsApp",
-  "LINE",
-  "Facebook",
-  "Instagram",
-  "TikTok",
-  "X"
-];
 
 const communityImages = [
   ["community2.webp", "Students presenting an AI build on stage"],
@@ -100,7 +52,7 @@ const communityImages = [
 
 const includedItems = [
   "One full hands-on workshop day",
-  "8 hours of guided AI building",
+  "A full day of guided AI building",
   "Step-by-step product build journey",
   "A real project built with AI",
   "Templates, prompts, and workflows",
@@ -147,7 +99,7 @@ const faqs = [
   },
   {
     q: "Is the workshop one day or four days?",
-    a: "This page is now aligned around one intensive workshop day: 25 July, 09:30 AM to 04:00 PM, with 8 hours of hands-on learning."
+    a: "This page is aligned around one intensive workshop day: 1 August 2026, 09:30 AM to 04:00 PM, with a full day of hands-on learning."
   },
   {
     q: "How do I reserve a seat?",
@@ -196,16 +148,16 @@ export default function Home() {
           <div className="event-strip">
             <span className="pulse-dot" />
             <strong>Next Workshop:</strong>
-            <span>25 July | 09:30 AM - 04:00 PM</span>
+            <span>1 August 2026 | 09:30 AM - 04:00 PM</span>
             <em>Limited Seats</em>
             <ChevronRight size={16} />
           </div>
 
           <div className="hero-actions">
             <a className="button" href={reserveHref}>
-              Reserve Seat for 25 July <ArrowRight size={18} />
+              Reserve Seat for 1 August <ArrowRight size={18} />
             </a>
-            <a className="button button-ghost" href="#curriculum">
+            <a className="button button-ghost" href={detailHref}>
               Explore Course <ArrowUpRight size={18} />
             </a>
           </div>
@@ -216,7 +168,7 @@ export default function Home() {
               <span>Build journey</span>
             </div>
             <div>
-              <strong>8 Hours</strong>
+              <strong>5 Sessions</strong>
               <span>Hands-on</span>
             </div>
             <div>
@@ -471,7 +423,7 @@ export default function Home() {
             <div className="info-grid">
               <div>
                 <span>Date</span>
-                <strong>25 July</strong>
+                <strong>1 August 2026</strong>
               </div>
               <div>
                 <span>Time</span>
@@ -504,8 +456,8 @@ export default function Home() {
 
           <aside className="date-tile" aria-label="Workshop date">
             <div>
-              <strong>25</strong>
-              <span>July</span>
+              <strong>01</strong>
+              <span>August</span>
             </div>
             <p>Seats are filling fast</p>
           </aside>
@@ -597,40 +549,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="footer">
-        <div className="footer-grid">
-          {footerColumns.map((column) => (
-            <div key={column.title}>
-              <h3>{column.title}</h3>
-              {column.links.map(([label, href]) =>
-                href ? (
-                  <a key={label} href={href}>
-                    {label}
-                  </a>
-                ) : (
-                  <span className="footer-muted-link" key={label}>
-                    {label}
-                  </span>
-                )
-              )}
-            </div>
-          ))}
-
-          <div className="footer-contact">
-            <h3>Contact</h3>
-            <div className="contact-list">
-              {contactChannels.map((channel) => (
-                <span key={channel}>{channel}</span>
-              ))}
-              <a href="mailto:contact@djai.academy">Email:contact@djai.academy</a>
-            </div>
-          </div>
-        </div>
-
-        <NewsletterSignup locale="en" />
-
-        <div className="copyright">(c) 2026 DJAI Academy. All rights reserved.</div>
-      </footer>
+      <SiteFooter locale="en" />
 
       <a className="scroll-top" href="#home" aria-label="Back to top">
         <ArrowRight size={20} />

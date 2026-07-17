@@ -36,6 +36,8 @@ const publicRoutes = [
   "/blog/en/compress-image-to-100kb-500kb/",
   "/course/",
   "/course/en/",
+  "/course/detail/",
+  "/course/detail/en/",
   "/siamese_cat/dev/",
   "/siamese_cat/dev/en/",
   "/admin/blog/",

@@ -13,65 +13,17 @@ import {
   Sparkles,
   Users
 } from "lucide-react";
-import NewsletterSignup from "./NewsletterSignup";
+import SiteFooter from "./SiteFooter";
 import SiteHeader from "./SiteHeader";
 
 const reserveHref =
-  "https://buy.stripe.com/dRm5kD2F2ahD1BP2ufgIo00";
+  "https://buy.stripe.com/aFa28r2F21L7dkxb0LgIo01";
+const detailHref = "https://www.djai.academy/course/detail/";
 const mapHref =
   "https://www.google.com/maps/search/?api=1&query=House%2C%2046%2F27%20Bangna-Trad%20Road%2C%20Bang%20Kaeo%2C%20Bang%20Phli%20District%2C%20Samut%20Prakan%2010540";
 
 const BASE_PATH = "/course";
 const assetPath = (path) => `${BASE_PATH}/assets/${path}`;
-
-const siteLinks = {
-  academy: "https://www.djai.academy/",
-  tools: "https://www.djai.academy/tools/",
-  services: "https://www.djai.academy/service/",
-  courses: "https://www.djai.academy/course/",
-  community: "https://www.djai.academy/course/#community",
-  portfolio: "https://www.djai.academy/portfolio/",
-  promo: "https://www.djai.academy/course/#pricing",
-  development: "https://www.djai.academy/development/",
-  blog: "https://www.djai.academy/blog/"
-};
-
-const footerColumns = [
-  {
-    title: "เรียนรู้",
-    links: [
-      ["เข้าร่วมคอร์ส Offline", siteLinks.courses],
-      ["คอร์สที่กำลังเปิด", siteLinks.courses],
-      ["บล็อก", siteLinks.blog]
-    ]
-  },
-  {
-    title: "สร้างกับเรา",
-    links: [
-      ["พัฒนาโปรเจกต์", siteLinks.development],
-      ["บริการ", siteLinks.services],
-      ["ผลงาน", siteLinks.portfolio],
-      ["โปรโมชัน", siteLinks.promo]
-    ]
-  },
-  {
-    title: "Community",
-    links: [
-      ["เข้าร่วม Online Community", siteLinks.community],
-      ["เครื่องมือฟรี", siteLinks.tools],
-      ["โปรเจกต์ Open-source", null]
-    ]
-  }
-];
-
-const contactChannels = [
-  "WhatsApp",
-  "LINE",
-  "Facebook",
-  "Instagram",
-  "TikTok",
-  "X"
-];
 
 const communityImages = [
   ["community2.webp", "นักเรียนกำลังนำเสนอผลงาน AI บนเวที"],
@@ -86,7 +38,7 @@ const communityImages = [
 
 const includedItems = [
   "Workshop ปฏิบัติจริงเต็มวัน",
-  "8 ชั่วโมงของการสร้างงานด้วย AI แบบมีผู้แนะนำ",
+  "การสร้างงานด้วย AI แบบมีผู้แนะนำตลอดวัน",
   "เส้นทางสร้าง product ทีละขั้นตอน",
   "โปรเจกต์จริงที่สร้างด้วย AI",
   "Template, prompt และ workflow สำหรับนำไปใช้ต่อ",
@@ -133,7 +85,7 @@ const faqs = [
   },
   {
     q: "Workshop หนึ่งวันหรือสี่วัน?",
-    a: "หน้านี้ปรับเป็น workshop แบบเข้มข้น 1 วัน วันที่ 25 July เวลา 09:30 AM ถึง 04:00 PM รวม 8 ชั่วโมงของการเรียนแบบลงมือทำ"
+    a: "Workshop นี้จัดแบบเข้มข้น 1 วัน ในวันที่ 1 สิงหาคม 2026 เวลา 09:30 ถึง 16:00 น. พร้อมการเรียนและลงมือสร้างจริงตลอดวัน"
   },
   {
     q: "จองที่นั่งอย่างไร?",
@@ -181,16 +133,16 @@ export default function Home() {
           <div className="event-strip">
             <span className="pulse-dot" />
             <strong>Workshop รอบถัดไป:</strong>
-            <span>25 July | 09:30 AM - 04:00 PM</span>
+            <span>1 สิงหาคม 2026 | 09:30 - 16:00 น.</span>
             <em>ที่นั่งจำกัด</em>
             <ChevronRight size={16} />
           </div>
 
           <div className="hero-actions">
             <a className="button" href={reserveHref}>
-              จองที่นั่งสำหรับ 25 July <ArrowRight size={18} />
+              จองที่นั่งสำหรับ 1 สิงหาคม <ArrowRight size={18} />
             </a>
-            <a className="button button-ghost" href="#curriculum">
+            <a className="button button-ghost" href={detailHref}>
               ดูรายละเอียดคอร์ส <ArrowUpRight size={18} />
             </a>
           </div>
@@ -201,7 +153,7 @@ export default function Home() {
               <span>เส้นทางการสร้าง</span>
             </div>
             <div>
-              <strong>8 ชั่วโมง</strong>
+              <strong>5 Sessions</strong>
               <span>ลงมือทำจริง</span>
             </div>
             <div>
@@ -444,7 +396,7 @@ export default function Home() {
             <div className="info-grid">
               <div>
                 <span>วันที่</span>
-                <strong>25 July</strong>
+                <strong>1 สิงหาคม 2026</strong>
               </div>
               <div>
                 <span>เวลา</span>
@@ -477,8 +429,8 @@ export default function Home() {
 
           <aside className="date-tile" aria-label="วันที่ workshop">
             <div>
-              <strong>25</strong>
-              <span>July</span>
+              <strong>01</strong>
+              <span>สิงหาคม</span>
             </div>
             <p>ที่นั่งมีจำนวนจำกัด</p>
           </aside>
@@ -569,40 +521,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="footer">
-        <div className="footer-grid">
-          {footerColumns.map((column) => (
-            <div key={column.title}>
-              <h3>{column.title}</h3>
-              {column.links.map(([label, href]) =>
-                href ? (
-                  <a key={label} href={href}>
-                    {label}
-                  </a>
-                ) : (
-                  <span className="footer-muted-link" key={label}>
-                    {label}
-                  </span>
-                )
-              )}
-            </div>
-          ))}
-
-          <div className="footer-contact">
-            <h3>ติดต่อ</h3>
-            <div className="contact-list">
-              {contactChannels.map((channel) => (
-                <span key={channel}>{channel}</span>
-              ))}
-              <a href="mailto:contact@djai.academy">Email: contact@djai.academy</a>
-            </div>
-          </div>
-        </div>
-
-        <NewsletterSignup locale="th" />
-
-        <div className="copyright">(c) 2026 DJAI Academy. สงวนลิขสิทธิ์</div>
-      </footer>
+      <SiteFooter locale="th" />
 
       <a className="scroll-top" href="#home" aria-label="กลับขึ้นด้านบน">
         <ArrowRight size={20} />

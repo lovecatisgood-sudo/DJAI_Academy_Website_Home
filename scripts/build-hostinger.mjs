@@ -1,4 +1,4 @@
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { spawnSync } from "node:child_process";
 
@@ -17,7 +17,12 @@ const projects = [
     dir: "djai-academy-course",
     install: "ci",
     build: ["run", "build"],
-    outputs: ["out/index.html", "out/en/index.html"]
+    outputs: [
+      "out/index.html",
+      "out/en/index.html",
+      "out/detail/index.html",
+      "out/detail/en/index.html"
+    ]
   },
   {
     name: "DJAI QR generator",
@@ -80,11 +85,26 @@ function validateOutputs(project) {
   }
 }
 
+function setCourseExportLanguages(project) {
+  if (project.dir !== "djai-academy-course") return;
+
+  for (const relativePath of ["out/en/index.html", "out/detail/en/index.html"]) {
+    const outputPath = join(rootDir, project.dir, relativePath);
+    const html = readFileSync(outputPath, "utf8");
+    const updatedHtml = html.replace('<html lang="th">', '<html lang="en">');
+    if (updatedHtml === html) {
+      throw new Error(`DJAI course could not set English document language: ${relativePath}`);
+    }
+    writeFileSync(outputPath, updatedHtml);
+  }
+}
+
 for (const project of projects) {
   const cwd = join(rootDir, project.dir);
   ensureDependencies(project);
   run("npm", project.build, cwd);
   validateOutputs(project);
+  setCourseExportLanguages(project);
 }
 
 for (const project of staticProjects) {

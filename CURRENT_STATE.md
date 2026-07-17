@@ -444,7 +444,7 @@ Latest pricing/payment update:
 - Course price changed to `THB 5,999` per pax.
 - Previous comparison price changed to `THB 8,999`.
 - All course reservation CTAs now point to Stripe checkout:
-  - `https://buy.stripe.com/dRm5kD2F2ahD1BP2ufgIo00`
+  - `https://buy.stripe.com/aFa28r2F21L7dkxb0LgIo01`
 - FAQ reservation answer now references secure Stripe payment instead of email reservation.
 
 Validation completed:

@@ -85,7 +85,7 @@ function DevelopmentDropdown({ links, copy }) {
   );
 }
 
-export default function SiteHeader({ locale = "th" }) {
+export default function SiteHeader({ locale = "th", switchLanguageHref }) {
   const [open, setOpen] = useState(false);
   const lang = locale === "en" ? "en" : "th";
   const links = siteLinks[lang];
@@ -128,7 +128,7 @@ export default function SiteHeader({ locale = "th" }) {
             {label}
           </a>
         ))}
-        <a href={links.switchLanguage} hrefLang={lang === "en" ? "th" : "en"}>
+        <a href={switchLanguageHref || links.switchLanguage} hrefLang={lang === "en" ? "th" : "en"}>
           {copy.switchLanguage}
         </a>
         <a className="nav-subscribe" href={links.community}>
