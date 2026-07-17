@@ -1,4 +1,4 @@
-import { existsSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { spawnSync } from "node:child_process";
 
@@ -10,6 +10,7 @@ const projects = [
     dir: "djai-academy-homepage",
     install: "ci",
     build: ["run", "build"],
+    clean: [".next"],
     outputs: [".next/BUILD_ID"]
   },
   {
@@ -76,6 +77,12 @@ function ensureDependencies(project) {
   run("npm", installCommand, cwd);
 }
 
+function cleanBuildOutputs(project) {
+  for (const output of project.clean || []) {
+    rmSync(join(rootDir, project.dir, output), { recursive: true, force: true });
+  }
+}
+
 function validateOutputs(project) {
   for (const output of project.outputs) {
     const outputPath = join(rootDir, project.dir, output);
@@ -102,6 +109,7 @@ function setCourseExportLanguages(project) {
 for (const project of projects) {
   const cwd = join(rootDir, project.dir);
   ensureDependencies(project);
+  cleanBuildOutputs(project);
   run("npm", project.build, cwd);
   validateOutputs(project);
   setCourseExportLanguages(project);
