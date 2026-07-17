@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Free DJAI Tools | QR Generator, Image Converter and Builder Utilities",
+  title: "Free DJAI Tools | PDF Tools, QR Generator and Image Converter",
   description:
-    "Use free DJAI tools for QR codes, image resizing, image compression, and browser-based creator workflows. No account required.",
+    "Use free DJAI tools to merge, split, compress, and convert PDFs, create QR codes, and resize images. Private browser processing with no account.",
   alternates: {
     canonical: "/tools/en/",
     languages: {
@@ -34,14 +34,21 @@ const tools = [
     text: "Resize, compress, and convert JPG, PNG, and WebP images directly in your browser. Your files stay on your device.",
     href: "https://www.djai.academy/tools/resizeimg/en/",
     tags: ["JPG", "PNG", "WebP"]
+  },
+  {
+    label: "PDF Tools",
+    title: "DJTools Free PDF Tool Set",
+    text: "Merge, split, compress, convert, rotate, watermark, and password protect PDFs for free. Files stay on your device.",
+    href: "https://www.djai.academy/tools/PDFTools/en/",
+    tags: ["PDF", "AES-256", "Private"]
   }
 ];
 
 const comingSoon = [
-  "PDF tools",
   "Background remover",
   "Favicon generator",
-  "Social media image presets"
+  "Social media image presets",
+  "OCR tools"
 ];
 
 const ecosystem = [
@@ -78,7 +85,7 @@ const structuredData = {
   name: "Free DJAI Tools",
   url: "https://www.djai.academy/tools/en/",
   description:
-    "A collection of free browser-based tools from DJAI Academy, including QR code generation and image conversion utilities.",
+    "A collection of free browser-based tools from DJAI Academy, including PDF, QR code, and image conversion utilities.",
   publisher: {
     "@type": "Organization",
     name: "DJAI Academy",

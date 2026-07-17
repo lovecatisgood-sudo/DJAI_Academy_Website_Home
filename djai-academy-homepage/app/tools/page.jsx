@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "เครื่องมือฟรีจาก DJAI | QR Generator และ Image Tools",
+  title: "เครื่องมือฟรีจาก DJAI | PDF, QR Code และ Image Tools",
   description:
-    "ใช้เครื่องมือฟรีจาก DJAI สำหรับสร้าง QR code แปลงรูป resize รูป compress รูป และ workflow สำหรับ creator และธุรกิจ",
+    "ใช้เครื่องมือฟรีจาก DJAI สำหรับ PDF, QR code, แปลงรูป, resize รูป และ workflow สำหรับ creator นักเรียน และธุรกิจ",
   alternates: {
     canonical: "/tools/",
     languages: {
@@ -34,10 +34,17 @@ const tools = [
     text: "Resize, compress และ convert JPG, PNG, WebP ผ่าน browser โดยไฟล์อยู่ในเครื่องของคุณ",
     href: "https://www.djai.academy/tools/resizeimg/",
     tags: ["JPG", "PNG", "WebP"]
+  },
+  {
+    label: "PDF Tools",
+    title: "DJTools Free PDF Tool Set",
+    text: "รวม แยก บีบอัด แปลง หมุน ใส่ลายน้ำ และล็อก PDF ใน browser ฟรี โดยไฟล์ไม่ออกจากอุปกรณ์ของคุณ",
+    href: "https://www.djai.academy/tools/PDFTools/",
+    tags: ["PDF", "AES-256", "Private"]
   }
 ];
 
-const comingSoon = ["PDF tools", "Background remover", "Favicon generator", "Social media image presets"];
+const comingSoon = ["Background remover", "Favicon generator", "Social media image presets", "OCR tools"];
 
 const ecosystem = [
   {
@@ -73,7 +80,7 @@ const structuredData = {
   name: "เครื่องมือฟรีจาก DJAI",
   url: "https://www.djai.academy/tools/",
   description:
-    "ชุดเครื่องมือฟรีบน browser จาก DJAI Academy เช่น QR code generator และ image converter",
+    "ชุดเครื่องมือฟรีบน browser จาก DJAI Academy เช่น PDF tools, QR code generator และ image converter",
   publisher: {
     "@type": "Organization",
     name: "DJAI Academy",

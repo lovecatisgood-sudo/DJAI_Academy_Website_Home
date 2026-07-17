@@ -33,6 +33,22 @@ const projects = [
     outputs: ["out/index.html", "out/en/index.html"]
   },
   {
+    name: "DJAI PDF tools",
+    dir: "djai-pdf-tools",
+    install: "ci",
+    build: ["run", "build"],
+    clean: [".next", "out"],
+    outputs: [
+      "out/index.html",
+      "out/en/index.html",
+      "out/merge-pdf/index.html",
+      "out/merge-pdf/en/index.html",
+      "out/protect-pdf/index.html",
+      "out/protect-pdf/en/index.html",
+      "out/pdf.worker.min.mjs"
+    ]
+  },
+  {
     name: "Siamese Cat Dev bio",
     dir: "Siamese-Cat-Dev-Bio-Site",
     install: "ci",

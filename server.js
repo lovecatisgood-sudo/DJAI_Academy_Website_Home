@@ -46,6 +46,10 @@ const staticMounts = [
     dir: path.join(rootDir, "djai-image-resizer", "public")
   },
   {
+    prefix: "/tools/PDFTools",
+    dir: path.join(rootDir, "djai-pdf-tools", "out")
+  },
+  {
     prefix: "/siamese_cat/dev",
     dir: path.join(rootDir, "Siamese-Cat-Dev-Bio-Site", "dist")
   }
@@ -121,6 +125,8 @@ function serveHealth(req, res) {
     path.join(rootDir, "djai-academy-course", "out", "index.html"),
     path.join(rootDir, "DJayTools-Free-QR-Generator-Source", "out", "index.html"),
     path.join(rootDir, "djai-image-resizer", "public", "index.html"),
+    path.join(rootDir, "djai-pdf-tools", "out", "index.html"),
+    path.join(rootDir, "djai-pdf-tools", "out", "pdf.worker.min.mjs"),
     path.join(rootDir, "Siamese-Cat-Dev-Bio-Site", "dist", "index.html")
   ];
   const buildsReady = requiredOutputs.every((output) => fs.existsSync(output));
