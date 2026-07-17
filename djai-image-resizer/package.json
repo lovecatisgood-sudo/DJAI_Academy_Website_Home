@@ -1,0 +1,14 @@
+{
+  "name": "djai-image-resizer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A free, private JPG and PNG resize/compression tool by DJAI Academy and Siamese Cat Dev.",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED"
+}

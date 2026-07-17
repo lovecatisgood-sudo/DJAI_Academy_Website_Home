@@ -1,0 +1,26 @@
+import assert from "node:assert/strict";
+import { access, readFile } from "node:fs/promises";
+import test from "node:test";
+
+const basePath = "/tools/qrgen";
+
+async function exists(path) {
+  try {
+    await access(path);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+test("Hostinger static export uses the configured subpath", async () => {
+  const html = await readFile(new URL("../out/index.html", import.meta.url), "utf8");
+
+  assert.match(html, new RegExp(`${basePath}/_next/static`));
+  assert.match(html, new RegExp(`${basePath}/djai-academy-logo\\.webp`));
+  assert.match(html, new RegExp(`${basePath}/siamese-cat-dev-logo\\.png`));
+  assert.doesNotMatch(html, /src="\/(?:djai-academy-logo|siamese-cat-dev-logo)/);
+
+  assert.equal(await exists(new URL("../out/djai-academy-logo.webp", import.meta.url)), true);
+  assert.equal(await exists(new URL("../out/siamese-cat-dev-logo.png", import.meta.url)), true);
+});
