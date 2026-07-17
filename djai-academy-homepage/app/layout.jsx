@@ -1,5 +1,6 @@
 import "./globals.css";
 import Script from "next/script";
+import { headers } from "next/headers";
 
 const GA_ID = "G-CGJ5BTR44T";
 
@@ -22,9 +23,12 @@ export const metadata = {
   }
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  const requestHeaders = await headers();
+  const language = requestHeaders.get("x-djai-language") === "en" ? "en" : "th";
+
   return (
-    <html lang="th">
+    <html lang={language}>
       <body>
         {children}
         <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />

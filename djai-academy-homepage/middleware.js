@@ -20,7 +20,17 @@ export function middleware(request) {
     }
   }
 
-  return NextResponse.next();
+  const requestHeaders = new Headers(request.headers);
+  const isEnglishPage = /^\/(?:en(?:\/|$)|(?:portfolio|development|service|tools|blog)\/en(?:\/|$))/.test(
+    pathname
+  );
+  requestHeaders.set("x-djai-language", isEnglishPage ? "en" : "th");
+
+  return NextResponse.next({
+    request: {
+      headers: requestHeaders
+    }
+  });
 }
 
 export const config = {
