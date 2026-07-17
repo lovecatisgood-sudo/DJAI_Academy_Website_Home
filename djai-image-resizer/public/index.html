@@ -5,19 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <base href="/tools/resizeimg/">
   <meta name="theme-color" content="#071c4a">
-  <meta name="description" content="แปลงไฟล์ ย่อขนาด และบีบอัดรูปภาพ JPG, PNG และ WebP ฟรี รูปภาพประมวลผลใน browser ของคุณโดยไม่อัปโหลดขึ้น server">
+  <meta name="description" content="แปลง ย่อ บีบอัด และจัดการรูป JPG, PNG, WebP, HEIC ฟรี รองรับหลายไฟล์และ ZIP โดยรูปประมวลผลใน browser ไม่อัปโหลดขึ้น server">
   <link rel="canonical" href="https://www.djai.academy/tools/resizeimg/">
   <link rel="alternate" hreflang="th" href="https://www.djai.academy/tools/resizeimg/">
   <link rel="alternate" hreflang="en" href="https://www.djai.academy/tools/resizeimg/en/">
   <link rel="alternate" hreflang="x-default" href="https://www.djai.academy/tools/resizeimg/">
   <meta property="og:title" content="เครื่องมือย่อรูปและแปลงไฟล์ฟรี | DJAI Image Tools">
-  <meta property="og:description" content="ย่อขนาด แปลงไฟล์ และบีบอัดรูปภาพ JPG, PNG และ WebP ใน browser ของคุณ ไม่ต้องสมัคร ไม่มี watermark และไม่อัปโหลดไฟล์">
+  <meta property="og:description" content="แปลง ย่อ และบีบอัด JPG, PNG, WebP และ HEIC ใน browser รองรับหลายไฟล์ ไม่ต้องสมัครและไม่อัปโหลดรูป">
   <meta property="og:url" content="https://www.djai.academy/tools/resizeimg/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://www.djai.academy/tools/resizeimg/assets/siamese-cat-mascot.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="เครื่องมือย่อรูปและแปลงไฟล์ฟรี | DJAI Image Tools">
-  <meta name="twitter:description" content="ย่อขนาด แปลงไฟล์ และบีบอัดรูปภาพ JPG, PNG และ WebP โดยตรงใน browser">
+  <meta name="twitter:description" content="แปลง ย่อ บีบอัด และจัดการ JPG, PNG, WebP และ HEIC โดยตรงใน browser">
   <meta name="twitter:image" content="https://www.djai.academy/tools/resizeimg/assets/siamese-cat-mascot.png">
   <title>เครื่องมือย่อรูปและแปลงไฟล์ฟรี | DJAI Image Tools</title>
   <link rel="icon" href="assets/favicon.png" type="image/png">
@@ -41,7 +41,7 @@
       "url": "https://www.djai.academy/tools/resizeimg/",
       "applicationCategory": "UtilitiesApplication",
       "operatingSystem": "Web browser",
-      "description": "เครื่องมือรูปภาพฟรีบน browser สำหรับแปลงไฟล์ ย่อขนาด และบีบอัดรูปภาพ JPG, PNG และ WebP โดยไม่อัปโหลดไฟล์ขึ้น server",
+      "description": "เครื่องมือรูปภาพฟรีบน browser สำหรับแปลง ย่อ บีบอัด และจัดการ JPG, PNG, WebP, HEIC และ HEIF แบบหลายไฟล์โดยไม่อัปโหลดขึ้น server",
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -54,11 +54,11 @@
       }
     }
   </script>
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"ทำให้รูปขนาดใกล้ 100 KB ได้ไหม?","acceptedAnswer":{"@type":"Answer","text":"ได้ เครื่องมือจะปรับคุณภาพและขนาดภาพเพื่อให้ผลลัพธ์ใกล้ขนาดเป้าหมายหรือเล็กกว่าเล็กน้อย"}},{"@type":"Question","name":"รูปภาพถูกอัปโหลดไปที่ DJAI หรือไม่?","acceptedAnswer":{"@type":"Answer","text":"ไม่ รูปภาพและการประมวลผลอยู่ใน browser บนอุปกรณ์ของผู้ใช้"}},{"@type":"Question","name":"รองรับไฟล์รูปอะไรบ้าง?","acceptedAnswer":{"@type":"Answer","text":"รองรับ JPG, JPEG, PNG, WebP, HEIC และ HEIF และส่งออกเป็น JPG, PNG หรือ WebP"}}]}
+  </script>
 </head>
 <body>
-  <div class="ambient ambient-one" aria-hidden="true"></div>
-  <div class="ambient ambient-two" aria-hidden="true"></div>
-
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="https://www.djai.academy/" aria-label="หน้าแรก DJAI Academy">
@@ -90,7 +90,7 @@
           <span class="tool-brand-icon" aria-hidden="true">{ }</span>
           <span><strong>DJTool</strong> by DJAI</span>
         </a>
-        <p class="eyebrow">เครื่องมือรูปภาพ JPG, PNG และ WebP ฟรี</p>
+        <p class="eyebrow">เครื่องมือรูปภาพ JPG, PNG, WebP และ HEIC ฟรี</p>
         <h1>ทำให้ทุกรูป <span>พอดีกับงานของคุณ</span></h1>
         <p class="hero-description">บีบอัดรูปให้ใกล้ขนาด KB ที่ต้องการ ย่อรูปตามเปอร์เซ็นต์ หรือกำหนดขนาด pixel ได้โดยไม่อัปโหลดไฟล์ขึ้น server</p>
         <div class="hero-points" aria-label="ประโยชน์ของเครื่องมือ">
@@ -105,8 +105,6 @@
       </div>
 
       <div class="hero-art" aria-hidden="true">
-        <div class="hero-ring ring-one"></div>
-        <div class="hero-ring ring-two"></div>
         <div class="floating-pill pill-one"><span>2.8 MB</span><b>→</b><strong>180 KB</strong></div>
         <div class="floating-pill pill-two"><span>50%</span><strong>Same ratio</strong></div>
         <div class="mascot-card">
@@ -120,7 +118,7 @@
       <div class="section-heading centered">
         <span class="section-kicker">เครื่องมือย่อรูป</span>
         <h2 id="tool-heading">ไฟล์เล็กลง รูปยังใช้งานได้ดี</h2>
-        <p>เลือกรูปหนึ่งไฟล์ แล้วกำหนดวิธีที่ต้องการย่อ ทุกอย่างทำงานบนอุปกรณ์ของคุณโดยตรง</p>
+        <p>เลือกรูปหนึ่งไฟล์หรือหลายไฟล์ แล้วกำหนดวิธีที่ต้องการ ทุกอย่างทำงานบนอุปกรณ์ของคุณโดยตรง</p>
       </div>
 
       <div class="tool-app">
@@ -129,7 +127,7 @@
             <span class="tool-title-icon">
               <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="8.5" cy="9" r="1.5"/><path d="m5 17 4.5-4.5 3 3 2-2L19 18"/></svg>
             </span>
-            <div><strong>DJAI Image Resizer</strong><small>JPG, PNG &amp; WebP</small></div>
+            <div><strong>DJAI Image Tools</strong><small>JPG, PNG, WebP &amp; HEIC</small></div>
           </div>
           <div class="local-badge"><span></span> ส่วนตัวและทำงานในเครื่อง</div>
         </div>
@@ -142,9 +140,9 @@
             <strong>ลากรูปภาพมาวางที่นี่</strong>
             <span>หรือคลิกเพื่อเลือกไฟล์จากอุปกรณ์ของคุณ</span>
             <span class="choose-file">เลือกรูปภาพ</span>
-            <small>รองรับ JPG, JPEG, PNG และ WebP · สูงสุด 50 MB</small>
+            <small>รองรับ JPG, JPEG, PNG, WebP, HEIC และ HEIF · สูงสุด 20 ไฟล์</small>
           </button>
-          <input id="file-input" type="file" accept="image/jpeg,image/png,image/webp" hidden>
+          <input id="file-input" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif,.heic,.heif" multiple hidden>
         </div>
 
         <div id="editor-view" class="editor-view" hidden>
@@ -153,10 +151,14 @@
               <div class="selected-file">
                 <div class="selected-thumb"><img id="tiny-preview" alt="ตัวอย่างรูปที่เลือก"></div>
                 <div class="selected-info"><strong id="file-name">image.jpg</strong><span id="file-meta">—</span></div>
+                <button id="rotate-file" class="icon-button" type="button" aria-label="หมุนรูปที่เลือก 90 องศา" title="หมุน 90 องศา">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M19 12a7 7 0 1 1-2-5l3 3"/></svg>
+                </button>
                 <button id="remove-file" class="icon-button" type="button" aria-label="ลบรูปที่เลือก">
                   <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"/></svg>
                 </button>
               </div>
+              <div id="batch-list" class="batch-list" aria-label="รายการรูปภาพ" hidden></div>
 
               <fieldset class="mode-fieldset">
                 <legend>ต้องการย่อรูปแบบไหน?</legend>
@@ -209,6 +211,15 @@
               </div>
 
               <div id="panel-dimensions" class="setting-panel" data-panel="dimensions" hidden>
+                <label for="preset-select">Preset ขนาดภาพ</label>
+                <select id="preset-select" class="preset-select">
+                  <option value="custom">กำหนดเอง</option>
+                  <option value="1080x1080">Instagram Square · 1080 × 1080</option>
+                  <option value="1080x1350">Instagram Portrait · 1080 × 1350</option>
+                  <option value="1080x1920">Instagram Story · 1080 × 1920</option>
+                  <option value="1280x720">YouTube Thumbnail · 1280 × 720</option>
+                  <option value="1200x630">Facebook Post · 1200 × 630</option>
+                </select>
                 <div class="dimension-grid">
                   <label for="width-input">กว้าง <span>px</span><input id="width-input" type="number" min="1" max="20000" step="1"></label>
                   <button id="ratio-lock" class="ratio-lock active" type="button" aria-pressed="true" aria-label="ล็อกอัตราส่วนภาพ">
@@ -229,6 +240,17 @@
                 </select>
               </div>
 
+              <div id="quality-row" class="quality-row">
+                <div class="quality-heading"><label for="quality-input">คุณภาพผลลัพธ์</label><strong id="quality-value">82%</strong></div>
+                <input id="quality-input" class="range-input" type="range" min="45" max="100" value="82" step="1">
+                <div class="quick-values quality-values">
+                  <button type="button" data-quality="65">ไฟล์เล็ก</button>
+                  <button class="selected" type="button" data-quality="82">สมดุล</button>
+                  <button type="button" data-quality="94">คุณภาพสูง</button>
+                </div>
+                <p id="quality-note" class="setting-note">ใช้เป็นคุณภาพ export หรือคุณภาพสูงสุดในโหมดเป้าหมาย KB</p>
+              </div>
+
               <button id="process-button" class="primary-button process-button" type="button">
                 <span class="button-label">ย่อรูปภาพ</span>
                 <span class="button-spinner" aria-hidden="true"></span>
@@ -242,6 +264,7 @@
                 <div class="preview-tabs">
                   <button class="preview-tab active" type="button" data-preview="original">ต้นฉบับ</button>
                   <button class="preview-tab" type="button" data-preview="result" disabled>ผลลัพธ์</button>
+                  <button class="preview-tab" type="button" data-preview="compare" disabled>เปรียบเทียบ</button>
                 </div>
                 <button id="checker-toggle" class="checker-toggle" type="button" aria-pressed="false" title="เปิด/ปิดตารางพื้นโปร่งใส">
                   <span></span><span></span><span></span><span></span>
@@ -249,6 +272,12 @@
               </div>
               <div id="preview-stage" class="preview-stage">
                 <img id="main-preview" alt="ตัวอย่างรูปภาพต้นฉบับ">
+                <div id="compare-view" class="compare-view" hidden>
+                  <img id="compare-original" alt="รูปภาพต้นฉบับ">
+                  <div id="compare-result-wrap"><img id="compare-result" alt="รูปภาพผลลัพธ์"></div>
+                  <input id="compare-slider" type="range" min="0" max="100" value="50" aria-label="เลื่อนเพื่อเปรียบเทียบรูปก่อนและหลัง">
+                  <span class="compare-before">ก่อน</span><span class="compare-after">หลัง</span>
+                </div>
                 <div id="empty-result" class="empty-result" hidden>
                   <span>✨</span><strong>รูปที่ย่อแล้วจะแสดงที่นี่</strong><small>ปรับค่าที่ต้องการแล้วกด ย่อรูปภาพ</small>
                 </div>
@@ -279,6 +308,7 @@
               ดาวน์โหลดรูปภาพ
             </button>
           </div>
+          <div id="batch-results" class="batch-results" hidden></div>
         </div>
       </div>
       <p class="browser-note"><span>🔒</span> รูปภาพของคุณไม่ออกจาก browser เราไม่อัปโหลด ไม่จัดเก็บ และไม่ดูไฟล์ของคุณ</p>
@@ -328,13 +358,29 @@
           <div class="privacy-list">
             <span><i>✓</i> ประมวลผลใน browser ของคุณ</span>
             <span><i>✓</i> ลบ metadata โดยอัตโนมัติ</span>
-            <span><i>✓</i> ไม่ต้องสมัคร และไม่มี tracking pixel</span>
+            <span><i>✓</i> Analytics ไม่รับชื่อไฟล์หรือเนื้อหารูป</span>
           </div>
         </div>
         <div class="privacy-visual" aria-hidden="true">
           <div class="shield-orbit"><span></span></div>
           <svg viewBox="0 0 24 24"><path d="M12 3 5 6v5c0 4.8 2.8 8 7 10 4.2-2 7-5.2 7-10V6l-7-3Z"/><path d="m9 12 2 2 4-4"/></svg>
         </div>
+      </div>
+    </section>
+
+    <section class="popular-tools section-shell" aria-labelledby="popular-tools-heading">
+      <div class="section-heading narrow">
+        <span class="section-kicker">งานยอดนิยม</span>
+        <h2 id="popular-tools-heading">เปิดเครื่องมือพร้อมค่าที่ต้องการ</h2>
+        <p>เลือกงานแปลงไฟล์ บีบอัด หรือ resize ที่ใช้บ่อย ทุกหน้าทำงานด้วยเครื่องมือเดียวกันและประมวลผลใน browser</p>
+      </div>
+      <div class="popular-links">
+        <a href="jpg-to-png/"><strong>JPG เป็น PNG</strong><span>แปลงรูปฟรี</span></a>
+        <a href="png-to-jpg/"><strong>PNG เป็น JPG</strong><span>ปรับคุณภาพได้</span></a>
+        <a href="jpg-to-webp/"><strong>JPG เป็น WebP</strong><span>เหมาะกับเว็บไซต์</span></a>
+        <a href="webp-to-jpg/"><strong>WebP เป็น JPG</strong><span>รองรับระบบทั่วไป</span></a>
+        <a href="image-to-100kb/"><strong>รูปใกล้ 100 KB</strong><span>สำหรับแบบฟอร์ม</span></a>
+        <a href="heic-to-jpg/"><strong>HEIC เป็น JPG</strong><span>รูปจาก iPhone</span></a>
       </div>
     </section>
 

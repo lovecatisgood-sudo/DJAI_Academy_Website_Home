@@ -26,6 +26,28 @@ const publicRoutes = [
   "/tools/qrgen/en/",
   "/tools/resizeimg/",
   "/tools/resizeimg/en/",
+  "/tools/resizeimg/jpg-to-png/",
+  "/tools/resizeimg/jpg-to-png/en/",
+  "/tools/resizeimg/png-to-jpg/",
+  "/tools/resizeimg/png-to-jpg/en/",
+  "/tools/resizeimg/jpg-to-webp/",
+  "/tools/resizeimg/jpg-to-webp/en/",
+  "/tools/resizeimg/png-to-webp/",
+  "/tools/resizeimg/png-to-webp/en/",
+  "/tools/resizeimg/webp-to-jpg/",
+  "/tools/resizeimg/webp-to-jpg/en/",
+  "/tools/resizeimg/webp-to-png/",
+  "/tools/resizeimg/webp-to-png/en/",
+  "/tools/resizeimg/compress-image/",
+  "/tools/resizeimg/compress-image/en/",
+  "/tools/resizeimg/resize-image/",
+  "/tools/resizeimg/resize-image/en/",
+  "/tools/resizeimg/image-to-100kb/",
+  "/tools/resizeimg/image-to-100kb/en/",
+  "/tools/resizeimg/image-to-500kb/",
+  "/tools/resizeimg/image-to-500kb/en/",
+  "/tools/resizeimg/heic-to-jpg/",
+  "/tools/resizeimg/heic-to-jpg/en/",
   "/tools/PDFTools/",
   "/tools/PDFTools/en/",
   "/tools/PDFTools/merge-pdf/",
@@ -44,6 +66,10 @@ const publicRoutes = [
   "/tools/PDFTools/watermark-pdf/en/",
   "/tools/PDFTools/protect-pdf/",
   "/tools/PDFTools/protect-pdf/en/",
+  "/tools/PDFTools/jpg-to-pdf/",
+  "/tools/PDFTools/jpg-to-pdf/en/",
+  "/tools/PDFTools/pdf-to-jpg/",
+  "/tools/PDFTools/pdf-to-jpg/en/",
   "/blog/",
   "/blog/en/",
   "/blog/how-to-create-free-qr-code/",
@@ -170,6 +196,12 @@ async function verify() {
     apexResponse.status !== 308 || apexResponse.location !== "https://www.djai.academy/"
   ) {
     failures.push("apex host: expected 308 to https://www.djai.academy/");
+  }
+
+  const imageControllerResponse = await fetch(`${origin}/tools/resizeimg/app.js`);
+  const imageControllerCache = imageControllerResponse.headers.get("cache-control") || "";
+  if (imageControllerCache.includes("immutable") || !imageControllerCache.includes("must-revalidate")) {
+    failures.push(`/tools/resizeimg/app.js: unsafe cache policy ${imageControllerCache || "(none)"}`);
   }
 
   const discoveredRoutes = new Set();

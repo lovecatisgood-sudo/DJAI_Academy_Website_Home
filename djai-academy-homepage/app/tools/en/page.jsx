@@ -31,9 +31,9 @@ const tools = [
   {
     label: "Image Tools",
     title: "Free Image Converter and Resizer",
-    text: "Resize, compress, and convert JPG, PNG, and WebP images directly in your browser. Your files stay on your device.",
+    text: "Resize, compress, and convert JPG, PNG, WebP, and HEIC images. Process batches and download a ZIP while files stay on your device.",
     href: "https://www.djai.academy/tools/resizeimg/en/",
-    tags: ["JPG", "PNG", "WebP"]
+    tags: ["HEIC", "Batch", "Target KB"]
   },
   {
     label: "PDF Tools",
@@ -47,8 +47,17 @@ const tools = [
 const comingSoon = [
   "Background remover",
   "Favicon generator",
-  "Social media image presets",
+  "AVIF tools",
   "OCR tools"
+];
+
+const popularWorkflows = [
+  ["JPG to PNG", "Convert an image without uploading", "https://www.djai.academy/tools/resizeimg/jpg-to-png/en/"],
+  ["HEIC to JPG", "Convert an iPhone photo in your browser", "https://www.djai.academy/tools/resizeimg/heic-to-jpg/en/"],
+  ["Image to 100 KB", "Prepare an image for upload forms", "https://www.djai.academy/tools/resizeimg/image-to-100kb/en/"],
+  ["JPG to PDF", "Combine multiple images into a PDF", "https://www.djai.academy/tools/PDFTools/jpg-to-pdf/en/"],
+  ["PDF to JPG", "Export every page as an image or ZIP", "https://www.djai.academy/tools/PDFTools/pdf-to-jpg/en/"],
+  ["Create a QR code", "Download a PNG or SVG", "https://www.djai.academy/tools/qrgen/en/"]
 ];
 
 const ecosystem = [
@@ -151,6 +160,18 @@ export default function ToolsPage() {
             <strong>Open tool</strong>
           </a>
         ))}
+      </section>
+
+      <section className="workflow-section" aria-labelledby="workflow-heading">
+        <div>
+          <p className="eyebrow">START WITH A TASK</p>
+          <h2 id="workflow-heading">Shortcuts for popular workflows.</h2>
+        </div>
+        <div className="workflow-links">
+          {popularWorkflows.map(([title, text, href]) => (
+            <a href={href} key={href}><strong>{title}</strong><span>{text}</span></a>
+          ))}
+        </div>
       </section>
 
       <section className="tools-band">

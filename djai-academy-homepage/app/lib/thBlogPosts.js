@@ -100,7 +100,7 @@ Format ของรูปมีผลต่อคุณภาพ ขนาดไ
 
 ## ขั้นตอนที่ 1: เปิด DJAI Image Tools
 
-เข้าไปที่ [Free Image Converter and Resizer](https://www.djai.academy/tools/resizeimg/) แล้วเลือกภาพ JPG, JPEG, PNG หรือ WebP
+เข้าไปที่ [Free Image Converter and Resizer](https://www.djai.academy/tools/resizeimg/) แล้วเลือกภาพ JPG, JPEG, PNG หรือ WebP หากต้องการงานเฉพาะสามารถเปิด [JPG เป็น PNG](https://www.djai.academy/tools/resizeimg/jpg-to-png/) หรือ [JPG เป็น WebP](https://www.djai.academy/tools/resizeimg/jpg-to-webp/) พร้อมค่าที่ตั้งไว้ได้
 
 ## ขั้นตอนที่ 2: เลือก Output Format
 
@@ -171,13 +171,13 @@ Format ของรูปมีผลต่อคุณภาพ ขนาดไ
 
 ## เครื่องมือที่ใช้
 
-ใช้ [DJAI Image Tools](https://www.djai.academy/tools/resizeimg/) และเลือก workflow สำหรับ target file size เครื่องมือทำงานใน browser ดังนั้นรูปไม่ถูก upload ไปยัง server
+ใช้ [เครื่องมือบีบอัดรูปตามขนาดเป้าหมาย](https://www.djai.academy/tools/resizeimg/compress-image/) เครื่องมือทำงานใน browser ดังนั้นรูปไม่ถูก upload ไปยัง server
 
 แนวทางนี้เหมาะกับธุรกิจ โรงเรียน โรงแรม และ creator ที่จัดการรูปภาพลูกค้าหรือเอกสารภายใน
 
 ## ขั้นตอนที่ 1: เลือกรูปภาพ
 
-เปิด [DJAI Image Tools](https://www.djai.academy/tools/resizeimg/) แล้วเลือกรูป JPG, PNG หรือ WebP ที่ต้องการ compress
+เปิด [DJAI Image Tools](https://www.djai.academy/tools/resizeimg/compress-image/) แล้วเลือกรูป JPG, PNG หรือ WebP ที่ต้องการ compress สำหรับงานที่กำหนดชัดเจนเปิด [ลดรูปใกล้ 100 KB](https://www.djai.academy/tools/resizeimg/image-to-100kb/) หรือ [ลดรูปใกล้ 500 KB](https://www.djai.academy/tools/resizeimg/image-to-500kb/) ได้โดยตรง
 
 ถ้ารูปใหญ่มาก เครื่องมืออาจต้องลดทั้ง quality และ dimension เพื่อให้ถึง target size ซึ่งเป็นเรื่องปกติ
 

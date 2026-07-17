@@ -103,10 +103,15 @@ function resolveStaticFile(mount, pathname) {
 function serveStaticFile(req, res, filePath) {
   const extension = path.extname(filePath).toLowerCase();
   const isHtml = extension === ".html";
+  const isVersionedAsset = /[.-][a-f0-9]{8,}\./i.test(path.basename(filePath));
 
   res.writeHead(200, {
     "Content-Type": mimeTypes[extension] || "application/octet-stream",
-    "Cache-Control": isHtml ? "no-cache" : "public, max-age=31536000, immutable",
+    "Cache-Control": isHtml
+      ? "no-cache"
+      : isVersionedAsset
+        ? "public, max-age=31536000, immutable"
+        : "public, max-age=3600, must-revalidate",
     "X-Content-Type-Options": "nosniff",
     "Referrer-Policy": "strict-origin-when-cross-origin"
   });

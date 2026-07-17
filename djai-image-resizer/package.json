@@ -4,11 +4,17 @@
   "private": true,
   "description": "A free, private JPG and PNG resize/compression tool by DJAI Academy and Siamese Cat Dev.",
   "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "npm run build && node --test tests/*.test.mjs",
     "start": "node server.js",
     "dev": "node --watch server.js"
   },
   "engines": {
     "node": ">=18"
   },
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "dependencies": {
+    "heic2any": "0.0.4",
+    "jszip": "3.10.1"
+  }
 }

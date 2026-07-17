@@ -31,9 +31,9 @@ const tools = [
   {
     label: "Image Tools",
     title: "Free Image Converter and Resizer",
-    text: "Resize, compress และ convert JPG, PNG, WebP ผ่าน browser โดยไฟล์อยู่ในเครื่องของคุณ",
+    text: "Resize, compress และ convert JPG, PNG, WebP, HEIC ผ่าน browser รองรับหลายไฟล์และดาวน์โหลด ZIP โดยไฟล์อยู่ในเครื่องของคุณ",
     href: "https://www.djai.academy/tools/resizeimg/",
-    tags: ["JPG", "PNG", "WebP"]
+    tags: ["HEIC", "Batch", "Target KB"]
   },
   {
     label: "PDF Tools",
@@ -44,7 +44,16 @@ const tools = [
   }
 ];
 
-const comingSoon = ["Background remover", "Favicon generator", "Social media image presets", "OCR tools"];
+const comingSoon = ["Background remover", "Favicon generator", "AVIF tools", "OCR tools"];
+
+const popularWorkflows = [
+  ["JPG เป็น PNG", "แปลงไฟล์รูปโดยไม่ upload", "https://www.djai.academy/tools/resizeimg/jpg-to-png/"],
+  ["HEIC เป็น JPG", "แปลงรูปจาก iPhone ใน browser", "https://www.djai.academy/tools/resizeimg/heic-to-jpg/"],
+  ["ลดรูปใกล้ 100 KB", "เตรียมรูปสำหรับแบบฟอร์ม", "https://www.djai.academy/tools/resizeimg/image-to-100kb/"],
+  ["JPG เป็น PDF", "รวมรูปหลายหน้าเป็น PDF", "https://www.djai.academy/tools/PDFTools/jpg-to-pdf/"],
+  ["PDF เป็น JPG", "ส่งออกทุกหน้าเป็นรูปหรือ ZIP", "https://www.djai.academy/tools/PDFTools/pdf-to-jpg/"],
+  ["สร้าง QR Code", "ดาวน์โหลด PNG หรือ SVG", "https://www.djai.academy/tools/qrgen/"]
+];
 
 const ecosystem = [
   {
@@ -146,6 +155,18 @@ export default function ThaiToolsPage() {
             <strong>เปิดเครื่องมือ</strong>
           </a>
         ))}
+      </section>
+
+      <section className="workflow-section" aria-labelledby="workflow-heading">
+        <div>
+          <p className="eyebrow">เปิดตามงานที่ต้องการ</p>
+          <h2 id="workflow-heading">ทางลัดสำหรับงานยอดนิยม</h2>
+        </div>
+        <div className="workflow-links">
+          {popularWorkflows.map(([title, text, href]) => (
+            <a href={href} key={href}><strong>{title}</strong><span>{text}</span></a>
+          ))}
+        </div>
       </section>
 
       <section className="tools-band">

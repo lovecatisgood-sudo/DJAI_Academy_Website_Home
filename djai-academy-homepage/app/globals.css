@@ -879,6 +879,7 @@ pre {
 .tools-grid,
 .tools-band,
 .coming-tools,
+.workflow-section,
 .ecosystem-hub {
   width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
@@ -967,6 +968,37 @@ pre {
   border-bottom: 1px solid rgba(25, 227, 255, 0.16);
   grid-template-columns: 0.85fr 1.15fr;
 }
+
+.workflow-section {
+  display: grid;
+  gap: 40px;
+  padding: 70px 0;
+  border-bottom: 1px solid rgba(25, 227, 255, 0.16);
+  grid-template-columns: 0.72fr 1.28fr;
+}
+
+.workflow-section h2 {
+  font-size: clamp(2rem, 4vw, 3.8rem);
+}
+
+.workflow-links {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.workflow-links a {
+  display: grid;
+  gap: 7px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(25, 227, 255, 0.18);
+  border-radius: 8px;
+}
+
+.workflow-links a:hover { border-color: rgba(25, 227, 255, 0.55); }
+.workflow-links strong { color: #ffffff; }
+.workflow-links span { color: #a9bfdf; font-size: 0.88rem; line-height: 1.5; }
 
 .tools-band h2,
 .coming-tools h2,
@@ -2215,6 +2247,7 @@ pre {
   .tools-grid,
   .tools-band,
   .coming-tools,
+  .workflow-section,
   .blog-layout,
   .article-cta,
   .portfolio-grid,
@@ -2325,6 +2358,7 @@ pre {
 
   .tools-nav nav,
   .coming-tools ul,
+  .workflow-links,
   .ecosystem-links {
     grid-template-columns: 1fr;
   }

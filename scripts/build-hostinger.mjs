@@ -33,6 +33,22 @@ const projects = [
     outputs: ["out/index.html", "out/en/index.html"]
   },
   {
+    name: "DJAI image tools",
+    dir: "djai-image-resizer",
+    install: "ci",
+    build: ["run", "build"],
+    outputs: [
+      "public/index.html",
+      "public/en/index.html",
+      "public/jpg-to-png/index.html",
+      "public/jpg-to-png/en/index.html",
+      "public/heic-to-jpg/index.html",
+      "public/heic-to-jpg/en/index.html",
+      "public/vendor/heic2any.min.js",
+      "public/vendor/jszip.min.js"
+    ]
+  },
+  {
     name: "DJAI PDF tools",
     dir: "djai-pdf-tools",
     install: "ci",
@@ -43,6 +59,10 @@ const projects = [
       "out/en/index.html",
       "out/merge-pdf/index.html",
       "out/merge-pdf/en/index.html",
+      "out/jpg-to-pdf/index.html",
+      "out/jpg-to-pdf/en/index.html",
+      "out/pdf-to-jpg/index.html",
+      "out/pdf-to-jpg/en/index.html",
       "out/protect-pdf/index.html",
       "out/protect-pdf/en/index.html",
       "out/pdf.worker.min.mjs"
@@ -54,14 +74,6 @@ const projects = [
     install: "ci",
     build: ["run", "build"],
     outputs: ["dist/index.html", "dist/en/index.html"]
-  }
-];
-
-const staticProjects = [
-  {
-    name: "DJAI image resizer",
-    dir: "djai-image-resizer",
-    outputs: ["public/index.html", "public/en/index.html", "public/app.js", "public/styles.css"]
   }
 ];
 
@@ -129,10 +141,6 @@ for (const project of projects) {
   run("npm", project.build, cwd);
   validateOutputs(project);
   setCourseExportLanguages(project);
-}
-
-for (const project of staticProjects) {
-  validateOutputs(project);
 }
 
 console.log("\nHostinger build completed. Start with: npm start");

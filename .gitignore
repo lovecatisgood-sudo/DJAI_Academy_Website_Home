@@ -35,3 +35,7 @@ Thumbs.db
 # Temporary previews
 tmp/
 *.tmp
+
+# Local donor projects retained only as implementation references
+DJayTools-Free-Image-Converter-Resizer/
+djai-image-pdf-tools-production/

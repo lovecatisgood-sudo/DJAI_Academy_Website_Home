@@ -293,12 +293,21 @@ function ToolSettings({ tool, language, options, update }: {
   );
 }
 
-export default function PdfToolsApp({ language, initialTool }: { language: Language; initialTool?: ToolSlug }) {
+export type PdfSeoPage = {
+  slug: string;
+  label: string;
+  title: string;
+  short: string;
+  description: string;
+  guide: { title: string; intro: string; steps: [string, string, string] };
+};
+
+export default function PdfToolsApp({ language, initialTool, seoPage }: { language: Language; initialTool?: ToolSlug; seoPage?: PdfSeoPage }) {
   const copy = ui[language];
   const en = language === "en";
   const activeTool = initialTool || "merge-pdf";
-  const activeCopy = toolCopy[language][activeTool];
-  const activeGuide = toolGuides[language][activeTool];
+  const activeCopy = seoPage || toolCopy[language][activeTool];
+  const activeGuide = seoPage?.guide || toolGuides[language][activeTool];
   const ActiveIcon = icons[activeTool];
   const [files, setFiles] = useState<File[]>([]);
   const [options, setOptions] = useState(defaultOptions);
@@ -368,7 +377,11 @@ export default function PdfToolsApp({ language, initialTool }: { language: Langu
     }
   }
 
-  const canonical = initialTool ? `${SITE_URL}/${initialTool}/${en ? "en/" : ""}` : `${SITE_URL}/${en ? "en/" : ""}`;
+  const publicSlug = seoPage?.slug || initialTool;
+  const canonical = publicSlug ? `${SITE_URL}/${publicSlug}/${en ? "en/" : ""}` : `${SITE_URL}/${en ? "en/" : ""}`;
+  const languageHref = seoPage
+    ? `${BASE_PATH}/${seoPage.slug}/${en ? "" : "en/"}`
+    : initialTool ? toolHref(initialTool, en ? "th" : "en") : homeHref(en ? "th" : "en");
   const structuredData = [
     {
       "@context": "https://schema.org",
@@ -420,7 +433,7 @@ export default function PdfToolsApp({ language, initialTool }: { language: Langu
           <a href={en ? "https://www.djai.academy/course/en/" : "https://www.djai.academy/course/"}>{copy.nav.course}</a>
           <a href={en ? "https://www.djai.academy/development/en/" : "https://www.djai.academy/development/"}>{copy.nav.development}</a>
           <a href={en ? "https://www.djai.academy/blog/en/" : "https://www.djai.academy/blog/"}>{copy.nav.blog}</a>
-          <a className="language-link" href={initialTool ? toolHref(initialTool, en ? "th" : "en") : homeHref(en ? "th" : "en")} hrefLang={en ? "th" : "en"}>{copy.nav.language}</a>
+          <a className="language-link" href={languageHref} hrefLang={en ? "th" : "en"}>{copy.nav.language}</a>
         </nav>
       </header>
 
