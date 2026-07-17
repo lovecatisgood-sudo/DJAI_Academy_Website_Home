@@ -388,7 +388,7 @@ Important deployment changes:
 
 - Configured static export for `/course`.
 - Thai default page is `/course/`.
-- English page is `/course/EN/`.
+- English page is `/course/en/`.
 - Added `basePath: "/course"` and matching asset prefix.
 - Fixed image paths to use `/course/assets/...`.
 - Added `/course`-safe icon metadata.
@@ -409,14 +409,14 @@ Header/footer changes applied only to this course project:
   - Mobile hamburger menu behavior via `app/SiteHeader.jsx`
 
 - Corrected header/footer links:
-  - Tools: Thai `/tools/th/`, English `/tools/EN/`
-  - Services: Thai `/service/th/`, English `/service/EN/`
-  - Courses: Thai `/course/`, English `/course/EN/`
-  - Community: `https://djai.academy/community`
-  - Portfolio: `https://djai.academy/portfolio`
-  - Promo: `https://djai.academy/promo`
-  - Development: `https://djai.academy/development`
-  - Blog: `https://djai.academy/blog`
+  - Tools: Thai `/tools/`, English `/tools/en/`
+  - Services: Thai `/service/`, English `/service/en/`
+  - Courses: Thai `/course/`, English `/course/en/`
+  - Community: Thai `/course/#community`, English `/course/en/#community`
+  - Portfolio: Thai `/portfolio/`, English `/portfolio/en/`
+  - Promo: Thai `/course/#pricing`, English `/course/en/#pricing`
+  - Development: Thai `/development/`, English `/development/en/`
+  - Blog: Thai `/blog/`, English `/blog/en/`
 
 - Footer now uses 4 columns:
   - Learn

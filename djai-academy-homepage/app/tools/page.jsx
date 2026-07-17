@@ -107,7 +107,7 @@ export default function ThaiToolsPage() {
         </a>
         <nav aria-label="Tools navigation">
           <a href="https://www.djai.academy/course/">คอร์สเรียน</a>
-          <a href="https://www.djai.academy/community/">ชุมชน</a>
+          <a href="https://www.djai.academy/course/#community">ชุมชน</a>
           <a href="https://www.djai.academy/service/">บริการ</a>
           <a href="https://www.djai.academy/blog/">บล็อก</a>
           <a href="https://www.djai.academy/tools/en/" hrefLang="en">

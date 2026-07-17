@@ -6,6 +6,7 @@ const rootDir = __dirname;
 const homepageDir = path.join(rootDir, "djai-academy-homepage");
 const nextPackagePath = path.join(homepageDir, "node_modules", "next");
 const next = require(nextPackagePath);
+const packageMetadata = require(path.join(rootDir, "package.json"));
 
 const port = Number(process.env.PORT || 3000);
 const hostname = process.env.HOST || "0.0.0.0";
@@ -114,6 +115,31 @@ function serveStaticFile(req, res, filePath) {
   fs.createReadStream(filePath).pipe(res);
 }
 
+function serveHealth(req, res) {
+  const requiredOutputs = [
+    path.join(homepageDir, ".next", "BUILD_ID"),
+    path.join(rootDir, "djai-academy-course", "out", "index.html"),
+    path.join(rootDir, "DJayTools-Free-QR-Generator-Source", "out", "index.html"),
+    path.join(rootDir, "djai-image-resizer", "public", "index.html"),
+    path.join(rootDir, "Siamese-Cat-Dev-Bio-Site", "dist", "index.html")
+  ];
+  const buildsReady = requiredOutputs.every((output) => fs.existsSync(output));
+  const body = JSON.stringify({
+    status: buildsReady ? "ok" : "degraded",
+    app: packageMetadata.name,
+    version: packageMetadata.version,
+    buildsReady
+  });
+
+  res.writeHead(buildsReady ? 200 : 503, {
+    "Content-Type": "application/json; charset=utf-8",
+    "Content-Length": Buffer.byteLength(body),
+    "Cache-Control": "no-store",
+    "X-DJAI-Application": "academy-root"
+  });
+  res.end(req.method === "HEAD" ? undefined : body);
+}
+
 function tryServeMountedStatic(req, res, pathname) {
   if (matchesMount(pathname, "/tools/Resizeimg")) {
     redirect(res, pathname.replace("/tools/Resizeimg", "/tools/resizeimg"));
@@ -137,6 +163,17 @@ app.prepare().then(() => {
   http
     .createServer((req, res) => {
       const pathname = normalizePathname(req.url || "/");
+      const requestHost = String(req.headers.host || "").split(":")[0].toLowerCase();
+
+      if (requestHost === "djai.academy") {
+        redirect(res, `https://www.djai.academy${req.url || "/"}`);
+        return;
+      }
+
+      if (pathname === "/healthz") {
+        serveHealth(req, res);
+        return;
+      }
 
       if (tryServeMountedStatic(req, res, pathname)) {
         return;
@@ -147,4 +184,7 @@ app.prepare().then(() => {
     .listen(port, hostname, () => {
       console.log(`DJAI Academy website running at http://${hostname}:${port}`);
     });
+}).catch((error) => {
+  console.error("Unable to start DJAI Academy website.", error);
+  process.exit(1);
 });

@@ -9,8 +9,8 @@ const links = {
   tools: "https://www.djai.academy/tools/en/",
   service: "https://www.djai.academy/service/en/",
   course: "https://www.djai.academy/course/en/",
-  community: "https://www.djai.academy/community",
-  promo: "https://www.djai.academy/promo",
+  community: "https://www.djai.academy/course/en/#community",
+  promo: "https://www.djai.academy/course/en/#pricing",
   development: "https://www.djai.academy/development/en/",
   blog: "https://www.djai.academy/blog/en/",
   thai: "https://www.djai.academy/"

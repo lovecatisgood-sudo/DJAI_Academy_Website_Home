@@ -20,7 +20,14 @@ const THAI_CATEGORY_TO_KEY = Object.fromEntries(
   Object.entries(BLOG_CATEGORY_LABELS.th).map(([key, label]) => [label, key])
 );
 
-const DATA_FILE = path.join(process.cwd(), "data", "blog-posts.json");
+const workingDirectory = process.cwd();
+const homepageDirectory =
+  path.basename(workingDirectory) === "djai-academy-homepage"
+    ? workingDirectory
+    : path.join(workingDirectory, "djai-academy-homepage");
+const DATA_FILE = path.resolve(
+  process.env.DJAI_BLOG_DATA_FILE || path.join(homepageDirectory, "data", "blog-posts.json")
+);
 
 export function slugify(value) {
   return String(value || "")

@@ -112,7 +112,7 @@ export default function ToolsPage() {
         </a>
         <nav aria-label="Tools navigation">
           <a href="https://www.djai.academy/course/en/">Courses</a>
-          <a href="https://www.djai.academy/community/">Community</a>
+          <a href="https://www.djai.academy/course/en/#community">Community</a>
           <a href="https://www.djai.academy/service/en/">Services</a>
           <a href="https://www.djai.academy/blog/en/">Blog</a>
           <a href="https://www.djai.academy/tools/" hrefLang="th">

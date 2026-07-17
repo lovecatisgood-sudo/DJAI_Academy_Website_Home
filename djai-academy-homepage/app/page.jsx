@@ -36,7 +36,7 @@ const routes = [
     eyebrow: "เข้าร่วม",
     title: "ชุมชนคนสร้างโปรเจกต์",
     text: "ติดตามความรู้ เครื่องมือฟรี และแนวคิดการสร้างโปรดักต์สำหรับยุค AI",
-    href: "https://www.djai.academy/community/",
+    href: "https://www.djai.academy/course/#community",
     action: "เข้าร่วมชุมชน"
   },
   {
@@ -82,7 +82,7 @@ export default function ThaiHomePage() {
                 โปรดักต์ดิจิทัลสำหรับธุรกิจ
               </p>
               <div className="hero-actions">
-                <a className="button primary" href="https://www.djai.academy/community/">
+                <a className="button primary" href="https://www.djai.academy/course/#community">
                   เข้าร่วมชุมชนฟรี
                 </a>
                 <a className="button secondary" href="https://www.djai.academy/course/">

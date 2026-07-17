@@ -29,9 +29,9 @@ const siteLinks = {
   tools: "https://www.djai.academy/tools/",
   services: "https://www.djai.academy/service/",
   courses: "https://www.djai.academy/course/",
-  community: "https://www.djai.academy/community/",
+  community: "https://www.djai.academy/course/#community",
   portfolio: "https://www.djai.academy/portfolio/",
-  promo: "https://www.djai.academy/promo/",
+  promo: "https://www.djai.academy/course/#pricing",
   development: "https://www.djai.academy/development/",
   blog: "https://www.djai.academy/blog/"
 };

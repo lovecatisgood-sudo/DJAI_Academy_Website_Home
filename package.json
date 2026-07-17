@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "Root Hostinger deployment entry point for DJAI Academy and public tools.",
+  "main": "server.js",
   "engines": {
     "node": ">=22.13.0"
   },
@@ -10,6 +11,7 @@
     "build": "node scripts/build-hostinger.mjs",
     "prestart": "node scripts/ensure-hostinger-build.mjs",
     "start": "node server.js",
+    "verify:hostinger": "node scripts/audit-hostinger.mjs",
     "hostinger:build": "node scripts/build-hostinger.mjs",
     "hostinger:start": "node server.js"
   }

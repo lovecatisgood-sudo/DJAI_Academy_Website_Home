@@ -1,0 +1,188 @@
+import { spawn } from "node:child_process";
+import { request } from "node:http";
+
+const port = Number(process.env.DJAI_AUDIT_PORT || 3147);
+const origin = `http://127.0.0.1:${port}`;
+const publicRoutes = [
+  "/",
+  "/en/",
+  "/portfolio/",
+  "/portfolio/en/",
+  "/development/",
+  "/development/en/",
+  "/service/",
+  "/service/en/",
+  "/tools/",
+  "/tools/en/",
+  "/tools/qrgen/",
+  "/tools/qrgen/en/",
+  "/tools/resizeimg/",
+  "/tools/resizeimg/en/",
+  "/blog/",
+  "/blog/en/",
+  "/blog/how-to-create-free-qr-code/",
+  "/blog/en/how-to-create-free-qr-code/",
+  "/blog/how-to-convert-jpg-png-webp-free/",
+  "/blog/en/how-to-convert-jpg-png-webp-free/",
+  "/blog/compress-image-to-100kb-500kb/",
+  "/blog/en/compress-image-to-100kb-500kb/",
+  "/course/",
+  "/course/en/",
+  "/siamese_cat/dev/",
+  "/siamese_cat/dev/en/",
+  "/admin/blog/",
+  "/robots.txt",
+  "/sitemap.xml",
+  "/healthz"
+];
+const redirects = [
+  ["/th/", "/"],
+  ["/EN/", "/en/"],
+  ["/tools/Resizeimg/", "/tools/resizeimg/"]
+];
+const auditPassword = "djai-local-deployment-audit";
+
+const server = spawn(process.execPath, ["server.js"], {
+  cwd: new URL("..", import.meta.url).pathname,
+  env: {
+    ...process.env,
+    HOST: "127.0.0.1",
+    NODE_ENV: "production",
+    PORT: String(port),
+    DJAI_BLOG_ADMIN_PASSWORD: auditPassword
+  },
+  stdio: ["ignore", "pipe", "pipe"]
+});
+
+let serverOutput = "";
+server.stdout.on("data", (chunk) => {
+  serverOutput += chunk;
+});
+server.stderr.on("data", (chunk) => {
+  serverOutput += chunk;
+});
+
+async function waitForServer() {
+  for (let attempt = 0; attempt < 60; attempt += 1) {
+    try {
+      const response = await fetch(`${origin}/healthz`, { cache: "no-store" });
+      if (response.ok) return;
+    } catch {
+      // The server is still starting.
+    }
+    await new Promise((resolve) => setTimeout(resolve, 500));
+  }
+  throw new Error(`Server did not become ready.\n${serverOutput}`);
+}
+
+function requestApexRedirect() {
+  return new Promise((resolve, reject) => {
+    const requestHandle = request(
+      {
+        hostname: "127.0.0.1",
+        port,
+        path: "/",
+        headers: { Host: "djai.academy" }
+      },
+      (response) => {
+        response.resume();
+        resolve({ status: response.statusCode, location: response.headers.location });
+      }
+    );
+    requestHandle.on("error", reject);
+    requestHandle.end();
+  });
+}
+
+async function verify() {
+  await waitForServer();
+  const failures = [];
+
+  for (const route of publicRoutes) {
+    const response = await fetch(`${origin}${route}`, { redirect: "manual" });
+    if (response.status !== 200) {
+      failures.push(`${route}: expected 200, received ${response.status}`);
+    }
+  }
+
+  for (const [route, expectedLocation] of redirects) {
+    const response = await fetch(`${origin}${route}`, { redirect: "manual" });
+    const location = response.headers.get("location");
+    const normalizedLocation = location ? new URL(location, origin).pathname : "";
+    if (response.status !== 308 || normalizedLocation !== expectedLocation) {
+      failures.push(
+        `${route}: expected 308 to ${expectedLocation}, received ${response.status} to ${normalizedLocation || "(none)"}`
+      );
+    }
+  }
+
+  const unauthorizedAdminResponse = await fetch(`${origin}/api/admin/blog/`);
+  if (unauthorizedAdminResponse.status !== 401) {
+    failures.push(
+      `/api/admin/blog/: expected 401 without credentials, received ${unauthorizedAdminResponse.status}`
+    );
+  }
+
+  const authorizedAdminResponse = await fetch(`${origin}/api/admin/blog/`, {
+    headers: { Authorization: `Bearer ${auditPassword}` }
+  });
+  if (authorizedAdminResponse.status !== 200) {
+    failures.push(
+      `/api/admin/blog/: expected 200 with credentials, received ${authorizedAdminResponse.status}`
+    );
+  } else {
+    const payload = await authorizedAdminResponse.json();
+    if (!Array.isArray(payload.posts) || payload.posts.length < 3) {
+      failures.push("/api/admin/blog/: expected at least three seeded blog posts");
+    }
+  }
+
+  const apexResponse = await requestApexRedirect();
+  if (
+    apexResponse.status !== 308 || apexResponse.location !== "https://www.djai.academy/"
+  ) {
+    failures.push("apex host: expected 308 to https://www.djai.academy/");
+  }
+
+  const discoveredRoutes = new Set();
+  for (const route of publicRoutes.filter((candidate) => candidate.endsWith("/"))) {
+    const response = await fetch(`${origin}${route}`);
+    const html = await response.text();
+    const baseMatch = html.match(/<base\s+[^>]*href=["']([^"']+)["']/i);
+    const documentBase = baseMatch ? new URL(baseMatch[1], `${origin}${route}`) : new URL(route, origin);
+    for (const match of html.matchAll(/(?:href|src)=["']([^"']+)["']/g)) {
+      try {
+        const url = new URL(match[1], documentBase);
+        if (url.origin === origin) {
+          discoveredRoutes.add(`${url.pathname}${url.search}`);
+        } else if (url.hostname === "www.djai.academy") {
+          discoveredRoutes.add(`${url.pathname}${url.search}`);
+        }
+      } catch {
+        // Ignore non-URL attributes such as data URIs.
+      }
+    }
+  }
+
+  for (const route of discoveredRoutes) {
+    const response = await fetch(`${origin}${route}`, { redirect: "manual" });
+    if (response.status >= 400) {
+      failures.push(`discovered ${route}: received ${response.status}`);
+    }
+  }
+
+  if (failures.length) {
+    throw new Error(`Hostinger route audit failed:\n- ${failures.join("\n- ")}`);
+  }
+
+  console.log(
+    `Hostinger route audit passed: ${publicRoutes.length} pages, ${redirects.length} redirects, ` +
+      `${discoveredRoutes.size} internal links/assets, admin API auth, and canonical host.`
+  );
+}
+
+try {
+  await verify();
+} finally {
+  server.kill("SIGTERM");
+}

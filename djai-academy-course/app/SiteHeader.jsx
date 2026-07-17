@@ -8,9 +8,9 @@ const siteLinks = {
     tools: "https://www.djai.academy/tools/",
     service: "https://www.djai.academy/service/",
     course: "https://www.djai.academy/course/",
-    community: "https://www.djai.academy/community/",
+    community: "https://www.djai.academy/course/#community",
     portfolio: "https://www.djai.academy/portfolio/",
-    promo: "https://www.djai.academy/promo/",
+    promo: "https://www.djai.academy/course/#pricing",
     development: "https://www.djai.academy/development/",
     blog: "https://www.djai.academy/blog/",
     switchLanguage: "https://www.djai.academy/course/en/"
@@ -20,9 +20,9 @@ const siteLinks = {
     tools: "https://www.djai.academy/tools/en/",
     service: "https://www.djai.academy/service/en/",
     course: "https://www.djai.academy/course/en/",
-    community: "https://www.djai.academy/community/",
+    community: "https://www.djai.academy/course/en/#community",
     portfolio: "https://www.djai.academy/portfolio/en/",
-    promo: "https://www.djai.academy/promo/",
+    promo: "https://www.djai.academy/course/en/#pricing",
     development: "https://www.djai.academy/development/en/",
     blog: "https://www.djai.academy/blog/en/",
     switchLanguage: "https://www.djai.academy/course/"

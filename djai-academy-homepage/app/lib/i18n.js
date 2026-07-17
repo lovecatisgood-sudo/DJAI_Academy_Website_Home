@@ -30,12 +30,12 @@ const paths = {
     th: "/course/"
   },
   community: {
-    en: "/community/",
-    th: "/community/"
+    en: "/course/en/#community",
+    th: "/course/#community"
   },
   promo: {
-    en: "/promo/",
-    th: "/promo/"
+    en: "/course/en/#pricing",
+    th: "/course/#pricing"
   },
   siameseCatDev: {
     en: "/siamese_cat/dev/en/",
