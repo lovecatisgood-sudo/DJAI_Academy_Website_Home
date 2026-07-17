@@ -4,28 +4,28 @@ import { useState } from "react";
 
 const siteLinks = {
   th: {
-    academy: "https://djai.academy/th/",
-    tools: "https://djai.academy/tools/th/",
-    service: "https://djai.academy/service/th/",
-    course: "https://djai.academy/course/",
-    community: "https://djai.academy/community/",
-    portfolio: "https://djai.academy/portfolio/th/",
-    promo: "https://djai.academy/promo/",
-    development: "https://djai.academy/development/th/",
-    blog: "https://djai.academy/blog/th/",
-    switchLanguage: "https://djai.academy/course/EN/"
+    academy: "https://www.djai.academy/",
+    tools: "https://www.djai.academy/tools/",
+    service: "https://www.djai.academy/service/",
+    course: "https://www.djai.academy/course/",
+    community: "https://www.djai.academy/community/",
+    portfolio: "https://www.djai.academy/portfolio/",
+    promo: "https://www.djai.academy/promo/",
+    development: "https://www.djai.academy/development/",
+    blog: "https://www.djai.academy/blog/",
+    switchLanguage: "https://www.djai.academy/course/en/"
   },
   en: {
-    academy: "https://djai.academy/EN/",
-    tools: "https://djai.academy/tools/EN/",
-    service: "https://djai.academy/service/EN/",
-    course: "https://djai.academy/course/EN/",
-    community: "https://djai.academy/community/",
-    portfolio: "https://djai.academy/portfolio/EN/",
-    promo: "https://djai.academy/promo/",
-    development: "https://djai.academy/development/EN/",
-    blog: "https://djai.academy/blog/EN/",
-    switchLanguage: "https://djai.academy/course/"
+    academy: "https://www.djai.academy/en/",
+    tools: "https://www.djai.academy/tools/en/",
+    service: "https://www.djai.academy/service/en/",
+    course: "https://www.djai.academy/course/en/",
+    community: "https://www.djai.academy/community/",
+    portfolio: "https://www.djai.academy/portfolio/en/",
+    promo: "https://www.djai.academy/promo/",
+    development: "https://www.djai.academy/development/en/",
+    blog: "https://www.djai.academy/blog/en/",
+    switchLanguage: "https://www.djai.academy/course/"
   }
 };
 

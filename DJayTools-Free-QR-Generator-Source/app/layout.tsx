@@ -6,7 +6,7 @@ const BASE_PATH = "/tools/qrgen";
 const GA_ID = "G-CGJ5BTR44T";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://djai.academy"),
+  metadataBase: new URL("https://www.djai.academy"),
   title: "สร้าง QR Code ฟรี | DJayTools by DJAI Academy",
   description:
     "สร้าง QR code ฟรีใน browser ดาวน์โหลดเป็น PNG หรือ SVG ได้ ไม่ต้องสมัครบัญชี ไม่มี watermark และไม่มีวันหมดอายุ",

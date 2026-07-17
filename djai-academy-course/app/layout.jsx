@@ -5,7 +5,7 @@ const BASE_PATH = "/course";
 const GA_ID = "G-CGJ5BTR44T";
 
 export const metadata = {
-  metadataBase: new URL("https://djai.academy"),
+  metadataBase: new URL("https://www.djai.academy"),
   title: "DJAI Academy | AI Masterclass ภาษาไทย",
   description:
     "AI Masterclass แบบลงมือทำในประเทศไทย เรียนการสร้างเว็บไซต์ แอป automation และ digital product จริงด้วย AI โดยไม่จำเป็นต้องมีพื้นฐาน programming",
@@ -13,7 +13,7 @@ export const metadata = {
     canonical: `${BASE_PATH}/`,
     languages: {
       th: `${BASE_PATH}/`,
-      en: `${BASE_PATH}/EN/`,
+      en: `${BASE_PATH}/en/`,
       "x-default": `${BASE_PATH}/`
     }
   },

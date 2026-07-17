@@ -3,17 +3,17 @@ export const metadata = {
   description:
     "Use free DJAI tools for QR codes, image resizing, image compression, and browser-based creator workflows. No account required.",
   alternates: {
-    canonical: "/tools/EN/",
+    canonical: "/tools/en/",
     languages: {
-      en: "/tools/EN/",
-      th: "/tools/th/"
+      en: "/tools/en/",
+      th: "/tools/"
     }
   },
   openGraph: {
     title: "Free DJAI Tools",
     description:
       "Free browser-based tools from DJAI Academy, built for creators, founders, students, and businesses.",
-    url: "/tools/EN/",
+    url: "/tools/en/",
     siteName: "DJAI Academy",
     images: ["/djai-logo.webp"],
     type: "website"
@@ -25,14 +25,14 @@ const tools = [
     label: "QR Generator",
     title: "Free QR Code Generator",
     text: "Create custom QR codes for websites, menus, profiles, forms, and campaigns. Download PNG or SVG files with no sign-up.",
-    href: "https://djai.academy/tools/qrgen/en/",
+    href: "https://www.djai.academy/tools/qrgen/en/",
     tags: ["QR code", "PNG", "SVG"]
   },
   {
     label: "Image Tools",
     title: "Free Image Converter and Resizer",
     text: "Resize, compress, and convert JPG, PNG, and WebP images directly in your browser. Your files stay on your device.",
-    href: "https://djai.academy/tools/resizeimg/en/",
+    href: "https://www.djai.academy/tools/resizeimg/en/",
     tags: ["JPG", "PNG", "WebP"]
   }
 ];
@@ -48,12 +48,12 @@ const ecosystem = [
   {
     title: "Develop With DJAI",
     text: "Custom web tools, apps, automation systems, and AI-powered platforms.",
-    href: "https://djai.academy/service/EN/"
+    href: "https://www.djai.academy/service/en/"
   },
   {
     title: "Siamese Cat Dev",
     text: "Software development, product design, and technical implementation partner.",
-    href: "https://djai.academy/siamese_cat/dev/EN/"
+    href: "https://www.djai.academy/siamese_cat/dev/en/"
   },
   {
     title: "Siamese Cat Cafe",
@@ -76,13 +76,13 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   name: "Free DJAI Tools",
-  url: "https://djai.academy/tools/EN/",
+  url: "https://www.djai.academy/tools/en/",
   description:
     "A collection of free browser-based tools from DJAI Academy, including QR code generation and image conversion utilities.",
   publisher: {
     "@type": "Organization",
     name: "DJAI Academy",
-    url: "https://djai.academy/"
+    url: "https://www.djai.academy/"
   },
   hasPart: tools.map((tool) => ({
     "@type": "SoftwareApplication",
@@ -107,15 +107,15 @@ export default function ToolsPage() {
       />
 
       <header className="tools-nav">
-        <a href="https://djai.academy/EN/" aria-label="DJAI Academy home">
+        <a href="https://www.djai.academy/en/" aria-label="DJAI Academy home">
           <img src="/djai-logo.webp" alt="DJAI Academy" />
         </a>
         <nav aria-label="Tools navigation">
-          <a href="https://djai.academy/course/EN/">Courses</a>
-          <a href="https://djai.academy/community/">Community</a>
-          <a href="https://djai.academy/service/EN/">Services</a>
-          <a href="https://djai.academy/blog/EN/">Blog</a>
-          <a href="https://djai.academy/tools/th/" hrefLang="th">
+          <a href="https://www.djai.academy/course/en/">Courses</a>
+          <a href="https://www.djai.academy/community/">Community</a>
+          <a href="https://www.djai.academy/service/en/">Services</a>
+          <a href="https://www.djai.academy/blog/en/">Blog</a>
+          <a href="https://www.djai.academy/tools/" hrefLang="th">
             ไทย
           </a>
         </nav>

@@ -29,11 +29,11 @@ QR code เป็นวิธีที่ง่ายที่สุดในก
 
 ## เครื่องมือที่ใช้
 
-ใช้ [Free QR Code Generator by DJAI Academy](https://djai.academy/tools/qrgen/) เครื่องมือนี้สร้าง QR code ใน browser และดาวน์โหลดเป็น PNG หรือ SVG ได้
+ใช้ [Free QR Code Generator by DJAI Academy](https://www.djai.academy/tools/qrgen/) เครื่องมือนี้สร้าง QR code ใน browser และดาวน์โหลดเป็น PNG หรือ SVG ได้
 
 ## ขั้นตอนที่ 1: เปิด QR Generator
 
-เข้าไปที่ [DJAI QR Generator](https://djai.academy/tools/qrgen/) ไม่ต้องสมัครบัญชี ไม่ต้องติดตั้งโปรแกรม และไม่ต้อง upload ไฟล์ขึ้น server
+เข้าไปที่ [DJAI QR Generator](https://www.djai.academy/tools/qrgen/) ไม่ต้องสมัครบัญชี ไม่ต้องติดตั้งโปรแกรม และไม่ต้อง upload ไฟล์ขึ้น server
 
 ## ขั้นตอนที่ 2: วางลิงก์ปลายทาง
 
@@ -47,7 +47,7 @@ QR code เป็นวิธีที่ง่ายที่สุดในก
 - หน้าโปรโมชัน
 - หน้า course หรือ portfolio
 
-ถ้าต้องการโปรโมตคอร์ส DJAI สามารถลิงก์ไปที่ [หน้า course](https://djai.academy/course/) ได้ ถ้าต้องการ campaign page หรือ custom tool ทีม [DJAI development](https://djai.academy/service/th/) ช่วยสร้างได้
+ถ้าต้องการโปรโมตคอร์ส DJAI สามารถลิงก์ไปที่ [หน้า course](https://www.djai.academy/course/) ได้ ถ้าต้องการ campaign page หรือ custom tool ทีม [DJAI development](https://www.djai.academy/service/) ช่วยสร้างได้
 
 ## ขั้นตอนที่ 3: เลือกสไตล์
 
@@ -68,7 +68,7 @@ QR code เป็นวิธีที่ง่ายที่สุดในก
 
 ## สรุป
 
-เริ่มจาก [DJAI Free QR Code Generator](https://djai.academy/tools/qrgen/) แล้วสร้าง QR code หนึ่งอันสำหรับ action ที่ชัดเจน QR code ที่ดีควรพาคนไปยังปลายทางเดียวอย่างรวดเร็ว`
+เริ่มจาก [DJAI Free QR Code Generator](https://www.djai.academy/tools/qrgen/) แล้วสร้าง QR code หนึ่งอันสำหรับ action ที่ชัดเจน QR code ที่ดีควรพาคนไปยังปลายทางเดียวอย่างรวดเร็ว`
   },
   {
     id: "tutorial-free-image-converter-th",
@@ -94,13 +94,13 @@ Format ของรูปมีผลต่อคุณภาพ ขนาดไ
 
 ## เครื่องมือที่ใช้
 
-ใช้ [DJAI Image Tools](https://djai.academy/tools/resizeimg/) เพื่อแปลง JPG, PNG และ WebP ใน browser ไฟล์ของคุณอยู่ในเครื่องและไม่ถูก upload ไปที่ server ของ DJAI
+ใช้ [DJAI Image Tools](https://www.djai.academy/tools/resizeimg/) เพื่อแปลง JPG, PNG และ WebP ใน browser ไฟล์ของคุณอยู่ในเครื่องและไม่ถูก upload ไปที่ server ของ DJAI
 
-สามารถเริ่มจาก [หน้าเครื่องมือฟรี DJAI](https://djai.academy/tools/th/) เพื่อดูเครื่องมือทั้งหมดที่มีอยู่
+สามารถเริ่มจาก [หน้าเครื่องมือฟรี DJAI](https://www.djai.academy/tools/) เพื่อดูเครื่องมือทั้งหมดที่มีอยู่
 
 ## ขั้นตอนที่ 1: เปิด DJAI Image Tools
 
-เข้าไปที่ [Free Image Converter and Resizer](https://djai.academy/tools/resizeimg/) แล้วเลือกภาพ JPG, JPEG, PNG หรือ WebP
+เข้าไปที่ [Free Image Converter and Resizer](https://www.djai.academy/tools/resizeimg/) แล้วเลือกภาพ JPG, JPEG, PNG หรือ WebP
 
 ## ขั้นตอนที่ 2: เลือก Output Format
 
@@ -141,11 +141,11 @@ Format ของรูปมีผลต่อคุณภาพ ขนาดไ
 
 เหมาะกับเว็บไซต์สมัยใหม่ เพราะลดขนาดไฟล์ได้ดีโดยคุณภาพยังดี
 
-ถ้าธุรกิจของคุณต้องการเว็บไซต์หรือระบบจัดการรูปภาพแบบอัตโนมัติ ดูบริการ [DJAI software development](https://djai.academy/service/th/) ได้
+ถ้าธุรกิจของคุณต้องการเว็บไซต์หรือระบบจัดการรูปภาพแบบอัตโนมัติ ดูบริการ [DJAI software development](https://www.djai.academy/service/) ได้
 
 ## สรุป
 
-ใช้ [DJAI Image Tools](https://djai.academy/tools/resizeimg/) เมื่อคุณต้องการแปลงรูปแบบเร็ว ปลอดภัย และเป็นส่วนตัว เริ่มจาก WebP สำหรับเว็บไซต์ PNG สำหรับ transparency และ JPG สำหรับรูปถ่ายทั่วไป`
+ใช้ [DJAI Image Tools](https://www.djai.academy/tools/resizeimg/) เมื่อคุณต้องการแปลงรูปแบบเร็ว ปลอดภัย และเป็นส่วนตัว เริ่มจาก WebP สำหรับเว็บไซต์ PNG สำหรับ transparency และ JPG สำหรับรูปถ่ายทั่วไป`
   },
   {
     id: "tutorial-compress-image-to-target-size-th",
@@ -171,13 +171,13 @@ Format ของรูปมีผลต่อคุณภาพ ขนาดไ
 
 ## เครื่องมือที่ใช้
 
-ใช้ [DJAI Image Tools](https://djai.academy/tools/resizeimg/) และเลือก workflow สำหรับ target file size เครื่องมือทำงานใน browser ดังนั้นรูปไม่ถูก upload ไปยัง server
+ใช้ [DJAI Image Tools](https://www.djai.academy/tools/resizeimg/) และเลือก workflow สำหรับ target file size เครื่องมือทำงานใน browser ดังนั้นรูปไม่ถูก upload ไปยัง server
 
 แนวทางนี้เหมาะกับธุรกิจ โรงเรียน โรงแรม และ creator ที่จัดการรูปภาพลูกค้าหรือเอกสารภายใน
 
 ## ขั้นตอนที่ 1: เลือกรูปภาพ
 
-เปิด [DJAI Image Tools](https://djai.academy/tools/resizeimg/) แล้วเลือกรูป JPG, PNG หรือ WebP ที่ต้องการ compress
+เปิด [DJAI Image Tools](https://www.djai.academy/tools/resizeimg/) แล้วเลือกรูป JPG, PNG หรือ WebP ที่ต้องการ compress
 
 ถ้ารูปใหญ่มาก เครื่องมืออาจต้องลดทั้ง quality และ dimension เพื่อให้ถึง target size ซึ่งเป็นเรื่องปกติ
 
@@ -191,7 +191,7 @@ Format ของรูปมีผลต่อคุณภาพ ขนาดไ
 - 500 KB สำหรับรูปเว็บไซต์หรือ blog
 - 1 MB สำหรับรูปคุณภาพสูง
 
-ถ้ากำลังเตรียมรูปสำหรับ [DJAI Academy](https://djai.academy/th/) ขนาด 500 KB มักเหมาะกับรูปใหญ่บนเว็บ ส่วนหน้า mobile-first อาจใช้ 100-200 KB
+ถ้ากำลังเตรียมรูปสำหรับ [DJAI Academy](https://www.djai.academy/) ขนาด 500 KB มักเหมาะกับรูปใหญ่บนเว็บ ส่วนหน้า mobile-first อาจใช้ 100-200 KB
 
 ## ขั้นตอนที่ 3: ลด Dimension เมื่อจำเป็น
 
@@ -215,7 +215,7 @@ Format ของรูปมีผลต่อคุณภาพ ขนาดไ
 
 เมื่อรูปพร้อมแล้ว download และนำไปใช้กับเว็บไซต์ form campaign article หรือ workflow ภายใน
 
-ถ้าทีมของคุณต้องเตรียมรูปจำนวนมากซ้ำๆ DJAI สามารถสร้าง custom tool หรือ automation ผ่าน [บริการพัฒนา DJAI](https://djai.academy/service/th/) ได้
+ถ้าทีมของคุณต้องเตรียมรูปจำนวนมากซ้ำๆ DJAI สามารถสร้าง custom tool หรือ automation ผ่าน [บริการพัฒนา DJAI](https://www.djai.academy/service/) ได้
 
 ## Best Practices
 
@@ -228,7 +228,7 @@ Format ของรูปมีผลต่อคุณภาพ ขนาดไ
 
 ## สรุป
 
-ใช้ [DJAI Image Tools](https://djai.academy/tools/resizeimg/) เมื่อคุณต้องการ compress รูปให้ใกล้ 100 KB, 200 KB, 500 KB หรือขนาดอื่น เป็นเครื่องมือฟรี เร็ว และเป็นส่วนตัว`
+ใช้ [DJAI Image Tools](https://www.djai.academy/tools/resizeimg/) เมื่อคุณต้องการ compress รูปให้ใกล้ 100 KB, 200 KB, 500 KB หรือขนาดอื่น เป็นเครื่องมือฟรี เร็ว และเป็นส่วนตัว`
   }
 ];
 

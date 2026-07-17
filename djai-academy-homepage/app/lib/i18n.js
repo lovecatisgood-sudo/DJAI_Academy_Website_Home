@@ -1,32 +1,32 @@
-export const SITE_URL = "https://djai.academy";
+export const SITE_URL = "https://www.djai.academy";
 
 const paths = {
   home: {
-    en: "/EN/",
-    th: "/th/"
+    en: "/en/",
+    th: "/"
   },
   portfolio: {
-    en: "/portfolio/EN/",
-    th: "/portfolio/th/"
+    en: "/portfolio/en/",
+    th: "/portfolio/"
   },
   tools: {
-    en: "/tools/EN/",
-    th: "/tools/th/"
+    en: "/tools/en/",
+    th: "/tools/"
   },
   service: {
-    en: "/service/EN/",
-    th: "/service/th/"
+    en: "/service/en/",
+    th: "/service/"
   },
   development: {
-    en: "/development/EN/",
-    th: "/development/th/"
+    en: "/development/en/",
+    th: "/development/"
   },
   blog: {
-    en: "/blog/EN/",
-    th: "/blog/th/"
+    en: "/blog/en/",
+    th: "/blog/"
   },
   course: {
-    en: "/course/EN/",
+    en: "/course/en/",
     th: "/course/"
   },
   community: {
@@ -38,7 +38,7 @@ const paths = {
     th: "/promo/"
   },
   siameseCatDev: {
-    en: "/siamese_cat/dev/EN/",
+    en: "/siamese_cat/dev/en/",
     th: "/siamese_cat/dev/"
   }
 };
@@ -52,7 +52,7 @@ export function urlFor(route, locale = "en") {
 }
 
 export function blogPostPath(slug, locale = "en") {
-  return locale === "th" ? `/blog/th/${slug}/` : `/blog/EN/${slug}/`;
+  return locale === "th" ? `/blog/${slug}/` : `/blog/en/${slug}/`;
 }
 
 export function blogPostUrl(slug, locale = "en") {

@@ -11,7 +11,7 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   name: "DJayTools Free QR Generator",
-  url: "https://djai.academy/tools/qrgen/en/",
+  url: "https://www.djai.academy/tools/qrgen/en/",
   applicationCategory: "UtilitiesApplication",
   operatingSystem: "Web browser",
   description:
@@ -24,7 +24,7 @@ const structuredData = {
   publisher: {
     "@type": "Organization",
     name: "DJAI Academy",
-    url: "https://djai.academy/",
+    url: "https://www.djai.academy/",
   },
 };
 
@@ -48,7 +48,7 @@ function normalizeUrl(value: string) {
 export default function Home() {
   const qrMount = useRef<HTMLDivElement>(null);
   const qrInstance = useRef<import("qr-code-styling").default | null>(null);
-  const [url, setUrl] = useState("https://djai.academy");
+  const [url, setUrl] = useState("https://www.djai.academy");
   const [dots, setDots] = useState<DotType>("rounded");
   const [corners, setCorners] = useState<CornerSquareType>("extra-rounded");
   const [color, setColor] = useState(COLORS[0]);
@@ -66,7 +66,7 @@ export default function Home() {
         width: 280,
         height: 280,
         type: "svg",
-        data: normalizedUrl || "https://djai.academy",
+        data: normalizedUrl || "https://www.djai.academy",
         margin: 12,
         qrOptions: { errorCorrectionLevel: "Q" },
         dotsOptions: { type: dots, color },
@@ -117,12 +117,12 @@ export default function Home() {
         </a>
         <nav aria-label="Main navigation">
           <a href="#profile">Profile</a>
-          <a href="https://djai.academy/EN/" target="_blank" rel="noopener noreferrer">DJAI Academy <span className="external-mark">↗</span></a>
-          <a href="https://djai.academy/development/EN/" target="_blank" rel="noopener noreferrer">Develop with us <span className="external-mark">↗</span></a>
-          <a href="https://djai.academy/tools/resizeimg/en/" target="_blank" rel="noopener noreferrer">Image tools <span className="external-mark">↗</span></a>
-          <a href="https://djai.academy/blog/EN/" target="_blank" rel="noopener noreferrer">Blog <span className="external-mark">↗</span></a>
-          <a href="https://djai.academy/tools/qrgen/" hrefLang="th">ไทย</a>
-          <a className="nav-cta" href="https://djai.academy/community" target="_blank" rel="noopener noreferrer">Sign up / Login</a>
+          <a href="https://www.djai.academy/en/" target="_blank" rel="noopener noreferrer">DJAI Academy <span className="external-mark">↗</span></a>
+          <a href="https://www.djai.academy/development/en/" target="_blank" rel="noopener noreferrer">Develop with us <span className="external-mark">↗</span></a>
+          <a href="https://www.djai.academy/tools/resizeimg/en/" target="_blank" rel="noopener noreferrer">Image tools <span className="external-mark">↗</span></a>
+          <a href="https://www.djai.academy/blog/en/" target="_blank" rel="noopener noreferrer">Blog <span className="external-mark">↗</span></a>
+          <a href="https://www.djai.academy/tools/qrgen/" hrefLang="th">ไทย</a>
+          <a className="nav-cta" href="https://www.djai.academy/community" target="_blank" rel="noopener noreferrer">Sign up / Login</a>
         </nav>
       </header>
 
@@ -130,7 +130,7 @@ export default function Home() {
         <div className="eyebrow"><span>100% free</span> · No sign-up required</div>
         <h1>Turn any link into a<br /><em>beautiful QR code.</em></h1>
         <p>Create, customize, and download a high-quality QR code in seconds. Private, unlimited, and completely free.</p>
-        <a className="developer-credit" href="https://djai.academy/siamese_cat/dev" target="_blank" rel="noopener noreferrer" aria-label="Learn more about Siamese Cat Dev">
+        <a className="developer-credit" href="https://www.djai.academy/siamese_cat/dev" target="_blank" rel="noopener noreferrer" aria-label="Learn more about Siamese Cat Dev">
           <img src={assetPath("siamese-cat-dev-logo.png")} alt="Siamese Cat Dev" />
           <span><small>APP DEVELOPED BY</small><strong>Siamese Cat Dev</strong></span>
         </a>
@@ -255,14 +255,14 @@ export default function Home() {
 
       <section className="developer-profile" id="profile">
         <div className="developer-logo-stage">
-          <a href="https://djai.academy/siamese_cat/dev" target="_blank" rel="noopener noreferrer" aria-label="Visit the Siamese Cat Dev profile">
+          <a href="https://www.djai.academy/siamese_cat/dev" target="_blank" rel="noopener noreferrer" aria-label="Visit the Siamese Cat Dev profile">
             <img src={assetPath("siamese-cat-dev-logo.png")} alt="Siamese Cat Dev logo" />
           </a>
         </div>
         <div className="developer-profile-copy">
           <span className="step-tag">MEET THE DEVELOPER</span>
-          <h2>Built with care by<br /><em><a href="https://djai.academy/siamese_cat/dev" target="_blank" rel="noopener noreferrer">Siamese Cat Dev.</a></em></h2>
-          <p><a className="inline-profile-link" href="https://djai.academy/siamese_cat/dev" target="_blank" rel="noopener noreferrer">Siamese Cat Dev</a> is a product designer, project manager, and software development partner with close to 10 years of experience building digital products. He has spent the past decade leading his own development team and working closely with businesses to design, build, and launch practical software solutions.</p>
+          <h2>Built with care by<br /><em><a href="https://www.djai.academy/siamese_cat/dev" target="_blank" rel="noopener noreferrer">Siamese Cat Dev.</a></em></h2>
+          <p><a className="inline-profile-link" href="https://www.djai.academy/siamese_cat/dev" target="_blank" rel="noopener noreferrer">Siamese Cat Dev</a> is a product designer, project manager, and software development partner with close to 10 years of experience building digital products. He has spent the past decade leading his own development team and working closely with businesses to design, build, and launch practical software solutions.</p>
           <p>He is also a student of DJAI Academy and now serves as a development and training partner, helping turn ideas into useful, real-world products.</p>
           <div className="developer-tags"><span>Product Design</span><span>Project Management</span><span>Software Development</span><span>Training</span></div>
         </div>
@@ -276,13 +276,13 @@ export default function Home() {
         <nav className="footer-links" aria-label="DJAI and partner links">
           <div>
             <strong>DJAI</strong>
-            <a href="https://djai.academy/EN/" target="_blank" rel="noopener noreferrer">DJAI Academy</a>
-            <a href="https://djai.academy/tools/EN/" target="_blank" rel="noopener noreferrer">Free DJAI Tools</a>
-            <a href="https://djai.academy/service/EN/" target="_blank" rel="noopener noreferrer">Develop With Us</a>
+            <a href="https://www.djai.academy/en/" target="_blank" rel="noopener noreferrer">DJAI Academy</a>
+            <a href="https://www.djai.academy/tools/en/" target="_blank" rel="noopener noreferrer">Free DJAI Tools</a>
+            <a href="https://www.djai.academy/service/en/" target="_blank" rel="noopener noreferrer">Develop With Us</a>
           </div>
           <div>
             <strong>Builder Partners</strong>
-            <a href="https://djai.academy/siamese_cat/dev" target="_blank" rel="noopener noreferrer">Siamese Cat Dev</a>
+            <a href="https://www.djai.academy/siamese_cat/dev" target="_blank" rel="noopener noreferrer">Siamese Cat Dev</a>
             <a href="https://creative.siamesecat.cafe" target="_blank" rel="noopener noreferrer">Siamese Cat Creative Club</a>
           </div>
           <div>

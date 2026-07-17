@@ -21,10 +21,10 @@ export const metadata = {
   description:
     "A hands-on AI masterclass in Thailand for building real websites, apps, automations, and digital products without a programming background.",
   alternates: {
-    canonical: "/course/EN/",
+    canonical: "/course/en/",
     languages: {
       th: "/course/",
-      en: "/course/EN/",
+      en: "/course/en/",
       "x-default": "/course/"
     }
   }
@@ -39,15 +39,15 @@ const BASE_PATH = "/course";
 const assetPath = (path) => `${BASE_PATH}/assets/${path}`;
 
 const siteLinks = {
-  academy: "https://djai.academy/EN/",
-  tools: "https://djai.academy/tools/EN/",
-  services: "https://djai.academy/service/EN/",
-  courses: "https://djai.academy/course/EN/",
-  community: "https://djai.academy/community/",
-  portfolio: "https://djai.academy/portfolio/EN/",
-  promo: "https://djai.academy/promo/",
-  development: "https://djai.academy/development/EN/",
-  blog: "https://djai.academy/blog/EN/"
+  academy: "https://www.djai.academy/en/",
+  tools: "https://www.djai.academy/tools/en/",
+  services: "https://www.djai.academy/service/en/",
+  courses: "https://www.djai.academy/course/en/",
+  community: "https://www.djai.academy/community/",
+  portfolio: "https://www.djai.academy/portfolio/en/",
+  promo: "https://www.djai.academy/promo/",
+  development: "https://www.djai.academy/development/en/",
+  blog: "https://www.djai.academy/blog/en/"
 };
 
 const footerColumns = [

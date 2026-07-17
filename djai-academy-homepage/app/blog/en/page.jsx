@@ -9,17 +9,17 @@ export const metadata = {
   description:
     "Read DJAI Academy news, guides, and tutorials for AI learning, free tools, image optimization, QR codes, and practical digital product building.",
   alternates: {
-    canonical: "/blog/EN/",
+    canonical: "/blog/en/",
     languages: {
-      en: "/blog/EN/",
-      th: "/blog/th/"
+      en: "/blog/en/",
+      th: "/blog/"
     }
   },
   openGraph: {
     title: "DJAI Blog",
     description:
       "News, guides, and tutorials from DJAI Academy for builders, creators, students, and businesses.",
-    url: "/blog/EN/",
+    url: "/blog/en/",
     siteName: "DJAI Academy",
     images: ["/djai-logo.webp"],
     type: "website"
@@ -52,16 +52,16 @@ export default async function BlogPage({ searchParams }) {
     "@context": "https://schema.org",
     "@type": "Blog",
     name: "DJAI Blog",
-    url: "https://djai.academy/blog/EN/",
+    url: "https://www.djai.academy/blog/en/",
     publisher: {
       "@type": "Organization",
       name: "DJAI Academy",
-      url: "https://djai.academy/"
+      url: "https://www.djai.academy/"
     },
     blogPost: posts.map((post) => ({
       "@type": "BlogPosting",
       headline: post.title,
-      url: `https://djai.academy/blog/EN/${post.slug}/`,
+      url: `https://www.djai.academy/blog/en/${post.slug}/`,
       datePublished: post.publishedAt,
       articleSection: post.category,
       description: post.excerpt
@@ -89,14 +89,14 @@ export default async function BlogPage({ searchParams }) {
         <section className="blog-layout">
           <aside className="blog-sidebar" aria-label="Blog categories">
             <h2>Categories</h2>
-            <a className={selectedCategory === "All" ? "active" : ""} href="/blog/EN/">
+            <a className={selectedCategory === "All" ? "active" : ""} href="/blog/en/">
               <span>All</span>
               <strong>{categoryCounts.All}</strong>
             </a>
             {BLOG_CATEGORIES.map((category) => (
               <a
                 className={selectedCategory === category ? "active" : ""}
-                href={`/blog/EN/?category=${encodeURIComponent(category)}`}
+                href={`/blog/en/?category=${encodeURIComponent(category)}`}
                 key={category}
               >
                 <span>{category}</span>
@@ -111,7 +111,7 @@ export default async function BlogPage({ searchParams }) {
                 <p className="eyebrow">{selectedCategory}</p>
                 <h2>{selectedCategory === "All" ? "Latest posts" : `${selectedCategory} posts`}</h2>
               </div>
-              <a href="https://djai.academy/tools/EN/">Open free tools</a>
+              <a href="https://www.djai.academy/tools/en/">Open free tools</a>
             </div>
 
             {visiblePosts.length ? (
@@ -123,12 +123,12 @@ export default async function BlogPage({ searchParams }) {
                       <span>{post.readingTime}</span>
                     </div>
                     <h3>
-                      <a href={`/blog/EN/${post.slug}/`}>{post.title}</a>
+                      <a href={`/blog/en/${post.slug}/`}>{post.title}</a>
                     </h3>
                     <p>{post.excerpt}</p>
                     <div className="post-card-footer">
                       <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
-                      <a href={`/blog/EN/${post.slug}/`}>Read tutorial</a>
+                      <a href={`/blog/en/${post.slug}/`}>Read tutorial</a>
                     </div>
                   </article>
                 ))}

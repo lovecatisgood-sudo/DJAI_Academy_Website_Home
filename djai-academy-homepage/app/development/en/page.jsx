@@ -6,17 +6,17 @@ export const metadata = {
   description:
     "DJAI helps founders, SMEs, and companies build web apps, mobile apps, SaaS platforms, AI automations, games, fintech products, and Web3 applications quickly and cost-effectively.",
   alternates: {
-    canonical: "/development/EN/",
+    canonical: "/development/en/",
     languages: {
-      en: "/development/EN/",
-      th: "/development/th/"
+      en: "/development/en/",
+      th: "/development/"
     }
   },
   openGraph: {
     title: "DJAI Development",
     description:
       "Bring DJAI your requirements. We plan, design, build, automate, and launch software products with fast, cost-aware execution.",
-    url: "/development/EN/",
+    url: "/development/en/",
     siteName: "DJAI Academy",
     images: ["/portfolio/games/Xana_Metaverse.webp"],
     type: "website"
@@ -69,17 +69,17 @@ const proofLinks = [
   {
     title: "Portfolio",
     text: "See selected authorized websites, games, and Web3 products DJAI has delivered.",
-    href: "https://djai.academy/portfolio/EN/"
+    href: "https://www.djai.academy/portfolio/en/"
   },
   {
     title: "Services",
     text: "Scan the exact development services and product categories we cover.",
-    href: "https://djai.academy/service/EN/"
+    href: "https://www.djai.academy/service/en/"
   },
   {
     title: "Free Tools",
     text: "Try public tools that show our product thinking and browser-based utility work.",
-    href: "https://djai.academy/tools/EN/"
+    href: "https://www.djai.academy/tools/en/"
   }
 ];
 
@@ -87,7 +87,7 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   name: "DJAI Development",
-  url: "https://djai.academy/development/EN/",
+  url: "https://www.djai.academy/development/en/",
   description:
     "Custom software development, AI automation, SaaS, mobile apps, fintech applications, games, Web3 products, and internal business systems.",
   email: "contact@djai.academy",
@@ -95,7 +95,7 @@ const structuredData = {
   provider: {
     "@type": "Organization",
     name: "DJAI Academy",
-    url: "https://djai.academy/"
+    url: "https://www.djai.academy/"
   },
   hasOfferCatalog: {
     "@type": "OfferCatalog",
@@ -137,7 +137,7 @@ export default function DevelopmentPage() {
               <a className="button primary" href="mailto:contact@djai.academy">
                 Start a Project
               </a>
-              <a className="button secondary dark" href="https://djai.academy/portfolio/EN/">
+              <a className="button secondary dark" href="https://www.djai.academy/portfolio/en/">
                 View Portfolio
               </a>
             </div>
@@ -218,7 +218,7 @@ export default function DevelopmentPage() {
             <a className="button primary" href="mailto:contact@djai.academy">
               contact@djai.academy
             </a>
-            <a className="button ghost light" href="https://djai.academy/service/EN/">
+            <a className="button ghost light" href="https://www.djai.academy/service/en/">
               Explore Services
             </a>
           </div>

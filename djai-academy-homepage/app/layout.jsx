@@ -4,7 +4,7 @@ import Script from "next/script";
 const GA_ID = "G-CGJ5BTR44T";
 
 export const metadata = {
-  metadataBase: new URL("https://djai.academy"),
+  metadataBase: new URL("https://www.djai.academy"),
   title: "DJAI Academy | Educate, Build, Deploy",
   description:
     "DJAI Academy helps builders learn AI, create software, launch tools, and turn ideas into working products.",
@@ -24,7 +24,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="th">
       <body>
         {children}
         <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="afterInteractive" />

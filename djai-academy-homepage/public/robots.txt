@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://djai.academy/sitemap.xml
+Sitemap: https://www.djai.academy/sitemap.xml

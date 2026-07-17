@@ -4,16 +4,16 @@ import Image from "next/image";
 import { useMemo, useState } from "react";
 
 const links = {
-  academy: "https://djai.academy/EN/",
-  portfolio: "https://djai.academy/portfolio/EN/",
-  tools: "https://djai.academy/tools/EN/",
-  service: "https://djai.academy/service/EN/",
-  course: "https://djai.academy/course/EN/",
-  community: "https://djai.academy/community",
-  promo: "https://djai.academy/promo",
-  development: "https://djai.academy/development/EN/",
-  blog: "https://djai.academy/blog/EN/",
-  thai: "https://djai.academy/th/"
+  academy: "https://www.djai.academy/en/",
+  portfolio: "https://www.djai.academy/portfolio/en/",
+  tools: "https://www.djai.academy/tools/en/",
+  service: "https://www.djai.academy/service/en/",
+  course: "https://www.djai.academy/course/en/",
+  community: "https://www.djai.academy/community",
+  promo: "https://www.djai.academy/promo",
+  development: "https://www.djai.academy/development/en/",
+  blog: "https://www.djai.academy/blog/en/",
+  thai: "https://www.djai.academy/"
 };
 
 const developmentLinks = [

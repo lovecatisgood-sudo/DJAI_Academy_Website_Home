@@ -25,15 +25,15 @@ const BASE_PATH = "/course";
 const assetPath = (path) => `${BASE_PATH}/assets/${path}`;
 
 const siteLinks = {
-  academy: "https://djai.academy/th/",
-  tools: "https://djai.academy/tools/th/",
-  services: "https://djai.academy/service/th/",
-  courses: "https://djai.academy/course/",
-  community: "https://djai.academy/community/",
-  portfolio: "https://djai.academy/portfolio/th/",
-  promo: "https://djai.academy/promo/",
-  development: "https://djai.academy/development/th/",
-  blog: "https://djai.academy/blog/th/"
+  academy: "https://www.djai.academy/",
+  tools: "https://www.djai.academy/tools/",
+  services: "https://www.djai.academy/service/",
+  courses: "https://www.djai.academy/course/",
+  community: "https://www.djai.academy/community/",
+  portfolio: "https://www.djai.academy/portfolio/",
+  promo: "https://www.djai.academy/promo/",
+  development: "https://www.djai.academy/development/",
+  blog: "https://www.djai.academy/blog/"
 };
 
 const footerColumns = [

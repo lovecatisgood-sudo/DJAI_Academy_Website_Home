@@ -3,17 +3,17 @@ export const metadata = {
   description:
     "DJAI Academy helps builders learn AI, create software, launch tools, and turn ideas into working products.",
   alternates: {
-    canonical: "/EN/",
+    canonical: "/en/",
     languages: {
-      en: "/EN/",
-      th: "/th/"
+      en: "/en/",
+      th: "/"
     }
   },
   openGraph: {
     title: "DJAI Academy | Educate, Build, Deploy",
     description:
       "Learn AI, build software, use free tools, and turn ideas into working products with DJAI Academy.",
-    url: "/EN/",
+    url: "/en/",
     siteName: "DJAI Academy",
     images: ["/djai-logo.webp"],
     type: "website"

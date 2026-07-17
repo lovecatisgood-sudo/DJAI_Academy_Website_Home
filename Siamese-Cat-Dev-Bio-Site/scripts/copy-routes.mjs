@@ -2,7 +2,7 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const distDir = new URL('../dist/', import.meta.url);
-const englishDir = join(distDir.pathname, 'EN');
+const englishDir = join(distDir.pathname, 'en');
 const indexPath = join(distDir.pathname, 'index.html');
 const englishIndexPath = join(englishDir, 'index.html');
 
@@ -15,8 +15,8 @@ const englishHtml = readFileSync(indexPath, 'utf8')
     'content="Siamese Cat Dev is a product designer, project manager, and software development partner building useful digital products with Vibe Coding."',
   )
   .replace(
-    '<link rel="canonical" href="https://djai.academy/siamese_cat/dev/" />',
-    '<link rel="canonical" href="https://djai.academy/siamese_cat/dev/EN/" />',
+    '<link rel="canonical" href="https://www.djai.academy/siamese_cat/dev/" />',
+    '<link rel="canonical" href="https://www.djai.academy/siamese_cat/dev/en/" />',
   )
   .replaceAll(
     'Siamese Cat Dev | Product, Development และ Vibe Coding',
@@ -27,8 +27,8 @@ const englishHtml = readFileSync(indexPath, 'utf8')
     'Product design, software development, AI-assisted building, and public tools from Siamese Cat Dev.',
   )
   .replace(
-    '<meta property="og:url" content="https://djai.academy/siamese_cat/dev/" />',
-    '<meta property="og:url" content="https://djai.academy/siamese_cat/dev/EN/" />',
+    '<meta property="og:url" content="https://www.djai.academy/siamese_cat/dev/" />',
+    '<meta property="og:url" content="https://www.djai.academy/siamese_cat/dev/en/" />',
   );
 
 writeFileSync(englishIndexPath, englishHtml);

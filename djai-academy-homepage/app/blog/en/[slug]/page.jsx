@@ -100,10 +100,10 @@ export async function generateMetadata({ params }) {
   }
 
   const languages = {
-    en: `/blog/EN/${post.slug}/`
+    en: `/blog/en/${post.slug}/`
   };
   if (post.alternateSlugs?.th) {
-    languages.th = `/blog/th/${post.alternateSlugs.th}/`;
+    languages.th = `/blog/${post.alternateSlugs.th}/`;
   }
 
   return {
@@ -111,13 +111,13 @@ export async function generateMetadata({ params }) {
     description: post.seoDescription || post.excerpt,
     keywords: post.keywords,
     alternates: {
-      canonical: `/blog/EN/${post.slug}/`,
+      canonical: `/blog/en/${post.slug}/`,
       languages
     },
     openGraph: {
       title: post.seoTitle || post.title,
       description: post.seoDescription || post.excerpt,
-      url: `/blog/EN/${post.slug}/`,
+      url: `/blog/en/${post.slug}/`,
       siteName: "DJAI Academy",
       images: ["/djai-logo.webp"],
       type: "article",
@@ -151,13 +151,13 @@ export default async function BlogPostPage({ params }) {
     publisher: {
       "@type": "Organization",
       name: "DJAI Academy",
-      url: "https://djai.academy/",
+      url: "https://www.djai.academy/",
       logo: {
         "@type": "ImageObject",
-        url: "https://djai.academy/djai-logo.webp"
+        url: "https://www.djai.academy/djai-logo.webp"
       }
     },
-    mainEntityOfPage: `https://djai.academy/blog/EN/${post.slug}/`
+    mainEntityOfPage: `https://www.djai.academy/blog/en/${post.slug}/`
   };
 
   return (
@@ -165,7 +165,7 @@ export default async function BlogPostPage({ params }) {
       <SiteHeader
         locale="en"
         currentRoute="blog"
-        languageHref={post.alternateSlugs?.th ? `/blog/th/${post.alternateSlugs.th}/` : "/blog/th/"}
+        languageHref={post.alternateSlugs?.th ? `/blog/${post.alternateSlugs.th}/` : "/blog/"}
       />
       <main className="article-page">
         <script
@@ -175,7 +175,7 @@ export default async function BlogPostPage({ params }) {
 
         <article className="article-shell">
           <header className="article-header">
-            <a className="back-link" href="/blog/EN/">
+            <a className="back-link" href="/blog/en/">
               Back to blog
             </a>
             <div className="post-meta">
@@ -194,7 +194,7 @@ export default async function BlogPostPage({ params }) {
               <p className="eyebrow">Free DJAI tools</p>
               <h2>Use the tools from this tutorial.</h2>
             </div>
-            <a className="button" href="https://djai.academy/tools/EN/">
+            <a className="button" href="https://www.djai.academy/tools/en/">
               Open free tools
             </a>
           </footer>

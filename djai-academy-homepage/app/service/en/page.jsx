@@ -6,17 +6,17 @@ export const metadata = {
   description:
     "DJAI provides custom software development services for websites, web apps, mobile apps, SaaS, AI automation, CRM, POS, fintech, games, and Web3 products.",
   alternates: {
-    canonical: "/service/EN/",
+    canonical: "/service/en/",
     languages: {
-      en: "/service/EN/",
-      th: "/service/th/"
+      en: "/service/en/",
+      th: "/service/"
     }
   },
   openGraph: {
     title: "DJAI Services",
     description:
       "Custom development services covering web apps, mobile apps, SaaS, AI automation, business systems, fintech, games, and Web3.",
-    url: "/service/EN/",
+    url: "/service/en/",
     siteName: "DJAI Academy",
     images: ["/portfolio/websites/Siamese_Cat_Cafe.png"],
     type: "website"
@@ -91,21 +91,21 @@ const engagementModels = [
 ];
 
 const relatedPages = [
-  ["Development Approach", "https://djai.academy/development/EN/"],
-  ["Portfolio", "https://djai.academy/portfolio/EN/"],
-  ["Free Tools", "https://djai.academy/tools/EN/"],
-  ["Build Articles", "https://djai.academy/blog/EN/"]
+  ["Development Approach", "https://www.djai.academy/development/en/"],
+  ["Portfolio", "https://www.djai.academy/portfolio/en/"],
+  ["Free Tools", "https://www.djai.academy/tools/en/"],
+  ["Build Articles", "https://www.djai.academy/blog/en/"]
 ];
 
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Service",
   name: "DJAI Custom Software Development Services",
-  url: "https://djai.academy/service/EN/",
+  url: "https://www.djai.academy/service/en/",
   provider: {
     "@type": "Organization",
     name: "DJAI Academy",
-    url: "https://djai.academy/"
+    url: "https://www.djai.academy/"
   },
   areaServed: ["Thailand", "Singapore", "Global"],
   serviceType: services.map((service) => service.title),
@@ -114,7 +114,7 @@ const structuredData = {
   offers: {
     "@type": "Offer",
     availability: "https://schema.org/InStock",
-    url: "https://djai.academy/service/EN/"
+    url: "https://www.djai.academy/service/en/"
   }
 };
 
@@ -140,10 +140,10 @@ export default function ServicePage() {
             <a className="button primary" href="mailto:contact@djai.academy">
               Request a Quote
             </a>
-            <a className="button secondary dark" href="https://djai.academy/development/EN/">
+            <a className="button secondary dark" href="https://www.djai.academy/development/en/">
               How We Develop
             </a>
-            <a className="button secondary dark" href="https://djai.academy/portfolio/EN/">
+            <a className="button secondary dark" href="https://www.djai.academy/portfolio/en/">
               See Portfolio
             </a>
           </div>

@@ -71,7 +71,7 @@ function Header() {
     ['About', '#about'],
     ['Journey', '#journey'],
     ['What I Do', '#work'],
-    ['DJAI Academy', 'https://djai.academy/EN/'],
+    ['DJAI Academy', 'https://www.djai.academy/en/'],
     ['ไทย', '/siamese_cat/dev/'],
     ['Contact', '#contact'],
   ];
@@ -561,7 +561,7 @@ function DjaiPartnership() {
           <h2>BUILDING AND TEACHING WITH <em>DJAI ACADEMY.</em></h2>
           <p>As a co-assistant and development and training partner, I help turn business needs into useful software while sharing practical ways to work with AI-assisted development tools.</p>
           <div className="button-row">
-            <a className="button button-light" href="https://djai.academy/EN/" target="_blank" rel="noreferrer">
+            <a className="button button-light" href="https://www.djai.academy/en/" target="_blank" rel="noreferrer">
               Visit DJAI Academy <ArrowUpRight />
             </a>
             <a className="text-link light-link" href="https://share.google/hFTdRIqW8KeL4Z7p0" target="_blank" rel="noreferrer">
@@ -681,7 +681,7 @@ function Footer() {
         </FadeIn>
         <FadeIn className="footer-side" delay={0.1}>
           <p>I partner with businesses, developers, and learners who want to turn good ideas into working software.</p>
-          <a className="button button-primary" href="https://djai.academy/service/EN/" target="_blank" rel="noreferrer">
+          <a className="button button-primary" href="https://www.djai.academy/service/en/" target="_blank" rel="noreferrer">
             Start a conversation <ArrowUpRight />
           </a>
         </FadeIn>
@@ -691,8 +691,8 @@ function Footer() {
           <img src={assetPath('siamese-cat-dev-logo.png')} alt="Siamese Cat Dev" />
         </div>
         <div className="footer-links">
-          <a href="https://djai.academy/EN/" target="_blank" rel="noreferrer">DJAI Academy <ArrowUpRight /></a>
-          <a href="https://djai.academy/tools/EN/" target="_blank" rel="noreferrer">Free DJAI Tools <ArrowUpRight /></a>
+          <a href="https://www.djai.academy/en/" target="_blank" rel="noreferrer">DJAI Academy <ArrowUpRight /></a>
+          <a href="https://www.djai.academy/tools/en/" target="_blank" rel="noreferrer">Free DJAI Tools <ArrowUpRight /></a>
           <a href="https://siamesecat.cafe/" target="_blank" rel="noreferrer">Siamese Cat Cafe <ArrowUpRight /></a>
           <a href="https://creative.siamesecat.cafe/" target="_blank" rel="noreferrer">Creative Club <ArrowUpRight /></a>
           <a href="https://hotel.siamesecat.cafe/" target="_blank" rel="noreferrer">Cat Hotel & Learning Center <ArrowUpRight /></a>
@@ -718,7 +718,7 @@ export default function App() {
       'content',
       'Siamese Cat Dev is a product designer, project manager, and software development partner building useful digital products with Vibe Coding.',
     );
-    document.querySelector('link[rel="canonical"]')?.setAttribute('href', 'https://djai.academy/siamese_cat/dev/EN/');
+    document.querySelector('link[rel="canonical"]')?.setAttribute('href', 'https://www.djai.academy/siamese_cat/dev/en/');
   }, []);
 
   return (

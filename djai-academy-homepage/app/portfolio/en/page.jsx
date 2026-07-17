@@ -6,17 +6,17 @@ export const metadata = {
   description:
     "Explore selected DJAI portfolio projects across websites, games, Web3 apps, NFT marketplaces, crypto products, and business platforms.",
   alternates: {
-    canonical: "/portfolio/EN/",
+    canonical: "/portfolio/en/",
     languages: {
-      en: "/portfolio/EN/",
-      th: "/portfolio/th/"
+      en: "/portfolio/en/",
+      th: "/portfolio/"
     }
   },
   openGraph: {
     title: "DJAI Portfolio",
     description:
       "Selected DJAI work across websites, games, Web3 products, tools, and digital business platforms.",
-    url: "/portfolio/EN/",
+    url: "/portfolio/en/",
     siteName: "DJAI Academy",
     images: ["/portfolio/websites/Siamese_Cat_Cafe.png"],
     type: "website"
@@ -198,19 +198,19 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   name: "DJAI Portfolio",
-  url: "https://djai.academy/portfolio/EN/",
+  url: "https://www.djai.academy/portfolio/en/",
   description:
     "Selected authorized DJAI portfolio projects across websites, games, Web3 apps, crypto products, and digital platforms.",
   publisher: {
     "@type": "Organization",
     name: "DJAI Academy",
-    url: "https://djai.academy/"
+    url: "https://www.djai.academy/"
   },
   hasPart: flatProjects.map((project) => ({
     "@type": "CreativeWork",
     name: project.name,
     description: project.description,
-    image: `https://djai.academy${project.image}`,
+    image: `https://www.djai.academy${project.image}`,
     genre: project.category,
     ...(project.href ? { url: project.href } : {})
   }))
@@ -264,10 +264,10 @@ export default function PortfolioPage() {
             the team has delivered.
           </p>
           <div className="portfolio-hero-actions">
-            <a className="button primary" href="https://djai.academy/service/EN/">
+            <a className="button primary" href="https://www.djai.academy/service/en/">
               Build With DJAI
             </a>
-            <a className="button secondary dark" href="https://djai.academy/blog/EN/">
+            <a className="button secondary dark" href="https://www.djai.academy/blog/en/">
               Read Build Guides
             </a>
           </div>
@@ -325,7 +325,7 @@ export default function PortfolioPage() {
             </p>
           </div>
           <div className="portfolio-cta-actions">
-            <a className="button primary" href="https://djai.academy/service/EN/">
+            <a className="button primary" href="https://www.djai.academy/service/en/">
               View Services
             </a>
             <a className="button ghost light" href="mailto:contact@djai.academy">
