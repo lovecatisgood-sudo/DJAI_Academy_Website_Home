@@ -1,0 +1,16 @@
+{
+  "name": "djai-academy-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Root Hostinger deployment entry point for DJAI Academy and public tools.",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "build": "node scripts/build-hostinger.mjs",
+    "prestart": "node scripts/ensure-hostinger-build.mjs",
+    "start": "node server.js",
+    "hostinger:build": "node scripts/build-hostinger.mjs",
+    "hostinger:start": "node server.js"
+  }
+}
