@@ -6,45 +6,36 @@
     "node": ">=22.13.0"
   },
   "scripts": {
-    "install:ci": "bash scripts/install-ci.sh",
-    "dev": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vite",
+    "dev": "next dev",
     "build": "node scripts/build-root-hostinger.mjs",
     "build:app": "next build && node scripts/set-export-language.mjs",
     "build:hostinger": "node scripts/build-root-hostinger.mjs",
-    "build:sites": "bash scripts/build-verified.sh",
     "start": "node scripts/start-root-hostinger.mjs",
-    "start:standalone": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext start",
     "test": "npm run test:hostinger",
     "test:hostinger": "npm run build:app && node --test tests/static-export.test.mjs",
-    "test:sites": "npm run build:sites && node --test tests/rendered-html.test.mjs",
-    "validate:artifact": "bash scripts/validate-artifact.sh",
-    "lint": "bash scripts/sites-env.sh -- eslint . --ignore-pattern dist --ignore-pattern .next",
-    "db:generate": "bash scripts/sites-env.sh -- drizzle-kit generate"
+    "lint": "eslint app --ignore-pattern .next"
   },
   "dependencies": {
-    "drizzle-orm": "0.45.2",
     "next": "16.2.6",
     "qr-code-styling": "^1.9.2",
     "react": "19.2.6",
     "react-dom": "19.2.6"
   },
   "devDependencies": {
-    "@cloudflare/vite-plugin": "1.37.1",
     "@tailwindcss/postcss": "4.2.1",
     "@types/node": "22.19.19",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
-    "@vitejs/plugin-react": "6.0.2",
-    "@vitejs/plugin-rsc": "0.5.26",
-    "drizzle-kit": "0.31.10",
     "eslint": "9.39.4",
     "eslint-config-next": "16.2.6",
-    "react-server-dom-webpack": "19.2.6",
+    "postcss": "8.5.10",
     "tailwindcss": "4.2.1",
-    "typescript": "5.9.3",
-    "vinext": "0.0.50",
-    "vite": "8.0.13",
-    "wrangler": "4.92.0"
+    "typescript": "5.9.3"
+  },
+  "overrides": {
+    "@babel/core": "7.29.6",
+    "js-yaml": "4.2.0",
+    "postcss": "8.5.10"
   },
   "type": "module",
   "displayName": "DJayTools Free QR Generator"

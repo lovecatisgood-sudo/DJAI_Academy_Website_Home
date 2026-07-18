@@ -188,6 +188,7 @@ run("node", ["scripts/optimize-site-images.mjs"], rootDir);
 for (const project of projects) {
   const cwd = join(rootDir, project.dir);
   ensureDependencies(project);
+  run("npm", ["audit", "--audit-level=low"], cwd);
   cleanBuildOutputs(project);
   run("npm", project.build, cwd);
   validateOutputs(project);
