@@ -38,7 +38,10 @@ test("category hubs and local processing assets exist", () => {
     "out/document/ocr-runtime/worker.min.js",
     "out/document/ocr-data/eng.traineddata.gz",
     "out/document/ocr-data/tha.traineddata.gz",
-    "out/djai-assets/djai-academy-logo.webp"
+    "out/djai-assets/djai-academy-logo.webp",
+    "out/djai-assets/djai-academy-logo-display.webp",
+    "out/djai-assets/djai-academy-logo-small.webp",
+    "out/djai-assets/siamese-cat-dev-logo.webp"
   ]) assert.equal(existsSync(join(root, asset)), true, `missing ${asset}`);
 });
 

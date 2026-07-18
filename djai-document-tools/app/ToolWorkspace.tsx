@@ -2,7 +2,7 @@
 
 import { ArrowRight, Check, Clipboard, Download, FileArchive, FileText, LoaderCircle, LockKeyhole, RotateCcw, ShieldCheck, Upload, X } from "lucide-react";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { processTool, type ToolOptions, type ToolResult } from "./processors";
+import type { ToolOptions, ToolResult } from "./processors";
 import type { Language, ToolDefinition } from "./tool-data";
 
 const defaults: ToolOptions = {
@@ -68,6 +68,7 @@ export default function ToolWorkspace({ tool, language }: { tool: ToolDefinition
     if (needsFile && !files.length) { setError(en ? "Choose a supported file first." : "กรุณาเลือกไฟล์ที่รองรับก่อน"); return; }
     setRunning(true); setError(""); setResult(null);
     try {
+      const { processTool } = await import("./processors");
       const processed = await processTool(tool, files, input, options);
       const url = processed.blob ? URL.createObjectURL(processed.blob) : undefined;
       setResult({ ...processed, url });

@@ -71,7 +71,7 @@ export default function SiteHeader({ locale = "en", currentRoute = "home", langu
   return (
     <header className="site-header">
       <a className="brand" href={urlFor("home", locale)} aria-label={copy.brandLabel}>
-        <Image src="/djai-logo.webp" alt={copy.brandLabel} width={180} height={86} priority />
+        <Image src="/djai-logo-small.webp" alt={copy.brandLabel} width={180} height={97} loading="eager" />
       </a>
 
       <button

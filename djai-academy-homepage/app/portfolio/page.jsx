@@ -18,7 +18,7 @@ export const metadata = {
       "ตัวอย่างผลงานเว็บไซต์ เกม Web3 product และแพลตฟอร์มธุรกิจที่ DJAI ได้พัฒนา",
     url: "/portfolio/",
     siteName: "DJAI Academy",
-    images: ["/portfolio/websites/Siamese_Cat_Cafe.png"],
+    images: ["/portfolio/optimized/websites/Siamese_Cat_Cafe.webp"],
     type: "website"
   }
 };
@@ -33,7 +33,7 @@ const categories = [
     projects: [
       {
         name: "Siam Silk Road Global Logistic",
-        image: "/portfolio/websites/Siam_Silk_Road_Global_Logistic.png",
+        image: "/portfolio/optimized/websites/Siam_Silk_Road_Global_Logistic.webp",
         href: "https://ssrgc.com/",
         description:
           "เว็บไซต์บริษัท trading และ logistics ในประเทศไทยที่ช่วยนำเสนอความน่าเชื่อถือด้านการค้าระหว่างประเทศ โดยเฉพาะตลาด Central Asia และภูมิภาคใกล้เคียง",
@@ -41,7 +41,7 @@ const categories = [
       },
       {
         name: "KuSolution Roof Landing Page",
-        image: "/portfolio/websites/Kusolution.png",
+        image: "/portfolio/optimized/websites/Kusolution.webp",
         href: "https://roof.kusolutions.co/",
         description:
           "Landing page สำหรับธุรกิจซ่อมแซมหลังคา พร้อม flow วิเคราะห์ปัญหารั่วและนำผู้ใช้ไปสู่การติดต่อเพื่อสร้าง lead",
@@ -49,7 +49,7 @@ const categories = [
       },
       {
         name: "Siamese Cat Cafe",
-        image: "/portfolio/websites/Siamese_Cat_Cafe.png",
+        image: "/portfolio/optimized/websites/Siamese_Cat_Cafe.webp",
         href: "https://siamesecat.cafe/",
         description:
           "เว็บไซต์สำหรับ Siamese Cat Cafe ใกล้ Mega Bangna นำเสนอประสบการณ์คาเฟ่ แมวที่ได้รับการอุปการะ และเรื่องราวของแบรนด์",
@@ -57,7 +57,7 @@ const categories = [
       },
       {
         name: "Siamese Cat Creative Club",
-        image: "/portfolio/websites/Siamese_Cat_Creative_Club.png",
+        image: "/portfolio/optimized/websites/Siamese_Cat_Creative_Club.webp",
         href: "https://creative.siamesecat.cafe/",
         description:
           "เว็บไซต์ศูนย์กิจกรรมสร้างสรรค์สำหรับเด็ก ครอบคลุม after-school program, weekend activity, package และ course discovery",
@@ -65,7 +65,7 @@ const categories = [
       },
       {
         name: "Siamese Cat Hotel",
-        image: "/portfolio/websites/Siamese_Cat_Hotel.png",
+        image: "/portfolio/optimized/websites/Siamese_Cat_Hotel.webp",
         href: "https://hotel.siamesecat.cafe/",
         description:
           "เว็บไซต์ cat hotel ภายใต้ Siamese Cat Group ช่วยขยายแบรนด์จากคาเฟ่สู่บริการ pet hospitality พร้อมแนวทางการจองที่ชัดเจน",
@@ -73,7 +73,7 @@ const categories = [
       },
       {
         name: "Protein Drink Landing Page",
-        image: "/portfolio/websites/Protein_Drink.png",
+        image: "/portfolio/optimized/websites/Protein_Drink.webp",
         href: "https://spylt-website-react.vercel.app/",
         description:
           "Product landing page สำหรับเครื่องดื่มโปรตีนคาเฟอีน เน้น visual ของสินค้า benefit-led messaging และ conversion สำหรับสาย fitness",
@@ -81,7 +81,7 @@ const categories = [
       },
       {
         name: "Misfit Ecommerce Site",
-        image: "/portfolio/websites/misfit_Ecommerce.png",
+        image: "/portfolio/optimized/websites/misfit_Ecommerce.webp",
         href: "https://stunning-cranachan-2cdc35.netlify.app/",
         description:
           "ตัวอย่าง ecommerce storefront สำหรับสินค้ branded items ออกแบบเพื่อการ browse สินค้า visual merchandising และเส้นทางการซื้อที่เรียบง่าย",
@@ -89,7 +89,7 @@ const categories = [
       },
       {
         name: "Luna Homemade Bakery",
-        image: "/portfolio/websites/Luna_Bakery.png",
+        image: "/portfolio/optimized/websites/Luna_Bakery.webp",
         href: "https://lunahomemadebakery.com/",
         description:
           "เว็บไซต์ bakery และ cafe สำหรับ Luna Homemade Bakery ที่โคราช ช่วยเล่าแบรนด์ สินค้า และเรื่องราวของธุรกิจท้องถิ่น",
@@ -106,35 +106,35 @@ const categories = [
     projects: [
       {
         name: "XANA Metaverse",
-        image: "/portfolio/games/Xana_Metaverse.webp",
+        image: "/portfolio/optimized/games/Xana_Metaverse.webp",
         description:
           "โปรเจกต์ metaverse ecosystem ขนาดใหญ่ที่พัฒนาร่วมกับ Noborderz รวมถึง mobile app, NFT duel, marketplace infrastructure และ ecosystem feature หลายส่วน",
         services: ["Metaverse", "Mobile app", "NFT ecosystem"]
       },
       {
         name: "Flipper On-chain Game",
-        image: "/portfolio/games/Flipper_Game_Onchain_odds_coin_flip_game.png",
+        image: "/portfolio/optimized/games/Flipper_Game_Onchain_odds_coin_flip_game.webp",
         description:
           "เกม coin-flip ที่ใช้แนวคิด transparent on-chain odds เพื่อให้ผู้เล่นตรวจสอบ probability logic ได้ แทนการเชื่อระบบที่ซ่อนอยู่",
         services: ["On-chain game", "Transparent odds", "Crypto UX"]
       },
       {
         name: "Pump Dump Price Prediction Game",
-        image: "/portfolio/games/Pump_Dump_Price_Prediction_Game.webp",
+        image: "/portfolio/optimized/games/Pump_Dump_Price_Prediction_Game.webp",
         description:
           "เกมทำนายราคาภายใน 30 วินาทีโดยอิง BTC และ ETH real market data พร้อม gameplay loop ที่เร็วและ reward ชัดเจน",
         services: ["Prediction game", "Market data", "Realtime gameplay"]
       },
       {
         name: "Kong Banana Tapping Game",
-        image: "/portfolio/games/Kong_Banana.webp",
+        image: "/portfolio/optimized/games/Kong_Banana.webp",
         description:
           "Telegram tap-to-earn mini-game พร้อม Banana token reward, referral, energy boost, sound feedback และ game economy ที่ออกแบบให้เล่นต่อเนื่อง",
         services: ["Telegram mini-game", "Tap-to-earn", "Community growth"]
       },
       {
         name: "Siamese Cat Vs Dog",
-        image: "/portfolio/games/Siamese_Cat_Vs_Dog.png",
+        image: "/portfolio/optimized/games/Siamese_Cat_Vs_Dog.webp",
         description:
           "Viral marketing mini-game สำหรับคาเฟ่แมวในไทย มี 5 stage, 3 difficulty, pixel asset, leaderboard และระบบ reward เพื่อกระตุ้นการแชร์",
         services: ["Mini-game", "Viral marketing", "Pixel art"]
@@ -150,35 +150,35 @@ const categories = [
     projects: [
       {
         name: "Cazi Cazi Full Ecosystem",
-        image: "/portfolio/crypto_apps/Cazi_Cazi_Full_Ecosystem.png",
+        image: "/portfolio/optimized/crypto_apps/Cazi_Cazi_Full_Ecosystem.webp",
         description:
           "Play-to-earn crypto game ecosystem พร้อม staking, yield farming, token economy planning, game logic และ infrastructure ของโปรเจกต์",
         services: ["P2E game", "Token economy", "Staking and farming"]
       },
       {
         name: "Felicite The Space Cat",
-        image: "/portfolio/crypto_apps/Felicite.png",
+        image: "/portfolio/optimized/crypto_apps/Felicite.webp",
         description:
           "Solana meme-token brand ที่เล่าเรื่องแมวตัวแรกในอวกาศ พร้อม artwork โดยศิลปินจริง launch design และ narrative direction",
         services: ["Token brand", "Artwork direction", "Launch story"]
       },
       {
         name: "Lolipop NFT Marketplace",
-        image: "/portfolio/crypto_apps/Lolipop_NFT_Marketplace.png",
+        image: "/portfolio/optimized/crypto_apps/Lolipop_NFT_Marketplace.webp",
         description:
           "NFT marketplace บน Ethereum, Base และ BSC พร้อม visual system แบบ playful, token utility, hold-to-earn และ purchase reward",
         services: ["NFT marketplace", "Multi-chain", "Reward mechanics"]
       },
       {
         name: "Sharky Sharkx",
-        image: "/portfolio/crypto_apps/sharky_sharkx.png",
+        image: "/portfolio/optimized/crypto_apps/sharky_sharkx.webp",
         description:
           "Meme-coin concept พร้อม artwork ที่วาดโดยคนจริง brand design, launch support และการช่วยเตรียม centralized exchange listing",
         services: ["Meme-token brand", "Art direction", "Launch support"]
       },
       {
         name: "Web3 RWA Real Estate",
-        image: "/portfolio/crypto_apps/Web3_RWA_Realestate.png",
+        image: "/portfolio/optimized/crypto_apps/Web3_RWA_Realestate.webp",
         description:
           "แนวคิด real-world asset สำหรับ tokenizing real estate พร้อม Web3 product planning, architecture และ execution strategy",
         services: ["RWA", "Real estate tokenization", "Product architecture"]
@@ -216,14 +216,16 @@ const structuredData = {
   }))
 };
 
-function ProjectCard({ project, eager = false }) {
+function ProjectCard({ project }) {
   return (
     <article className="portfolio-card">
       <div className="portfolio-card-image">
         <img
           src={project.image}
           alt={`ภาพตัวอย่างโปรเจกต์ ${project.name}`}
-          loading={eager ? "eager" : "lazy"}
+          width="1200"
+          height="675"
+          loading="lazy"
           decoding="async"
         />
       </div>
@@ -303,12 +305,8 @@ export default function ThaiPortfolioPage() {
               <p>{category.summary}</p>
             </div>
             <div className="portfolio-grid">
-              {category.projects.map((project, projectIndex) => (
-                <ProjectCard
-                  project={project}
-                  eager={category.id === "websites" && projectIndex < 4}
-                  key={project.name}
-                />
+              {category.projects.map((project) => (
+                <ProjectCard project={project} key={project.name} />
               ))}
             </div>
           </section>

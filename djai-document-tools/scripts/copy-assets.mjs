@@ -6,7 +6,9 @@ const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const workspace = join(root, "..");
 const copies = [
   [join(workspace, "djai-pdf-tools/public/djai-academy-logo.webp"), join(root, "public/djai-assets/djai-academy-logo.webp")],
-  [join(workspace, "djai-pdf-tools/public/siamese-cat-dev-logo.png"), join(root, "public/djai-assets/siamese-cat-dev-logo.png")],
+  [join(workspace, "djai-pdf-tools/public/djai-academy-logo-display.webp"), join(root, "public/djai-assets/djai-academy-logo-display.webp")],
+  [join(workspace, "djai-pdf-tools/public/djai-academy-logo-small.webp"), join(root, "public/djai-assets/djai-academy-logo-small.webp")],
+  [join(workspace, "djai-pdf-tools/public/siamese-cat-dev-logo.webp"), join(root, "public/djai-assets/siamese-cat-dev-logo.webp")],
   [join(root, "node_modules/pdfjs-dist/build/pdf.worker.min.mjs"), join(root, "public/document/pdf.worker.min.mjs")],
   [join(root, "node_modules/tesseract.js/dist/worker.min.js"), join(root, "public/document/ocr-runtime/worker.min.js")],
   [join(root, "node_modules/tesseract.js-core/tesseract-core-simd-lstm.wasm.js"), join(root, "public/document/ocr-runtime/tesseract-core-simd-lstm.wasm.js")],

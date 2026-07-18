@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.djai.academy"),
   title: "DJAI Document Tools",
   description: "Free private browser tools for documents, AI context, OCR, CSV and spreadsheets.",
-  icons: { icon: "/tools/djai-assets/djai-academy-logo.webp" }
+  icons: { icon: "/tools/djai-assets/djai-academy-logo-small.webp" }
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
@@ -14,8 +14,8 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="th">
       <body>
         {children}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-CGJ5BTR44T" strategy="afterInteractive" />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-CGJ5BTR44T" strategy="lazyOnload" />
+        <Script id="google-analytics" strategy="lazyOnload">
           {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-CGJ5BTR44T',{anonymize_ip:true});`}
         </Script>
       </body>

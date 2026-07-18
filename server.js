@@ -1,6 +1,7 @@
 const fs = require("node:fs");
 const http = require("node:http");
 const path = require("node:path");
+const zlib = require("node:zlib");
 
 const rootDir = __dirname;
 const homepageDir = path.join(rootDir, "djai-academy-homepage");
@@ -124,9 +125,16 @@ function resolveStaticFile(mount, pathname) {
 function serveStaticFile(req, res, filePath) {
   const extension = path.extname(filePath).toLowerCase();
   const isHtml = extension === ".html";
-  const isVersionedAsset = /[.-][a-f0-9]{8,}\./i.test(path.basename(filePath));
+  const isVersionedAsset = filePath.includes(`${path.sep}_next${path.sep}static${path.sep}`)
+    || /[.-][a-f0-9_-]{8,}\./i.test(path.basename(filePath));
+  const compressibleExtensions = new Set([".html", ".css", ".js", ".mjs", ".json", ".svg", ".txt"]);
+  const acceptsGzip = /(?:^|,)\s*gzip\s*(?:,|$)/i.test(req.headers["accept-encoding"] || "");
+  const useGzip = req.method !== "HEAD"
+    && acceptsGzip
+    && compressibleExtensions.has(extension)
+    && fs.statSync(filePath).size >= 1024;
 
-  res.writeHead(200, {
+  const headers = {
     "Content-Type": mimeTypes[extension] || "application/octet-stream",
     "Cache-Control": isHtml
       ? "no-cache"
@@ -134,15 +142,20 @@ function serveStaticFile(req, res, filePath) {
         ? "public, max-age=31536000, immutable"
         : "public, max-age=3600, must-revalidate",
     "X-Content-Type-Options": "nosniff",
-    "Referrer-Policy": "strict-origin-when-cross-origin"
-  });
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "Vary": "Accept-Encoding"
+  };
+  if (useGzip) headers["Content-Encoding"] = "gzip";
+  res.writeHead(200, headers);
 
   if (req.method === "HEAD") {
     res.end();
     return;
   }
 
-  fs.createReadStream(filePath).pipe(res);
+  const source = fs.createReadStream(filePath);
+  if (useGzip) source.pipe(zlib.createGzip({ level: 6 })).pipe(res);
+  else source.pipe(res);
 }
 
 function serveHealth(req, res) {

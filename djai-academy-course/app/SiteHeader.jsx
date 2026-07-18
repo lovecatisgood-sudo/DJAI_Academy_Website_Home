@@ -100,7 +100,7 @@ export default function SiteHeader({ locale = "th", switchLanguageHref }) {
   return (
     <header className="site-header">
       <a className="brand" href={links.academy} aria-label="DJAI Academy">
-        <img src="/course/assets/DJAI-logo.webp" alt="DJAI Academy" />
+        <img src="/course/assets/DJAI-logo-small.webp" alt="DJAI Academy" width="360" height="193" loading="eager" decoding="async" />
       </a>
 
       <button

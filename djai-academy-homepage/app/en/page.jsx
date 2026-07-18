@@ -128,7 +128,7 @@ function Header() {
   return (
     <header className="site-header">
       <a className="brand" href={links.academy} aria-label="DJAI Academy">
-        <Image src="/djai-logo.webp" alt="DJAI Academy" width={180} height={86} priority />
+        <Image src="/djai-logo-small.webp" alt="DJAI Academy" width={180} height={97} loading="eager" />
       </a>
 
       <button
@@ -278,15 +278,19 @@ export default function Home() {
               <div className="orbit one" />
               <div className="orbit two" />
               <div className="logo-plate">
-                <Image src="/djai-logo.webp" alt="DJAI Academy logo" width={520} height={250} priority />
+                <Image src="/djai-logo-display.webp" alt="DJAI Academy logo" width={768} height={413} loading="eager" />
               </div>
-              <Image
+              <img
                 className="founder"
-                src="/founder-djai.webp"
+                src="/founder-djai-display.webp"
+                srcSet="/founder-djai-mobile.webp 640w, /founder-djai-display.webp 912w"
+                sizes="(max-width: 640px) 86vw, (max-width: 1024px) 420px, 440px"
                 alt="DJAI Academy founder"
-                width={560}
-                height={900}
-                priority
+                width="912"
+                height="1440"
+                loading="eager"
+                decoding="async"
+                fetchPriority="high"
               />
               <div className="signal-card">
                 <span>AI + Product + Deployment</span>

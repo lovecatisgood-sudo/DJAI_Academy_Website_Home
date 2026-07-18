@@ -11,7 +11,14 @@ const projects = [
     install: "ci",
     build: ["run", "build"],
     clean: [".next"],
-    outputs: [".next/BUILD_ID"]
+    outputs: [
+      ".next/BUILD_ID",
+      "public/djai-logo-display.webp",
+      "public/djai-logo-small.webp",
+      "public/founder-djai-display.webp",
+      "public/founder-djai-mobile.webp",
+      "public/portfolio/optimized/websites/Siam_Silk_Road_Global_Logistic.webp"
+    ]
   },
   {
     name: "DJAI course",
@@ -22,7 +29,9 @@ const projects = [
       "out/index.html",
       "out/en/index.html",
       "out/detail/index.html",
-      "out/detail/en/index.html"
+      "out/detail/en/index.html",
+      "out/assets/DJAI-logo-small.webp",
+      "out/assets/Instructor-DJAI-display.webp"
     ]
   },
   {
@@ -30,7 +39,7 @@ const projects = [
     dir: "DJayTools-Free-QR-Generator-Source",
     install: "ci",
     build: ["run", "build:app"],
-    outputs: ["out/index.html", "out/en/index.html"]
+    outputs: ["out/index.html", "out/en/index.html", "out/djai-academy-logo-display.webp", "out/siamese-cat-dev-logo.webp"]
   },
   {
     name: "DJAI image tools",
@@ -46,6 +55,8 @@ const projects = [
       "public/heic-to-jpg/en/index.html",
       "public/remove-image-metadata/index.html",
       "public/remove-image-metadata/en/index.html",
+      "public/assets/djai-academy-logo.webp",
+      "public/assets/siamese-cat-dev-transparent.webp",
       "public/vendor/heic2any.min.js",
       "public/vendor/jszip.min.js"
     ]
@@ -73,6 +84,9 @@ const projects = [
       "out/add-page-numbers/en/index.html",
       "out/remove-pdf-metadata/index.html",
       "out/remove-pdf-metadata/en/index.html",
+      "out/djai-academy-logo-display.webp",
+      "out/djai-academy-logo-small.webp",
+      "out/siamese-cat-dev-logo.webp",
       "out/pdf.worker.min.mjs"
     ]
   },
@@ -96,7 +110,10 @@ const projects = [
       "out/document/ocr-runtime/worker.min.js",
       "out/document/ocr-data/eng.traineddata.gz",
       "out/document/ocr-data/tha.traineddata.gz",
-      "out/djai-assets/djai-academy-logo.webp"
+      "out/djai-assets/djai-academy-logo.webp",
+      "out/djai-assets/djai-academy-logo-display.webp",
+      "out/djai-assets/djai-academy-logo-small.webp",
+      "out/djai-assets/siamese-cat-dev-logo.webp"
     ]
   },
   {
@@ -104,7 +121,7 @@ const projects = [
     dir: "Siamese-Cat-Dev-Bio-Site",
     install: "ci",
     build: ["run", "build"],
-    outputs: ["dist/index.html", "dist/en/index.html"]
+    outputs: ["dist/index.html", "dist/en/index.html", "dist/djai-academy-logo.webp", "dist/siamese-cat-dev-logo.webp"]
   }
 ];
 
@@ -164,6 +181,9 @@ function setCourseExportLanguages(project) {
     writeFileSync(outputPath, updatedHtml);
   }
 }
+
+ensureDependencies(projects[0]);
+run("node", ["scripts/optimize-site-images.mjs"], rootDir);
 
 for (const project of projects) {
   const cwd = join(rootDir, project.dir);

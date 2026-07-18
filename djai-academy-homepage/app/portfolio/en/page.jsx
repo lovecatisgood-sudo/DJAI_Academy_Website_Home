@@ -18,7 +18,7 @@ export const metadata = {
       "Selected DJAI work across websites, games, Web3 products, tools, and digital business platforms.",
     url: "/portfolio/en/",
     siteName: "DJAI Academy",
-    images: ["/portfolio/websites/Siamese_Cat_Cafe.png"],
+    images: ["/portfolio/optimized/websites/Siamese_Cat_Cafe.webp"],
     type: "website"
   }
 };
@@ -33,7 +33,7 @@ const categories = [
     projects: [
       {
         name: "Siam Silk Road Global Logistic",
-        image: "/portfolio/websites/Siam_Silk_Road_Global_Logistic.png",
+        image: "/portfolio/optimized/websites/Siam_Silk_Road_Global_Logistic.webp",
         href: "https://ssrgc.com/",
         description:
           "A corporate website for a Thailand-based trading and logistics company that supports international trade, especially across Central Asia and nearby markets.",
@@ -41,7 +41,7 @@ const categories = [
       },
       {
         name: "KuSolution Roof Landing Page",
-        image: "/portfolio/websites/Kusolution.png",
+        image: "/portfolio/optimized/websites/Kusolution.webp",
         href: "https://roof.kusolutions.co/",
         description:
           "A renovation landing page built around roof-leak assessment, damage analysis, and a direct lead-generation path for service inquiries.",
@@ -49,7 +49,7 @@ const categories = [
       },
       {
         name: "Siamese Cat Cafe",
-        image: "/portfolio/websites/Siamese_Cat_Cafe.png",
+        image: "/portfolio/optimized/websites/Siamese_Cat_Cafe.webp",
         href: "https://siamesecat.cafe/",
         description:
           "A consumer website for Siamese Cat Cafe near Mega Bangna, presenting the cafe experience, adopted cats, and local brand story in a search-friendly format.",
@@ -57,7 +57,7 @@ const categories = [
       },
       {
         name: "Siamese Cat Creative Club",
-        image: "/portfolio/websites/Siamese_Cat_Creative_Club.png",
+        image: "/portfolio/optimized/websites/Siamese_Cat_Creative_Club.webp",
         href: "https://creative.siamesecat.cafe/",
         description:
           "A creative learning center website for kids' after-school programs, weekend activities, long-hour packages, and course discovery.",
@@ -65,7 +65,7 @@ const categories = [
       },
       {
         name: "Siamese Cat Hotel",
-        image: "/portfolio/websites/Siamese_Cat_Hotel.png",
+        image: "/portfolio/optimized/websites/Siamese_Cat_Hotel.webp",
         href: "https://hotel.siamesecat.cafe/",
         description:
           "A cat hotel website for the Siamese Cat Group, extending the cafe brand into pet hospitality with a clearer service and booking experience.",
@@ -73,7 +73,7 @@ const categories = [
       },
       {
         name: "Protein Drink Landing Page",
-        image: "/portfolio/websites/Protein_Drink.png",
+        image: "/portfolio/optimized/websites/Protein_Drink.webp",
         href: "https://spylt-website-react.vercel.app/",
         description:
           "A product landing page for a caffeinated protein drink, focused on visual product appeal, benefit-led messaging, and fitness audience conversion.",
@@ -81,7 +81,7 @@ const categories = [
       },
       {
         name: "Misfit Ecommerce Site",
-        image: "/portfolio/websites/misfit_Ecommerce.png",
+        image: "/portfolio/optimized/websites/misfit_Ecommerce.webp",
         href: "https://stunning-cranachan-2cdc35.netlify.app/",
         description:
           "An ecommerce storefront concept for branded items, designed around product browsing, visual merchandising, and a clean shopping path.",
@@ -89,7 +89,7 @@ const categories = [
       },
       {
         name: "Luna Homemade Bakery",
-        image: "/portfolio/websites/Luna_Bakery.png",
+        image: "/portfolio/optimized/websites/Luna_Bakery.webp",
         href: "https://lunahomemadebakery.com/",
         description:
           "A warm bakery and cafe website for Luna Homemade Bakery in Korat, Thailand, created to present the brand, products, and local business story.",
@@ -106,35 +106,35 @@ const categories = [
     projects: [
       {
         name: "XANA Metaverse",
-        image: "/portfolio/games/Xana_Metaverse.webp",
+        image: "/portfolio/optimized/games/Xana_Metaverse.webp",
         description:
           "A large-scale metaverse ecosystem project developed with Noborderz, including mobile app work, NFT duel experiences, marketplace infrastructure, and broader ecosystem features.",
         services: ["Metaverse", "Mobile app", "NFT ecosystem"]
       },
       {
         name: "Flipper On-chain Game",
-        image: "/portfolio/games/Flipper_Game_Onchain_odds_coin_flip_game.png",
+        image: "/portfolio/optimized/games/Flipper_Game_Onchain_odds_coin_flip_game.webp",
         description:
           "A coin-flip game concept using transparent on-chain odds so players can inspect probability mechanics instead of trusting hidden game logic.",
         services: ["On-chain game", "Transparent odds", "Crypto UX"]
       },
       {
         name: "Pump Dump Price Prediction Game",
-        image: "/portfolio/games/Pump_Dump_Price_Prediction_Game.webp",
+        image: "/portfolio/optimized/games/Pump_Dump_Price_Prediction_Game.webp",
         description:
           "A 30-second market prediction game where players predict short-term BTC or ETH direction using real market data and a fast reward loop.",
         services: ["Prediction game", "Market data", "Realtime gameplay"]
       },
       {
         name: "Kong Banana Tapping Game",
-        image: "/portfolio/games/Kong_Banana.webp",
+        image: "/portfolio/optimized/games/Kong_Banana.webp",
         description:
           "A Telegram tap-to-earn mini-game with Banana token rewards, referral mechanics, energy boosts, sound feedback, and a balanced growth economy.",
         services: ["Telegram mini-game", "Tap-to-earn", "Community growth"]
       },
       {
         name: "Siamese Cat Vs Dog",
-        image: "/portfolio/games/Siamese_Cat_Vs_Dog.png",
+        image: "/portfolio/optimized/games/Siamese_Cat_Vs_Dog.webp",
         description:
           "A viral marketing mini-game for a Thailand cat cafe, built with five stages, three difficulty levels, custom pixel assets, leaderboards, and reward-driven sharing.",
         services: ["Mini-game", "Viral marketing", "Pixel art"]
@@ -150,35 +150,35 @@ const categories = [
     projects: [
       {
         name: "Cazi Cazi Full Ecosystem",
-        image: "/portfolio/crypto_apps/Cazi_Cazi_Full_Ecosystem.png",
+        image: "/portfolio/optimized/crypto_apps/Cazi_Cazi_Full_Ecosystem.webp",
         description:
           "A play-to-earn crypto game ecosystem with staking, yield farming, token-economy planning, game logic, and supporting product infrastructure.",
         services: ["P2E game", "Token economy", "Staking and farming"]
       },
       {
         name: "Felicite The Space Cat",
-        image: "/portfolio/crypto_apps/Felicite.png",
+        image: "/portfolio/optimized/crypto_apps/Felicite.webp",
         description:
           "A Solana meme-token brand built around the story of the first cat in space, with original artist-made artwork, launch design, and narrative direction.",
         services: ["Token brand", "Artwork direction", "Launch story"]
       },
       {
         name: "Lolipop NFT Marketplace",
-        image: "/portfolio/crypto_apps/Lolipop_NFT_Marketplace.png",
+        image: "/portfolio/optimized/crypto_apps/Lolipop_NFT_Marketplace.webp",
         description:
           "An NFT marketplace across Ethereum, Base, and BSC with a playful visual system, token utility, hold-to-earn mechanics, and purchase rewards.",
         services: ["NFT marketplace", "Multi-chain", "Reward mechanics"]
       },
       {
         name: "Sharky Sharkx",
-        image: "/portfolio/crypto_apps/sharky_sharkx.png",
+        image: "/portfolio/optimized/crypto_apps/sharky_sharkx.webp",
         description:
           "A meme-coin concept with human-made artwork, brand design, launch support, and centralized exchange listing assistance.",
         services: ["Meme-token brand", "Art direction", "Launch support"]
       },
       {
         name: "Web3 RWA Real Estate",
-        image: "/portfolio/crypto_apps/Web3_RWA_Realestate.png",
+        image: "/portfolio/optimized/crypto_apps/Web3_RWA_Realestate.webp",
         description:
           "A real-world asset project concept for tokenizing real estate, supported by Web3 product planning, architecture, and execution strategy.",
         services: ["RWA", "Real estate tokenization", "Product architecture"]
@@ -216,14 +216,16 @@ const structuredData = {
   }))
 };
 
-function ProjectCard({ project, eager = false }) {
+function ProjectCard({ project }) {
   return (
     <article className="portfolio-card">
       <div className="portfolio-card-image">
         <img
           src={project.image}
           alt={`${project.name} project screenshot`}
-          loading={eager ? "eager" : "lazy"}
+          width="1200"
+          height="675"
+          loading="lazy"
           decoding="async"
         />
       </div>
@@ -304,12 +306,8 @@ export default function PortfolioPage() {
               <p>{category.summary}</p>
             </div>
             <div className="portfolio-grid">
-              {category.projects.map((project, projectIndex) => (
-                <ProjectCard
-                  project={project}
-                  eager={category.id === "websites" && projectIndex < 4}
-                  key={project.name}
-                />
+              {category.projects.map((project) => (
+                <ProjectCard project={project} key={project.name} />
               ))}
             </div>
           </section>

@@ -84,7 +84,7 @@ function Header() {
       transition={{ duration: 0.65, ease }}
     >
       <a className="brand" href="#top" aria-label="Siamese Cat Dev home">
-        <img src={assetPath('siamese-cat-dev-wordmark.png')} alt="Siamese Cat Dev" />
+        <img src={assetPath('siamese-cat-dev-wordmark.webp')} alt="Siamese Cat Dev" />
       </a>
       <nav className="desktop-nav" aria-label="Main navigation">
         {nav.map(([label, href]) => (
@@ -207,7 +207,7 @@ function MagneticMascot() {
       }}
     >
       <img
-        src={assetPath('siamese-cat-dev-character.png')}
+        src={assetPath('siamese-cat-dev-character.webp')}
         alt="Siamese Cat Dev mascot coding on a laptop"
         draggable="false"
       />
@@ -546,7 +546,7 @@ function DjaiLogoTilt() {
       onPointerLeave={() => { x.set(0); y.set(0); }}
       style={{ rotateX, rotateY }}
     >
-      <img src={assetPath('djai-academy-logo.png')} alt="DJAI Academy" />
+      <img src={assetPath('djai-academy-logo.webp')} alt="DJAI Academy" loading="lazy" decoding="async" />
     </motion.div>
   );
 }
@@ -688,7 +688,7 @@ function Footer() {
       </div>
       <div className="footer-brand section-shell">
         <div className="footer-logo-panel">
-          <img src={assetPath('siamese-cat-dev-logo.png')} alt="Siamese Cat Dev" />
+          <img src={assetPath('siamese-cat-dev-logo.webp')} alt="Siamese Cat Dev" loading="lazy" decoding="async" />
         </div>
         <div className="footer-links">
           <a href="https://www.djai.academy/en/" target="_blank" rel="noreferrer">DJAI Academy <ArrowUpRight /></a>

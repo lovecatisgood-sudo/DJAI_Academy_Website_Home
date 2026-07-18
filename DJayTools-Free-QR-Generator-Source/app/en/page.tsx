@@ -112,7 +112,7 @@ export default function Home() {
       />
       <header className="site-header">
         <a className="brand" href="#top" aria-label="DJayTools home">
-          <img src={assetPath("djai-academy-logo.webp")} alt="DJAI Academy" />
+          <img src={assetPath("djai-academy-logo-display.webp")} alt="DJAI Academy" width="384" height="206" decoding="async" />
           <span><strong>DJayTools</strong><small>by DJAI Academy</small></span>
         </a>
         <nav aria-label="Main navigation">
@@ -131,7 +131,7 @@ export default function Home() {
         <h1>Turn any link into a<br /><em>beautiful QR code.</em></h1>
         <p>Create, customize, and download a high-quality QR code in seconds. Private, unlimited, and completely free.</p>
         <a className="developer-credit" href="https://www.djai.academy/siamese_cat/dev" target="_blank" rel="noopener noreferrer" aria-label="Learn more about Siamese Cat Dev">
-          <img src={assetPath("siamese-cat-dev-logo.png")} alt="Siamese Cat Dev" />
+          <img src={assetPath("siamese-cat-dev-logo.webp")} alt="Siamese Cat Dev" width="900" height="900" loading="lazy" decoding="async" />
           <span><small>APP DEVELOPED BY</small><strong>Siamese Cat Dev</strong></span>
         </a>
         <button className="primary hero-button" onClick={scrollToGenerator}>Create your free QR code <span>↘</span></button>
@@ -256,7 +256,7 @@ export default function Home() {
       <section className="developer-profile" id="profile">
         <div className="developer-logo-stage">
           <a href="https://www.djai.academy/siamese_cat/dev" target="_blank" rel="noopener noreferrer" aria-label="Visit the Siamese Cat Dev profile">
-            <img src={assetPath("siamese-cat-dev-logo.png")} alt="Siamese Cat Dev logo" />
+            <img src={assetPath("siamese-cat-dev-logo.webp")} alt="Siamese Cat Dev logo" width="900" height="900" loading="lazy" decoding="async" />
           </a>
         </div>
         <div className="developer-profile-copy">
@@ -270,7 +270,7 @@ export default function Home() {
 
       <footer>
         <div className="footer-identity">
-          <a className="brand footer-brand" href="#top"><img src={assetPath("djai-academy-logo.webp")} alt="DJAI Academy" /><span><strong>DJayTools</strong><small>by DJAI Academy</small></span></a>
+          <a className="brand footer-brand" href="#top"><img src={assetPath("djai-academy-logo-display.webp")} alt="DJAI Academy" width="384" height="206" loading="lazy" decoding="async" /><span><strong>DJayTools</strong><small>by DJAI Academy</small></span></a>
           <p>Useful digital tools, thoughtfully made for the community.</p>
         </div>
         <nav className="footer-links" aria-label="DJAI and partner links">

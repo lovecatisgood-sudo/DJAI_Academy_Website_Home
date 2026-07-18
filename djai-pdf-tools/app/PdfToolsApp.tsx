@@ -33,7 +33,7 @@ import {
 import type { LucideIcon } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { processFiles, type ProcessingOptions, type ProcessResult } from "./pdf-actions";
+import type { ProcessingOptions, ProcessResult } from "./pdf-actions";
 import { BASE_PATH, SITE_URL, homeHref, toolCopy, toolGuides, toolHref, toolSlugs, type Language, type ToolSlug } from "./tool-data";
 
 const icons: Record<ToolSlug, LucideIcon> = {
@@ -387,6 +387,7 @@ export default function PdfToolsApp({ language, initialTool, seoPage }: { langua
     }
     setProcessing(true);
     try {
+      const { processFiles } = await import("./pdf-actions");
       const processed = await processFiles(activeTool, files, options);
       if (result?.url) URL.revokeObjectURL(result.url);
       setResult({ ...processed, url: URL.createObjectURL(processed.blob), originalSize: files.reduce((sum, file) => sum + file.size, 0) });
@@ -446,7 +447,7 @@ export default function PdfToolsApp({ language, initialTool, seoPage }: { langua
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <header className="site-header">
         <a className="brand" href={homeHref(language)} aria-label="DJTools by DJAI Academy">
-          <Image src={`${BASE_PATH}/djai-academy-logo.webp`} alt="DJAI Academy" width={114} height={84} unoptimized />
+          <Image src={`${BASE_PATH}/djai-academy-logo-display.webp`} alt="DJAI Academy" width={114} height={61} loading="eager" unoptimized />
           <span><strong>DJTools</strong><small>PDF · by DJAI Academy</small></span>
         </a>
         <button className="menu-button" type="button" aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen} onClick={() => setMenuOpen((open) => !open)}>{menuOpen ? <X /> : <Menu />}</button>
@@ -470,7 +471,7 @@ export default function PdfToolsApp({ language, initialTool, seoPage }: { langua
           <a className="primary-button" href="#workspace">{copy.heroButton}<ArrowDown size={19} /></a>
         </div>
         <div className="hero-visual" aria-label="DJTools PDF workflow">
-          <div className="logo-stage"><Image src={`${BASE_PATH}/djai-academy-logo.webp`} alt="DJAI Academy logo" width={192} height={142} unoptimized /><strong>DJTools</strong><span>Free PDF Tool Set</span></div>
+          <div className="logo-stage"><Image src={`${BASE_PATH}/djai-academy-logo-display.webp`} alt="DJAI Academy logo" width={192} height={103} loading="eager" unoptimized /><strong>DJTools</strong><span>Free PDF Tool Set</span></div>
           <div className="file-sheet sheet-back"><span>PDF</span></div>
           <div className="file-sheet sheet-front"><FileArchive size={48} /><strong>{initialTool ? activeCopy.label : "PDF"}</strong><small>PRIVATE · FREE</small></div>
         </div>
@@ -539,11 +540,11 @@ export default function PdfToolsApp({ language, initialTool, seoPage }: { langua
 
       <section className="conversion-band course-band"><div className="course-symbol"><GraduationCap /></div><div><p className="eyebrow">{copy.courseEyebrow}</p><h2>{copy.courseTitle}</h2><p>{copy.courseText}</p><a className="secondary-button" href={en ? "https://www.djai.academy/course/detail/en/" : "https://www.djai.academy/course/detail/"}>{copy.courseButton}<BookOpen /></a></div></section>
 
-      <section className="builder-section" id="builder"><a className="builder-logo" href={en ? "https://www.djai.academy/siamese_cat/dev/en/" : "https://www.djai.academy/siamese_cat/dev/"}><Image src={`${BASE_PATH}/siamese-cat-dev-logo.png`} alt="Siamese Cat Dev logo" width={640} height={540} unoptimized /></a><div><p className="eyebrow">{copy.builderEyebrow}</p><h2>{copy.builderTitle}</h2><p>{copy.builderText}</p><a className="text-link" href={en ? "https://www.djai.academy/siamese_cat/dev/en/" : "https://www.djai.academy/siamese_cat/dev/"}>{copy.builderLink}<ArrowRight /></a></div></section>
+      <section className="builder-section" id="builder"><a className="builder-logo" href={en ? "https://www.djai.academy/siamese_cat/dev/en/" : "https://www.djai.academy/siamese_cat/dev/"}><Image src={`${BASE_PATH}/siamese-cat-dev-logo.webp`} alt="Siamese Cat Dev logo" width={640} height={540} loading="lazy" unoptimized /></a><div><p className="eyebrow">{copy.builderEyebrow}</p><h2>{copy.builderTitle}</h2><p>{copy.builderText}</p><a className="text-link" href={en ? "https://www.djai.academy/siamese_cat/dev/en/" : "https://www.djai.academy/siamese_cat/dev/"}>{copy.builderLink}<ArrowRight /></a></div></section>
 
       <section className="seo-section"><div><p className="eyebrow">FREE PDF TOOLS</p><h2>{copy.seoTitle}</h2><p>{copy.seoText}</p></div><div className="faq-list"><h2>{copy.faqTitle}</h2>{copy.faq.map(([question, answer]) => <details key={question}><summary>{question}<span>+</span></summary><p>{answer}</p></details>)}</div></section>
 
-      <footer><div className="footer-brand"><a className="brand" href={homeHref(language)}><Image src={`${BASE_PATH}/djai-academy-logo.webp`} alt="DJAI Academy" width={114} height={84} unoptimized /><span><strong>DJTools</strong><small>PDF · by DJAI Academy</small></span></a><p>{copy.footerPrivacy}</p></div><div className="footer-links"><div><strong>DJAI</strong><a href={en ? "https://www.djai.academy/en/" : "https://www.djai.academy/"}>DJAI Academy</a><a href={en ? "https://www.djai.academy/course/en/" : "https://www.djai.academy/course/"}>{copy.nav.course}</a><a href={en ? "https://www.djai.academy/blog/en/" : "https://www.djai.academy/blog/"}>{copy.nav.blog}</a></div><div><strong>BUILD</strong><a href={en ? "https://www.djai.academy/development/en/" : "https://www.djai.academy/development/"}>{copy.nav.development}</a><a href={en ? "https://www.djai.academy/portfolio/en/" : "https://www.djai.academy/portfolio/"}>{copy.portfolioButton}</a><a href={en ? "https://www.djai.academy/siamese_cat/dev/en/" : "https://www.djai.academy/siamese_cat/dev/"}>Siamese Cat Dev</a></div><div><strong>TOOLS</strong>{toolSlugs.slice(0, 4).map((slug) => <a href={toolHref(slug, language)} key={slug}>{toolCopy[language][slug].label}</a>)}</div></div><p className="copyright">© 2026 {copy.copyright}</p></footer>
+      <footer><div className="footer-brand"><a className="brand" href={homeHref(language)}><Image src={`${BASE_PATH}/djai-academy-logo-display.webp`} alt="DJAI Academy" width={114} height={61} loading="lazy" unoptimized /><span><strong>DJTools</strong><small>PDF · by DJAI Academy</small></span></a><p>{copy.footerPrivacy}</p></div><div className="footer-links"><div><strong>DJAI</strong><a href={en ? "https://www.djai.academy/en/" : "https://www.djai.academy/"}>DJAI Academy</a><a href={en ? "https://www.djai.academy/course/en/" : "https://www.djai.academy/course/"}>{copy.nav.course}</a><a href={en ? "https://www.djai.academy/blog/en/" : "https://www.djai.academy/blog/"}>{copy.nav.blog}</a></div><div><strong>BUILD</strong><a href={en ? "https://www.djai.academy/development/en/" : "https://www.djai.academy/development/"}>{copy.nav.development}</a><a href={en ? "https://www.djai.academy/portfolio/en/" : "https://www.djai.academy/portfolio/"}>{copy.portfolioButton}</a><a href={en ? "https://www.djai.academy/siamese_cat/dev/en/" : "https://www.djai.academy/siamese_cat/dev/"}>Siamese Cat Dev</a></div><div><strong>TOOLS</strong>{toolSlugs.slice(0, 4).map((slug) => <a href={toolHref(slug, language)} key={slug}>{toolCopy[language][slug].label}</a>)}</div></div><p className="copyright">© 2026 {copy.copyright}</p></footer>
     </main>
   );
 }

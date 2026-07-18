@@ -183,7 +183,7 @@ export default function Home() {
           <div className="orbit orbit-two" />
           <img
             className="instructor"
-            src={assetPath("Instructor-DJAI.webp")}
+            src={assetPath("Instructor-DJAI-display.webp")}
             alt="DJAI Academy instructor"
           />
           <div className="floating-badge badge-ai">

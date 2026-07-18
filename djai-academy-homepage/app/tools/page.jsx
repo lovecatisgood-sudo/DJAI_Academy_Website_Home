@@ -143,7 +143,7 @@ export default function ThaiToolsPage() {
 
       <header className="tools-nav">
         <a href="https://www.djai.academy/" aria-label="DJAI Academy home">
-          <img src="/djai-logo.webp" alt="DJAI Academy" />
+          <img src="/djai-logo-small.webp" alt="DJAI Academy" width="360" height="193" loading="lazy" decoding="async" />
         </a>
         <nav aria-label="Tools navigation">
           <a href="https://www.djai.academy/course/">คอร์สเรียน</a>

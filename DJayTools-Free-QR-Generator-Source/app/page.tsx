@@ -112,7 +112,7 @@ export default function Home() {
       />
       <header className="site-header">
         <a className="brand" href="#top" aria-label="หน้าแรก DJayTools">
-          <img src={assetPath("djai-academy-logo.webp")} alt="DJAI Academy" />
+          <img src={assetPath("djai-academy-logo-display.webp")} alt="DJAI Academy" width="384" height="206" decoding="async" />
           <span><strong>DJayTools</strong><small>by DJAI Academy</small></span>
         </a>
         <nav aria-label="เมนูหลัก">
@@ -131,7 +131,7 @@ export default function Home() {
         <h1>เปลี่ยนทุกลิงก์ให้เป็น<br /><em>QR code ที่สวยและพร้อมใช้</em></h1>
         <p>สร้าง ปรับแต่ง และดาวน์โหลด QR code คุณภาพสูงได้ในไม่กี่วินาที เป็นส่วนตัว ใช้ได้ไม่จำกัด และฟรี</p>
         <a className="developer-credit" href="https://www.djai.academy/siamese_cat/dev/" target="_blank" rel="noopener noreferrer" aria-label="ดูข้อมูลเพิ่มเติมเกี่ยวกับ Siamese Cat Dev">
-          <img src={assetPath("siamese-cat-dev-logo.png")} alt="Siamese Cat Dev" />
+          <img src={assetPath("siamese-cat-dev-logo.webp")} alt="Siamese Cat Dev" width="900" height="900" loading="lazy" decoding="async" />
           <span><small>พัฒนาแอปโดย</small><strong>Siamese Cat Dev</strong></span>
         </a>
         <button className="primary hero-button" onClick={scrollToGenerator}>สร้าง QR code ฟรี <span>↘</span></button>
@@ -256,7 +256,7 @@ export default function Home() {
       <section className="developer-profile" id="profile">
         <div className="developer-logo-stage">
           <a href="https://www.djai.academy/siamese_cat/dev/" target="_blank" rel="noopener noreferrer" aria-label="ดูโปรไฟล์ Siamese Cat Dev">
-            <img src={assetPath("siamese-cat-dev-logo.png")} alt="Siamese Cat Dev logo" />
+            <img src={assetPath("siamese-cat-dev-logo.webp")} alt="Siamese Cat Dev logo" width="900" height="900" loading="lazy" decoding="async" />
           </a>
         </div>
         <div className="developer-profile-copy">
@@ -270,7 +270,7 @@ export default function Home() {
 
       <footer>
         <div className="footer-identity">
-          <a className="brand footer-brand" href="#top"><img src={assetPath("djai-academy-logo.webp")} alt="DJAI Academy" /><span><strong>DJayTools</strong><small>by DJAI Academy</small></span></a>
+          <a className="brand footer-brand" href="#top"><img src={assetPath("djai-academy-logo-display.webp")} alt="DJAI Academy" width="384" height="206" loading="lazy" decoding="async" /><span><strong>DJayTools</strong><small>by DJAI Academy</small></span></a>
           <p>เครื่องมือดิจิทัลที่มีประโยชน์ สร้างเพื่อชุมชนและคนทำงานจริง</p>
         </div>
         <nav className="footer-links" aria-label="ลิงก์ของ DJAI และ partner">

@@ -28,12 +28,23 @@
     />
     <meta name="twitter:image" content="https://www.djai.academy/siamese_cat/dev/siamese-cat-dev-logo.png" />
     <title>Siamese Cat Dev | Product, Development และ Vibe Coding</title>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CGJ5BTR44T"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-CGJ5BTR44T');
+      function loadAnalytics() {
+        if (window.djAnalyticsLoaded) return;
+        window.djAnalyticsLoaded = true;
+        const script = document.createElement("script");
+        script.async = true;
+        script.src = "https://www.googletagmanager.com/gtag/js?id=G-CGJ5BTR44T";
+        document.head.appendChild(script);
+        gtag("js", new Date());
+        gtag("config", "G-CGJ5BTR44T");
+      }
+      window.addEventListener("load", () => {
+        if ("requestIdleCallback" in window) requestIdleCallback(loadAnalytics, { timeout: 3000 });
+        else setTimeout(loadAnalytics, 1500);
+      }, { once: true });
     </script>
     <script type="application/ld+json">
       {

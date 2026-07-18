@@ -25,12 +25,23 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-CGJ5BTR44T"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-CGJ5BTR44T');
+    function loadAnalytics() {
+      if (window.djAnalyticsLoaded) return;
+      window.djAnalyticsLoaded = true;
+      const script = document.createElement("script");
+      script.async = true;
+      script.src = "https://www.googletagmanager.com/gtag/js?id=G-CGJ5BTR44T";
+      document.head.appendChild(script);
+      gtag("js", new Date());
+      gtag("config", "G-CGJ5BTR44T");
+    }
+    window.addEventListener("load", () => {
+      if ("requestIdleCallback" in window) requestIdleCallback(loadAnalytics, { timeout: 3000 });
+      else setTimeout(loadAnalytics, 1500);
+    }, { once: true });
   </script>
   <script src="app.js" defer></script>
   <script type="application/ld+json">
@@ -62,7 +73,7 @@
   <header class="site-header">
     <div class="header-inner">
       <a class="brand" href="https://www.djai.academy/en/" aria-label="DJAI Academy home">
-        <img src="assets/djai-academy-logo.png" alt="DJAI Academy">
+        <img src="assets/djai-academy-logo.webp" alt="DJAI Academy" width="384" height="206" decoding="async">
       </a>
 
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-navigation" aria-label="Open navigation">
@@ -446,7 +457,7 @@
   <footer class="site-footer">
     <div class="footer-main section-shell">
       <div class="footer-brand">
-        <img class="footer-djai" src="assets/djai-academy-logo.png" alt="DJAI Academy">
+        <img class="footer-djai" src="assets/djai-academy-logo.webp" alt="DJAI Academy" width="384" height="206" loading="lazy" decoding="async">
         <p>We educate, we build, and we deploy. Practical digital tools made for everyone.</p>
         <div class="footer-tool-mark"><span>{ }</span><strong>DJTool</strong> by DJAI</div>
       </div>
@@ -458,7 +469,7 @@
       <p>© <span id="current-year"></span> DJAI Academy. All rights reserved.</p>
       <a class="developer-credit" href="https://www.djai.academy/siamese_cat/dev/en/">
         <span>Designed &amp; developed by</span>
-        <img src="assets/siamese-cat-dev-transparent.png" alt="Siamese Cat Dev">
+        <img src="assets/siamese-cat-dev-transparent.webp" alt="Siamese Cat Dev" width="900" height="759" loading="lazy" decoding="async">
       </a>
     </div>
   </footer>

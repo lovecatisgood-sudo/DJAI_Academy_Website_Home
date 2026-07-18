@@ -227,6 +227,23 @@ async function verify() {
     failures.push(`/tools/resizeimg/app.js: unsafe cache policy ${imageControllerCache || "(none)"}`);
   }
 
+  const documentHtml = await fetch(`${origin}/tools/document/docx-to-pdf/`).then((response) => response.text());
+  const staticScript = documentHtml.match(/src=["']([^"']*\/tools\/_next\/static\/[^"']+[.]js)["']/)?.[1];
+  if (!staticScript) {
+    failures.push("document tool: expected a versioned Next.js script");
+  } else {
+    const staticResponse = await fetch(new URL(staticScript, origin), {
+      headers: { "Accept-Encoding": "gzip" }
+    });
+    const cacheControl = staticResponse.headers.get("cache-control") || "";
+    if (!cacheControl.includes("immutable")) {
+      failures.push(`${staticScript}: expected immutable cache policy, received ${cacheControl || "(none)"}`);
+    }
+    if (staticResponse.headers.get("content-encoding") !== "gzip") {
+      failures.push(`${staticScript}: expected gzip transfer encoding`);
+    }
+  }
+
   const discoveredRoutes = new Set();
   for (const route of publicRoutes.filter((candidate) => candidate.endsWith("/"))) {
     const response = await fetch(`${origin}${route}`);

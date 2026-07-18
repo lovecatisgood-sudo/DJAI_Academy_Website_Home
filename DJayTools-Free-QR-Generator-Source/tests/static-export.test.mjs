@@ -19,12 +19,14 @@ test("Hostinger static export uses the configured subpath", async () => {
 
   assert.match(html, new RegExp(`${basePath}/_next/static`));
   assert.match(html, new RegExp(`${basePath}/djai-academy-logo\\.webp`));
-  assert.match(html, new RegExp(`${basePath}/siamese-cat-dev-logo\\.png`));
+  assert.match(html, new RegExp(`${basePath}/djai-academy-logo-display\\.webp`));
+  assert.match(html, new RegExp(`${basePath}/siamese-cat-dev-logo\\.webp`));
   assert.doesNotMatch(html, /src="\/(?:djai-academy-logo|siamese-cat-dev-logo)/);
   assert.match(html, /<html lang="th">/);
   assert.match(englishHtml, /<html lang="en">/);
   assert.match(englishHtml, /Free QR Code Generator/);
 
   assert.equal(await exists(new URL("../out/djai-academy-logo.webp", import.meta.url)), true);
-  assert.equal(await exists(new URL("../out/siamese-cat-dev-logo.png", import.meta.url)), true);
+  assert.equal(await exists(new URL("../out/djai-academy-logo-display.webp", import.meta.url)), true);
+  assert.equal(await exists(new URL("../out/siamese-cat-dev-logo.webp", import.meta.url)), true);
 });

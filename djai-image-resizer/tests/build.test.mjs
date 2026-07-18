@@ -46,6 +46,18 @@ test("public image-tool code has no donor canonical or runtime CDN", () => {
   }
 });
 
+test("display assets and analytics are optimized for initial load", () => {
+  for (const asset of ["assets/djai-academy-logo.webp", "assets/siamese-cat-dev-transparent.webp"]) {
+    assert.equal(existsSync(join(publicDir, asset)), true, asset);
+  }
+  for (const file of ["index.html", "en/index.html"]) {
+    const html = readFileSync(join(publicDir, file), "utf8");
+    assert.doesNotMatch(html, /<script async src="https:\/\/www\.googletagmanager\.com/);
+    assert.match(html, /requestIdleCallback/);
+    assert.match(html, /djai-academy-logo\.webp/);
+  }
+});
+
 test("base pages expose complete batch and comparison controls", () => {
   for (const file of ["index.html", "en/index.html"]) {
     const html = readFileSync(join(publicDir, file), "utf8");

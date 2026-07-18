@@ -5,7 +5,7 @@ import test from "node:test";
 
 const projectDir = new URL("..", import.meta.url).pathname;
 const outDir = join(projectDir, "out");
-const tools = ["merge-pdf", "split-pdf", "compress-pdf", "images-to-pdf", "pdf-to-images", "rotate-pdf", "watermark-pdf", "protect-pdf"];
+const tools = ["merge-pdf", "split-pdf", "compress-pdf", "images-to-pdf", "pdf-to-images", "rotate-pdf", "watermark-pdf", "protect-pdf", "organize-pdf", "add-page-numbers", "remove-pdf-metadata"];
 
 const pages = [
   ["index.html", "th"],
@@ -29,7 +29,7 @@ test("all bilingual PDF tool pages are exported with metadata", () => {
 });
 
 test("browser PDF worker and brand assets are exported", () => {
-  for (const asset of ["pdf.worker.min.mjs", "djai-academy-logo.webp", "siamese-cat-dev-logo.png", "favicon.svg"]) {
+  for (const asset of ["pdf.worker.min.mjs", "djai-academy-logo.webp", "djai-academy-logo-display.webp", "djai-academy-logo-small.webp", "siamese-cat-dev-logo.webp", "favicon.svg"]) {
     assert.ok(existsSync(join(outDir, asset)), `${asset} should exist`);
   }
 });
