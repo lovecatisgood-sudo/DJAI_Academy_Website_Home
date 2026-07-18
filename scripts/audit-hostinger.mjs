@@ -107,11 +107,13 @@ const publicRoutes = [
   "/siamese_cat/dev/",
   "/siamese_cat/dev/en/",
   "/admin/blog/",
+  "/favicon.svg",
   "/robots.txt",
   "/sitemap.xml",
   "/healthz"
 ];
 const redirects = [
+  ["/favicon.ico", "/favicon.svg"],
   ["/th/", "/"],
   ["/EN/", "/en/"],
   ["/tools/Resizeimg/", "/tools/resizeimg/"],

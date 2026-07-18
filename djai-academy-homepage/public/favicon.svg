@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="DJAI Academy">
+  <defs>
+    <linearGradient id="djai-favicon-blue" x1="10" x2="54" y1="8" y2="56" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00E0FF"/>
+      <stop offset="0.55" stop-color="#00A3FF"/>
+      <stop offset="1" stop-color="#5A7CFF"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#071327"/>
+  <path d="M17 50 31.6 13.5c.8-2 3.6-2 4.4 0L50.5 50h-9.1l-2.6-7.1H28.6L26 50h-9Zm14.2-14.7h5.1l-2.5-7.2-2.6 7.2Z" fill="url(#djai-favicon-blue)"/>
+  <path d="M12 16h7M45 16h7M12 48h7M45 48h7M16 12v7M48 12v7M16 45v7M48 45v7" stroke="#00E0FF" stroke-width="2.4" stroke-linecap="round"/>
+  <circle cx="16" cy="16" r="2.6" fill="#FFFFFF"/>
+  <circle cx="48" cy="16" r="2.6" fill="#FFFFFF"/>
+  <circle cx="16" cy="48" r="2.6" fill="#FFFFFF"/>
+  <circle cx="48" cy="48" r="2.6" fill="#FFFFFF"/>
+</svg>

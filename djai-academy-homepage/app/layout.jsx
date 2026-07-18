@@ -12,6 +12,14 @@ export const metadata = {
   alternates: {
     canonical: "/"
   },
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/djai-logo-small.webp", type: "image/webp" }
+    ],
+    shortcut: "/favicon.svg",
+    apple: "/djai-logo-small.webp"
+  },
   openGraph: {
     title: "DJAI Academy | Educate, Build, Deploy",
     description:

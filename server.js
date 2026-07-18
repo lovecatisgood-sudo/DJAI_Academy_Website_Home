@@ -252,6 +252,11 @@ app.prepare().then(() => {
         return;
       }
 
+      if (pathname === "/favicon.ico") {
+        redirect(res, "/favicon.svg");
+        return;
+      }
+
       if (tryServeMountedStatic(req, res, pathname)) {
         return;
       }
