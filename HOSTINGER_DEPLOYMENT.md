@@ -72,6 +72,10 @@ Legacy `/th/` and uppercase `/EN/` routes redirect to the canonical paths.
 
 Set `DJAI_BLOG_ADMIN_PASSWORD` in hPanel before using `/admin/blog/`. Keep it out of Git.
 
+Set `DJAI_BLOG_API_KEY` if Codex, Hermes, OpenClaw, or another harness agent should publish blog
+posts through API calls. Use a long random secret and send it as `Authorization: Bearer ...` or
+`X-DJAI-Blog-API-Key`.
+
 For blog content that must persist across deployments, set `DJAI_BLOG_DATA_FILE` to an absolute,
 writable, persistent server path. Without this override, posts are stored in
 `djai-academy-homepage/data/blog-posts.json` inside the deployed application.

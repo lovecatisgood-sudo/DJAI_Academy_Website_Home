@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import crypto from "node:crypto";
 import { getAllPostGroups, upsertPost } from "../../../lib/blogStore";
 
 export const runtime = "nodejs";
@@ -8,37 +9,54 @@ function getConfiguredPassword() {
   return process.env.DJAI_BLOG_ADMIN_PASSWORD || "";
 }
 
-function isAuthorized(password) {
-  const configured = getConfiguredPassword();
-  return Boolean(configured) && password === configured;
+function getConfiguredApiKey() {
+  return process.env.DJAI_BLOG_API_KEY || "";
 }
 
-function getHeaderPassword(request) {
+function timingSafeEqualString(received, configured) {
+  if (!received || !configured) {
+    return false;
+  }
+
+  const receivedBuffer = Buffer.from(String(received));
+  const configuredBuffer = Buffer.from(String(configured));
+
+  return (
+    receivedBuffer.length === configuredBuffer.length &&
+    crypto.timingSafeEqual(receivedBuffer, configuredBuffer)
+  );
+}
+
+function isAuthorizedSecret(secret) {
+  return timingSafeEqualString(secret, getConfiguredPassword()) || timingSafeEqualString(secret, getConfiguredApiKey());
+}
+
+function getHeaderSecret(request) {
   const bearer = request.headers.get("authorization") || "";
   if (bearer.toLowerCase().startsWith("bearer ")) {
     return bearer.slice(7).trim();
   }
-  return request.headers.get("x-admin-password") || "";
+  return request.headers.get("x-djai-blog-api-key") || request.headers.get("x-admin-password") || "";
 }
 
 function authError() {
-  if (!getConfiguredPassword()) {
+  if (!getConfiguredPassword() && !getConfiguredApiKey()) {
     return NextResponse.json(
       {
         error:
-          "Blog admin backend is not configured. Set DJAI_BLOG_ADMIN_PASSWORD in the deployment environment."
+          "Blog admin backend is not configured. Set DJAI_BLOG_ADMIN_PASSWORD or DJAI_BLOG_API_KEY in the deployment environment."
       },
       { status: 503 }
     );
   }
 
-  return NextResponse.json({ error: "Invalid admin password." }, { status: 401 });
+  return NextResponse.json({ error: "Invalid blog admin credential." }, { status: 401 });
 }
 
 export async function GET(request) {
-  const password = getHeaderPassword(request);
+  const secret = getHeaderSecret(request);
 
-  if (!isAuthorized(password)) {
+  if (!isAuthorizedSecret(secret)) {
     return authError();
   }
 
@@ -48,9 +66,9 @@ export async function GET(request) {
 
 export async function POST(request) {
   const body = await request.json().catch(() => null);
-  const password = body?.password || getHeaderPassword(request);
+  const secret = body?.apiKey || body?.password || getHeaderSecret(request);
 
-  if (!isAuthorized(password)) {
+  if (!isAuthorizedSecret(secret)) {
     return authError();
   }
 

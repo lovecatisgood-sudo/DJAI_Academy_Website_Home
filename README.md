@@ -15,3 +15,5 @@ The production entry file is `server.js`. After deployment, `GET /healthz` must 
 `"app":"djai-academy-website"` and `"buildsReady":true`.
 
 See `HOSTINGER_DEPLOYMENT.md` for the exact hPanel settings and troubleshooting checklist.
+
+For agent blog publishing through API calls, see `BLOG_API.md`.

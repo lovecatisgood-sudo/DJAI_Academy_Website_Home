@@ -1,5 +1,8 @@
 import { spawn } from "node:child_process";
+import { copyFile, mkdtemp, rm } from "node:fs/promises";
 import { request } from "node:http";
+import { tmpdir } from "node:os";
+import { join } from "node:path";
 
 const port = Number(process.env.DJAI_AUDIT_PORT || 3147);
 const origin = `http://127.0.0.1:${port}`;
@@ -120,6 +123,10 @@ const redirects = [
   ["/tools/document/word-to-pdf/en/", "/tools/document/docx-to-pdf/en/"]
 ];
 const auditPassword = "djai-local-deployment-audit";
+const auditApiKey = "djai-local-api-key-audit";
+const auditDataDirectory = await mkdtemp(join(tmpdir(), "djai-blog-audit-"));
+const auditDataFile = join(auditDataDirectory, "blog-posts.json");
+await copyFile(join(repositoryRoot, "djai-academy-homepage", "data", "blog-posts.json"), auditDataFile);
 
 const server = spawn(process.execPath, [serverEntry], {
   cwd: serverDirectory,
@@ -128,7 +135,9 @@ const server = spawn(process.execPath, [serverEntry], {
     HOST: "127.0.0.1",
     NODE_ENV: "production",
     PORT: String(port),
-    DJAI_BLOG_ADMIN_PASSWORD: auditPassword
+    DJAI_BLOG_ADMIN_PASSWORD: auditPassword,
+    DJAI_BLOG_API_KEY: auditApiKey,
+    DJAI_BLOG_DATA_FILE: auditDataFile
   },
   stdio: ["ignore", "pipe", "pipe"]
 });
@@ -213,6 +222,61 @@ async function verify() {
     const payload = await authorizedAdminResponse.json();
     if (!Array.isArray(payload.posts) || payload.posts.length < 3) {
       failures.push("/api/admin/blog/: expected at least three seeded blog posts");
+    }
+  }
+
+  const apiKeyAdminResponse = await fetch(`${origin}/api/admin/blog/`, {
+    headers: { "X-DJAI-Blog-API-Key": auditApiKey }
+  });
+  if (apiKeyAdminResponse.status !== 200) {
+    failures.push(
+      `/api/admin/blog/: expected 200 with API key, received ${apiKeyAdminResponse.status}`
+    );
+  }
+
+  const createDraftResponse = await fetch(`${origin}/api/admin/blog/`, {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${auditApiKey}`,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      post: {
+        translationGroupId: "audit-agent-autopost",
+        category: "Tutorial",
+        author: "DJAI Academy",
+        translations: {
+          en: {
+            title: "Audit Agent Autopost",
+            slug: "audit-agent-autopost",
+            status: "draft",
+            excerpt: "Temporary audit post.",
+            content: "## Audit\n\nTemporary audit content."
+          },
+          th: {
+            title: "Audit Agent Autopost TH",
+            slug: "audit-agent-autopost-th",
+            status: "draft",
+            excerpt: "Temporary audit post.",
+            content: "## Audit\n\nTemporary audit content."
+          }
+        }
+      }
+    })
+  });
+  if (createDraftResponse.status !== 200) {
+    failures.push(
+      `/api/admin/blog/: expected API key POST to create draft, received ${createDraftResponse.status}`
+    );
+  } else {
+    const payload = await createDraftResponse.json();
+    if (
+      payload.post?.translationGroupId !== "audit-agent-autopost" ||
+      payload.post?.category !== "Tutorial" ||
+      payload.post?.translations?.en?.status !== "draft" ||
+      payload.post?.translations?.th?.status !== "draft"
+    ) {
+      failures.push("/api/admin/blog/: API key POST returned an invalid multilingual draft payload");
     }
   }
 
@@ -316,4 +380,5 @@ try {
   await verify();
 } finally {
   server.kill("SIGTERM");
+  await rm(auditDataDirectory, { recursive: true, force: true });
 }
