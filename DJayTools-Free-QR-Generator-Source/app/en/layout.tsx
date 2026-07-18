@@ -22,6 +22,13 @@ export const metadata: Metadata = {
     images: [`${BASE_PATH}/djai-academy-logo.webp`],
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free QR Code Generator | DJayTools by DJAI Academy",
+    description:
+      "Create custom QR codes for websites, menus, profiles, and forms. Download PNG or SVG for free.",
+    images: [`${BASE_PATH}/djai-academy-logo.webp`],
+  },
 };
 
 export default function EnglishLayout({ children }: Readonly<{ children: React.ReactNode }>) {

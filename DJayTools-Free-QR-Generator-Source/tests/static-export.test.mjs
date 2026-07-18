@@ -15,11 +15,15 @@ async function exists(path) {
 
 test("Hostinger static export uses the configured subpath", async () => {
   const html = await readFile(new URL("../out/index.html", import.meta.url), "utf8");
+  const englishHtml = await readFile(new URL("../out/en/index.html", import.meta.url), "utf8");
 
   assert.match(html, new RegExp(`${basePath}/_next/static`));
   assert.match(html, new RegExp(`${basePath}/djai-academy-logo\\.webp`));
   assert.match(html, new RegExp(`${basePath}/siamese-cat-dev-logo\\.png`));
   assert.doesNotMatch(html, /src="\/(?:djai-academy-logo|siamese-cat-dev-logo)/);
+  assert.match(html, /<html lang="th">/);
+  assert.match(englishHtml, /<html lang="en">/);
+  assert.match(englishHtml, /Free QR Code Generator/);
 
   assert.equal(await exists(new URL("../out/djai-academy-logo.webp", import.meta.url)), true);
   assert.equal(await exists(new URL("../out/siamese-cat-dev-logo.png", import.meta.url)), true);
