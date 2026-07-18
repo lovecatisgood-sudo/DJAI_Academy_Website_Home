@@ -49,6 +49,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .site-header nav { display: flex; align-items: center; gap: 24px; }
 .site-header nav a { color: #ccdaec; font-size: 0.84rem; font-weight: 750; }
 .site-header nav a:hover { color: var(--cyan); }
+.site-header nav a.active { color: white; border-bottom: 2px solid var(--cyan); }
 .site-header nav .language-link { padding: 9px 12px; color: var(--navy); background: var(--cyan); border-radius: 6px; }
 .menu-button { display: none; width: 42px; height: 42px; place-items: center; color: white; background: transparent; border: 1px solid rgba(255,255,255,.2); border-radius: 6px; }
 

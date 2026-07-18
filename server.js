@@ -29,7 +29,8 @@ const mimeTypes = {
   ".svg": "image/svg+xml",
   ".ico": "image/x-icon",
   ".woff": "font/woff",
-  ".woff2": "font/woff2"
+  ".woff2": "font/woff2",
+  ".gz": "application/gzip"
 };
 
 const staticMounts = [
@@ -48,6 +49,26 @@ const staticMounts = [
   {
     prefix: "/tools/PDFTools",
     dir: path.join(rootDir, "djai-pdf-tools", "out")
+  },
+  {
+    prefix: "/tools/document",
+    dir: path.join(rootDir, "djai-document-tools", "out", "document")
+  },
+  {
+    prefix: "/tools/ai",
+    dir: path.join(rootDir, "djai-document-tools", "out", "ai")
+  },
+  {
+    prefix: "/tools/spreadsheet",
+    dir: path.join(rootDir, "djai-document-tools", "out", "spreadsheet")
+  },
+  {
+    prefix: "/tools/_next",
+    dir: path.join(rootDir, "djai-document-tools", "out", "_next")
+  },
+  {
+    prefix: "/tools/djai-assets",
+    dir: path.join(rootDir, "djai-document-tools", "out", "djai-assets")
   },
   {
     prefix: "/siamese_cat/dev",
@@ -132,6 +153,8 @@ function serveHealth(req, res) {
     path.join(rootDir, "djai-image-resizer", "public", "index.html"),
     path.join(rootDir, "djai-pdf-tools", "out", "index.html"),
     path.join(rootDir, "djai-pdf-tools", "out", "pdf.worker.min.mjs"),
+    path.join(rootDir, "djai-document-tools", "out", "document", "index.html"),
+    path.join(rootDir, "djai-document-tools", "out", "document", "pdf.worker.min.mjs"),
     path.join(rootDir, "Siamese-Cat-Dev-Bio-Site", "dist", "index.html")
   ];
   const buildsReady = requiredOutputs.every((output) => fs.existsSync(output));
@@ -154,6 +177,36 @@ function serveHealth(req, res) {
 function tryServeMountedStatic(req, res, pathname) {
   if (matchesMount(pathname, "/tools/Resizeimg")) {
     redirect(res, pathname.replace("/tools/Resizeimg", "/tools/resizeimg"));
+    return true;
+  }
+
+  if (pathname === "/tools/docx-to-pdf" || pathname === "/tools/docx-to-pdf/") {
+    redirect(res, "/tools/document/docx-to-pdf/");
+    return true;
+  }
+
+  if (pathname === "/tools/docx-to-pdf/en" || pathname === "/tools/docx-to-pdf/en/") {
+    redirect(res, "/tools/document/docx-to-pdf/en/");
+    return true;
+  }
+
+  if (pathname === "/tools/word-to-pdf" || pathname === "/tools/word-to-pdf/") {
+    redirect(res, "/tools/document/docx-to-pdf/");
+    return true;
+  }
+
+  if (pathname === "/tools/word-to-pdf/en" || pathname === "/tools/word-to-pdf/en/") {
+    redirect(res, "/tools/document/docx-to-pdf/en/");
+    return true;
+  }
+
+  if (pathname === "/tools/document/word-to-pdf" || pathname === "/tools/document/word-to-pdf/") {
+    redirect(res, "/tools/document/docx-to-pdf/");
+    return true;
+  }
+
+  if (pathname === "/tools/document/word-to-pdf/en" || pathname === "/tools/document/word-to-pdf/en/") {
+    redirect(res, "/tools/document/docx-to-pdf/en/");
     return true;
   }
 

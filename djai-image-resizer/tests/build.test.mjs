@@ -10,7 +10,7 @@ const projectDir = join(dirname(fileURLToPath(import.meta.url)), "..");
 const publicDir = join(projectDir, "public");
 
 test("all SEO presets have Thai and English static pages", () => {
-  assert.equal(presets.length, 11);
+  assert.equal(presets.length, 12);
   for (const preset of presets) {
     for (const language of ["th", "en"]) {
       const path = join(publicDir, preset.slug, ...(language === "en" ? ["en"] : []), "index.html");

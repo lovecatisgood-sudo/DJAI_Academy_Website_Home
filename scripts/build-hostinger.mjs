@@ -44,6 +44,8 @@ const projects = [
       "public/jpg-to-png/en/index.html",
       "public/heic-to-jpg/index.html",
       "public/heic-to-jpg/en/index.html",
+      "public/remove-image-metadata/index.html",
+      "public/remove-image-metadata/en/index.html",
       "public/vendor/heic2any.min.js",
       "public/vendor/jszip.min.js"
     ]
@@ -65,7 +67,36 @@ const projects = [
       "out/pdf-to-jpg/en/index.html",
       "out/protect-pdf/index.html",
       "out/protect-pdf/en/index.html",
+      "out/organize-pdf/index.html",
+      "out/organize-pdf/en/index.html",
+      "out/add-page-numbers/index.html",
+      "out/add-page-numbers/en/index.html",
+      "out/remove-pdf-metadata/index.html",
+      "out/remove-pdf-metadata/en/index.html",
       "out/pdf.worker.min.mjs"
+    ]
+  },
+  {
+    name: "DJAI document, AI, and spreadsheet tools",
+    dir: "djai-document-tools",
+    install: "ci",
+    build: ["run", "build"],
+    clean: [".next", "out"],
+    outputs: [
+      "out/document/index.html",
+      "out/document/en/index.html",
+      "out/document/docx-to-pdf/index.html",
+      "out/document/docx-to-pdf/en/index.html",
+      "out/document/ocr/index.html",
+      "out/ai/token-counter/index.html",
+      "out/ai/context-optimizer/en/index.html",
+      "out/spreadsheet/csv-to-json/index.html",
+      "out/spreadsheet/xlsx-to-csv/en/index.html",
+      "out/document/pdf.worker.min.mjs",
+      "out/document/ocr-runtime/worker.min.js",
+      "out/document/ocr-data/eng.traineddata.gz",
+      "out/document/ocr-data/tha.traineddata.gz",
+      "out/djai-assets/djai-academy-logo.webp"
     ]
   },
   {

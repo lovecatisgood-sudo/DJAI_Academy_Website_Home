@@ -14,11 +14,14 @@ import {
   Files,
   FileStack,
   GraduationCap,
+  Hash,
   ImagePlus,
+  ListOrdered,
   LoaderCircle,
   LockKeyhole,
   Menu,
   Minimize2,
+  Tags,
   RotateCw,
   ShieldCheck,
   Sparkles,
@@ -41,7 +44,10 @@ const icons: Record<ToolSlug, LucideIcon> = {
   "pdf-to-images": FileImage,
   "rotate-pdf": RotateCw,
   "watermark-pdf": Sparkles,
-  "protect-pdf": FileLock2
+  "protect-pdf": FileLock2,
+  "organize-pdf": ListOrdered,
+  "add-page-numbers": Hash,
+  "remove-pdf-metadata": Tags
 };
 
 const defaultOptions: ProcessingOptions = {
@@ -65,7 +71,10 @@ const defaultOptions: ProcessingOptions = {
   allowPrint: true,
   allowCopy: false,
   allowModify: false,
-  allowForms: true
+  allowForms: true,
+  pageOrder: "1-3",
+  pageNumberPosition: "bottom-center",
+  pageNumberStart: 1
 };
 
 const ui = {
@@ -76,7 +85,7 @@ const ui = {
     heroText: "รวม แยก บีบอัด แปลง หมุน ใส่ลายน้ำ และป้องกัน PDF โดยไฟล์ทำงานใน browser และไม่ออกจากอุปกรณ์ของคุณ",
     heroButton: "เริ่มใช้เครื่องมือฟรี",
     trust: ["ฟรี 100%", "ไม่ต้องสมัคร", "ไม่มี watermark", "ประมวลผลในอุปกรณ์"],
-    allTools: "8 เครื่องมือ PDF ที่ใช้งานได้จริง",
+    allTools: "11 เครื่องมือ PDF ที่ใช้งานได้จริง",
     allToolsText: "เลือกงานที่ต้องการ ไฟล์จะถูกประมวลผลใน browser โดยไม่ส่งขึ้น server",
     open: "เปิดเครื่องมือ",
     workspace: "พื้นที่ทำงาน",
@@ -130,7 +139,7 @@ const ui = {
     heroText: "Merge, split, compress, convert, rotate, watermark, and protect PDFs in your browser. Your files never leave your device.",
     heroButton: "Start using tools for free",
     trust: ["100% free", "No sign-up", "No watermark", "On-device processing"],
-    allTools: "Eight practical PDF tools",
+    allTools: "Eleven practical PDF tools",
     allToolsText: "Choose a task. Your files are processed locally in the browser and are never sent to a server.",
     open: "Open tool",
     workspace: "PDF workspace",
@@ -258,6 +267,19 @@ function ToolSettings({ tool, language, options, update }: {
       <label className="field-label">{en ? "Pages (leave blank for all)" : "ระบุหน้า (เว้นว่างเพื่อหมุนทุกหน้า)"}<input value={options.selectedPages} onChange={(event) => update("selectedPages", event.target.value)} placeholder="1-3, 5" /></label>
     </>
   );
+  if (tool === "organize-pdf") return (
+    <>
+      <label className="field-label">{en ? "Final page order" : "ลำดับหน้าสุดท้าย"}<input value={options.pageOrder} onChange={(event) => update("pageOrder", event.target.value)} placeholder="3, 1-2, 5" /></label>
+      <p className="setting-note warning">{en ? "Pages left out are removed. You can repeat a page if a duplicate is needed." : "หน้าที่ไม่ระบุจะถูกลบ และสามารถระบุหน้าเดิมซ้ำเพื่อทำสำเนาได้"}</p>
+    </>
+  );
+  if (tool === "add-page-numbers") return (
+    <div className="setting-grid">
+      <label className="field-label">{en ? "Position" : "ตำแหน่ง"}<select value={options.pageNumberPosition} onChange={(event) => update("pageNumberPosition", event.target.value as ProcessingOptions["pageNumberPosition"])}><option value="bottom-left">{en ? "Bottom left" : "ล่างซ้าย"}</option><option value="bottom-center">{en ? "Bottom center" : "ล่างกลาง"}</option><option value="bottom-right">{en ? "Bottom right" : "ล่างขวา"}</option><option value="top-left">{en ? "Top left" : "บนซ้าย"}</option><option value="top-center">{en ? "Top center" : "บนกลาง"}</option><option value="top-right">{en ? "Top right" : "บนขวา"}</option></select></label>
+      <label className="field-label">{en ? "Start at" : "เริ่มที่เลข"}<input type="number" min="0" value={options.pageNumberStart} onChange={(event) => update("pageNumberStart", Number(event.target.value))} /></label>
+    </div>
+  );
+  if (tool === "remove-pdf-metadata") return <p className="setting-note warning">{en ? "This clears title, author, subject, keywords, creator, producer, and document dates. Page content is not changed." : "ระบบจะลบ title, author, subject, keywords, creator, producer และวันที่ของเอกสาร โดยไม่เปลี่ยนเนื้อหาในหน้า"}</p>;
   if (tool === "watermark-pdf") return (
     <>
       <label>{en ? "Watermark type" : "ประเภทลายน้ำ"}</label>
@@ -429,10 +451,12 @@ export default function PdfToolsApp({ language, initialTool, seoPage }: { langua
         </a>
         <button className="menu-button" type="button" aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen} onClick={() => setMenuOpen((open) => !open)}>{menuOpen ? <X /> : <Menu />}</button>
         <nav className={menuOpen ? "open" : ""} aria-label="Main navigation">
+          <a className="active" href={homeHref(language)}>PDF</a>
+          <a href={en ? "https://www.djai.academy/tools/resizeimg/en/" : "https://www.djai.academy/tools/resizeimg/"}>{en ? "Image" : "รูปภาพ"}</a>
+          <a href={en ? "https://www.djai.academy/tools/document/en/" : "https://www.djai.academy/tools/document/"}>{en ? "Document" : "เอกสาร"}</a>
+          <a href={en ? "https://www.djai.academy/tools/ai/en/" : "https://www.djai.academy/tools/ai/"}>AI</a>
+          <a href={en ? "https://www.djai.academy/tools/spreadsheet/en/" : "https://www.djai.academy/tools/spreadsheet/"}>{en ? "Spreadsheet" : "ตารางข้อมูล"}</a>
           <a href={en ? "https://www.djai.academy/tools/en/" : "https://www.djai.academy/tools/"}>{copy.nav.tools}</a>
-          <a href={en ? "https://www.djai.academy/course/en/" : "https://www.djai.academy/course/"}>{copy.nav.course}</a>
-          <a href={en ? "https://www.djai.academy/development/en/" : "https://www.djai.academy/development/"}>{copy.nav.development}</a>
-          <a href={en ? "https://www.djai.academy/blog/en/" : "https://www.djai.academy/blog/"}>{copy.nav.blog}</a>
           <a className="language-link" href={languageHref} hrefLang={en ? "th" : "en"}>{copy.nav.language}</a>
         </nav>
       </header>

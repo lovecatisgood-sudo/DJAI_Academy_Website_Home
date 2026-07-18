@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "เครื่องมือฟรีจาก DJAI | PDF, QR Code และ Image Tools",
+  title: "เครื่องมือฟรีจาก DJAI | PDF, DOCX, AI, CSV, QR และรูปภาพ",
   description:
-    "ใช้เครื่องมือฟรีจาก DJAI สำหรับ PDF, QR code, แปลงรูป, resize รูป และ workflow สำหรับ creator นักเรียน และธุรกิจ",
+    "ใช้เครื่องมือฟรีจาก DJAI สำหรับ PDF, DOCX, OCR, AI context, CSV, QR code และรูปภาพ แบบ private ใน browser",
   alternates: {
     canonical: "/tools/",
     languages: {
@@ -41,10 +41,31 @@ const tools = [
     text: "รวม แยก บีบอัด แปลง หมุน ใส่ลายน้ำ และล็อก PDF ใน browser ฟรี โดยไฟล์ไม่ออกจากอุปกรณ์ของคุณ",
     href: "https://www.djai.academy/tools/PDFTools/",
     tags: ["PDF", "AES-256", "Private"]
+  },
+  {
+    label: "Document Tools",
+    title: "DJAI Document Converter",
+    text: "แปลง DOCX เป็น PDF, HTML, Markdown และข้อความ ดึงข้อความจาก PDF หรือใช้ OCR ภาษาไทยและอังกฤษใน browser",
+    href: "https://www.djai.academy/tools/document/",
+    tags: ["DOCX", "OCR", "Private"]
+  },
+  {
+    label: "AI Tools",
+    title: "AI Context and Token Tools",
+    text: "นับ token ทำความสะอาด context แบ่ง RAG chunk และจัดหลายไฟล์เป็น prompt package โดยข้อมูลไม่ออกจากอุปกรณ์",
+    href: "https://www.djai.academy/tools/ai/",
+    tags: ["Tokens", "RAG", "Context"]
+  },
+  {
+    label: "Spreadsheet Tools",
+    title: "CSV, JSON and Excel Tools",
+    text: "แปลง ทำความสะอาด รวม และแบ่ง CSV, JSON และ XLSX แบบ private สำหรับ data workflow และ automation",
+    href: "https://www.djai.academy/tools/spreadsheet/",
+    tags: ["CSV", "JSON", "XLSX"]
   }
 ];
 
-const comingSoon = ["Background remover", "Favicon generator", "AVIF tools", "OCR tools"];
+const comingSoon = ["Background remover", "Favicon generator", "AVIF tools", "High-fidelity Office conversion"];
 
 const popularWorkflows = [
   ["JPG เป็น PNG", "แปลงไฟล์รูปโดยไม่ upload", "https://www.djai.academy/tools/resizeimg/jpg-to-png/"],
@@ -52,7 +73,10 @@ const popularWorkflows = [
   ["ลดรูปใกล้ 100 KB", "เตรียมรูปสำหรับแบบฟอร์ม", "https://www.djai.academy/tools/resizeimg/image-to-100kb/"],
   ["JPG เป็น PDF", "รวมรูปหลายหน้าเป็น PDF", "https://www.djai.academy/tools/PDFTools/jpg-to-pdf/"],
   ["PDF เป็น JPG", "ส่งออกทุกหน้าเป็นรูปหรือ ZIP", "https://www.djai.academy/tools/PDFTools/pdf-to-jpg/"],
-  ["สร้าง QR Code", "ดาวน์โหลด PNG หรือ SVG", "https://www.djai.academy/tools/qrgen/"]
+  ["DOCX เป็น PDF", "แปลง Word แบบ private", "https://www.djai.academy/tools/document/docx-to-pdf/"],
+  ["PDF เป็นข้อความ", "ดึงข้อความตามช่วงหน้า", "https://www.djai.academy/tools/document/pdf-to-text/"],
+  ["นับ Token เอกสาร", "ตรวจ context ก่อนใช้กับ AI", "https://www.djai.academy/tools/ai/token-counter/"],
+  ["CSV เป็น JSON", "เตรียมข้อมูลสำหรับ API", "https://www.djai.academy/tools/spreadsheet/csv-to-json/"]
 ];
 
 const ecosystem = [
@@ -89,7 +113,7 @@ const structuredData = {
   name: "เครื่องมือฟรีจาก DJAI",
   url: "https://www.djai.academy/tools/",
   description:
-    "ชุดเครื่องมือฟรีบน browser จาก DJAI Academy เช่น PDF tools, QR code generator และ image converter",
+    "ชุดเครื่องมือฟรีบน browser จาก DJAI Academy สำหรับ PDF, เอกสาร, AI context, spreadsheet, QR code และรูปภาพ",
   publisher: {
     "@type": "Organization",
     name: "DJAI Academy",

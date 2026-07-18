@@ -61,6 +61,11 @@ export const presets = [
     slug: "heic-to-jpg", mode: "dimensions", format: "image/jpeg",
     th: ["แปลง HEIC เป็น JPG ฟรี ออนไลน์ | DJAI Image Tools", "แปลง HEIC เป็น JPG ฟรี", "แปลงรูป HEIC และ HEIF จาก iPhone เป็น JPG ฟรีใน browser โดยไม่อัปโหลดรูป", "วิธีแปลง HEIC เป็น JPG", "เปิดรูป HEIC หรือ HEIF จาก iPhone แล้วแปลงเป็น JPG สำหรับเว็บไซต์ แบบฟอร์ม และโปรแกรมทั่วไป", ["เลือกไฟล์ HEIC หรือ HEIF", "รอ browser ถอดรหัสและแสดงภาพ", "ประมวลผลแล้วดาวน์โหลด JPG"]],
     en: ["Convert HEIC to JPG Free Online | DJAI Image Tools", "Convert HEIC to JPG for free", "Convert iPhone HEIC and HEIF photos to JPG free in your browser without uploading images to a server.", "How to convert HEIC to JPG", "Open an iPhone HEIC or HEIF photo and create a compatible JPG for websites, forms, and common applications.", ["Choose a HEIC or HEIF file", "Let the browser decode and preview it", "Process and download the JPG"]]
+  },
+  {
+    slug: "remove-image-metadata", mode: "dimensions",
+    th: ["ลบ Metadata รูปภาพฟรี แบบ Private | DJAI Image Tools", "ลบ Metadata จากรูปภาพฟรี", "ลบ EXIF และ metadata จาก JPG PNG WebP หรือ HEIC ด้วยการสร้างสำเนาใหม่ใน browser โดยไม่ upload รูป", "วิธีลบ Metadata จากรูปภาพ", "เครื่องมือจะ decode และสร้างไฟล์รูปใหม่ผ่าน browser canvas ทำให้ metadata เดิมไม่ติดไปกับไฟล์ผลลัพธ์", ["เลือกรูปที่ต้องการทำให้เป็นส่วนตัว", "คงขนาดและ format ที่ต้องการ", "ประมวลผลและดาวน์โหลดสำเนาใหม่"]],
+    en: ["Remove Image Metadata Free and Privately | DJAI Image Tools", "Remove metadata from an image for free", "Remove EXIF and metadata from JPG, PNG, WebP, or HEIC by creating a new browser-processed copy without uploading it.", "How to remove image metadata", "The tool decodes the image and creates a new file through browser canvas, preventing original metadata from being carried into the result.", ["Choose the image to make privacy-safe", "Keep the dimensions and preferred format", "Process and download the new copy"]]
   }
 ];
 

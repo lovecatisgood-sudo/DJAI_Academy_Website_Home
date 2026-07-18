@@ -9,7 +9,10 @@ export const toolSlugs = [
   "pdf-to-images",
   "rotate-pdf",
   "watermark-pdf",
-  "protect-pdf"
+  "protect-pdf",
+  "organize-pdf",
+  "add-page-numbers",
+  "remove-pdf-metadata"
 ] as const;
 
 export type ToolSlug = (typeof toolSlugs)[number];
@@ -80,6 +83,27 @@ export const toolCopy: Record<Language, Record<ToolSlug, ToolCopy>> = {
       short: "ป้องกัน PDF ด้วยรหัสผ่านและกำหนดสิทธิ์การใช้งาน",
       description: "ใส่รหัสผ่าน PDF ใน browser ด้วย AES-256 พร้อมกำหนดสิทธิ์พิมพ์ คัดลอก แก้ไข และกรอกฟอร์ม",
       keywords: ["ใส่รหัส PDF", "ล็อก PDF", "protect PDF"]
+    },
+    "organize-pdf": {
+      label: "จัดหน้า PDF",
+      title: "เรียงและลบหน้า PDF ฟรี",
+      short: "กำหนดลำดับหน้าใหม่และตัดหน้าที่ไม่ต้องการออก",
+      description: "เรียงหน้า PDF ใหม่หรือลบหน้าที่ไม่ต้องการใน browser ฟรี โดยระบุลำดับสุดท้าย เช่น 3, 1, 2, 5",
+      keywords: ["เรียงหน้า PDF", "ลบหน้า PDF", "จัดหน้า PDF"]
+    },
+    "add-page-numbers": {
+      label: "ใส่เลขหน้า",
+      title: "ใส่เลขหน้า PDF ฟรี",
+      short: "เพิ่มเลขหน้าด้านล่างหรือด้านบนพร้อมกำหนดเลขเริ่มต้น",
+      description: "เพิ่มเลขหน้าให้ PDF ฟรี เลือกตำแหน่งและเลขเริ่มต้นได้ โดยไฟล์ประมวลผลใน browser",
+      keywords: ["ใส่เลขหน้า PDF", "เพิ่มเลข PDF", "page number PDF"]
+    },
+    "remove-pdf-metadata": {
+      label: "ลบ Metadata",
+      title: "ลบ Metadata จาก PDF ฟรี",
+      short: "ลบ title, author, subject, keywords และข้อมูลผู้สร้าง",
+      description: "สร้างสำเนา PDF ที่ลบ metadata ระบุตัวตนออกแบบ private ใน browser โดยไม่ upload เอกสาร",
+      keywords: ["ลบ metadata PDF", "ลบ author PDF", "PDF privacy"]
     }
   },
   en: {
@@ -138,6 +162,27 @@ export const toolCopy: Record<Language, Record<ToolSlug, ToolCopy>> = {
       short: "Secure a PDF with a password and document permissions.",
       description: "Password protect a PDF in your browser with AES-256 encryption and control printing, copying, editing, and form permissions.",
       keywords: ["password protect PDF", "lock PDF", "encrypt PDF AES-256"]
+    },
+    "organize-pdf": {
+      label: "Organize PDF",
+      title: "Reorder and Delete PDF Pages Free",
+      short: "Choose a new page order and leave unwanted pages out.",
+      description: "Reorder PDF pages or delete pages for free by entering the final order, such as 3, 1, 2, 5. Processing stays in your browser.",
+      keywords: ["reorder PDF pages", "delete PDF pages", "organize PDF"]
+    },
+    "add-page-numbers": {
+      label: "Add Page Numbers",
+      title: "Add Page Numbers to PDF Free",
+      short: "Number PDF pages at the top or bottom with a custom starting number.",
+      description: "Add page numbers to a PDF for free with position and starting-number controls, processed privately in your browser.",
+      keywords: ["add page numbers PDF", "number PDF pages", "PDF pagination"]
+    },
+    "remove-pdf-metadata": {
+      label: "Remove Metadata",
+      title: "Remove PDF Metadata Free",
+      short: "Clear title, author, subject, keywords, and creator information.",
+      description: "Create a privacy-safe PDF copy with identifying metadata removed locally in your browser.",
+      keywords: ["remove PDF metadata", "remove PDF author", "PDF privacy tool"]
     }
   }
 };
@@ -189,6 +234,21 @@ export const toolGuides: Record<Language, Record<ToolSlug, ToolGuide>> = {
       title: "วิธีล็อก PDF ด้วยรหัสผ่าน AES-256",
       intro: "ป้องกันเอกสารสำคัญด้วยรหัสผ่านและกำหนดสิทธิ์การพิมพ์ copy แก้ไข และกรอก form รหัสผ่านไม่ถูกส่งหรือจัดเก็บโดย DJAI",
       steps: ["เลือก PDF และตั้งรหัสผ่านที่เดายาก", "กำหนดสิทธิ์ของผู้เปิดเอกสาร", "ดาวน์โหลด PDF ที่เข้ารหัสและเก็บรหัสผ่านให้ปลอดภัย"]
+    },
+    "organize-pdf": {
+      title: "วิธีเรียงหรือลบหน้า PDF",
+      intro: "ระบุลำดับหน้าสุดท้ายที่ต้องการ หน้าใดที่ไม่ระบุจะถูกตัดออกจากไฟล์ผลลัพธ์",
+      steps: ["เลือกไฟล์ PDF", "ใส่ลำดับหน้า เช่น 3, 1-2, 5", "สร้างและดาวน์โหลด PDF ที่จัดหน้าแล้ว"]
+    },
+    "add-page-numbers": {
+      title: "วิธีเพิ่มเลขหน้าใน PDF",
+      intro: "เพิ่มเลขหน้าสำหรับรายงาน คู่มือ และเอกสารส่งงาน พร้อมเลือกตำแหน่งและเลขเริ่มต้น",
+      steps: ["เลือกไฟล์ PDF", "เลือกตำแหน่งและเลขเริ่มต้น", "สร้างและดาวน์โหลด PDF ที่มีเลขหน้า"]
+    },
+    "remove-pdf-metadata": {
+      title: "วิธีลบ Metadata จาก PDF",
+      intro: "ลบข้อมูล title, author, subject, keywords, creator และ producer ก่อนแชร์เอกสาร",
+      steps: ["เลือกไฟล์ PDF", "ตรวจคำอธิบายข้อมูลที่จะถูกลบ", "สร้างและดาวน์โหลดสำเนาที่ลบ metadata"]
     }
   },
   en: {
@@ -231,6 +291,21 @@ export const toolGuides: Record<Language, Record<ToolSlug, ToolGuide>> = {
       title: "How to password protect a PDF with AES-256",
       intro: "Secure a sensitive document with a password and control printing, copying, editing, and form filling. DJAI never receives the password.",
       steps: ["Select a PDF and create a strong password", "Choose the permissions available to readers", "Download the encrypted PDF and store the password safely"]
+    },
+    "organize-pdf": {
+      title: "How to reorder or delete PDF pages",
+      intro: "Enter the final page sequence you need. Pages left out of the sequence are removed from the result.",
+      steps: ["Select a PDF file", "Enter an order such as 3, 1-2, 5", "Create and download the organized PDF"]
+    },
+    "add-page-numbers": {
+      title: "How to add page numbers to a PDF",
+      intro: "Number reports, manuals, and submissions with a selected position and custom starting number.",
+      steps: ["Select a PDF file", "Choose the position and starting number", "Create and download the numbered PDF"]
+    },
+    "remove-pdf-metadata": {
+      title: "How to remove metadata from a PDF",
+      intro: "Clear title, author, subject, keywords, creator, and producer details before sharing a document.",
+      steps: ["Select a PDF file", "Review what information will be cleared", "Create and download the metadata-safe copy"]
     }
   }
 };

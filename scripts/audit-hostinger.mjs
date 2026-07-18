@@ -48,6 +48,8 @@ const publicRoutes = [
   "/tools/resizeimg/image-to-500kb/en/",
   "/tools/resizeimg/heic-to-jpg/",
   "/tools/resizeimg/heic-to-jpg/en/",
+  "/tools/resizeimg/remove-image-metadata/",
+  "/tools/resizeimg/remove-image-metadata/en/",
   "/tools/PDFTools/",
   "/tools/PDFTools/en/",
   "/tools/PDFTools/merge-pdf/",
@@ -70,6 +72,21 @@ const publicRoutes = [
   "/tools/PDFTools/jpg-to-pdf/en/",
   "/tools/PDFTools/pdf-to-jpg/",
   "/tools/PDFTools/pdf-to-jpg/en/",
+  "/tools/PDFTools/organize-pdf/",
+  "/tools/PDFTools/organize-pdf/en/",
+  "/tools/PDFTools/add-page-numbers/",
+  "/tools/PDFTools/add-page-numbers/en/",
+  "/tools/PDFTools/remove-pdf-metadata/",
+  "/tools/PDFTools/remove-pdf-metadata/en/",
+  ...[
+    { category: "document", tools: ["docx-to-pdf", "docx-to-html", "docx-to-markdown", "docx-to-text", "pdf-to-text", "pdf-to-word", "ocr"] },
+    { category: "ai", tools: ["token-counter", "pdf-to-ai-markdown", "context-optimizer", "rag-chunk-calculator", "prompt-packager"] },
+    { category: "spreadsheet", tools: ["csv-to-json", "json-to-csv", "csv-cleaner", "merge-csv", "split-csv", "csv-to-xlsx", "xlsx-to-csv"] }
+  ].flatMap(({ category, tools }) => [
+    `/tools/${category}/`,
+    `/tools/${category}/en/`,
+    ...tools.flatMap((tool) => [`/tools/${category}/${tool}/`, `/tools/${category}/${tool}/en/`])
+  ]),
   "/blog/",
   "/blog/en/",
   "/blog/how-to-create-free-qr-code/",
@@ -92,7 +109,13 @@ const publicRoutes = [
 const redirects = [
   ["/th/", "/"],
   ["/EN/", "/en/"],
-  ["/tools/Resizeimg/", "/tools/resizeimg/"]
+  ["/tools/Resizeimg/", "/tools/resizeimg/"],
+  ["/tools/docx-to-pdf/", "/tools/document/docx-to-pdf/"],
+  ["/tools/word-to-pdf/", "/tools/document/docx-to-pdf/"],
+  ["/tools/docx-to-pdf/en/", "/tools/document/docx-to-pdf/en/"],
+  ["/tools/word-to-pdf/en/", "/tools/document/docx-to-pdf/en/"],
+  ["/tools/document/word-to-pdf/", "/tools/document/docx-to-pdf/"],
+  ["/tools/document/word-to-pdf/en/", "/tools/document/docx-to-pdf/en/"]
 ];
 const auditPassword = "djai-local-deployment-audit";
 

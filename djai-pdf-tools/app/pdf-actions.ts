@@ -22,6 +22,9 @@ export type ProcessingOptions = {
   allowCopy: boolean;
   allowModify: boolean;
   allowForms: boolean;
+  pageOrder: string;
+  pageNumberPosition: "bottom-left" | "bottom-center" | "bottom-right" | "top-left" | "top-center" | "top-right";
+  pageNumberStart: number;
 };
 
 export type ProcessResult = {
@@ -66,6 +69,24 @@ function parsePageList(value: string, totalPages: number) {
   }
 
   return [...pages];
+}
+
+function parsePageSequence(value: string, totalPages: number) {
+  const pages: number[] = [];
+  for (const token of value.split(",").map((part) => part.trim()).filter(Boolean)) {
+    const range = token.match(/^(\d+)\s*-\s*(\d+)$/);
+    if (range) {
+      const start = Number(range[1]);
+      const end = Number(range[2]);
+      if (start < 1 || end < start || end > totalPages) throw new Error(`Invalid page range: ${token}`);
+      for (let page = start; page <= end; page += 1) pages.push(page - 1);
+      continue;
+    }
+    const page = Number(token);
+    if (!Number.isInteger(page) || page < 1 || page > totalPages) throw new Error(`Invalid page: ${token}`);
+    pages.push(page - 1);
+  }
+  return pages;
 }
 
 async function readBytes(file: File) {
@@ -392,6 +413,48 @@ async function protectPdf(file: File, options: ProcessingOptions): Promise<Proce
   return { blob: asBlob(bytes), fileName: downloadName(file, "protected"), itemCount: pdf.getPages().length, note: "AES-256" };
 }
 
+async function organizePdf(file: File, options: ProcessingOptions): Promise<ProcessResult> {
+  const { PDFDocument } = await import("pdf-lib");
+  const source = await PDFDocument.load(await readBytes(file));
+  const sequence = parsePageSequence(options.pageOrder, source.getPageCount());
+  if (!sequence.length) throw new Error("Enter at least one page in the final order.");
+  const output = await PDFDocument.create();
+  const pages = await output.copyPages(source, sequence);
+  pages.forEach((page) => output.addPage(page));
+  const bytes = await savePdf(output);
+  return { blob: asBlob(bytes), fileName: downloadName(file, "organized"), itemCount: sequence.length, note: `${source.getPageCount() - new Set(sequence).size} page(s) removed` };
+}
+
+async function addPageNumbers(file: File, options: ProcessingOptions): Promise<ProcessResult> {
+  const { PDFDocument, StandardFonts, rgb } = await import("pdf-lib");
+  const pdf = await PDFDocument.load(await readBytes(file));
+  const font = await pdf.embedFont(StandardFonts.Helvetica);
+  const size = 10;
+  pdf.getPages().forEach((page, index) => {
+    const label = String(options.pageNumberStart + index);
+    const bounds = page.getSize();
+    const width = font.widthOfTextAtSize(label, size);
+    const horizontal = options.pageNumberPosition.endsWith("left") ? 24 : options.pageNumberPosition.endsWith("right") ? bounds.width - width - 24 : (bounds.width - width) / 2;
+    const vertical = options.pageNumberPosition.startsWith("top") ? bounds.height - 25 : 18;
+    page.drawText(label, { x: horizontal, y: vertical, size, font, color: rgb(0.15, 0.2, 0.3) });
+  });
+  const bytes = await savePdf(pdf);
+  return { blob: asBlob(bytes), fileName: downloadName(file, "numbered"), itemCount: pdf.getPageCount(), note: `Starts at ${options.pageNumberStart}` };
+}
+
+async function removePdfMetadata(file: File): Promise<ProcessResult> {
+  const { PDFDocument } = await import("pdf-lib");
+  const pdf = await PDFDocument.load(await readBytes(file), { updateMetadata: false });
+  pdf.setTitle("");
+  pdf.setAuthor("");
+  pdf.setSubject("");
+  pdf.setKeywords([]);
+  pdf.setCreator("");
+  pdf.setProducer("");
+  const bytes = await pdf.save({ useObjectStreams: true, addDefaultPage: false });
+  return { blob: asBlob(bytes), fileName: downloadName(file, "metadata-removed"), itemCount: pdf.getPageCount(), note: "Document metadata cleared" };
+}
+
 export async function processFiles(tool: ToolSlug, files: File[], options: ProcessingOptions): Promise<ProcessResult> {
   if (!files.length) throw new Error("Choose at least one file.");
   if (files.some((file) => file.size > 100 * 1024 * 1024)) throw new Error("Each file must be smaller than 100 MB.");
@@ -407,5 +470,8 @@ export async function processFiles(tool: ToolSlug, files: File[], options: Proce
     case "rotate-pdf": return rotatePdf(files[0], options);
     case "watermark-pdf": return watermarkPdf(files[0], options);
     case "protect-pdf": return protectPdf(files[0], options);
+    case "organize-pdf": return organizePdf(files[0], options);
+    case "add-page-numbers": return addPageNumbers(files[0], options);
+    case "remove-pdf-metadata": return removePdfMetadata(files[0]);
   }
 }

@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Free DJAI Tools | PDF Tools, QR Generator and Image Converter",
+  title: "Free DJAI Tools | PDF, DOCX, AI, CSV, QR and Image Tools",
   description:
-    "Use free DJAI tools to merge, split, compress, and convert PDFs, create QR codes, and resize images. Private browser processing with no account.",
+    "Use free DJAI tools for PDF, DOCX, OCR, AI context, CSV, QR codes, and images. Private browser processing with no account.",
   alternates: {
     canonical: "/tools/en/",
     languages: {
@@ -41,6 +41,27 @@ const tools = [
     text: "Merge, split, compress, convert, rotate, watermark, and password protect PDFs for free. Files stay on your device.",
     href: "https://www.djai.academy/tools/PDFTools/en/",
     tags: ["PDF", "AES-256", "Private"]
+  },
+  {
+    label: "Document Tools",
+    title: "DJAI Document Converter",
+    text: "Convert DOCX to PDF, HTML, Markdown, and text, extract PDF text, or run Thai and English OCR in your browser.",
+    href: "https://www.djai.academy/tools/document/en/",
+    tags: ["DOCX", "OCR", "Private"]
+  },
+  {
+    label: "AI Tools",
+    title: "AI Context and Token Tools",
+    text: "Count tokens, clean context, preview RAG chunks, and package multiple files for AI without uploading content.",
+    href: "https://www.djai.academy/tools/ai/en/",
+    tags: ["Tokens", "RAG", "Context"]
+  },
+  {
+    label: "Spreadsheet Tools",
+    title: "CSV, JSON and Excel Tools",
+    text: "Convert, clean, merge, and split CSV, JSON, and XLSX files privately for data workflows and automation.",
+    href: "https://www.djai.academy/tools/spreadsheet/en/",
+    tags: ["CSV", "JSON", "XLSX"]
   }
 ];
 
@@ -48,7 +69,7 @@ const comingSoon = [
   "Background remover",
   "Favicon generator",
   "AVIF tools",
-  "OCR tools"
+  "High-fidelity Office conversion"
 ];
 
 const popularWorkflows = [
@@ -57,7 +78,10 @@ const popularWorkflows = [
   ["Image to 100 KB", "Prepare an image for upload forms", "https://www.djai.academy/tools/resizeimg/image-to-100kb/en/"],
   ["JPG to PDF", "Combine multiple images into a PDF", "https://www.djai.academy/tools/PDFTools/jpg-to-pdf/en/"],
   ["PDF to JPG", "Export every page as an image or ZIP", "https://www.djai.academy/tools/PDFTools/pdf-to-jpg/en/"],
-  ["Create a QR code", "Download a PNG or SVG", "https://www.djai.academy/tools/qrgen/en/"]
+  ["DOCX to PDF", "Convert Word privately in your browser", "https://www.djai.academy/tools/document/docx-to-pdf/en/"],
+  ["PDF to Text", "Extract text from selected pages", "https://www.djai.academy/tools/document/pdf-to-text/en/"],
+  ["Document Token Counter", "Check context use before AI", "https://www.djai.academy/tools/ai/token-counter/en/"],
+  ["CSV to JSON", "Prepare data for APIs", "https://www.djai.academy/tools/spreadsheet/csv-to-json/en/"]
 ];
 
 const ecosystem = [
@@ -94,7 +118,7 @@ const structuredData = {
   name: "Free DJAI Tools",
   url: "https://www.djai.academy/tools/en/",
   description:
-    "A collection of free browser-based tools from DJAI Academy, including PDF, QR code, and image conversion utilities.",
+    "A collection of free browser tools from DJAI Academy for PDFs, documents, AI context, spreadsheets, QR codes, and images.",
   publisher: {
     "@type": "Organization",
     name: "DJAI Academy",
