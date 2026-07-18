@@ -91,6 +91,11 @@ const ecosystem = [
     href: "https://www.djai.academy/service/en/"
   },
   {
+    title: "DJAI × Siamese Cat",
+    text: "The technology, product, and business-growth partnership across the Siamese Cat ecosystem.",
+    href: "https://www.djai.academy/siamese_cat/en/"
+  },
+  {
     title: "Siamese Cat Dev",
     text: "Software development, product design, and technical implementation partner.",
     href: "https://www.djai.academy/siamese_cat/dev/en/"

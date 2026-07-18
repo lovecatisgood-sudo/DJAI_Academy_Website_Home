@@ -6,7 +6,8 @@ const legacyUppercaseRules = [
   [/^\/development\/EN(?=\/|$)/, "/development/en"],
   [/^\/service\/EN(?=\/|$)/, "/service/en"],
   [/^\/tools\/EN(?=\/|$)/, "/tools/en"],
-  [/^\/blog\/EN(?=\/|$)/, "/blog/en"]
+  [/^\/blog\/EN(?=\/|$)/, "/blog/en"],
+  [/^\/siamese_cat\/EN(?=\/|$)/, "/siamese_cat/en"]
 ];
 
 export function middleware(request) {
@@ -21,7 +22,7 @@ export function middleware(request) {
   }
 
   const requestHeaders = new Headers(request.headers);
-  const isEnglishPage = /^\/(?:en(?:\/|$)|(?:portfolio|development|service|tools|blog)\/en(?:\/|$))/.test(
+  const isEnglishPage = /^\/(?:en(?:\/|$)|(?:portfolio|development|service|tools|blog|siamese_cat)\/en(?:\/|$))/.test(
     pathname
   );
   requestHeaders.set("x-djai-language", isEnglishPage ? "en" : "th");

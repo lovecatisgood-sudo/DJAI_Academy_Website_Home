@@ -99,6 +99,8 @@ const publicRoutes = [
   "/course/en/",
   "/course/detail/",
   "/course/detail/en/",
+  "/siamese_cat/",
+  "/siamese_cat/en/",
   "/siamese_cat/dev/",
   "/siamese_cat/dev/en/",
   "/admin/blog/",
@@ -242,6 +244,35 @@ async function verify() {
     if (staticResponse.headers.get("content-encoding") !== "gzip") {
       failures.push(`${staticScript}: expected gzip transfer encoding`);
     }
+  }
+
+  const partnershipChecks = [
+    ["/siamese_cat/", "/siamese_cat/dev/"],
+    ["/siamese_cat/en/", "/siamese_cat/dev/en/"]
+  ];
+  for (const [route, developerPath] of partnershipChecks) {
+    const html = await fetch(`${origin}${route}`).then((response) => response.text());
+    for (const expected of [developerPath, "https://siamesecat.cafe/", "https://hotel.siamesecat.cafe/", "https://creative.siamesecat.cafe/"]) {
+      if (!html.includes(`href="${expected}"`)) failures.push(`${route}: missing partnership link ${expected}`);
+    }
+    const expectedLanguage = route.includes("/en/") ? "en" : "th";
+    if (!html.includes(`<html lang="${expectedLanguage}"`)) failures.push(`${route}: expected html lang=${expectedLanguage}`);
+  }
+
+  const developerCreditChecks = [
+    ["/tools/qrgen/", "/siamese_cat/dev/"],
+    ["/tools/qrgen/en/", "/siamese_cat/dev/en/"],
+    ["/tools/resizeimg/", "/siamese_cat/dev/"],
+    ["/tools/resizeimg/jpg-to-png/en/", "/siamese_cat/dev/en/"],
+    ["/tools/PDFTools/", "/siamese_cat/dev/"],
+    ["/tools/PDFTools/merge-pdf/en/", "/siamese_cat/dev/en/"],
+    ["/tools/document/", "/siamese_cat/dev/"],
+    ["/tools/ai/token-counter/en/", "/siamese_cat/dev/en/"],
+    ["/tools/spreadsheet/", "/siamese_cat/dev/"]
+  ];
+  for (const [route, expectedPath] of developerCreditChecks) {
+    const html = await fetch(`${origin}${route}`).then((response) => response.text());
+    if (!html.includes(expectedPath)) failures.push(`${route}: missing linked Siamese Cat Dev credit ${expectedPath}`);
   }
 
   const discoveredRoutes = new Set();

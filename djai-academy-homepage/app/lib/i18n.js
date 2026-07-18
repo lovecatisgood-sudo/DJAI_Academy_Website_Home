@@ -40,6 +40,10 @@ const paths = {
   siameseCatDev: {
     en: "/siamese_cat/dev/en/",
     th: "/siamese_cat/dev/"
+  },
+  siameseCat: {
+    en: "/siamese_cat/en/",
+    th: "/siamese_cat/"
   }
 };
 

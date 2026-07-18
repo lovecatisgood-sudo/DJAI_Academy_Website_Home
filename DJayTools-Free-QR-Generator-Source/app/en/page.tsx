@@ -130,7 +130,7 @@ export default function Home() {
         <div className="eyebrow"><span>100% free</span> · No sign-up required</div>
         <h1>Turn any link into a<br /><em>beautiful QR code.</em></h1>
         <p>Create, customize, and download a high-quality QR code in seconds. Private, unlimited, and completely free.</p>
-        <a className="developer-credit" href="https://www.djai.academy/siamese_cat/dev" target="_blank" rel="noopener noreferrer" aria-label="Learn more about Siamese Cat Dev">
+        <a className="developer-credit" href="https://www.djai.academy/siamese_cat/dev/en/" target="_blank" rel="noopener noreferrer" aria-label="Learn more about Siamese Cat Dev">
           <img src={assetPath("siamese-cat-dev-logo.webp")} alt="Siamese Cat Dev" width="900" height="900" loading="lazy" decoding="async" />
           <span><small>APP DEVELOPED BY</small><strong>Siamese Cat Dev</strong></span>
         </a>
@@ -255,14 +255,14 @@ export default function Home() {
 
       <section className="developer-profile" id="profile">
         <div className="developer-logo-stage">
-          <a href="https://www.djai.academy/siamese_cat/dev" target="_blank" rel="noopener noreferrer" aria-label="Visit the Siamese Cat Dev profile">
+          <a href="https://www.djai.academy/siamese_cat/dev/en/" target="_blank" rel="noopener noreferrer" aria-label="Visit the Siamese Cat Dev profile">
             <img src={assetPath("siamese-cat-dev-logo.webp")} alt="Siamese Cat Dev logo" width="900" height="900" loading="lazy" decoding="async" />
           </a>
         </div>
         <div className="developer-profile-copy">
           <span className="step-tag">MEET THE DEVELOPER</span>
-          <h2>Built with care by<br /><em><a href="https://www.djai.academy/siamese_cat/dev" target="_blank" rel="noopener noreferrer">Siamese Cat Dev.</a></em></h2>
-          <p><a className="inline-profile-link" href="https://www.djai.academy/siamese_cat/dev" target="_blank" rel="noopener noreferrer">Siamese Cat Dev</a> is a product designer, project manager, and software development partner with close to 10 years of experience building digital products. He has spent the past decade leading his own development team and working closely with businesses to design, build, and launch practical software solutions.</p>
+          <h2>Built with care by<br /><em><a href="https://www.djai.academy/siamese_cat/dev/en/" target="_blank" rel="noopener noreferrer">Siamese Cat Dev.</a></em></h2>
+          <p><a className="inline-profile-link" href="https://www.djai.academy/siamese_cat/dev/en/" target="_blank" rel="noopener noreferrer">Siamese Cat Dev</a> is a product designer, project manager, and software development partner with close to 10 years of experience building digital products. He has spent the past decade leading his own development team and working closely with businesses to design, build, and launch practical software solutions.</p>
           <p>He is also a student of DJAI Academy and now serves as a development and training partner, helping turn ideas into useful, real-world products.</p>
           <div className="developer-tags"><span>Product Design</span><span>Project Management</span><span>Software Development</span><span>Training</span></div>
         </div>
@@ -282,7 +282,7 @@ export default function Home() {
           </div>
           <div>
             <strong>Builder Partners</strong>
-            <a href="https://www.djai.academy/siamese_cat/dev" target="_blank" rel="noopener noreferrer">Siamese Cat Dev</a>
+            <a href="https://www.djai.academy/siamese_cat/dev/en/" target="_blank" rel="noopener noreferrer">Siamese Cat Dev</a>
             <a href="https://creative.siamesecat.cafe" target="_blank" rel="noopener noreferrer">Siamese Cat Creative Club</a>
           </div>
           <div>

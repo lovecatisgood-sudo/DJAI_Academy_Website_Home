@@ -25,6 +25,7 @@ const footerCopy = {
         links: [
           ["Join Online Community", "community"],
           ["Tools", "tools"],
+          ["Siamese Cat ecosystem", "siameseCat"],
           ["Open-source Projects", null]
         ]
       }
@@ -57,6 +58,7 @@ const footerCopy = {
         links: [
           ["เข้าร่วมชุมชนออนไลน์", "community"],
           ["เครื่องมือฟรี", "tools"],
+          ["เครือข่าย Siamese Cat", "siameseCat"],
           ["โปรเจกต์โอเพนซอร์ส", null]
         ]
       }

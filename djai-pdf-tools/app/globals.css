@@ -224,6 +224,7 @@ input[type="checkbox"] { width: 1px; min-height: 1px; opacity: 0; position: abso
 .builder-section h2 { margin-bottom: 24px; }
 .builder-section p:not(.eyebrow) { font-size: 1.02rem; }
 .text-link { display: inline-flex; align-items: center; gap: 9px; margin-top: 14px; color: var(--blue); font-weight: 900; }
+.siamese-dev-link { color: inherit; text-decoration: underline; text-decoration-color: var(--cyan); text-decoration-thickness: 2px; text-underline-offset: 3px; }
 
 .seo-section { display: grid; grid-template-columns: .9fr 1.1fr; gap: 80px; padding: 100px 0 120px; border-top: 1px solid var(--line); }
 .seo-section > div:first-child { position: sticky; top: 110px; align-self: start; }

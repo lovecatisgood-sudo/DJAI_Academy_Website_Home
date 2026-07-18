@@ -32,7 +32,7 @@ import {
 } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import type { ProcessingOptions, ProcessResult } from "./pdf-actions";
 import { BASE_PATH, SITE_URL, homeHref, toolCopy, toolGuides, toolHref, toolSlugs, type Language, type ToolSlug } from "./tool-data";
 
@@ -49,6 +49,15 @@ const icons: Record<ToolSlug, LucideIcon> = {
   "add-page-numbers": Hash,
   "remove-pdf-metadata": Tags
 };
+
+function linkedBuilderName(text: string, href: string) {
+  return text.split("Siamese Cat Dev").map((part, index) => (
+    <Fragment key={`${index}-${part.slice(0, 12)}`}>
+      {index > 0 && <a className="siamese-dev-link" href={href}>Siamese Cat Dev</a>}
+      {part}
+    </Fragment>
+  ));
+}
 
 const defaultOptions: ProcessingOptions = {
   splitMode: "extract",
@@ -327,6 +336,7 @@ export type PdfSeoPage = {
 export default function PdfToolsApp({ language, initialTool, seoPage }: { language: Language; initialTool?: ToolSlug; seoPage?: PdfSeoPage }) {
   const copy = ui[language];
   const en = language === "en";
+  const devHref = en ? "https://www.djai.academy/siamese_cat/dev/en/" : "https://www.djai.academy/siamese_cat/dev/";
   const activeTool = initialTool || "merge-pdf";
   const activeCopy = seoPage || toolCopy[language][activeTool];
   const activeGuide = seoPage?.guide || toolGuides[language][activeTool];
@@ -534,13 +544,13 @@ export default function PdfToolsApp({ language, initialTool, seoPage }: { langua
 
       {initialTool && <section className="tool-guide"><div><p className="eyebrow">HOW TO</p><h2>{activeGuide.title}</h2><p>{activeGuide.intro}</p></div><ol>{activeGuide.steps.map((step, index) => <li key={step}><span>{String(index + 1).padStart(2, "0")}</span><p>{step}</p></li>)}</ol></section>}
 
-      <section className="privacy-band"><ShieldCheck /><div><h2>{copy.privacyTitle}</h2><p>{copy.privacyText}</p></div></section>
+      <section className="privacy-band"><ShieldCheck /><div><h2>{copy.privacyTitle}</h2><p>{linkedBuilderName(copy.privacyText, devHref)}</p></div></section>
 
-      <section className="conversion-band development-band"><div><p className="eyebrow">{copy.devEyebrow}</p><h2>{copy.devTitle}</h2><p>{copy.devText}</p><div className="button-row"><a className="primary-button" href={en ? "https://www.djai.academy/development/en/" : "https://www.djai.academy/development/"}>{copy.devButton}<ArrowRight /></a><a className="secondary-button" href={en ? "https://www.djai.academy/portfolio/en/" : "https://www.djai.academy/portfolio/"}>{copy.portfolioButton}</a></div></div><div className="system-visual"><span><Files /></span><ArrowRight /><span><WandSparkles /></span><ArrowRight /><span><ShieldCheck /></span></div></section>
+      <section className="conversion-band development-band"><div><p className="eyebrow">{copy.devEyebrow}</p><h2>{copy.devTitle}</h2><p>{linkedBuilderName(copy.devText, devHref)}</p><div className="button-row"><a className="primary-button" href={en ? "https://www.djai.academy/development/en/" : "https://www.djai.academy/development/"}>{copy.devButton}<ArrowRight /></a><a className="secondary-button" href={en ? "https://www.djai.academy/portfolio/en/" : "https://www.djai.academy/portfolio/"}>{copy.portfolioButton}</a></div></div><div className="system-visual"><span><Files /></span><ArrowRight /><span><WandSparkles /></span><ArrowRight /><span><ShieldCheck /></span></div></section>
 
       <section className="conversion-band course-band"><div className="course-symbol"><GraduationCap /></div><div><p className="eyebrow">{copy.courseEyebrow}</p><h2>{copy.courseTitle}</h2><p>{copy.courseText}</p><a className="secondary-button" href={en ? "https://www.djai.academy/course/detail/en/" : "https://www.djai.academy/course/detail/"}>{copy.courseButton}<BookOpen /></a></div></section>
 
-      <section className="builder-section" id="builder"><a className="builder-logo" href={en ? "https://www.djai.academy/siamese_cat/dev/en/" : "https://www.djai.academy/siamese_cat/dev/"}><Image src={`${BASE_PATH}/siamese-cat-dev-logo.webp`} alt="Siamese Cat Dev logo" width={640} height={540} loading="lazy" unoptimized /></a><div><p className="eyebrow">{copy.builderEyebrow}</p><h2>{copy.builderTitle}</h2><p>{copy.builderText}</p><a className="text-link" href={en ? "https://www.djai.academy/siamese_cat/dev/en/" : "https://www.djai.academy/siamese_cat/dev/"}>{copy.builderLink}<ArrowRight /></a></div></section>
+      <section className="builder-section" id="builder"><a className="builder-logo" href={devHref}><Image src={`${BASE_PATH}/siamese-cat-dev-logo.webp`} alt="Siamese Cat Dev logo" width={640} height={540} loading="lazy" unoptimized /></a><div><p className="eyebrow">{copy.builderEyebrow}</p><h2>{linkedBuilderName(copy.builderTitle, devHref)}</h2><p>{linkedBuilderName(copy.builderText, devHref)}</p><a className="text-link" href={devHref}>{copy.builderLink}<ArrowRight /></a></div></section>
 
       <section className="seo-section"><div><p className="eyebrow">FREE PDF TOOLS</p><h2>{copy.seoTitle}</h2><p>{copy.seoText}</p></div><div className="faq-list"><h2>{copy.faqTitle}</h2>{copy.faq.map(([question, answer]) => <details key={question}><summary>{question}<span>+</span></summary><p>{answer}</p></details>)}</div></section>
 
