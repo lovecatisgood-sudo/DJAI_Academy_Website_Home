@@ -6,8 +6,21 @@ import { categoryHref, toolHref, toolsFor, type Language, type ToolDefinition } 
 export default function ToolPage({ tool, language }: { tool: ToolDefinition; language: Language }) {
   const en = language === "en";
   const canonical = `https://www.djai.academy${toolHref(tool, language)}`;
-  const steps = en ? ["Choose a supported file or paste text", "Review the relevant settings", "Process locally and download or copy the result"] : ["เลือกไฟล์ที่รองรับหรือวางข้อความ", "ตรวจตัวเลือกที่เกี่ยวข้อง", "ประมวลผลในเครื่องแล้วดาวน์โหลดหรือคัดลอกผลลัพธ์"];
-  const faq = en ? [
+  const tokenCounter = tool.slug === "token-counter";
+  const steps = tokenCounter
+    ? (en ? ["Paste text or import a supported document", "Choose a tokenizer encoding and context size", "Review live tokens, words, characters, context use, and cost"] : ["วางข้อความหรือนำเข้าเอกสารที่รองรับ", "เลือก tokenizer encoding และขนาด context", "ดู token คำ ตัวอักษร context และค่าใช้จ่ายแบบ live"])
+    : (en ? ["Choose a supported file or paste text", "Review the relevant settings", "Process locally and download or copy the result"] : ["เลือกไฟล์ที่รองรับหรือวางข้อความ", "ตรวจตัวเลือกที่เกี่ยวข้อง", "ประมวลผลในเครื่องแล้วดาวน์โหลดหรือคัดลอกผลลัพธ์"]);
+  const faq = tokenCounter ? (en ? [
+    ["Does the token counter upload my text?", "No. Text and imported documents are read and counted locally in your browser."],
+    ["Why is a token count different from a word count?", "AI tokenizers split text into model-readable units. One word can use one or several tokens, and the ratio varies by language and content."],
+    ["Can it count Thai, Chinese, Japanese, and English words?", "Yes. Word and character statistics use browser language segmentation for multilingual text, while AI tokens use the selected tokenizer encoding."],
+    ["Which tokenizer should I choose?", "Use o200k_base for a modern OpenAI-compatible estimate, cl100k_base for earlier GPT-era workflows, or p50k_base for legacy content. Always confirm the tokenizer used by your target model or API."]
+  ] : [
+    ["เครื่องมือนี้ upload ข้อความหรือไม่?", "ไม่ ข้อความและเอกสารที่นำเข้าจะถูกอ่านและนับใน browser ของคุณ"],
+    ["ทำไมจำนวน token ไม่เท่ากับจำนวนคำ?", "AI tokenizer แบ่งข้อความเป็นหน่วยที่ model อ่านได้ หนึ่งคำอาจใช้หนึ่งหรือหลาย token และสัดส่วนจะแตกต่างตามภาษาและเนื้อหา"],
+    ["นับคำภาษาไทย จีน ญี่ปุ่น และอังกฤษได้หรือไม่?", "ได้ สถิติคำและตัวอักษรใช้ระบบแบ่งภาษาของ browser ส่วน AI token ใช้ tokenizer encoding ที่คุณเลือก"],
+    ["ควรเลือก tokenizer ใด?", "ใช้ o200k_base สำหรับค่าประมาณแบบ OpenAI รุ่นใหม่ cl100k_base สำหรับ workflow รุ่นก่อน หรือ p50k_base สำหรับระบบเก่า และควรตรวจ tokenizer ของ model หรือ API ที่ใช้งานจริงเสมอ"]
+  ]) : (en ? [
     ["Are my files uploaded?", "No. This tool processes files in browser memory on your device."],
     ["Is the tool free?", "Yes. Core processing is free, requires no account, and adds no watermark."],
     ["Why can formatting change?", "Document formats store layout differently. Browser conversion prioritizes privacy and practical output over exact reconstruction."]
@@ -15,7 +28,7 @@ export default function ToolPage({ tool, language }: { tool: ToolDefinition; lan
     ["ไฟล์ถูก upload หรือไม่?", "ไม่ เครื่องมือนี้ประมวลผลไฟล์ใน memory ของ browser บนอุปกรณ์ของคุณ"],
     ["ใช้งานฟรีหรือไม่?", "ใช้งานฟรี ไม่ต้องสมัคร และไม่มี watermark"],
     ["ทำไม formatting อาจเปลี่ยน?", "แต่ละ format เก็บ layout ต่างกัน การแปลงใน browser เน้น privacy และผลลัพธ์ที่ใช้งานได้มากกว่าการจำลองต้นฉบับแบบสมบูรณ์"]
-  ];
+  ]);
   const related = toolsFor(tool.category).filter((candidate) => candidate.slug !== tool.slug).slice(0, 4);
   const structuredData = [
     { "@context": "https://schema.org", "@type": "SoftwareApplication", name: tool.title[language], description: tool.description[language], url: canonical, applicationCategory: "UtilitiesApplication", operatingSystem: "Web browser", isAccessibleForFree: true, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, publisher: { "@type": "Organization", name: "DJAI Academy", url: "https://www.djai.academy/" } },

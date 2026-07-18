@@ -156,6 +156,19 @@ async function readTextFile(file: File, options: ToolOptions) {
   return file.text();
 }
 
+export async function extractTextForAnalysis(files: File[]) {
+  assertFiles(files);
+  const supported = new Set(["docx", "pdf", "txt", "md", "csv", "json", "js", "ts", "tsx", "jsx", "py", "html", "css", "xml", "yaml", "yml"]);
+  const options: ToolOptions = { paperSize: "a4", margin: 42, pageNumbers: false, pageRange: "", preserveBreaks: true, ocrLanguage: "eng", chunkSize: 700, chunkOverlap: 100, boundary: "markdown", splitRows: 1000, worksheet: 0 };
+  return Promise.all(files.map(async (file) => {
+    const extension = file.name.split(".").pop()?.toLowerCase() || "";
+    if (!supported.has(extension) && !file.type.startsWith("text/")) throw new Error(`${file.name} is not a supported text document.`);
+    const text = await readTextFile(file, options);
+    if (extension === "pdf" && text.replace(/\s/g, "").length < 20) throw new Error(`${file.name} has no selectable text. Try Document OCR.`);
+    return { name: file.name, text };
+  }));
+}
+
 function textBlob(text: string, type = "text/plain;charset=utf-8") {
   return new Blob([text], { type });
 }
@@ -355,7 +368,7 @@ export async function processTool(tool: ToolDefinition, files: File[], input: st
     const text = [input, ...(await Promise.all(files.map((item) => readTextFile(item, options))))].filter(Boolean).join("\n\n");
     if (!text.trim()) throw new Error("Paste text or choose a supported document.");
     const stats = await tokenStats(text);
-    return { text, note: "CL100K-compatible token estimate", stats: [["Tokens", formatNumber(stats.tokens)], ["Words", formatNumber(stats.words)], ["Characters", formatNumber(stats.characters)], ["128K context", `${Math.min(100, stats.tokens / 1280).toFixed(1)}%`]] };
+    return { text, note: "o200k_base-compatible token estimate", stats: [["Tokens", formatNumber(stats.tokens)], ["Words", formatNumber(stats.words)], ["Characters", formatNumber(stats.characters)], ["128K context", `${Math.min(100, stats.tokens / 1280).toFixed(1)}%`]] };
   }
   if (tool.slug === "context-optimizer") {
     const source = [input, ...(await Promise.all(files.map((item) => readTextFile(item, options))))].filter(Boolean).join("\n\n");
@@ -367,7 +380,7 @@ export async function processTool(tool: ToolDefinition, files: File[], input: st
     if (!input.trim()) throw new Error("Paste the document text to split.");
     const result = await makeChunks(input, options.chunkSize, Math.min(options.chunkOverlap, options.chunkSize - 1));
     const jsonl = result.chunks.map((chunk) => JSON.stringify(chunk)).join("\n");
-    return { text: result.chunks.map((chunk) => `### ${chunk.id} · ${chunk.tokenCount} tokens\n${chunk.text}`).join("\n\n"), blob: textBlob(jsonl, "application/x-ndjson;charset=utf-8"), fileName: "DJTools-rag-chunks.jsonl", note: "CL100K-compatible chunks", stats: [["Total tokens", formatNumber(result.total)], ["Chunks", formatNumber(result.chunks.length)], ["Overlap", `${options.chunkOverlap} tokens`]] };
+    return { text: result.chunks.map((chunk) => `### ${chunk.id} · ${chunk.tokenCount} tokens\n${chunk.text}`).join("\n\n"), blob: textBlob(jsonl, "application/x-ndjson;charset=utf-8"), fileName: "DJTools-rag-chunks.jsonl", note: "o200k_base-compatible chunks", stats: [["Total tokens", formatNumber(result.total)], ["Chunks", formatNumber(result.chunks.length)], ["Overlap", `${options.chunkOverlap} tokens`]] };
   }
   if (tool.slug === "prompt-packager") {
     const contents = await Promise.all(files.map(async (item) => ({ name: item.name, text: await readTextFile(item, options) })));

@@ -1,9 +1,15 @@
 "use client";
 
 import { ArrowRight, Check, Clipboard, Download, FileArchive, FileText, LoaderCircle, LockKeyhole, RotateCcw, ShieldCheck, Upload, X } from "lucide-react";
+import dynamic from "next/dynamic";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { ToolOptions, ToolResult } from "./processors";
 import type { Language, ToolDefinition } from "./tool-data";
+
+const TokenCounterWorkspace = dynamic(() => import("./TokenCounterWorkspace"), {
+  ssr: false,
+  loading: () => <section className="workspace token-loading" aria-busy="true"><LoaderCircle className="spin" /><span>Loading private counter...</span></section>
+});
 
 const defaults: ToolOptions = {
   paperSize: "a4", margin: 42, pageNumbers: false, pageRange: "", preserveBreaks: true,
@@ -31,6 +37,11 @@ function formatBytes(value: number) {
 }
 
 export default function ToolWorkspace({ tool, language }: { tool: ToolDefinition; language: Language }) {
+  if (tool.slug === "token-counter") return <TokenCounterWorkspace tool={tool} language={language} />;
+  return <GenericToolWorkspace tool={tool} language={language} />;
+}
+
+function GenericToolWorkspace({ tool, language }: { tool: ToolDefinition; language: Language }) {
   const en = language === "en";
   const [files, setFiles] = useState<File[]>([]);
   const [input, setInput] = useState("");
@@ -41,8 +52,8 @@ export default function ToolWorkspace({ tool, language }: { tool: ToolDefinition
   const [dragging, setDragging] = useState(false);
   const [copied, setCopied] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
-  const textMode = ["token-counter", "context-optimizer", "rag-chunk-calculator", "prompt-packager"].includes(tool.slug);
-  const needsFile = !["token-counter", "context-optimizer", "rag-chunk-calculator", "prompt-packager"].includes(tool.slug);
+  const textMode = ["context-optimizer", "rag-chunk-calculator", "prompt-packager"].includes(tool.slug);
+  const needsFile = !["context-optimizer", "rag-chunk-calculator", "prompt-packager"].includes(tool.slug);
   const allowsMultiple = Boolean(tool.multiple);
   const outputText = result?.text || "";
 

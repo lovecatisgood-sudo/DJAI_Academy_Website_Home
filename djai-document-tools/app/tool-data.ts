@@ -103,11 +103,11 @@ export const tools: ToolDefinition[] = [
   },
   {
     slug: "token-counter", category: "ai", input: "document",
-    label: { th: "Token Counter", en: "Token Counter" },
-    title: { th: "นับ Token เอกสารสำหรับ AI ฟรี", en: "Free AI Document Token Counter" },
-    description: { th: "วางข้อความหรือเลือก DOCX, PDF, TXT, Markdown และไฟล์ code เพื่อนับ token, คำ และ context usage", en: "Paste text or select DOCX, PDF, TXT, Markdown, and code files to count tokens, words, and context usage." },
-    intent: { th: "ตรวจว่าเอกสารพอดีกับ context window ก่อนใช้กับ AI", en: "Check whether content fits an AI context window before using it." },
-    keywords: { th: ["นับ token", "document token counter", "context window"], en: ["token counter", "document token counter", "AI context calculator"] }
+    label: { th: "Token Counter สำหรับ Vibe Coding", en: "Token Counter for Vibe Coders" },
+    title: { th: "เครื่องมือนับ Token ฟรีสำหรับ Vibe Coding", en: "Free Token Counter for Vibe Coders" },
+    description: { th: "นับ AI token, คำภาษาไทยและหลายภาษา, ตัวอักษร, UTF-8 byte และ context usage จากข้อความ DOCX PDF Markdown หรือ code แบบ private ใน browser", en: "Count AI tokens, multilingual words, characters, UTF-8 bytes, and context usage from text, DOCX, PDF, Markdown, or code privately in your browser." },
+    intent: { th: "ตรวจ prompt, code และเอกสารก่อนใช้กับ AI เพื่อวางแผน context window และต้นทุน token", en: "Check prompts, code, and documents before using AI to plan context windows and token costs." },
+    keywords: { th: ["นับ token ฟรี", "นับคำภาษาไทย", "vibe coding token counter", "คำนวณ context window"], en: ["free token counter", "token counter for vibe coding", "AI prompt token counter", "multilingual word counter", "context window calculator"] }
   },
   {
     slug: "pdf-to-ai-markdown", category: "ai", input: "pdf",

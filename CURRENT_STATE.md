@@ -1,6 +1,19 @@
 # Current State — DJAI Multi-Page Deployment
 
-Saved: 2026-07-17, Asia/Ho_Chi_Minh
+Saved: 2026-07-18, Asia/Ho_Chi_Minh
+
+## Latest verified release
+
+- Canonical Vibe Coding token counter:
+  - Thai default: `https://djai.academy/tools/ai/token-counter/`
+  - English: `https://djai.academy/tools/ai/token-counter/en/`
+- The standalone `djai-token-counter` prototype was not deployed; its useful ideas were consolidated into the existing DJTools AI category to avoid duplicate SEO pages.
+- Live private-browser analysis now includes `o200k_base`, `cl100k_base`, and `p50k_base` token estimates; multilingual word segmentation; grapheme-aware character counts; characters without spaces; sentences; paragraphs; lines; UTF-8 bytes; reading time; context use; context remaining; and optional input-cost estimation.
+- Local import supports DOCX, selectable-text PDF, TXT, Markdown, CSV, JSON, and common source-code files. Scanned PDFs are directed to Document OCR.
+- The page has tailored Thai/English titles, descriptions, keywords, HowTo content, FAQs, canonicals, hreflang, related AI tools, course and development CTAs, and linked Siamese Cat Dev credit.
+- Tokenizer tables and the analyzer workspace are dynamically loaded only for token-counter visitors.
+- Validation passed: project lint, seven automated tests, production static export, complete Hostinger build, zero dependency vulnerabilities, Hostinger route audit (`130` pages, `9` redirects, `246` internal links/assets), desktop/mobile browser interaction QA, local document import, and zero browser console errors.
+- No temporary DJAI web server or QA browser remains running.
 
 Workspace sandbox:
 
