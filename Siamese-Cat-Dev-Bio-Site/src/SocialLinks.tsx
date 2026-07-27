@@ -27,6 +27,28 @@ type SocialLinksProps = {
   language: 'th' | 'en';
 };
 
+export function HeaderSocialLinks({ language }: SocialLinksProps) {
+  const thai = language === 'th';
+
+  return (
+    <nav className="header-social-links" aria-label={thai ? 'Social Media ของ Siamese Cat Dev' : 'Siamese Cat Dev social media'}>
+      {socialLinks.map((social) => (
+        <a
+          className="header-social-link"
+          href={social.href}
+          key={social.name}
+          target="_blank"
+          rel="noreferrer"
+          title={`${social.name}: ${social.handle}`}
+          aria-label={thai ? `ติดตาม ${social.handle} บน ${social.name}` : `Follow ${social.handle} on ${social.name}`}
+        >
+          <img src={assetPath(social.image)} alt="" width="20" height="20" decoding="async" />
+        </a>
+      ))}
+    </nav>
+  );
+}
+
 export default function SocialLinks({ language }: SocialLinksProps) {
   const thai = language === 'th';
 

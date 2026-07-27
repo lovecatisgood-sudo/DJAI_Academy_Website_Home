@@ -31,7 +31,7 @@ import {
 } from 'lucide-react';
 import { ReactNode, useEffect, useRef, useState } from 'react';
 import EnglishApp from './EnglishApp';
-import SocialLinks from './SocialLinks';
+import SocialLinks, { HeaderSocialLinks } from './SocialLinks';
 
 const ease = [0.25, 0.1, 0.25, 1] as const;
 const assetPath = (path: string) => `${import.meta.env.BASE_URL}${path}`;
@@ -100,15 +100,18 @@ function Header() {
           </a>
         ))}
       </nav>
-      <button
-        className="menu-button"
-        type="button"
-        aria-label={open ? 'ปิดเมนู' : 'เปิดเมนู'}
-        aria-expanded={open}
-        onClick={() => setOpen((value) => !value)}
-      >
-        {open ? <X /> : <Menu />}
-      </button>
+      <div className="header-actions">
+        <HeaderSocialLinks language="th" />
+        <button
+          className="menu-button"
+          type="button"
+          aria-label={open ? 'ปิดเมนู' : 'เปิดเมนู'}
+          aria-expanded={open}
+          onClick={() => setOpen((value) => !value)}
+        >
+          {open ? <X /> : <Menu />}
+        </button>
+      </div>
       <AnimatePresence>
         {open && (
           <motion.nav
