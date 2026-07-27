@@ -11,7 +11,9 @@ const packageMetadata = require(path.join(rootDir, "package.json"));
 
 const port = Number(process.env.PORT || 3000);
 const hostname = process.env.HOST || "0.0.0.0";
-const dev = process.env.NODE_ENV !== "production" && process.env.NODE_ENV !== "prod";
+// Hosting providers do not always set NODE_ENV. Default to the production
+// server and opt into development mode only when it is requested explicitly.
+const dev = process.env.NODE_ENV === "development";
 
 const app = next({ dev, dir: homepageDir, hostname, port });
 const handle = app.getRequestHandler();
