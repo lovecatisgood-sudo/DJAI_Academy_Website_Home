@@ -30,6 +30,7 @@ import {
   X,
 } from 'lucide-react';
 import { ReactNode, useEffect, useRef, useState } from 'react';
+import SocialLinks from './SocialLinks';
 
 const ease = [0.25, 0.1, 0.25, 1] as const;
 const assetPath = (path: string) => `${import.meta.env.BASE_URL}${path}`;
@@ -684,6 +685,7 @@ function Footer() {
           <a className="button button-primary" href="https://www.djai.academy/service/en/" target="_blank" rel="noreferrer">
             Start a conversation <ArrowUpRight />
           </a>
+          <SocialLinks language="en" />
         </FadeIn>
       </div>
       <div className="footer-brand section-shell">
