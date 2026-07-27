@@ -4,6 +4,12 @@ const assetPath = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 
 const socialLinks = [
   {
+    name: 'GitHub',
+    handle: 'lovecatisgood-sudo',
+    href: 'https://github.com/lovecatisgood-sudo',
+    image: 'social-github.png',
+  },
+  {
     name: 'X',
     handle: '@siamesecatdev',
     href: 'https://x.com/siamesecatdev',
