@@ -4,6 +4,7 @@ import "./globals.css";
 
 const BASE_PATH = "/tools/PDFTools";
 const GA_ID = "G-CGJ5BTR44T";
+const ADSENSE_CLIENT = "ca-pub-3624708289866566";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.djai.academy"),
@@ -20,6 +21,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="th">
       <body>
         {children}
+        <Script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="lazyOnload" />
         <Script id="google-analytics" strategy="lazyOnload">
           {`

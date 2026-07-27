@@ -3,6 +3,7 @@ import Script from "next/script";
 import { headers } from "next/headers";
 
 const GA_ID = "G-CGJ5BTR44T";
+const ADSENSE_CLIENT = "ca-pub-3624708289866566";
 
 export const metadata = {
   metadataBase: new URL("https://www.djai.academy"),
@@ -34,11 +35,20 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   const requestHeaders = await headers();
   const language = requestHeaders.get("x-djai-language") === "en" ? "en" : "th";
+  const shouldLoadAdSense = requestHeaders.get("x-djai-adsense") === "1";
 
   return (
     <html lang={language}>
       <body>
         {children}
+        {shouldLoadAdSense ? (
+          <Script
+            async
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+            crossOrigin="anonymous"
+            strategy="afterInteractive"
+          />
+        ) : null}
         <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="lazyOnload" />
         <Script id="google-analytics" strategy="lazyOnload">
           {`
