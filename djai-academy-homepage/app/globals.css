@@ -1399,6 +1399,19 @@ pre {
   text-underline-offset: 0.2em;
 }
 
+.article-image {
+  margin: 8px 0;
+}
+
+.article-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(16, 60, 118, 0.14);
+  border-radius: 8px;
+  box-shadow: 0 18px 50px rgba(9, 30, 66, 0.12);
+}
+
 .article-cta {
   display: grid;
   align-items: center;

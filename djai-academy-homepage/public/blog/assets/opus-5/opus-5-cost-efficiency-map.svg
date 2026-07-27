@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Claude Opus 5 cost-efficiency map</title>
+  <desc id="desc">A quadrant map showing Claude Opus 5 as a high-capability and lower frontier-cost model compared with lower-cost and premium models.</desc>
+  <rect width="1200" height="720" fill="#08182c"/>
+  <text x="72" y="82" fill="#ffffff" font-family="Inter,Arial,sans-serif" font-size="42" font-weight="800">The Opus 5 story is cost efficiency</text>
+  <text x="72" y="122" fill="#a9bfdc" font-family="Inter,Arial,sans-serif" font-size="22">For builders, the question is not “Which model is strongest?” but “Which model is worth using for this step?”</text>
+  <g transform="translate(150 170)">
+    <rect x="0" y="0" width="900" height="420" rx="18" fill="#0d213b" stroke="#24496f"/>
+    <line x1="450" y1="0" x2="450" y2="420" stroke="#24496f" stroke-width="2"/>
+    <line x1="0" y1="210" x2="900" y2="210" stroke="#24496f" stroke-width="2"/>
+    <text x="330" y="462" fill="#b8c8df" font-family="Inter,Arial,sans-serif" font-size="18">Lower cost per work unit</text>
+    <text x="660" y="462" fill="#b8c8df" font-family="Inter,Arial,sans-serif" font-size="18">Higher cost per work unit</text>
+    <text x="-90" y="228" fill="#b8c8df" font-family="Inter,Arial,sans-serif" font-size="18" transform="rotate(-90 -90 228)">Higher capability</text>
+    <text x="-90" y="386" fill="#b8c8df" font-family="Inter,Arial,sans-serif" font-size="18" transform="rotate(-90 -90 386)">Lower capability</text>
+    <text x="38" y="54" fill="#18e0b7" font-family="Inter,Arial,sans-serif" font-size="23" font-weight="800">High-value frontier work</text>
+    <text x="512" y="54" fill="#ffb547" font-family="Inter,Arial,sans-serif" font-size="23" font-weight="800">Premium frontier work</text>
+    <text x="38" y="260" fill="#68a8ff" font-family="Inter,Arial,sans-serif" font-size="23" font-weight="800">Bulk execution</text>
+    <text x="512" y="260" fill="#9ab0cc" font-family="Inter,Arial,sans-serif" font-size="23" font-weight="800">Hard to justify at scale</text>
+    <g font-family="Inter,Arial,sans-serif">
+      <circle cx="285" cy="126" r="58" fill="#18e0b7"/>
+      <text x="226" y="122" fill="#05201a" font-size="22" font-weight="900">Opus 5</text>
+      <text x="218" y="150" fill="#05201a" font-size="15" font-weight="800">$5 / $25</text>
+      <circle cx="705" cy="126" r="58" fill="#ffb547"/>
+      <text x="654" y="122" fill="#291600" font-size="21" font-weight="900">Fable 5</text>
+      <text x="650" y="150" fill="#291600" font-size="15" font-weight="800">$10 / $50</text>
+      <circle cx="246" cy="330" r="52" fill="#68a8ff"/>
+      <text x="198" y="326" fill="#061a34" font-size="20" font-weight="900">Sonnet 5</text>
+      <text x="201" y="352" fill="#061a34" font-size="15" font-weight="800">$2 / $10 intro</text>
+      <circle cx="410" cy="350" r="42" fill="#8fe6d2"/>
+      <text x="377" y="347" fill="#05201a" font-size="18" font-weight="900">Haiku</text>
+      <text x="374" y="369" fill="#05201a" font-size="14" font-weight="800">$1 / $5</text>
+      <circle cx="598" cy="170" r="48" fill="#c8d6ea"/>
+      <text x="559" y="166" fill="#10213a" font-size="19" font-weight="900">GPT-5.5</text>
+      <text x="560" y="190" fill="#10213a" font-size="14" font-weight="800">$5 / $30</text>
+    </g>
+  </g>
+  <text x="72" y="686" fill="#7f98bb" font-family="Inter,Arial,sans-serif" font-size="16">Positioning is editorial analysis by DJAI Academy, based on public pricing and launch coverage.</text>
+</svg>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720" role="img" aria-labelledby="title desc">
+  <title id="title">Practical AI model routing workflow</title>
+  <desc id="desc">A workflow diagram showing how builders can route planning, implementation, review and bulk work to different AI model tiers.</desc>
+  <rect width="1200" height="720" fill="#06182e"/>
+  <text x="72" y="82" fill="#ffffff" font-family="Inter,Arial,sans-serif" font-size="42" font-weight="800">How builders should read the Opus 5 launch</text>
+  <text x="72" y="122" fill="#a9bfdc" font-family="Inter,Arial,sans-serif" font-size="22">Model routing matters more than model loyalty. Spend premium tokens where judgment changes the outcome.</text>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#7da7d9"/>
+    </marker>
+  </defs>
+  <g font-family="Inter,Arial,sans-serif">
+    <g transform="translate(78 205)">
+      <rect width="225" height="155" rx="16" fill="#0f2948" stroke="#295783"/>
+      <text x="24" y="45" fill="#18e0b7" font-size="22" font-weight="900">1. Plan</text>
+      <text x="24" y="80" fill="#ffffff" font-size="20" font-weight="800">Use stronger reasoning</text>
+      <text x="24" y="112" fill="#b9c9df" font-size="16">Architecture, risks,</text>
+      <text x="24" y="136" fill="#b9c9df" font-size="16">requirements, tradeoffs</text>
+    </g>
+    <line x1="315" y1="282" x2="392" y2="282" stroke="#7da7d9" stroke-width="4" marker-end="url(#arrow)"/>
+    <g transform="translate(405 205)">
+      <rect width="225" height="155" rx="16" fill="#102d42" stroke="#286d80"/>
+      <text x="24" y="45" fill="#68a8ff" font-size="22" font-weight="900">2. Execute</text>
+      <text x="24" y="80" fill="#ffffff" font-size="20" font-weight="800">Use high-limit agents</text>
+      <text x="24" y="112" fill="#b9c9df" font-size="16">Patch code, test,</text>
+      <text x="24" y="136" fill="#b9c9df" font-size="16">iterate, stabilize</text>
+    </g>
+    <line x1="642" y1="282" x2="719" y2="282" stroke="#7da7d9" stroke-width="4" marker-end="url(#arrow)"/>
+    <g transform="translate(732 205)">
+      <rect width="225" height="155" rx="16" fill="#2a2141" stroke="#6d5aa0"/>
+      <text x="24" y="45" fill="#ffb547" font-size="22" font-weight="900">3. Review</text>
+      <text x="24" y="80" fill="#ffffff" font-size="20" font-weight="800">Use a second pass</text>
+      <text x="24" y="112" fill="#b9c9df" font-size="16">Audit bugs, UX,</text>
+      <text x="24" y="136" fill="#b9c9df" font-size="16">SEO, security, cost</text>
+    </g>
+    <path d="M846 376 C760 485 412 485 206 376" fill="none" stroke="#7da7d9" stroke-width="4" marker-end="url(#arrow)" opacity="0.75"/>
+    <g transform="translate(256 485)">
+      <rect width="690" height="96" rx="16" fill="#092139" stroke="#245270"/>
+      <text x="28" y="38" fill="#ffffff" font-size="22" font-weight="900">Repeat with measured token cost</text>
+      <text x="28" y="68" fill="#b9c9df" font-size="17">Cache repeated context, batch non-urgent work, and reserve premium models for decisions that matter.</text>
+    </g>
+    <g transform="translate(980 222)">
+      <rect width="145" height="120" rx="14" fill="#0b342e" stroke="#18e0b7"/>
+      <text x="22" y="42" fill="#18e0b7" font-size="19" font-weight="900">DJAI rule</text>
+      <text x="22" y="72" fill="#d8fff7" font-size="15">Route by</text>
+      <text x="22" y="94" fill="#d8fff7" font-size="15">task value,</text>
+      <text x="22" y="116" fill="#d8fff7" font-size="15">not hype.</text>
+    </g>
+  </g>
+  <text x="72" y="686" fill="#7f98bb" font-family="Inter,Arial,sans-serif" font-size="16">Created by DJAI Academy for the Siamese Cat Dev builder workflow.</text>
+</svg>

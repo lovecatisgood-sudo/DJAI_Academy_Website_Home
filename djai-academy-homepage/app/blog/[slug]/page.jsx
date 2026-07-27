@@ -76,6 +76,18 @@ function renderContent(content) {
       return;
     }
 
+    const imageMatch = trimmed.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
+    if (imageMatch) {
+      flushList();
+      const [, alt, src] = imageMatch;
+      blocks.push(
+        <figure className="article-image" key={`image-${blocks.length}`}>
+          <img alt={alt} src={src} loading="lazy" decoding="async" />
+        </figure>
+      );
+      return;
+    }
+
     if (trimmed.startsWith("- ")) {
       listItems.push(trimmed.slice(2));
       return;
