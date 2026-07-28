@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" role="img" aria-labelledby="title desc">
+  <title id="title">Superpowers skill choice map</title>
+  <desc id="desc">A decision map for selecting Superpowers skills by software development situation.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#071a3f"/>
+      <stop offset="100%" stop-color="#161b4f"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#000" flood-opacity=".24"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="780" rx="42" fill="url(#bg)"/>
+  <text x="70" y="84" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="44" font-weight="850">When to use which Superpowers skill</text>
+  <text x="70" y="126" fill="#b7c7e6" font-family="Inter,Arial,sans-serif" font-size="20">Choose by the failure mode you want to prevent.</text>
+  <g filter="url(#shadow)" font-family="Inter,Arial,sans-serif">
+    <rect x="70" y="180" width="320" height="145" rx="24" fill="#fff"/>
+    <rect x="440" y="180" width="320" height="145" rx="24" fill="#fff"/>
+    <rect x="810" y="180" width="320" height="145" rx="24" fill="#fff"/>
+    <rect x="70" y="385" width="320" height="145" rx="24" fill="#fff"/>
+    <rect x="440" y="385" width="320" height="145" rx="24" fill="#fff"/>
+    <rect x="810" y="385" width="320" height="145" rx="24" fill="#fff"/>
+    <rect x="255" y="590" width="320" height="120" rx="24" fill="#fff"/>
+    <rect x="625" y="590" width="320" height="120" rx="24" fill="#fff"/>
+  </g>
+  <g font-family="Inter,Arial,sans-serif">
+    <g fill="#f97357" font-size="15" font-weight="850">
+      <text x="98" y="218">UNCLEAR GOAL</text>
+      <text x="468" y="218">APPROVED GOAL</text>
+      <text x="838" y="218">IMPLEMENTING</text>
+      <text x="98" y="423">BUG OR FAILURE</text>
+      <text x="468" y="423">LARGE PLAN</text>
+      <text x="838" y="423">HANDOFF</text>
+      <text x="283" y="628">REVIEW FEEDBACK</text>
+      <text x="653" y="628">REUSABLE BEHAVIOR</text>
+    </g>
+    <g fill="#071a3f" font-size="25" font-weight="850">
+      <text x="98" y="258">brainstorming</text>
+      <text x="468" y="258">writing-plans</text>
+      <text x="838" y="258">test-driven-development</text>
+      <text x="98" y="463">systematic-debugging</text>
+      <text x="468" y="463">executing-plans</text>
+      <text x="838" y="463">finishing-branch</text>
+      <text x="283" y="668">receiving-code-review</text>
+      <text x="653" y="668">writing-skills</text>
+    </g>
+    <g fill="#50627a" font-size="16">
+      <text x="98" y="291">Prevent building the</text><text x="98" y="315">wrong thing fast.</text>
+      <text x="468" y="291">Turn design into tiny,</text><text x="468" y="315">verifiable tasks.</text>
+      <text x="838" y="291">Make correctness visible</text><text x="838" y="315">before code expands.</text>
+      <text x="98" y="496">Find root cause before</text><text x="98" y="520">stacking patches.</text>
+      <text x="468" y="496">Work in batches with</text><text x="468" y="520">human checkpoints.</text>
+      <text x="838" y="496">Verify, merge, PR, keep,</text><text x="838" y="520">or clean up safely.</text>
+      <text x="283" y="696">Respond with evidence.</text>
+      <text x="653" y="696">Turn a pattern into a reusable agent guide.</text>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Superpowers workflow pipeline</title>
+  <desc id="desc">A pipeline showing brainstorm, worktree, plan, execute, TDD, review, and finish branch.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f8fbff"/>
+      <stop offset="100%" stop-color="#eef4ff"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f4f8ff"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="14" stdDeviation="15" flood-color="#082044" flood-opacity=".14"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="760" rx="42" fill="url(#bg)"/>
+  <text x="72" y="82" fill="#071a3f" font-family="Inter,Arial,sans-serif" font-size="44" font-weight="850">The Superpowers development pipeline</text>
+  <text x="72" y="124" fill="#50627a" font-family="Inter,Arial,sans-serif" font-size="20">A coding agent becomes more useful when it follows a real engineering sequence.</text>
+  <g font-family="Inter,Arial,sans-serif">
+    <g filter="url(#shadow)">
+      <rect x="72" y="180" width="220" height="150" rx="24" fill="url(#card)"/>
+      <rect x="352" y="180" width="220" height="150" rx="24" fill="url(#card)"/>
+      <rect x="632" y="180" width="220" height="150" rx="24" fill="url(#card)"/>
+      <rect x="912" y="180" width="220" height="150" rx="24" fill="url(#card)"/>
+      <rect x="212" y="430" width="220" height="150" rx="24" fill="url(#card)"/>
+      <rect x="492" y="430" width="220" height="150" rx="24" fill="url(#card)"/>
+      <rect x="772" y="430" width="220" height="150" rx="24" fill="url(#card)"/>
+    </g>
+    <g fill="#5dd9ef">
+      <circle cx="103" cy="213" r="18"/><circle cx="383" cy="213" r="18"/><circle cx="663" cy="213" r="18"/><circle cx="943" cy="213" r="18"/>
+      <circle cx="243" cy="463" r="18"/><circle cx="523" cy="463" r="18"/><circle cx="803" cy="463" r="18"/>
+    </g>
+    <g fill="#071a3f" font-size="22" font-weight="800">
+      <text x="92" y="260">Brainstorm</text>
+      <text x="372" y="260">Worktree</text>
+      <text x="652" y="260">Write plan</text>
+      <text x="932" y="260">Execute</text>
+      <text x="232" y="510">TDD</text>
+      <text x="512" y="510">Review</text>
+      <text x="792" y="510">Finish</text>
+    </g>
+    <g fill="#50627a" font-size="16">
+      <text x="92" y="292">Clarify what to build</text>
+      <text x="92" y="316">before coding.</text>
+      <text x="372" y="292">Isolate changes on</text>
+      <text x="372" y="316">a clean branch.</text>
+      <text x="652" y="292">Break work into</text>
+      <text x="652" y="316">small tasks.</text>
+      <text x="932" y="292">Implement with</text>
+      <text x="932" y="316">checkpoints.</text>
+      <text x="232" y="542">Red, green, refactor.</text>
+      <text x="232" y="566">Proof beats claims.</text>
+      <text x="512" y="542">Check spec compliance</text>
+      <text x="512" y="566">and code quality.</text>
+      <text x="792" y="542">Verify, present options,</text>
+      <text x="792" y="566">clean up safely.</text>
+    </g>
+  </g>
+  <g stroke="#f97357" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <path d="M302 255h38"/><path d="M330 240l15 15-15 15"/>
+    <path d="M582 255h38"/><path d="M610 240l15 15-15 15"/>
+    <path d="M862 255h38"/><path d="M890 240l15 15-15 15"/>
+    <path d="M1022 345c0 64-72 85-146 85h-18"/><path d="M875 415l-18 15 18 15"/>
+    <path d="M442 505h38"/><path d="M470 490l15 15-15 15"/>
+    <path d="M722 505h38"/><path d="M750 490l15 15-15 15"/>
+  </g>
+  <rect x="72" y="650" width="1058" height="58" rx="29" fill="#071a3f"/>
+  <text x="120" y="686" fill="#fff" font-family="Inter,Arial,sans-serif" font-size="19" font-weight="700">The point is not to make the agent slower. The point is to make long-running work stay correct.</text>
+</svg>
