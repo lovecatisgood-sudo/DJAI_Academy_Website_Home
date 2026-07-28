@@ -1,4 +1,5 @@
 import AdSenseAd from "../components/AdSenseAd";
+import ShareButtons from "../components/ShareButtons";
 
 export const metadata = {
   title: "เครื่องมือฟรีจาก DJAI | PDF, DOCX, AI, CSV, QR และรูปภาพ",
@@ -170,6 +171,7 @@ export default function ThaiToolsPage() {
           DJAI สร้างเครื่องมือฟรีเพื่อช่วยให้คนทำงานเร็วขึ้น แก้ปัญหาดิจิทัลในชีวิตประจำวัน
           และเห็นแนวคิดการสร้าง product ที่ใช้งานได้จริง
         </p>
+        <ShareButtons url="https://www.djai.academy/tools/" title="เครื่องมือฟรีจาก DJAI" locale="th" compact />
       </section>
 
       <AdSenseAd label="Tools advertisement" />

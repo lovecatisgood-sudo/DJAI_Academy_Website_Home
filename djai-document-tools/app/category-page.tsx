@@ -1,6 +1,7 @@
 import { ArrowRight, FileText, ScanText, Sparkles, TableProperties } from "lucide-react";
 import Image from "next/image";
 import AdSenseAd from "./AdSenseAd";
+import ShareButtons from "./ShareButtons";
 import { categories, categoryHref, categoryOrder, toolHref, toolsFor, type Category, type Language, type ToolDefinition } from "./tool-data";
 
 const icons = { document: FileText, ai: Sparkles, spreadsheet: TableProperties };
@@ -47,6 +48,7 @@ export default function CategoryPage({ category, language }: { category: Categor
           <p className="eyebrow">DJTOOLS BY DJAI ACADEMY</p>
           <h1>{copy.title[language]}</h1>
           <p>{copy.description[language]}</p>
+          <ShareButtons url={canonical} title={copy.title[language]} language={language} compact />
           <a className="primary-button" href="#available-tools">{en ? "Choose a tool" : "เลือกเครื่องมือ"}<ArrowRight /></a>
         </div>
         <div className="hero-emblem"><Icon /><strong>{category.toUpperCase()}</strong><span>PRIVATE · FREE</span></div>

@@ -1350,6 +1350,53 @@ pre {
   gap: 20px;
 }
 
+.share-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  max-width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(22, 119, 255, 0.14);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 12px 30px rgba(8, 38, 85, 0.08);
+}
+
+.share-buttons.compact {
+  margin-top: 0;
+}
+
+.share-buttons span {
+  padding: 0 6px;
+  color: #607898;
+  font-size: 0.78rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.share-buttons a,
+.share-buttons button {
+  min-height: 34px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 999px;
+  color: var(--deep);
+  background: #eef6ff;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.share-buttons a:hover,
+.share-buttons button:hover {
+  color: white;
+  background: var(--blue);
+}
+
 .back-link {
   width: fit-content;
   color: var(--blue);

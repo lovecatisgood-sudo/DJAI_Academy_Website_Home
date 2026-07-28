@@ -35,6 +35,7 @@ import Image from "next/image";
 import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import type { ProcessingOptions, ProcessResult } from "./pdf-actions";
 import AdSenseAd from "./AdSenseAd";
+import ShareButtons from "./ShareButtons";
 import ToolPromoModal, { shouldShowToolPromo } from "./ToolPromoModal";
 import { BASE_PATH, SITE_URL, homeHref, toolCopy, toolGuides, toolHref, toolSlugs, type Language, type ToolSlug } from "./tool-data";
 
@@ -482,6 +483,7 @@ export default function PdfToolsApp({ language, initialTool, seoPage }: { langua
           <p className="eyebrow">{initialTool ? activeCopy.label : copy.heroEyebrow}</p>
           <h1>{initialTool ? activeCopy.title : copy.heroTitle}</h1>
           <p>{initialTool ? activeCopy.description : copy.heroText}</p>
+          <ShareButtons url={canonical} title={initialTool ? activeCopy.title : copy.heroTitle} language={language} compact />
           <a className="primary-button" href="#workspace">{copy.heroButton}<ArrowDown size={19} /></a>
         </div>
         <div className="hero-visual" aria-label="DJTools PDF workflow">
@@ -545,6 +547,7 @@ export default function PdfToolsApp({ language, initialTool, seoPage }: { langua
           <div className="success-mark"><Check /></div><p className="eyebrow">SUCCESS</p><h2>{copy.resultTitle}</h2><p>{copy.resultText}</p>
           <div className="result-stats"><div><span>{copy.original}</span><strong>{formatBytes(result.originalSize)}</strong></div><div><span>{copy.result}</span><strong>{formatBytes(result.blob.size)}</strong></div><div><span>{copy.items}</span><strong>{result.itemCount}</strong></div>{result.note && <div><span>MODE</span><strong>{result.note}</strong></div>}</div>
           <a className="download-button" href={result.url} download={result.fileName}><Download />{copy.download}</a>
+          <ShareButtons url={canonical} title={initialTool ? activeCopy.title : copy.heroTitle} language={language} compact />
           <button className="clear-button light" type="button" onClick={clearWorkspace}>{copy.clear}</button>
           <div className="continue-tools"><h3>{copy.continue}</h3><div>{related.map((slug) => { const Icon = icons[slug]; return <a href={toolHref(slug, language)} key={slug}><Icon /><span>{toolCopy[language][slug].label}</span><ArrowRight /></a>; })}</div></div>
         </section>

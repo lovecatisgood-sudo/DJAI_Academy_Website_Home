@@ -4,8 +4,9 @@ import { ArrowRight, Check, Clipboard, Download, FileArchive, FileText, LoaderCi
 import dynamic from "next/dynamic";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { ToolOptions, ToolResult } from "./processors";
+import ShareButtons from "./ShareButtons";
 import ToolPromoModal, { shouldShowToolPromo } from "./ToolPromoModal";
-import type { Language, ToolDefinition } from "./tool-data";
+import { toolHref, type Language, type ToolDefinition } from "./tool-data";
 
 const TokenCounterWorkspace = dynamic(() => import("./TokenCounterWorkspace"), {
   ssr: false,
@@ -56,6 +57,7 @@ function GenericToolWorkspace({ tool, language }: { tool: ToolDefinition; langua
   const inputRef = useRef<HTMLInputElement>(null);
   const textMode = ["context-optimizer", "rag-chunk-calculator", "prompt-packager"].includes(tool.slug);
   const needsFile = !["context-optimizer", "rag-chunk-calculator", "prompt-packager"].includes(tool.slug);
+  const shareUrl = `https://www.djai.academy${toolHref(tool, language)}`;
   const allowsMultiple = Boolean(tool.multiple);
   const outputText = result?.text || "";
 
@@ -132,6 +134,7 @@ function GenericToolWorkspace({ tool, language }: { tool: ToolDefinition; langua
       {result.html && <div className="html-preview" dangerouslySetInnerHTML={{ __html: result.html }} />}
       {outputText && <pre className="text-preview">{outputText}</pre>}
       <div className="result-actions">{result.url && result.fileName && <a className="download-button" href={result.url} download={result.fileName}><Download />{en ? "Download result" : "ดาวน์โหลดผลลัพธ์"}</a>}{outputText && <button type="button" onClick={copyResult}>{copied ? <Check /> : <Clipboard />}{copied ? (en ? "Copied" : "คัดลอกแล้ว") : (en ? "Copy result" : "คัดลอกผลลัพธ์")}</button>}</div>
+      <ShareButtons url={shareUrl} title={tool.title[language]} language={language} compact />
     </section>}
     <ToolPromoModal language={language} type={promoType} onClose={() => setPromoType(null)} />
   </>;

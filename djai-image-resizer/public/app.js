@@ -35,6 +35,8 @@
     remove: 'ลบ',
     rotate: 'หมุน',
     download: 'ดาวน์โหลด',
+    copyLink: 'คัดลอกลิงก์',
+    copiedLink: 'คัดลอกแล้ว',
     promoLater: 'ไว้ทีหลัง',
     promos: {
       course: {
@@ -82,6 +84,8 @@
     remove: 'Remove',
     rotate: 'Rotate',
     download: 'Download',
+    copyLink: 'Copy link',
+    copiedLink: 'Copied',
     promoLater: 'Maybe later',
     promos: {
       course: {
@@ -163,6 +167,7 @@
     promoTitle: $('#tool-promo-title'),
     promoText: $('#tool-promo-text'),
     promoLink: $('#tool-promo-link'),
+    shareCopyButtons: $$('[data-share-copy]'),
     year: $('#current-year')
   };
 
@@ -265,6 +270,20 @@
     els.promoLater.textContent = copy.promoLater;
     els.promoModal.hidden = false;
     els.promoClose.focus({ preventScroll: true });
+  };
+
+  const copyShareLink = async (button) => {
+    const shareBox = button.closest('[data-share-url]');
+    const url = shareBox?.dataset.shareUrl || window.location.href;
+    try {
+      await navigator.clipboard.writeText(url);
+      button.textContent = copy.copiedLink;
+      window.setTimeout(() => {
+        button.textContent = copy.copyLink;
+      }, 1800);
+    } catch {
+      window.prompt(isThai ? 'คัดลอกลิงก์นี้:' : 'Copy this link:', url);
+    }
   };
 
   const setError = (message = '') => {
@@ -907,6 +926,7 @@
     els.checkerToggle.setAttribute('aria-pressed', String(active));
   });
   els.downloadButton.addEventListener('click', downloadResults);
+  els.shareCopyButtons.forEach(button => button.addEventListener('click', () => copyShareLink(button)));
   els.promoClose?.addEventListener('click', hideToolPromo);
   els.promoLater?.addEventListener('click', hideToolPromo);
   document.addEventListener('keydown', (event) => {

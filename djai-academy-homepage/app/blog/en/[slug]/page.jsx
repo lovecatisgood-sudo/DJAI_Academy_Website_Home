@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import SiteFooter from "../../../components/SiteFooter";
 import SiteHeader from "../../../components/SiteHeader";
 import AdSenseAd from "../../../components/AdSenseAd";
+import ShareButtons from "../../../components/ShareButtons";
 import { getPostBySlug } from "../../../lib/blogStore";
 
 export const dynamic = "force-dynamic";
@@ -198,6 +199,7 @@ export default async function BlogPostPage({ params }) {
             </div>
             <h1>{post.title}</h1>
             <p>{post.excerpt}</p>
+            <ShareButtons url={`https://www.djai.academy/blog/en/${post.slug}/`} title={post.title} locale="en" />
           </header>
 
           <AdSenseAd label="Article advertisement" variant="inArticle" />
@@ -215,6 +217,8 @@ export default async function BlogPostPage({ params }) {
               Open free tools
             </a>
           </footer>
+
+          <ShareButtons url={`https://www.djai.academy/blog/en/${post.slug}/`} title={post.title} locale="en" compact />
 
           <AdSenseAd label="Related content advertisement" variant="multiplex" />
         </article>

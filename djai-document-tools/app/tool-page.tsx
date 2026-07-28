@@ -1,5 +1,6 @@
 import { ArrowLeft, ArrowRight, ShieldCheck } from "lucide-react";
 import AdSenseAd from "./AdSenseAd";
+import ShareButtons from "./ShareButtons";
 import { ServiceBands, SuiteFooter, SuiteHeader } from "./category-page";
 import ToolWorkspace from "./ToolWorkspace";
 import { categoryHref, toolHref, toolsFor, type Language, type ToolDefinition } from "./tool-data";
@@ -40,7 +41,7 @@ export default function ToolPage({ tool, language }: { tool: ToolDefinition; lan
   return <main>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
     <SuiteHeader category={tool.category} language={language} tool={tool} />
-    <section className="tool-intro"><a href={categoryHref(tool.category, language)}><ArrowLeft />{en ? `Back to ${tool.category} tools` : "กลับไปหน้าเครื่องมือ"}</a><p className="eyebrow">{tool.label[language]}</p><h1>{tool.title[language]}</h1><p>{tool.description[language]}</p><div><span><ShieldCheck />{en ? "Private browser processing" : "ประมวลผลแบบ private ใน browser"}</span><span>{en ? "No account" : "ไม่ต้องสมัคร"}</span><span>{en ? "Free" : "ใช้ฟรี"}</span></div></section>
+    <section className="tool-intro"><a href={categoryHref(tool.category, language)}><ArrowLeft />{en ? `Back to ${tool.category} tools` : "กลับไปหน้าเครื่องมือ"}</a><p className="eyebrow">{tool.label[language]}</p><h1>{tool.title[language]}</h1><p>{tool.description[language]}</p><ShareButtons url={canonical} title={tool.title[language]} language={language} compact /><div><span><ShieldCheck />{en ? "Private browser processing" : "ประมวลผลแบบ private ใน browser"}</span><span>{en ? "No account" : "ไม่ต้องสมัคร"}</span><span>{en ? "Free" : "ใช้ฟรี"}</span></div></section>
     <AdSenseAd label="Tool advertisement" />
     <ToolWorkspace tool={tool} language={language} />
     <AdSenseAd label="Tool advertisement" variant="display2" />

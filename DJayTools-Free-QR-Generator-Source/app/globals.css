@@ -55,6 +55,12 @@ button { cursor: pointer; }
 
 .ad-section { display: block; max-width: 980px; min-height: 90px; margin: 0 auto 34px; padding: 12px 24px; border-radius: 18px; background: rgba(255,255,255,.58); }
 
+.share-buttons { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 9px; width: fit-content; max-width: 100%; padding: 10px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.9); box-shadow: 0 16px 42px rgba(7,30,61,.1); }
+.share-buttons.compact { margin-top: 4px; }
+.share-buttons span { padding: 0 6px; color: var(--muted); font-size: .74rem; font-weight: 900; text-transform: uppercase; letter-spacing: .08em; }
+.share-buttons a, .share-buttons button { min-height: 34px; padding: 0 12px; border: 0; border-radius: 999px; color: var(--navy); background: #f0eee8; font: inherit; font-size: .8rem; font-weight: 900; cursor: pointer; }
+.share-buttons a:hover, .share-buttons button:hover { color: white; background: var(--orange); }
+
 .promo-modal { position: fixed; inset: 0; z-index: 80; display: grid; place-items: center; padding: 20px; background: rgba(7,30,61,.56); animation: fade-in .16s ease-out; }
 .promo-modal.closing { animation: fade-out .14s ease-in forwards; }
 .promo-card { position: relative; width: min(520px, 100%); padding: 30px; color: var(--navy); background: white; border: 1px solid var(--line); border-radius: 22px; box-shadow: 0 28px 80px rgba(7,30,61,.28); }

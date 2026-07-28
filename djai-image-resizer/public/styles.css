@@ -354,6 +354,37 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
 .developer-credit span { font-size: 9px; }
 .developer-credit img { width: 110px; height: 58px; object-fit: contain; filter: drop-shadow(0 3px 8px rgba(0,0,0,.25)); }
 
+.share-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 9px;
+  width: fit-content;
+  max-width: 100%;
+  padding: 10px;
+  border: 1px solid #dfe8f2;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .88);
+  box-shadow: 0 16px 42px rgba(10, 31, 71, .08);
+}
+.share-buttons.compact { grid-column: 1 / -1; margin-top: 0; }
+.share-buttons span { padding: 0 6px; color: var(--muted); font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: .08em; }
+.share-buttons a,
+.share-buttons button {
+  min-height: 34px;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 999px;
+  color: var(--navy);
+  background: #eef6ff;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 900;
+  cursor: pointer;
+}
+.share-buttons a:hover,
+.share-buttons button:hover { color: white; background: var(--blue); }
+
 .promo-modal[hidden] { display: none; }
 .promo-modal {
   position: fixed;

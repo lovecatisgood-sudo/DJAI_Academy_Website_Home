@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import SiteFooter from "../../components/SiteFooter";
 import SiteHeader from "../../components/SiteHeader";
 import AdSenseAd from "../../components/AdSenseAd";
+import ShareButtons from "../../components/ShareButtons";
 import { getThaiPostBySlug } from "../../lib/thBlogPosts";
 
 function formatDate(value) {
@@ -205,6 +206,7 @@ export default async function ThaiBlogPostPage({ params }) {
             </div>
             <h1>{post.title}</h1>
             <p>{post.excerpt}</p>
+            <ShareButtons url={`https://www.djai.academy/blog/${post.slug}/`} title={post.title} locale="th" />
           </header>
 
           <AdSenseAd label="Article advertisement" variant="inArticle" />
@@ -222,6 +224,8 @@ export default async function ThaiBlogPostPage({ params }) {
               เปิดเครื่องมือฟรี
             </a>
           </footer>
+
+          <ShareButtons url={`https://www.djai.academy/blog/${post.slug}/`} title={post.title} locale="th" compact />
 
           <AdSenseAd label="Related content advertisement" variant="multiplex" />
         </article>

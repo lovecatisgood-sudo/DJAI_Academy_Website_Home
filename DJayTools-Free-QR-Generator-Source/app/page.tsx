@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { CornerSquareType, DotType } from "qr-code-styling";
 import AdSenseAd from "./AdSenseAd";
+import ShareButtons from "./ShareButtons";
 import ToolPromoModal, { shouldShowToolPromo } from "./ToolPromoModal";
 
 const COLORS = ["#D97757", "#0B32A4", "#00BFD8", "#5630C8", "#071E3D", "#F2A65A", "#2E8B57", "#D7467D"];
@@ -139,6 +140,7 @@ export default function Home() {
           <span><small>พัฒนาแอปโดย</small><strong>Siamese Cat Dev</strong></span>
         </a>
         <button className="primary hero-button" onClick={scrollToGenerator}>สร้าง QR code ฟรี <span>↘</span></button>
+        <ShareButtons url="https://www.djai.academy/tools/qrgen/" title="Free QR Code Generator by DJAI" language="th" compact />
         <div className="hero-note"><span>✓</span> สร้างได้ไม่จำกัด <span>✓</span> ดาวน์โหลด PNG &amp; SVG <span>✓</span> ใช้งานได้ถาวร</div>
       </section>
 
@@ -210,6 +212,7 @@ export default function Home() {
               </div>
               <button className="primary download" onClick={download}>ดาวน์โหลด QR <span>↓</span></button>
             </div>
+            <ShareButtons url="https://www.djai.academy/tools/qrgen/" title="Free QR Code Generator by DJAI" language="th" compact />
           </div>
         </div>
       </section>

@@ -1,4 +1,5 @@
 import AdSenseAd from "../../components/AdSenseAd";
+import ShareButtons from "../../components/ShareButtons";
 
 export const metadata = {
   title: "Free DJAI Tools | PDF, DOCX, AI, CSV, QR and Image Tools",
@@ -175,6 +176,7 @@ export default function ToolsPage() {
           DJAI publishes free tools to help people build faster, work smarter, and solve everyday
           digital problems without accounts, paywalls, or unnecessary friction.
         </p>
+        <ShareButtons url="https://www.djai.academy/tools/en/" title="Free DJAI Tools" locale="en" compact />
       </section>
 
       <AdSenseAd label="Tools advertisement" />
