@@ -16,7 +16,7 @@ export const metadata = {
     title: "AI Masterclass: จากไอเดียสู่โปรดักต์จริง",
     description: "Workshop AI แบบลงมือทำเต็มวัน วันที่ 1 สิงหาคม 2026 โดย DJAI Academy",
     url: "/course/detail/",
-    images: ["/course/assets/community2.webp"],
+    images: ["/course/assets/community2-display.webp"],
     type: "website"
   }
 };

@@ -27,8 +27,12 @@ export const metadata = {
       "Learn AI, build software, use free tools, and turn ideas into working products with DJAI Academy.",
     url: "/",
     siteName: "DJAI Academy",
-    images: ["/djai-logo.webp"],
+    images: [{ url: "/social/djai-academy.webp", width: 1200, height: 630, alt: "DJAI Academy" }],
     type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/social/djai-academy.webp"]
   }
 };
 

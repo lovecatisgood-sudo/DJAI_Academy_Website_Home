@@ -461,7 +461,7 @@ export default function PdfToolsApp({ language, initialTool, seoPage }: { langua
     <main id="top">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <header className="site-header">
-        <a className="brand" href={homeHref(language)} aria-label="DJTools by DJAI Academy">
+        <a className="brand" href={homeHref(language)}>
           <Image src={`${BASE_PATH}/djai-academy-logo-display.webp`} alt="DJAI Academy" width={114} height={61} loading="eager" unoptimized />
           <span><strong>DJTools</strong><small>PDF · by DJAI Academy</small></span>
         </a>
@@ -527,7 +527,7 @@ export default function PdfToolsApp({ language, initialTool, seoPage }: { langua
             >
               <span><Upload /></span><strong>{copy.uploadTitle}</strong><small>{isImageInput ? "JPG · PNG · WebP" : "PDF"} · {copy.uploadHint}</small><b>{isImageInput ? copy.uploadImages : copy.uploadPdf}</b>
             </button>
-            <input ref={fileInput} className="visually-hidden" type="file" accept={accept} multiple={allowsMultiple} onChange={(event) => event.target.files && addFiles(event.target.files)} />
+            <input ref={fileInput} className="visually-hidden" type="file" accept={accept} multiple={allowsMultiple} aria-label={en ? "Choose files to process" : "เลือกไฟล์ที่ต้องการประมวลผล"} onChange={(event) => event.target.files && addFiles(event.target.files)} />
             {files.length > 0 && <div className="file-list"><div className="file-list-title"><strong>{copy.files}</strong><span>{files.length}</span></div>{files.map((file, index) => <div className="file-row" key={`${file.name}-${file.lastModified}-${index}`}><span className="file-type">{isImageInput ? <FileImage /> : <FileArchive />}</span><div><strong>{file.name}</strong><small>{formatBytes(file.size)}</small></div>{allowsMultiple && <div className="file-order"><button type="button" aria-label="Move up" title="Move up" onClick={() => moveFile(index, -1)} disabled={index === 0}><ArrowUp /></button><button type="button" aria-label="Move down" title="Move down" onClick={() => moveFile(index, 1)} disabled={index === files.length - 1}><ArrowDown /></button></div>}<button className="remove-file" type="button" aria-label="Remove file" title="Remove file" onClick={() => setFiles((current) => current.filter((_, itemIndex) => itemIndex !== index))}><Trash2 /></button></div>)}</div>}
           </div>
           <div className="settings-column">

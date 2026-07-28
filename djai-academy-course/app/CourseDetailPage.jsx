@@ -329,7 +329,7 @@ export default function CourseDetailPage({ locale = "th" }) {
 
       <section className="detail-hero">
         <img
-          src="/course/assets/community2.webp"
+          src="/course/assets/community2-display.webp"
           alt={language === "en" ? "DJAI Academy hands-on workshop" : "Workshop แบบลงมือทำของ DJAI Academy"}
         />
         <div className="detail-hero-shade" />

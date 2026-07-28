@@ -201,7 +201,7 @@ export default function Home() {
           <div className="preview-panel">
             <div className="preview-top"><span>ตัวอย่างแบบสด</span><i><span /> พร้อมสแกน</i></div>
             <div className={`qr-frame frame-${frame}`}>
-              <div ref={qrMount} className="qr-mount" aria-label="ตัวอย่าง QR code" />
+              <div ref={qrMount} className="qr-mount" role="img" aria-label="ตัวอย่าง QR code" />
               {frame === "label" && <strong>SCAN ME</strong>}
             </div>
             <p>QR code แบบ static นี้ไม่มีวันหมดอายุ</p>

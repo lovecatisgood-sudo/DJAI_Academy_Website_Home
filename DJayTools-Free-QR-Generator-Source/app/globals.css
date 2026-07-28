@@ -5,8 +5,8 @@
   --blue: #0b32a4;
   --cyan: #00bfd8;
   --violet: #5630c8;
-  --orange: #d97757;
-  --orange-dark: #bd5e40;
+  --orange: #a94428;
+  --orange-dark: #87351e;
   --coral: var(--orange);
   --cream: #f6f7fb;
   --paper: #ffffff;
@@ -85,7 +85,7 @@ button { cursor: pointer; }
 .control-block:last-child { margin-bottom: 0; }
 .control-block label, .control-block legend { display: block; margin-bottom: 11px; font-size: 14px; font-weight: 800; }
 .control-block label b, .control-block legend b { display: inline-grid; place-items: center; width: 21px; height: 21px; margin-right: 7px; background: var(--orange); color: white; border-radius: 50%; font-size: 11px; }
-.control-block legend span { color: #89909a; font-weight: 500; }
+.control-block legend span { color: #606873; font-weight: 500; }
 .url-field { height: 52px; display: flex; align-items: center; gap: 11px; padding: 0 15px; border: 1.5px solid #b9b7b2; border-radius: 10px; background: white; }
 .url-field:focus-within { border-color: var(--orange); box-shadow: 0 0 0 3px rgba(217,119,87,.12); }
 .url-field.has-error { border-color: #cb3d3d; }
@@ -125,7 +125,7 @@ button { cursor: pointer; }
 .preview-panel > p { color: #717982; font-size: 11px; }
 .download-controls { width: 100%; display: flex; gap: 10px; margin-top: auto; padding-top: 24px; }
 .format-switch { display: flex; padding: 4px; background: white; border: 1px solid #d2cec7; border-radius: 11px; }
-.format-switch button { border: 0; border-radius: 7px; background: transparent; color: #737982; padding: 0 11px; font-size: 11px; font-weight: 800; }
+.format-switch button { border: 0; border-radius: 7px; background: transparent; color: #626973; padding: 0 11px; font-size: 11px; font-weight: 800; }
 .format-switch button.active { background: var(--blue); color: white; }
 .download { flex: 1; padding: 14px 17px; }
 
@@ -135,7 +135,7 @@ button { cursor: pointer; }
 .trust-strip b { color: var(--coral); font-size: 29px; }
 .trust-strip span { display: flex; flex-direction: column; gap: 4px; }
 .trust-strip strong { font-size: 13px; }
-.trust-strip small { color: #7b8188; font-size: 10px; }
+.trust-strip small { color: #59616b; font-size: 10px; }
 
 .how-section { max-width: 1120px; margin: 0 auto 130px; padding: 0 32px; }
 .section-intro { max-width: 560px; margin-bottom: 42px; }
@@ -144,7 +144,7 @@ button { cursor: pointer; }
 .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
 .steps article { position: relative; min-height: 280px; border: 1px solid var(--line); border-radius: 18px; padding: 28px; background: rgba(255,255,255,.62); transition: transform .2s, background .2s; }
 .steps article:hover { transform: translateY(-5px); background: white; }
-.steps article > span { color: #9aa0a6; font-size: 11px; font-weight: 900; letter-spacing: .15em; }
+.steps article > span { color: #626a74; font-size: 11px; font-weight: 900; letter-spacing: .15em; }
 .step-icon { margin: 38px 0 27px; width: 55px; height: 55px; display: grid; place-items: center; border-radius: 15px; background: var(--orange); color: white; font-size: 24px; box-shadow: 7px 7px 0 var(--blue); }
 .steps article:nth-child(2) .step-icon { background: var(--blue); box-shadow: 7px 7px 0 var(--cyan); }
 .steps article:nth-child(3) .step-icon { background: var(--violet); box-shadow: 7px 7px 0 var(--orange); }
@@ -189,7 +189,7 @@ button { cursor: pointer; }
 .inline-profile-link { color: var(--orange-dark); font-weight: 800; text-decoration: underline; text-decoration-color: rgba(217,119,87,.35); text-underline-offset: 3px; }
 .developer-tags { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 27px; }
 .developer-tags span { padding: 8px 12px; border: 1px solid rgba(217,119,87,.28); border-radius: 999px; background: rgba(255,255,255,.75); color: var(--navy); font-size: 11px; font-weight: 800; }
-footer { min-height: 220px; padding: 46px max(32px, calc((100vw - 1120px)/2)); border-top: 1px solid #d7d1c8; display: grid; grid-template-columns: 1fr 1.25fr auto; align-items: start; gap: 55px; color: #7c838b; font-size: 11px; background: #fff; }
+footer { min-height: 220px; padding: 46px max(32px, calc((100vw - 1120px)/2)); border-top: 1px solid #d7d1c8; display: grid; grid-template-columns: 1fr 1.25fr auto; align-items: start; gap: 55px; color: #5f6873; font-size: 11px; background: #fff; }
 .footer-brand img { width: 48px; height: 38px; }
 .footer-brand strong { font-size: 17px; }
 footer strong { color: var(--navy); }

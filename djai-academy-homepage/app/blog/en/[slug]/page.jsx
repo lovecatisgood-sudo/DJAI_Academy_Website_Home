@@ -133,11 +133,17 @@ export async function generateMetadata({ params }) {
       description: post.seoDescription || post.excerpt,
       url: `/blog/en/${post.slug}/`,
       siteName: "DJAI Academy",
-      images: ["/djai-logo.webp"],
+      images: [{ url: "/social/djai-blog.webp", width: 1200, height: 630, alt: post.title }],
       type: "article",
       publishedTime: post.publishedAt,
       modifiedTime: post.updatedAt,
       authors: [post.author]
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.seoTitle || post.title,
+      description: post.seoDescription || post.excerpt,
+      images: ["/social/djai-blog.webp"]
     }
   };
 }

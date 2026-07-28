@@ -25,9 +25,10 @@ const homepageDirectory =
   path.basename(workingDirectory) === "djai-academy-homepage"
     ? workingDirectory
     : path.join(workingDirectory, "djai-academy-homepage");
-const DATA_FILE = path.resolve(
-  process.env.DJAI_BLOG_DATA_FILE || path.join(homepageDirectory, "data", "blog-posts.json")
-);
+const defaultDataFile = path.join(homepageDirectory, "data", "blog-posts.json");
+const DATA_FILE = process.env.DJAI_BLOG_DATA_FILE
+  ? path.resolve(process.env.DJAI_BLOG_DATA_FILE)
+  : defaultDataFile;
 
 export function slugify(value) {
   return String(value || "")

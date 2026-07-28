@@ -126,15 +126,23 @@ function resolveStaticFile(mount, pathname) {
 
 function serveStaticFile(req, res, filePath) {
   const extension = path.extname(filePath).toLowerCase();
+  const stats = fs.statSync(filePath);
   const isHtml = extension === ".html";
   const isVersionedAsset = filePath.includes(`${path.sep}_next${path.sep}static${path.sep}`)
     || /[.-][a-f0-9_-]{8,}\./i.test(path.basename(filePath));
   const compressibleExtensions = new Set([".html", ".css", ".js", ".mjs", ".json", ".svg", ".txt"]);
   const acceptsGzip = /(?:^|,)\s*gzip\s*(?:,|$)/i.test(req.headers["accept-encoding"] || "");
-  const useGzip = req.method !== "HEAD"
-    && acceptsGzip
+  const acceptsBrotli = /(?:^|,)\s*br\s*(?:,|$)/i.test(req.headers["accept-encoding"] || "");
+  const useCompression = req.method !== "HEAD"
     && compressibleExtensions.has(extension)
-    && fs.statSync(filePath).size >= 1024;
+    && stats.size >= 1024;
+  const etag = `W/"${stats.size.toString(16)}-${Math.floor(stats.mtimeMs).toString(16)}"`;
+
+  if (req.headers["if-none-match"] === etag) {
+    res.writeHead(304, { ETag: etag, "Cache-Control": isHtml ? "no-cache" : isVersionedAsset ? "public, max-age=31536000, immutable" : "public, max-age=86400, must-revalidate, stale-while-revalidate=604800" });
+    res.end();
+    return;
+  }
 
   const headers = {
     "Content-Type": mimeTypes[extension] || "application/octet-stream",
@@ -142,12 +150,18 @@ function serveStaticFile(req, res, filePath) {
       ? "no-cache"
       : isVersionedAsset
         ? "public, max-age=31536000, immutable"
-        : "public, max-age=3600, must-revalidate",
+        : "public, max-age=86400, must-revalidate, stale-while-revalidate=604800",
+    ETag: etag,
+    "Last-Modified": stats.mtime.toUTCString(),
     "X-Content-Type-Options": "nosniff",
     "Referrer-Policy": "strict-origin-when-cross-origin",
+    "X-Frame-Options": "SAMEORIGIN",
+    "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
+    "Permissions-Policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
     "Vary": "Accept-Encoding"
   };
-  if (useGzip) headers["Content-Encoding"] = "gzip";
+  if (useCompression && acceptsBrotli) headers["Content-Encoding"] = "br";
+  else if (useCompression && acceptsGzip) headers["Content-Encoding"] = "gzip";
   res.writeHead(200, headers);
 
   if (req.method === "HEAD") {
@@ -156,7 +170,8 @@ function serveStaticFile(req, res, filePath) {
   }
 
   const source = fs.createReadStream(filePath);
-  if (useGzip) source.pipe(zlib.createGzip({ level: 6 })).pipe(res);
+  if (useCompression && acceptsBrotli) source.pipe(zlib.createBrotliCompress({ params: { [zlib.constants.BROTLI_PARAM_QUALITY]: 5 } })).pipe(res);
+  else if (useCompression && acceptsGzip) source.pipe(zlib.createGzip({ level: 6 })).pipe(res);
   else source.pipe(res);
 }
 

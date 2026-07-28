@@ -10,7 +10,10 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
   const { category } = await params;
   if (!categoryOrder.includes(category as Category)) return {};
   const key = category as Category;
-  return { title: `${categories[key].title.en} | DJTools`, description: categories[key].description.en, alternates: { canonical: categoryHref(key, "en"), languages: { th: categoryHref(key, "th"), en: categoryHref(key, "en"), "x-default": categoryHref(key, "th") } } };
+  const title = `${categories[key].title.en} | DJTools`;
+  const description = categories[key].description.en;
+  const canonical = categoryHref(key, "en");
+  return { title, description, alternates: { canonical, languages: { th: categoryHref(key, "th"), en: canonical, "x-default": categoryHref(key, "th") } }, openGraph: { title, description, url: canonical, siteName: "DJAI Academy", images: ["/social/djai-tools.webp"], type: "website" }, twitter: { card: "summary_large_image", title, description, images: ["/social/djai-tools.webp"] } };
 }
 
 export default async function Page({ params }: { params: Promise<{ category: string }> }) {

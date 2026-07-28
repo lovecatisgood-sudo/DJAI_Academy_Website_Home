@@ -116,7 +116,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="DJayTools home">
+        <a className="brand" href="#top">
           <img src={assetPath("djai-academy-logo-display.webp")} alt="DJAI Academy" width="384" height="206" decoding="async" />
           <span><strong>DJayTools</strong><small>by DJAI Academy</small></span>
         </a>
@@ -135,7 +135,7 @@ export default function Home() {
         <div className="eyebrow"><span>100% free</span> · No sign-up required</div>
         <h1>Turn any link into a<br /><em>beautiful QR code.</em></h1>
         <p>Create, customize, and download a high-quality QR code in seconds. Private, unlimited, and completely free.</p>
-        <a className="developer-credit" href="https://www.djai.academy/siamese_cat/dev/en/" target="_blank" rel="noopener noreferrer" aria-label="Learn more about Siamese Cat Dev">
+        <a className="developer-credit" href="https://www.djai.academy/siamese_cat/dev/en/" target="_blank" rel="noopener noreferrer">
           <img src={assetPath("siamese-cat-dev-logo.webp")} alt="Siamese Cat Dev" width="900" height="900" loading="lazy" decoding="async" />
           <span><small>APP DEVELOPED BY</small><strong>Siamese Cat Dev</strong></span>
         </a>
@@ -201,7 +201,7 @@ export default function Home() {
           <div className="preview-panel">
             <div className="preview-top"><span>LIVE PREVIEW</span><i><span /> Ready to scan</i></div>
             <div className={`qr-frame frame-${frame}`}>
-              <div ref={qrMount} className="qr-mount" aria-label="QR code preview" />
+              <div ref={qrMount} className="qr-mount" role="img" aria-label="QR code preview" />
               {frame === "label" && <strong>SCAN ME</strong>}
             </div>
             <p>This static QR code never expires.</p>

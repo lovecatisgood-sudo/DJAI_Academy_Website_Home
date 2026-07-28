@@ -18,7 +18,7 @@ export const metadata = {
       "Custom development services covering web apps, mobile apps, SaaS, AI automation, business systems, fintech, games, and Web3.",
     url: "/service/en/",
     siteName: "DJAI Academy",
-    images: ["/portfolio/websites/Siamese_Cat_Cafe.png"],
+    images: [{ url: "/social/djai-development.webp", width: 1200, height: 630 }],
     type: "website"
   }
 };

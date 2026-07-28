@@ -3,7 +3,7 @@
   --navy-2: #0d2342;
   --blue: #1256d8;
   --cyan: #19e3ff;
-  --coral: #ff5a5f;
+  --coral: #c9343a;
   --green: #0a8f6a;
   --ink: #102039;
   --muted: #5c6b7f;
@@ -51,7 +51,10 @@ img { max-width: 100%; height: auto; }
 
 .share-buttons { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; width: fit-content; max-width: 100%; padding: 10px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,255,255,.9); box-shadow: 0 16px 42px rgba(7,19,39,.08); }
 .share-buttons.compact { margin-top: 4px; }
-.share-buttons span { padding: 0 6px; color: #627287; font-size: .74rem; font-weight: 900; text-transform: uppercase; letter-spacing: .08em; }
+.share-buttons span { padding: 0 6px; color: #46566b; font-size: .74rem; font-weight: 900; text-transform: uppercase; letter-spacing: .08em; }
+
+.tool-intro .eyebrow { color: #68edff; }
+.service-band .eyebrow { color: #fff; }
 .share-buttons a, .share-buttons button { min-height: 34px; padding: 0 12px; border: 0; border-radius: 999px; color: var(--ink); background: #eef3f8; font: inherit; font-size: .8rem; font-weight: 900; cursor: pointer; }
 .share-buttons a:hover, .share-buttons button:hover { color: white; background: var(--coral); }
 
@@ -214,7 +217,7 @@ img { max-width: 100%; height: auto; }
 
 .service-band, .course-band { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 50px; padding: 70px max(24px, calc((100vw - 1120px) / 2)); }
 .service-band { color: white; background: var(--blue); }
-.service-band .eyebrow { color: var(--cyan); }
+.service-band .eyebrow { color: #fff; }
 .service-band p:last-child { max-width: 700px; color: #dce7fa; line-height: 1.65; }
 .course-band { grid-template-columns: 60px 1fr auto; background: #fff4d6; }
 .course-band > svg { width: 48px; height: 48px; color: var(--coral); }

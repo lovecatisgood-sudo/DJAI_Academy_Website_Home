@@ -10,7 +10,7 @@ const legacyUppercaseRules = [
   [/^\/siamese_cat\/EN(?=\/|$)/, "/siamese_cat/en"]
 ];
 
-export function middleware(request) {
+export function proxy(request) {
   const { pathname } = request.nextUrl;
 
   for (const [pattern, replacement] of legacyUppercaseRules) {

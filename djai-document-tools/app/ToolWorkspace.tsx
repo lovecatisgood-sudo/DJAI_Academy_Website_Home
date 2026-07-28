@@ -114,7 +114,7 @@ function GenericToolWorkspace({ tool, language }: { tool: ToolDefinition; langua
             <button className={`drop-zone ${dragging ? "dragging" : ""}`} type="button" onClick={() => inputRef.current?.click()} onDragEnter={(event) => { event.preventDefault(); setDragging(true); }} onDragOver={(event) => event.preventDefault()} onDragLeave={() => setDragging(false)} onDrop={(event) => { event.preventDefault(); setDragging(false); addFiles(event.dataTransfer.files); }}>
               <Upload /><strong>{files.length ? (en ? "Add or replace file" : "เพิ่มหรือเปลี่ยนไฟล์") : (en ? "Drop a file here" : "วางไฟล์ที่นี่")}</strong><small>{en ? "Processed locally · Maximum 40 MB per file" : "ประมวลผลในเครื่อง · สูงสุด 40 MB ต่อไฟล์"}</small><span>{en ? "Choose file" : "เลือกไฟล์"}</span>
             </button>
-            <input ref={inputRef} className="visually-hidden" type="file" accept={acceptFor(tool)} multiple={allowsMultiple} onChange={(event) => event.target.files && addFiles(event.target.files)} />
+            <input ref={inputRef} className="visually-hidden" type="file" accept={acceptFor(tool)} multiple={allowsMultiple} aria-label={en ? "Choose files to process" : "เลือกไฟล์ที่ต้องการประมวลผล"} onChange={(event) => event.target.files && addFiles(event.target.files)} />
           </>}
           {files.length > 0 && <div className="selected-files">{files.map((file, index) => <div key={`${file.name}-${index}`}><FileText /><span><strong>{file.name}</strong><small>{formatBytes(file.size)}</small></span><button type="button" aria-label="Remove file" title="Remove file" onClick={() => setFiles((current) => current.filter((_, item) => item !== index))}><X /></button></div>)}</div>}
         </div>

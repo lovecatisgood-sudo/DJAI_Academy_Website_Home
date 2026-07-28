@@ -18,7 +18,7 @@ export const metadata = {
       "Bring DJAI your requirements. We plan, design, build, automate, and launch software products with fast, cost-aware execution.",
     url: "/development/en/",
     siteName: "DJAI Academy",
-    images: ["/portfolio/games/Xana_Metaverse.webp"],
+    images: ["/portfolio/optimized/games/Xana_Metaverse.webp"],
     type: "website"
   }
 };

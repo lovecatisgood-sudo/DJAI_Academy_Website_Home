@@ -16,7 +16,7 @@ export const metadata = {
     title: "AI Masterclass: From Idea to Live Product",
     description: "A full-day hands-on AI workshop on 1 August 2026 by DJAI Academy.",
     url: "/course/detail/en/",
-    images: ["/course/assets/community2.webp"],
+    images: ["/course/assets/community2-display.webp"],
     type: "website"
   }
 };

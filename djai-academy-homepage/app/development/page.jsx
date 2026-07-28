@@ -18,7 +18,7 @@ export const metadata = {
       "ส่ง requirement ให้ DJAI เราช่วยวางแผน ออกแบบ พัฒนา และเปิดใช้งานโปรดักต์อย่างเร็วและคุ้มค่า",
     url: "/development/",
     siteName: "DJAI Academy",
-    images: ["/portfolio/games/Xana_Metaverse.webp"],
+    images: ["/portfolio/optimized/games/Xana_Metaverse.webp"],
     type: "website"
   }
 };

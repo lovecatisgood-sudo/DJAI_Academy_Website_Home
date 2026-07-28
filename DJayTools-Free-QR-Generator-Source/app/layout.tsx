@@ -17,6 +17,7 @@ export const metadata: Metadata = {
     languages: {
       th: `${BASE_PATH}/`,
       en: `${BASE_PATH}/en/`,
+      "x-default": `${BASE_PATH}/`,
     },
   },
   openGraph: {
@@ -49,6 +50,7 @@ export default function RootLayout({
   return (
     <html lang="th">
       <body>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": [{ "@type": "SoftwareApplication", name: "DJAI Free QR Code Generator", url: "https://www.djai.academy/tools/qrgen/", applicationCategory: "UtilitiesApplication", operatingSystem: "Web browser", isAccessibleForFree: true, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, publisher: { "@type": "Organization", name: "DJAI Academy", url: "https://www.djai.academy/" } }, { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "DJAI Academy", item: "https://www.djai.academy/" }, { "@type": "ListItem", position: 2, name: "Free QR Code Generator", item: "https://www.djai.academy/tools/qrgen/" }] }] }) }} />
         {children}
         <Script
           async

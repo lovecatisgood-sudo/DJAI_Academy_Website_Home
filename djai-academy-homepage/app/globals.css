@@ -2,7 +2,7 @@
   --ink: #031026;
   --deep: #061a3d;
   --panel: #082655;
-  --blue: #1677ff;
+  --blue: #075bbb;
   --cyan: #19e3ff;
   --orange: #ff8a2b;
   --cream: #f7fbff;
@@ -49,6 +49,8 @@ select,
 textarea {
   font: inherit;
 }
+
+.section .eyebrow { color: #0752a8; }
 
 textarea {
   resize: vertical;
@@ -1422,6 +1424,11 @@ pre {
   background: rgba(255, 255, 255, 0.54);
 }
 
+.ad-section.ad-display,
+.ad-section.ad-display2 { min-height: 280px; }
+.ad-section.ad-inArticle { min-height: 250px; }
+.ad-section.ad-multiplex { min-height: 320px; }
+
 .article-content h2,
 .article-content h3 {
   margin: 24px 0 0;
@@ -1947,7 +1954,7 @@ pre {
   color: #ffffff;
   background:
     linear-gradient(rgba(3, 16, 38, 0.12), rgba(3, 16, 38, 0.82)),
-    url("/portfolio/games/Xana_Metaverse.webp") center / cover;
+    url("/portfolio/optimized/games/Xana_Metaverse.webp") center / cover;
   border: 1px solid rgba(25, 227, 255, 0.22);
   border-radius: 8px;
   box-shadow: var(--shadow);

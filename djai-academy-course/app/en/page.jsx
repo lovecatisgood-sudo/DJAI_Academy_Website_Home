@@ -40,14 +40,14 @@ const BASE_PATH = "/course";
 const assetPath = (path) => `${BASE_PATH}/assets/${path}`;
 
 const communityImages = [
-  ["community2.webp", "Students presenting an AI build on stage"],
-  ["community4.webp", "DJAI speaker teaching visual creation with AI"],
-  ["community1.webp", "DJAI Academy student group workshop photo"],
-  ["community8.webp", "Digital transformation training session"],
-  ["community3.webp", "Students and instructor after an AI class"],
-  ["community6.webp", "Corporate AI training group"],
-  ["community5.webp", "DJAI Academy partner workshop group"],
-  ["community7.webp", "AI transformation class presentation"]
+  ["community2-display.webp", "Students presenting an AI build on stage"],
+  ["community4-display.webp", "DJAI speaker teaching visual creation with AI"],
+  ["community1-display.webp", "DJAI Academy student group workshop photo"],
+  ["community8-display.webp", "Digital transformation training session"],
+  ["community3-display.webp", "Students and instructor after an AI class"],
+  ["community6-display.webp", "Corporate AI training group"],
+  ["community5-display.webp", "DJAI Academy partner workshop group"],
+  ["community7-display.webp", "AI transformation class presentation"]
 ];
 
 const includedItems = [
@@ -185,6 +185,8 @@ export default function Home() {
             className="instructor"
             src={assetPath("Instructor-DJAI-display.webp")}
             alt="DJAI Academy instructor"
+            fetchPriority="high"
+            decoding="async"
           />
           <div className="floating-badge badge-ai">
             <span className="pulse-dot" />
@@ -270,7 +272,7 @@ export default function Home() {
       <section id="community" className="section split-section community">
         <div className="photo-grid" aria-label="DJAI Academy community photos">
           {communityImages.map(([src, alt]) => (
-            <img key={src} src={assetPath(src)} alt={alt} />
+            <img key={src} src={assetPath(src)} alt={alt} loading="lazy" decoding="async" />
           ))}
         </div>
 
@@ -361,8 +363,10 @@ export default function Home() {
         <div className="phone-stage">
           <div className="phone-glow" />
           <img
-            src={assetPath("719233138_122103496575327302_5083318908732239582_n.webp")}
+            src={assetPath("mobile-app-display.webp")}
             alt="Example mobile app interface built through AI workflows"
+            loading="lazy"
+            decoding="async"
           />
         </div>
       </section>

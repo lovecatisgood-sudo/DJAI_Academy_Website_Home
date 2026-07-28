@@ -18,7 +18,7 @@ export const metadata = {
       "บริการพัฒนาเว็บไซต์ แอป SaaS AI Automation ระบบธุรกิจ Fintech เกม และ Web3",
     url: "/service/",
     siteName: "DJAI Academy",
-    images: ["/portfolio/websites/Siamese_Cat_Cafe.png"],
+    images: [{ url: "/social/djai-development.webp", width: 1200, height: 630 }],
     type: "website"
   }
 };

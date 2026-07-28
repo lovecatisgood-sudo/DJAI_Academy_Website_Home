@@ -51,7 +51,7 @@ export default function AdSenseAd({ label = "Advertisement", variant = "display"
   }, []);
 
   return (
-    <section className="ad-section" aria-label={label}>
+    <section className={`ad-section ad-${variant}`} aria-label={label}>
       <ins
         className="adsbygoogle"
         style={unit.style}
