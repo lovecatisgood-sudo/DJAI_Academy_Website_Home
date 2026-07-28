@@ -49,6 +49,19 @@ img { max-width: 100%; height: auto; }
 
 .ad-section { display: block; width: min(980px, calc(100% - 48px)); min-height: 90px; margin: 34px auto; padding: 12px; border-radius: 18px; background: rgba(255,255,255,.9); }
 
+.promo-modal { position: fixed; inset: 0; z-index: 80; display: grid; place-items: center; padding: 20px; background: rgba(7,19,39,.56); animation: fade-in .16s ease-out; }
+.promo-modal.closing { animation: fade-out .14s ease-in forwards; }
+.promo-card { position: relative; width: min(520px, 100%); padding: 30px; color: var(--ink); background: white; border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 28px 80px rgba(7,19,39,.28); }
+.promo-card h2 { margin: 0 0 12px; font-size: clamp(1.7rem, 4vw, 2.45rem); line-height: 1.05; }
+.promo-card > p:not(.eyebrow) { color: #50627a; line-height: 1.7; }
+.promo-close { position: absolute; top: 12px; right: 14px; width: 34px; height: 34px; color: var(--ink); background: #eef3f8; border: 0; border-radius: 50%; font-size: 24px; line-height: 1; }
+.promo-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.promo-actions a, .promo-actions button { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; padding: 0 16px; border-radius: 8px; font-weight: 900; }
+.promo-actions a { color: white; background: var(--coral); }
+.promo-actions button { color: var(--ink); background: #eef3f8; border: 0; }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fade-out { from { opacity: 1; } to { opacity: 0; } }
+
 .tool-directory, .related-tools, .faq-section { padding: 90px max(24px, calc((100vw - 1180px) / 2)); }
 .section-heading { max-width: 700px; margin-bottom: 36px; }
 .section-heading h2, .service-band h2, .course-band h2, .how-to h2, .faq-section h2 { margin: 0; font-size: clamp(1.7rem, 3vw, 2.7rem); line-height: 1.15; }

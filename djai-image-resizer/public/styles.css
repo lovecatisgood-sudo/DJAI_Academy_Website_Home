@@ -354,10 +354,70 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
 .developer-credit span { font-size: 9px; }
 .developer-credit img { width: 110px; height: 58px; object-fit: contain; filter: drop-shadow(0 3px 8px rgba(0,0,0,.25)); }
 
+.promo-modal[hidden] { display: none; }
+.promo-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(5, 20, 50, .58);
+  backdrop-filter: blur(8px);
+  animation: promo-fade .18s ease-out;
+}
+.promo-modal.closing { animation: promo-fade-out .18s ease-in forwards; }
+.promo-card {
+  position: relative;
+  width: min(100%, 520px);
+  padding: 34px;
+  border: 1px solid rgba(255, 255, 255, .25);
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at top left, rgba(93, 217, 239, .28), transparent 34%),
+    linear-gradient(135deg, #071a3f, #0b1026 58%, #25115d);
+  color: white;
+  box-shadow: 0 28px 80px rgba(0, 0, 0, .35);
+}
+.promo-card .section-kicker { color: #5dd9ef; }
+.promo-card h2 { margin: 10px 0 12px; font-size: clamp(27px, 5vw, 40px); line-height: 1.04; letter-spacing: -.04em; }
+.promo-card p:not(.section-kicker) { color: rgba(255, 255, 255, .78); line-height: 1.7; }
+.promo-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .12);
+  color: white;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+}
+.promo-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+.promo-actions a,
+.promo-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  padding: 0 18px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 13px;
+  cursor: pointer;
+}
+.promo-actions a { color: #071a3f; background: white; }
+.promo-actions button { border: 1px solid rgba(255, 255, 255, .28); color: white; background: transparent; }
+
 @keyframes spin { to { transform: rotate(360deg); } }
 @keyframes spinReverse { to { transform: rotate(-360deg); } }
 @keyframes floatMascot { 0%,100% { transform: translateY(0) rotate(-.4deg); } 50% { transform: translateY(-12px) rotate(.5deg); } }
 @keyframes floatPill { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes promo-fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes promo-fade-out { to { opacity: 0; transform: translateY(8px); } }
 
 @media (max-width: 1050px) {
   .main-nav { gap: 15px; }

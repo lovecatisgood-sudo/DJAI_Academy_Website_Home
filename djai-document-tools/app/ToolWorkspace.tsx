@@ -4,6 +4,7 @@ import { ArrowRight, Check, Clipboard, Download, FileArchive, FileText, LoaderCi
 import dynamic from "next/dynamic";
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { ToolOptions, ToolResult } from "./processors";
+import ToolPromoModal, { shouldShowToolPromo } from "./ToolPromoModal";
 import type { Language, ToolDefinition } from "./tool-data";
 
 const TokenCounterWorkspace = dynamic(() => import("./TokenCounterWorkspace"), {
@@ -51,6 +52,7 @@ function GenericToolWorkspace({ tool, language }: { tool: ToolDefinition; langua
   const [running, setRunning] = useState(false);
   const [dragging, setDragging] = useState(false);
   const [copied, setCopied] = useState(false);
+  const [promoType, setPromoType] = useState<"course" | "development" | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const textMode = ["context-optimizer", "rag-chunk-calculator", "prompt-packager"].includes(tool.slug);
   const needsFile = !["context-optimizer", "rag-chunk-calculator", "prompt-packager"].includes(tool.slug);
@@ -83,6 +85,7 @@ function GenericToolWorkspace({ tool, language }: { tool: ToolDefinition; langua
       const processed = await processTool(tool, files, input, options);
       const url = processed.blob ? URL.createObjectURL(processed.blob) : undefined;
       setResult({ ...processed, url });
+      if (processed.blob) setPromoType(shouldShowToolPromo());
       window.dispatchEvent(new CustomEvent("djai-tool-complete", { detail: { tool: tool.slug } }));
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : (en ? "The tool could not process this file." : "ไม่สามารถประมวลผลไฟล์นี้ได้"));
@@ -130,6 +133,7 @@ function GenericToolWorkspace({ tool, language }: { tool: ToolDefinition; langua
       {outputText && <pre className="text-preview">{outputText}</pre>}
       <div className="result-actions">{result.url && result.fileName && <a className="download-button" href={result.url} download={result.fileName}><Download />{en ? "Download result" : "ดาวน์โหลดผลลัพธ์"}</a>}{outputText && <button type="button" onClick={copyResult}>{copied ? <Check /> : <Clipboard />}{copied ? (en ? "Copied" : "คัดลอกแล้ว") : (en ? "Copy result" : "คัดลอกผลลัพธ์")}</button>}</div>
     </section>}
+    <ToolPromoModal language={language} type={promoType} onClose={() => setPromoType(null)} />
   </>;
 }
 

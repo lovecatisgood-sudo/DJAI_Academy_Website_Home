@@ -34,7 +34,24 @@
     select: 'เลือก',
     remove: 'ลบ',
     rotate: 'หมุน',
-    download: 'ดาวน์โหลด'
+    download: 'ดาวน์โหลด',
+    promoLater: 'ไว้ทีหลัง',
+    promos: {
+      course: {
+        eyebrow: 'เรียนต่อกับ DJAI',
+        title: 'อยากสร้างเครื่องมือ AI และเว็บของคุณเองไหม?',
+        text: 'เข้าคอร์ส DJAI เพื่อเรียน workflow จริงสำหรับสร้างเว็บ เครื่องมือ automation และโปรเจกต์ AI ที่ deploy ใช้งานได้',
+        cta: 'ดูคอร์ส DJAI',
+        href: 'https://www.djai.academy/course/'
+      },
+      development: {
+        eyebrow: 'สร้างโปรเจกต์กับทีมเรา',
+        title: 'Want to make your app or your own site with professional development team?',
+        text: 'ทีม Siamese Cat Dev ช่วยออกแบบและพัฒนาเว็บ แอป เครื่องมือ automation และระบบ AI สำหรับธุรกิจของคุณ',
+        cta: 'คุยเรื่องโปรเจกต์',
+        href: 'https://www.djai.academy/development/'
+      }
+    }
   } : {
     imageFallback: 'Image',
     chooseSupported: 'Choose a JPG, PNG, WebP, HEIC, or HEIF image.',
@@ -64,7 +81,24 @@
     select: 'Select',
     remove: 'Remove',
     rotate: 'Rotate',
-    download: 'Download'
+    download: 'Download',
+    promoLater: 'Maybe later',
+    promos: {
+      course: {
+        eyebrow: 'Learn with DJAI',
+        title: 'Want to build your own AI tools and websites?',
+        text: 'Join DJAI courses to learn practical workflows for building websites, automation tools, and AI projects you can deploy.',
+        cta: 'View DJAI courses',
+        href: 'https://www.djai.academy/course/en/'
+      },
+      development: {
+        eyebrow: 'Build with our team',
+        title: 'Want to make your app or your own site with professional development team?',
+        text: 'Siamese Cat Dev can design and build websites, apps, automation tools, and AI systems for your business.',
+        cta: 'Start a project',
+        href: 'https://www.djai.academy/development/en/'
+      }
+    }
   };
 
   const els = {
@@ -122,6 +156,13 @@
     savedBadge: $('#saved-badge'),
     downloadButton: $('#download-button'),
     batchResults: $('#batch-results'),
+    promoModal: $('#tool-promo-modal'),
+    promoClose: $('#tool-promo-close'),
+    promoLater: $('#tool-promo-later'),
+    promoEyebrow: $('#tool-promo-eyebrow'),
+    promoTitle: $('#tool-promo-title'),
+    promoText: $('#tool-promo-text'),
+    promoLink: $('#tool-promo-link'),
     year: $('#current-year')
   };
 
@@ -183,6 +224,47 @@
   const safeBaseName = (name) => {
     const base = name.replace(/\.[^.]+$/, '').replace(/[^a-z0-9_-]+/gi, '-').replace(/^-+|-+$/g, '');
     return base || 'djai-image';
+  };
+
+  const PROMO_LAST_SHOWN_KEY = 'djai-tool-promo-last-shown';
+  const PROMO_NEXT_TYPE_KEY = 'djai-tool-promo-next-type';
+  const PROMO_INTERVAL_MS = 6 * 60 * 60 * 1000;
+
+  const shouldShowToolPromo = () => {
+    try {
+      const lastShown = Number(window.localStorage.getItem(PROMO_LAST_SHOWN_KEY) || '0');
+      if (Date.now() - lastShown < PROMO_INTERVAL_MS) return null;
+      const type = window.localStorage.getItem(PROMO_NEXT_TYPE_KEY) === 'development' ? 'development' : 'course';
+      window.localStorage.setItem(PROMO_LAST_SHOWN_KEY, String(Date.now()));
+      window.localStorage.setItem(PROMO_NEXT_TYPE_KEY, type === 'course' ? 'development' : 'course');
+      return type;
+    } catch {
+      return 'course';
+    }
+  };
+
+  const hideToolPromo = () => {
+    if (!els.promoModal || els.promoModal.hidden) return;
+    els.promoModal.classList.add('closing');
+    window.setTimeout(() => {
+      els.promoModal.hidden = true;
+      els.promoModal.classList.remove('closing');
+    }, 180);
+  };
+
+  const showToolPromo = () => {
+    if (!els.promoModal) return;
+    const type = shouldShowToolPromo();
+    if (!type) return;
+    const promo = copy.promos[type];
+    els.promoEyebrow.textContent = promo.eyebrow;
+    els.promoTitle.textContent = promo.title;
+    els.promoText.textContent = promo.text;
+    els.promoLink.textContent = promo.cta;
+    els.promoLink.href = promo.href;
+    els.promoLater.textContent = copy.promoLater;
+    els.promoModal.hidden = false;
+    els.promoClose.focus({ preventScroll: true });
   };
 
   const setError = (message = '') => {
@@ -700,6 +782,7 @@
       link.href = state.results[0].url;
       link.download = state.results[0].name;
       link.click();
+      showToolPromo();
       return;
     }
     try {
@@ -712,6 +795,7 @@
       link.href = url;
       link.download = 'djai-images.zip';
       link.click();
+      showToolPromo();
       setTimeout(() => URL.revokeObjectURL(url), 1000);
     } catch (error) {
       console.error(error);
@@ -823,6 +907,11 @@
     els.checkerToggle.setAttribute('aria-pressed', String(active));
   });
   els.downloadButton.addEventListener('click', downloadResults);
+  els.promoClose?.addEventListener('click', hideToolPromo);
+  els.promoLater?.addEventListener('click', hideToolPromo);
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') hideToolPromo();
+  });
 
   window.addEventListener('beforeunload', () => {
     revokeUrl('objectUrl');

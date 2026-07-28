@@ -35,6 +35,7 @@ import Image from "next/image";
 import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import type { ProcessingOptions, ProcessResult } from "./pdf-actions";
 import AdSenseAd from "./AdSenseAd";
+import ToolPromoModal, { shouldShowToolPromo } from "./ToolPromoModal";
 import { BASE_PATH, SITE_URL, homeHref, toolCopy, toolGuides, toolHref, toolSlugs, type Language, type ToolSlug } from "./tool-data";
 
 const icons: Record<ToolSlug, LucideIcon> = {
@@ -348,6 +349,7 @@ export default function PdfToolsApp({ language, initialTool, seoPage }: { langua
   const [processing, setProcessing] = useState(false);
   const [error, setError] = useState("");
   const [result, setResult] = useState<(ProcessResult & { url: string; originalSize: number }) | null>(null);
+  const [promoType, setPromoType] = useState<"course" | "development" | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const fileInput = useRef<HTMLInputElement>(null);
 
@@ -402,6 +404,7 @@ export default function PdfToolsApp({ language, initialTool, seoPage }: { langua
       const processed = await processFiles(activeTool, files, options);
       if (result?.url) URL.revokeObjectURL(result.url);
       setResult({ ...processed, url: URL.createObjectURL(processed.blob), originalSize: files.reduce((sum, file) => sum + file.size, 0) });
+      setPromoType(shouldShowToolPromo());
       window.setTimeout(() => document.getElementById("pdf-result")?.scrollIntoView({ behavior: "smooth", block: "center" }), 50);
     } catch (caught) {
       const message = caught instanceof Error ? caught.message : "Unable to process this file.";
@@ -562,6 +565,7 @@ export default function PdfToolsApp({ language, initialTool, seoPage }: { langua
       <section className="seo-section"><div><p className="eyebrow">FREE PDF TOOLS</p><h2>{copy.seoTitle}</h2><p>{copy.seoText}</p></div><div className="faq-list"><h2>{copy.faqTitle}</h2>{copy.faq.map(([question, answer]) => <details key={question}><summary>{question}<span>+</span></summary><p>{answer}</p></details>)}</div></section>
 
       <footer><div className="footer-brand"><a className="brand" href={homeHref(language)}><Image src={`${BASE_PATH}/djai-academy-logo-display.webp`} alt="DJAI Academy" width={114} height={61} loading="lazy" unoptimized /><span><strong>DJTools</strong><small>PDF · by DJAI Academy</small></span></a><p>{copy.footerPrivacy}</p></div><div className="footer-links"><div><strong>DJAI</strong><a href={en ? "https://www.djai.academy/en/" : "https://www.djai.academy/"}>DJAI Academy</a><a href={en ? "https://www.djai.academy/course/en/" : "https://www.djai.academy/course/"}>{copy.nav.course}</a><a href={en ? "https://www.djai.academy/blog/en/" : "https://www.djai.academy/blog/"}>{copy.nav.blog}</a></div><div><strong>BUILD</strong><a href={en ? "https://www.djai.academy/development/en/" : "https://www.djai.academy/development/"}>{copy.nav.development}</a><a href={en ? "https://www.djai.academy/portfolio/en/" : "https://www.djai.academy/portfolio/"}>{copy.portfolioButton}</a><a href={en ? "https://www.djai.academy/siamese_cat/dev/en/" : "https://www.djai.academy/siamese_cat/dev/"}>Siamese Cat Dev</a></div><div><strong>TOOLS</strong>{toolSlugs.slice(0, 4).map((slug) => <a href={toolHref(slug, language)} key={slug}>{toolCopy[language][slug].label}</a>)}</div></div><p className="copyright">© 2026 {copy.copyright}</p></footer>
+      <ToolPromoModal language={language} type={promoType} onClose={() => setPromoType(null)} />
     </main>
   );
 }

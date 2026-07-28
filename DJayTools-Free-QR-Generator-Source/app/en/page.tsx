@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { CornerSquareType, DotType } from "qr-code-styling";
 import AdSenseAd from "../AdSenseAd";
+import ToolPromoModal, { shouldShowToolPromo } from "../ToolPromoModal";
 
 const COLORS = ["#D97757", "#0B32A4", "#00BFD8", "#5630C8", "#071E3D", "#F2A65A", "#2E8B57", "#D7467D"];
 const BASE_PATH = "/tools/qrgen";
@@ -56,6 +57,7 @@ export default function Home() {
   const [frame, setFrame] = useState<"none" | "simple" | "label">("label");
   const [format, setFormat] = useState<"png" | "svg">("png");
   const [error, setError] = useState("");
+  const [promoType, setPromoType] = useState<"course" | "development" | null>(null);
 
   const normalizedUrl = useMemo(() => normalizeUrl(url), [url]);
 
@@ -99,6 +101,7 @@ export default function Home() {
   function download() {
     if (!validate() || !qrInstance.current) return;
     qrInstance.current.download({ name: "DJayTools-QR-Code", extension: format });
+    setPromoType(shouldShowToolPromo());
   }
 
   function scrollToGenerator() {
@@ -300,6 +303,7 @@ export default function Home() {
         </nav>
         <p className="copyright">© 2026 DJAI Academy</p>
       </footer>
+      <ToolPromoModal language="en" type={promoType} onClose={() => setPromoType(null)} />
     </main>
   );
 }

@@ -55,6 +55,19 @@ button { cursor: pointer; }
 
 .ad-section { display: block; max-width: 980px; min-height: 90px; margin: 0 auto 34px; padding: 12px 24px; border-radius: 18px; background: rgba(255,255,255,.58); }
 
+.promo-modal { position: fixed; inset: 0; z-index: 80; display: grid; place-items: center; padding: 20px; background: rgba(7,30,61,.56); animation: fade-in .16s ease-out; }
+.promo-modal.closing { animation: fade-out .14s ease-in forwards; }
+.promo-card { position: relative; width: min(520px, 100%); padding: 30px; color: var(--navy); background: white; border: 1px solid var(--line); border-radius: 22px; box-shadow: 0 28px 80px rgba(7,30,61,.28); }
+.promo-card h2 { margin: 10px 0 12px; font-size: clamp(1.7rem, 4vw, 2.45rem); line-height: 1.05; letter-spacing: -1.6px; }
+.promo-card > p:not(.step-tag) { color: var(--muted); line-height: 1.7; }
+.promo-close { position: absolute; top: 12px; right: 14px; width: 34px; height: 34px; color: var(--navy); background: #f0eee8; border: 0; border-radius: 50%; font-size: 24px; line-height: 1; }
+.promo-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
+.promo-actions a, .promo-actions button { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; padding: 0 16px; border-radius: 10px; font-weight: 900; }
+.promo-actions a { color: white; background: var(--orange); }
+.promo-actions button { color: var(--navy); background: #f0eee8; border: 0; }
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes fade-out { from { opacity: 1; } to { opacity: 0; } }
+
 .generator-shell { max-width: 1180px; margin: 0 auto 74px; padding: 28px 32px 0; scroll-margin-top: 20px; }
 .generator-head { display: flex; justify-content: space-between; align-items: end; margin: 0 4px 18px; }
 .generator-head h2 { margin: 8px 0 0; font-size: 34px; letter-spacing: -1.5px; }
