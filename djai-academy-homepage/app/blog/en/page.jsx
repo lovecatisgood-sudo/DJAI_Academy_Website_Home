@@ -34,6 +34,18 @@ function formatDate(value) {
   }).format(new Date(value));
 }
 
+function readLabel(category) {
+  if (category === "Tutorial") {
+    return "Read tutorial";
+  }
+
+  if (category === "Guides") {
+    return "Read guide";
+  }
+
+  return "Read article";
+}
+
 export default async function BlogPage({ searchParams }) {
   const params = await searchParams;
   const selectedCategory = BLOG_CATEGORIES.includes(params?.category) ? params.category : "All";
@@ -128,7 +140,7 @@ export default async function BlogPage({ searchParams }) {
                     <p>{post.excerpt}</p>
                     <div className="post-card-footer">
                       <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
-                      <a href={`/blog/en/${post.slug}/`}>Read tutorial</a>
+                      <a href={`/blog/en/${post.slug}/`}>{readLabel(post.categoryKey)}</a>
                     </div>
                   </article>
                 ))}
