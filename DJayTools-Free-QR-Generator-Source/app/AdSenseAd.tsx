@@ -19,9 +19,10 @@ const AD_UNITS = {
     }
   },
   multiplex: {
-    slot: "2012765259",
+    slot: "7214075331",
     props: {
-      "data-ad-format": "autorelaxed"
+      "data-ad-format": "fluid",
+      "data-ad-layout-key": "-ef+6k-30-ac+ty"
     }
   }
 };
