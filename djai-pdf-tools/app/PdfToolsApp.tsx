@@ -535,6 +535,8 @@ export default function PdfToolsApp({ language, initialTool, seoPage }: { langua
         </div>
       </section>
 
+      <AdSenseAd label="PDF tools advertisement" variant="display2" />
+
       {result && (
         <section className="result-section" id="pdf-result" aria-live="polite">
           <div className="success-mark"><Check /></div><p className="eyebrow">SUCCESS</p><h2>{copy.resultTitle}</h2><p>{copy.resultText}</p>
@@ -546,6 +548,8 @@ export default function PdfToolsApp({ language, initialTool, seoPage }: { langua
       )}
 
       {initialTool && <section className="tool-guide"><div><p className="eyebrow">HOW TO</p><h2>{activeGuide.title}</h2><p>{activeGuide.intro}</p></div><ol>{activeGuide.steps.map((step, index) => <li key={step}><span>{String(index + 1).padStart(2, "0")}</span><p>{step}</p></li>)}</ol></section>}
+
+      <AdSenseAd label="Related content advertisement" variant="multiplex" />
 
       <section className="privacy-band"><ShieldCheck /><div><h2>{copy.privacyTitle}</h2><p>{linkedBuilderName(copy.privacyText, devHref)}</p></div></section>
 

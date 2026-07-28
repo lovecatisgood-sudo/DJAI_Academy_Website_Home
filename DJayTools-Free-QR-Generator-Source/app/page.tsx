@@ -248,6 +248,8 @@ export default function Home() {
         </div>
       </section>
 
+      <AdSenseAd label="QR tool advertisement" variant="display2" />
+
       <section className="final-cta">
         <div>
           <span className="step-tag">พร้อมเมื่อคุณพร้อม</span>
@@ -255,6 +257,8 @@ export default function Home() {
         </div>
         <button className="primary" onClick={scrollToGenerator}>สร้าง QR code ฟรี <span>↗</span></button>
       </section>
+
+      <AdSenseAd label="Related content advertisement" variant="multiplex" />
 
       <section className="developer-profile" id="profile">
         <div className="developer-logo-stage">

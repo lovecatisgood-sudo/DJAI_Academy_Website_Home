@@ -195,6 +195,8 @@ export default function ToolsPage() {
         ))}
       </section>
 
+      <AdSenseAd label="Tools advertisement" variant="display2" />
+
       <section className="workflow-section" aria-labelledby="workflow-heading">
         <div>
           <p className="eyebrow">START WITH A TASK</p>

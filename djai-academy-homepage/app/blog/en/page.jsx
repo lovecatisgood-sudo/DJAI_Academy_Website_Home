@@ -156,6 +156,8 @@ export default async function BlogPage({ searchParams }) {
             )}
           </div>
         </section>
+
+        <AdSenseAd label="Blog advertisement" variant="display2" />
       </main>
       <SiteFooter locale="en" />
     </>

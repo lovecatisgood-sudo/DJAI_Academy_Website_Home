@@ -12,6 +12,14 @@ const AD_UNITS = {
     },
     style: { display: "block" }
   },
+  display2: {
+    slot: "2939100040",
+    props: {
+      "data-ad-format": "auto",
+      "data-full-width-responsive": "true"
+    },
+    style: { display: "block" }
+  },
   inArticle: {
     slot: "9915306007",
     props: {
@@ -19,6 +27,13 @@ const AD_UNITS = {
       "data-ad-format": "fluid"
     },
     style: { display: "block", textAlign: "center" }
+  },
+  multiplex: {
+    slot: "2012765259",
+    props: {
+      "data-ad-format": "autorelaxed"
+    },
+    style: { display: "block" }
   }
 };
 

@@ -65,6 +65,7 @@ export default function CategoryPage({ category, language }: { category: Categor
           ))}
         </div>
       </section>
+      <AdSenseAd label="Tools advertisement" variant="display2" />
       <ServiceBands language={language} category={category} />
       <SuiteFooter language={language} />
     </main>

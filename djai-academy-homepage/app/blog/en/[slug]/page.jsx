@@ -215,6 +215,8 @@ export default async function BlogPostPage({ params }) {
               Open free tools
             </a>
           </footer>
+
+          <AdSenseAd label="Related content advertisement" variant="multiplex" />
         </article>
       </main>
       <SiteFooter locale="en" />

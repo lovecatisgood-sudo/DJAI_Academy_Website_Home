@@ -190,6 +190,8 @@ export default function ThaiToolsPage() {
         ))}
       </section>
 
+      <AdSenseAd label="Tools advertisement" variant="display2" />
+
       <section className="workflow-section" aria-labelledby="workflow-heading">
         <div>
           <p className="eyebrow">เปิดตามงานที่ต้องการ</p>

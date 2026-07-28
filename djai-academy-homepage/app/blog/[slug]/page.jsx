@@ -222,6 +222,8 @@ export default async function ThaiBlogPostPage({ params }) {
               เปิดเครื่องมือฟรี
             </a>
           </footer>
+
+          <AdSenseAd label="Related content advertisement" variant="multiplex" />
         </article>
       </main>
       <SiteFooter locale="th" />

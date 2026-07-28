@@ -144,6 +144,8 @@ export default async function ThaiBlogPage({ searchParams }) {
             )}
           </div>
         </section>
+
+        <AdSenseAd label="Blog advertisement" variant="display2" />
       </main>
       <SiteFooter locale="th" />
     </>
