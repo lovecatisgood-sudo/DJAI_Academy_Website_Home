@@ -1,5 +1,6 @@
 import { ArrowRight, FileText, ScanText, Sparkles, TableProperties } from "lucide-react";
 import Image from "next/image";
+import AdSenseAd from "./AdSenseAd";
 import { categories, categoryHref, categoryOrder, toolHref, toolsFor, type Category, type Language, type ToolDefinition } from "./tool-data";
 
 const icons = { document: FileText, ai: Sparkles, spreadsheet: TableProperties };
@@ -53,6 +54,7 @@ export default function CategoryPage({ category, language }: { category: Categor
       <section className="trust-strip">
         <span>{en ? "Free to use" : "ใช้ฟรี"}</span><span>{en ? "No account" : "ไม่ต้องสมัคร"}</span><span>{en ? "Local processing" : "ประมวลผลในเครื่อง"}</span><span>{en ? "No watermark" : "ไม่มี watermark"}</span>
       </section>
+      <AdSenseAd label="Tools advertisement" />
       <section className="tool-directory" id="available-tools">
         <div className="section-heading"><p className="eyebrow">{en ? "AVAILABLE NOW" : "พร้อมใช้งาน"}</p><h2>{en ? "Choose the job you need to complete" : "เลือกงานที่คุณต้องการทำ"}</h2></div>
         <div className="directory-grid">

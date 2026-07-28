@@ -1,3 +1,5 @@
+import AdSenseAd from "../../components/AdSenseAd";
+
 export const metadata = {
   title: "Free DJAI Tools | PDF, DOCX, AI, CSV, QR and Image Tools",
   description:
@@ -174,6 +176,8 @@ export default function ToolsPage() {
           digital problems without accounts, paywalls, or unnecessary friction.
         </p>
       </section>
+
+      <AdSenseAd label="Tools advertisement" />
 
       <section className="tools-grid" aria-label="Free DJAI tools">
         {tools.map((tool) => (

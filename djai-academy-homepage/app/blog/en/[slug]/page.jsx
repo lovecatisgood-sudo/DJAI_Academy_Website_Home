@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import SiteFooter from "../../../components/SiteFooter";
 import SiteHeader from "../../../components/SiteHeader";
+import AdSenseAd from "../../../components/AdSenseAd";
 import { getPostBySlug } from "../../../lib/blogStore";
 
 export const dynamic = "force-dynamic";
@@ -199,7 +200,11 @@ export default async function BlogPostPage({ params }) {
             <p>{post.excerpt}</p>
           </header>
 
+          <AdSenseAd label="Article advertisement" variant="inArticle" />
+
           <div className="article-content">{renderContent(post.content)}</div>
+
+          <AdSenseAd label="Article advertisement" variant="inArticle" />
 
           <footer className="article-cta">
             <div>

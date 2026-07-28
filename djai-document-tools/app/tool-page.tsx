@@ -1,4 +1,5 @@
 import { ArrowLeft, ArrowRight, ShieldCheck } from "lucide-react";
+import AdSenseAd from "./AdSenseAd";
 import { ServiceBands, SuiteFooter, SuiteHeader } from "./category-page";
 import ToolWorkspace from "./ToolWorkspace";
 import { categoryHref, toolHref, toolsFor, type Language, type ToolDefinition } from "./tool-data";
@@ -40,6 +41,7 @@ export default function ToolPage({ tool, language }: { tool: ToolDefinition; lan
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
     <SuiteHeader category={tool.category} language={language} tool={tool} />
     <section className="tool-intro"><a href={categoryHref(tool.category, language)}><ArrowLeft />{en ? `Back to ${tool.category} tools` : "กลับไปหน้าเครื่องมือ"}</a><p className="eyebrow">{tool.label[language]}</p><h1>{tool.title[language]}</h1><p>{tool.description[language]}</p><div><span><ShieldCheck />{en ? "Private browser processing" : "ประมวลผลแบบ private ใน browser"}</span><span>{en ? "No account" : "ไม่ต้องสมัคร"}</span><span>{en ? "Free" : "ใช้ฟรี"}</span></div></section>
+    <AdSenseAd label="Tool advertisement" />
     <ToolWorkspace tool={tool} language={language} />
     <section className="how-to"><div><p className="eyebrow">HOW TO</p><h2>{en ? `How to use ${tool.label.en}` : `วิธีใช้ ${tool.label.th}`}</h2><p>{tool.intent[language]}</p></div><ol>{steps.map((step, index) => <li key={step}><span>{index + 1}</span><p>{step}</p></li>)}</ol></section>
     <section className="related-tools"><div className="section-heading"><p className="eyebrow">{en ? "CONTINUE WITH" : "ทำงานต่อ"}</p><h2>{en ? "Related free tools" : "เครื่องมือฟรีที่เกี่ยวข้อง"}</h2></div><div>{related.map((item) => <a href={toolHref(item, language)} key={item.slug}><strong>{item.label[language]}</strong><span>{item.intent[language]}</span><ArrowRight /></a>)}</div></section>

@@ -2,6 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { CornerSquareType, DotType } from "qr-code-styling";
+import AdSenseAd from "./AdSenseAd";
 
 const COLORS = ["#D97757", "#0B32A4", "#00BFD8", "#5630C8", "#071E3D", "#F2A65A", "#2E8B57", "#D7467D"];
 const BASE_PATH = "/tools/qrgen";
@@ -137,6 +138,8 @@ export default function Home() {
         <button className="primary hero-button" onClick={scrollToGenerator}>สร้าง QR code ฟรี <span>↘</span></button>
         <div className="hero-note"><span>✓</span> สร้างได้ไม่จำกัด <span>✓</span> ดาวน์โหลด PNG &amp; SVG <span>✓</span> ใช้งานได้ถาวร</div>
       </section>
+
+      <AdSenseAd label="QR tool advertisement" />
 
       <section className="generator-shell" id="generator">
         <div className="generator-head">

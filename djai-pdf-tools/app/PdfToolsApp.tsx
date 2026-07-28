@@ -34,6 +34,7 @@ import type { LucideIcon } from "lucide-react";
 import Image from "next/image";
 import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import type { ProcessingOptions, ProcessResult } from "./pdf-actions";
+import AdSenseAd from "./AdSenseAd";
 import { BASE_PATH, SITE_URL, homeHref, toolCopy, toolGuides, toolHref, toolSlugs, type Language, type ToolSlug } from "./tool-data";
 
 const icons: Record<ToolSlug, LucideIcon> = {
@@ -490,6 +491,8 @@ export default function PdfToolsApp({ language, initialTool, seoPage }: { langua
       <section className="trust-bar" aria-label="Product promises">
         {copy.trust.map((item, index) => <div key={item}>{index === 3 ? <ShieldCheck /> : <Check />}<span>{item}</span></div>)}
       </section>
+
+      <AdSenseAd label="PDF tools advertisement" />
 
       {!initialTool && (
         <section className="tools-section" id="tools">

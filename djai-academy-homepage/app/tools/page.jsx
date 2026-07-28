@@ -1,3 +1,5 @@
+import AdSenseAd from "../components/AdSenseAd";
+
 export const metadata = {
   title: "เครื่องมือฟรีจาก DJAI | PDF, DOCX, AI, CSV, QR และรูปภาพ",
   description:
@@ -169,6 +171,8 @@ export default function ThaiToolsPage() {
           และเห็นแนวคิดการสร้าง product ที่ใช้งานได้จริง
         </p>
       </section>
+
+      <AdSenseAd label="Tools advertisement" />
 
       <section className="tools-grid" aria-label="Free DJAI tools">
         {tools.map((tool) => (

@@ -101,6 +101,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .trust-bar div:last-child { border-right: 0; }
 .trust-bar svg { width: 21px; color: var(--coral); }
 
+.ad-section { display: block; width: min(980px, calc(100% - 48px)); min-height: 90px; margin: 34px auto 0; padding: 12px; border-radius: 18px; background: rgba(255,255,255,.82); }
+
 .tools-section, .workspace-section, .tool-guide, .builder-section, .seo-section { width: min(1240px, calc(100% - 48px)); margin-inline: auto; }
 .tools-section { padding: 116px 0 90px; }
 .section-heading { max-width: 800px; margin-bottom: 46px; }

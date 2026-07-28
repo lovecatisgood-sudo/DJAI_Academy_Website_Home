@@ -116,6 +116,7 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
 .section-heading p { max-width: 700px; margin: 17px auto 0; color: var(--muted); font-size: 16px; line-height: 1.7; }
 
 .tool-section { padding: 95px 0 72px; }
+.ad-section { display: block; max-width: 980px; min-height: 90px; margin: 0 auto 28px; padding: 12px 24px; border-radius: 20px; background: rgba(255,255,255,.78); }
 .tool-app { overflow: hidden; border: 1px solid #dbe5f3; border-radius: 26px; background: white; box-shadow: var(--shadow); }
 .tool-topbar { min-height: 77px; padding: 15px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; border-bottom: 1px solid #e2e9f4; background: linear-gradient(180deg, #fff, #fbfdff); }
 .tool-title { display: flex; align-items: center; gap: 12px; }

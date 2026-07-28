@@ -1,5 +1,6 @@
 import SiteFooter from "../../components/SiteFooter";
 import SiteHeader from "../../components/SiteHeader";
+import AdSenseAd from "../../components/AdSenseAd";
 import { BLOG_CATEGORIES, getAllPosts } from "../../lib/blogStore";
 
 export const dynamic = "force-dynamic";
@@ -97,6 +98,8 @@ export default async function BlogPage({ searchParams }) {
             publish, and improve digital experiences.
           </p>
         </section>
+
+        <AdSenseAd label="Blog advertisement" />
 
         <section className="blog-layout">
           <aside className="blog-sidebar" aria-label="Blog categories">

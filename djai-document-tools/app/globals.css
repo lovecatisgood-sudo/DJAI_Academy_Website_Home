@@ -47,6 +47,8 @@ img { max-width: 100%; height: auto; }
 .trust-strip { display: grid; grid-template-columns: repeat(4, 1fr); color: white; background: var(--blue); }
 .trust-strip span { min-height: 64px; display: grid; place-items: center; padding: 12px; border-right: 1px solid rgba(255,255,255,.25); font-size: .8rem; font-weight: 850; text-align: center; }
 
+.ad-section { display: block; width: min(980px, calc(100% - 48px)); min-height: 90px; margin: 34px auto; padding: 12px; border-radius: 18px; background: rgba(255,255,255,.9); }
+
 .tool-directory, .related-tools, .faq-section { padding: 90px max(24px, calc((100vw - 1180px) / 2)); }
 .section-heading { max-width: 700px; margin-bottom: 36px; }
 .section-heading h2, .service-band h2, .course-band h2, .how-to h2, .faq-section h2 { margin: 0; font-size: clamp(1.7rem, 3vw, 2.7rem); line-height: 1.15; }

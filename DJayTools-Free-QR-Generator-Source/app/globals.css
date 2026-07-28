@@ -53,6 +53,8 @@ button { cursor: pointer; }
 .hero-note { margin-top: 22px; display: flex; justify-content: center; gap: 18px; flex-wrap: wrap; color: #69717b; font-size: 12px; font-weight: 700; }
 .hero-note span { color: #28a66a; }
 
+.ad-section { display: block; max-width: 980px; min-height: 90px; margin: 0 auto 34px; padding: 12px 24px; border-radius: 18px; background: rgba(255,255,255,.58); }
+
 .generator-shell { max-width: 1180px; margin: 0 auto 74px; padding: 28px 32px 0; scroll-margin-top: 20px; }
 .generator-head { display: flex; justify-content: space-between; align-items: end; margin: 0 4px 18px; }
 .generator-head h2 { margin: 8px 0 0; font-size: 34px; letter-spacing: -1.5px; }

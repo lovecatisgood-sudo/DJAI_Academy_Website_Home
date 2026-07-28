@@ -1,5 +1,6 @@
 import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
+import AdSenseAd from "../components/AdSenseAd";
 import { TH_BLOG_CATEGORIES, getAllThaiPosts } from "../lib/thBlogPosts";
 
 export const metadata = {
@@ -85,6 +86,8 @@ export default async function ThaiBlogPage({ searchParams }) {
             สำหรับ creator, founder, นักเรียน และธุรกิจ
           </p>
         </section>
+
+        <AdSenseAd label="Blog advertisement" />
 
         <section className="blog-layout">
           <aside className="blog-sidebar" aria-label="Blog categories">
