@@ -107,6 +107,9 @@ const publicRoutes = [
   "/siamese_cat/dev/",
   "/siamese_cat/dev/en/",
   "/admin/blog/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/privacy/",
+  "/app-ads.txt",
   "/favicon.svg",
   "/robots.txt",
   "/sitemap.xml",
@@ -193,6 +196,13 @@ async function verify() {
     if (response.status !== 200) {
       failures.push(`${route}: expected 200, received ${response.status}`);
     }
+  }
+
+  const appAdsResponse = await fetch(`${origin}/app-ads.txt`);
+  const appAdsBody = (await appAdsResponse.text()).trim();
+  const expectedAppAds = "google.com, pub-3624708289866566, DIRECT, f08c47fec0942fa0";
+  if (appAdsBody !== expectedAppAds) {
+    failures.push("/app-ads.txt: publisher authorization does not match the expected AdMob record");
   }
 
   for (const [route, expectedLocation] of redirects) {

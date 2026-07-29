@@ -1,3 +1,4 @@
+import Link from "next/link";
 import SiteFooter from "../../components/SiteFooter";
 import SiteHeader from "../../components/SiteHeader";
 import AdSenseAd from "../../components/AdSenseAd";
@@ -104,10 +105,10 @@ export default async function BlogPage({ searchParams }) {
         <section className="blog-layout">
           <aside className="blog-sidebar" aria-label="Blog categories">
             <h2>Categories</h2>
-            <a className={selectedCategory === "All" ? "active" : ""} href="/blog/en/">
+            <Link className={selectedCategory === "All" ? "active" : ""} href="/blog/en/">
               <span>All</span>
               <strong>{categoryCounts.All}</strong>
-            </a>
+            </Link>
             {BLOG_CATEGORIES.map((category) => (
               <a
                 className={selectedCategory === category ? "active" : ""}

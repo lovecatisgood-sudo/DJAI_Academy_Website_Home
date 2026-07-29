@@ -1,3 +1,4 @@
+import Link from "next/link";
 import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
 import AdSenseAd from "../components/AdSenseAd";
@@ -92,10 +93,10 @@ export default async function ThaiBlogPage({ searchParams }) {
         <section className="blog-layout">
           <aside className="blog-sidebar" aria-label="Blog categories">
             <h2>หมวดหมู่</h2>
-            <a className={selectedCategory === "ทั้งหมด" ? "active" : ""} href="/blog/">
+            <Link className={selectedCategory === "ทั้งหมด" ? "active" : ""} href="/blog/">
               <span>ทั้งหมด</span>
               <strong>{categoryCounts["ทั้งหมด"]}</strong>
-            </a>
+            </Link>
             {TH_BLOG_CATEGORIES.map((category) => (
               <a
                 className={selectedCategory === category ? "active" : ""}

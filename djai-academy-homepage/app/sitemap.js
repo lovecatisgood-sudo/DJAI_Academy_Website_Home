@@ -10,7 +10,8 @@ const corePaths = [
   "/", "/en/", "/portfolio/", "/portfolio/en/", "/development/", "/development/en/",
   "/service/", "/service/en/", "/tools/", "/tools/en/", "/tools/qrgen/", "/tools/qrgen/en/",
   "/course/", "/course/en/", "/course/detail/", "/course/detail/en/", "/siamese_cat/",
-  "/siamese_cat/en/", "/siamese_cat/dev/", "/siamese_cat/dev/en/", "/blog/", "/blog/en/"
+  "/siamese_cat/en/", "/siamese_cat/dev/", "/siamese_cat/dev/en/", "/blog/", "/blog/en/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/", "/Cam_PDF_Scan_Signer_QR-Gen/privacy/"
 ];
 
 const imageTools = [

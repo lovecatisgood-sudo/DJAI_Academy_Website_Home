@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import SiteFooter from "../../components/SiteFooter";
 import SiteHeader from "../../components/SiteHeader";
@@ -202,9 +203,9 @@ export default async function ThaiBlogPostPage({ params }) {
 
         <article className="article-shell">
           <header className="article-header">
-            <a className="back-link" href="/blog/">
+            <Link className="back-link" href="/blog/">
               กลับไปที่บล็อก
-            </a>
+            </Link>
             <div className="post-meta">
               <span>{post.category}</span>
               <span>{post.readingTime}</span>
