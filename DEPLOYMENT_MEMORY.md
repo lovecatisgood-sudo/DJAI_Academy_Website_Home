@@ -9,7 +9,8 @@ Updated: 2026-07-29
 - Hostinger deployment source: Git push to `main`
 - Root build command: `npm run build`
 - Root start command: `npm start`
-- Primary release commit: `744a857`
+- Primary tool release commit: `744a857`
+- Screaming Frog SEO remediation commit: `0651e14`
 - Live deployment verified on 2026-07-29 after Hostinger auto-deploy.
 
 ## Included Tool Clusters
@@ -25,7 +26,7 @@ The media app uses the locally shipped single-thread FFmpeg WebAssembly core. Ge
 ## Release Verification Baseline
 
 - Complete Hostinger build passed.
-- Route audit passed 193 pages, 10 redirects, and 315 internal links/assets.
+- Route audit passed 193 pages, 10 redirects, and 316 internal links/assets.
 - Representative mobile Lighthouse scores: Performance 98-100, Accessibility 100, SEO 100.
 - Real browser WAV-to-MP3 conversion passed with no console errors.
 - Homepage lint has zero errors.
@@ -50,3 +51,13 @@ The following production endpoints returned HTTP 200 after deployment:
 - `/tools/PDFTools/delete-pages-from-pdf/`
 
 Live HTML checks confirmed one H1, correct self-referencing canonicals, DJAI organization schema on the homepage, non-blocking AdSense markup, and all new route families in the sitemap. A follow-up regression fix makes every exported English QR task page emit `<html lang="en">`.
+
+## Screaming Frog Baseline
+
+- Installed edition: Screaming Frog SEO Spider 24.3, free/unlicensed.
+- A normal crawl reached the free 500-URL ceiling because scripts and images count toward the allowance.
+- For complete submitted-page coverage, download the live sitemap and use List Mode with its URLs. The 2026-07-29 list crawl covered all 205 sitemap URLs without exceeding the free limit.
+- All 205 sitemap URLs returned HTTP 200 and were indexable.
+- The focused crawl found no missing or duplicate page titles, meta descriptions, H1s, or canonicals, and no 4xx or 5xx sitemap URLs.
+- Remediation commit `0651e14` added crawlable initial content to the client-rendered Siamese Cat Dev bio, repaired legacy blog hreflang data, added QR `x-default`, and supplied descriptive product-image alt text.
+- The default CLI configuration does not enable JavaScript rendering or Schema.org/Google structured-data validation. Do not interpret an empty structured-data error export from that configuration as a complete schema audit.

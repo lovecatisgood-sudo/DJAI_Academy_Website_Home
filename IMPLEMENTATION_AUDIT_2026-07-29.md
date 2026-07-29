@@ -68,12 +68,22 @@ Date: 2026-07-29
 
 The repeated Best Practices deduction is from the AdSense third-party cookie and Chrome inspector checks on localhost. It is not caused by a conversion or layout failure.
 
+## Screaming Frog Production Audit
+
+- Screaming Frog SEO Spider 24.3 free edition was run locally against production.
+- The initial standard crawl reached the 500-URL free limit after crawling pages and resources. It exposed two client-rendered bio pages without crawlable H1 content, three non-reciprocal legacy blog hreflang pairs, one missing QR `x-default`, and product images with empty alt text.
+- Commit `0651e14` corrected those source issues and passed the complete production build.
+- A second crawl used List Mode with all 205 live sitemap URLs, ensuring the free allowance covered every submitted page.
+- Result: 205/205 HTTP 200 and indexable, with zero missing or duplicate titles, descriptions, H1s, or canonicals, and zero internal 4xx/5xx sitemap URLs.
+- The final crawl exports are stored outside the repository at `/tmp/sf-djai-sitemap-audit/` for this workstation session.
+
 ## External Audit Limits
 
 - Google PageSpeed Insights API returned HTTP 429 because the available anonymous project quota is zero, so a fresh PSI field report could not be collected.
 - CrUX field data requires a working API quota/key and enough real-user samples for each URL. No field score is claimed in this audit.
 - Google indexing coverage cannot be established from a `site:` search. Search Console URL Inspection and Page Indexing reports remain the authoritative checks after deployment.
-- Screaming Frog MCP was not available in this environment. The repository's deterministic Hostinger crawler covered route status, redirects, canonical host behavior, internal links, static assets, language output, and admin authentication.
+- Screaming Frog's local CLI was used directly; its MCP server was not required for this audit.
+- The default Screaming Frog CLI configuration used standard HTML crawling. JavaScript rendering and structured-data validation were not enabled, so schema validity remains covered by source inspection and existing rendered-page checks rather than a Screaming Frog validation claim.
 
 ## Release Residuals
 
@@ -86,3 +96,4 @@ The repeated Best Practices deduction is from the AdSense third-party cookie and
 - Release commit `744a857` was pushed to `main` and Hostinger auto-deployed it successfully.
 - Health, sitemap, llms.txt, PDF, QR, image, and media production routes returned HTTP 200.
 - The post-deployment HTML inspection found and corrected the English QR task-page language attribute; regression coverage now checks every exported English QR route.
+- Screaming Frog remediation commit `0651e14` was pushed to `main` for Hostinger auto-deployment.
