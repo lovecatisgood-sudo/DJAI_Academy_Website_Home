@@ -1872,6 +1872,24 @@ pre {
   object-position: top center;
 }
 
+.portfolio-card-image-app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px;
+  background: #e8f2ff;
+}
+
+.portfolio-card-image-app img {
+  width: auto;
+  max-width: 29%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 8px 22px rgba(4, 18, 37, 0.14);
+}
+
 .portfolio-card-body {
   display: grid;
   gap: 14px;

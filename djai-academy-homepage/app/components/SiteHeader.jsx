@@ -14,6 +14,7 @@ const navCopy = {
     portfolio: "Portfolio",
     tools: "Tools",
     blog: "Blog",
+    camPdf: "Cam PDF App",
     join: "Join Community",
     switchLabel: "ไทย",
     brandLabel: "DJAI Academy"
@@ -27,6 +28,7 @@ const navCopy = {
     portfolio: "ผลงาน",
     tools: "เครื่องมือ",
     blog: "บล็อก",
+    camPdf: "แอป Cam PDF",
     join: "เข้าร่วมชุมชน",
     switchLabel: "EN",
     brandLabel: "DJAI Academy"
@@ -37,7 +39,8 @@ function DevelopmentDropdown({ copy, locale }) {
   const developmentLinks = [
     [copy.services, urlFor("service", locale)],
     [copy.promo, urlFor("promo", locale)],
-    [copy.portfolio, urlFor("portfolio", locale)]
+    [copy.portfolio, urlFor("portfolio", locale)],
+    [copy.camPdf, "/Cam_PDF_Scan_Signer_QR-Gen/"]
   ];
 
   return (

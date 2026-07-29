@@ -25,6 +25,28 @@ export const metadata = {
 
 const categories = [
   {
+    id: "mobile-apps",
+    label: "Mobile Apps",
+    title: "Practical Android products for everyday document work",
+    summary:
+      "DJAI mobile products that combine scanning, file management, PDF editing and signing, controlled exports, and QR workflows in one focused experience.",
+    projects: [
+      {
+        name: "Cam PDF Scan Signer QR Gen",
+        image: "/apps/cam-pdf/home.png",
+        images: [
+          "/apps/cam-pdf/editor.png",
+          "/apps/cam-pdf/home.png",
+          "/apps/cam-pdf/qr.png"
+        ],
+        href: "/Cam_PDF_Scan_Signer_QR-Gen/",
+        description:
+          "An Android document workspace for scanning and organizing files, importing PDFs, DOCX documents and images, editing and signing pages, naming exports, and creating or scanning QR codes with local document processing.",
+        services: ["Android app", "Document scanning", "PDF and QR tools"]
+      }
+    ]
+  },
+  {
     id: "websites",
     label: "Websites",
     title: "Corporate, product and local business websites",
@@ -219,15 +241,18 @@ const structuredData = {
 function ProjectCard({ project }) {
   return (
     <article className="portfolio-card">
-      <div className="portfolio-card-image">
-        <img
-          src={project.image}
-          alt={`${project.name} project screenshot`}
-          width="1200"
-          height="675"
-          loading="lazy"
-          decoding="async"
-        />
+      <div className={`portfolio-card-image${project.images ? " portfolio-card-image-app" : ""}`}>
+        {(project.images || [project.image]).map((image, index) => (
+          <img
+            src={image}
+            alt={index === 0 ? `${project.name} project screenshots` : ""}
+            width={project.images ? "390" : "1200"}
+            height={project.images ? "844" : "675"}
+            loading="lazy"
+            decoding="async"
+            key={image}
+          />
+        ))}
       </div>
       <div className="portfolio-card-body">
         <h3>{project.name}</h3>

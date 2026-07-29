@@ -17,7 +17,8 @@ const footerCopy = {
           ["Development", "development"],
           ["Services", "service"],
           ["Portfolio", "portfolio"],
-          ["Current Promo", "promo"]
+          ["Current Promo", "promo"],
+          ["Cam PDF Android App", "/Cam_PDF_Scan_Signer_QR-Gen/"]
         ]
       },
       {
@@ -50,7 +51,8 @@ const footerCopy = {
           ["งานพัฒนา", "development"],
           ["บริการ", "service"],
           ["ผลงาน", "portfolio"],
-          ["โปรโมชัน", "promo"]
+          ["โปรโมชัน", "promo"],
+          ["แอป Cam PDF Android", "/Cam_PDF_Scan_Signer_QR-Gen/"]
         ]
       },
       {
@@ -82,7 +84,7 @@ export default function SiteFooter({ locale = "en" }) {
             <h3>{column.title}</h3>
             {column.links.map(([label, route]) =>
               route ? (
-                <a href={urlFor(route, locale)} key={label}>
+                <a href={route.startsWith("/") ? route : urlFor(route, locale)} key={label}>
                   {label}
                 </a>
               ) : (

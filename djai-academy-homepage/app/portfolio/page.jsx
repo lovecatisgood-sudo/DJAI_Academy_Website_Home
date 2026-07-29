@@ -25,6 +25,28 @@ export const metadata = {
 
 const categories = [
   {
+    id: "mobile-apps",
+    label: "แอปมือถือ",
+    title: "แอป Android สำหรับงานเอกสารที่ใช้งานได้จริง",
+    summary:
+      "โปรดักต์มือถือของ DJAI ที่รวมการสแกน จัดการไฟล์ แก้ไขและเซ็น PDF ส่งออกเอกสาร และสร้าง QR code ไว้ใน workflow เดียว",
+    projects: [
+      {
+        name: "Cam PDF Scan Signer QR Gen",
+        image: "/apps/cam-pdf/home.png",
+        images: [
+          "/apps/cam-pdf/editor.png",
+          "/apps/cam-pdf/home.png",
+          "/apps/cam-pdf/qr.png"
+        ],
+        href: "/Cam_PDF_Scan_Signer_QR-Gen/",
+        description:
+          "แอป Android สำหรับสแกนและจัดระเบียบเอกสาร นำเข้า PDF, DOCX และรูปภาพ แก้ไข เซ็น ตั้งชื่อไฟล์ก่อนส่งออก และสร้างหรือสแกน QR code โดยเน้นการประมวลผลเอกสารในอุปกรณ์",
+        services: ["Android app", "Document scanning", "PDF and QR tools"]
+      }
+    ]
+  },
+  {
     id: "websites",
     label: "เว็บไซต์",
     title: "เว็บไซต์ธุรกิจ เว็บไซต์สินค้า และเว็บไซต์ท้องถิ่น",
@@ -219,15 +241,18 @@ const structuredData = {
 function ProjectCard({ project }) {
   return (
     <article className="portfolio-card">
-      <div className="portfolio-card-image">
-        <img
-          src={project.image}
-          alt={`ภาพตัวอย่างโปรเจกต์ ${project.name}`}
-          width="1200"
-          height="675"
-          loading="lazy"
-          decoding="async"
-        />
+      <div className={`portfolio-card-image${project.images ? " portfolio-card-image-app" : ""}`}>
+        {(project.images || [project.image]).map((image, index) => (
+          <img
+            src={image}
+            alt={index === 0 ? `ภาพตัวอย่างโปรเจกต์ ${project.name}` : ""}
+            width={project.images ? "390" : "1200"}
+            height={project.images ? "844" : "675"}
+            loading="lazy"
+            decoding="async"
+            key={image}
+          />
+        ))}
       </div>
       <div className="portfolio-card-body">
         <h3>{project.name}</h3>
