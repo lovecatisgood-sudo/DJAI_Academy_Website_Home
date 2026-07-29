@@ -266,6 +266,15 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
 .browser-note { margin: 18px 0 0; text-align: center; color: #56657a; font-size: 11px; }
 .browser-note span { margin-right: 4px; }
 
+.mobile-app-callout { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px; margin-top: -28px; margin-bottom: 82px; padding: 28px; border: 1px solid rgba(40, 96, 180, .16); border-radius: 8px; background: linear-gradient(135deg, #ffffff, #eef8ff); box-shadow: 0 20px 58px rgba(10, 32, 70, .12); }
+.mobile-app-callout .app-device-mark { display: grid; place-items: center; position: relative; width: 76px; height: 76px; border-radius: 18px; color: #fff; background: #0b65c2; }
+.mobile-app-callout .app-device-mark span { font-size: 48px; line-height: 1; transform: translateY(-2px); }
+.mobile-app-callout .app-device-mark b { position: absolute; right: 13px; bottom: 10px; color: #8bf1ff; font-size: 24px; line-height: 1; }
+.mobile-app-callout h2 { margin: 8px 0; font-size: clamp(1.55rem, 3vw, 2.45rem); line-height: 1.08; color: var(--ink); }
+.mobile-app-callout p { margin: 0; max-width: 720px; color: var(--muted); line-height: 1.65; }
+.app-download-button { display: inline-flex; min-height: 48px; align-items: center; justify-content: center; padding: 0 18px; border-radius: 8px; color: #fff; background: var(--coral); font-weight: 900; white-space: nowrap; }
+.app-download-button:hover { transform: translateY(-2px); box-shadow: 0 16px 35px rgba(237, 104, 91, .24); }
+
 .how-section { padding: 100px 0; background: linear-gradient(180deg, #f8fbff, #f3f7fe); }
 .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .step-card { position: relative; min-height: 285px; padding: 32px; overflow: hidden; border: 1px solid #dfe8f3; border-radius: 20px; background: white; box-shadow: 0 13px 34px rgba(26, 54, 99, .07); }
@@ -480,6 +489,8 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
   .preview-stage { min-height: 430px; }
   .result-bar { grid-template-columns: 1fr auto; }
   .result-numbers { display: none; }
+  .mobile-app-callout { grid-template-columns: 1fr; }
+  .app-download-button { justify-self: start; }
   .steps-grid { grid-template-columns: 1fr; }
   .step-card { min-height: 230px; }
   .privacy-card { grid-template-columns: 1fr; }
@@ -508,6 +519,7 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
   .pill-one { top: 42px; left: 4px; }
   .pill-two { right: 0; bottom: 55px; }
   .tool-section { padding-top: 72px; }
+  .mobile-app-callout { margin-top: -18px; margin-bottom: 64px; padding: 22px; }
   .section-heading { margin-bottom: 30px; }
   .section-heading h2 { font-size: 34px; }
   .tool-app { border-radius: 18px; }

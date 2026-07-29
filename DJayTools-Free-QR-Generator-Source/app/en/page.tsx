@@ -223,6 +223,16 @@ export default function Home() {
         <div><b>↯</b><span><strong>Instant download</strong><small>Print-ready PNG and SVG</small></span></div>
       </section>
 
+      <section className="mobile-app-callout" aria-labelledby="cam-pdf-app-title">
+        <div className="app-device-mark" aria-hidden="true"><span>▯</span><b>⌁</b></div>
+        <div>
+          <span className="step-tag">MOBILE APP</span>
+          <h2 id="cam-pdf-app-title">Need scanning, PDF signing, and QR tools on your phone?</h2>
+          <p>Cam PDF Scan, Signer & QR Generator brings advanced mobile document tools into one app, including a scanner, PDF signer, QR generator, and productivity workflows.</p>
+        </div>
+        <a className="primary" href="https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/">Download the app <span>↗</span></a>
+      </section>
+
       <section className="how-section" id="how">
         <div className="section-intro">
           <span className="step-tag">HOW IT WORKS</span>

@@ -1002,6 +1002,65 @@ pre {
 .workflow-links strong { color: #ffffff; }
 .workflow-links span { color: #a9bfdf; font-size: 0.88rem; line-height: 1.5; }
 
+.tools-app-callout {
+  display: grid;
+  align-items: center;
+  gap: 24px;
+  width: min(1180px, calc(100% - 32px));
+  margin: 60px auto 0;
+  padding: 28px;
+  grid-template-columns: auto 1fr auto;
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(8, 38, 85, 0.96), rgba(5, 86, 127, 0.9));
+  border: 1px solid rgba(25, 227, 255, 0.22);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.tools-app-callout .app-device-mark {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 76px;
+  height: 76px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 18px;
+}
+
+.tools-app-callout .app-device-mark span {
+  font-size: 48px;
+  line-height: 1;
+  transform: translateY(-2px);
+}
+
+.tools-app-callout .app-device-mark b {
+  position: absolute;
+  right: 12px;
+  bottom: 8px;
+  color: var(--cyan);
+  font-size: 24px;
+  line-height: 1;
+}
+
+.tools-app-callout h2 {
+  margin: 4px 0 8px;
+  font-size: clamp(1.6rem, 4vw, 3rem);
+}
+
+.tools-app-callout p:not(.eyebrow) {
+  max-width: 760px;
+  margin: 0;
+  color: #c5d8f3;
+  line-height: 1.7;
+}
+
+.tools-app-callout .button {
+  justify-self: end;
+  white-space: nowrap;
+}
+
 .tools-band h2,
 .coming-tools h2,
 .ecosystem-hub h2 {
@@ -2694,6 +2753,7 @@ pre {
   .tools-band,
   .coming-tools,
   .workflow-section,
+  .tools-app-callout,
   .blog-layout,
   .article-cta,
   .portfolio-grid,
@@ -2807,6 +2867,14 @@ pre {
   .workflow-links,
   .ecosystem-links {
     grid-template-columns: 1fr;
+  }
+
+  .tools-app-callout {
+    padding: 22px;
+  }
+
+  .tools-app-callout .button {
+    justify-self: stretch;
   }
 
   .tools-nav nav {

@@ -1,7 +1,7 @@
 import { ArrowLeft, ArrowRight, ShieldCheck } from "lucide-react";
 import AdSenseAd from "./AdSenseAd";
 import ShareButtons from "./ShareButtons";
-import { ServiceBands, SuiteFooter, SuiteHeader } from "./category-page";
+import { CamPdfAppCallout, ServiceBands, SuiteFooter, SuiteHeader } from "./category-page";
 import ToolWorkspace from "./ToolWorkspace";
 import { categoryHref, toolHref, toolsFor, type Language, type ToolDefinition } from "./tool-data";
 
@@ -45,6 +45,7 @@ export default function ToolPage({ tool, language }: { tool: ToolDefinition; lan
     <AdSenseAd label="Tool advertisement" />
     <ToolWorkspace tool={tool} language={language} />
     <AdSenseAd label="Tool advertisement" variant="display2" />
+    <CamPdfAppCallout language={language} />
     <section className="how-to"><div><p className="eyebrow">HOW TO</p><h2>{en ? `How to use ${tool.label.en}` : `วิธีใช้ ${tool.label.th}`}</h2><p>{tool.intent[language]}</p></div><ol>{steps.map((step, index) => <li key={step}><span>{index + 1}</span><p>{step}</p></li>)}</ol></section>
     <section className="related-tools"><div className="section-heading"><p className="eyebrow">{en ? "CONTINUE WITH" : "ทำงานต่อ"}</p><h2>{en ? "Related free tools" : "เครื่องมือฟรีที่เกี่ยวข้อง"}</h2></div><div>{related.map((item) => <a href={toolHref(item, language)} key={item.slug}><strong>{item.label[language]}</strong><span>{item.intent[language]}</span><ArrowRight /></a>)}</div></section>
     <AdSenseAd label="Related content advertisement" variant="multiplex" />

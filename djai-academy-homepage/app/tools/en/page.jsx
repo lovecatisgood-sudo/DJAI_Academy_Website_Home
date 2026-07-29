@@ -199,6 +199,16 @@ export default function ToolsPage() {
 
       <AdSenseAd label="Tools advertisement" variant="display2" />
 
+      <section className="tools-app-callout" aria-labelledby="cam-pdf-app-title">
+        <div className="app-device-mark" aria-hidden="true"><span>▯</span><b>⌁</b></div>
+        <div>
+          <p className="eyebrow">MOBILE APP</p>
+          <h2 id="cam-pdf-app-title">Use advanced document tools on your phone.</h2>
+          <p>Cam PDF Scan, Signer & QR Generator brings a scanner, PDF signer, QR generator, and productivity workflows into one mobile app.</p>
+        </div>
+        <a className="button" href="https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/">Download the app</a>
+      </section>
+
       <section className="workflow-section" aria-labelledby="workflow-heading">
         <div>
           <p className="eyebrow">START WITH A TASK</p>

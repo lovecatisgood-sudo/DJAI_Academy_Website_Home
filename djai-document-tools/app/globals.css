@@ -224,6 +224,13 @@ img { max-width: 100%; height: auto; }
 .course-band p:last-child { color: var(--muted); line-height: 1.6; }
 .course-band > a { display: inline-flex; align-items: center; gap: 9px; color: var(--blue); font-weight: 850; }
 .course-band > a svg { width: 18px; }
+.mobile-app-callout { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 24px; width: min(1120px, calc(100% - 48px)); margin: 42px auto 20px; padding: 28px; border: 1px solid rgba(30, 120, 220, .18); border-radius: 8px; background: linear-gradient(135deg, #ffffff, #eef6ff); box-shadow: 0 20px 60px rgba(10, 38, 75, .12); }
+.mobile-app-callout .app-device-mark { display: grid; place-items: center; position: relative; width: 76px; height: 76px; border-radius: 18px; color: white; background: var(--blue); }
+.mobile-app-callout .app-device-mark svg:first-child { width: 40px; height: 40px; }
+.mobile-app-callout .app-device-mark svg:last-child { position: absolute; right: 12px; bottom: 12px; width: 24px; height: 24px; color: var(--cyan); }
+.mobile-app-callout h2 { margin: 4px 0 8px; font-size: clamp(1.45rem, 3vw, 2.25rem); line-height: 1.1; }
+.mobile-app-callout p:not(.eyebrow) { margin: 0; max-width: 720px; color: var(--muted); line-height: 1.65; }
+.mobile-app-callout .primary-button { justify-self: end; white-space: nowrap; }
 .suite-footer { display: grid; grid-template-columns: 1.4fr .6fr .8fr; gap: 50px; padding: 60px max(24px, calc((100vw - 1180px) / 2)); color: #bdcbe0; background: var(--navy); }
 .suite-footer > div:first-child { display: grid; grid-template-columns: 100px 1fr; align-items: center; gap: 15px; }
 .suite-footer > div:first-child img { width: 100px; }
@@ -247,6 +254,8 @@ img { max-width: 100%; height: auto; }
   .token-options { border-top: 1px solid var(--line); border-left: 0; }
   .option-panel { border-top: 1px solid var(--line); border-left: 0; }
   .service-band, .course-band { grid-template-columns: 1fr; }
+  .mobile-app-callout { grid-template-columns: 1fr; }
+  .mobile-app-callout .primary-button { justify-self: start; }
   .course-band > svg { display: none; }
 }
 
@@ -276,6 +285,7 @@ img { max-width: 100%; height: auto; }
   .result-stats { grid-template-columns: 1fr 1fr; }
   .how-to, .faq-section { grid-template-columns: 1fr; gap: 35px; }
   .service-band, .course-band { gap: 25px; }
+  .mobile-app-callout { width: min(100% - 30px, 1120px); padding: 22px; }
   .suite-footer { grid-template-columns: 1fr 1fr; gap: 35px; }
   .suite-footer > div:first-child { grid-column: 1 / -1; }
 }

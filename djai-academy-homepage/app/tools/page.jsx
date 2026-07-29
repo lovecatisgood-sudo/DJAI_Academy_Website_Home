@@ -195,6 +195,16 @@ export default function ThaiToolsPage() {
 
       <AdSenseAd label="Tools advertisement" variant="display2" />
 
+      <section className="tools-app-callout" aria-labelledby="cam-pdf-app-title">
+        <div className="app-device-mark" aria-hidden="true"><span>▯</span><b>⌁</b></div>
+        <div>
+          <p className="eyebrow">แอปมือถือ</p>
+          <h2 id="cam-pdf-app-title">ใช้เครื่องมือเอกสารขั้นสูงบนมือถือ</h2>
+          <p>Cam PDF Scan, Signer & QR Generator รวม scanner, PDF signer, QR generator และ workflow productivity สำหรับงานเอกสารในแอปเดียว</p>
+        </div>
+        <a className="button" href="https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/">ดาวน์โหลดแอป</a>
+      </section>
+
       <section className="workflow-section" aria-labelledby="workflow-heading">
         <div>
           <p className="eyebrow">เปิดตามงานที่ต้องการ</p>

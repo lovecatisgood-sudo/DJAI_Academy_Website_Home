@@ -223,6 +223,16 @@ export default function Home() {
         <div><b>↯</b><span><strong>ดาวน์โหลดทันที</strong><small>ไฟล์ PNG และ SVG พร้อมใช้งาน</small></span></div>
       </section>
 
+      <section className="mobile-app-callout" aria-labelledby="cam-pdf-app-title">
+        <div className="app-device-mark" aria-hidden="true"><span>▯</span><b>⌁</b></div>
+        <div>
+          <span className="step-tag">แอปมือถือ</span>
+          <h2 id="cam-pdf-app-title">ต้องการสแกนเอกสาร เซ็น PDF และสร้าง QR บนมือถือ?</h2>
+          <p>Cam PDF Scan, Signer & QR Generator รวมเครื่องมือเอกสารขั้นสูงสำหรับมือถือ ทั้ง scanner, PDF signer, QR generator และ workflow productivity ในแอปเดียว</p>
+        </div>
+        <a className="primary" href="https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/">ดาวน์โหลดแอป <span>↗</span></a>
+      </section>
+
       <section className="how-section" id="how">
         <div className="section-intro">
           <span className="step-tag">วิธีใช้งาน</span>

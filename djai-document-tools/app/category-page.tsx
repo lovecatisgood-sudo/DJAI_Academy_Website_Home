@@ -1,4 +1,4 @@
-import { ArrowRight, FileText, ScanText, Sparkles, TableProperties } from "lucide-react";
+import { ArrowRight, FileText, ScanLine, ScanText, Smartphone, Sparkles, TableProperties } from "lucide-react";
 import Image from "next/image";
 import AdSenseAd from "./AdSenseAd";
 import ShareButtons from "./ShareButtons";
@@ -68,6 +68,7 @@ export default function CategoryPage({ category, language }: { category: Categor
         </div>
       </section>
       <AdSenseAd label="Tools advertisement" variant="display2" />
+      <CamPdfAppCallout language={language} />
       <ServiceBands language={language} category={category} />
       <SuiteFooter language={language} />
     </main>
@@ -100,6 +101,27 @@ export function ServiceBands({ language, category }: { language: Language; categ
     <section className="service-band"><div><p className="eyebrow">{en ? "BUILD WITH DJAI" : "พัฒนากับ DJAI"}</p><h2>{service.title}</h2><p>{service.text}</p></div><a className="primary-button" href={en ? "/development/en/" : "/development/"}>{en ? "Discuss your system" : "คุยเรื่องระบบของคุณ"}<ArrowRight /></a></section>
     <section className="course-band"><ScanText /><div><p className="eyebrow">VIBE CODING</p><h2>{en ? "Learn to turn a workflow into a working product" : "เรียนเปลี่ยน workflow ให้เป็น product ที่ใช้งานได้"}</h2><p>{en ? "Build websites, applications, and automation with AI through a practical one-day workshop." : "สร้างเว็บไซต์ application และ automation ด้วย AI ใน workshop ที่ลงมือทำจริง"}</p></div><a href={en ? "/course/detail/en/" : "/course/detail/"}>{en ? "Explore the course" : "ดูรายละเอียดคอร์ส"}<ArrowRight /></a></section>
   </>;
+}
+
+export function CamPdfAppCallout({ language }: { language: Language }) {
+  const en = language === "en";
+  return (
+    <section className="mobile-app-callout" aria-labelledby="cam-pdf-app-title">
+      <div className="app-device-mark"><Smartphone /><ScanLine /></div>
+      <div>
+        <p className="eyebrow">{en ? "MOBILE APP" : "แอปมือถือ"}</p>
+        <h2 id="cam-pdf-app-title">{en ? "Take document tools with you." : "พกเครื่องมือเอกสารไปกับคุณ"}</h2>
+        <p>
+          {en
+            ? "Cam PDF Scan, Signer & QR Generator adds mobile scanning, PDF signing, QR tools, and advanced document workflows for phone-first work."
+            : "Cam PDF Scan, Signer & QR Generator เพิ่มการสแกนเอกสาร เซ็น PDF เครื่องมือ QR และ workflow เอกสารขั้นสูงสำหรับการใช้งานบนมือถือ"}
+        </p>
+      </div>
+      <a className="primary-button" href="https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/">
+        {en ? "Download the app" : "ดาวน์โหลดแอป"}<ArrowRight />
+      </a>
+    </section>
+  );
 }
 
 export function SuiteFooter({ language }: { language: Language }) {

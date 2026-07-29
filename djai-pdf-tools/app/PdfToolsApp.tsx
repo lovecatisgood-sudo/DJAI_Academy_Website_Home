@@ -21,6 +21,8 @@ import {
   LockKeyhole,
   Menu,
   Minimize2,
+  ScanLine,
+  Smartphone,
   Tags,
   RotateCw,
   ShieldCheck,
@@ -219,6 +221,27 @@ function Segmented<T extends string | number>({ values, value, onChange }: {
         </button>
       ))}
     </div>
+  );
+}
+
+function CamPdfAppCallout({ language }: { language: Language }) {
+  const en = language === "en";
+  return (
+    <section className="mobile-app-callout" aria-labelledby="cam-pdf-app-title">
+      <div className="app-device-mark"><Smartphone /><ScanLine /></div>
+      <div>
+        <p className="eyebrow">{en ? "MOBILE APP" : "แอปมือถือ"}</p>
+        <h2 id="cam-pdf-app-title">{en ? "Need these tools on your phone?" : "อยากใช้เครื่องมือเหล่านี้บนมือถือ?"}</h2>
+        <p>
+          {en
+            ? "Cam PDF Scan, Signer & QR Generator brings document scanning, PDF signing, QR tools, and advanced productivity features into one mobile app."
+            : "Cam PDF Scan, Signer & QR Generator รวมการสแกนเอกสาร เซ็น PDF เครื่องมือ QR และฟีเจอร์ productivity ขั้นสูงไว้ในแอปมือถือเดียว"}
+        </p>
+      </div>
+      <a className="primary-button" href="https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/">
+        {en ? "Download the app" : "ดาวน์โหลดแอป"}<ArrowRight />
+      </a>
+    </section>
   );
 }
 
@@ -539,6 +562,8 @@ export default function PdfToolsApp({ language, initialTool, seoPage }: { langua
           </div>
         </div>
       </section>
+
+      <CamPdfAppCallout language={language} />
 
       <AdSenseAd label="PDF tools advertisement" variant="display2" />
 
