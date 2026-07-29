@@ -5,6 +5,7 @@ import SiteHeader from "../../../components/SiteHeader";
 import AdSenseAd from "../../../components/AdSenseAd";
 import ShareButtons from "../../../components/ShareButtons";
 import { SIAMESE_CAT_DEV_CATEGORY, getPostBySlug } from "../../../lib/blogStore";
+import { getThaiPostBySlug } from "../../../lib/thBlogPosts";
 
 export const dynamic = "force-dynamic";
 
@@ -117,9 +118,11 @@ export async function generateMetadata({ params }) {
   const languages = {
     en: `/blog/en/${post.slug}/`
   };
-  if (post.alternateSlugs?.th) {
-    languages.th = `/blog/${post.alternateSlugs.th}/`;
-    languages["x-default"] = `/blog/${post.alternateSlugs.th}/`;
+  const thaiPost = post.alternateSlugs?.th ? null : await getThaiPostBySlug(post.slug);
+  const thaiSlug = post.alternateSlugs?.th || thaiPost?.slug;
+  if (thaiSlug) {
+    languages.th = `/blog/${thaiSlug}/`;
+    languages["x-default"] = `/blog/${thaiSlug}/`;
   } else {
     languages["x-default"] = `/blog/en/${post.slug}/`;
   }
