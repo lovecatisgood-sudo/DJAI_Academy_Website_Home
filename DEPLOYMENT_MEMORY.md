@@ -12,6 +12,7 @@ Updated: 2026-07-29
 - Primary tool release commit: `744a857`
 - Screaming Frog SEO remediation commit: `0651e14`
 - Persistent blog hreflang compatibility commit: `cf3601d`
+- Initial-head metadata compatibility commit: `59a375f`
 - Live deployment verified on 2026-07-29 after Hostinger auto-deploy.
 
 ## Included Tool Clusters
@@ -62,4 +63,5 @@ Live HTML checks confirmed one H1, correct self-referencing canonicals, DJAI org
 - The focused crawl found no missing or duplicate page titles, meta descriptions, H1s, or canonicals, and no 4xx or 5xx sitemap URLs.
 - Remediation commit `0651e14` added crawlable initial content to the client-rendered Siamese Cat Dev bio, repaired legacy blog hreflang data, added QR `x-default`, and supplied descriptive product-image alt text.
 - Commit `cf3601d` makes English metadata resolve the actual seeded Thai post even when Hostinger's persistent blog file predates the compatibility field stored in the repository copy.
+- Commit `59a375f` makes that seeded fallback synchronous so Next.js emits canonical and hreflang tags in the initial document head instead of streamed metadata that HTML-limited crawlers can miss.
 - The default CLI configuration does not enable JavaScript rendering or Schema.org/Google structured-data validation. Do not interpret an empty structured-data error export from that configuration as a complete schema audit.

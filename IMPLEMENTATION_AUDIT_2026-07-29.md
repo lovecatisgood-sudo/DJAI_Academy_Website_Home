@@ -74,6 +74,7 @@ The repeated Best Practices deduction is from the AdSense third-party cookie and
 - The initial standard crawl reached the 500-URL free limit after crawling pages and resources. It exposed two client-rendered bio pages without crawlable H1 content, three non-reciprocal legacy blog hreflang pairs, one missing QR `x-default`, and product images with empty alt text.
 - Commit `0651e14` corrected those source issues and passed the complete production build.
 - Production uses a persistent blog data file older than the repository seed format. Commit `cf3601d` removes that format dependency by resolving the actual Thai post when generating English hreflang metadata; this was verified locally against a simulated legacy persistent file.
+- The first compatibility implementation introduced a second asynchronous metadata lookup, which Next.js streamed too late for standard Screaming Frog parsing. Commit `59a375f` uses a synchronous seeded-post lookup; a fresh Screaming Frog crawl against the simulated legacy production server returned zero missing canonicals, missing hreflang return links, or missing `x-default` rows across all seven affected URLs.
 - A second crawl used List Mode with all 205 live sitemap URLs, ensuring the free allowance covered every submitted page.
 - Result: 205/205 HTTP 200 and indexable, with zero missing or duplicate titles, descriptions, H1s, or canonicals, and zero internal 4xx/5xx sitemap URLs.
 - The final crawl exports are stored outside the repository at `/tmp/sf-djai-sitemap-audit/` for this workstation session.
@@ -99,3 +100,4 @@ The repeated Best Practices deduction is from the AdSense third-party cookie and
 - The post-deployment HTML inspection found and corrected the English QR task-page language attribute; regression coverage now checks every exported English QR route.
 - Screaming Frog remediation commit `0651e14` was pushed to `main` for Hostinger auto-deployment.
 - Persistent-data hreflang compatibility commit `cf3601d` was prepared after production exposed the older data shape.
+- Initial-head metadata compatibility commit `59a375f` was prepared after Screaming Frog exposed Next.js metadata streaming behavior.
