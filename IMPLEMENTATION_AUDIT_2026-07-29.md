@@ -73,6 +73,7 @@ The repeated Best Practices deduction is from the AdSense third-party cookie and
 - Screaming Frog SEO Spider 24.3 free edition was run locally against production.
 - The initial standard crawl reached the 500-URL free limit after crawling pages and resources. It exposed two client-rendered bio pages without crawlable H1 content, three non-reciprocal legacy blog hreflang pairs, one missing QR `x-default`, and product images with empty alt text.
 - Commit `0651e14` corrected those source issues and passed the complete production build.
+- Production uses a persistent blog data file older than the repository seed format. Commit `cf3601d` removes that format dependency by resolving the actual Thai post when generating English hreflang metadata; this was verified locally against a simulated legacy persistent file.
 - A second crawl used List Mode with all 205 live sitemap URLs, ensuring the free allowance covered every submitted page.
 - Result: 205/205 HTTP 200 and indexable, with zero missing or duplicate titles, descriptions, H1s, or canonicals, and zero internal 4xx/5xx sitemap URLs.
 - The final crawl exports are stored outside the repository at `/tmp/sf-djai-sitemap-audit/` for this workstation session.
@@ -97,3 +98,4 @@ The repeated Best Practices deduction is from the AdSense third-party cookie and
 - Health, sitemap, llms.txt, PDF, QR, image, and media production routes returned HTTP 200.
 - The post-deployment HTML inspection found and corrected the English QR task-page language attribute; regression coverage now checks every exported English QR route.
 - Screaming Frog remediation commit `0651e14` was pushed to `main` for Hostinger auto-deployment.
+- Persistent-data hreflang compatibility commit `cf3601d` was prepared after production exposed the older data shape.
