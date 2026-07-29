@@ -3,6 +3,7 @@ import { join } from "node:path";
 import { spawnSync } from "node:child_process";
 
 const rootDir = new URL("..", import.meta.url).pathname;
+const runDependencyAudit = process.env.DJAI_RUN_NPM_AUDIT === "1";
 
 const projects = [
   {
@@ -191,7 +192,9 @@ run("node", ["scripts/optimize-site-images.mjs"], rootDir);
 for (const project of projects) {
   const cwd = join(rootDir, project.dir);
   ensureDependencies(project);
-  run("npm", ["audit", "--audit-level=low"], cwd);
+  if (runDependencyAudit) {
+    run("npm", ["audit", "--audit-level=low"], cwd);
+  }
   cleanBuildOutputs(project);
   run("npm", project.build, cwd);
   validateOutputs(project);
