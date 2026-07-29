@@ -79,4 +79,10 @@ The repeated Best Practices deduction is from the AdSense third-party cookie and
 
 - The worktree contains unrelated untracked material that was not modified or removed.
 - This report is the release baseline for the Git `main` deployment requested on 2026-07-29.
-- After Hostinger completes the Git deployment, submit the refreshed sitemap in Search Console and inspect representative new PDF, QR, image, and media URLs.
+- Submit the refreshed sitemap in Search Console and inspect representative new PDF, QR, image, and media URLs there.
+
+## Deployment Result
+
+- Release commit `744a857` was pushed to `main` and Hostinger auto-deployed it successfully.
+- Health, sitemap, llms.txt, PDF, QR, image, and media production routes returned HTTP 200.
+- The post-deployment HTML inspection found and corrected the English QR task-page language attribute; regression coverage now checks every exported English QR route.

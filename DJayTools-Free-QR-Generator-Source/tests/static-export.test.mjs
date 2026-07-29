@@ -38,6 +38,7 @@ test("exports bilingual task pages with unique metadata", async () => {
     const english = await readFile(new URL(`../out/${slug}/en/index.html`, import.meta.url), "utf8");
     assert.match(thai, new RegExp(`<link rel="canonical" href="https://www.djai.academy${basePath}/${slug}/"`));
     assert.match(english, new RegExp(`<link rel="canonical" href="https://www.djai.academy${basePath}/${slug}/en/"`));
+    assert.match(english, /<html lang="en">/);
     assert.match(thai, /hrefLang="en"/);
     assert.match(english, /hrefLang="th"/);
   }
