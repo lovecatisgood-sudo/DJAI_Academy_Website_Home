@@ -40,7 +40,11 @@ const projects = [
     dir: "DJayTools-Free-QR-Generator-Source",
     install: "ci",
     build: ["run", "build:app"],
-    outputs: ["out/index.html", "out/en/index.html", "out/djai-academy-logo-display.webp", "out/siamese-cat-dev-logo.webp"]
+    outputs: [
+      "out/index.html", "out/en/index.html",
+      ...["url-qr-code-generator", "wifi-qr-code-generator", "vcard-qr-code-generator", "text-qr-code-generator", "email-qr-code-generator", "whatsapp-qr-code-generator", "qr-code-generator-with-logo"].flatMap((tool) => [`out/${tool}/index.html`, `out/${tool}/en/index.html`]),
+      "out/djai-academy-logo-display.webp", "out/siamese-cat-dev-logo.webp"
+    ]
   },
   {
     name: "DJAI image tools",
@@ -58,6 +62,14 @@ const projects = [
       "public/remove-image-metadata/en/index.html",
       "public/remove-background-image/index.html",
       "public/remove-background-image/en/index.html",
+      "public/resize-image-to-200kb/index.html",
+      "public/resize-image-to-200kb/en/index.html",
+      "public/avif-to-jpg/index.html",
+      "public/avif-to-jpg/en/index.html",
+      "public/avif-to-png/index.html",
+      "public/avif-to-png/en/index.html",
+      "public/passport-photo-resizer/index.html",
+      "public/passport-photo-resizer/en/index.html",
       "public/assets/djai-academy-logo.webp",
       "public/assets/siamese-cat-dev-transparent.webp",
       "public/vendor/background-removal.mjs",
@@ -80,6 +92,18 @@ const projects = [
       "out/jpg-to-pdf/en/index.html",
       "out/pdf-to-jpg/index.html",
       "out/pdf-to-jpg/en/index.html",
+      "out/png-to-pdf/index.html",
+      "out/png-to-pdf/en/index.html",
+      "out/webp-to-pdf/index.html",
+      "out/webp-to-pdf/en/index.html",
+      "out/pdf-to-png/index.html",
+      "out/pdf-to-png/en/index.html",
+      "out/extract-pdf-pages/index.html",
+      "out/extract-pdf-pages/en/index.html",
+      "out/delete-pages-from-pdf/index.html",
+      "out/delete-pages-from-pdf/en/index.html",
+      "out/reorder-pdf-pages/index.html",
+      "out/reorder-pdf-pages/en/index.html",
       "out/protect-pdf/index.html",
       "out/protect-pdf/en/index.html",
       "out/organize-pdf/index.html",
@@ -92,6 +116,19 @@ const projects = [
       "out/djai-academy-logo-small.webp",
       "out/siamese-cat-dev-logo.webp",
       "out/pdf.worker.min.mjs"
+    ]
+  },
+  {
+    name: "DJAI media tools",
+    dir: "djai-media-tools",
+    install: "ci",
+    build: ["run", "build"],
+    clean: ["public"],
+    outputs: [
+      "public/index.html", "public/en/index.html", "public/mp3-to-wav/index.html",
+      "public/mp3-to-wav/en/index.html", "public/compress-video/index.html",
+      "public/compress-video/en/index.html", "public/vendor/core/ffmpeg-core.wasm",
+      "public/vendor/ffmpeg/worker.js"
     ]
   },
   {

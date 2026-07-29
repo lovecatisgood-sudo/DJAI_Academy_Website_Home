@@ -1,7 +1,7 @@
 import { SIAMESE_CAT_DEV_CATEGORY, getAllPosts, getPostsByCategory } from "./lib/blogStore";
 import { getAllThaiPosts } from "./lib/thBlogPosts";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 3600;
 
 const ORIGIN = "https://www.djai.academy";
 const STATIC_LAST_MODIFIED = new Date("2026-07-28T00:00:00.000Z");
@@ -18,13 +18,26 @@ const corePaths = [
 const imageTools = [
   "jpg-to-png", "png-to-jpg", "jpg-to-webp", "png-to-webp", "webp-to-jpg", "webp-to-png",
   "compress-image", "resize-image", "image-to-100kb", "image-to-500kb", "heic-to-jpg",
-  "remove-image-metadata", "remove-background-image"
+  "remove-image-metadata", "remove-background-image", "resize-image-to-200kb", "avif-to-jpg",
+  "avif-to-png", "passport-photo-resizer"
+];
+
+const qrTools = [
+  "url-qr-code-generator", "wifi-qr-code-generator", "vcard-qr-code-generator",
+  "text-qr-code-generator", "email-qr-code-generator", "whatsapp-qr-code-generator",
+  "qr-code-generator-with-logo"
 ];
 
 const pdfTools = [
   "merge-pdf", "split-pdf", "compress-pdf", "images-to-pdf", "pdf-to-images", "rotate-pdf",
   "watermark-pdf", "protect-pdf", "organize-pdf", "add-page-numbers", "remove-pdf-metadata",
-  "jpg-to-pdf", "pdf-to-jpg"
+  "jpg-to-pdf", "pdf-to-jpg", "png-to-pdf", "webp-to-pdf", "pdf-to-png",
+  "extract-pdf-pages", "delete-pages-from-pdf", "reorder-pdf-pages"
+];
+
+const mediaTools = [
+  "mp3-to-wav", "wav-to-mp3", "m4a-to-mp3", "mp4-to-mp3", "extract-audio-from-video",
+  "mp4-to-webm", "webm-to-mp4", "mov-to-mp4", "compress-video"
 ];
 
 const suiteTools = {
@@ -39,8 +52,10 @@ function bilingual(base, slugs = []) {
 
 const staticPaths = [
   ...corePaths,
+  ...bilingual("/tools/qrgen/", qrTools),
   ...bilingual("/tools/resizeimg/", imageTools),
   ...bilingual("/tools/PDFTools/", pdfTools),
+  ...bilingual("/tools/media/", mediaTools),
   ...Object.entries(suiteTools).flatMap(([category, slugs]) => bilingual(`/tools/${category}/`, slugs))
 ];
 

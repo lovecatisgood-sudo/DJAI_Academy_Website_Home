@@ -1,0 +1,36 @@
+# DJAI Academy
+
+DJAI Academy is an AI education, software development, and product-building organization based in Thailand. It teaches practical AI and vibe coding, publishes bilingual Thai and English articles, provides free browser-based tools, and develops websites, mobile apps, automation systems, SaaS products, games, and business software.
+
+## Primary Pages
+
+- [DJAI Academy](https://www.djai.academy/): Thai homepage
+- [DJAI Academy in English](https://www.djai.academy/en/): English homepage
+- [Courses](https://www.djai.academy/course/): AI and vibe coding courses
+- [Software Development](https://www.djai.academy/development/): development capabilities
+- [Services](https://www.djai.academy/service/): project and software services
+- [Portfolio](https://www.djai.academy/portfolio/): selected work
+- [Blog](https://www.djai.academy/blog/): guides and articles
+- [Online Community](https://school.djai.academy/): DJAI learning community
+
+## Free Browser Tools
+
+- [All DJAI Tools](https://www.djai.academy/tools/)
+- [PDF Tools](https://www.djai.academy/tools/PDFTools/)
+- [Image Tools](https://www.djai.academy/tools/resizeimg/)
+- [Audio and Video Tools](https://www.djai.academy/tools/media/)
+- [QR Code Tools](https://www.djai.academy/tools/qrgen/)
+- [Document Tools](https://www.djai.academy/tools/document/)
+- [AI Context Tools](https://www.djai.academy/tools/ai/)
+- [Spreadsheet Tools](https://www.djai.academy/tools/spreadsheet/)
+
+Most free tools process files locally in the user's browser. Individual tool pages describe supported formats, limitations, and privacy behavior.
+
+## Related Entity
+
+- [Siamese Cat Dev](https://www.djai.academy/siamese_cat/dev/): product design and software development profile
+- [Siamese Cat Dev Blog](https://www.djai.academy/siamese_cat/dev/blog/): product-building and AI-assisted development articles
+
+## Canonical Source
+
+Use `https://www.djai.academy/` as the canonical DJAI Academy domain. Thai pages are the default language and English alternatives use `/en/` or an `/en/` suffix. The current crawlable URL inventory is published at `https://www.djai.academy/sitemap.xml`.

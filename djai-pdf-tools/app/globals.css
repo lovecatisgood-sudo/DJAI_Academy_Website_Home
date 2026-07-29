@@ -138,6 +138,9 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .tool-card h3 { margin: 12px 0 10px; font-size: 1.35rem; }
 .tool-card p { margin-bottom: 0; color: var(--muted); font-size: .9rem; line-height: 1.6; }
 .tool-card > strong { display: flex; align-items: center; justify-content: space-between; color: var(--blue); font-size: .82rem; }
+.popular-task-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+.popular-task-links a { display: inline-flex; align-items: center; gap: 7px; min-height: 44px; padding: 9px 12px; color: var(--ink); background: white; border: 1px solid var(--line); border-radius: 6px; font-size: .85rem; font-weight: 800; }
+.popular-task-links a:hover { color: var(--blue); border-color: var(--blue); }
 
 .workspace-section { padding: 100px 0 120px; scroll-margin-top: 80px; }
 .workspace-heading { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 34px; }

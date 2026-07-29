@@ -9,7 +9,8 @@ export const metadata = {
     canonical: "/portfolio/",
     languages: {
       en: "/portfolio/en/",
-      th: "/portfolio/"
+      th: "/portfolio/",
+      "x-default": "/portfolio/"
     }
   },
   openGraph: {

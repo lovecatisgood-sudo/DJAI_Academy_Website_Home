@@ -171,9 +171,9 @@
             <strong>ลากรูปภาพมาวางที่นี่</strong>
             <span>หรือคลิกเพื่อเลือกไฟล์จากอุปกรณ์ของคุณ</span>
             <span class="choose-file">เลือกรูปภาพ</span>
-            <small>รองรับ JPG, JPEG, PNG, WebP, HEIC และ HEIF · สูงสุด 20 ไฟล์</small>
+            <small>รองรับ JPG, JPEG, PNG, WebP, AVIF, HEIC และ HEIF · สูงสุด 20 ไฟล์</small>
           </button>
-          <input id="file-input" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif,.heic,.heif" multiple hidden>
+          <input id="file-input" type="file" accept="image/jpeg,image/png,image/webp,image/avif,image/heic,image/heif,.heic,.heif,.avif" aria-label="เลือกรูปภาพ" multiple hidden>
         </div>
 
         <div id="editor-view" class="editor-view" hidden>
@@ -254,6 +254,8 @@
                   <option value="1080x1920">Instagram Story · 1080 × 1920</option>
                   <option value="1280x720">YouTube Thumbnail · 1280 × 720</option>
                   <option value="1200x630">Facebook Post · 1200 × 630</option>
+                  <option value="413x531">Thai Passport 35 × 45 mm · 413 × 531</option>
+                  <option value="600x600">US Passport 2 × 2 inch · 600 × 600</option>
                 </select>
                 <div class="dimension-grid">
                   <label for="width-input">กว้าง <span>px</span><input id="width-input" type="number" min="1" max="20000" step="1"></label>
@@ -452,6 +454,9 @@
         <a href="webp-to-jpg/"><strong>WebP เป็น JPG</strong><span>รองรับระบบทั่วไป</span></a>
         <a href="image-to-100kb/"><strong>รูปใกล้ 100 KB</strong><span>สำหรับแบบฟอร์ม</span></a>
         <a href="heic-to-jpg/"><strong>HEIC เป็น JPG</strong><span>รูปจาก iPhone</span></a>
+        <a href="avif-to-jpg/"><strong>AVIF เป็น JPG</strong><span>รองรับระบบทั่วไป</span></a>
+        <a href="resize-image-to-200kb/"><strong>รูปใกล้ 200 KB</strong><span>ตั้งค่าเป้าหมายแล้ว</span></a>
+        <a href="passport-photo-resizer/"><strong>รูปพาสปอร์ต</strong><span>35x45 และ 2x2 นิ้ว</span></a>
       </div>
     </section>
 
@@ -538,7 +543,7 @@
       <p id="tool-promo-text"></p>
       <div class="promo-actions">
         <a id="tool-promo-link" href="https://www.djai.academy/course/"></a>
-        <button id="tool-promo-later" type="button"></button>
+        <button id="tool-promo-later" type="button">ไว้ภายหลัง</button>
       </div>
     </div>
   </div>

@@ -22,7 +22,9 @@ export type ProcessingOptions = {
   allowCopy: boolean;
   allowModify: boolean;
   allowForms: boolean;
+  organizeMode: "order" | "delete";
   pageOrder: string;
+  deletePages: string;
   pageNumberPosition: "bottom-left" | "bottom-center" | "bottom-right" | "top-left" | "top-center" | "top-right";
   pageNumberStart: number;
 };
@@ -416,13 +418,17 @@ async function protectPdf(file: File, options: ProcessingOptions): Promise<Proce
 async function organizePdf(file: File, options: ProcessingOptions): Promise<ProcessResult> {
   const { PDFDocument } = await import("pdf-lib");
   const source = await PDFDocument.load(await readBytes(file));
-  const sequence = parsePageSequence(options.pageOrder, source.getPageCount());
-  if (!sequence.length) throw new Error("Enter at least one page in the final order.");
+  const totalPages = source.getPageCount();
+  const deletedPages = options.organizeMode === "delete" ? parsePageList(options.deletePages, totalPages) : [];
+  const sequence = options.organizeMode === "delete"
+    ? source.getPageIndices().filter((index) => !deletedPages.includes(index))
+    : parsePageSequence(options.pageOrder, totalPages);
+  if (!sequence.length) throw new Error(options.organizeMode === "delete" ? "Keep at least one PDF page." : "Enter at least one page in the final order.");
   const output = await PDFDocument.create();
   const pages = await output.copyPages(source, sequence);
   pages.forEach((page) => output.addPage(page));
   const bytes = await savePdf(output);
-  return { blob: asBlob(bytes), fileName: downloadName(file, "organized"), itemCount: sequence.length, note: `${source.getPageCount() - new Set(sequence).size} page(s) removed` };
+  return { blob: asBlob(bytes), fileName: downloadName(file, "organized"), itemCount: sequence.length, note: `${totalPages - new Set(sequence).size} page(s) removed` };
 }
 
 async function addPageNumbers(file: File, options: ProcessingOptions): Promise<ProcessResult> {

@@ -36,6 +36,7 @@ import type { LucideIcon } from "lucide-react";
 import Image from "next/image";
 import { Fragment, useEffect, useMemo, useRef, useState } from "react";
 import type { ProcessingOptions, ProcessResult } from "./pdf-actions";
+import { pdfSeoAliases, type PdfSeoPage } from "./seo-alias-data";
 import AdSenseAd from "./AdSenseAd";
 import ShareButtons from "./ShareButtons";
 import ToolPromoModal, { shouldShowToolPromo } from "./ToolPromoModal";
@@ -86,7 +87,9 @@ const defaultOptions: ProcessingOptions = {
   allowCopy: false,
   allowModify: false,
   allowForms: true,
+  organizeMode: "order",
   pageOrder: "1-3",
+  deletePages: "1",
   pageNumberPosition: "bottom-center",
   pageNumberStart: 1
 };
@@ -304,8 +307,12 @@ function ToolSettings({ tool, language, options, update }: {
   );
   if (tool === "organize-pdf") return (
     <>
-      <label className="field-label">{en ? "Final page order" : "ลำดับหน้าสุดท้าย"}<input value={options.pageOrder} onChange={(event) => update("pageOrder", event.target.value)} placeholder="3, 1-2, 5" /></label>
-      <p className="setting-note warning">{en ? "Pages left out are removed. You can repeat a page if a duplicate is needed." : "หน้าที่ไม่ระบุจะถูกลบ และสามารถระบุหน้าเดิมซ้ำเพื่อทำสำเนาได้"}</p>
+      {options.organizeMode === "delete" ? (
+        <label className="field-label">{en ? "Pages to delete" : "หน้าที่ต้องการลบ"}<input value={options.deletePages} onChange={(event) => update("deletePages", event.target.value)} placeholder="2, 4-6" /></label>
+      ) : (
+        <label className="field-label">{en ? "Final page order" : "ลำดับหน้าสุดท้าย"}<input value={options.pageOrder} onChange={(event) => update("pageOrder", event.target.value)} placeholder="3, 1-2, 5" /></label>
+      )}
+      <p className="setting-note warning">{options.organizeMode === "delete" ? (en ? "Selected pages are removed from a new copy. The original stays unchanged." : "หน้าที่ระบุจะถูกลบจากสำเนาใหม่ โดยไฟล์ต้นฉบับไม่เปลี่ยนแปลง") : (en ? "Pages left out are removed. You can repeat a page if a duplicate is needed." : "หน้าที่ไม่ระบุจะถูกลบ และสามารถระบุหน้าเดิมซ้ำเพื่อทำสำเนาได้")}</p>
     </>
   );
   if (tool === "add-page-numbers") return (
@@ -350,16 +357,7 @@ function ToolSettings({ tool, language, options, update }: {
   );
 }
 
-export type PdfSeoPage = {
-  slug: string;
-  label: string;
-  title: string;
-  short: string;
-  description: string;
-  guide: { title: string; intro: string; steps: [string, string, string] };
-};
-
-export default function PdfToolsApp({ language, initialTool, seoPage }: { language: Language; initialTool?: ToolSlug; seoPage?: PdfSeoPage }) {
+export default function PdfToolsApp({ language, initialTool, seoPage, initialOptions, acceptedTypes, acceptOverride, fileTypeLabel }: { language: Language; initialTool?: ToolSlug; seoPage?: PdfSeoPage; initialOptions?: Partial<ProcessingOptions>; acceptedTypes?: string[]; acceptOverride?: string; fileTypeLabel?: string }) {
   const copy = ui[language];
   const en = language === "en";
   const devHref = en ? "https://www.djai.academy/siamese_cat/dev/en/" : "https://www.djai.academy/siamese_cat/dev/";
@@ -368,7 +366,8 @@ export default function PdfToolsApp({ language, initialTool, seoPage }: { langua
   const activeGuide = seoPage?.guide || toolGuides[language][activeTool];
   const ActiveIcon = icons[activeTool];
   const [files, setFiles] = useState<File[]>([]);
-  const [options, setOptions] = useState(defaultOptions);
+  const configuredDefaults = useMemo(() => ({ ...defaultOptions, ...initialOptions }), [initialOptions]);
+  const [options, setOptions] = useState(configuredDefaults);
   const [dragging, setDragging] = useState(false);
   const [processing, setProcessing] = useState(false);
   const [error, setError] = useState("");
@@ -379,7 +378,7 @@ export default function PdfToolsApp({ language, initialTool, seoPage }: { langua
 
   const isImageInput = activeTool === "images-to-pdf";
   const allowsMultiple = activeTool === "merge-pdf" || activeTool === "images-to-pdf";
-  const accept = isImageInput ? "image/jpeg,image/png,image/webp" : "application/pdf,.pdf";
+  const accept = acceptOverride || (isImageInput ? "image/jpeg,image/png,image/webp" : "application/pdf,.pdf");
   const related = useMemo(() => toolSlugs.filter((slug) => slug !== activeTool).slice(0, 4), [activeTool]);
 
   useEffect(() => () => {
@@ -391,7 +390,7 @@ export default function PdfToolsApp({ language, initialTool, seoPage }: { langua
   }
 
   function addFiles(incoming: FileList | File[]) {
-    const selected = Array.from(incoming).filter((file) => isImageInput ? file.type.startsWith("image/") : (file.type === "application/pdf" || file.name.toLowerCase().endsWith(".pdf")));
+    const selected = Array.from(incoming).filter((file) => acceptedTypes?.length ? acceptedTypes.includes(file.type) : isImageInput ? file.type.startsWith("image/") : (file.type === "application/pdf" || file.name.toLowerCase().endsWith(".pdf")));
     setError("");
     setResult(null);
     setFiles((current) => allowsMultiple ? [...current, ...selected] : selected.slice(0, 1));
@@ -412,7 +411,7 @@ export default function PdfToolsApp({ language, initialTool, seoPage }: { langua
     setFiles([]);
     setResult(null);
     setError("");
-    setOptions(defaultOptions);
+    setOptions(configuredDefaults);
     if (fileInput.current) fileInput.current.value = "";
   }
 
@@ -532,6 +531,9 @@ export default function PdfToolsApp({ language, initialTool, seoPage }: { langua
               return <a className={`tool-card accent-${index % 4}`} href={toolHref(slug, language)} key={slug}><span className="tool-icon"><Icon /></span><div><small>{String(index + 1).padStart(2, "0")}</small><h3>{item.label}</h3><p>{item.short}</p></div><strong>{copy.open}<ArrowRight size={16} /></strong></a>;
             })}
           </div>
+          <div className="popular-task-links" aria-label={en ? "Popular PDF tasks" : "งาน PDF ยอดนิยม"}>
+            {Object.values(pdfSeoAliases).map((alias) => <a href={`${BASE_PATH}/${alias.slug}/${en ? "en/" : ""}`} key={alias.slug}>{alias.copy[language].label}<ArrowRight size={15} /></a>)}
+          </div>
         </section>
       )}
 
@@ -548,7 +550,7 @@ export default function PdfToolsApp({ language, initialTool, seoPage }: { langua
               onDragLeave={() => setDragging(false)}
               onDrop={(event) => { event.preventDefault(); setDragging(false); addFiles(event.dataTransfer.files); }}
             >
-              <span><Upload /></span><strong>{copy.uploadTitle}</strong><small>{isImageInput ? "JPG · PNG · WebP" : "PDF"} · {copy.uploadHint}</small><b>{isImageInput ? copy.uploadImages : copy.uploadPdf}</b>
+              <span><Upload /></span><strong>{copy.uploadTitle}</strong><small>{fileTypeLabel || (isImageInput ? "JPG · PNG · WebP" : "PDF")} · {copy.uploadHint}</small><b>{isImageInput ? copy.uploadImages : copy.uploadPdf}</b>
             </button>
             <input ref={fileInput} className="visually-hidden" type="file" accept={accept} multiple={allowsMultiple} aria-label={en ? "Choose files to process" : "เลือกไฟล์ที่ต้องการประมวลผล"} onChange={(event) => event.target.files && addFiles(event.target.files)} />
             {files.length > 0 && <div className="file-list"><div className="file-list-title"><strong>{copy.files}</strong><span>{files.length}</span></div>{files.map((file, index) => <div className="file-row" key={`${file.name}-${file.lastModified}-${index}`}><span className="file-type">{isImageInput ? <FileImage /> : <FileArchive />}</span><div><strong>{file.name}</strong><small>{formatBytes(file.size)}</small></div>{allowsMultiple && <div className="file-order"><button type="button" aria-label="Move up" title="Move up" onClick={() => moveFile(index, -1)} disabled={index === 0}><ArrowUp /></button><button type="button" aria-label="Move down" title="Move down" onClick={() => moveFile(index, 1)} disabled={index === files.length - 1}><ArrowDown /></button></div>}<button className="remove-file" type="button" aria-label="Remove file" title="Remove file" onClick={() => setFiles((current) => current.filter((_, itemIndex) => itemIndex !== index))}><Trash2 /></button></div>)}</div>}

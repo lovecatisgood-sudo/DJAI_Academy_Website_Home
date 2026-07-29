@@ -30,3 +30,15 @@ test("Hostinger static export uses the configured subpath", async () => {
   assert.equal(await exists(new URL("../out/djai-academy-logo-display.webp", import.meta.url)), true);
   assert.equal(await exists(new URL("../out/siamese-cat-dev-logo.webp", import.meta.url)), true);
 });
+
+test("exports bilingual task pages with unique metadata", async () => {
+  const slugs = ["url-qr-code-generator", "wifi-qr-code-generator", "vcard-qr-code-generator", "text-qr-code-generator", "email-qr-code-generator", "whatsapp-qr-code-generator", "qr-code-generator-with-logo"];
+  for (const slug of slugs) {
+    const thai = await readFile(new URL(`../out/${slug}/index.html`, import.meta.url), "utf8");
+    const english = await readFile(new URL(`../out/${slug}/en/index.html`, import.meta.url), "utf8");
+    assert.match(thai, new RegExp(`<link rel="canonical" href="https://www.djai.academy${basePath}/${slug}/"`));
+    assert.match(english, new RegExp(`<link rel="canonical" href="https://www.djai.academy${basePath}/${slug}/en/"`));
+    assert.match(thai, /hrefLang="en"/);
+    assert.match(english, /hrefLang="th"/);
+  }
+});

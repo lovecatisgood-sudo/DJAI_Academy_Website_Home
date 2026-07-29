@@ -9,7 +9,8 @@ export const metadata = {
     canonical: "/service/",
     languages: {
       en: "/service/en/",
-      th: "/service/"
+      th: "/service/",
+      "x-default": "/service/"
     }
   },
   openGraph: {

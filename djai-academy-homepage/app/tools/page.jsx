@@ -9,7 +9,8 @@ export const metadata = {
     canonical: "/tools/",
     languages: {
       en: "/tools/en/",
-      th: "/tools/"
+      th: "/tools/",
+      "x-default": "/tools/"
     }
   },
   openGraph: {
@@ -46,6 +47,13 @@ const tools = [
     tags: ["PDF", "AES-256", "Private"]
   },
   {
+    label: "Media Tools",
+    title: "แปลงไฟล์เสียงและวิดีโอฟรี",
+    text: "แปลง MP3, WAV, M4A, MP4, MOV และ WebM ดึงเสียงหรือบีบอัดวิดีโอด้วย FFmpeg ใน browser โดยไม่ upload ไฟล์",
+    href: "https://www.djai.academy/tools/media/",
+    tags: ["MP3", "MP4", "FFmpeg"]
+  },
+  {
     label: "Document Tools",
     title: "DJAI Document Converter",
     text: "แปลง DOCX เป็น PDF, HTML, Markdown และข้อความ ดึงข้อความจาก PDF หรือใช้ OCR ภาษาไทยและอังกฤษใน browser",
@@ -68,7 +76,7 @@ const tools = [
   }
 ];
 
-const comingSoon = ["Favicon generator", "AVIF tools", "High-fidelity Office conversion"];
+const comingSoon = ["Favicon generator", "High-fidelity Office conversion"];
 
 const popularWorkflows = [
   ["ลบพื้นหลังรูป", "สร้าง PNG โปร่งใสใน browser", "https://www.djai.academy/tools/resizeimg/remove-background-image/"],
@@ -77,6 +85,8 @@ const popularWorkflows = [
   ["ลดรูปใกล้ 100 KB", "เตรียมรูปสำหรับแบบฟอร์ม", "https://www.djai.academy/tools/resizeimg/image-to-100kb/"],
   ["JPG เป็น PDF", "รวมรูปหลายหน้าเป็น PDF", "https://www.djai.academy/tools/PDFTools/jpg-to-pdf/"],
   ["PDF เป็น JPG", "ส่งออกทุกหน้าเป็นรูปหรือ ZIP", "https://www.djai.academy/tools/PDFTools/pdf-to-jpg/"],
+  ["MP4 เป็น MP3", "ดึงเสียงจากวิดีโอใน browser", "https://www.djai.academy/tools/media/mp4-to-mp3/"],
+  ["บีบอัดวิดีโอ", "ลดขนาด MP4 MOV และ WebM", "https://www.djai.academy/tools/media/compress-video/"],
   ["DOCX เป็น PDF", "แปลง Word แบบ private", "https://www.djai.academy/tools/document/docx-to-pdf/"],
   ["PDF เป็นข้อความ", "ดึงข้อความตามช่วงหน้า", "https://www.djai.academy/tools/document/pdf-to-text/"],
   ["นับ Token เอกสาร", "ตรวจ context ก่อนใช้กับ AI", "https://www.djai.academy/tools/ai/token-counter/"],

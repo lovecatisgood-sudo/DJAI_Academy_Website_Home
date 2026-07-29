@@ -171,9 +171,9 @@
             <strong>Drop your image here</strong>
             <span>or click to browse from your device</span>
             <span class="choose-file">Choose image</span>
-            <small>JPG, JPEG, PNG, WebP, HEIC and HEIF · Up to 20 files</small>
+            <small>JPG, JPEG, PNG, WebP, AVIF, HEIC and HEIF · Up to 20 files</small>
           </button>
-          <input id="file-input" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif,.heic,.heif" multiple hidden>
+          <input id="file-input" type="file" accept="image/jpeg,image/png,image/webp,image/avif,image/heic,image/heif,.heic,.heif,.avif" aria-label="Choose images" multiple hidden>
         </div>
 
         <div id="editor-view" class="editor-view" hidden>
@@ -254,6 +254,8 @@
                   <option value="1080x1920">Instagram Story · 1080 × 1920</option>
                   <option value="1280x720">YouTube Thumbnail · 1280 × 720</option>
                   <option value="1200x630">Facebook Post · 1200 × 630</option>
+                  <option value="413x531">Thai Passport 35 × 45 mm · 413 × 531</option>
+                  <option value="600x600">US Passport 2 × 2 inch · 600 × 600</option>
                 </select>
                 <div class="dimension-grid">
                   <label for="width-input">Width <span>px</span><input id="width-input" type="number" min="1" max="20000" step="1"></label>
@@ -452,6 +454,9 @@
         <a href="webp-to-jpg/en/"><strong>WebP to JPG</strong><span>Wider compatibility</span></a>
         <a href="image-to-100kb/en/"><strong>Image to 100 KB</strong><span>For upload forms</span></a>
         <a href="heic-to-jpg/en/"><strong>HEIC to JPG</strong><span>iPhone photos</span></a>
+        <a href="avif-to-jpg/en/"><strong>AVIF to JPG</strong><span>Wider compatibility</span></a>
+        <a href="resize-image-to-200kb/en/"><strong>Image to 200 KB</strong><span>Preconfigured target</span></a>
+        <a href="passport-photo-resizer/en/"><strong>Passport photo</strong><span>35x45 and 2x2 inch</span></a>
       </div>
     </section>
 
@@ -538,7 +543,7 @@
       <p id="tool-promo-text"></p>
       <div class="promo-actions">
         <a id="tool-promo-link" href="https://www.djai.academy/course/en/"></a>
-        <button id="tool-promo-later" type="button"></button>
+        <button id="tool-promo-later" type="button">Maybe later</button>
       </div>
     </div>
   </div>

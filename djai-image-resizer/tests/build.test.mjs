@@ -10,7 +10,7 @@ const projectDir = join(dirname(fileURLToPath(import.meta.url)), "..");
 const publicDir = join(projectDir, "public");
 
 test("all SEO presets have Thai and English static pages", () => {
-  assert.equal(presets.length, 13);
+  assert.equal(presets.length, 17);
   assert.equal(presets.some((preset) => preset.slug === "remove-background-image"), true);
   for (const preset of presets) {
     for (const language of ["th", "en"]) {
@@ -70,5 +70,6 @@ test("base pages expose complete batch and comparison controls", () => {
     }
     assert.match(html, /multiple hidden/);
     assert.match(html, /image\/heic/);
+    assert.match(html, /image\/avif/);
   }
 });

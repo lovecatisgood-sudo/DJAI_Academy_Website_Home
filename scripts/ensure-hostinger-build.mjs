@@ -17,7 +17,10 @@ const requiredOutputs = [
   "Siamese-Cat-Dev-Bio-Site/dist/index.html",
   "Siamese-Cat-Dev-Bio-Site/dist/en/index.html",
   "djai-image-resizer/public/index.html",
-  "djai-image-resizer/public/en/index.html"
+  "djai-image-resizer/public/en/index.html",
+  "djai-media-tools/public/index.html",
+  "djai-media-tools/public/en/index.html",
+  "djai-media-tools/public/vendor/core/ffmpeg-core.wasm"
 ];
 
 const missingOutput = requiredOutputs.find((output) => !existsSync(join(rootDir, output)));

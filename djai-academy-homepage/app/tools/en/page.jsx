@@ -9,7 +9,8 @@ export const metadata = {
     canonical: "/tools/en/",
     languages: {
       en: "/tools/en/",
-      th: "/tools/"
+      th: "/tools/",
+      "x-default": "/tools/"
     }
   },
   openGraph: {
@@ -46,6 +47,13 @@ const tools = [
     tags: ["PDF", "AES-256", "Private"]
   },
   {
+    label: "Media Tools",
+    title: "Free Audio and Video Converter",
+    text: "Convert MP3, WAV, M4A, MP4, MOV, and WebM, extract audio, or compress video with FFmpeg in your browser without uploading files.",
+    href: "https://www.djai.academy/tools/media/en/",
+    tags: ["MP3", "MP4", "FFmpeg"]
+  },
+  {
     label: "Document Tools",
     title: "DJAI Document Converter",
     text: "Convert DOCX to PDF, HTML, Markdown, and text, extract PDF text, or run Thai and English OCR in your browser.",
@@ -70,7 +78,6 @@ const tools = [
 
 const comingSoon = [
   "Favicon generator",
-  "AVIF tools",
   "High-fidelity Office conversion"
 ];
 
@@ -81,6 +88,8 @@ const popularWorkflows = [
   ["Image to 100 KB", "Prepare an image for upload forms", "https://www.djai.academy/tools/resizeimg/image-to-100kb/en/"],
   ["JPG to PDF", "Combine multiple images into a PDF", "https://www.djai.academy/tools/PDFTools/jpg-to-pdf/en/"],
   ["PDF to JPG", "Export every page as an image or ZIP", "https://www.djai.academy/tools/PDFTools/pdf-to-jpg/en/"],
+  ["MP4 to MP3", "Extract video audio in your browser", "https://www.djai.academy/tools/media/mp4-to-mp3/en/"],
+  ["Compress video", "Reduce MP4, MOV, and WebM files", "https://www.djai.academy/tools/media/compress-video/en/"],
   ["DOCX to PDF", "Convert Word privately in your browser", "https://www.djai.academy/tools/document/docx-to-pdf/en/"],
   ["PDF to Text", "Extract text from selected pages", "https://www.djai.academy/tools/document/pdf-to-text/en/"],
   ["Document Token Counter", "Check context use before AI", "https://www.djai.academy/tools/ai/token-counter/en/"],

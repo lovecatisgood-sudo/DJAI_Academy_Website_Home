@@ -58,6 +58,26 @@ export const presets = [
     en: ["Compress Image to Approximately 500 KB Free | DJAI", "Compress an image to approximately 500 KB", "Reduce a JPG, PNG, or WebP image toward 500 KB free in your browser for email, websites, and forms.", "How to reduce an image to 500 KB", "The 500 KB target is preselected for images that need useful detail under a file-size limit.", ["Choose the image to compress", "Use the 500 KB target", "Compare the sizes and download"]]
   },
   {
+    slug: "resize-image-to-200kb", mode: "target", targetKb: 200,
+    th: ["ลดขนาดรูปให้ใกล้ 200 KB ฟรี | DJAI Image Tools", "ลดขนาดรูปให้ใกล้ 200 KB", "ลดขนาด JPG PNG WebP หรือ AVIF ให้ใกล้ 200 KB ฟรีสำหรับแบบฟอร์ม อีเมล และเว็บไซต์ โดยประมวลผลใน browser", "วิธีลดขนาดรูปให้ใกล้ 200 KB", "ระบบตั้งเป้าหมาย 200 KB ไว้ล่วงหน้าและจะปรับคุณภาพหรือขนาดภาพเท่าที่จำเป็น โดยแสดงขนาดจริงก่อนดาวน์โหลด", ["เลือกรูปจากอุปกรณ์", "ตรวจค่าเป้าหมาย 200 KB", "ประมวลผล ตรวจขนาดจริง และดาวน์โหลด"]],
+    en: ["Resize Image to Approximately 200 KB Free | DJAI", "Resize an image to approximately 200 KB", "Reduce JPG, PNG, WebP, or AVIF images toward 200 KB free for forms, email, and websites with private browser processing.", "How to resize an image to 200 KB", "The 200 KB target is preconfigured. The tool adjusts quality or dimensions only as needed and shows the actual output size before download.", ["Choose an image from your device", "Confirm the 200 KB target", "Process, check the actual size, and download"]]
+  },
+  {
+    slug: "avif-to-jpg", mode: "dimensions", format: "image/jpeg",
+    th: ["แปลง AVIF เป็น JPG ฟรี ออนไลน์ | DJAI Image Tools", "แปลง AVIF เป็น JPG ฟรี", "แปลงรูป AVIF เป็น JPG ฟรีใน browser สำหรับเว็บไซต์ แบบฟอร์ม และโปรแกรมที่ยังไม่รองรับ AVIF", "วิธีแปลง AVIF เป็น JPG", "เลือกไฟล์ AVIF แล้วส่งออกเป็น JPG ที่รองรับกว้างขึ้น การทำงานขึ้นอยู่กับการรองรับ AVIF ของ browser", ["เลือกไฟล์ AVIF", "ตั้งคุณภาพ JPG", "ประมวลผลและดาวน์โหลด JPG"]],
+    en: ["Convert AVIF to JPG Free Online | DJAI Image Tools", "Convert AVIF to JPG for free", "Convert AVIF images to widely compatible JPG files free in your browser for forms, websites, and software.", "How to convert AVIF to JPG", "Choose an AVIF file and export it as JPG. Processing stays on your device when the browser supports AVIF decoding.", ["Choose an AVIF image", "Set the JPG quality", "Process and download the JPG"]]
+  },
+  {
+    slug: "avif-to-png", mode: "dimensions", format: "image/png",
+    th: ["แปลง AVIF เป็น PNG ฟรี ออนไลน์ | DJAI Image Tools", "แปลง AVIF เป็น PNG ฟรี", "แปลง AVIF เป็น PNG ฟรีใน browser สำหรับงานออกแบบและ workflow ที่ต้องการไฟล์ PNG", "วิธีแปลง AVIF เป็น PNG", "PNG เหมาะกับงานที่ต้องการความเข้ากันได้และพื้นโปร่งใส การแปลงทำในอุปกรณ์เมื่อ browser รองรับ AVIF", ["เลือกไฟล์ AVIF", "ตรวจค่า PNG", "ประมวลผลและดาวน์โหลด PNG"]],
+    en: ["Convert AVIF to PNG Free Online | DJAI Image Tools", "Convert AVIF to PNG for free", "Convert AVIF images to PNG free in your browser for design and publishing workflows that require PNG.", "How to convert AVIF to PNG", "PNG is useful for compatibility and transparency. Conversion remains on your device when AVIF decoding is supported by the browser.", ["Choose an AVIF image", "Confirm PNG output", "Process and download the PNG"]]
+  },
+  {
+    slug: "passport-photo-resizer", mode: "dimensions", format: "image/jpeg", width: 413, height: 531, crop: true,
+    th: ["Resize รูปพาสปอร์ต 35x45 มม. ฟรี | DJAI", "Resize และครอปรูปพาสปอร์ตฟรี", "ครอปรูปพาสปอร์ตเป็นสัดส่วน 35 × 45 มม. ที่ 413 × 531 px หรือเลือก US 2 × 2 นิ้ว 600 × 600 px ฟรีใน browser", "วิธี Resize รูปพาสปอร์ต", "ค่าเริ่มต้นใช้รูป 35 × 45 มม. ที่ประมาณ 300 DPI เครื่องมือครอปกึ่งกลางให้เต็มกรอบ โปรดตรวจข้อกำหนดล่าสุดของหน่วยงานก่อนยื่นจริง", ["เลือกรูปหน้าตรงที่มีพื้นที่รอบศีรษะ", "เลือก 35x45 หรือ US 2x2", "ครอป ตรวจภาพ และดาวน์โหลด JPG"]],
+    en: ["Passport Photo Resizer 35x45 mm and 2x2 Inch | DJAI", "Resize and crop a passport photo for free", "Crop a passport photo to 35 × 45 mm at 413 × 531 px or choose the US 2 × 2 inch 600 × 600 px preset, privately in your browser.", "How to resize a passport photo", "The default is a 35 × 45 mm ratio at approximately 300 DPI. The tool center-crops to fill the frame. Always verify current authority requirements before submitting.", ["Choose a front-facing photo with space around the head", "Select the 35x45 or US 2x2 preset", "Crop, review, and download the JPG"]]
+  },
+  {
     slug: "heic-to-jpg", mode: "dimensions", format: "image/jpeg",
     th: ["แปลง HEIC เป็น JPG ฟรี ออนไลน์ | DJAI Image Tools", "แปลง HEIC เป็น JPG ฟรี", "แปลงรูป HEIC และ HEIF จาก iPhone เป็น JPG ฟรีใน browser โดยไม่อัปโหลดรูป", "วิธีแปลง HEIC เป็น JPG", "เปิดรูป HEIC หรือ HEIF จาก iPhone แล้วแปลงเป็น JPG สำหรับเว็บไซต์ แบบฟอร์ม และโปรแกรมทั่วไป", ["เลือกไฟล์ HEIC หรือ HEIF", "รอ browser ถอดรหัสและแสดงภาพ", "ประมวลผลแล้วดาวน์โหลด JPG"]],
     en: ["Convert HEIC to JPG Free Online | DJAI Image Tools", "Convert HEIC to JPG for free", "Convert iPhone HEIC and HEIF photos to JPG free in your browser without uploading images to a server.", "How to convert HEIC to JPG", "Open an iPhone HEIC or HEIF photo and create a compatible JPG for websites, forms, and common applications.", ["Choose a HEIC or HEIF file", "Let the browser decode and preview it", "Process and download the JPG"]]
@@ -97,6 +117,9 @@ function render(template, preset, language) {
   if (preset.format) attrs.push(`data-preset-format="${preset.format}"`);
   if (preset.targetKb) attrs.push(`data-preset-target="${preset.targetKb}"`);
   if (preset.percent) attrs.push(`data-preset-percent="${preset.percent}"`);
+  if (preset.width) attrs.push(`data-preset-width="${preset.width}"`);
+  if (preset.height) attrs.push(`data-preset-height="${preset.height}"`);
+  if (preset.crop) attrs.push('data-preset-crop="true"');
   const switchUrl = language === "th" ? englishUrl : thaiUrl;
   const guide = `<section class="seo-guide section-shell" aria-labelledby="seo-guide-heading"><div><span class="section-kicker">${language === "th" ? "คู่มือเครื่องมือ" : "TOOL GUIDE"}</span><h2 id="seo-guide-heading">${escapeHtml(guideTitle)}</h2><p>${escapeHtml(intro)}</p></div><ol>${steps.map((step) => `<li><span>${escapeHtml(step)}</span></li>`).join("")}</ol></section>`;
 

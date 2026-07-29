@@ -1,10 +1,12 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { CornerSquareType, DotType } from "qr-code-styling";
 import AdSenseAd from "../AdSenseAd";
 import ShareButtons from "../ShareButtons";
 import ToolPromoModal, { shouldShowToolPromo } from "../ToolPromoModal";
+import QrTaskFields from "../QrTaskFields";
+import { qrToolCopy, qrToolHref, qrToolSlugs, type QrPageCopy, type QrToolSlug } from "../qr-tool-data";
 
 const COLORS = ["#D97757", "#0B32A4", "#00BFD8", "#5630C8", "#071E3D", "#F2A65A", "#2E8B57", "#D7467D"];
 const BASE_PATH = "/tools/qrgen";
@@ -42,16 +44,12 @@ const cornerStyles: { label: string; value: CornerSquareType }[] = [
   { label: "Rounded", value: "extra-rounded" },
 ];
 
-function normalizeUrl(value: string) {
-  const trimmed = value.trim();
-  if (!trimmed) return "";
-  return /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`;
-}
-
-export default function Home() {
+export default function Home({ toolSlug, pageCopy }: { toolSlug?: QrToolSlug; pageCopy?: QrPageCopy }) {
   const qrMount = useRef<HTMLDivElement>(null);
   const qrInstance = useRef<import("qr-code-styling").default | null>(null);
-  const [url, setUrl] = useState("https://www.djai.academy");
+  const [taskPayload, setTaskPayload] = useState("https://www.djai.academy");
+  const [taskError, setTaskError] = useState("");
+  const [logoData, setLogoData] = useState("");
   const [dots, setDots] = useState<DotType>("rounded");
   const [corners, setCorners] = useState<CornerSquareType>("extra-rounded");
   const [color, setColor] = useState(COLORS[0]);
@@ -60,7 +58,9 @@ export default function Home() {
   const [error, setError] = useState("");
   const [promoType, setPromoType] = useState<"course" | "development" | null>(null);
 
-  const normalizedUrl = useMemo(() => normalizeUrl(url), [url]);
+  const canonical = toolSlug ? `https://www.djai.academy${qrToolHref(toolSlug, "en")}` : "https://www.djai.academy/tools/qrgen/en/";
+  const languageHref = toolSlug ? qrToolHref(toolSlug, "th") : "/tools/qrgen/";
+  const title = pageCopy?.title || "Free QR Code Generator";
 
   useEffect(() => {
     let active = true;
@@ -70,13 +70,15 @@ export default function Home() {
         width: 280,
         height: 280,
         type: "svg",
-        data: normalizedUrl || "https://www.djai.academy",
+        data: taskPayload || "https://www.djai.academy",
+        image: logoData || undefined,
         margin: 12,
         qrOptions: { errorCorrectionLevel: "Q" },
         dotsOptions: { type: dots, color },
         cornersSquareOptions: { type: corners, color },
         cornersDotOptions: { type: "dot", color },
         backgroundOptions: { color: "#ffffff" },
+        imageOptions: { hideBackgroundDots: true, imageSize: 0.32, margin: 5 },
       });
       qrMount.current.innerHTML = "";
       instance.append(qrMount.current);
@@ -85,18 +87,15 @@ export default function Home() {
     return () => {
       active = false;
     };
-  }, [normalizedUrl, dots, corners, color]);
+  }, [taskPayload, logoData, dots, corners, color]);
 
   function validate() {
-    try {
-      const parsed = new URL(normalizedUrl);
-      if (!["http:", "https:"].includes(parsed.protocol)) throw new Error();
-      setError("");
-      return true;
-    } catch {
-      setError("Enter a valid website address, such as https://example.com");
+    if (!taskPayload || taskError) {
+      setError(taskError || "Enter the information to encode in the QR code.");
       return false;
     }
+    setError("");
+    return true;
   }
 
   function download() {
@@ -113,7 +112,7 @@ export default function Home() {
     <main>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({ ...structuredData, name: title, url: canonical, description: pageCopy?.description || structuredData.description }) }}
       />
       <header className="site-header">
         <a className="brand" href="#top">
@@ -126,25 +125,29 @@ export default function Home() {
           <a href="https://www.djai.academy/development/en/" target="_blank" rel="noopener noreferrer">Develop with us <span className="external-mark">↗</span></a>
           <a href="https://www.djai.academy/tools/resizeimg/en/" target="_blank" rel="noopener noreferrer">Image tools <span className="external-mark">↗</span></a>
           <a href="https://www.djai.academy/blog/en/" target="_blank" rel="noopener noreferrer">Blog <span className="external-mark">↗</span></a>
-          <a href="https://www.djai.academy/tools/qrgen/" hrefLang="th">ไทย</a>
+          <a href={languageHref} hrefLang="th">ไทย</a>
           <a className="nav-cta" href="https://school.djai.academy/" target="_blank" rel="noopener noreferrer">Join community</a>
         </nav>
       </header>
 
       <section className="hero" id="top">
         <div className="eyebrow"><span>100% free</span> · No sign-up required</div>
-        <h1>Turn any link into a<br /><em>beautiful QR code.</em></h1>
-        <p>Create, customize, and download a high-quality QR code in seconds. Private, unlimited, and completely free.</p>
+        <h1>{pageCopy ? pageCopy.title : <>Turn any link into a<br /><em>beautiful QR code.</em></>}</h1>
+        <p>{pageCopy?.description || "Create, customize, and download a high-quality QR code in seconds. Private, unlimited, and completely free."}</p>
         <a className="developer-credit" href="https://www.djai.academy/siamese_cat/dev/en/" target="_blank" rel="noopener noreferrer">
           <img src={assetPath("siamese-cat-dev-logo.webp")} alt="Siamese Cat Dev" width="900" height="900" loading="lazy" decoding="async" />
           <span><small>APP DEVELOPED BY</small><strong>Siamese Cat Dev</strong></span>
         </a>
         <button className="primary hero-button" onClick={scrollToGenerator}>Create your free QR code <span>↘</span></button>
-        <ShareButtons url="https://www.djai.academy/tools/qrgen/en/" title="Free QR Code Generator by DJAI" language="en" compact />
+        <ShareButtons url={canonical} title={title} language="en" compact />
         <div className="hero-note"><span>✓</span> Unlimited QR codes <span>✓</span> PNG &amp; SVG downloads <span>✓</span> Works forever</div>
       </section>
 
       <AdSenseAd label="QR tool advertisement" />
+
+      <nav className="qr-task-links" aria-label="QR code tools by type">
+        {qrToolSlugs.map((slug) => <a key={slug} href={qrToolHref(slug, "en")} aria-current={slug === toolSlug ? "page" : undefined}>{qrToolCopy[slug].en.title}</a>)}
+      </nav>
 
       <section className="generator-shell" id="generator">
         <div className="generator-head">
@@ -158,11 +161,8 @@ export default function Home() {
         <div className="generator-card">
           <div className="controls">
             <div className="control-block">
-              <label htmlFor="destination"><b>1</b> Enter your destination</label>
-              <div className={`url-field ${error ? "has-error" : ""}`}>
-                <span aria-hidden="true">↗</span>
-                <input id="destination" value={url} onChange={(e) => { setUrl(e.target.value); setError(""); }} onBlur={validate} placeholder="https://example.com/your-link" inputMode="url" />
-              </div>
+              <label><b>1</b> Enter the QR code information</label>
+              <QrTaskFields mode={pageCopy?.mode || "url"} language="en" onPayload={setTaskPayload} onError={setTaskError} onLogo={setLogoData} />
               {error && <p className="error" role="alert">{error}</p>}
             </div>
 
@@ -212,7 +212,7 @@ export default function Home() {
               </div>
               <button className="primary download" onClick={download}>Download QR <span>↓</span></button>
             </div>
-            <ShareButtons url="https://www.djai.academy/tools/qrgen/en/" title="Free QR Code Generator by DJAI" language="en" compact />
+            <ShareButtons url={canonical} title={title} language="en" compact />
           </div>
         </div>
       </section>

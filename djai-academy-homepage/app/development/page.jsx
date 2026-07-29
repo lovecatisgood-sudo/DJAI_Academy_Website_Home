@@ -9,7 +9,8 @@ export const metadata = {
     canonical: "/development/",
     languages: {
       en: "/development/en/",
-      th: "/development/"
+      th: "/development/",
+      "x-default": "/development/"
     }
   },
   openGraph: {

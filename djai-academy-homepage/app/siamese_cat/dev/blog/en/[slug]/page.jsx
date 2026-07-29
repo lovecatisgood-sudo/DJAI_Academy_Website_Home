@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import SiteFooter from "../../../../../components/SiteFooter";
 import SiteHeader from "../../../../../components/SiteHeader";
 import AdSenseAd from "../../../../../components/AdSenseAd";
@@ -34,6 +35,9 @@ export async function generateMetadata({ params }) {
   };
   if (post.alternateSlugs?.th) {
     languages.th = `/siamese_cat/dev/blog/${post.alternateSlugs.th}/`;
+    languages["x-default"] = `/siamese_cat/dev/blog/${post.alternateSlugs.th}/`;
+  } else {
+    languages["x-default"] = `/siamese_cat/dev/blog/en/${post.slug}/`;
   }
 
   return {
@@ -116,9 +120,9 @@ export default async function SiameseCatDevEnglishPostPage({ params }) {
 
         <article className="article-shell">
           <header className="article-header">
-            <a className="back-link" href="/siamese_cat/dev/blog/en/">
+            <Link className="back-link" href="/siamese_cat/dev/blog/en/">
               Back to Siamese Cat Dev blog
-            </a>
+            </Link>
             <div className="post-meta">
               <span>{post.category}</span>
               <span>{post.readingTime}</span>

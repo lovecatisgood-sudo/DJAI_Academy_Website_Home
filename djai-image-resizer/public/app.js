@@ -210,7 +210,7 @@
   const MAX_FILES = 20;
   const MAX_FILE_BYTES = 50 * 1024 * 1024;
   const MAX_TOTAL_BYTES = 200 * 1024 * 1024;
-  const supportedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/heic', 'image/heif'];
+  const supportedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/avif', 'image/heic', 'image/heif'];
   const staticSvg = {
     rotate: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M19 12a7 7 0 1 1-2-5l3 3"/></svg>',
     remove: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"/></svg>'
@@ -218,7 +218,7 @@
 
   const currentItem = () => state.items[state.activeIndex] || null;
   const isHeic = (file) => /\.(heic|heif)$/i.test(file.name) || ['image/heic', 'image/heif'].includes(file.type);
-  const isSupported = (file) => supportedTypes.includes(file.type) || /\.(jpe?g|png|webp|heic|heif)$/i.test(file.name);
+  const isSupported = (file) => supportedTypes.includes(file.type) || /\.(jpe?g|png|webp|avif|heic|heif)$/i.test(file.name);
   const orientedDimensions = (bitmap, rotation) => rotation % 180 === 0
     ? { width: bitmap.width, height: bitmap.height }
     : { width: bitmap.height, height: bitmap.width };
@@ -669,7 +669,24 @@
     const rotated = rotation % 180 !== 0;
     const drawWidth = rotated ? height : width;
     const drawHeight = rotated ? width : height;
-    ctx.drawImage(bitmap, -drawWidth / 2, -drawHeight / 2, drawWidth, drawHeight);
+    if (document.body.dataset.presetCrop === 'true') {
+      const sourceAspect = bitmap.width / bitmap.height;
+      const targetAspect = drawWidth / drawHeight;
+      let sx = 0;
+      let sy = 0;
+      let sourceWidth = bitmap.width;
+      let sourceHeight = bitmap.height;
+      if (sourceAspect > targetAspect) {
+        sourceWidth = bitmap.height * targetAspect;
+        sx = (bitmap.width - sourceWidth) / 2;
+      } else {
+        sourceHeight = bitmap.width / targetAspect;
+        sy = (bitmap.height - sourceHeight) / 2;
+      }
+      ctx.drawImage(bitmap, sx, sy, sourceWidth, sourceHeight, -drawWidth / 2, -drawHeight / 2, drawWidth, drawHeight);
+    } else {
+      ctx.drawImage(bitmap, -drawWidth / 2, -drawHeight / 2, drawWidth, drawHeight);
+    }
     const blob = await canvasToBlob(canvas, type, quality);
     canvas.width = 1;
     canvas.height = 1;
@@ -891,10 +908,18 @@
   };
 
   const applyPagePreset = () => {
-    const { presetMode, presetFormat, presetTarget, presetPercent } = document.body.dataset;
+    const { presetMode, presetFormat, presetTarget, presetPercent, presetWidth, presetHeight, presetCrop } = document.body.dataset;
     if (presetFormat) els.formatSelect.value = presetFormat;
     if (presetTarget) els.targetSize.value = presetTarget;
     if (presetPercent) els.percentage.value = presetPercent;
+    if (presetWidth) els.widthInput.value = presetWidth;
+    if (presetHeight) els.heightInput.value = presetHeight;
+    if (presetCrop) {
+      state.ratioLocked = false;
+      els.ratioLock.classList.remove('active');
+      els.ratioLock.setAttribute('aria-pressed', 'false');
+      els.presetSelect.value = `${presetWidth}x${presetHeight}`;
+    }
     if (presetMode) switchMode(presetMode);
     updateQualityUI();
   };
@@ -947,9 +972,9 @@
       const [width, height] = els.presetSelect.value.split('x');
       els.widthInput.value = width;
       els.heightInput.value = height;
-      state.ratioLocked = true;
-      els.ratioLock.classList.add('active');
-      els.ratioLock.setAttribute('aria-pressed', 'true');
+      state.ratioLocked = document.body.dataset.presetCrop !== 'true';
+      els.ratioLock.classList.toggle('active', state.ratioLocked);
+      els.ratioLock.setAttribute('aria-pressed', String(state.ratioLocked));
     }
     clearResults();
   });

@@ -119,6 +119,9 @@ export async function generateMetadata({ params }) {
   };
   if (post.alternateSlugs?.th) {
     languages.th = `/blog/${post.alternateSlugs.th}/`;
+    languages["x-default"] = `/blog/${post.alternateSlugs.th}/`;
+  } else {
+    languages["x-default"] = `/blog/en/${post.slug}/`;
   }
 
   return {

@@ -117,7 +117,8 @@ export async function generateMetadata({ params }) {
 
   const englishSlug = post.alternateSlugs?.en || (post.source === "admin" ? "" : post.slug);
   const languages = {
-    th: `/blog/${post.slug}/`
+    th: `/blog/${post.slug}/`,
+    "x-default": `/blog/${post.slug}/`
   };
   if (englishSlug) {
     languages.en = `/blog/en/${englishSlug}/`;

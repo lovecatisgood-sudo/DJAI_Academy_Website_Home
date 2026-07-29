@@ -39,3 +39,7 @@ tmp/
 # Local donor projects retained only as implementation references
 DJayTools-Free-Image-Converter-Resizer/
 djai-image-pdf-tools-production/
+
+# Generated static tool outputs (rebuilt by the Hostinger build)
+djai-media-tools/public/
+djai-image-resizer/public/*/

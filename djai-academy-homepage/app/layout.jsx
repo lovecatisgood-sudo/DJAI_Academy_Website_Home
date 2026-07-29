@@ -4,6 +4,17 @@ import { headers } from "next/headers";
 
 const GA_ID = "G-CGJ5BTR44T";
 const ADSENSE_CLIENT = "ca-pub-3624708289866566";
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "@id": "https://www.djai.academy/#organization",
+  name: "DJAI Academy",
+  url: "https://www.djai.academy/",
+  logo: "https://www.djai.academy/djai-logo.webp",
+  description: "DJAI Academy teaches practical AI and vibe coding and builds software, automation, and digital products.",
+  areaServed: { "@type": "Country", name: "Thailand" },
+  knowsAbout: ["Artificial intelligence", "Vibe coding", "Software development", "Product development", "Automation"]
+};
 
 export const metadata = {
   metadataBase: new URL("https://www.djai.academy"),
@@ -46,12 +57,13 @@ export default async function RootLayout({ children }) {
   return (
     <html lang={language}>
       <body>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
         {children}
         <Script
           async
           src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
           crossOrigin="anonymous"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
         />
         <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="lazyOnload" />
         <Script id="google-analytics" strategy="lazyOnload">

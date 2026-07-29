@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import SiteFooter from "../../../../components/SiteFooter";
 import SiteHeader from "../../../../components/SiteHeader";
 import AdSenseAd from "../../../../components/AdSenseAd";
@@ -30,7 +31,8 @@ export async function generateMetadata({ params }) {
   }
 
   const languages = {
-    th: `/siamese_cat/dev/blog/${post.slug}/`
+    th: `/siamese_cat/dev/blog/${post.slug}/`,
+    "x-default": `/siamese_cat/dev/blog/${post.slug}/`
   };
   if (post.alternateSlugs?.en) {
     languages.en = `/siamese_cat/dev/blog/en/${post.alternateSlugs.en}/`;
@@ -116,9 +118,9 @@ export default async function SiameseCatDevThaiPostPage({ params }) {
 
         <article className="article-shell">
           <header className="article-header">
-            <a className="back-link" href="/siamese_cat/dev/blog/">
+            <Link className="back-link" href="/siamese_cat/dev/blog/">
               กลับไปที่บล็อก Siamese Cat Dev
-            </a>
+            </Link>
             <div className="post-meta">
               <span>{post.category}</span>
               <span>{post.readingTime}</span>

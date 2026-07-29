@@ -13,7 +13,8 @@ export const metadata = {
     canonical: "/blog/",
     languages: {
       en: "/blog/en/",
-      th: "/blog/"
+      th: "/blog/",
+      "x-default": "/blog/"
     }
   },
   openGraph: {

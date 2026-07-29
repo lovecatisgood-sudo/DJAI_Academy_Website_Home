@@ -85,12 +85,12 @@ export default async function SiameseCatDevEnglishBlogPage() {
         <section className="blog-layout">
           <aside className="blog-sidebar" aria-label="Siamese Cat Dev blog navigation">
             <h2>Siamese Cat Dev</h2>
-            <a className="active" href="/siamese_cat/dev/blog/en/">
+            <Link className="active" href="/siamese_cat/dev/blog/en/">
               <span>All posts</span>
               <strong>{posts.length}</strong>
-            </a>
+            </Link>
             <a href="/siamese_cat/dev/en/">Meet Siamese Cat Dev</a>
-            <a href="/blog/en/">DJAI Blog</a>
+            <Link href="/blog/en/">DJAI Blog</Link>
           </aside>
 
           <div className="blog-list">
@@ -136,3 +136,4 @@ export default async function SiameseCatDevEnglishBlogPage() {
     </>
   );
 }
+import Link from "next/link";

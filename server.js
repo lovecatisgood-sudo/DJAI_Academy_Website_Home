@@ -33,6 +33,7 @@ const mimeTypes = {
   ".ico": "image/x-icon",
   ".woff": "font/woff",
   ".woff2": "font/woff2",
+  ".wasm": "application/wasm",
   ".gz": "application/gzip"
 };
 
@@ -48,6 +49,10 @@ const staticMounts = [
   {
     prefix: "/tools/resizeimg",
     dir: path.join(rootDir, "djai-image-resizer", "public")
+  },
+  {
+    prefix: "/tools/media",
+    dir: path.join(rootDir, "djai-media-tools", "public")
   },
   {
     prefix: "/tools/PDFTools",

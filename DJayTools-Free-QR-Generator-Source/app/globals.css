@@ -208,6 +208,18 @@ footer strong { color: var(--navy); }
 .footer-links a { color: #657082; font-size: 12px; font-weight: 700; text-decoration: none; }
 .footer-links a:hover { color: var(--orange); }
 .copyright { margin: 4px 0 0; white-space: nowrap; }
+.qr-task-links { max-width: 1120px; margin: 28px auto 0; padding: 0 24px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.qr-task-links a { padding: 9px 12px; border: 1px solid #d7d1c8; border-radius: 6px; background: #fff; color: var(--navy); font-size: 12px; font-weight: 800; text-decoration: none; }
+.qr-task-links a:hover, .qr-task-links a[aria-current="page"] { border-color: var(--orange); background: rgba(217,119,87,.1); color: var(--orange-dark); }
+.task-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 14px; }
+.task-field { display: flex; flex-direction: column; gap: 7px; min-width: 0; }
+.task-field:only-child, .task-field:has(textarea), .task-field:has(input[type="file"]) { grid-column: 1 / -1; }
+.task-field span { color: var(--navy); font-size: 12px; font-weight: 800; }
+.task-field input, .task-field select, .task-field textarea { width: 100%; min-height: 44px; padding: 10px 12px; border: 1px solid #cfc8be; border-radius: 5px; background: #fff; color: var(--navy); font: inherit; }
+.task-field textarea { resize: vertical; }
+.task-field input:focus, .task-field select:focus, .task-field textarea:focus { border-color: var(--orange); outline: 3px solid rgba(217,119,87,.15); }
+.task-check { grid-column: 1 / -1; display: flex; align-items: center; gap: 9px; color: var(--navy); font-size: 13px; font-weight: 700; }
+.task-check input { width: 18px; height: 18px; accent-color: var(--orange); }
 
 @media (max-width: 820px) {
   .site-header { height: 72px; padding: 0 20px; }
@@ -263,6 +275,9 @@ footer strong { color: var(--navy); }
   .developer-logo-stage a { min-height: 310px; }
   .developer-logo-stage img { width: 100%; }
   .footer-links { grid-template-columns: 1fr; gap: 30px; }
+  .task-fields { grid-template-columns: 1fr; }
+  .qr-task-links { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 8px; }
+  .qr-task-links a { flex: 0 0 auto; }
 }
 
 @media (prefers-reduced-motion: reduce) {
