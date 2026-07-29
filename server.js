@@ -75,7 +75,8 @@ const staticMounts = [
   },
   {
     prefix: "/siamese_cat/dev",
-    dir: path.join(rootDir, "Siamese-Cat-Dev-Bio-Site", "dist")
+    dir: path.join(rootDir, "Siamese-Cat-Dev-Bio-Site", "dist"),
+    excludePrefixes: ["/siamese_cat/dev/blog"]
   }
 ];
 
@@ -242,6 +243,7 @@ function tryServeMountedStatic(req, res, pathname) {
 
   for (const mount of staticMounts) {
     if (!matchesMount(pathname, mount.prefix)) continue;
+    if ((mount.excludePrefixes || []).some((prefix) => matchesMount(pathname, prefix))) continue;
 
     const filePath = resolveStaticFile(mount, pathname);
     if (filePath) {

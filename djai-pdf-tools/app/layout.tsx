@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "เครื่องมือ PDF ฟรี | DJTools by DJAI Academy",
   description: "รวม แยก บีบอัด แปลง หมุน ใส่ลายน้ำ และล็อก PDF ฟรีใน browser ไฟล์ไม่ถูก upload และไม่ต้องสมัครบัญชี",
   applicationName: "DJTools by DJAI Academy - Free PDF Tool Set",
+  other: {
+    "google-adsense-account": ADSENSE_CLIENT
+  },
   icons: {
     icon: `${BASE_PATH}/favicon.svg`
   }

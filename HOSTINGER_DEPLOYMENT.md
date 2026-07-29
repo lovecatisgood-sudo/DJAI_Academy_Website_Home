@@ -65,6 +65,8 @@ that serves the main Next.js app and mounts the static tools at their public pat
 - `/course/en/`
 - `/siamese_cat/dev/`
 - `/siamese_cat/dev/en/`
+- `/siamese_cat/dev/blog/`
+- `/siamese_cat/dev/blog/en/`
 
 Legacy `/th/` and uppercase `/EN/` routes redirect to the canonical paths.
 

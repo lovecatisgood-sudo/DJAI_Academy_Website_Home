@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <base href="/tools/resizeimg/">
   <meta name="theme-color" content="#071c4a">
+  <meta name="google-adsense-account" content="ca-pub-3624708289866566">
   <meta name="description" content="แปลง ย่อ บีบอัด และจัดการรูป JPG, PNG, WebP, HEIC ฟรี รองรับหลายไฟล์และ ZIP โดยรูปประมวลผลใน browser ไม่อัปโหลดขึ้น server">
   <link rel="canonical" href="https://www.djai.academy/tools/resizeimg/">
   <link rel="alternate" hreflang="th" href="https://www.djai.academy/tools/resizeimg/">
@@ -191,8 +192,8 @@
               <div id="batch-list" class="batch-list" aria-label="รายการรูปภาพ" hidden></div>
 
               <fieldset class="mode-fieldset">
-                <legend>ต้องการย่อรูปแบบไหน?</legend>
-                <div class="mode-tabs" role="tablist" aria-label="โหมดการย่อรูป">
+                <legend>ต้องการจัดการรูปแบบไหน?</legend>
+                <div class="mode-tabs" role="tablist" aria-label="โหมดการจัดการรูป">
                   <button class="mode-tab active" type="button" data-mode="target" role="tab" aria-selected="true">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M7 6h7.5a3.5 3.5 0 0 1 0 7H9.5a3.5 3.5 0 0 0 0 7H17"/></svg>
                     เป้าหมาย KB
@@ -204,6 +205,10 @@
                   <button class="mode-tab" type="button" data-mode="dimensions" role="tab" aria-selected="false">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 15v5h-5M15 4h5v5M9 20H4v-5"/></svg>
                     ขนาดภาพ
+                  </button>
+                  <button class="mode-tab" type="button" data-mode="background" role="tab" aria-selected="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="m4 17 5-5 4 4 2-2 5 5"/><path d="M15 8h.01"/></svg>
+                    ลบพื้นหลัง
                   </button>
                 </div>
               </fieldset>
@@ -258,6 +263,12 @@
                   <label for="height-input">สูง <span>px</span><input id="height-input" type="number" min="1" max="20000" step="1"></label>
                 </div>
                 <p class="setting-note">ระบบล็อกอัตราส่วนภาพไว้เป็นค่าเริ่มต้นเพื่อป้องกันรูปยืดผิดสัดส่วน</p>
+              </div>
+
+              <div id="panel-background" class="setting-panel" data-panel="background" hidden>
+                <strong class="panel-title">ลบพื้นหลังด้วย AI ใน browser</strong>
+                <p class="setting-note">ผลลัพธ์จะเป็น PNG พื้นหลังโปร่งใส เหมาะกับรูปสินค้า รูปโปรไฟล์ thumbnail และ social content</p>
+                <p class="setting-note">ครั้งแรกอาจใช้เวลานานเพราะ browser ต้องดาวน์โหลดโมเดล AI หลังจากนั้นจะเร็วขึ้นจาก cache</p>
               </div>
 
               <div class="format-row">
@@ -424,6 +435,7 @@
         <p>เลือกงานแปลงไฟล์ บีบอัด หรือ resize ที่ใช้บ่อย ทุกหน้าทำงานด้วยเครื่องมือเดียวกันและประมวลผลใน browser</p>
       </div>
       <div class="popular-links">
+        <a href="remove-background-image/"><strong>ลบพื้นหลังรูป</strong><span>ดาวน์โหลด PNG โปร่งใส</span></a>
         <a href="jpg-to-png/"><strong>JPG เป็น PNG</strong><span>แปลงรูปฟรี</span></a>
         <a href="png-to-jpg/"><strong>PNG เป็น JPG</strong><span>ปรับคุณภาพได้</span></a>
         <a href="jpg-to-webp/"><strong>JPG เป็น WebP</strong><span>เหมาะกับเว็บไซต์</span></a>
@@ -466,6 +478,10 @@
         <details>
           <summary>รูปภาพถูกอัปโหลดไปที่ DJAI ไหม?<span></span></summary>
           <p>ไม่ เครื่องมือนี้ทำงานใน browser ของคุณ และไม่ส่งรูปภาพไปที่ DJAI หรือ <a href="https://www.djai.academy/siamese_cat/dev/">Siamese Cat Dev</a></p>
+        </details>
+        <details>
+          <summary>ลบพื้นหลังรูปได้จริงไหม?<span></span></summary>
+          <p>ได้ โหมดลบพื้นหลังใช้ AI segmentation ใน browser และส่งออกเป็น PNG พื้นหลังโปร่งใส เหมาะกับรูปสินค้า รูปคน และรูปสำหรับ social media</p>
         </details>
       </div>
     </section>
@@ -524,7 +540,7 @@
         <p>เราให้ความรู้ สร้าง และ deploy เครื่องมือ digital ที่ใช้งานได้จริงสำหรับทุกคน</p>
         <div class="footer-tool-mark"><span>{ }</span><strong>DJTool</strong> by DJAI</div>
       </div>
-      <div class="footer-column"><strong>สำรวจ</strong><a href="https://www.djai.academy/">DJAI Academy</a><a href="https://www.djai.academy/course/">คอร์สเรียน</a><a href="https://www.djai.academy/course/#community">Community</a></div>
+      <div class="footer-column"><strong>สำรวจ</strong><a href="https://www.djai.academy/">DJAI Academy</a><a href="https://www.djai.academy/course/">คอร์สเรียน</a><a href="https://school.djai.academy/">Community</a></div>
       <div class="footer-column"><strong>สร้างกับเรา</strong><a href="https://www.djai.academy/service/">บริการ</a><a href="https://www.djai.academy/portfolio/">ผลงาน</a><a href="https://www.djai.academy/tools/">เครื่องมือฟรี</a></div>
       <div class="footer-column"><strong>ติดต่อ</strong><a href="mailto:contact@djai.academy">contact@djai.academy</a><a href="tel:+66924100377">+66 092 410 0377</a><a href="https://www.djai.academy/blog/">บล็อก</a></div>
     </div>

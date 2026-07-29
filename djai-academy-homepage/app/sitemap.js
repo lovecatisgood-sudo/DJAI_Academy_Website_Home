@@ -1,4 +1,4 @@
-import { getAllPosts } from "./lib/blogStore";
+import { SIAMESE_CAT_DEV_CATEGORY, getAllPosts, getPostsByCategory } from "./lib/blogStore";
 import { getAllThaiPosts } from "./lib/thBlogPosts";
 
 export const dynamic = "force-dynamic";
@@ -10,14 +10,15 @@ const corePaths = [
   "/", "/en/", "/portfolio/", "/portfolio/en/", "/development/", "/development/en/",
   "/service/", "/service/en/", "/tools/", "/tools/en/", "/tools/qrgen/", "/tools/qrgen/en/",
   "/course/", "/course/en/", "/course/detail/", "/course/detail/en/", "/siamese_cat/",
-  "/siamese_cat/en/", "/siamese_cat/dev/", "/siamese_cat/dev/en/", "/blog/", "/blog/en/",
-  "/Cam_PDF_Scan_Signer_QR-Gen/", "/Cam_PDF_Scan_Signer_QR-Gen/privacy/"
+  "/siamese_cat/en/", "/siamese_cat/dev/", "/siamese_cat/dev/en/", "/siamese_cat/dev/blog/",
+  "/siamese_cat/dev/blog/en/", "/blog/", "/blog/en/", "/Cam_PDF_Scan_Signer_QR-Gen/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/privacy/"
 ];
 
 const imageTools = [
   "jpg-to-png", "png-to-jpg", "jpg-to-webp", "png-to-webp", "webp-to-jpg", "webp-to-png",
   "compress-image", "resize-image", "image-to-100kb", "image-to-500kb", "heic-to-jpg",
-  "remove-image-metadata"
+  "remove-image-metadata", "remove-background-image"
 ];
 
 const pdfTools = [
@@ -48,9 +49,11 @@ function entry(path, lastModified, changeFrequency = "monthly", priority = 0.7) 
 }
 
 export default async function sitemap() {
-  const [englishPosts, thaiPosts] = await Promise.all([
+  const [englishPosts, thaiPosts, englishSiameseDevPosts, thaiSiameseDevPosts] = await Promise.all([
     getAllPosts({ locale: "en" }),
-    getAllThaiPosts()
+    getAllThaiPosts(),
+    getPostsByCategory(SIAMESE_CAT_DEV_CATEGORY, { locale: "en" }),
+    getPostsByCategory(SIAMESE_CAT_DEV_CATEGORY, { locale: "th" })
   ]);
 
   const staticEntries = [...new Set(staticPaths)].map((path) => entry(
@@ -60,8 +63,18 @@ export default async function sitemap() {
     path === "/" || path === "/en/" ? 1 : path.startsWith("/tools/") ? 0.8 : 0.7
   ));
   const articleEntries = [
-    ...englishPosts.map((post) => entry(`/blog/en/${post.slug}/`, post.updatedAt || post.publishedAt, "monthly", 0.8)),
-    ...thaiPosts.map((post) => entry(`/blog/${post.slug}/`, post.updatedAt || post.publishedAt, "monthly", 0.8))
+    ...englishPosts
+      .filter((post) => post.categoryKey !== SIAMESE_CAT_DEV_CATEGORY)
+      .map((post) => entry(`/blog/en/${post.slug}/`, post.updatedAt || post.publishedAt, "monthly", 0.8)),
+    ...thaiPosts
+      .filter((post) => post.categoryKey !== SIAMESE_CAT_DEV_CATEGORY)
+      .map((post) => entry(`/blog/${post.slug}/`, post.updatedAt || post.publishedAt, "monthly", 0.8)),
+    ...englishSiameseDevPosts.map((post) =>
+      entry(`/siamese_cat/dev/blog/en/${post.slug}/`, post.updatedAt || post.publishedAt, "monthly", 0.8)
+    ),
+    ...thaiSiameseDevPosts.map((post) =>
+      entry(`/siamese_cat/dev/blog/${post.slug}/`, post.updatedAt || post.publishedAt, "monthly", 0.8)
+    )
   ];
 
   return [...new Map([...staticEntries, ...articleEntries].map((item) => [item.url, item])).values()];

@@ -34,9 +34,9 @@ const tools = [
   {
     label: "Image Tools",
     title: "Free Image Converter and Resizer",
-    text: "Resize, compress และ convert JPG, PNG, WebP, HEIC ผ่าน browser รองรับหลายไฟล์และดาวน์โหลด ZIP โดยไฟล์อยู่ในเครื่องของคุณ",
+    text: "Resize, compress, remove background และ convert JPG, PNG, WebP, HEIC ผ่าน browser รองรับหลายไฟล์และดาวน์โหลด ZIP โดยไฟล์อยู่ในเครื่องของคุณ",
     href: "https://www.djai.academy/tools/resizeimg/",
-    tags: ["HEIC", "Batch", "Target KB"]
+    tags: ["Background", "HEIC", "Batch"]
   },
   {
     label: "PDF Tools",
@@ -68,9 +68,10 @@ const tools = [
   }
 ];
 
-const comingSoon = ["Background remover", "Favicon generator", "AVIF tools", "High-fidelity Office conversion"];
+const comingSoon = ["Favicon generator", "AVIF tools", "High-fidelity Office conversion"];
 
 const popularWorkflows = [
+  ["ลบพื้นหลังรูป", "สร้าง PNG โปร่งใสใน browser", "https://www.djai.academy/tools/resizeimg/remove-background-image/"],
   ["JPG เป็น PNG", "แปลงไฟล์รูปโดยไม่ upload", "https://www.djai.academy/tools/resizeimg/jpg-to-png/"],
   ["HEIC เป็น JPG", "แปลงรูปจาก iPhone ใน browser", "https://www.djai.academy/tools/resizeimg/heic-to-jpg/"],
   ["ลดรูปใกล้ 100 KB", "เตรียมรูปสำหรับแบบฟอร์ม", "https://www.djai.academy/tools/resizeimg/image-to-100kb/"],
@@ -155,7 +156,7 @@ export default function ThaiToolsPage() {
         </a>
         <nav aria-label="Tools navigation">
           <a href="https://www.djai.academy/course/">คอร์สเรียน</a>
-          <a href="https://www.djai.academy/course/#community">ชุมชน</a>
+          <a href="https://school.djai.academy/">ชุมชน</a>
           <a href="https://www.djai.academy/service/">บริการ</a>
           <a href="https://www.djai.academy/blog/">บล็อก</a>
           <a href="https://www.djai.academy/tools/en/" hrefLang="en">
@@ -243,6 +244,8 @@ export default function ThaiToolsPage() {
           ))}
         </div>
       </section>
+
+      <AdSenseAd label="Related tools advertisement" variant="multiplex" />
     </main>
   );
 }

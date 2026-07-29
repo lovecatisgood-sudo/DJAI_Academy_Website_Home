@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <base href="/tools/resizeimg/">
   <meta name="theme-color" content="#071c4a">
+  <meta name="google-adsense-account" content="ca-pub-3624708289866566">
   <meta name="description" content="Convert, resize, and compress JPG, PNG, WebP, and HEIC images free. Process batches and ZIP downloads privately in your browser.">
   <link rel="canonical" href="https://www.djai.academy/tools/resizeimg/en/">
   <link rel="alternate" hreflang="th" href="https://www.djai.academy/tools/resizeimg/">
@@ -191,8 +192,8 @@
               <div id="batch-list" class="batch-list" aria-label="Image queue" hidden></div>
 
               <fieldset class="mode-fieldset">
-                <legend>How would you like to resize?</legend>
-                <div class="mode-tabs" role="tablist" aria-label="Resize mode">
+                <legend>What do you want to do?</legend>
+                <div class="mode-tabs" role="tablist" aria-label="Image tool mode">
                   <button class="mode-tab active" type="button" data-mode="target" role="tab" aria-selected="true">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M7 6h7.5a3.5 3.5 0 0 1 0 7H9.5a3.5 3.5 0 0 0 0 7H17"/></svg>
                     Target KB
@@ -204,6 +205,10 @@
                   <button class="mode-tab" type="button" data-mode="dimensions" role="tab" aria-selected="false">
                     <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 15v5h-5M15 4h5v5M9 20H4v-5"/></svg>
                     Dimensions
+                  </button>
+                  <button class="mode-tab" type="button" data-mode="background" role="tab" aria-selected="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="m4 17 5-5 4 4 2-2 5 5"/><path d="M15 8h.01"/></svg>
+                    Background
                   </button>
                 </div>
               </fieldset>
@@ -258,6 +263,12 @@
                   <label for="height-input">Height <span>px</span><input id="height-input" type="number" min="1" max="20000" step="1"></label>
                 </div>
                 <p class="setting-note">Aspect ratio is locked by default to prevent stretched images.</p>
+              </div>
+
+              <div id="panel-background" class="setting-panel" data-panel="background" hidden>
+                <strong class="panel-title">Remove the background with browser AI</strong>
+                <p class="setting-note">The result is a transparent PNG for product images, profile photos, thumbnails, and social content.</p>
+                <p class="setting-note">The first run can take longer because the browser downloads the AI model. Later runs are faster from cache.</p>
               </div>
 
               <div class="format-row">
@@ -424,6 +435,7 @@
         <p>Choose a common conversion, compression, or resize workflow. Every page uses the same private browser-based processing engine.</p>
       </div>
       <div class="popular-links">
+        <a href="remove-background-image/en/"><strong>Remove background</strong><span>Download transparent PNG</span></a>
         <a href="jpg-to-png/en/"><strong>JPG to PNG</strong><span>Free conversion</span></a>
         <a href="png-to-jpg/en/"><strong>PNG to JPG</strong><span>Quality control</span></a>
         <a href="jpg-to-webp/en/"><strong>JPG to WebP</strong><span>For faster websites</span></a>
@@ -466,6 +478,10 @@
         <details>
           <summary>Are my images uploaded to DJAI?<span></span></summary>
           <p>No. The tool works locally in your browser and does not send the image to DJAI or <a href="https://www.djai.academy/siamese_cat/dev/en/">Siamese Cat Dev</a>.</p>
+        </details>
+        <details>
+          <summary>Can this remove image backgrounds?<span></span></summary>
+          <p>Yes. Background mode uses browser-based AI segmentation and exports a transparent PNG for product photos, profile images, and social media assets.</p>
         </details>
       </div>
     </section>
@@ -524,7 +540,7 @@
         <p>We educate, we build, and we deploy. Practical digital tools made for everyone.</p>
         <div class="footer-tool-mark"><span>{ }</span><strong>DJTool</strong> by DJAI</div>
       </div>
-      <div class="footer-column"><strong>Explore</strong><a href="https://www.djai.academy/en/">DJAI Academy</a><a href="https://www.djai.academy/course/en/">Upcoming Courses</a><a href="https://www.djai.academy/course/en/#community">Community</a></div>
+      <div class="footer-column"><strong>Explore</strong><a href="https://www.djai.academy/en/">DJAI Academy</a><a href="https://www.djai.academy/course/en/">Upcoming Courses</a><a href="https://school.djai.academy/">Community</a></div>
       <div class="footer-column"><strong>Build</strong><a href="https://www.djai.academy/service/en/">Services</a><a href="https://www.djai.academy/portfolio/en/">Portfolio</a><a href="https://www.djai.academy/tools/en/">Free Tools</a></div>
       <div class="footer-column"><strong>Contact</strong><a href="mailto:contact@djai.academy">contact@djai.academy</a><a href="tel:+66924100377">+66 092 410 0377</a><a href="https://www.djai.academy/blog/en/">Blog</a></div>
     </div>

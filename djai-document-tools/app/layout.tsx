@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.djai.academy"),
   title: "DJAI Document Tools",
   description: "Free private browser tools for documents, AI context, OCR, CSV and spreadsheets.",
+  other: {
+    "google-adsense-account": ADSENSE_CLIENT
+  },
   icons: { icon: "/tools/djai-assets/djai-academy-logo-small.webp" }
 };
 

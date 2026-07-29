@@ -73,6 +73,7 @@ function Header() {
     ['เกี่ยวกับ', '#about'],
     ['เส้นทาง', '#journey'],
     ['งานที่ทำ', '#work'],
+    ['บล็อก', '/siamese_cat/dev/blog/'],
     ['DJAI Academy', 'https://www.djai.academy/'],
     ['EN', '/siamese_cat/dev/en/'],
     ['ติดต่อ', '#contact'],
@@ -698,6 +699,7 @@ function Footer() {
         </div>
         <div className="footer-links">
           <a href="https://www.djai.academy/" target="_blank" rel="noreferrer">DJAI Academy <ArrowUpRight /></a>
+          <a href="/siamese_cat/dev/blog/">บล็อก Siamese Cat Dev <ArrowUpRight /></a>
           <a href="https://www.djai.academy/tools/" target="_blank" rel="noreferrer">เครื่องมือฟรีจาก DJAI <ArrowUpRight /></a>
           <a href="https://siamesecat.cafe/" target="_blank" rel="noreferrer">Siamese Cat Cafe <ArrowUpRight /></a>
           <a href="https://creative.siamesecat.cafe/" target="_blank" rel="noreferrer">Creative Club <ArrowUpRight /></a>

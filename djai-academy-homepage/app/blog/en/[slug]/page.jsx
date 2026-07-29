@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import SiteFooter from "../../../components/SiteFooter";
 import SiteHeader from "../../../components/SiteHeader";
 import AdSenseAd from "../../../components/AdSenseAd";
 import ShareButtons from "../../../components/ShareButtons";
-import { getPostBySlug } from "../../../lib/blogStore";
+import { SIAMESE_CAT_DEV_CATEGORY, getPostBySlug } from "../../../lib/blogStore";
 
 export const dynamic = "force-dynamic";
 
@@ -155,6 +155,10 @@ export default async function BlogPostPage({ params }) {
 
   if (!post) {
     notFound();
+  }
+
+  if (post.categoryKey === SIAMESE_CAT_DEV_CATEGORY) {
+    permanentRedirect(`/siamese_cat/dev/blog/en/${post.slug}/`);
   }
 
   const structuredData = {

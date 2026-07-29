@@ -160,12 +160,13 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
 .batch-action svg { width: 14px; }
 .mode-fieldset { margin: 23px 0 18px; padding: 0; border: 0; }
 .mode-fieldset legend, .setting-panel > label:first-child, .format-row label { margin-bottom: 9px; color: #34425a; font-size: 11px; font-weight: 700; }
-.mode-tabs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; padding: 5px; border: 1px solid #e0e8f3; border-radius: 12px; background: white; }
+.mode-tabs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; padding: 5px; border: 1px solid #e0e8f3; border-radius: 12px; background: white; }
 .mode-tab { min-height: 67px; padding: 7px 5px; border: 0; border-radius: 9px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 5px; color: #77849a; background: transparent; font-size: 10px; font-weight: 700; cursor: pointer; }
 .mode-tab svg { width: 19px; }
 .mode-tab.active { color: var(--blue); background: #edf5ff; box-shadow: inset 0 0 0 1px rgba(11,115,255,.08); }
 .setting-panel { min-height: 220px; padding: 17px; border: 1px solid #e1e8f2; border-radius: 14px; background: white; }
 .setting-panel > label { display: block; }
+.panel-title { display: block; margin-bottom: 9px; color: #10244d; font-size: 12px; }
 .input-with-unit { display: grid; grid-template-columns: 1fr 48px; overflow: hidden; border: 1px solid #cfdbea; border-radius: 10px; transition: .2s; }
 .input-with-unit:focus-within { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(11,115,255,.1); }
 .input-with-unit input { width: 100%; border: 0; outline: 0; padding: 11px 12px; color: var(--navy); font-size: 18px; font-weight: 700; }

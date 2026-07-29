@@ -9,7 +9,7 @@ const links = {
   tools: "https://www.djai.academy/tools/en/",
   service: "https://www.djai.academy/service/en/",
   course: "https://www.djai.academy/course/en/",
-  community: "https://www.djai.academy/course/en/#community",
+  community: "https://school.djai.academy/",
   promo: "https://www.djai.academy/course/en/#pricing",
   development: "https://www.djai.academy/development/en/",
   blog: "https://www.djai.academy/blog/en/",

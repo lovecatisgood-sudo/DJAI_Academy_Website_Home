@@ -10,7 +10,8 @@ const projectDir = join(dirname(fileURLToPath(import.meta.url)), "..");
 const publicDir = join(projectDir, "public");
 
 test("all SEO presets have Thai and English static pages", () => {
-  assert.equal(presets.length, 12);
+  assert.equal(presets.length, 13);
+  assert.equal(presets.some((preset) => preset.slug === "remove-background-image"), true);
   for (const preset of presets) {
     for (const language of ["th", "en"]) {
       const path = join(publicDir, preset.slug, ...(language === "en" ? ["en"] : []), "index.html");
@@ -32,10 +33,13 @@ test("all SEO presets have Thai and English static pages", () => {
 test("processing libraries are bundled locally", () => {
   const heic = join(publicDir, "vendor", "heic2any.min.js");
   const zip = join(publicDir, "vendor", "jszip.min.js");
+  const backgroundRemoval = join(publicDir, "vendor", "background-removal.mjs");
   assert.equal(existsSync(heic), true);
   assert.equal(existsSync(zip), true);
+  assert.equal(existsSync(backgroundRemoval), true);
   assert.ok(readFileSync(heic).byteLength > 1_000_000);
   assert.ok(readFileSync(zip).byteLength > 50_000);
+  assert.ok(readFileSync(backgroundRemoval).byteLength > 500_000);
 });
 
 test("public image-tool code has no donor canonical or runtime CDN", () => {
@@ -61,7 +65,7 @@ test("display assets and analytics are optimized for initial load", () => {
 test("base pages expose complete batch and comparison controls", () => {
   for (const file of ["index.html", "en/index.html"]) {
     const html = readFileSync(join(publicDir, file), "utf8");
-    for (const id of ["batch-list", "preset-select", "quality-input", "compare-view", "batch-results"]) {
+    for (const id of ["batch-list", "preset-select", "panel-background", "quality-input", "compare-view", "batch-results"]) {
       assert.match(html, new RegExp(`id="${id}"`));
     }
     assert.match(html, /multiple hidden/);

@@ -34,9 +34,9 @@ const tools = [
   {
     label: "Image Tools",
     title: "Free Image Converter and Resizer",
-    text: "Resize, compress, and convert JPG, PNG, WebP, and HEIC images. Process batches and download a ZIP while files stay on your device.",
+    text: "Resize, compress, remove backgrounds, and convert JPG, PNG, WebP, and HEIC images. Process batches and download a ZIP while files stay on your device.",
     href: "https://www.djai.academy/tools/resizeimg/en/",
-    tags: ["HEIC", "Batch", "Target KB"]
+    tags: ["Background", "HEIC", "Batch"]
   },
   {
     label: "PDF Tools",
@@ -69,13 +69,13 @@ const tools = [
 ];
 
 const comingSoon = [
-  "Background remover",
   "Favicon generator",
   "AVIF tools",
   "High-fidelity Office conversion"
 ];
 
 const popularWorkflows = [
+  ["Remove image background", "Create a transparent PNG in your browser", "https://www.djai.academy/tools/resizeimg/remove-background-image/en/"],
   ["JPG to PNG", "Convert an image without uploading", "https://www.djai.academy/tools/resizeimg/jpg-to-png/en/"],
   ["HEIC to JPG", "Convert an iPhone photo in your browser", "https://www.djai.academy/tools/resizeimg/heic-to-jpg/en/"],
   ["Image to 100 KB", "Prepare an image for upload forms", "https://www.djai.academy/tools/resizeimg/image-to-100kb/en/"],
@@ -160,7 +160,7 @@ export default function ToolsPage() {
         </a>
         <nav aria-label="Tools navigation">
           <a href="https://www.djai.academy/course/en/">Courses</a>
-          <a href="https://www.djai.academy/course/en/#community">Community</a>
+          <a href="https://school.djai.academy/">Community</a>
           <a href="https://www.djai.academy/service/en/">Services</a>
           <a href="https://www.djai.academy/blog/en/">Blog</a>
           <a href="https://www.djai.academy/tools/" hrefLang="th">
@@ -249,6 +249,8 @@ export default function ToolsPage() {
           ))}
         </div>
       </section>
+
+      <AdSenseAd label="Related tools advertisement" variant="multiplex" />
     </main>
   );
 }

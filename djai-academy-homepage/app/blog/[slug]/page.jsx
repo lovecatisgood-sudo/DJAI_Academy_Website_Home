@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import SiteFooter from "../../components/SiteFooter";
 import SiteHeader from "../../components/SiteHeader";
 import AdSenseAd from "../../components/AdSenseAd";
 import ShareButtons from "../../components/ShareButtons";
+import { SIAMESE_CAT_DEV_CATEGORY } from "../../lib/blogStore";
 import { getThaiPostBySlug } from "../../lib/thBlogPosts";
 
 function formatDate(value) {
@@ -156,6 +157,10 @@ export default async function ThaiBlogPostPage({ params }) {
 
   if (!post) {
     notFound();
+  }
+
+  if (post.categoryKey === SIAMESE_CAT_DEV_CATEGORY) {
+    permanentRedirect(`/siamese_cat/dev/blog/${post.slug}/`);
   }
 
   const structuredData = {

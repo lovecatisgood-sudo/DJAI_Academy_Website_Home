@@ -1,6 +1,6 @@
-import { getAllPosts, getPostBySlug } from "./blogStore";
+import { SIAMESE_CAT_DEV_CATEGORY, getAllPosts, getPostBySlug } from "./blogStore";
 
-export const TH_BLOG_CATEGORIES = ["ข่าวสาร", "คู่มือ", "บทความสอนใช้งาน"];
+export const TH_BLOG_CATEGORIES = ["ข่าวสาร", "คู่มือ", "บทความสอนใช้งาน", SIAMESE_CAT_DEV_CATEGORY];
 
 const posts = [
   {

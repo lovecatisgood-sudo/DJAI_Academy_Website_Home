@@ -2,7 +2,8 @@
 
 import { useMemo, useState } from "react";
 
-const categories = ["News", "Guides", "Tutorial"];
+const SIAMESE_CAT_DEV_CATEGORY = "Siamese Cat Dev";
+const categories = ["News", "Guides", "Tutorial", SIAMESE_CAT_DEV_CATEGORY];
 const locales = [
   {
     key: "en",
@@ -65,6 +66,14 @@ function hasTranslationContent(translation) {
   return ["title", "slug", "excerpt", "seoTitle", "seoDescription", "keywords", "content"].some((field) =>
     String(translation[field] || "").trim()
   );
+}
+
+function postHrefFor(locale, slug, category) {
+  if (category === SIAMESE_CAT_DEV_CATEGORY) {
+    return locale === "en" ? `/siamese_cat/dev/blog/en/${slug}/` : `/siamese_cat/dev/blog/${slug}/`;
+  }
+
+  return locale === "en" ? `/blog/en/${slug}/` : `/blog/${slug}/`;
 }
 
 export default function AdminBlogForm() {
@@ -177,7 +186,7 @@ export default function AdminBlogForm() {
         locale,
         label: config?.label || locale,
         status: translation.status,
-        href: `${config?.pathPrefix || "/blog/"}${translation.slug}/`
+        href: postHrefFor(locale, translation.slug, payload.post?.category)
       };
     });
 

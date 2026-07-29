@@ -27,6 +27,12 @@ const socialLinks = [
     href: 'https://www.facebook.com/people/Siamese-Cat-Dev/61592514145429/',
     image: 'social-facebook.png',
   },
+  {
+    name: 'YouTube',
+    handle: '@SiameseCatDev',
+    href: 'https://www.youtube.com/@SiameseCatDev',
+    image: 'social-youtube.png',
+  },
 ];
 
 type SocialLinksProps = {

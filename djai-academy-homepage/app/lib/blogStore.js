@@ -1,17 +1,20 @@
 import fs from "node:fs/promises";
 import path from "node:path";
 
-export const BLOG_CATEGORIES = ["News", "Guides", "Tutorial"];
+export const SIAMESE_CAT_DEV_CATEGORY = "Siamese Cat Dev";
+export const BLOG_CATEGORIES = ["News", "Guides", "Tutorial", SIAMESE_CAT_DEV_CATEGORY];
 export const BLOG_CATEGORY_LABELS = {
   en: {
     News: "News",
     Guides: "Guides",
-    Tutorial: "Tutorial"
+    Tutorial: "Tutorial",
+    [SIAMESE_CAT_DEV_CATEGORY]: "Siamese Cat Dev"
   },
   th: {
     News: "ข่าวสาร",
     Guides: "คู่มือ",
-    Tutorial: "บทความสอนใช้งาน"
+    Tutorial: "บทความสอนใช้งาน",
+    [SIAMESE_CAT_DEV_CATEGORY]: "Siamese Cat Dev"
   }
 };
 
@@ -215,6 +218,17 @@ export async function getAllPosts({ includeDrafts = false, locale = "en" } = {})
 
 export async function getPostBySlug(slug, { includeDrafts = false, locale = "en" } = {}) {
   const posts = await getAllPosts({ includeDrafts, locale });
+  return posts.find((post) => post.slug === slug);
+}
+
+export async function getPostsByCategory(category, { includeDrafts = false, locale = "en" } = {}) {
+  const key = categoryKey(category);
+  const posts = await getAllPosts({ includeDrafts, locale });
+  return posts.filter((post) => post.categoryKey === key);
+}
+
+export async function getPostBySlugInCategory(slug, category, { includeDrafts = false, locale = "en" } = {}) {
+  const posts = await getPostsByCategory(category, { includeDrafts, locale });
   return posts.find((post) => post.slug === slug);
 }
 

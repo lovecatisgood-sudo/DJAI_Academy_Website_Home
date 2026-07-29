@@ -33,26 +33,26 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     images: ["/social/djai-academy.webp"]
+  },
+  other: {
+    "google-adsense-account": ADSENSE_CLIENT
   }
 };
 
 export default async function RootLayout({ children }) {
   const requestHeaders = await headers();
   const language = requestHeaders.get("x-djai-language") === "en" ? "en" : "th";
-  const shouldLoadAdSense = requestHeaders.get("x-djai-adsense") === "1";
 
   return (
     <html lang={language}>
       <body>
         {children}
-        {shouldLoadAdSense ? (
-          <Script
-            async
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
-            crossOrigin="anonymous"
-            strategy="afterInteractive"
-          />
-        ) : null}
+        <Script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
+          crossOrigin="anonymous"
+          strategy="beforeInteractive"
+        />
         <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="lazyOnload" />
         <Script id="google-analytics" strategy="lazyOnload">
           {`

@@ -1,4 +1,5 @@
 export const SITE_URL = "https://www.djai.academy";
+export const COMMUNITY_URL = "https://school.djai.academy/";
 
 const paths = {
   home: {
@@ -30,8 +31,8 @@ const paths = {
     th: "/course/"
   },
   community: {
-    en: "/course/en/#community",
-    th: "/course/#community"
+    en: COMMUNITY_URL,
+    th: COMMUNITY_URL
   },
   promo: {
     en: "/course/en/#pricing",
@@ -52,7 +53,8 @@ export function pathFor(route, locale = "en") {
 }
 
 export function urlFor(route, locale = "en") {
-  return `${SITE_URL}${pathFor(route, locale)}`;
+  const path = pathFor(route, locale);
+  return path.startsWith("http") ? path : `${SITE_URL}${path}`;
 }
 
 export function blogPostPath(slug, locale = "en") {

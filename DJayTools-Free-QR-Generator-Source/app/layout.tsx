@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   description:
     "สร้าง QR code ฟรีใน browser ดาวน์โหลดเป็น PNG หรือ SVG ได้ ไม่ต้องสมัครบัญชี ไม่มี watermark และไม่มีวันหมดอายุ",
   applicationName: "DJayTools Free QR Generator",
+  other: {
+    "google-adsense-account": ADSENSE_CLIENT,
+  },
   alternates: {
     canonical: `${BASE_PATH}/`,
     languages: {

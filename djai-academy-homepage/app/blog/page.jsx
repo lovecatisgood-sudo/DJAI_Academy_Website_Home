@@ -2,6 +2,7 @@ import Link from "next/link";
 import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
 import AdSenseAd from "../components/AdSenseAd";
+import { SIAMESE_CAT_DEV_CATEGORY } from "../lib/blogStore";
 import { TH_BLOG_CATEGORIES, getAllThaiPosts } from "../lib/thBlogPosts";
 
 export const metadata = {
@@ -32,6 +33,12 @@ function formatDate(value) {
     day: "numeric",
     year: "numeric"
   }).format(new Date(value));
+}
+
+function postHref(post) {
+  return post.categoryKey === SIAMESE_CAT_DEV_CATEGORY
+    ? `/siamese_cat/dev/blog/${post.slug}/`
+    : `/blog/${post.slug}/`;
 }
 
 export default async function ThaiBlogPage({ searchParams }) {
@@ -127,12 +134,12 @@ export default async function ThaiBlogPage({ searchParams }) {
                       <span>{post.readingTime}</span>
                     </div>
                     <h3>
-                      <a href={`/blog/${post.slug}/`}>{post.title}</a>
+                      <a href={postHref(post)}>{post.title}</a>
                     </h3>
                     <p>{post.excerpt}</p>
                     <div className="post-card-footer">
                       <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
-                      <a href={`/blog/${post.slug}/`}>อ่านบทความ</a>
+                      <a href={postHref(post)}>อ่านบทความ</a>
                     </div>
                   </article>
                 ))}
@@ -147,6 +154,8 @@ export default async function ThaiBlogPage({ searchParams }) {
         </section>
 
         <AdSenseAd label="Blog advertisement" variant="display2" />
+
+        <AdSenseAd label="Related content advertisement" variant="multiplex" />
       </main>
       <SiteFooter locale="th" />
     </>

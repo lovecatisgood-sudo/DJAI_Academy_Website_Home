@@ -2,7 +2,7 @@ import Link from "next/link";
 import SiteFooter from "../../components/SiteFooter";
 import SiteHeader from "../../components/SiteHeader";
 import AdSenseAd from "../../components/AdSenseAd";
-import { BLOG_CATEGORIES, getAllPosts } from "../../lib/blogStore";
+import { BLOG_CATEGORIES, SIAMESE_CAT_DEV_CATEGORY, getAllPosts } from "../../lib/blogStore";
 
 export const dynamic = "force-dynamic";
 
@@ -46,6 +46,12 @@ function readLabel(category) {
   }
 
   return "Read article";
+}
+
+function postHref(post) {
+  return post.categoryKey === SIAMESE_CAT_DEV_CATEGORY
+    ? `/siamese_cat/dev/blog/en/${post.slug}/`
+    : `/blog/en/${post.slug}/`;
 }
 
 export default async function BlogPage({ searchParams }) {
@@ -139,12 +145,12 @@ export default async function BlogPage({ searchParams }) {
                       <span>{post.readingTime}</span>
                     </div>
                     <h3>
-                      <a href={`/blog/en/${post.slug}/`}>{post.title}</a>
+                      <a href={postHref(post)}>{post.title}</a>
                     </h3>
                     <p>{post.excerpt}</p>
                     <div className="post-card-footer">
                       <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time>
-                      <a href={`/blog/en/${post.slug}/`}>{readLabel(post.categoryKey)}</a>
+                      <a href={postHref(post)}>{readLabel(post.categoryKey)}</a>
                     </div>
                   </article>
                 ))}
@@ -159,6 +165,8 @@ export default async function BlogPage({ searchParams }) {
         </section>
 
         <AdSenseAd label="Blog advertisement" variant="display2" />
+
+        <AdSenseAd label="Related content advertisement" variant="multiplex" />
       </main>
       <SiteFooter locale="en" />
     </>

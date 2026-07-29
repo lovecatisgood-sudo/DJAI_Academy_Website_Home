@@ -55,8 +55,11 @@ const projects = [
       "public/heic-to-jpg/en/index.html",
       "public/remove-image-metadata/index.html",
       "public/remove-image-metadata/en/index.html",
+      "public/remove-background-image/index.html",
+      "public/remove-background-image/en/index.html",
       "public/assets/djai-academy-logo.webp",
       "public/assets/siamese-cat-dev-transparent.webp",
+      "public/vendor/background-removal.mjs",
       "public/vendor/heic2any.min.js",
       "public/vendor/jszip.min.js"
     ]

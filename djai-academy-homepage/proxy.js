@@ -25,9 +25,7 @@ export function proxy(request) {
   const isEnglishPage = /^\/(?:en(?:\/|$)|(?:portfolio|development|service|tools|blog|siamese_cat)\/en(?:\/|$))/.test(
     pathname
   );
-  const shouldLoadAdSense = /^\/(?:blog|tools)(?:\/|$)/.test(pathname);
   requestHeaders.set("x-djai-language", isEnglishPage ? "en" : "th");
-  requestHeaders.set("x-djai-adsense", shouldLoadAdSense ? "1" : "0");
 
   return NextResponse.next({
     request: {

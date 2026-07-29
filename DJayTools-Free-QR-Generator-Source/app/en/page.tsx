@@ -127,7 +127,7 @@ export default function Home() {
           <a href="https://www.djai.academy/tools/resizeimg/en/" target="_blank" rel="noopener noreferrer">Image tools <span className="external-mark">↗</span></a>
           <a href="https://www.djai.academy/blog/en/" target="_blank" rel="noopener noreferrer">Blog <span className="external-mark">↗</span></a>
           <a href="https://www.djai.academy/tools/qrgen/" hrefLang="th">ไทย</a>
-          <a className="nav-cta" href="https://www.djai.academy/course/en/#community" target="_blank" rel="noopener noreferrer">Join community</a>
+          <a className="nav-cta" href="https://school.djai.academy/" target="_blank" rel="noopener noreferrer">Join community</a>
         </nav>
       </header>
 

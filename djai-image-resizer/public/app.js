@@ -13,6 +13,7 @@
     totalTooLarge: 'ไฟล์ทั้งหมดต้องมีขนาดรวมไม่เกิน 200 MB',
     readError: 'เราไม่สามารถอ่านรูปนี้ได้ ไฟล์อาจเสียหายหรือใช้ encoding ที่ไม่รองรับ',
     heicError: 'ไม่สามารถถอดรหัส HEIC นี้ได้ กรุณาลองรูปอื่นหรือแปลงจากอุปกรณ์ต้นทางก่อน',
+    backgroundError: 'ไม่สามารถลบพื้นหลังรูปนี้ได้ กรุณาลองรูปที่ชัดขึ้นหรือใช้รูปอื่น',
     exportError: 'Browser ไม่สามารถ export รูปภาพได้',
     dimensionTooLarge: 'ขนาดภาพที่ขอใหญ่เกินไปสำหรับการประมวลผลใน browser อย่างปลอดภัย',
     invalidDimensions: 'กรุณาใส่ค่าความกว้างและความสูงที่ถูกต้อง',
@@ -23,13 +24,20 @@
     fileCount: (value) => `${value} ไฟล์`,
     rotation: (value) => `หมุน ${value}°`,
     processing: (current, total) => `กำลังประมวลผล ${current}/${total}`,
+    downloadingModel: (value) => `กำลังโหลดโมเดล AI ${value}%`,
+    removingBackground: (current, total) => `กำลังลบพื้นหลัง ${current}/${total}`,
     processOne: 'ประมวลผลรูปภาพ',
     processMany: (value) => `ประมวลผล ${value} รูป`,
+    removeBackgroundOne: 'ลบพื้นหลังรูป',
+    removeBackgroundMany: (value) => `ลบพื้นหลัง ${value} รูป`,
     downloadOne: 'ดาวน์โหลดรูปภาพ',
     downloadMany: 'ดาวน์โหลดทั้งหมดเป็น ZIP',
     resultOne: 'รูปภาพของคุณพร้อมดาวน์โหลด',
     resultMany: (value) => `${value} รูปพร้อมดาวน์โหลด`,
+    backgroundResultOne: 'รูป PNG พื้นหลังโปร่งใสพร้อมดาวน์โหลด',
+    backgroundResultMany: (value) => `${value} รูป PNG พื้นหลังโปร่งใสพร้อมดาวน์โหลด`,
     pngQuality: 'PNG เป็นรูปแบบ lossless จึงไม่ใช้ค่า quality แต่ยังลดขนาดด้วย dimensions ได้',
+    backgroundPngNote: 'โหมดลบพื้นหลังส่งออกเป็น PNG โปร่งใสเสมอ จึงไม่ใช้ค่า quality หรือรูปแบบไฟล์อื่น',
     qualityNote: 'ใช้เป็นคุณภาพ export หรือคุณภาพสูงสุดในโหมดเป้าหมาย KB',
     select: 'เลือก',
     remove: 'ลบ',
@@ -62,6 +70,7 @@
     totalTooLarge: 'The combined file size must be no more than 200 MB.',
     readError: 'We could not read this image. It may be damaged or use an unsupported encoding.',
     heicError: 'This HEIC file could not be decoded. Try another photo or convert it on the source device first.',
+    backgroundError: 'The background could not be removed. Try a clearer image or a different photo.',
     exportError: 'The browser could not export the image.',
     dimensionTooLarge: 'The requested dimensions are too large for safe browser processing.',
     invalidDimensions: 'Enter valid width and height values.',
@@ -72,13 +81,20 @@
     fileCount: (value) => `${value} files`,
     rotation: (value) => `${value}° rotation`,
     processing: (current, total) => `Processing ${current}/${total}`,
+    downloadingModel: (value) => `Downloading AI model ${value}%`,
+    removingBackground: (current, total) => `Removing background ${current}/${total}`,
     processOne: 'Process image',
     processMany: (value) => `Process ${value} images`,
+    removeBackgroundOne: 'Remove background',
+    removeBackgroundMany: (value) => `Remove backgrounds from ${value} images`,
     downloadOne: 'Download image',
     downloadMany: 'Download all as ZIP',
     resultOne: 'Your image is ready to download.',
     resultMany: (value) => `${value} images are ready to download.`,
+    backgroundResultOne: 'Your transparent PNG is ready to download.',
+    backgroundResultMany: (value) => `${value} transparent PNG images are ready to download.`,
     pngQuality: 'PNG is lossless, so the quality setting is not used. Dimensions can still reduce its size.',
+    backgroundPngNote: 'Background removal always exports a transparent PNG, so output format and quality controls are not used.',
     qualityNote: 'Used as export quality or the maximum quality in target-KB mode.',
     select: 'Select',
     remove: 'Remove',
@@ -133,6 +149,7 @@
     heightInput: $('#height-input'),
     ratioLock: $('#ratio-lock'),
     formatSelect: $('#format-select'),
+    formatRow: $('.format-row'),
     qualityRow: $('#quality-row'),
     qualityInput: $('#quality-input'),
     qualityValue: $('#quality-value'),
@@ -186,7 +203,8 @@
     originalWidth: 0,
     originalHeight: 0,
     originalType: '',
-    originalHasTransparency: false
+    originalHasTransparency: false,
+    backgroundRemoval: null
   };
 
   const MAX_FILES = 20;
@@ -364,6 +382,14 @@
 
   const getResultForActive = () => state.results.find(result => result.itemId === currentItem()?.id) || null;
 
+  const loadBackgroundRemoval = async () => {
+    if (state.backgroundRemoval) return state.backgroundRemoval;
+    const moduleUrl = new URL('vendor/background-removal.mjs', document.baseURI).toString();
+    const module = await import(moduleUrl);
+    state.backgroundRemoval = module.remove;
+    return state.backgroundRemoval;
+  };
+
   const applyPreviewRotation = () => {
     const rotation = currentItem()?.rotation || 0;
     els.mainPreview.style.transform = state.activePreview === 'original' ? `rotate(${rotation}deg)` : '';
@@ -382,6 +408,7 @@
   };
 
   const getImageType = (sourceType = state.originalType) => {
+    if (state.mode === 'background') return 'image/png';
     if (els.formatSelect.value !== 'original') return els.formatSelect.value;
     return ['image/jpeg', 'image/png', 'image/webp'].includes(sourceType) ? sourceType : 'image/jpeg';
   };
@@ -390,10 +417,13 @@
     const value = Number(els.qualityInput.value);
     els.qualityValue.textContent = `${value}%`;
     els.quickQualities.forEach(button => button.classList.toggle('selected', Number(button.dataset.quality) === value));
+    const backgroundMode = state.mode === 'background';
     const pngOnly = state.items.length === 1 && getImageType() === 'image/png';
-    els.qualityInput.disabled = pngOnly;
-    els.qualityRow.classList.toggle('disabled', pngOnly);
-    els.qualityNote.textContent = pngOnly ? copy.pngQuality : copy.qualityNote;
+    els.formatSelect.disabled = backgroundMode;
+    els.formatRow.hidden = backgroundMode;
+    els.qualityInput.disabled = backgroundMode || pngOnly;
+    els.qualityRow.classList.toggle('disabled', backgroundMode || pngOnly);
+    els.qualityNote.textContent = backgroundMode ? copy.backgroundPngNote : pngOnly ? copy.pngQuality : copy.qualityNote;
   };
 
   const showPreview = (kind) => {
@@ -427,7 +457,13 @@
   };
 
   const updateProcessLabel = () => {
-    els.processLabel.textContent = state.items.length > 1 ? copy.processMany(state.items.length) : copy.processOne;
+    els.processLabel.textContent = state.mode === 'background'
+      ? state.items.length > 1
+        ? copy.removeBackgroundMany(state.items.length)
+        : copy.removeBackgroundOne
+      : state.items.length > 1
+        ? copy.processMany(state.items.length)
+        : copy.processOne;
   };
 
   const renderBatchList = () => {
@@ -601,6 +637,11 @@
       panel.classList.toggle('active', active);
       panel.hidden = !active;
     });
+    if (mode === 'background') {
+      els.formatSelect.value = 'image/png';
+    }
+    updateQualityUI();
+    updateProcessLabel();
     clearResults();
   };
 
@@ -743,23 +784,48 @@
       }
       const quality = Number(els.qualityInput.value) / 100;
       const results = [];
+      const removeBackground = state.mode === 'background' ? await loadBackgroundRemoval() : null;
 
       for (let index = 0; index < state.items.length; index += 1) {
-        els.processLabel.textContent = copy.processing(index + 1, state.items.length);
+        els.processLabel.textContent = state.mode === 'background'
+          ? copy.removingBackground(index + 1, state.items.length)
+          : copy.processing(index + 1, state.items.length);
         const item = state.items[index];
         const decoded = await decodeItem(item);
         try {
           const original = orientedDimensions(decoded.bitmap, item.rotation);
-          const type = getImageType(decoded.type);
-          const context = { bitmap: decoded.bitmap, rotation: item.rotation, dimensions: getDimensions(original.width, original.height) };
-          const output = state.mode === 'target'
-            ? await compressToTarget(context, targetKB * 1024, type, els.keepDimensions.checked, quality)
-            : {
-                blob: await renderBitmapBlob(decoded.bitmap, item.rotation, context.dimensions.width, context.dimensions.height, type, quality),
-                width: context.dimensions.width,
-                height: context.dimensions.height
-              };
-          const name = `${safeBaseName(item.file.name)}-djai.${extensionForType(type)}`;
+          let type = getImageType(decoded.type);
+          let output;
+
+          if (state.mode === 'background') {
+            const normalizedInput = await renderBitmapBlob(decoded.bitmap, item.rotation, original.width, original.height, 'image/png', .96);
+            const blob = await removeBackground(normalizedInput, {
+              progress: (key, current, total) => {
+                if (!String(key).startsWith('fetch:') || !Number.isFinite(total) || total <= 0) return;
+                const percent = Math.max(0, Math.min(100, Math.round(current / total * 100)));
+                els.processLabel.textContent = copy.downloadingModel(percent);
+              }
+            }).catch((error) => {
+              console.error(error);
+              throw new Error(copy.backgroundError);
+            });
+            const resultBitmap = await createImageBitmap(blob);
+            output = { blob, width: resultBitmap.width, height: resultBitmap.height };
+            if (resultBitmap.close) resultBitmap.close();
+            type = 'image/png';
+          } else {
+            const context = { bitmap: decoded.bitmap, rotation: item.rotation, dimensions: getDimensions(original.width, original.height) };
+            output = state.mode === 'target'
+              ? await compressToTarget(context, targetKB * 1024, type, els.keepDimensions.checked, quality)
+              : {
+                  blob: await renderBitmapBlob(decoded.bitmap, item.rotation, context.dimensions.width, context.dimensions.height, type, quality),
+                  width: context.dimensions.width,
+                  height: context.dimensions.height
+                };
+          }
+
+          const suffix = state.mode === 'background' ? 'background-removed-djai' : 'djai';
+          const name = `${safeBaseName(item.file.name)}-${suffix}.${extensionForType(type)}`;
           results.push({ itemId: item.id, name, blob: output.blob, url: URL.createObjectURL(output.blob), width: output.width, height: output.height, type, before: item.file.size });
         } finally {
           if (decoded.bitmap?.close) decoded.bitmap.close();
@@ -774,7 +840,9 @@
       els.afterSize.textContent = formatBytes(afterTotal);
       els.savedBadge.textContent = reduction >= 0 ? copy.smaller(reduction) : copy.larger(Math.abs(reduction));
       els.savedBadge.classList.toggle('larger', reduction < 0);
-      els.resultSummaryText.textContent = results.length > 1 ? copy.resultMany(results.length) : copy.resultOne;
+      els.resultSummaryText.textContent = state.mode === 'background'
+        ? results.length > 1 ? copy.backgroundResultMany(results.length) : copy.backgroundResultOne
+        : results.length > 1 ? copy.resultMany(results.length) : copy.resultOne;
       els.downloadButton.lastChild.textContent = ` ${results.length > 1 ? copy.downloadMany : copy.downloadOne}`;
       els.resultBar.hidden = false;
       els.previewTabs.forEach(tab => {
