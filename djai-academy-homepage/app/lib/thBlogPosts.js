@@ -240,6 +240,10 @@ export async function getAllThaiPosts() {
   );
 }
 
+export function getSeededThaiPostBySlug(slug) {
+  return posts.find((post) => post.slug === slug);
+}
+
 export async function getThaiPostBySlug(slug) {
-  return (await getPostBySlug(slug, { locale: "th" })) || posts.find((post) => post.slug === slug);
+  return (await getPostBySlug(slug, { locale: "th" })) || getSeededThaiPostBySlug(slug);
 }
