@@ -132,7 +132,7 @@ export default function CamPdfAppPage() {
           <div className={styles.heroShade} />
           <div className={styles.heroInner}>
             <div className={styles.productLockup}>
-              <Image src="/apps/cam-pdf/icon.webp" alt="" width={72} height={72} />
+              <Image src="/apps/cam-pdf/icon.png" alt="" width={72} height={72} />
               <span>Android app by DJAI</span>
             </div>
             <h1 className={styles.heroTitle}>Cam PDF Scan Signer QR Gen</h1>
