@@ -1,6 +1,6 @@
 # DJAI Deployment Memory
 
-Updated: 2026-07-29
+Updated: 2026-07-30
 
 ## Current Release
 
@@ -13,7 +13,8 @@ Updated: 2026-07-29
 - Screaming Frog SEO remediation commit: `0651e14`
 - Persistent blog hreflang compatibility commit: `cf3601d`
 - Initial-head metadata compatibility commit: `59a375f`
-- Live deployment verified on 2026-07-29 after Hostinger auto-deploy.
+- State and audit documentation base commit: `ce6fdaa`
+- Live deployment verified on 2026-07-30 after Hostinger auto-deploy.
 
 ## Included Tool Clusters
 
@@ -60,7 +61,7 @@ Live HTML checks confirmed one H1, correct self-referencing canonicals, DJAI org
 - A normal crawl reached the free 500-URL ceiling because scripts and images count toward the allowance.
 - For complete submitted-page coverage, download the live sitemap and use List Mode with its URLs. The 2026-07-29 list crawl covered all 205 sitemap URLs without exceeding the free limit.
 - All 205 sitemap URLs returned HTTP 200 and were indexable.
-- The focused crawl found no missing or duplicate page titles, meta descriptions, H1s, or canonicals, and no 4xx or 5xx sitemap URLs.
+- The final production crawl found no missing or duplicate page titles, meta descriptions, H1s, or canonicals; no missing hreflang return links or `x-default`; and no 4xx or 5xx sitemap URLs.
 - Remediation commit `0651e14` added crawlable initial content to the client-rendered Siamese Cat Dev bio, repaired legacy blog hreflang data, added QR `x-default`, and supplied descriptive product-image alt text.
 - Commit `cf3601d` makes English metadata resolve the actual seeded Thai post even when Hostinger's persistent blog file predates the compatibility field stored in the repository copy.
 - Commit `59a375f` makes that seeded fallback synchronous so Next.js emits canonical and hreflang tags in the initial document head instead of streamed metadata that HTML-limited crawlers can miss.

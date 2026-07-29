@@ -1,5 +1,54 @@
 # Current State — DJAI Multi-Page Deployment
 
+## Authoritative Checkpoint — 2026-07-30
+
+This checkpoint supersedes conflicting paths, route conventions, process IDs, and deployment notes
+in the older 2026-07-18 history below.
+
+- Active workspace: `/home/siamesedev/Documents/codex/website_DJAI_HOME`
+- Deployment branch: `main`
+- Remote: `lovecatisgood-sudo/DJAI_Academy_Website_Home`
+- Local `HEAD` and `origin/main`: `ce6fdaa`
+- Latest functional SEO commit: `59a375f`
+- Hostinger deploys automatically from pushes to `main` using root `npm run build` and `npm start`.
+- Canonical production host: `https://www.djai.academy`
+- No temporary local preview or audit server remains running.
+
+Current public tool clusters:
+
+- QR: `/tools/qrgen/`
+- Images, including background removal: `/tools/resizeimg/`
+- PDF: `/tools/PDFTools/`
+- Audio and video: `/tools/media/`
+- Document, AI, and spreadsheet: `/tools/document/`, `/tools/ai/`, `/tools/spreadsheet/`
+- Cam PDF mobile application page: `/Cam_PDF_Scan_Signer_QR-Gen/`
+- Siamese Cat Dev bio and shared-backend blog: `/siamese_cat/dev/` and `/siamese_cat/dev/blog/`
+
+Latest verification:
+
+- Complete Hostinger production build passed.
+- Deterministic route audit passed 193 pages, 10 redirects, and 316 internal links/assets.
+- Screaming Frog SEO Spider 24.3 free edition crawled all 205 sitemap URLs in List Mode.
+- Final production result: 205/205 HTTP 200 and indexable; zero missing or duplicate titles,
+  descriptions, H1s, or canonicals; zero missing hreflang return links or `x-default`; zero
+  internal 4xx or 5xx sitemap URLs.
+- The Screaming Frog corrections cover crawlable Siamese Cat Dev bio content, QR `x-default`,
+  descriptive product-image alt text, persistent legacy blog data, and Next.js metadata placement
+  in the initial document head.
+- Structured-data validation and JavaScript rendering were not enabled in the default Screaming
+  Frog CLI configuration. CrUX field data also remains unavailable without sufficient field data
+  and working API quota. Search Console remains authoritative for Google indexing coverage.
+
+Release memory and detailed audit:
+
+- `DEPLOYMENT_MEMORY.md`
+- `IMPLEMENTATION_AUDIT_2026-07-29.md`
+- Temporary crawl exports for this workstation session: `/tmp/sf-djai-sitemap-audit/`
+
+Unrelated local reference material remains untracked and must not be committed unless explicitly
+requested: `Open_Source_Repo/`, `claude_opus_audit_28jul.md`, `feature_list.md`, and
+`yt_icon_red_digital.eps`.
+
 Saved: 2026-07-18, Asia/Ho_Chi_Minh
 
 ## Latest verified release
