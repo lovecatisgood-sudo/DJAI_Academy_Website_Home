@@ -29,6 +29,20 @@ const englishHtml = readFileSync(indexPath, 'utf8')
   .replace(
     '<meta property="og:url" content="https://www.djai.academy/siamese_cat/dev/" />',
     '<meta property="og:url" content="https://www.djai.academy/siamese_cat/dev/en/" />',
+  )
+  .replace(
+    'Siamese Cat Dev: Product Design, Software Development และ Vibe Coding',
+    'Siamese Cat Dev: Product Design, Software Development and Vibe Coding',
+  )
+  .replace(
+    'สร้าง digital product, software และ AI-assisted workflow ที่ใช้งานได้จริง\n          พร้อมแบ่งปันบทความและเครื่องมือฟรีสำหรับ builders.',
+    'Building useful digital products, software, and AI-assisted workflows while sharing practical articles and free tools for builders.',
+  )
+  .replace('อ่านบล็อก Siamese Cat Dev', 'Read the Siamese Cat Dev blog')
+  .replace('เข้าร่วม DJAI Academy community', 'Join the DJAI Academy community')
+  .replace(
+    'href="/siamese_cat/dev/blog/"',
+    'href="/siamese_cat/dev/blog/en/"',
   );
 
 writeFileSync(englishIndexPath, englishHtml);

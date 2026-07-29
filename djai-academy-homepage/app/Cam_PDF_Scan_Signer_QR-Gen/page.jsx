@@ -103,11 +103,11 @@ export default function CamPdfAppPage() {
         />
 
         <section className={styles.hero}>
-          <div className={styles.heroScreens} aria-hidden="true">
+          <div className={styles.heroScreens}>
             <Image
               className={styles.heroScreenLeft}
               src="/apps/cam-pdf/editor.png"
-              alt=""
+              alt="Cam PDF Scan Signer document edge correction screen"
               width={390}
               height={844}
               priority
@@ -115,7 +115,7 @@ export default function CamPdfAppPage() {
             <Image
               className={styles.heroScreenMain}
               src="/apps/cam-pdf/home.png"
-              alt=""
+              alt="Cam PDF Scan Signer document library home screen"
               width={390}
               height={844}
               priority
@@ -123,7 +123,7 @@ export default function CamPdfAppPage() {
             <Image
               className={styles.heroScreenRight}
               src="/apps/cam-pdf/qr.png"
-              alt=""
+              alt="Cam PDF Scan Signer QR code generator screen"
               width={390}
               height={844}
               priority
@@ -132,7 +132,12 @@ export default function CamPdfAppPage() {
           <div className={styles.heroShade} />
           <div className={styles.heroInner}>
             <div className={styles.productLockup}>
-              <Image src="/apps/cam-pdf/icon.png" alt="" width={72} height={72} />
+              <Image
+                src="/apps/cam-pdf/icon.png"
+                alt="Cam PDF Scan Signer QR Gen app icon"
+                width={72}
+                height={72}
+              />
               <span>Android app by DJAI</span>
             </div>
             <h1 className={styles.heroTitle}>Cam PDF Scan Signer QR Gen</h1>

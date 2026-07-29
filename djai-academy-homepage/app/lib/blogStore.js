@@ -119,6 +119,9 @@ function normalizeStoredGroup(post) {
   return {
     id: post.id || `post-${post.translationGroupId || Date.now()}`,
     translationGroupId: slugify(post.translationGroupId || post.id),
+    legacySeededThaiSlug: post.legacySeededThaiSlug
+      ? slugify(post.legacySeededThaiSlug)
+      : undefined,
     category: categoryKey(post.category),
     author: String(post.author || "DJAI Academy").trim(),
     publishedAt: post.publishedAt || post.updatedAt || new Date().toISOString(),

@@ -246,7 +246,7 @@ function ProjectCard({ project }) {
         {(project.images || [project.image]).map((image, index) => (
           <img
             src={image}
-            alt={index === 0 ? `ภาพตัวอย่างโปรเจกต์ ${project.name}` : ""}
+            alt={`ภาพหน้าจอ ${index + 1} ของโปรเจกต์ ${project.name}`}
             width={project.images ? "390" : "1200"}
             height={project.images ? "844" : "675"}
             loading="lazy"

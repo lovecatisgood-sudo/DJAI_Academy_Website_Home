@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     languages: {
       th: `${BASE_PATH}/`,
       en: `${BASE_PATH}/en/`,
+      "x-default": `${BASE_PATH}/`,
     },
   },
   openGraph: {
