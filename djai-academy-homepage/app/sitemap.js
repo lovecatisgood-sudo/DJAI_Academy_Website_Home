@@ -12,7 +12,8 @@ const corePaths = [
   "/course/", "/course/en/", "/course/detail/", "/course/detail/en/", "/siamese_cat/",
   "/siamese_cat/en/", "/siamese_cat/dev/", "/siamese_cat/dev/en/", "/siamese_cat/dev/blog/",
   "/siamese_cat/dev/blog/en/", "/blog/", "/blog/en/", "/Cam_PDF_Scan_Signer_QR-Gen/",
-  "/Cam_PDF_Scan_Signer_QR-Gen/privacy/"
+  "/Cam_PDF_Scan_Signer_QR-Gen/privacy/", "/Cam_PDF_Scan_Signer_QR-Gen/terms/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/delete-account/"
 ];
 
 const imageTools = [

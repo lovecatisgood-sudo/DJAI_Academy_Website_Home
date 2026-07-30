@@ -225,12 +225,14 @@ export default function CamPdfAppPage() {
             <h2>Your documents are not a cloud service.</h2>
             <p>
               Scans, imported document content, signatures, and generated files stay in app-owned
-              storage unless you choose to share or export them. Advertising, diagnostics, and
-              Google Play services are described separately in the privacy policy.
+              storage unless you choose to share or export them. Account, usage, consent, analytics,
+              advertising, and notification metadata are described separately in the privacy policy.
             </p>
           </div>
           <div className={styles.privacyLinks}>
             <a href={`${APP_PATH}privacy/`}>Read the privacy policy</a>
+            <a href={`${APP_PATH}terms/`}>Read the terms</a>
+            <a href={`${APP_PATH}delete-account/`}>Delete an account</a>
             <a href="mailto:contact@djai.academy">Contact support</a>
           </div>
         </section>
