@@ -7,6 +7,42 @@ import { categoryHref, toolHref, toolsFor, type Language, type ToolDefinition } 
 
 export default function ToolPage({ tool, language }: { tool: ToolDefinition; language: Language }) {
   const en = language === "en";
+  const specializedGuidance = {
+    "docx-to-markdown": en
+      ? {
+          eyebrow: "STRUCTURED OUTPUT",
+          title: "Choose Markdown when document structure still matters",
+          copy:
+            "Markdown keeps useful authoring structure such as headings, ordered and unordered lists, links, emphasis, and compatible tables as readable plain-text syntax. It is the stronger output for Git repositories, README files, developer specifications, static-site content, Cursor or Codex context, and AI documentation workflows.",
+          limit:
+            "Word-only presentation details such as exact pagination, floating objects, text boxes, custom fonts, and complex visual layout are not Markdown concepts. Review tables and image references after conversion before committing the file to a documentation project."
+        }
+      : {
+          eyebrow: "ผลลัพธ์แบบมีโครงสร้าง",
+          title: "เลือก Markdown เมื่อต้องรักษาโครงสร้างเอกสาร",
+          copy:
+            "Markdown เก็บ heading, list, link, emphasis และ table ที่รองรับไว้เป็น syntax ข้อความที่อ่านได้ เหมาะกับ README, Git repository, specification สำหรับนักพัฒนา, static site, context สำหรับ Cursor หรือ Codex และเอกสาร AI",
+          limit:
+            "รูปแบบเฉพาะของ Word เช่น pagination, floating object, text box, font และ layout ซับซ้อนไม่ใช่ส่วนหนึ่งของ Markdown ควรตรวจ table และ image reference ก่อนนำไฟล์ไปใช้จริง"
+        },
+    "docx-to-text": en
+      ? {
+          eyebrow: "PLAIN-TEXT OUTPUT",
+          title: "Choose TXT when formatting should be removed",
+          copy:
+            "Plain text intentionally strips headings, emphasis, link destinations, table structure, page styling, and other Word formatting. It is useful when you need clean words for search, copy and paste, word counting, transcription cleanup, lightweight archives, NLP preprocessing, or systems that only accept TXT.",
+          limit:
+            "Because formatting is discarded, a DOCX table can become a simple reading-order sequence and visual relationships may be lost. Use the Markdown converter instead when headings, lists, links, or table structure carry meaning."
+        }
+      : {
+          eyebrow: "ผลลัพธ์ข้อความล้วน",
+          title: "เลือก TXT เมื่อต้องการลบ formatting",
+          copy:
+            "ข้อความล้วนจะตัด heading, emphasis, ปลายทาง link, โครงสร้าง table, page style และ formatting ของ Word ออก เหมาะกับการค้นหา copy-paste นับคำ จัดเก็บแบบเบา เตรียมข้อมูล NLP หรือระบบที่รับเฉพาะ TXT",
+          limit:
+            "เมื่อ formatting ถูกตัด table อาจกลายเป็นข้อความตามลำดับการอ่านและความสัมพันธ์ทางภาพอาจหายไป หาก heading, list, link หรือ table มีความหมาย ควรใช้เครื่องมือ DOCX เป็น Markdown แทน"
+        }
+  }[tool.slug];
   const canonical = `https://www.djai.academy${toolHref(tool, language)}`;
   const tokenCounter = tool.slug === "token-counter";
   const steps = tokenCounter
@@ -47,6 +83,7 @@ export default function ToolPage({ tool, language }: { tool: ToolDefinition; lan
     <AdSenseAd label="Tool advertisement" variant="display2" />
     <CamPdfAppCallout language={language} />
     <section className="how-to"><div><p className="eyebrow">HOW TO</p><h2>{en ? `How to use ${tool.label.en}` : `วิธีใช้ ${tool.label.th}`}</h2><p>{tool.intent[language]}</p></div><ol>{steps.map((step, index) => <li key={step}><span>{index + 1}</span><p>{step}</p></li>)}</ol></section>
+    {specializedGuidance ? <section className="how-to tool-specific-guidance"><div><p className="eyebrow">{specializedGuidance.eyebrow}</p><h2>{specializedGuidance.title}</h2><p>{specializedGuidance.copy}</p></div><div><p>{specializedGuidance.limit}</p></div></section> : null}
     <section className="related-tools"><div className="section-heading"><p className="eyebrow">{en ? "CONTINUE WITH" : "ทำงานต่อ"}</p><h2>{en ? "Related free tools" : "เครื่องมือฟรีที่เกี่ยวข้อง"}</h2></div><div>{related.map((item) => <a href={toolHref(item, language)} key={item.slug}><strong>{item.label[language]}</strong><span>{item.intent[language]}</span><ArrowRight /></a>)}</div></section>
     <AdSenseAd label="Related content advertisement" variant="multiplex" />
     <section className="faq-section"><div><p className="eyebrow">FAQ</p><h2>{en ? "Common questions" : "คำถามที่พบบ่อย"}</h2></div><div>{faq.map(([question, answer]) => <details key={question}><summary>{question}<span>+</span></summary><p>{answer}</p></details>)}</div></section>

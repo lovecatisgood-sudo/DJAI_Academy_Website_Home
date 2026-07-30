@@ -17,7 +17,7 @@ import SiteFooter from "../SiteFooter";
 import SiteHeader from "../SiteHeader";
 
 export const metadata = {
-  title: "DJAI Academy | AI Masterclass",
+  title: "DJAI Academy AI Masterclass in Thailand",
   description:
     "A hands-on AI masterclass in Thailand for building real websites, apps, automations, and digital products without a programming background.",
   alternates: {

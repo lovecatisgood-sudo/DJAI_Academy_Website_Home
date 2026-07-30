@@ -5,7 +5,7 @@ import AdSenseAd from "../components/AdSenseAd";
 import { SIAMESE_CAT_DEV_CATEGORY } from "../lib/blogStore";
 import { TH_BLOG_CATEGORIES, getAllThaiPosts } from "../lib/thBlogPosts";
 
-export const metadata = {
+const defaultMetadata = {
   title: "บล็อก DJAI | ข่าวสาร คู่มือ และบทความสอนใช้งาน",
   description:
     "อ่านข่าวสาร คู่มือ และบทความสอนใช้งานจาก DJAI Academy เกี่ยวกับ AI เครื่องมือฟรี image optimization QR code และการสร้าง product",
@@ -27,6 +27,34 @@ export const metadata = {
     type: "website"
   }
 };
+
+export async function generateMetadata({ searchParams }) {
+  const params = await searchParams;
+  const filtered = TH_BLOG_CATEGORIES.includes(params?.category);
+
+  if (!filtered) {
+    return defaultMetadata;
+  }
+
+  return {
+    ...defaultMetadata,
+    alternates: {
+      canonical: "/blog/"
+    },
+    robots: {
+      index: false,
+      follow: true,
+      googleBot: {
+        index: false,
+        follow: true
+      }
+    },
+    openGraph: {
+      ...defaultMetadata.openGraph,
+      url: "/blog/"
+    }
+  };
+}
 
 function formatDate(value) {
   return new Intl.DateTimeFormat("th-TH", {

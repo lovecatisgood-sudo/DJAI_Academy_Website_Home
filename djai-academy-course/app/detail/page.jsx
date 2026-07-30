@@ -1,7 +1,7 @@
 import CourseDetailPage from "../CourseDetailPage";
 
 export const metadata = {
-  title: "รายละเอียด AI Masterclass | จากไอเดียสู่โปรดักต์จริง | DJAI Academy",
+  title: "หลักสูตร AI Masterclass: จากไอเดียสู่โปรดักต์ | DJAI",
   description:
     "ดูกำหนดการและหลักสูตร AI Masterclass วันที่ 1 สิงหาคม 2026 เรียน Vibe Coding วางแผน สร้าง และ launch โปรดักต์จริงด้วย AI ภายในหนึ่งวัน",
   alternates: {

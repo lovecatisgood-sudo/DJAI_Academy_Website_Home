@@ -6,7 +6,7 @@ import { BLOG_CATEGORIES, SIAMESE_CAT_DEV_CATEGORY, getAllPosts } from "../../li
 
 export const dynamic = "force-dynamic";
 
-export const metadata = {
+const defaultMetadata = {
   title: "DJAI Blog | News, Guides, and Tutorials",
   description:
     "Read DJAI Academy news, guides, and tutorials for AI learning, free tools, image optimization, QR codes, and practical digital product building.",
@@ -28,6 +28,34 @@ export const metadata = {
     type: "website"
   }
 };
+
+export async function generateMetadata({ searchParams }) {
+  const params = await searchParams;
+  const filtered = BLOG_CATEGORIES.includes(params?.category);
+
+  if (!filtered) {
+    return defaultMetadata;
+  }
+
+  return {
+    ...defaultMetadata,
+    alternates: {
+      canonical: "/blog/en/"
+    },
+    robots: {
+      index: false,
+      follow: true,
+      googleBot: {
+        index: false,
+        follow: true
+      }
+    },
+    openGraph: {
+      ...defaultMetadata.openGraph,
+      url: "/blog/en/"
+    }
+  };
+}
 
 function formatDate(value) {
   return new Intl.DateTimeFormat("en", {

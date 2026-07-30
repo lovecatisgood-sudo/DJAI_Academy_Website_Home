@@ -1,7 +1,7 @@
 import CourseDetailPage from "../../CourseDetailPage";
 
 export const metadata = {
-  title: "AI Masterclass Course Details | From Idea to Live Product | DJAI Academy",
+  title: "AI Masterclass: From Idea to Live Product | DJAI Academy",
   description:
     "Explore the 1 August 2026 AI Masterclass itinerary and curriculum. Learn Vibe Coding, plan, build, and launch a real product with AI in one day.",
   alternates: {

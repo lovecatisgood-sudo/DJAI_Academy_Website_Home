@@ -2,7 +2,7 @@ import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
 
 export const metadata = {
-  title: "DJAI Development | รับพัฒนาซอฟต์แวร์ แอป AI Automation และ Web3",
+  title: "DJAI Development | รับทำซอฟต์แวร์ แอป และ AI Automation",
   description:
     "DJAI รับพัฒนาเว็บไซต์ แอปมือถือ SaaS ระบบ AI Automation CRM POS Fintech เกม Crypto และ Web3 ด้วยแนวทางที่เร็วและคุมต้นทุน",
   alternates: {

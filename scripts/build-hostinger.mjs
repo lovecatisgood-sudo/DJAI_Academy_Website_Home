@@ -1,6 +1,7 @@
 import { existsSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { spawnSync } from "node:child_process";
+import { createHash } from "node:crypto";
 
 const rootDir = new URL("..", import.meta.url).pathname;
 const runDependencyAudit = process.env.DJAI_RUN_NPM_AUDIT === "1";
@@ -195,16 +196,21 @@ function run(command, args, cwd) {
 function ensureDependencies(project) {
   const cwd = join(rootDir, project.dir);
   const nodeModules = join(cwd, "node_modules");
+  const lockfile = join(cwd, "package-lock.json");
+  const manifest = existsSync(lockfile) ? lockfile : join(cwd, "package.json");
+  const marker = join(nodeModules, ".djai-dependency-fingerprint");
+  const fingerprint = createHash("sha256").update(readFileSync(manifest)).digest("hex");
 
-  if (existsSync(nodeModules)) {
+  if (existsSync(nodeModules) && existsSync(marker) && readFileSync(marker, "utf8").trim() === fingerprint) {
     return;
   }
 
-  const installCommand = project.install === "ci" && existsSync(join(cwd, "package-lock.json"))
+  const installCommand = project.install === "ci" && existsSync(lockfile)
     ? ["ci"]
     : ["install"];
 
   run("npm", installCommand, cwd);
+  writeFileSync(marker, `${fingerprint}\n`);
 }
 
 function cleanBuildOutputs(project) {
