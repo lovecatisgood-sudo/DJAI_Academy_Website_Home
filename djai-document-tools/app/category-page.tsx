@@ -70,6 +70,7 @@ export default function CategoryPage({ category, language }: { category: Categor
       <AdSenseAd label="Tools advertisement" variant="display2" />
       <CamPdfAppCallout language={language} />
       <ServiceBands language={language} category={category} />
+      <ToolEcosystemDirectory language={language} />
       <SuiteFooter language={language} />
     </main>
   );
@@ -122,6 +123,30 @@ export function CamPdfAppCallout({ language }: { language: Language }) {
       </a>
     </section>
   );
+}
+
+export function ToolEcosystemDirectory({ language }: { language: Language }) {
+  const en = language === "en";
+  const links = en ? [
+    ["All free tools", "/tools/en/", "Browse every free DJAI tool by task."],
+    ["QR code tools", "/tools/qrgen/en/", "Create QR codes for links, Wi-Fi, contacts, and messages."],
+    ["Image tools", "/tools/resizeimg/en/", "Convert, resize, compress, and remove image backgrounds."],
+    ["PDF tools", "/tools/PDFTools/en/", "Merge, split, convert, organize, and protect PDF files."],
+    ["Audio and video", "/tools/media/en/", "Convert media, extract audio, and compress video."],
+    ["Document tools", "/tools/document/en/", "Convert DOCX, extract PDF text, and run OCR."],
+    ["AI context tools", "/tools/ai/en/", "Count tokens, clean context, and plan RAG chunks."],
+    ["Spreadsheet tools", "/tools/spreadsheet/en/", "Convert and process CSV, JSON, and XLSX data."]
+  ] : [
+    ["เครื่องมือทั้งหมด", "/tools/", "รวมเครื่องมือฟรีทุกหมวดจาก DJAI"],
+    ["เครื่องมือ QR Code", "/tools/qrgen/", "สร้าง QR สำหรับลิงก์ Wi-Fi ผู้ติดต่อ และข้อความ"],
+    ["เครื่องมือรูปภาพ", "/tools/resizeimg/", "แปลง resize บีบอัด และลบพื้นหลังรูป"],
+    ["เครื่องมือ PDF", "/tools/PDFTools/", "รวม แยก แปลง จัดหน้า และป้องกัน PDF"],
+    ["เครื่องมือเสียงและวิดีโอ", "/tools/media/", "แปลงไฟล์ ดึงเสียง และบีบอัดวิดีโอ"],
+    ["เครื่องมือเอกสาร", "/tools/document/", "แปลง DOCX ดึงข้อความ PDF และทำ OCR"],
+    ["เครื่องมือ AI Context", "/tools/ai/", "นับ token ทำความสะอาด context และแบ่ง RAG chunk"],
+    ["เครื่องมือ Spreadsheet", "/tools/spreadsheet/", "แปลงและจัดการ CSV JSON และ XLSX"]
+  ];
+  return <nav className="tool-ecosystem-directory" aria-labelledby={`tool-ecosystem-${language}`} data-tool-discovery><div><p className="eyebrow">{en ? "EXPLORE DJAI TOOLS" : "สำรวจเครื่องมือ DJAI"}</p><h2 id={`tool-ecosystem-${language}`}>{en ? "Continue with another free workflow" : "ทำงานต่อด้วยเครื่องมือฟรีหมวดอื่น"}</h2></div><div>{links.map(([label, href, description]) => <a href={href} key={href}><strong>{label}</strong><span>{description}</span><ArrowRight /></a>)}</div></nav>;
 }
 
 export function SuiteFooter({ language }: { language: Language }) {

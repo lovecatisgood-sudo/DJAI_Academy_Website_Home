@@ -231,6 +231,14 @@ img { max-width: 100%; height: auto; }
 .mobile-app-callout h2 { margin: 4px 0 8px; font-size: clamp(1.45rem, 3vw, 2.25rem); line-height: 1.1; }
 .mobile-app-callout p:not(.eyebrow) { margin: 0; max-width: 720px; color: var(--muted); line-height: 1.65; }
 .mobile-app-callout .primary-button { justify-self: end; white-space: nowrap; }
+.tool-ecosystem-directory { width: min(1180px, calc(100% - 40px)); margin: 0 auto; padding: 72px 0; }
+.tool-ecosystem-directory > div:first-child { max-width: 760px; margin-bottom: 28px; }
+.tool-ecosystem-directory h2 { margin: 8px 0 0; color: var(--navy); font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.05; }
+.tool-ecosystem-directory > div:last-child { display: grid; gap: 12px; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.tool-ecosystem-directory a { display: grid; min-height: 124px; grid-template-columns: 1fr auto; align-content: center; gap: 7px 13px; padding: 18px; color: var(--navy); background: white; border: 1px solid var(--line); border-radius: 8px; }
+.tool-ecosystem-directory a:hover, .tool-ecosystem-directory a:focus-visible { border-color: var(--cyan); }
+.tool-ecosystem-directory a span { color: var(--muted); font-size: .76rem; line-height: 1.5; }
+.tool-ecosystem-directory a svg { grid-column: 2; grid-row: 1 / span 2; align-self: center; width: 17px; color: var(--cyan); }
 .suite-footer { display: grid; grid-template-columns: 1.4fr .6fr .8fr; gap: 50px; padding: 60px max(24px, calc((100vw - 1180px) / 2)); color: #bdcbe0; background: var(--navy); }
 .suite-footer > div:first-child { display: grid; grid-template-columns: 100px 1fr; align-items: center; gap: 15px; }
 .suite-footer > div:first-child img { width: 100px; }
@@ -245,6 +253,7 @@ img { max-width: 100%; height: auto; }
 .document-render-surface td, .document-render-surface th { padding: 6px; border: 1px solid #777; }
 
 @media (max-width: 960px) {
+  .tool-ecosystem-directory > div:last-child { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .suite-header { align-items: flex-start; padding-top: 10px; padding-bottom: 10px; }
   .suite-header nav { overflow-x: auto; max-width: 70vw; }
   .suite-header nav a { flex: 0 0 auto; }
@@ -260,6 +269,8 @@ img { max-width: 100%; height: auto; }
 }
 
 @media (max-width: 700px) {
+  .tool-ecosystem-directory { width: min(100% - 30px, 1180px); padding: 54px 0; }
+  .tool-ecosystem-directory > div:last-child { grid-template-columns: 1fr; }
   .suite-header { position: static; display: grid; gap: 7px; }
   .suite-header nav { width: 100%; max-width: 100%; padding-bottom: 3px; }
   .suite-header nav a { min-height: 34px; padding: 0 8px; }

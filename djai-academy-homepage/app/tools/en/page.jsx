@@ -1,5 +1,6 @@
 import AdSenseAd from "../../components/AdSenseAd";
 import ShareButtons from "../../components/ShareButtons";
+import ToolDirectorySection from "../ToolDirectorySection";
 
 export const metadata = {
   title: "Free DJAI Tools | PDF, DOCX, AI, CSV, QR and Image Tools",
@@ -241,6 +242,8 @@ export default function ToolsPage() {
           their own internal tools or automation systems.
         </p>
       </section>
+
+      <ToolDirectorySection locale="en" />
 
       <section className="coming-tools" aria-label="Future tool ideas">
         <div>

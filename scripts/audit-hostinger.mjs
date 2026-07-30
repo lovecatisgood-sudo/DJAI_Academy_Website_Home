@@ -212,6 +212,23 @@ async function verify() {
     }
   }
 
+  const toolDiscoveryRoutes = publicRoutes.filter(
+    (route) => route.startsWith("/tools/") && route.endsWith("/")
+  );
+  for (const route of toolDiscoveryRoutes) {
+    const html = await fetch(`${origin}${route}`).then((response) => response.text());
+    if (!html.includes("data-tool-discovery")) {
+      failures.push(`${route}: missing crawlable tool discovery navigation`);
+    }
+  }
+
+  for (const route of ["/", "/blog/", "/course/", "/service/"]) {
+    const html = await fetch(`${origin}${route}`).then((response) => response.text());
+    if (html.includes("data-tool-discovery")) {
+      failures.push(`${route}: tool-only discovery navigation leaked onto a non-tool page`);
+    }
+  }
+
   const promoResponse = await fetch(`${origin}/web_promo/`);
   const promoBody = await promoResponse.text();
   if (!promoBody.includes('<link rel="canonical" href="https://www.djai.academy/web_promo/"')) {

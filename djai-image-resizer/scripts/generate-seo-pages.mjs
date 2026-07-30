@@ -96,6 +96,27 @@ export const presets = [
 
 const escapeHtml = (value) => value.replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
 
+function discoveryMarkup(language, currentSlug) {
+  const en = language === "en";
+  const tools = presets.filter((preset) => preset.slug !== currentSlug).map((preset) => {
+    const [, label, description] = preset[language];
+    const url = `/tools/resizeimg/${preset.slug}/${en ? "en/" : ""}`;
+    return `<a href="${url}"><strong>${escapeHtml(label)}</strong><span>${escapeHtml(description)}</span></a>`;
+  }).join("");
+  const categories = en ? [
+    ["All free tools", "/tools/en/", "Browse every free DJAI tool by task."], ["QR code tools", "/tools/qrgen/en/", "Create QR codes for links, Wi-Fi, and contacts."], ["PDF tools", "/tools/PDFTools/en/", "Merge, split, convert, organize, and protect PDFs."], ["Audio and video", "/tools/media/en/", "Convert media, extract audio, and compress video."], ["Document tools", "/tools/document/en/", "Convert DOCX, extract text, and run OCR."], ["AI context tools", "/tools/ai/en/", "Count tokens, clean context, and plan RAG chunks."], ["Spreadsheet tools", "/tools/spreadsheet/en/", "Convert and process CSV, JSON, and XLSX."]
+  ] : [
+    ["เครื่องมือทั้งหมด", "/tools/", "รวมเครื่องมือฟรีทุกหมวดจาก DJAI"], ["เครื่องมือ QR Code", "/tools/qrgen/", "สร้าง QR สำหรับลิงก์ Wi-Fi และผู้ติดต่อ"], ["เครื่องมือ PDF", "/tools/PDFTools/", "รวม แยก แปลง จัดหน้า และป้องกัน PDF"], ["เสียงและวิดีโอ", "/tools/media/", "แปลงไฟล์ ดึงเสียง และบีบอัดวิดีโอ"], ["เครื่องมือเอกสาร", "/tools/document/", "แปลง DOCX ดึงข้อความ และ OCR"], ["เครื่องมือ AI", "/tools/ai/", "นับ token ทำความสะอาด context และแบ่ง RAG chunk"], ["เครื่องมือ Spreadsheet", "/tools/spreadsheet/", "แปลงและจัดการ CSV JSON และ XLSX"]
+  ];
+  const categoryLinks = categories.map(([label, href, description]) => `<a href="${href}"><strong>${label}</strong><span>${description}</span></a>`).join("");
+  return `<!-- TOOL_DISCOVERY_START --><nav class="tool-discovery-footer section-shell" aria-labelledby="tool-discovery-${language}" data-tool-discovery><div class="tool-discovery-heading"><span class="section-kicker">${en ? "IMAGE WORKFLOWS" : "เครื่องมือรูปภาพ"}</span><h2 id="tool-discovery-${language}">${en ? "Continue with the image task you need" : "ทำงานรูปภาพต่อด้วยเครื่องมือที่ตรงจุด"}</h2><p>${en ? "Choose a focused conversion, compression, resizing, privacy, or background-removal workflow." : "เลือกงานแปลงไฟล์ บีบอัด resize ความเป็นส่วนตัว หรือลบพื้นหลังที่ตั้งค่าไว้พร้อมใช้"}</p></div><div class="tool-discovery-links">${tools}</div><div class="tool-category-links">${categoryLinks}</div></nav><!-- TOOL_DISCOVERY_END -->`;
+}
+
+function injectDiscovery(template, markup) {
+  const clean = template.replace(/<!-- TOOL_DISCOVERY_START -->[\s\S]*?<!-- TOOL_DISCOVERY_END -->\s*/g, "");
+  return clean.replace('  <footer class="site-footer">', `  ${markup}\n\n  <footer class="site-footer">`);
+}
+
 function render(template, preset, language) {
   const [title, h1, description, guideTitle, intro, steps] = preset[language];
   const thaiUrl = `${siteRoot}/${preset.slug}/`;
@@ -123,7 +144,7 @@ function render(template, preset, language) {
   const switchUrl = language === "th" ? englishUrl : thaiUrl;
   const guide = `<section class="seo-guide section-shell" aria-labelledby="seo-guide-heading"><div><span class="section-kicker">${language === "th" ? "คู่มือเครื่องมือ" : "TOOL GUIDE"}</span><h2 id="seo-guide-heading">${escapeHtml(guideTitle)}</h2><p>${escapeHtml(intro)}</p></div><ol>${steps.map((step) => `<li><span>${escapeHtml(step)}</span></li>`).join("")}</ol></section>`;
 
-  return template
+  return injectDiscovery(template, discoveryMarkup(language, preset.slug))
     .replace(/<title>.*?<\/title>/, `<title>${escapeHtml(title)}</title>`)
     .replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${escapeHtml(description)}">`)
     .replace(/<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${canonical}">`)
@@ -144,6 +165,8 @@ function render(template, preset, language) {
 }
 
 const templates = { th: readFileSync(join(publicDir, "index.html"), "utf8"), en: readFileSync(join(publicDir, "en", "index.html"), "utf8") };
+writeFileSync(join(publicDir, "index.html"), injectDiscovery(templates.th, discoveryMarkup("th")));
+writeFileSync(join(publicDir, "en", "index.html"), injectDiscovery(templates.en, discoveryMarkup("en")));
 for (const preset of presets) {
   for (const language of ["th", "en"]) {
     const directory = join(publicDir, preset.slug, ...(language === "en" ? ["en"] : []));

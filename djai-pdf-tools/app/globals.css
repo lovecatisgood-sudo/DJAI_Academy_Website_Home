@@ -268,6 +268,15 @@ input[type="checkbox"] { width: 1px; min-height: 1px; opacity: 0; position: abso
 .faq-list summary span { color: var(--blue); font-size: 1.4rem; }
 .faq-list details p { margin: 0; padding: 0 17px 20px; font-size: .92rem; }
 
+.tool-ecosystem-directory { width: min(100% - 48px, 1240px); margin: 0 auto; padding: 72px 0; }
+.tool-ecosystem-directory > div:first-child { max-width: 740px; margin-bottom: 28px; }
+.tool-ecosystem-directory h2 { margin: 8px 0 0; color: var(--navy); font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.05; }
+.tool-ecosystem-directory > div:last-child { display: grid; gap: 12px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.tool-ecosystem-directory a { display: grid; min-height: 120px; grid-template-columns: 1fr auto; align-content: center; gap: 7px 14px; padding: 18px; color: var(--navy); background: white; border: 1px solid var(--line); border-radius: 7px; }
+.tool-ecosystem-directory a:hover, .tool-ecosystem-directory a:focus-visible { border-color: var(--blue); }
+.tool-ecosystem-directory a strong { align-self: end; }
+.tool-ecosystem-directory a span { color: var(--muted); font-size: .78rem; line-height: 1.5; }
+.tool-ecosystem-directory a svg { grid-column: 2; grid-row: 1 / span 2; align-self: center; width: 18px; color: var(--blue); }
 footer { display: grid; grid-template-columns: 1fr 1.35fr auto; gap: 60px; padding: 60px max(24px, calc((100vw - 1240px)/2)); color: #b8c7da; background: var(--navy); border-top: 1px solid rgba(25,227,255,.18); }
 .footer-brand p { margin: 18px 0 0; color: #8299b6; font-size: .8rem; }
 .footer-links { display: grid; grid-template-columns: repeat(3, 1fr); gap: 34px; }
@@ -315,6 +324,7 @@ footer { display: grid; grid-template-columns: 1fr 1.35fr auto; gap: 60px; paddi
   .seo-section { gap: 36px; }
   .seo-section > div:first-child { position: static; }
   footer { grid-template-columns: 1fr; gap: 36px; }
+  .tool-ecosystem-directory > div:last-child { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .copyright { white-space: normal; }
 }
 
@@ -362,6 +372,8 @@ footer { display: grid; grid-template-columns: 1fr 1.35fr auto; gap: 60px; paddi
   .course-symbol { width: 150px; aspect-ratio: 1; }
   .builder-logo { min-height: 330px; }
   .footer-links { grid-template-columns: 1fr 1fr; }
+  .tool-ecosystem-directory { width: min(100% - 30px, 1240px); padding: 56px 0; }
+  .tool-ecosystem-directory > div:last-child { grid-template-columns: 1fr; }
 }
 
 @media (prefers-reduced-motion: reduce) {

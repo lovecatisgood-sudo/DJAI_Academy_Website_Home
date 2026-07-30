@@ -6,6 +6,7 @@ import AdSenseAd from "./AdSenseAd";
 import ShareButtons from "./ShareButtons";
 import ToolPromoModal, { shouldShowToolPromo } from "./ToolPromoModal";
 import QrTaskFields from "./QrTaskFields";
+import ToolDiscoveryFooter from "./ToolDiscoveryFooter";
 import { qrToolCopy, qrToolHref, qrToolSlugs, type QrPageCopy, type QrToolSlug } from "./qr-tool-data";
 
 const COLORS = ["#D97757", "#0B32A4", "#00BFD8", "#5630C8", "#071E3D", "#F2A65A", "#2E8B57", "#D7467D"];
@@ -291,6 +292,7 @@ export default function Home({ toolSlug, pageCopy }: { toolSlug?: QrToolSlug; pa
         </div>
       </section>
 
+      <ToolDiscoveryFooter language="th" currentTool={toolSlug} />
       <footer>
         <div className="footer-identity">
           <a className="brand footer-brand" href="#top"><img src={assetPath("djai-academy-logo-display.webp")} alt="DJAI Academy" width="384" height="206" loading="lazy" decoding="async" /><span><strong>DJayTools</strong><small>by DJAI Academy</small></span></a>

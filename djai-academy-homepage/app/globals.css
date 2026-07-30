@@ -882,10 +882,93 @@ pre {
 .tools-band,
 .coming-tools,
 .workflow-section,
-.ecosystem-hub {
+.ecosystem-hub,
+.complete-tool-directory {
   width: min(1180px, calc(100% - 32px));
   margin: 0 auto;
 }
+
+.complete-tool-directory {
+  padding: 84px 0;
+  border-bottom: 1px solid rgba(25, 227, 255, 0.16);
+}
+
+.complete-tool-directory > .section-heading {
+  max-width: 850px;
+}
+
+.complete-tool-directory > .section-heading > p:last-child {
+  color: #bdd2ee;
+  line-height: 1.75;
+}
+
+.complete-tool-groups {
+  display: grid;
+  gap: 24px;
+  margin-top: 38px;
+}
+
+.complete-tool-group {
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(25, 227, 255, 0.2);
+  border-radius: 10px;
+}
+
+.complete-tool-group-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 22px;
+}
+
+.complete-tool-group-heading h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: clamp(1.55rem, 3vw, 2.35rem);
+}
+
+.complete-tool-group-heading p {
+  max-width: 720px;
+  margin: 8px 0 0;
+  color: #abc0df;
+  line-height: 1.6;
+}
+
+.complete-tool-group-heading > a {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 8px;
+  color: var(--cyan);
+  font-weight: 900;
+}
+
+.complete-tool-links {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.complete-tool-links a {
+  display: grid;
+  min-height: 112px;
+  align-content: start;
+  gap: 7px;
+  padding: 17px;
+  background: rgba(2, 10, 27, 0.46);
+  border: 1px solid rgba(25, 227, 255, 0.13);
+  border-radius: 8px;
+}
+
+.complete-tool-links a:hover,
+.complete-tool-links a:focus-visible {
+  border-color: rgba(25, 227, 255, 0.56);
+}
+
+.complete-tool-links strong { color: #ffffff; }
+.complete-tool-links span { color: #a9bfdf; font-size: 0.86rem; line-height: 1.5; }
 
 .tools-hero {
   padding: 86px 0 54px;
@@ -2865,9 +2948,13 @@ pre {
   .tools-nav nav,
   .coming-tools ul,
   .workflow-links,
-  .ecosystem-links {
+  .ecosystem-links,
+  .complete-tool-links {
     grid-template-columns: 1fr;
   }
+
+  .complete-tool-group { padding: 20px; }
+  .complete-tool-group-heading { flex-direction: column; }
 
   .tools-app-callout {
     padding: 22px;

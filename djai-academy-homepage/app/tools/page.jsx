@@ -1,5 +1,6 @@
 import AdSenseAd from "../components/AdSenseAd";
 import ShareButtons from "../components/ShareButtons";
+import ToolDirectorySection from "./ToolDirectorySection";
 
 export const metadata = {
   title: "เครื่องมือฟรีจาก DJAI | PDF, DOCX, AI, CSV, QR และรูปภาพ",
@@ -237,6 +238,8 @@ export default function ThaiToolsPage() {
           งานพัฒนา custom tool หรือ automation สำหรับธุรกิจที่ต้องการระบบของตัวเอง
         </p>
       </section>
+
+      <ToolDirectorySection locale="th" />
 
       <section className="coming-tools" aria-label="Future tool ideas">
         <div>

@@ -56,6 +56,41 @@ const icons: Record<ToolSlug, LucideIcon> = {
   "remove-pdf-metadata": Tags
 };
 
+const relatedToolOrder: Record<ToolSlug, ToolSlug[]> = {
+  "merge-pdf": ["split-pdf", "organize-pdf", "compress-pdf", "add-page-numbers", "watermark-pdf", "protect-pdf"],
+  "split-pdf": ["merge-pdf", "organize-pdf", "compress-pdf", "remove-pdf-metadata", "protect-pdf", "add-page-numbers"],
+  "compress-pdf": ["merge-pdf", "split-pdf", "remove-pdf-metadata", "protect-pdf", "organize-pdf", "images-to-pdf"],
+  "images-to-pdf": ["pdf-to-images", "merge-pdf", "compress-pdf", "organize-pdf", "add-page-numbers", "protect-pdf"],
+  "pdf-to-images": ["images-to-pdf", "split-pdf", "compress-pdf", "remove-pdf-metadata", "organize-pdf", "merge-pdf"],
+  "rotate-pdf": ["organize-pdf", "split-pdf", "merge-pdf", "add-page-numbers", "watermark-pdf", "compress-pdf"],
+  "watermark-pdf": ["protect-pdf", "add-page-numbers", "remove-pdf-metadata", "compress-pdf", "merge-pdf", "organize-pdf"],
+  "protect-pdf": ["remove-pdf-metadata", "watermark-pdf", "compress-pdf", "merge-pdf", "organize-pdf", "add-page-numbers"],
+  "organize-pdf": ["split-pdf", "merge-pdf", "rotate-pdf", "add-page-numbers", "compress-pdf", "remove-pdf-metadata"],
+  "add-page-numbers": ["watermark-pdf", "organize-pdf", "merge-pdf", "protect-pdf", "compress-pdf", "remove-pdf-metadata"],
+  "remove-pdf-metadata": ["protect-pdf", "compress-pdf", "watermark-pdf", "organize-pdf", "split-pdf", "merge-pdf"]
+};
+
+const toolCategories = {
+  th: [
+    ["เครื่องมือทั้งหมด", "/tools/", "รวมเครื่องมือฟรีทุกหมวดจาก DJAI"],
+    ["QR Code", "/tools/qrgen/", "สร้าง QR สำหรับลิงก์ Wi-Fi และผู้ติดต่อ"],
+    ["รูปภาพ", "/tools/resizeimg/", "แปลง resize บีบอัด และลบพื้นหลัง"],
+    ["เสียงและวิดีโอ", "/tools/media/", "แปลงไฟล์ ดึงเสียง และบีบอัดวิดีโอ"],
+    ["เอกสาร", "/tools/document/", "แปลง DOCX ดึงข้อความ และ OCR"],
+    ["AI Context", "/tools/ai/", "นับ token แบ่ง RAG chunk และจัด prompt"],
+    ["Spreadsheet", "/tools/spreadsheet/", "แปลงและจัดการ CSV JSON และ XLSX"]
+  ],
+  en: [
+    ["All free tools", "/tools/en/", "Browse every free DJAI tool by task."],
+    ["QR code tools", "/tools/qrgen/en/", "Create QR codes for links, Wi-Fi, and contacts."],
+    ["Image tools", "/tools/resizeimg/en/", "Convert, resize, compress, and remove backgrounds."],
+    ["Audio and video", "/tools/media/en/", "Convert files, extract audio, and compress video."],
+    ["Document tools", "/tools/document/en/", "Convert DOCX, extract text, and run OCR."],
+    ["AI context tools", "/tools/ai/en/", "Count tokens, plan RAG chunks, and package prompts."],
+    ["Spreadsheet tools", "/tools/spreadsheet/en/", "Convert and process CSV, JSON, and XLSX."]
+  ]
+} as const;
+
 function linkedBuilderName(text: string, href: string) {
   return text.split("Siamese Cat Dev").map((part, index) => (
     <Fragment key={`${index}-${part.slice(0, 12)}`}>
@@ -379,7 +414,7 @@ export default function PdfToolsApp({ language, initialTool, seoPage, initialOpt
   const isImageInput = activeTool === "images-to-pdf";
   const allowsMultiple = activeTool === "merge-pdf" || activeTool === "images-to-pdf";
   const accept = acceptOverride || (isImageInput ? "image/jpeg,image/png,image/webp" : "application/pdf,.pdf");
-  const related = useMemo(() => toolSlugs.filter((slug) => slug !== activeTool).slice(0, 4), [activeTool]);
+  const related = useMemo(() => relatedToolOrder[activeTool], [activeTool]);
 
   useEffect(() => () => {
     if (result?.url) URL.revokeObjectURL(result.url);
@@ -594,7 +629,11 @@ export default function PdfToolsApp({ language, initialTool, seoPage, initialOpt
 
       <section className="seo-section"><div><p className="eyebrow">FREE PDF TOOLS</p><h2>{copy.seoTitle}</h2><p>{copy.seoText}</p></div><div className="faq-list"><h2>{copy.faqTitle}</h2>{copy.faq.map(([question, answer]) => <details key={question}><summary>{question}<span>+</span></summary><p>{answer}</p></details>)}</div></section>
 
-      <footer><div className="footer-brand"><a className="brand" href={homeHref(language)}><Image src={`${BASE_PATH}/djai-academy-logo-display.webp`} alt="DJAI Academy" width={114} height={61} loading="lazy" unoptimized /><span><strong>DJTools</strong><small>PDF · by DJAI Academy</small></span></a><p>{copy.footerPrivacy}</p></div><div className="footer-links"><div><strong>DJAI</strong><a href={en ? "https://www.djai.academy/en/" : "https://www.djai.academy/"}>DJAI Academy</a><a href={en ? "https://www.djai.academy/course/en/" : "https://www.djai.academy/course/"}>{copy.nav.course}</a><a href={en ? "https://www.djai.academy/blog/en/" : "https://www.djai.academy/blog/"}>{copy.nav.blog}</a></div><div><strong>BUILD</strong><a href={en ? "https://www.djai.academy/development/en/" : "https://www.djai.academy/development/"}>{copy.nav.development}</a><a href={en ? "https://www.djai.academy/portfolio/en/" : "https://www.djai.academy/portfolio/"}>{copy.portfolioButton}</a><a href={en ? "https://www.djai.academy/siamese_cat/dev/en/" : "https://www.djai.academy/siamese_cat/dev/"}>Siamese Cat Dev</a></div><div><strong>TOOLS</strong>{toolSlugs.slice(0, 4).map((slug) => <a href={toolHref(slug, language)} key={slug}>{toolCopy[language][slug].label}</a>)}</div></div><p className="copyright">© 2026 {copy.copyright}</p></footer>
+      <nav className="tool-ecosystem-directory" aria-labelledby={`tool-ecosystem-${language}`} data-tool-discovery>
+        <div><p className="eyebrow">{en ? "EXPLORE DJAI TOOLS" : "สำรวจเครื่องมือ DJAI"}</p><h2 id={`tool-ecosystem-${language}`}>{en ? "Continue with another free workflow" : "ทำงานต่อด้วยเครื่องมือฟรีหมวดอื่น"}</h2></div>
+        <div>{toolCategories[language].map(([label, href, description]) => <a href={href} key={href}><strong>{label}</strong><span>{description}</span><ArrowRight /></a>)}</div>
+      </nav>
+      <footer><div className="footer-brand"><a className="brand" href={homeHref(language)}><Image src={`${BASE_PATH}/djai-academy-logo-display.webp`} alt="DJAI Academy" width={114} height={61} loading="lazy" unoptimized /><span><strong>DJTools</strong><small>PDF · by DJAI Academy</small></span></a><p>{copy.footerPrivacy}</p></div><div className="footer-links"><div><strong>DJAI</strong><a href={en ? "https://www.djai.academy/en/" : "https://www.djai.academy/"}>DJAI Academy</a><a href={en ? "https://www.djai.academy/course/en/" : "https://www.djai.academy/course/"}>{copy.nav.course}</a><a href={en ? "https://www.djai.academy/blog/en/" : "https://www.djai.academy/blog/"}>{copy.nav.blog}</a></div><div><strong>BUILD</strong><a href={en ? "https://www.djai.academy/development/en/" : "https://www.djai.academy/development/"}>{copy.nav.development}</a><a href={en ? "https://www.djai.academy/portfolio/en/" : "https://www.djai.academy/portfolio/"}>{copy.portfolioButton}</a><a href={en ? "https://www.djai.academy/siamese_cat/dev/en/" : "https://www.djai.academy/siamese_cat/dev/"}>Siamese Cat Dev</a></div><div><strong>TOOLS</strong>{related.slice(0, 4).map((slug) => <a href={toolHref(slug, language)} key={slug}>{toolCopy[language][slug].label}</a>)}</div></div><p className="copyright">© 2026 {copy.copyright}</p></footer>
       <ToolPromoModal language={language} type={promoType} onClose={() => setPromoType(null)} />
     </main>
   );

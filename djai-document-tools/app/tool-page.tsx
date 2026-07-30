@@ -1,7 +1,7 @@
 import { ArrowLeft, ArrowRight, ShieldCheck } from "lucide-react";
 import AdSenseAd from "./AdSenseAd";
 import ShareButtons from "./ShareButtons";
-import { CamPdfAppCallout, ServiceBands, SuiteFooter, SuiteHeader } from "./category-page";
+import { CamPdfAppCallout, ServiceBands, SuiteFooter, SuiteHeader, ToolEcosystemDirectory } from "./category-page";
 import ToolWorkspace from "./ToolWorkspace";
 import { categoryHref, toolHref, toolsFor, type Language, type ToolDefinition } from "./tool-data";
 
@@ -67,7 +67,7 @@ export default function ToolPage({ tool, language }: { tool: ToolDefinition; lan
     ["ใช้งานฟรีหรือไม่?", "ใช้งานฟรี ไม่ต้องสมัคร และไม่มี watermark"],
     ["ทำไม formatting อาจเปลี่ยน?", "แต่ละ format เก็บ layout ต่างกัน การแปลงใน browser เน้น privacy และผลลัพธ์ที่ใช้งานได้มากกว่าการจำลองต้นฉบับแบบสมบูรณ์"]
   ]);
-  const related = toolsFor(tool.category).filter((candidate) => candidate.slug !== tool.slug).slice(0, 4);
+  const related = toolsFor(tool.category).filter((candidate) => candidate.slug !== tool.slug).slice(0, 6);
   const structuredData = [
     { "@context": "https://schema.org", "@type": "SoftwareApplication", name: tool.title[language], description: tool.description[language], url: canonical, applicationCategory: "UtilitiesApplication", operatingSystem: "Web browser", isAccessibleForFree: true, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, publisher: { "@type": "Organization", name: "DJAI Academy", url: "https://www.djai.academy/" } },
     { "@context": "https://schema.org", "@type": "HowTo", name: tool.title[language], totalTime: "PT3M", step: steps.map((text, index) => ({ "@type": "HowToStep", position: index + 1, name: text, text })) },
@@ -84,9 +84,9 @@ export default function ToolPage({ tool, language }: { tool: ToolDefinition; lan
     <CamPdfAppCallout language={language} />
     <section className="how-to"><div><p className="eyebrow">HOW TO</p><h2>{en ? `How to use ${tool.label.en}` : `วิธีใช้ ${tool.label.th}`}</h2><p>{tool.intent[language]}</p></div><ol>{steps.map((step, index) => <li key={step}><span>{index + 1}</span><p>{step}</p></li>)}</ol></section>
     {specializedGuidance ? <section className="how-to tool-specific-guidance"><div><p className="eyebrow">{specializedGuidance.eyebrow}</p><h2>{specializedGuidance.title}</h2><p>{specializedGuidance.copy}</p></div><div><p>{specializedGuidance.limit}</p></div></section> : null}
-    <section className="related-tools"><div className="section-heading"><p className="eyebrow">{en ? "CONTINUE WITH" : "ทำงานต่อ"}</p><h2>{en ? "Related free tools" : "เครื่องมือฟรีที่เกี่ยวข้อง"}</h2></div><div>{related.map((item) => <a href={toolHref(item, language)} key={item.slug}><strong>{item.label[language]}</strong><span>{item.intent[language]}</span><ArrowRight /></a>)}</div></section>
+    <section className="related-tools" data-tool-discovery><div className="section-heading"><p className="eyebrow">{en ? "CONTINUE WITH" : "ทำงานต่อ"}</p><h2>{en ? "Related free tools" : "เครื่องมือฟรีที่เกี่ยวข้อง"}</h2></div><div>{related.map((item) => <a href={toolHref(item, language)} key={item.slug}><strong>{item.label[language]}</strong><span>{item.intent[language]}</span><ArrowRight /></a>)}</div></section>
     <AdSenseAd label="Related content advertisement" variant="multiplex" />
     <section className="faq-section"><div><p className="eyebrow">FAQ</p><h2>{en ? "Common questions" : "คำถามที่พบบ่อย"}</h2></div><div>{faq.map(([question, answer]) => <details key={question}><summary>{question}<span>+</span></summary><p>{answer}</p></details>)}</div></section>
-    <ServiceBands language={language} category={tool.category} /><SuiteFooter language={language} />
+    <ServiceBands language={language} category={tool.category} /><ToolEcosystemDirectory language={language} /><SuiteFooter language={language} />
   </main>;
 }
