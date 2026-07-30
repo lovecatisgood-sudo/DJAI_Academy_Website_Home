@@ -1,0 +1,13 @@
+.next/
+node_modules/
+out/
+
+.env
+.env.local
+.env.*.local
+
+*.log
+.DS_Store
+*.swp
+*.zip
+tsconfig.tsbuildinfo

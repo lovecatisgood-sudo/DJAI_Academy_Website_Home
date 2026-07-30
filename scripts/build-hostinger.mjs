@@ -22,6 +22,19 @@ const projects = [
     ]
   },
   {
+    name: "DJAI web development promo and voice agent",
+    dir: "djai-web-promo-voice",
+    install: "ci",
+    build: ["run", "next:build"],
+    clean: [".next"],
+    outputs: [
+      ".next/BUILD_ID",
+      "public/assets/css/styles.css",
+      "public/assets/js/promo.js",
+      "public/djai-voice-widget.js"
+    ]
+  },
+  {
     name: "DJAI course",
     dir: "djai-academy-course",
     install: "ci",

@@ -35,8 +35,8 @@ const paths = {
     th: COMMUNITY_URL
   },
   promo: {
-    en: "/course/en/#pricing",
-    th: "/course/#pricing"
+    en: "/web_promo/",
+    th: "/web_promo/"
   },
   siameseCatDev: {
     en: "/siamese_cat/dev/en/",

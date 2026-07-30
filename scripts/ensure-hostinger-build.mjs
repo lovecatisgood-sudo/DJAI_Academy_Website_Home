@@ -6,6 +6,7 @@ const rootDir = new URL("..", import.meta.url).pathname;
 
 const requiredOutputs = [
   "djai-academy-homepage/.next/BUILD_ID",
+  "djai-web-promo-voice/.next/BUILD_ID",
   "djai-academy-course/out/index.html",
   "djai-academy-course/out/en/index.html",
   "DJayTools-Free-QR-Generator-Source/out/index.html",

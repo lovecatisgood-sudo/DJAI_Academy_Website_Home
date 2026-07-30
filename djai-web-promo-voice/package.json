@@ -1,0 +1,46 @@
+{
+  "name": "djai-voice-sales-agent",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@11.12.0",
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=9.15.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "npm run hostinger:build",
+    "next:build": "next build",
+    "prepare:standalone": "node scripts/prepare-standalone.mjs",
+    "start": "node --env-file-if-exists=.env.local .next/standalone/server.js",
+    "typecheck": "tsc --noEmit",
+    "migrate": "node --env-file-if-exists=.env.local scripts/migrate.mjs",
+    "verify:env": "node --env-file-if-exists=.env.local scripts/verify-env.mjs",
+    "verify:source": "node scripts/verify-source.mjs",
+    "verify:schema": "node scripts/verify-schema.mjs",
+    "verify:live-schema": "node --env-file-if-exists=.env.local scripts/verify-live-schema.mjs",
+    "verify:standalone": "node scripts/verify-standalone.mjs",
+    "smoke:public": "node scripts/smoke-public.mjs",
+    "smoke:no-secrets": "node scripts/smoke-no-secrets.mjs",
+    "hostinger:build": "npm run verify:env && npm run migrate && npm run verify:source && npm run verify:schema && npm run verify:live-schema && npm run typecheck && npm run next:build && npm run prepare:standalone && npm run verify:standalone",
+    "deploy": "npm run hostinger:build",
+    "package:source": "node scripts/create-source-archive.mjs",
+    "verify:archive": "node scripts/verify-archive.mjs"
+  },
+  "dependencies": {
+    "@google/genai": "^2.11.0",
+    "@neondatabase/serverless": "^1.0.1",
+    "next": "^15.4.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.0",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.0",
+    "typescript": "^5.8.0"
+  }
+}

@@ -1,8 +1,11 @@
 # DJAI Academy Website
 
-This repository is one Hostinger Node.js application composed of the DJAI Academy website and
-several tools mounted below it. Deploy from the repository root; do not select an individual
-subfolder as the application.
+This repository is one Hostinger Node.js application composed of the DJAI Academy website,
+the web-development promotion and voice sales agent, and several tools mounted below it. Deploy
+from the repository root; do not select an individual subfolder as the application.
+
+The promotion is available at `/web_promo/`. Its authenticated voice-agent dashboard is available
+at `/voice_admin/`; the dashboard is intentionally excluded from search indexing.
 
 ## Production commands
 

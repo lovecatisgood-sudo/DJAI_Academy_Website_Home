@@ -4,10 +4,10 @@ import { getAllThaiPosts } from "./lib/thBlogPosts";
 export const revalidate = 3600;
 
 const ORIGIN = "https://www.djai.academy";
-const STATIC_LAST_MODIFIED = new Date("2026-07-28T00:00:00.000Z");
+const STATIC_LAST_MODIFIED = new Date("2026-07-30T00:00:00.000Z");
 
 const corePaths = [
-  "/", "/en/", "/portfolio/", "/portfolio/en/", "/development/", "/development/en/",
+  "/", "/en/", "/portfolio/", "/portfolio/en/", "/development/", "/development/en/", "/web_promo/",
   "/service/", "/service/en/", "/tools/", "/tools/en/", "/tools/qrgen/", "/tools/qrgen/en/",
   "/course/", "/course/en/", "/course/detail/", "/course/detail/en/", "/siamese_cat/",
   "/siamese_cat/en/", "/siamese_cat/dev/", "/siamese_cat/dev/en/", "/siamese_cat/dev/blog/",

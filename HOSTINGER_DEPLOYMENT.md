@@ -21,6 +21,7 @@ Do not configure any of these folders as the application root:
 - `DJayTools-Free-QR-Generator-Source`
 - `djai-academy-homepage`
 - `djai-academy-course`
+- `djai-web-promo-voice`
 - `djai-image-resizer`
 - `Siamese-Cat-Dev-Bio-Site`
 
@@ -36,6 +37,8 @@ This repository contains several apps:
 
 - `djai-academy-homepage` serves the main DJAI site and blog admin backend.
 - `djai-academy-course` is mounted at `/course/`.
+- `djai-web-promo-voice` serves the web-development offer at `/web_promo/` and its protected
+  dashboard at `/voice_admin/`.
 - `DJayTools-Free-QR-Generator-Source` is mounted at `/tools/qrgen/`.
 - `djai-image-resizer` is mounted at `/tools/resizeimg/`.
 - `Siamese-Cat-Dev-Bio-Site` is mounted at `/siamese_cat/dev/`.
@@ -51,6 +54,7 @@ that serves the main Next.js app and mounts the static tools at their public pat
 - `/portfolio/en/`
 - `/development/`
 - `/development/en/`
+- `/web_promo/`
 - `/service/`
 - `/service/en/`
 - `/tools/`
@@ -77,6 +81,20 @@ Set `DJAI_BLOG_ADMIN_PASSWORD` in hPanel before using `/admin/blog/`. Keep it ou
 Set `DJAI_BLOG_API_KEY` if Codex, Hermes, OpenClaw, or another harness agent should publish blog
 posts through API calls. Use a long random secret and send it as `Authorization: Bearer ...` or
 `X-DJAI-Blog-API-Key`.
+
+The voice sales agent also requires these server-only variables:
+
+- `DATABASE_URL`
+- `OPENAI_API_KEY`
+- `ADMIN_USERNAME`
+- `ADMIN_PASSWORD`
+- `SESSION_PASSWORD` (at least 32 random characters)
+- `SESSION_SIGNING_SECRET` (at least 32 random characters)
+- `WIDGET_ALLOWED_ORIGINS=https://www.djai.academy,https://djai.academy`
+
+`GEMINI_API_KEY` is optional and is only needed when the voice provider is switched from OpenAI
+Realtime to Gemini Live. Run the database migration from `djai-web-promo-voice` once before using
+the agent in production; the integrated root build deliberately does not mutate a live database.
 
 For blog content that must persist across deployments, set `DJAI_BLOG_DATA_FILE` to an absolute,
 writable, persistent server path. Without this override, posts are stored in

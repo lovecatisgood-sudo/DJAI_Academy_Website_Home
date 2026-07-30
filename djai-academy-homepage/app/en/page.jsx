@@ -10,7 +10,7 @@ const links = {
   service: "https://www.djai.academy/service/en/",
   course: "https://www.djai.academy/course/en/",
   community: "https://school.djai.academy/",
-  promo: "https://www.djai.academy/course/en/#pricing",
+  promo: "https://www.djai.academy/web_promo/",
   development: "https://www.djai.academy/development/en/",
   blog: "https://www.djai.academy/blog/en/",
   thai: "https://www.djai.academy/"
@@ -18,7 +18,7 @@ const links = {
 
 const developmentLinks = [
   ["Services", links.service],
-  ["Promo", links.promo],
+  ["Web Development Promo", links.promo],
   ["Portfolio", links.portfolio]
 ];
 
@@ -90,7 +90,7 @@ const footerColumns = [
       ["Development", links.development],
       ["Services", links.service],
       ["Portfolio", links.portfolio],
-      ["Current Promo", links.promo]
+      ["Web Development Promo", links.promo]
     ]
   },
   {

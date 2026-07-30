@@ -21,6 +21,7 @@ const publicRoutes = [
   "/portfolio/en/",
   "/development/",
   "/development/en/",
+  "/web_promo/",
   "/service/",
   "/service/en/",
   "/tools/",
@@ -117,6 +118,7 @@ const publicRoutes = [
   "/siamese_cat/dev/blog/",
   "/siamese_cat/dev/blog/en/",
   "/admin/blog/",
+  "/voice_admin/login",
   "/Cam_PDF_Scan_Signer_QR-Gen/",
   "/Cam_PDF_Scan_Signer_QR-Gen/privacy/",
   "/app-ads.txt",
@@ -128,6 +130,7 @@ const publicRoutes = [
 ];
 const redirects = [
   ["/favicon.ico", "/favicon.svg"],
+  ["/voice_admin/", "/voice_admin"],
   ["/th/", "/"],
   ["/EN/", "/en/"],
   ["/tools/Resizeimg/", "/tools/resizeimg/"],
@@ -207,6 +210,24 @@ async function verify() {
     if (response.status !== 200) {
       failures.push(`${route}: expected 200, received ${response.status}`);
     }
+  }
+
+  const promoResponse = await fetch(`${origin}/web_promo/`);
+  const promoBody = await promoResponse.text();
+  if (!promoBody.includes('<link rel="canonical" href="https://www.djai.academy/web_promo/"')) {
+    failures.push("/web_promo/: missing the production canonical URL");
+  }
+  if (!promoBody.includes("Professional websites built to launch, rank, and convert")) {
+    failures.push("/web_promo/: missing crawlable server-rendered service content");
+  }
+
+  const voiceAdminLoginResponse = await fetch(`${origin}/voice_admin/login`);
+  const voiceAdminLoginBody = await voiceAdminLoginResponse.text();
+  if (!String(voiceAdminLoginResponse.headers.get("x-robots-tag") || "").includes("noindex")) {
+    failures.push("/voice_admin/login: missing the X-Robots-Tag noindex directive");
+  }
+  if (!voiceAdminLoginBody.includes('name="robots" content="noindex, nofollow')) {
+    failures.push("/voice_admin/login: missing the HTML noindex directive");
   }
 
   const appAdsResponse = await fetch(`${origin}/app-ads.txt`);

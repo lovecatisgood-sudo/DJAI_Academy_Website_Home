@@ -5,8 +5,11 @@ const zlib = require("node:zlib");
 
 const rootDir = __dirname;
 const homepageDir = path.join(rootDir, "djai-academy-homepage");
+const voicePromoDir = path.join(rootDir, "djai-web-promo-voice");
 const nextPackagePath = path.join(homepageDir, "node_modules", "next");
+const voiceNextPackagePath = path.join(voicePromoDir, "node_modules", "next");
 const next = require(nextPackagePath);
+const voiceNext = require(voiceNextPackagePath);
 const packageMetadata = require(path.join(rootDir, "package.json"));
 
 const port = Number(process.env.PORT || 3000);
@@ -17,6 +20,8 @@ const dev = process.env.NODE_ENV === "development";
 
 const app = next({ dev, dir: homepageDir, hostname, port });
 const handle = app.getRequestHandler();
+const voiceApp = voiceNext({ dev, dir: voicePromoDir, hostname, port });
+const voiceHandle = voiceApp.getRequestHandler();
 
 const mimeTypes = {
   ".html": "text/html; charset=utf-8",
@@ -105,6 +110,13 @@ function matchesMount(pathname, prefix) {
   return pathname === prefix || pathname.startsWith(`${prefix}/`);
 }
 
+function rewriteRequestPath(req, sourcePrefix, destinationPrefix) {
+  const parsedUrl = new URL(req.url || "/", "http://localhost");
+  const suffix = parsedUrl.pathname.slice(sourcePrefix.length);
+  parsedUrl.pathname = `${destinationPrefix}${suffix}` || "/";
+  req.url = `${parsedUrl.pathname}${parsedUrl.search}`;
+}
+
 function resolveStaticFile(mount, pathname) {
   let stripped = pathname.slice(mount.prefix.length) || "/";
   if (stripped.endsWith("/")) stripped += "index.html";
@@ -184,6 +196,7 @@ function serveStaticFile(req, res, filePath) {
 function serveHealth(req, res) {
   const requiredOutputs = [
     path.join(homepageDir, ".next", "BUILD_ID"),
+    path.join(voicePromoDir, ".next", "BUILD_ID"),
     path.join(rootDir, "djai-academy-course", "out", "index.html"),
     path.join(rootDir, "DJayTools-Free-QR-Generator-Source", "out", "index.html"),
     path.join(rootDir, "djai-image-resizer", "public", "index.html"),
@@ -260,7 +273,7 @@ function tryServeMountedStatic(req, res, pathname) {
   return false;
 }
 
-app.prepare().then(() => {
+Promise.all([app.prepare(), voiceApp.prepare()]).then(() => {
   http
     .createServer((req, res) => {
       const pathname = normalizePathname(req.url || "/");
@@ -281,6 +294,30 @@ app.prepare().then(() => {
         return;
       }
 
+      if (pathname === "/web_promo") {
+        redirect(res, "/web_promo/");
+        return;
+      }
+
+      if (matchesMount(pathname, "/web_promo")) {
+        rewriteRequestPath(req, "/web_promo", "");
+        voiceHandle(req, res);
+        return;
+      }
+
+      if (pathname === "/voice_admin/") {
+        redirect(res, "/voice_admin");
+        return;
+      }
+
+      if (matchesMount(pathname, "/voice_admin")) {
+        res.setHeader("X-Robots-Tag", "noindex, nofollow, noarchive");
+        const destinationPrefix = pathname.startsWith("/voice_admin/api/") ? "" : "/admin";
+        rewriteRequestPath(req, "/voice_admin", destinationPrefix);
+        voiceHandle(req, res);
+        return;
+      }
+
       if (tryServeMountedStatic(req, res, pathname)) {
         return;
       }
@@ -288,7 +325,7 @@ app.prepare().then(() => {
       handle(req, res);
     })
     .listen(port, hostname, () => {
-      console.log(`DJAI Academy website running at http://${hostname}:${port}`);
+      console.log(`DJAI Academy website and voice promo running at http://${hostname}:${port}`);
     });
 }).catch((error) => {
   console.error("Unable to start DJAI Academy website.", error);
