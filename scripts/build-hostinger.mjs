@@ -205,6 +205,19 @@ function ensureDependencies(project) {
     return;
   }
 
+  if (existsSync(nodeModules) && !existsSync(marker)) {
+    const dependencyCheck = spawnSync("npm", ["ls", "--omit=dev", "--depth=0"], {
+      cwd,
+      stdio: "ignore",
+      env: process.env
+    });
+
+    if (dependencyCheck.status === 0) {
+      writeFileSync(marker, `${fingerprint}\n`);
+      return;
+    }
+  }
+
   const installCommand = project.install === "ci" && existsSync(lockfile)
     ? ["ci"]
     : ["install"];

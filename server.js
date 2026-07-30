@@ -44,6 +44,14 @@ const mimeTypes = {
 
 const staticMounts = [
   {
+    prefix: "/web_promo/_next/static",
+    dir: path.join(voicePromoDir, ".next", "static")
+  },
+  {
+    prefix: "/web_promo",
+    dir: path.join(voicePromoDir, "public")
+  },
+  {
     prefix: "/course",
     dir: path.join(rootDir, "djai-academy-course", "out")
   },
@@ -300,6 +308,9 @@ Promise.all([app.prepare(), voiceApp.prepare()]).then(() => {
       }
 
       if (matchesMount(pathname, "/web_promo")) {
+        if (tryServeMountedStatic(req, res, pathname)) {
+          return;
+        }
         rewriteRequestPath(req, "/web_promo", "");
         voiceHandle(req, res);
         return;

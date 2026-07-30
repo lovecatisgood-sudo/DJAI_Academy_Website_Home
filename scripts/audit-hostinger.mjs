@@ -221,6 +221,24 @@ async function verify() {
     failures.push("/web_promo/: missing crawlable server-rendered service content");
   }
 
+  const promoScriptResponse = await fetch(`${origin}/web_promo/assets/js/promo.js`);
+  const promoScriptBody = await promoScriptResponse.text();
+  if (promoScriptResponse.status !== 200 || !promoScriptBody.includes("Spin to reveal your guaranteed welcome voucher")) {
+    failures.push("/web_promo/assets/js/promo.js: guaranteed voucher wheel is not available");
+  }
+  if (!promoScriptBody.includes("/web_promo/api/voucher-lead")) {
+    failures.push("/web_promo/assets/js/promo.js: voucher lead endpoint is not connected");
+  }
+
+  const filteredBlogResponse = await fetch(`${origin}/blog/en/?category=Tutorial`);
+  const filteredBlogBody = await filteredBlogResponse.text();
+  if (!filteredBlogBody.includes('<meta name="robots" content="noindex, follow"')) {
+    failures.push("/blog/en/?category=Tutorial: missing noindex, follow directive");
+  }
+  if (filteredBlogBody.includes('<link rel="alternate"')) {
+    failures.push("/blog/en/?category=Tutorial: noncanonical filter must not emit hreflang");
+  }
+
   const llmsResponse = await fetch(`${origin}/llms.txt`);
   const llmsBody = await llmsResponse.text();
   if (!llmsBody.includes("https://www.djai.academy/web_promo/")) {
