@@ -2,26 +2,19 @@ const fs = require("node:fs");
 const http = require("node:http");
 const path = require("node:path");
 const zlib = require("node:zlib");
+const { spawn } = require("node:child_process");
 
 const rootDir = __dirname;
 const homepageDir = path.join(rootDir, "djai-academy-homepage");
 const voicePromoDir = path.join(rootDir, "djai-web-promo-voice");
-const nextPackagePath = path.join(homepageDir, "node_modules", "next");
-const voiceNextPackagePath = path.join(voicePromoDir, "node_modules", "next");
-const next = require(nextPackagePath);
-const voiceNext = require(voiceNextPackagePath);
 const packageMetadata = require(path.join(rootDir, "package.json"));
 
 const port = Number(process.env.PORT || 3000);
 const hostname = process.env.HOST || "0.0.0.0";
 // Hosting providers do not always set NODE_ENV. Default to the production
 // server and opt into development mode only when it is requested explicitly.
-const dev = process.env.NODE_ENV === "development";
-
-const app = next({ dev, dir: homepageDir, hostname, port });
-const handle = app.getRequestHandler();
-const voiceApp = voiceNext({ dev, dir: voicePromoDir, hostname, port });
-const voiceHandle = voiceApp.getRequestHandler();
+const homepagePort = Number(process.env.DJAI_HOMEPAGE_PORT || port + 1);
+const voicePromoPort = Number(process.env.DJAI_VOICE_PROMO_PORT || port + 2);
 
 const mimeTypes = {
   ".html": "text/html; charset=utf-8",
@@ -43,6 +36,10 @@ const mimeTypes = {
 };
 
 const staticMounts = [
+  {
+    prefix: "/_next/static",
+    dir: path.join(homepageDir, ".next", "static")
+  },
   {
     prefix: "/web_promo/_next/static",
     dir: path.join(voicePromoDir, ".next", "static")
@@ -95,6 +92,10 @@ const staticMounts = [
     prefix: "/siamese_cat/dev",
     dir: path.join(rootDir, "Siamese-Cat-Dev-Bio-Site", "dist"),
     excludePrefixes: ["/siamese_cat/dev/blog"]
+  },
+  {
+    prefix: "/",
+    dir: path.join(homepageDir, "public")
   }
 ];
 
@@ -115,6 +116,7 @@ function redirect(res, location, statusCode = 308) {
 }
 
 function matchesMount(pathname, prefix) {
+  if (prefix === "/") return true;
   return pathname === prefix || pathname.startsWith(`${prefix}/`);
 }
 
@@ -204,7 +206,9 @@ function serveStaticFile(req, res, filePath) {
 function serveHealth(req, res) {
   const requiredOutputs = [
     path.join(homepageDir, ".next", "BUILD_ID"),
+    path.join(homepageDir, ".next", "standalone", "server.js"),
     path.join(voicePromoDir, ".next", "BUILD_ID"),
+    path.join(voicePromoDir, ".next", "standalone", "server.js"),
     path.join(rootDir, "djai-academy-course", "out", "index.html"),
     path.join(rootDir, "DJayTools-Free-QR-Generator-Source", "out", "index.html"),
     path.join(rootDir, "djai-image-resizer", "public", "index.html"),
@@ -281,8 +285,81 @@ function tryServeMountedStatic(req, res, pathname) {
   return false;
 }
 
-Promise.all([app.prepare(), voiceApp.prepare()]).then(() => {
-  http
+function proxyRequest(req, res, targetPort) {
+  const upstream = http.request({
+    hostname: "127.0.0.1",
+    port: targetPort,
+    method: req.method,
+    path: req.url,
+    headers: { ...req.headers, host: `127.0.0.1:${targetPort}` }
+  }, (upstreamResponse) => {
+    res.writeHead(upstreamResponse.statusCode || 502, upstreamResponse.headers);
+    upstreamResponse.pipe(res);
+  });
+
+  upstream.on("error", (error) => {
+    console.error(`Unable to proxy ${req.url} to port ${targetPort}.`, error);
+    if (!res.headersSent) {
+      res.writeHead(502, { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store" });
+    }
+    res.end("Application service unavailable");
+  });
+  req.pipe(upstream);
+}
+
+function startStandalone(name, directory, internalPort) {
+  const serverPath = path.join(directory, ".next", "standalone", "server.js");
+  if (!fs.existsSync(serverPath)) {
+    throw new Error(`${name} standalone server is missing: ${serverPath}`);
+  }
+
+  const child = spawn(process.execPath, [serverPath], {
+    cwd: path.dirname(serverPath),
+    env: {
+      ...process.env,
+      NODE_ENV: "production",
+      PORT: String(internalPort),
+      HOSTNAME: "127.0.0.1"
+    },
+    stdio: "inherit"
+  });
+  child.on("exit", (code, signal) => {
+    if (code !== 0 && signal !== "SIGTERM") {
+      console.error(`${name} exited unexpectedly (code ${code}, signal ${signal || "none"}).`);
+    }
+  });
+  return child;
+}
+
+function waitForServer(internalPort, attempts = 100) {
+  return new Promise((resolve, reject) => {
+    const check = (remaining) => {
+      const request = http.get({ hostname: "127.0.0.1", port: internalPort, path: "/" }, (response) => {
+        response.resume();
+        resolve();
+      });
+      request.on("error", () => {
+        if (remaining <= 1) {
+          reject(new Error(`Timed out waiting for internal service on port ${internalPort}`));
+          return;
+        }
+        setTimeout(() => check(remaining - 1), 100);
+      });
+      request.setTimeout(1000, () => request.destroy());
+    };
+    check(attempts);
+  });
+}
+
+const children = [];
+let rootServer;
+
+async function start() {
+  children.push(startStandalone("DJAI homepage", homepageDir, homepagePort));
+  children.push(startStandalone("DJAI voice promo", voicePromoDir, voicePromoPort));
+  await Promise.all([waitForServer(homepagePort), waitForServer(voicePromoPort)]);
+
+  return http
     .createServer((req, res) => {
       const pathname = normalizePathname(req.url || "/");
       const requestHost = String(req.headers.host || "").split(":")[0].toLowerCase();
@@ -312,7 +389,7 @@ Promise.all([app.prepare(), voiceApp.prepare()]).then(() => {
           return;
         }
         rewriteRequestPath(req, "/web_promo", "");
-        voiceHandle(req, res);
+        proxyRequest(req, res, voicePromoPort);
         return;
       }
 
@@ -325,7 +402,7 @@ Promise.all([app.prepare(), voiceApp.prepare()]).then(() => {
         res.setHeader("X-Robots-Tag", "noindex, nofollow, noarchive");
         const destinationPrefix = pathname.startsWith("/voice_admin/api/") ? "" : "/admin";
         rewriteRequestPath(req, "/voice_admin", destinationPrefix);
-        voiceHandle(req, res);
+        proxyRequest(req, res, voicePromoPort);
         return;
       }
 
@@ -333,12 +410,35 @@ Promise.all([app.prepare(), voiceApp.prepare()]).then(() => {
         return;
       }
 
-      handle(req, res);
+      proxyRequest(req, res, homepagePort);
     })
     .listen(port, hostname, () => {
       console.log(`DJAI Academy website and voice promo running at http://${hostname}:${port}`);
     });
+}
+
+function stopChildren() {
+  for (const child of children) {
+    if (!child.killed) child.kill("SIGTERM");
+  }
+}
+
+function shutdown() {
+  stopChildren();
+  if (rootServer) {
+    rootServer.close(() => process.exit(0));
+    return;
+  }
+  process.exit(0);
+}
+
+process.once("SIGTERM", shutdown);
+process.once("SIGINT", shutdown);
+
+start().then((server) => {
+  rootServer = server;
 }).catch((error) => {
   console.error("Unable to start DJAI Academy website.", error);
+  stopChildren();
   process.exit(1);
 });

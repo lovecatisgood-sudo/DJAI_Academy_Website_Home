@@ -1,4 +1,4 @@
-import { existsSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { cpSync, existsSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
@@ -260,14 +260,22 @@ function prepareRuntimeArtifact(project) {
   const nextBuild = join(cwd, ".next");
 
   if (project.runtime) {
-    run("npm", ["prune", "--omit=dev"], cwd);
-    if (!existsSync(join(nodeModules, "next", "package.json"))) {
-      run("npm", ["ci", "--omit=dev"], cwd);
+    const standaloneDir = join(nextBuild, "standalone");
+    const tracedNodeModules = join(standaloneDir, "node_modules");
+    if (!existsSync(join(tracedNodeModules, "next", "package.json"))) {
+      throw new Error(`${project.name} did not generate a self-contained Next.js standalone runtime`);
     }
-    rmSync(join(nodeModules, ".pnpm"), { recursive: true, force: true });
-    rmSync(join(nodeModules, ".ignored"), { recursive: true, force: true });
+
+    // The generated standalone server contains exactly the dependencies traced
+    // by Next.js. Keep it intact and remove the multi-GB build dependency tree.
+    // Static and public assets are copied beside the standalone server because
+    // Next intentionally leaves them out of that directory.
+    rmSync(join(standaloneDir, "public"), { recursive: true, force: true });
+    cpSync(join(cwd, "public"), join(standaloneDir, "public"), { recursive: true });
+    rmSync(join(standaloneDir, ".next", "static"), { recursive: true, force: true });
+    cpSync(join(nextBuild, "static"), join(standaloneDir, ".next", "static"), { recursive: true });
+    rmSync(nodeModules, { recursive: true, force: true });
     rmSync(join(nextBuild, "cache"), { recursive: true, force: true });
-    rmSync(join(nextBuild, "standalone"), { recursive: true, force: true });
     return;
   }
 
