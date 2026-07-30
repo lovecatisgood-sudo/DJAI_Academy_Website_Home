@@ -16,10 +16,17 @@ export const initialKnowledgeMarkdown = `# DJAI Academy Voice Agent Knowledge
 ### Landing Page
 - Promotional price: 5,000 THB.
 - Original listed price: 10,000 THB.
-- Promotion is valid for July and August 2026.
 - Best for a single product, campaign, lead generation, ads, promotions, menus, portfolios, and simple business launches.
 - Includes: 1 custom-designed page, SEO optimization, AI Chat Bot (Auto CTA) 1-month free trial, first-year hosting, mobile responsive layout, and fast turnaround.
 - Renewal note: 3,000 THB/year after the first year.
+
+## Guaranteed Welcome Voucher
+- The welcome wheel always awards a 10,000 THB web-development voucher; it is a guaranteed reveal, not a random prize draw.
+- The visitor has four hours from the first visit to reserve the voucher by email.
+- The full 10,000 THB value applies to the Complete Website package, reducing its standard 20,000 THB price to 10,000 THB.
+- For other packages, the voucher discount is capped at 50% of the standard package price. The Landing Page is therefore 5,000 THB instead of 10,000 THB.
+- Other labels on the wheel preview campaign rewards and are not available in this welcome spin.
+- One voucher is available per customer, and the DJAI team confirms final scope and eligibility.
 
 ### Additional Page
 - Promotional price: 3,000 THB/page.

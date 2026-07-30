@@ -31,7 +31,13 @@ const serviceStructuredData = {
 export default function Home() {
   return (
     <>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `(function(){try{var s=JSON.parse(localStorage.getItem('djai-web-voucher-v1')||'null');var active=!s||(['new','won','form'].includes(s.stage)&&Number(s.deadline)>Date.now());if(active){document.documentElement.classList.add('voucher-pending');setTimeout(function(){document.documentElement.classList.remove('voucher-pending')},3000)}}catch(e){}})();`,
+        }}
+      />
       <PromoHeader />
+      <div id="voucher-welcome-root" />
       <main id="app">
         <article>
           <header>
@@ -58,6 +64,15 @@ export default function Home() {
               <li>Additional Page — 3,000 THB promotional price</li>
               <li>Complete five-page business website — 10,000 THB promotional price</li>
             </ul>
+          </section>
+          <section aria-labelledby="promo-voucher">
+            <h2 id="promo-voucher">Guaranteed 10,000 THB welcome voucher</h2>
+            <p>
+              New visitors can reveal a guaranteed 10,000 THB web-development voucher and
+              reserve it for four hours. The full value applies to the 20,000 THB Complete
+              Website package. Discounts on other packages are capped at 50% of their standard
+              price, including the Landing Page offer at 5,000 THB instead of 10,000 THB.
+            </p>
           </section>
           <section aria-labelledby="promo-ai-agent">
             <h2 id="promo-ai-agent">Talk to the DJAI AI voice sales agent</h2>

@@ -1,6 +1,36 @@
 const basePromoData = {
-  countdownEndsAt: "2026-08-31T23:59:59+07:00",
   contactUrl: "https://dev.djai.academy/contact-us/",
+  voucher: {
+    storageKey: "djai-web-voucher-v1",
+    durationMs: 4 * 60 * 60 * 1000,
+    title: "Spin to reveal your guaranteed welcome voucher",
+    intro: "Every new visitor receives a 10,000 THB web-development voucher in this welcome spin.",
+    spin: "Spin the wheel",
+    skip: "View packages first",
+    disclosure:
+      "This welcome spin always awards the 10,000 THB voucher. Other wheel labels preview campaign rewards and are not available in this welcome spin.",
+    winnerEyebrow: "Congratulations!",
+    winnerTitle: "You unlocked a 10,000 THB voucher",
+    winnerCopy: "Reserve it within 4 hours so the DJAI team can apply it to your project quote.",
+    lock: "Lock in this deal",
+    later: "Later",
+    reopen: "Open ฿10,000 voucher",
+    formTitle: "Reserve your voucher",
+    formCopy: "Enter your email and we will save your interest for a DJAI web-development follow-up.",
+    emailLabel: "Email address",
+    emailPlaceholder: "you@example.com",
+    consent:
+      "I agree that DJAI Academy may contact me about this website offer. I can ask to be removed at any time.",
+    submit: "Reserve my voucher",
+    submitting: "Saving…",
+    successTitle: "Your voucher is reserved",
+    successCopy: "Thank you. Your email is now in the DJAI lead dashboard for follow-up.",
+    error: "We could not save your email. Please try again.",
+    expired: "Voucher reservation window expired",
+    terms:
+      "Full 10,000 THB value applies to the 20,000 THB Complete Website package. For other packages, the discount is capped at 50% of the standard package price. One voucher per customer; final scope is confirmed by DJAI.",
+    prizes: ["10,000\nTHB", "5,000\nTHB", "2,500\nTHB", "Free\neBooks", "Better luck\nnext time", "100,000\nTHB"],
+  },
   ui: {
     skipToPackages: "Skip to packages",
     languageLabel: "Language",
@@ -56,9 +86,9 @@ const basePromoData = {
       "Thanks. I can help with that. DJAI websites include professional design, mobile responsive layout, SEO foundation, AI chatbot option, and first-year hosting & maintenance. Could you tell me what kind of website you want to build?",
   },
   urgency: {
-    label: "Limited Time Only",
-    offer: "Special Launch Pricing",
-    dates: "July & August 2026",
+    label: "Your voucher window",
+    offer: "Reserve within 4 hours",
+    dates: "Up to 50% off eligible packages",
   },
   header: {
     badge: "Website Packages",
@@ -212,6 +242,34 @@ const basePromoData = {
 };
 
 const thaiPromoOverrides = {
+  voucher: {
+    title: "หมุนวงล้อเพื่อเปิดคูปองต้อนรับของคุณ",
+    intro: "ผู้เข้าชมใหม่ทุกคนจะได้รับคูปองพัฒนาเว็บไซต์มูลค่า 10,000 บาทจากวงล้อต้อนรับนี้",
+    spin: "หมุนวงล้อ",
+    skip: "ดูแพ็กเกจก่อน",
+    disclosure:
+      "วงล้อต้อนรับนี้มอบคูปอง 10,000 บาทให้ทุกครั้ง ส่วนรางวัลอื่นบนวงล้อเป็นตัวอย่างรางวัลแคมเปญและไม่ได้เปิดให้รับจากวงล้อนี้",
+    winnerEyebrow: "ยินดีด้วย!",
+    winnerTitle: "คุณได้รับคูปองมูลค่า 10,000 บาท",
+    winnerCopy: "สำรองสิทธิ์ภายใน 4 ชั่วโมง เพื่อให้ทีม DJAI นำส่วนลดไปใช้ในใบเสนอราคาโปรเจกต์ของคุณ",
+    lock: "ล็อกสิทธิ์นี้ตอนนี้",
+    later: "ไว้ทีหลัง",
+    reopen: "เปิดคูปอง ฿10,000",
+    formTitle: "สำรองคูปองของคุณ",
+    formCopy: "กรอกอีเมล แล้วเราจะบันทึกความสนใจของคุณเพื่อให้ทีมพัฒนาเว็บไซต์ DJAI ติดต่อกลับ",
+    emailLabel: "อีเมล",
+    emailPlaceholder: "you@example.com",
+    consent: "ฉันยินยอมให้ DJAI Academy ติดต่อเกี่ยวกับข้อเสนอเว็บไซต์นี้ และสามารถขอให้หยุดติดต่อได้ทุกเมื่อ",
+    submit: "สำรองคูปองของฉัน",
+    submitting: "กำลังบันทึก…",
+    successTitle: "สำรองคูปองเรียบร้อยแล้ว",
+    successCopy: "ขอบคุณ อีเมลของคุณถูกบันทึกในระบบ lead ของ DJAI เพื่อให้ทีมติดต่อกลับแล้ว",
+    error: "ไม่สามารถบันทึกอีเมลได้ กรุณาลองอีกครั้ง",
+    expired: "หมดเวลาสำรองคูปองแล้ว",
+    terms:
+      "คูปองมูลค่าเต็ม 10,000 บาทใช้กับแพ็กเกจ Complete Website ราคาปกติ 20,000 บาท สำหรับแพ็กเกจอื่น ส่วนลดสูงสุดไม่เกิน 50% ของราคาปกติ จำกัด 1 สิทธิ์ต่อลูกค้า และทีม DJAI จะยืนยันขอบเขตงานขั้นสุดท้าย",
+    prizes: ["10,000\nบาท", "5,000\nบาท", "2,500\nบาท", "eBooks\nฟรี", "ครั้งหน้า\nขอให้โชคดี", "100,000\nบาท"],
+  },
   ui: {
     skipToPackages: "ข้ามไปดูแพ็กเกจ",
     languageLabel: "ภาษา",
@@ -267,9 +325,9 @@ const thaiPromoOverrides = {
       "ขอบคุณครับ/ค่ะ DJAI ช่วยทำเว็บไซต์ดีไซน์มืออาชีพ รองรับมือถือ วางพื้นฐาน SEO มีตัวเลือก AI chatbot และโฮสติ้งปีแรก อยากสร้างเว็บไซต์แบบไหนครับ/ค่ะ",
   },
   urgency: {
-    label: "เวลาจำกัด",
-    offer: "ราคาโปรโมชันเปิดตัว",
-    dates: "กรกฎาคมและสิงหาคม 2026",
+    label: "เวลาสำรองคูปองของคุณ",
+    offer: "สำรองสิทธิ์ภายใน 4 ชั่วโมง",
+    dates: "ลดสูงสุด 50% สำหรับแพ็กเกจที่ร่วมรายการ",
   },
   header: {
     badge: "แพ็กเกจเว็บไซต์",
@@ -441,11 +499,6 @@ function renderCountdownMarkup(prefix) {
   return `
     <div class="urgency-countdown">
       <div class="countdown-item">
-        <span class="countdown-number" data-countdown="${prefix}:days">00</span>
-        <span class="countdown-label">${promoData.ui.countdownLabels.days}</span>
-      </div>
-      <span class="countdown-separator">:</span>
-      <div class="countdown-item">
         <span class="countdown-number" data-countdown="${prefix}:hours">00</span>
         <span class="countdown-label">${promoData.ui.countdownLabels.hours}</span>
       </div>
@@ -479,7 +532,7 @@ function renderUrgency(prefix) {
           <span class="urgency-divider-dot">&middot;</span>
           <span class="urgency-offer">${promoData.urgency.offer}</span>
           <span class="urgency-divider-dot">&middot;</span>
-          <span class="urgency-dates">${promoData.urgency.dates}</span>
+          <span class="urgency-dates" data-countdown-status>${promoData.urgency.dates}</span>
         </div>
         <div class="urgency-icon-right">
           <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
@@ -886,9 +939,96 @@ function renderLanguageSwitch() {
   `;
 }
 
+function renderVoucherExperience() {
+  const prizeLabels = promoData.voucher.prizes
+    .map(
+      (prize, index) => `
+        <span class="voucher-wheel-label" style="--segment-angle: ${index * 60}deg">
+          <b>${escapeHtml(prize).replace("\n", "<br>")}</b>
+        </span>
+      `,
+    )
+    .join("");
+
+  return `
+    <section class="voucher-gate" data-voucher-gate hidden>
+      <div class="voucher-backdrop" aria-hidden="true"></div>
+      <div class="voucher-dialog" role="dialog" aria-modal="true" aria-labelledby="voucher-title">
+        <div class="voucher-panel" data-voucher-panel="spin">
+          <p class="voucher-eyebrow">DJAI Academy welcome offer</p>
+          <h2 id="voucher-title">${promoData.voucher.title}</h2>
+          <p class="voucher-intro">${promoData.voucher.intro}</p>
+          <div class="voucher-wheel-stage">
+            <div class="voucher-pointer" aria-hidden="true"></div>
+            <div class="voucher-wheel" data-voucher-wheel aria-label="${promoData.voucher.title}">
+              <div class="voucher-wheel-rim"></div>
+              ${prizeLabels}
+              <div class="voucher-wheel-hub"><span>DJAI</span></div>
+            </div>
+          </div>
+          <button class="voucher-primary" type="button" data-voucher-spin>${promoData.voucher.spin}</button>
+          <button class="voucher-text-button" type="button" data-voucher-later>${promoData.voucher.skip}</button>
+          <p class="voucher-disclosure">${promoData.voucher.disclosure}</p>
+        </div>
+
+        <div class="voucher-panel" data-voucher-panel="winner" hidden>
+          <div class="voucher-confetti" aria-hidden="true">✦ ✧ ✦</div>
+          <p class="voucher-eyebrow">${promoData.voucher.winnerEyebrow}</p>
+          <h2>${promoData.voucher.winnerTitle}</h2>
+          <div class="voucher-winner-value">฿10,000</div>
+          <p class="voucher-intro">${promoData.voucher.winnerCopy}</p>
+          ${renderCountdownMarkup("voucher")}
+          <div class="voucher-actions">
+            <button class="voucher-primary" type="button" data-voucher-lock>${promoData.voucher.lock}</button>
+            <button class="voucher-secondary" type="button" data-voucher-later>${promoData.voucher.later}</button>
+          </div>
+          <p class="voucher-terms">${promoData.voucher.terms}</p>
+        </div>
+
+        <div class="voucher-panel" data-voucher-panel="form" hidden>
+          <p class="voucher-eyebrow">฿10,000 DJAI voucher</p>
+          <h2>${promoData.voucher.formTitle}</h2>
+          <p class="voucher-intro">${promoData.voucher.formCopy}</p>
+          <form class="voucher-form" data-voucher-form>
+            <label for="voucher-email">${promoData.voucher.emailLabel}</label>
+            <input id="voucher-email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="${promoData.voucher.emailPlaceholder}" maxlength="254" required>
+            <div class="voucher-honeypot" aria-hidden="true">
+              <label for="voucher-website">Website</label>
+              <input id="voucher-website" name="website" type="text" tabindex="-1" autocomplete="off">
+            </div>
+            <label class="voucher-consent">
+              <input name="consent" type="checkbox" required>
+              <span>${promoData.voucher.consent}</span>
+            </label>
+            <p class="voucher-form-status" data-voucher-form-status role="status"></p>
+            <button class="voucher-primary" type="submit">${promoData.voucher.submit}</button>
+            <button class="voucher-text-button" type="button" data-voucher-later>${promoData.voucher.later}</button>
+          </form>
+          <p class="voucher-terms">${promoData.voucher.terms}</p>
+        </div>
+
+        <div class="voucher-panel" data-voucher-panel="success" hidden>
+          <div class="voucher-success-icon" aria-hidden="true">✓</div>
+          <h2>${promoData.voucher.successTitle}</h2>
+          <p class="voucher-intro">${promoData.voucher.successCopy}</p>
+          <button class="voucher-primary" type="button" data-voucher-later>${promoData.voucher.skip}</button>
+        </div>
+      </div>
+    </section>
+    <button class="voucher-reopen" type="button" data-voucher-reopen hidden>
+      <span aria-hidden="true">✦</span> ${promoData.voucher.reopen}
+    </button>
+  `;
+}
+
 function renderPage() {
   const app = document.querySelector("#app");
+  const voucherRoot = document.querySelector("#voucher-welcome-root");
   document.documentElement.lang = currentLanguage === "th" ? "th" : "en";
+
+  if (voucherRoot) {
+    voucherRoot.innerHTML = renderVoucherExperience();
+  }
 
   app.innerHTML = `
     <a class="skip-link" href="#packages">${promoData.ui.skipToPackages}</a>
@@ -899,9 +1039,44 @@ function renderPage() {
   `;
 }
 
+let voucherStateCache;
+
+function getVoucherState() {
+  if (voucherStateCache) {
+    return voucherStateCache;
+  }
+
+  let stored;
+  try {
+    stored = JSON.parse(window.localStorage.getItem(promoData.voucher.storageKey) || "null");
+  } catch {
+    stored = null;
+  }
+
+  const validDeadline = Number.isFinite(stored?.deadline) && stored.deadline > 0;
+  voucherStateCache = validDeadline
+    ? stored
+    : { deadline: Date.now() + promoData.voucher.durationMs, stage: "new" };
+
+  if (voucherStateCache.deadline <= Date.now() && voucherStateCache.stage !== "reserved") {
+    voucherStateCache.stage = "expired";
+  }
+
+  saveVoucherState(voucherStateCache);
+  return voucherStateCache;
+}
+
+function saveVoucherState(state) {
+  voucherStateCache = state;
+  try {
+    window.localStorage.setItem(promoData.voucher.storageKey, JSON.stringify(state));
+  } catch {
+  }
+}
+
 function updateCountdown() {
-  const end = new Date(promoData.countdownEndsAt).getTime();
-  const diff = Math.max(0, end - Date.now());
+  const state = getVoucherState();
+  const diff = Math.max(0, state.deadline - Date.now());
 
   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
   const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -918,6 +1093,163 @@ function updateCountdown() {
   document.querySelectorAll("[data-countdown]").forEach((field) => {
     const [, unit] = field.dataset.countdown.split(":");
     field.textContent = String(values[unit]).padStart(2, "0");
+  });
+
+  if (diff === 0) {
+    if (state.stage !== "reserved" && state.stage !== "expired") {
+      saveVoucherState({ ...state, stage: "expired" });
+    }
+    document.querySelectorAll("[data-countdown-status]").forEach((field) => {
+      field.textContent = promoData.voucher.expired;
+    });
+    document.querySelectorAll("[data-voucher-spin], [data-voucher-lock]").forEach((button) => {
+      button.disabled = true;
+      button.textContent = promoData.voucher.expired;
+    });
+    const reopen = document.querySelector("[data-voucher-reopen]");
+    if (reopen) reopen.hidden = true;
+  }
+}
+
+function bindVoucherExperience() {
+  const gate = document.querySelector("[data-voucher-gate]");
+  if (!gate) {
+    document.documentElement.classList.remove("voucher-pending");
+    return;
+  }
+
+  const panels = [...gate.querySelectorAll("[data-voucher-panel]")];
+  const reopen = document.querySelector("[data-voucher-reopen]");
+  const state = getVoucherState();
+  let previousFocus = null;
+
+  function showPanel(name) {
+    panels.forEach((panel) => {
+      panel.hidden = panel.dataset.voucherPanel !== name;
+    });
+    const activePanel = panels.find((panel) => panel.dataset.voucherPanel === name);
+    window.requestAnimationFrame(() => activePanel?.querySelector("button, input")?.focus());
+  }
+
+  function openGate(panelName) {
+    previousFocus = document.activeElement;
+    gate.hidden = false;
+    if (reopen) reopen.hidden = true;
+    document.body.classList.add("voucher-open");
+    showPanel(panelName);
+    document.documentElement.classList.remove("voucher-pending");
+  }
+
+  function closeGate(stage = "dismissed") {
+    saveVoucherState({ ...getVoucherState(), stage });
+    gate.hidden = true;
+    document.body.classList.remove("voucher-open");
+    document.documentElement.classList.remove("voucher-pending");
+    if (reopen) reopen.hidden = stage === "reserved" || getVoucherState().deadline <= Date.now();
+    previousFocus?.focus?.();
+  }
+
+  if (state.stage === "new") {
+    openGate("spin");
+  } else if (state.stage === "won") {
+    openGate("winner");
+  } else if (state.stage === "form") {
+    openGate("form");
+  } else {
+    document.documentElement.classList.remove("voucher-pending");
+    if (reopen) reopen.hidden = state.stage === "reserved" || state.stage === "expired";
+  }
+
+  gate.querySelector("[data-voucher-spin]")?.addEventListener("click", (event) => {
+    const button = event.currentTarget;
+    const wheel = gate.querySelector("[data-voucher-wheel]");
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    button.disabled = true;
+    wheel.classList.add("is-spinning");
+
+    window.setTimeout(
+      () => {
+        saveVoucherState({ ...getVoucherState(), stage: "won" });
+        showPanel("winner");
+        updateCountdown();
+      },
+      reducedMotion ? 500 : 5200,
+    );
+  });
+
+  gate.querySelector("[data-voucher-lock]")?.addEventListener("click", () => {
+    saveVoucherState({ ...getVoucherState(), stage: "form" });
+    showPanel("form");
+  });
+
+  gate.querySelectorAll("[data-voucher-later]").forEach((button) => {
+    button.addEventListener("click", () => {
+      const panel = button.closest("[data-voucher-panel]")?.dataset.voucherPanel;
+      const stage = panel === "success" ? "reserved" : panel === "spin" ? "new" : panel === "form" ? "form" : "won";
+      closeGate(stage);
+    });
+  });
+
+  reopen?.addEventListener("click", () => {
+    const current = getVoucherState();
+    if (current.deadline <= Date.now() || current.stage === "reserved") {
+      reopen.hidden = true;
+      return;
+    }
+    openGate(current.stage === "form" ? "form" : current.stage === "won" ? "winner" : "spin");
+  });
+
+  gate.querySelector("[data-voucher-form]")?.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const submit = form.querySelector('button[type="submit"]');
+    const status = form.querySelector("[data-voucher-form-status]");
+    const formData = new FormData(form);
+    submit.disabled = true;
+    submit.textContent = promoData.voucher.submitting;
+    status.textContent = "";
+
+    try {
+      const response = await fetch("/web_promo/api/voucher-lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          email: formData.get("email"),
+          website: formData.get("website"),
+          consent: formData.get("consent") === "on",
+          language: currentLanguage,
+          deadline: getVoucherState().deadline,
+          pageUrl: window.location.href,
+        }),
+      });
+      const payload = await response.json().catch(() => ({}));
+      if (!response.ok || !payload.ok) {
+        throw new Error(payload.error || promoData.voucher.error);
+      }
+
+      saveVoucherState({ ...getVoucherState(), stage: "reserved", leadId: payload.leadId || null });
+      showPanel("success");
+    } catch (error) {
+      status.textContent = error instanceof Error ? error.message : promoData.voucher.error;
+      submit.disabled = false;
+      submit.textContent = promoData.voucher.submit;
+    }
+  });
+
+  gate.addEventListener("keydown", (event) => {
+    if (event.key !== "Tab" || gate.hidden) return;
+    const focusable = [...gate.querySelectorAll('button:not([disabled]):not([hidden]), input:not([disabled]):not([type="hidden"])')]
+      .filter((element) => !element.closest("[hidden]"));
+    if (!focusable.length) return;
+    const first = focusable[0];
+    const last = focusable.at(-1);
+    if (event.shiftKey && document.activeElement === first) {
+      event.preventDefault();
+      last.focus();
+    } else if (!event.shiftKey && document.activeElement === last) {
+      event.preventDefault();
+      first.focus();
+    }
   });
 }
 
@@ -1137,6 +1469,7 @@ function bindLanguageSwitch() {
 renderPage();
 updateCountdown();
 window.setInterval(updateCountdown, 1000);
+bindVoucherExperience();
 bindLanguageSwitch();
 bindMobileSlides();
 bindAiChatbots();
