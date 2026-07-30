@@ -27,6 +27,13 @@ export const metadata = {
 
 const tools = [
   {
+    label: "Open SEO Tool",
+    title: "SEO Screaming Toad — SEO Crawler + MCP",
+    text: "ตรวจ Technical SEO, JavaScript, Canonical, Hreflang, Sitemap และ Structured Data พร้อมหลักฐานในเครื่องและ MCP 23 เครื่องมือสำหรับ AI Agent",
+    href: "https://www.djai.academy/tools/seo-screaming-toad/",
+    tags: ["SEO Crawler", "MCP", "Open Source"]
+  },
+  {
     label: "QR Generator",
     title: "Free QR Code Generator",
     text: "สร้าง QR code สำหรับเว็บไซต์ เมนู โปรไฟล์ ฟอร์ม งาน event และ campaign แล้วดาวน์โหลด PNG หรือ SVG ได้ฟรี",
@@ -239,8 +246,6 @@ export default function ThaiToolsPage() {
         </p>
       </section>
 
-      <ToolDirectorySection locale="th" />
-
       <section className="coming-tools" aria-label="Future tool ideas">
         <div>
           <p className="eyebrow">ต่อไป</p>
@@ -269,6 +274,8 @@ export default function ThaiToolsPage() {
       </section>
 
       <AdSenseAd label="Related tools advertisement" variant="multiplex" />
+
+      <ToolDirectorySection locale="th" />
     </main>
   );
 }

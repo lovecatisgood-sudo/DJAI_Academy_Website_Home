@@ -26,6 +26,8 @@ const publicRoutes = [
   "/service/en/",
   "/tools/",
   "/tools/en/",
+  "/tools/seo-screaming-toad/",
+  "/tools/seo-screaming-toad/en/",
   "/tools/qrgen/",
   "/tools/qrgen/en/",
   ...["url-qr-code-generator", "wifi-qr-code-generator", "vcard-qr-code-generator", "text-qr-code-generator", "email-qr-code-generator", "whatsapp-qr-code-generator", "qr-code-generator-with-logo"].flatMap((tool) => [`/tools/qrgen/${tool}/`, `/tools/qrgen/${tool}/en/`]),
@@ -229,6 +231,20 @@ async function verify() {
     }
   }
 
+  const toolHubFooterChecks = [
+    ["/tools/", "สร้างโดยทีมที่มี product จริงและธุรกิจจริง", "SEO crawler โอเพนซอร์สพร้อมหลักฐาน Technical SEO"],
+    ["/tools/en/", "Built by connected teams with real products.", "Open-source SEO crawler with technical evidence"]
+  ];
+  for (const [route, precedingContent, seoCardCopy] of toolHubFooterChecks) {
+    const html = await fetch(`${origin}${route}`).then((response) => response.text());
+    const directoryPosition = html.indexOf("data-tool-discovery");
+    const precedingPosition = html.indexOf(precedingContent);
+    if (directoryPosition < 0 || precedingPosition < 0 || directoryPosition < precedingPosition) {
+      failures.push(`${route}: complete tool directory is not positioned as the final discovery footer`);
+    }
+    if (!html.includes(seoCardCopy)) failures.push(`${route}: SEO crawler footer card is incomplete`);
+  }
+
   const promoResponse = await fetch(`${origin}/web_promo/`);
   const promoBody = await promoResponse.text();
   if (!promoBody.includes('<link rel="canonical" href="https://www.djai.academy/web_promo/"')) {
@@ -260,6 +276,41 @@ async function verify() {
   const llmsBody = await llmsResponse.text();
   if (!llmsBody.includes("https://www.djai.academy/web_promo/")) {
     failures.push("/llms.txt: missing the web development and voice-agent service");
+  }
+  if (!llmsBody.includes("https://www.djai.academy/tools/seo-screaming-toad/en/")) {
+    failures.push("/llms.txt: missing the English SEO Screaming Toad product guide");
+  }
+
+  const screamingToadChecks = [
+    {
+      route: "/tools/seo-screaming-toad/",
+      language: "th",
+      canonical: "https://www.djai.academy/tools/seo-screaming-toad/",
+      repository: "https://github.com/DJAI-Academy/-Screaming-Frog-Screaming-Toad-SEO-100M-URL"
+    },
+    {
+      route: "/tools/seo-screaming-toad/en/",
+      language: "en",
+      canonical: "https://www.djai.academy/tools/seo-screaming-toad/en/",
+      repository: "https://github.com/lovecatisgood-sudo/Free-Opensource-SEO-Screaming-Toad-not-Frog-tool-with-100million-url-crawl-potential"
+    }
+  ];
+  for (const check of screamingToadChecks) {
+    const html = await fetch(`${origin}${check.route}`).then((response) => response.text());
+    if (!html.includes(`<html lang="${check.language}"`)) failures.push(`${check.route}: expected html lang=${check.language}`);
+    if (!html.includes(`<link rel="canonical" href="${check.canonical}"`)) failures.push(`${check.route}: missing self-canonical`);
+    for (const language of ["th", "en", "x-default"]) {
+      if (!new RegExp(`hreflang=["']${language}["']`, "i").test(html)) failures.push(`${check.route}: missing ${language} hreflang`);
+    }
+    if (!html.includes(check.repository)) failures.push(`${check.route}: missing locale-specific source repository`);
+    if (!html.includes('"@type":"SoftwareApplication"')) failures.push(`${check.route}: missing SoftwareApplication structured data`);
+    if (!html.includes('"@type":"FAQPage"')) failures.push(`${check.route}: missing FAQ structured data`);
+    if (!html.includes("SEO Screaming Toad")) failures.push(`${check.route}: missing crawlable product content`);
+  }
+
+  const sitemapBody = await fetch(`${origin}/sitemap.xml`).then((response) => response.text());
+  for (const path of ["/tools/seo-screaming-toad/", "/tools/seo-screaming-toad/en/"]) {
+    if (!sitemapBody.includes(`https://www.djai.academy${path}`)) failures.push(`/sitemap.xml: missing ${path}`);
   }
 
   const voiceAdminLoginResponse = await fetch(`${origin}/voice_admin/login`);

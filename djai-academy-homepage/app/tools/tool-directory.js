@@ -1,5 +1,17 @@
 const categoryData = [
   {
+    id: "seo",
+    base: "/tools/seo-screaming-toad",
+    title: { th: "SEO Crawler และ MCP", en: "SEO crawler and MCP" },
+    description: {
+      th: "ตรวจ Technical SEO, JavaScript SEO และหลักฐานการ Crawl พร้อม MCP สำหรับ AI Agent",
+      en: "Audit technical and JavaScript SEO with crawl evidence and bounded MCP tools for AI agents."
+    },
+    tools: [
+      [null, "SEO Screaming Toad", "SEO crawler โอเพนซอร์สพร้อมหลักฐาน Technical SEO และ MCP สำหรับ AI Agent", "SEO Screaming Toad", "Open-source SEO crawler with technical evidence and bounded MCP tools for AI agents."]
+    ]
+  },
+  {
     id: "qr", base: "/tools/qrgen", title: { th: "เครื่องมือ QR Code", en: "QR code tools" },
     description: { th: "สร้าง QR Code สำหรับลิงก์ Wi-Fi ผู้ติดต่อ ข้อความ และงานสื่อสาร", en: "Create QR codes for links, Wi-Fi, contacts, text, and communication workflows." },
     tools: [
@@ -125,7 +137,9 @@ export function getToolDirectory(language) {
       slug,
       title: en ? enTitle : thTitle,
       description: en ? enDescription : thDescription,
-      href: `${category.base}/${slug}/${en ? "en/" : ""}`
+      href: slug
+        ? `${category.base}/${slug}/${en ? "en/" : ""}`
+        : `${category.base}/${en ? "en/" : ""}`
     }))
   }));
 }

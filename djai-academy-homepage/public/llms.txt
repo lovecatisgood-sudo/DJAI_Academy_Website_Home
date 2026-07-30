@@ -17,6 +17,8 @@ DJAI Academy is an AI education, software development, and product-building orga
 ## Free Browser Tools
 
 - [All DJAI Tools](https://www.djai.academy/tools/)
+- [SEO Screaming Toad — Thai](https://www.djai.academy/tools/seo-screaming-toad/): open-source technical SEO crawler, local evidence store, JavaScript audit workflow, and 23 bounded MCP tools for AI agents
+- [SEO Screaming Toad — English](https://www.djai.academy/tools/seo-screaming-toad/en/): English product guide, installation workflow, audit coverage, MCP configuration, and evidence-backed scale limits
 - [PDF Tools](https://www.djai.academy/tools/PDFTools/)
 - [Image Tools](https://www.djai.academy/tools/resizeimg/)
 - [Audio and Video Tools](https://www.djai.academy/tools/media/)
@@ -26,6 +28,8 @@ DJAI Academy is an AI education, software development, and product-building orga
 - [Spreadsheet Tools](https://www.djai.academy/tools/spreadsheet/)
 
 Most free tools process files locally in the user's browser. Individual tool pages describe supported formats, limitations, and privacy behavior.
+
+SEO Screaming Toad is an independent MIT-licensed release candidate. It is not affiliated with or endorsed by Screaming Frog Ltd. Its 100M+ design is a theoretical segmented-campaign direction; the published production-path evidence currently covers synthetic campaigns up to five million URLs, not a live-network 100-million-URL crawl.
 
 ## Related Entity
 

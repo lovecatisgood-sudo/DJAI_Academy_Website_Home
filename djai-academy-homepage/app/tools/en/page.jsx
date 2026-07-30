@@ -27,6 +27,13 @@ export const metadata = {
 
 const tools = [
   {
+    label: "Open SEO Tool",
+    title: "SEO Screaming Toad — SEO Crawler + MCP",
+    text: "Audit technical SEO, JavaScript, canonicals, hreflang, sitemaps, and structured data with local evidence and 23 MCP tools for AI agents.",
+    href: "https://www.djai.academy/tools/seo-screaming-toad/en/",
+    tags: ["SEO Crawler", "MCP", "Open Source"]
+  },
+  {
     label: "QR Generator",
     title: "Free QR Code Generator",
     text: "Create custom QR codes for websites, menus, profiles, forms, and campaigns. Download PNG or SVG files with no sign-up.",
@@ -243,8 +250,6 @@ export default function ToolsPage() {
         </p>
       </section>
 
-      <ToolDirectorySection locale="en" />
-
       <section className="coming-tools" aria-label="Future tool ideas">
         <div>
           <p className="eyebrow">Coming next</p>
@@ -273,6 +278,8 @@ export default function ToolsPage() {
       </section>
 
       <AdSenseAd label="Related tools advertisement" variant="multiplex" />
+
+      <ToolDirectorySection locale="en" />
     </main>
   );
 }

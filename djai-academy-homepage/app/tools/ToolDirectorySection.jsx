@@ -13,8 +13,8 @@ export default function ToolDirectorySection({ locale = "th" }) {
         </h2>
         <p>
           {en
-            ? "Browse working tools for QR codes, images, PDFs, media, documents, AI context, and spreadsheet data."
-            : "รวมเครื่องมือที่ใช้งานได้จริงสำหรับ QR Code รูปภาพ PDF เสียง วิดีโอ เอกสาร AI context และข้อมูลตาราง"}
+            ? "Browse working tools for SEO audits, QR codes, images, PDFs, media, documents, AI context, and spreadsheet data."
+            : "รวมเครื่องมือที่ใช้งานได้จริงสำหรับตรวจ SEO, QR Code, รูปภาพ, PDF, เสียง, วิดีโอ, เอกสาร, AI context และข้อมูลตาราง"}
         </p>
       </div>
       <div className="complete-tool-groups">
@@ -27,14 +27,16 @@ export default function ToolDirectorySection({ locale = "th" }) {
               </div>
               <a href={category.href}>{en ? "View category" : "ดูหมวดหมู่"}<span aria-hidden="true">→</span></a>
             </div>
-            <div className="complete-tool-links">
-              {category.tools.map((tool) => (
-                <a href={tool.href} key={tool.href}>
-                  <strong>{tool.title}</strong>
-                  <span>{tool.description}</span>
-                </a>
-              ))}
-            </div>
+            {category.tools.length > 0 && (
+              <div className="complete-tool-links">
+                {category.tools.map((tool) => (
+                  <a href={tool.href} key={tool.href}>
+                    <strong>{tool.title}</strong>
+                    <span>{tool.description}</span>
+                  </a>
+                ))}
+              </div>
+            )}
           </section>
         ))}
       </div>

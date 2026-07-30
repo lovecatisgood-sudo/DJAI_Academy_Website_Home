@@ -22,9 +22,7 @@ export function proxy(request) {
   }
 
   const requestHeaders = new Headers(request.headers);
-  const isEnglishPage = /^\/(?:en(?:\/|$)|(?:portfolio|development|service|tools|blog|siamese_cat)\/en(?:\/|$))/.test(
-    pathname
-  );
+  const isEnglishPage = /(?:^|\/)en(?:\/|$)/.test(pathname);
   requestHeaders.set("x-djai-language", isEnglishPage ? "en" : "th");
 
   return NextResponse.next({
