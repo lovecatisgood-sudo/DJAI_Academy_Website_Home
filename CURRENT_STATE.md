@@ -8,11 +8,37 @@ in the older 2026-07-18 history below.
 - Active workspace: `/home/siamesedev/Documents/codex/website_DJAI_HOME`
 - Deployment branch: `main`
 - Remote: `lovecatisgood-sudo/DJAI_Academy_Website_Home`
-- Local `HEAD` and `origin/main`: `ce6fdaa`
+- Latest deployed functional commit: `ab66f69`
 - Latest functional SEO commit: `59a375f`
 - Hostinger deploys automatically from pushes to `main` using root `npm run build` and `npm start`.
 - Canonical production host: `https://www.djai.academy`
 - No temporary local preview or audit server remains running.
+
+Latest web-promotion and voice-agent release:
+
+- Public service page: `https://www.djai.academy/web_promo/`
+- Protected administration entry: `https://www.djai.academy/voice_admin/`
+- Integration base commit: `426924a`
+- Mobile and SEO remediation commit: `ab66f69`
+- The mobile AI voice card is constrained below the fixed header and inside the safe viewport.
+  At an emulated `360x640` viewport, the panel measured approximately `522px` high, its card
+  ended at `614px`, all actions/privacy copy remained visible, and no horizontal overflow existed.
+- `/web_promo/` now has a Thai-aligned title, description, H1, explicit `index, follow`, a
+  self-referencing canonical, Open Graph/Twitter metadata, bilingual crawlable service copy,
+  expanded `Service` JSON-LD linked to the main Organization entity, and three Offer entries.
+- `llms.txt` now identifies the web-development promotion and OpenAI Realtime voice-agent service.
+- The production voice health endpoint returned HTTP 200 with database and settings checks true.
+- The new build is present at the Hostinger origin and was verified with a cache-busting query.
+  However, at the time of this checkpoint, the clean canonical URL still returned the prior HTML
+  from Hostinger CDN (`x-hcdn-cache-status: HIT`, long-lived `s-maxage`). The next required action
+  is to purge the domain cache in hPanel, then recrawl the clean `/web_promo/` URL.
+- A targeted Screaming Frog 24.3 List Mode crawl of the new origin returned HTTP 200, one H1,
+  title and meta description, `index, follow`, and the intended canonical. It reported the
+  cache-busting audit URL as canonicalised, which is expected. Its default CLI structured-data
+  export was disabled/empty; JSON-LD was separately parsed successfully.
+- Final local checks passed: voice Next.js production build, homepage production build,
+  TypeScript, `git diff --check`, and the deterministic Hostinger audit (195 pages, 11 redirects,
+  328 internal links/assets, admin API auth, and canonical host).
 
 Current public tool clusters:
 

@@ -14,7 +14,23 @@ Updated: 2026-07-30
 - Persistent blog hreflang compatibility commit: `cf3601d`
 - Initial-head metadata compatibility commit: `59a375f`
 - State and audit documentation base commit: `ce6fdaa`
+- Web-promotion and voice-admin integration commit: `426924a`
+- Web-promotion mobile and SEO remediation commit: `ab66f69`
 - Live deployment verified on 2026-07-30 after Hostinger auto-deploy.
+
+## Web Promotion and Voice Agent — Current Handoff
+
+- Public page: `/web_promo/`; protected admin: `/voice_admin/`.
+- Required production environment values were configured in hPanel and the live voice API health
+  check confirms both database and settings connectivity.
+- The short-phone mobile layout, header-aware positioning, metadata, crawlable bilingual content,
+  Service/Offer structured data, social metadata, and `llms.txt` entry are pushed on `main` at
+  `ab66f69`.
+- The new origin responds correctly when the CDN cache is bypassed. The clean public URL was still
+  serving the previous cached document at the checkpoint. Purge Hostinger CDN cache in hPanel,
+  then verify the clean URL without query parameters and run the final Screaming Frog List crawl.
+- Do not claim guaranteed ranking, indexing, or AI citations. Technical readiness is verified;
+  Google Search Console and field performance data remain authoritative for actual search results.
 
 ## Included Tool Clusters
 
