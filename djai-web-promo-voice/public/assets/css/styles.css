@@ -2654,12 +2654,13 @@ img {
   }
 
   .mobile-slide-ai-chat {
-    padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+    align-items: flex-start;
+    padding: 112px 12px calc(12px + env(safe-area-inset-bottom));
   }
 
   .mobile-slide-ai-chat .mobile-slide-panel {
-    height: calc(100svh - 20px - env(safe-area-inset-bottom));
-    max-height: calc(100svh - 20px - env(safe-area-inset-bottom));
+    height: min(680px, calc(100svh - 124px - env(safe-area-inset-bottom)));
+    max-height: min(680px, calc(100svh - 124px - env(safe-area-inset-bottom)));
   }
 
   .mobile-slide-ai-chat .mobile-slide-content,
@@ -2668,7 +2669,7 @@ img {
   }
 
   .mobile-slide-ai-chat .mobile-slide-panel .web-pricing-section {
-    padding: 10px;
+    padding: 6px;
   }
 
   .mobile-slide-panel .ai-chat-section {
@@ -2676,9 +2677,9 @@ img {
     height: 100%;
     min-height: 0;
     flex-direction: column;
-    gap: 10px;
+    gap: 6px;
     margin: 0;
-    padding: 12px;
+    padding: 8px;
     border-radius: 20px;
   }
 
@@ -2694,6 +2695,11 @@ img {
     text-align: center;
   }
 
+  .mobile-slide-ai-chat .ai-chat-badge,
+  .mobile-slide-ai-chat .ai-chat-copy p {
+    display: none;
+  }
+
   .mobile-slide-panel .ai-chat-badge {
     margin-bottom: 9px;
     padding: 7px 14px;
@@ -2702,8 +2708,8 @@ img {
 
   .mobile-slide-panel .ai-chat-copy h2 {
     max-width: 320px;
-    margin: 0 auto 7px;
-    font-size: 21px;
+    margin: 0 auto 2px;
+    font-size: 18px;
     line-height: 1.16;
     letter-spacing: -0.02em;
   }
@@ -2717,7 +2723,7 @@ img {
 
   .mobile-slide-panel .ai-chat-card {
     min-height: 0;
-    max-height: none;
+    max-height: 500px;
     flex: 1;
     padding: 9px;
     border-radius: 22px;
@@ -2762,13 +2768,13 @@ img {
   }
 
   .mobile-slide-panel .voice-agent-body {
-    gap: 10px;
-    padding: 12px 5px 10px;
+    gap: 7px;
+    padding: 8px 5px 7px;
   }
 
   .mobile-slide-panel .voice-agent-meter {
-    min-height: 82px;
-    padding: 16px 18px;
+    min-height: 62px;
+    padding: 10px 16px;
     border-radius: 18px;
   }
 
@@ -2797,13 +2803,13 @@ img {
   }
 
   .mobile-slide-panel .voice-agent-state {
-    min-height: 40px;
+    min-height: 34px;
     font-size: 12px;
     line-height: 1.45;
   }
 
   .mobile-slide-panel .voice-agent-transcript {
-    max-height: 94px;
+    max-height: 72px;
   }
 
   .mobile-slide-panel .voice-agent-line {
@@ -2851,7 +2857,7 @@ img {
   }
 
   .mobile-slide-panel .voice-agent-actions button {
-    min-height: 42px;
+    min-height: 40px;
     border-radius: 13px;
     font-size: 12px;
   }
@@ -2876,7 +2882,49 @@ img {
 
   .mobile-slide-panel .ai-privacy-note {
     padding: 0 5px max(2px, env(safe-area-inset-bottom));
-    font-size: 10px;
+    font-size: 9px;
+    line-height: 1.25;
+  }
+}
+
+@media (max-width: 767px) and (max-height: 700px) {
+  .mobile-slide-ai-chat {
+    padding-top: 106px;
+  }
+
+  .mobile-slide-ai-chat .mobile-slide-panel {
+    height: calc(100svh - 118px - env(safe-area-inset-bottom));
+    max-height: calc(100svh - 118px - env(safe-area-inset-bottom));
+  }
+
+  .mobile-slide-panel .ai-chat-section {
+    padding: 6px;
+  }
+
+  .mobile-slide-panel .ai-chat-copy h2 {
+    font-size: 16px;
+  }
+
+  .mobile-slide-panel .ai-chat-header {
+    padding: 6px 7px;
+  }
+
+  .mobile-slide-panel .voice-agent-meter {
+    min-height: 48px;
+    padding: 6px 14px;
+  }
+
+  .mobile-slide-panel .voice-agent-state {
+    min-height: 28px;
+    font-size: 11px;
+  }
+
+  .mobile-slide-panel .voice-agent-actions {
+    padding-top: 5px;
+  }
+
+  .mobile-slide-panel .voice-agent-actions button {
+    min-height: 38px;
   }
 }
 

@@ -9,6 +9,7 @@ DJAI Academy is an AI education, software development, and product-building orga
 - [Courses](https://www.djai.academy/course/): AI and vibe coding courses
 - [Software Development](https://www.djai.academy/development/): development capabilities
 - [Services](https://www.djai.academy/service/): project and software services
+- [Web Development Promotion](https://www.djai.academy/web_promo/): bilingual landing-page and business-website packages with technical SEO, hosting, AI chatbot, and an OpenAI Realtime voice sales agent
 - [Portfolio](https://www.djai.academy/portfolio/): selected work
 - [Blog](https://www.djai.academy/blog/): guides and articles
 - [Online Community](https://school.djai.academy/): DJAI learning community

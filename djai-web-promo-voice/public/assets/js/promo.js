@@ -944,7 +944,7 @@ function bindMobileSlides() {
   dots.forEach((dot) => {
     dot.addEventListener("click", () => {
       const index = Number(dot.dataset.progressIndex);
-      slides[index].scrollIntoView({ behavior: "smooth", block: "start" });
+      slidesRoot.scrollTo({ top: slides[index].offsetTop, behavior: "smooth" });
     });
   });
 
@@ -972,7 +972,7 @@ function bindMobileSlides() {
     const targetSlide = slides.find((slide) => `#${slide.id}` === hash);
     if (targetSlide) {
       window.requestAnimationFrame(() => {
-        targetSlide.scrollIntoView({ behavior: "auto", block: "start" });
+        slidesRoot.scrollTo({ top: targetSlide.offsetTop, behavior: "instant" });
       });
     }
   }

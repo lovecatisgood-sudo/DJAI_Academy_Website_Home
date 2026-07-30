@@ -217,8 +217,14 @@ async function verify() {
   if (!promoBody.includes('<link rel="canonical" href="https://www.djai.academy/web_promo/"')) {
     failures.push("/web_promo/: missing the production canonical URL");
   }
-  if (!promoBody.includes("Professional websites built to launch, rank, and convert")) {
+  if (!promoBody.includes("บริการพัฒนาเว็บไซต์ พร้อมเปิดตัว ติดอันดับ และสร้างลูกค้า")) {
     failures.push("/web_promo/: missing crawlable server-rendered service content");
+  }
+
+  const llmsResponse = await fetch(`${origin}/llms.txt`);
+  const llmsBody = await llmsResponse.text();
+  if (!llmsBody.includes("https://www.djai.academy/web_promo/")) {
+    failures.push("/llms.txt: missing the web development and voice-agent service");
   }
 
   const voiceAdminLoginResponse = await fetch(`${origin}/voice_admin/login`);

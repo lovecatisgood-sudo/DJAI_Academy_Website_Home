@@ -3,9 +3,9 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.djai.academy"),
-  title: "Web Development Promotion with AI Voice Agent | DJAI Academy",
+  title: "โปรโมชันพัฒนาเว็บไซต์ พร้อม AI Voice Agent | DJAI Academy",
   description:
-    "Professional web development packages with technical SEO, AI chatbot, OpenAI voice sales agent, hosting, and bilingual support from DJAI Academy.",
+    "บริการพัฒนาเว็บไซต์สำหรับธุรกิจ พร้อม Technical SEO, AI chatbot, OpenAI voice sales agent, โฮสติ้ง และบริการทั้งภาษาไทยและอังกฤษจาก DJAI Academy",
   keywords: [
     "DJAI Academy",
     "website packages",
@@ -22,13 +22,31 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/web_promo/",
   },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     type: "website",
     url: "/web_promo/",
     siteName: "DJAI Academy",
-    title: "Web Development Promotion with AI Voice Agent",
+    title: "โปรโมชันพัฒนาเว็บไซต์ พร้อม AI Voice Agent",
     description:
-      "Professional websites with technical SEO, AI chatbot, OpenAI voice sales agent, hosting, and bilingual support.",
+      "เว็บไซต์ธุรกิจพร้อม Technical SEO, AI chatbot, OpenAI voice sales agent, โฮสติ้ง และบริการสองภาษา",
+    images: [
+      {
+        url: "/social/djai-academy.webp",
+        width: 1200,
+        height: 630,
+        alt: "DJAI Academy web development service",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "โปรโมชันพัฒนาเว็บไซต์ พร้อม AI Voice Agent",
+    description: "เว็บไซต์ธุรกิจพร้อม Technical SEO, AI chatbot และ OpenAI voice sales agent",
+    images: ["/social/djai-academy.webp"],
   },
 };
 

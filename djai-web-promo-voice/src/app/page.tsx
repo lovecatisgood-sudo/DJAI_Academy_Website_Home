@@ -4,12 +4,15 @@ import PromoHeader from "./PromoHeader";
 const serviceStructuredData = {
   "@context": "https://schema.org",
   "@type": "Service",
+  "@id": "https://www.djai.academy/web_promo/#service",
   name: "DJAI Academy Web Development Service",
+  alternateName: "บริการพัฒนาเว็บไซต์ DJAI Academy",
+  description:
+    "Bilingual web development service with technical SEO, responsive design, hosting, AI chatbot, and an OpenAI Realtime voice sales agent.",
   url: "https://www.djai.academy/web_promo/",
+  mainEntityOfPage: "https://www.djai.academy/web_promo/",
   provider: {
-    "@type": "Organization",
-    name: "DJAI Academy",
-    url: "https://www.djai.academy/",
+    "@id": "https://www.djai.academy/#organization",
   },
   areaServed: "Worldwide",
   availableLanguage: ["Thai", "English"],
@@ -33,7 +36,7 @@ export default function Home() {
         <article>
           <header>
             <p>DJAI Academy Web Development Service</p>
-            <h1>Professional websites built to launch, rank, and convert</h1>
+            <h1>บริการพัฒนาเว็บไซต์ พร้อมเปิดตัว ติดอันดับ และสร้างลูกค้า</h1>
             <p>
               Choose a high-converting landing page, additional business page, or complete
               five-page website with technical SEO, responsive design, hosting, and bilingual
@@ -42,6 +45,10 @@ export default function Home() {
             <p lang="th">
               บริการพัฒนาเว็บไซต์สำหรับธุรกิจ พร้อมโครงสร้าง Technical SEO ดีไซน์รองรับมือถือ
               โฮสติ้ง และการสนับสนุนทั้งภาษาไทยและอังกฤษ
+            </p>
+            <p lang="en">
+              Professional websites built to launch, rank, and convert with technical SEO,
+              responsive design, hosting, and bilingual Thai-English support.
             </p>
           </header>
           <section aria-labelledby="promo-packages">
