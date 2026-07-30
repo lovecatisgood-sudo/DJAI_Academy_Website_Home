@@ -10,6 +10,7 @@ const projects = [
   {
     name: "DJAI homepage",
     dir: "djai-academy-homepage",
+    runtime: true,
     install: "ci",
     build: ["run", "build"],
     clean: [".next"],
@@ -25,6 +26,7 @@ const projects = [
   {
     name: "DJAI web development promo and voice agent",
     dir: "djai-web-promo-voice",
+    runtime: true,
     install: "ci",
     build: ["run", "next:build"],
     clean: [".next"],
@@ -201,18 +203,15 @@ function ensureDependencies(project) {
   const marker = join(nodeModules, ".djai-dependency-fingerprint");
   const fingerprint = createHash("sha256").update(readFileSync(manifest)).digest("hex");
 
-  if (existsSync(nodeModules) && existsSync(marker) && readFileSync(marker, "utf8").trim() === fingerprint) {
-    return;
-  }
-
-  if (existsSync(nodeModules) && !existsSync(marker)) {
-    const dependencyCheck = spawnSync("npm", ["ls", "--omit=dev", "--depth=0"], {
+  if (existsSync(nodeModules)) {
+    const fingerprintMatches = existsSync(marker) && readFileSync(marker, "utf8").trim() === fingerprint;
+    const dependencyCheck = spawnSync("npm", ["ls", "--depth=0"], {
       cwd,
       stdio: "ignore",
       env: process.env
     });
 
-    if (dependencyCheck.status === 0) {
+    if (dependencyCheck.status === 0 && (fingerprintMatches || !existsSync(marker))) {
       writeFileSync(marker, `${fingerprint}\n`);
       return;
     }
@@ -255,6 +254,27 @@ function setCourseExportLanguages(project) {
   }
 }
 
+function prepareRuntimeArtifact(project) {
+  const cwd = join(rootDir, project.dir);
+  const nodeModules = join(cwd, "node_modules");
+  const nextBuild = join(cwd, ".next");
+
+  if (project.runtime) {
+    run("npm", ["prune", "--omit=dev"], cwd);
+    if (!existsSync(join(nodeModules, "next", "package.json"))) {
+      run("npm", ["ci", "--omit=dev"], cwd);
+    }
+    rmSync(join(nodeModules, ".pnpm"), { recursive: true, force: true });
+    rmSync(join(nodeModules, ".ignored"), { recursive: true, force: true });
+    rmSync(join(nextBuild, "cache"), { recursive: true, force: true });
+    rmSync(join(nextBuild, "standalone"), { recursive: true, force: true });
+    return;
+  }
+
+  rmSync(nodeModules, { recursive: true, force: true });
+  rmSync(nextBuild, { recursive: true, force: true });
+}
+
 ensureDependencies(projects[0]);
 run("node", ["scripts/optimize-site-images.mjs"], rootDir);
 
@@ -268,6 +288,7 @@ for (const project of projects) {
   run("npm", project.build, cwd);
   validateOutputs(project);
   setCourseExportLanguages(project);
+  prepareRuntimeArtifact(project);
 }
 
 console.log("\nHostinger build completed. Start with: npm start");
