@@ -123,6 +123,8 @@ const publicRoutes = [
   "/voice_admin/login",
   "/Cam_PDF_Scan_Signer_QR-Gen/",
   "/Cam_PDF_Scan_Signer_QR-Gen/privacy/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/terms/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/delete-account/",
   "/app-ads.txt",
   "/favicon.svg",
   "/robots.txt",
@@ -327,6 +329,21 @@ async function verify() {
   const expectedAppAds = "google.com, pub-3624708289866566, DIRECT, f08c47fec0942fa0";
   if (appAdsBody !== expectedAppAds) {
     failures.push("/app-ads.txt: publisher authorization does not match the expected AdMob record");
+  }
+
+  const camPdfChecks = [
+    ["/Cam_PDF_Scan_Signer_QR-Gen/", "Cam PDF Scan Signer QR Gen"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/privacy/", "Privacy Policy"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/terms/", "Terms of Service"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/delete-account/", "Delete your account"]
+  ];
+  for (const [route, heading] of camPdfChecks) {
+    const html = await fetch(`${origin}${route}`).then((response) => response.text());
+    if (!html.includes('<html lang="en"')) failures.push(`${route}: expected html lang=en`);
+    if (!html.includes(`<link rel="canonical" href="https://www.djai.academy${route}"`)) {
+      failures.push(`${route}: missing self-canonical`);
+    }
+    if (!html.includes(`<h1`) || !html.includes(heading)) failures.push(`${route}: missing expected H1 content`);
   }
 
   for (const [route, expectedLocation] of redirects) {
