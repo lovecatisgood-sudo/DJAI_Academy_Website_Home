@@ -169,6 +169,24 @@ environment while demo mode is on:
 Remove `DJAI_VOICE_DEMO_MODE` once `DATABASE_URL` points at a migrated database. The application log
 prints a warning banner on every start while it is set.
 
+### Tuning the agent for a noisy room
+
+Voice-activity detection decides when the visitor has started and stopped speaking. Its settings are
+read from the environment so they can be adjusted without a database or a rebuild. Restart after
+changing any of them.
+
+| Variable | Default | Effect |
+| --- | --- | --- |
+| `DJAI_VOICE_VAD_THRESHOLD` | `0.7` | How loud speech must be to count. Raise toward `0.9` in a noisy room; lower toward `0.5` if a softly spoken visitor is missed. |
+| `DJAI_VOICE_VAD_SILENCE_MS` | `800` | Silence before the visitor's turn is treated as finished. Raise if the agent cuts in while someone is still thinking. |
+| `DJAI_VOICE_VAD_PREFIX_MS` | `300` | Audio kept from just before speech was detected. |
+| `DJAI_VOICE_NOISE_REDUCTION` | `far_field` | Use `near_field` for a headset or a handheld phone; `far_field` for a laptop across a desk. |
+
+Out-of-range and non-numeric values fall back to the defaults rather than failing the request.
+
+Barge-in is intentionally disabled: the agent finishes its sentence rather than stopping the moment
+it hears a sound. Turn-taking resumes after the response completes.
+
 ### After changing DATABASE_URL
 
 A new Neon project or branch starts empty. The root build runs only `next:build`, so it never

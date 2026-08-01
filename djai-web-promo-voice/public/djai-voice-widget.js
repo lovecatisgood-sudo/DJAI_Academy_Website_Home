@@ -438,8 +438,29 @@
 
     handleServerEvent(event) {
       if (event.type === "error") {
-        this.addTranscript("system", "Call interrupted. Please try again.");
-        this.endCall("Call interrupted. Please try again.");
+        // The Realtime API emits `error` for recoverable conditions too, most
+        // commonly when voice-activity detection commits a turn while a
+        // response is still playing. Ending the call on every one of those made
+        // ordinary background noise look like a dropped connection. Only
+        // genuinely unrecoverable errors should hang up.
+        const detail = event.error || {};
+        const signature = `${detail.code || ""} ${detail.type || ""}`.toLowerCase();
+        const fatal = [
+          "session_expired",
+          "invalid_api_key",
+          "authentication",
+          "unauthorized",
+          "insufficient_quota",
+          "rate_limit_exceeded",
+        ].some((needle) => signature.includes(needle));
+
+        console.warn("DJAI realtime error event", { fatal, error: detail });
+
+        if (fatal) {
+          this.addTranscript("system", "Call interrupted. Please try again.");
+          this.endCall("Call interrupted. Please try again.");
+        }
+
         return;
       }
 
@@ -731,7 +752,17 @@
       this.startButton.disabled = true;
 
       try {
-        this.localStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        // Without these, the agent's own voice coming out of the speaker is
+        // picked up by the microphone and read as the visitor talking, and
+        // room noise trips voice-activity detection. Browsers do not apply all
+        // three consistently unless they are asked for explicitly.
+        this.localStream = await navigator.mediaDevices.getUserMedia({
+          audio: {
+            echoCancellation: true,
+            noiseSuppression: true,
+            autoGainControl: true,
+          },
+        });
 
         const tokenResponse = await fetch(`${apiBase}/api/session`, {
           method: "POST",

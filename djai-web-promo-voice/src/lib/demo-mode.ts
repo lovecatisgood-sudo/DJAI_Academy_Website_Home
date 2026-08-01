@@ -45,6 +45,50 @@ export function demoSettings(): Settings {
   };
 }
 
+function numberFromEnv(name: string, fallback: number, min: number, max: number) {
+  const raw = optionalEnv(name);
+
+  // Number("") is 0, which is finite, so an unset variable would otherwise
+  // clamp to the minimum instead of using the fallback.
+  if (!raw) {
+    return fallback;
+  }
+
+  const parsed = Number(raw);
+
+  if (!Number.isFinite(parsed)) {
+    return fallback;
+  }
+
+  return Math.min(max, Math.max(min, parsed));
+}
+
+export type TurnDetectionTuning = {
+  threshold: number;
+  prefixPaddingMs: number;
+  silenceDurationMs: number;
+  noiseReduction: "far_field" | "near_field";
+};
+
+/**
+ * Voice-activity detection tuning. Admin Settings cannot reach these while the
+ * database is unavailable, and they are the settings most likely to need
+ * adjusting for a particular room, so they are read from the environment.
+ *
+ * Raise the threshold in a noisy room; lower it if a softly spoken visitor is
+ * not detected. Use near_field for a headset or a handheld phone.
+ */
+export function turnDetectionTuning(): TurnDetectionTuning {
+  const noiseReduction = optionalEnv("DJAI_VOICE_NOISE_REDUCTION").toLowerCase();
+
+  return {
+    threshold: numberFromEnv("DJAI_VOICE_VAD_THRESHOLD", 0.7, 0.1, 0.95),
+    prefixPaddingMs: numberFromEnv("DJAI_VOICE_VAD_PREFIX_MS", 300, 0, 2000),
+    silenceDurationMs: numberFromEnv("DJAI_VOICE_VAD_SILENCE_MS", 800, 200, 5000),
+    noiseReduction: noiseReduction === "near_field" ? "near_field" : "far_field",
+  };
+}
+
 /**
  * Records data that would have been persisted, so a lead captured during a
  * demo can still be recovered from the application log.

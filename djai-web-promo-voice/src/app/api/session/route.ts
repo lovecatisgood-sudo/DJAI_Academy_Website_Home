@@ -8,7 +8,7 @@ import { checkRateLimit } from "@/lib/rate-limit";
 import { buildVersion } from "@/lib/build-info";
 import { readJsonBody } from "@/lib/http-guards";
 import { mintGeminiLiveToken } from "@/lib/gemini-live";
-import { isDemoMode } from "@/lib/demo-mode";
+import { isDemoMode, turnDetectionTuning } from "@/lib/demo-mode";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -217,6 +217,7 @@ export async function POST(request: Request) {
       }
     }
 
+    const tuning = turnDetectionTuning();
     const response = await fetch("https://api.openai.com/v1/realtime/client_secrets", {
       method: "POST",
       headers: {
@@ -239,15 +240,18 @@ export async function POST(request: Request) {
                 model: settings.transcription_model,
               },
               noise_reduction: {
-                type: "far_field",
+                type: tuning.noiseReduction,
               },
               turn_detection: {
                 type: "server_vad",
-                threshold: 0.65,
-                prefix_padding_ms: 300,
-                silence_duration_ms: 700,
+                threshold: tuning.threshold,
+                prefix_padding_ms: tuning.prefixPaddingMs,
+                silence_duration_ms: tuning.silenceDurationMs,
                 idle_timeout_ms: 30000,
                 create_response: true,
+                // Keep the agent talking through background noise. Barge-in is
+                // deliberately off; the visitor's turn is handled after the
+                // current response finishes.
                 interrupt_response: false,
               },
             },
