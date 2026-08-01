@@ -1,10 +1,16 @@
 import { getSql } from "./db";
+import { demoSettings, isDemoMode } from "./demo-mode";
 import type { Settings } from "./types";
 
 let settingsCache: Settings | null = null;
 
 export async function getCachedSettings(): Promise<Settings> {
   if (settingsCache) {
+    return settingsCache;
+  }
+
+  if (isDemoMode()) {
+    settingsCache = demoSettings();
     return settingsCache;
   }
 

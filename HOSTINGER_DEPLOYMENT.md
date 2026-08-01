@@ -135,6 +135,40 @@ This validates every required variable, connects to Neon, prints the live settin
 session usage against the daily cap, and calls the OpenAI API with the configured key to confirm the
 key is valid and can see the configured Realtime model. It prints no secret values.
 
+### Demo mode: running the voice agent with no database
+
+Set `DJAI_VOICE_DEMO_MODE=1` in hPanel and restart. The public agent then runs entirely without a
+database, using the same default settings the migration seeds.
+
+This exists to demonstrate the agent before a database is provisioned. **Nothing is saved.**
+Conversations, transcripts, and captured leads are written to the application log only, each marked
+`[demo-mode] ... was NOT saved`. Voucher-form leads still send their email notification when SMTP is
+configured, because that path does not need the database.
+
+While demo mode is on:
+
+- `/voice_admin` does not work. It reads and writes conversation and lead tables.
+- The daily session cap is not enforced. The per-IP rate limit of 12 sessions per hour still applies.
+- Post-call analysis is off, because it writes conversation rows.
+- `/api/health` reports `"demoMode": true` with a warning, and returns 200.
+- `DATABASE_URL`, `ADMIN_USERNAME`, and `ADMIN_PASSWORD` are not required.
+
+Still required: `OPENAI_API_KEY`, `SESSION_PASSWORD`, `SESSION_SIGNING_SECRET`, and
+`WIDGET_ALLOWED_ORIGINS`.
+
+Because Admin Settings needs the database, the model and voice can be overridden from the
+environment while demo mode is on:
+
+| Variable | Default |
+| --- | --- |
+| `DJAI_VOICE_DEMO_MODEL_ID` | `gpt-realtime-2.1` |
+| `DJAI_VOICE_DEMO_VOICE` | `marin` |
+| `DJAI_VOICE_DEMO_TRANSCRIPTION_MODEL` | `gpt-realtime-whisper` |
+| `DJAI_VOICE_DEMO_PROVIDER` | `openai` |
+
+Remove `DJAI_VOICE_DEMO_MODE` once `DATABASE_URL` points at a migrated database. The application log
+prints a warning banner on every start while it is set.
+
 ### After changing DATABASE_URL
 
 A new Neon project or branch starts empty. The root build runs only `next:build`, so it never

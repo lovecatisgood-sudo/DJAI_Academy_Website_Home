@@ -8,6 +8,7 @@ import { checkRateLimit } from "@/lib/rate-limit";
 import { buildVersion } from "@/lib/build-info";
 import { readJsonBody } from "@/lib/http-guards";
 import { mintGeminiLiveToken } from "@/lib/gemini-live";
+import { isDemoMode } from "@/lib/demo-mode";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -87,6 +88,12 @@ function sanitizePageUrl(value: unknown) {
 }
 
 async function reserveConversation(conversationId: string, pageUrl: string, dailySessionCap: number) {
+  // Demo mode has no conversations table, so there is no daily cap to enforce.
+  // The per-IP rate limit above still applies.
+  if (isDemoMode()) {
+    return true;
+  }
+
   const sql = getSql();
   const rows = (await sql`
     with locked as (
@@ -112,6 +119,10 @@ async function reserveConversation(conversationId: string, pageUrl: string, dail
 }
 
 async function cleanupReservedConversation(conversationId: string) {
+  if (isDemoMode()) {
+    return;
+  }
+
   const sql = getSql();
   await sql`
     delete from conversations

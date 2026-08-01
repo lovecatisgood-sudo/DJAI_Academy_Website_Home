@@ -6,6 +6,7 @@ import { readJsonBody } from "@/lib/http-guards";
 import { checkRateLimit } from "@/lib/rate-limit";
 import { getCachedSettings } from "@/lib/settings-cache";
 import { analyzeAndPersistConversation } from "@/lib/conversation-post-analysis";
+import { isDemoMode, logSkippedWrite } from "@/lib/demo-mode";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -68,6 +69,18 @@ export async function POST(request: Request) {
       : null;
     const pageUrl = typeof body.page_url === "string" ? body.page_url.slice(0, 1000) : null;
     const language = parseLanguage(body.language);
+
+    if (isDemoMode()) {
+      logSkippedWrite("conversation", {
+        conversationId: session.conversationId,
+        duration,
+        language,
+        pageUrl,
+        turns: transcript.length,
+      });
+      return corsJson(request, { ok: true, analysis: "skipped", demoMode: true });
+    }
+
     const sql = getSql();
     const settings = await getCachedSettings();
 

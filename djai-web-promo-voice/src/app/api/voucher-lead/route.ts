@@ -4,6 +4,7 @@ import { getSql } from "@/lib/db";
 import { optionalEnv } from "@/lib/env";
 import { readJsonBody } from "@/lib/http-guards";
 import { checkRateLimit } from "@/lib/rate-limit";
+import { isDemoMode, logSkippedWrite } from "@/lib/demo-mode";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -116,6 +117,21 @@ export async function POST(request: Request) {
     }
     if (deadline <= now || deadline > now + 4 * 60 * 60 * 1000 + 15 * 60 * 1000) {
       return NextResponse.json({ error: "This voucher reservation window has expired." }, { status: 400 });
+    }
+
+    if (isDemoMode()) {
+      logSkippedWrite("voucher lead", { email, language, deadline, pageUrl });
+
+      // The email notification does not need the database, so a voucher lead
+      // captured during a demo still reaches the configured inbox.
+      let notificationSent = false;
+      try {
+        notificationSent = await sendLeadNotification({ email, language, deadline, leadId: null });
+      } catch (notificationError) {
+        console.error("Voucher lead notification failed in demo mode.", notificationError);
+      }
+
+      return NextResponse.json({ ok: true, leadId: null, notificationSent, demoMode: true });
     }
 
     const sql = getSql();

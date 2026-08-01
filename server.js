@@ -366,7 +366,20 @@ function warnAboutVoiceEnv() {
     "WIDGET_ALLOWED_ORIGINS"
   ];
   const read = (name) => String(process.env[name] || "").trim();
-  const missing = required.filter((name) => !read(name));
+  const demoMode = ["1", "true", "on"].includes(read("DJAI_VOICE_DEMO_MODE").toLowerCase());
+
+  if (demoMode) {
+    console.warn(
+      "*** DJAI_VOICE_DEMO_MODE is ON. The voice agent runs without a database: " +
+        "conversations and leads are NOT saved, and /voice_admin is unavailable. " +
+        "Unset this variable once DATABASE_URL points at a migrated database. ***"
+    );
+  }
+
+  const skipInDemo = ["DATABASE_URL", "ADMIN_USERNAME", "ADMIN_PASSWORD"];
+  const missing = required
+    .filter((name) => !(demoMode && skipInDemo.includes(name)))
+    .filter((name) => !read(name));
 
   if (missing.length) {
     console.warn(

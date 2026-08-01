@@ -1,4 +1,5 @@
 import { optionalEnv } from "./env";
+import { isDemoMode } from "./demo-mode";
 
 export type EnvDiagnostics = {
   ok: boolean;
@@ -22,8 +23,21 @@ const requiredNames = [
  * leave this function.
  */
 export function describeEnv(): EnvDiagnostics {
-  const missing = requiredNames.filter((name) => !optionalEnv(name));
+  const demoMode = isDemoMode();
+  const missing = requiredNames.filter((name) => {
+    // Demo mode runs with no database and no admin dashboard, so those
+    // variables are genuinely optional while it is on.
+    if (demoMode && ["DATABASE_URL", "ADMIN_USERNAME", "ADMIN_PASSWORD"].includes(name)) {
+      return false;
+    }
+
+    return !optionalEnv(name);
+  });
   const warnings: string[] = [];
+
+  if (demoMode) {
+    warnings.push("DEMO_MODE_no_data_is_saved");
+  }
 
   for (const name of ["SESSION_PASSWORD", "SESSION_SIGNING_SECRET"] as const) {
     const value = optionalEnv(name);

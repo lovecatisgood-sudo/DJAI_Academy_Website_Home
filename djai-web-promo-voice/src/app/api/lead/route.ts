@@ -4,6 +4,7 @@ import { verifySessionContext } from "@/lib/session-context";
 import { corsJson, corsNoContent } from "@/lib/cors";
 import { readJsonBody } from "@/lib/http-guards";
 import { checkRateLimit } from "@/lib/rate-limit";
+import { isDemoMode, logSkippedWrite } from "@/lib/demo-mode";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -27,6 +28,14 @@ export async function POST(request: Request) {
     }
 
     const lead = parseLeadPayload(body.lead);
+
+    if (isDemoMode()) {
+      // The agent is told the capture succeeded so the call flow stays natural.
+      // The lead exists only in the log until a database is configured.
+      logSkippedWrite("lead", { conversationId: session.conversationId, ...lead });
+      return corsJson(request, { ok: true, leadId: null, demoMode: true });
+    }
+
     const sql = getSql();
     const phone = lead.contact_type === "phone" ? lead.contact : null;
     const email = lead.contact_type === "email" ? lead.contact : null;
