@@ -116,6 +116,24 @@
     return root;
   }
 
+  // Appends the server's failure code to the on-screen message, but only when
+  // the page URL carries ?djaidebug=1. A live demo must never show this.
+  function describeSessionFailure(response, data) {
+    try {
+      if (new URLSearchParams(window.location.search).get("djaidebug") !== "1") {
+        return "";
+      }
+    } catch {
+      return "";
+    }
+
+    const parts = [`http ${response.status}`];
+    if (data && data.code) parts.push(data.code);
+    if (data && data.upstreamStatus) parts.push(`upstream ${data.upstreamStatus}`);
+    if (data && data.requestId) parts.push(`req ${data.requestId}`);
+    return ` [${parts.join(", ")}]`;
+  }
+
   function getClientSecret(data) {
     return (
       data?.clientSecret?.value ||
@@ -723,7 +741,14 @@
         const tokenData = await tokenResponse.json().catch(() => ({}));
 
         if (!tokenResponse.ok) {
-          throw new Error(tokenData.error || "Voice agent is unavailable.");
+          const detail = describeSessionFailure(tokenResponse, tokenData);
+          console.error("DJAI voice session request failed.", {
+            status: tokenResponse.status,
+            code: tokenData.code,
+            upstreamStatus: tokenData.upstreamStatus,
+            requestId: tokenData.requestId,
+          });
+          throw new Error((tokenData.error || "Voice agent is unavailable.") + detail);
         }
 
         this.sessionContext = tokenData.sessionContext;
