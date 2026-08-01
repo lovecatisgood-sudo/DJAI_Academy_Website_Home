@@ -249,10 +249,7 @@ export async function POST(request: Request) {
                 silence_duration_ms: tuning.silenceDurationMs,
                 idle_timeout_ms: 30000,
                 create_response: true,
-                // Keep the agent talking through background noise. Barge-in is
-                // deliberately off; the visitor's turn is handled after the
-                // current response finishes.
-                interrupt_response: false,
+                interrupt_response: tuning.interruptResponse,
               },
             },
             output: {

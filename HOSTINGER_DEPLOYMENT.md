@@ -182,10 +182,17 @@ changing any of them.
 | `DJAI_VOICE_VAD_PREFIX_MS` | `300` | Audio kept from just before speech was detected. |
 | `DJAI_VOICE_NOISE_REDUCTION` | `far_field` | Use `near_field` for a headset or a handheld phone; `far_field` for a laptop across a desk. |
 
+| `DJAI_VOICE_ALLOW_BARGE_IN` | `true` | Whether the visitor can talk over the agent. |
+
 Out-of-range and non-numeric values fall back to the defaults rather than failing the request.
 
-Barge-in is intentionally disabled: the agent finishes its sentence rather than stopping the moment
-it hears a sound. Turn-taking resumes after the response completes.
+Barge-in must stay enabled in normal use. With it off, a turn committed while the agent is still
+speaking cannot produce a reply: the server refuses to cancel the active response, returns
+`conversation_already_has_active_response`, and the visitor's turn is dropped, so the agent appears
+to stop responding as soon as anyone speaks.
+
+If background noise cuts the agent off, raise `DJAI_VOICE_VAD_THRESHOLD` rather than disabling
+barge-in.
 
 ### After changing DATABASE_URL
 

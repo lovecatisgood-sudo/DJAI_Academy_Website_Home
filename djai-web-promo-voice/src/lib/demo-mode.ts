@@ -63,11 +63,30 @@ function numberFromEnv(name: string, fallback: number, min: number, max: number)
   return Math.min(max, Math.max(min, parsed));
 }
 
+function booleanFromEnv(name: string, fallback: boolean) {
+  const raw = optionalEnv(name).toLowerCase();
+
+  if (!raw) {
+    return fallback;
+  }
+
+  if (["1", "true", "on", "yes"].includes(raw)) {
+    return true;
+  }
+
+  if (["0", "false", "off", "no"].includes(raw)) {
+    return false;
+  }
+
+  return fallback;
+}
+
 export type TurnDetectionTuning = {
   threshold: number;
   prefixPaddingMs: number;
   silenceDurationMs: number;
   noiseReduction: "far_field" | "near_field";
+  interruptResponse: boolean;
 };
 
 /**
@@ -86,6 +105,10 @@ export function turnDetectionTuning(): TurnDetectionTuning {
     prefixPaddingMs: numberFromEnv("DJAI_VOICE_VAD_PREFIX_MS", 300, 0, 2000),
     silenceDurationMs: numberFromEnv("DJAI_VOICE_VAD_SILENCE_MS", 800, 200, 5000),
     noiseReduction: noiseReduction === "near_field" ? "near_field" : "far_field",
+    // Barge-in must be allowed, otherwise a turn committed while the agent is
+    // still speaking cannot produce a response: the server refuses to cancel
+    // the active one and the visitor's turn is silently dropped.
+    interruptResponse: booleanFromEnv("DJAI_VOICE_ALLOW_BARGE_IN", true),
   };
 }
 
