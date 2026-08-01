@@ -1,4 +1,4 @@
-import { neon } from "@neondatabase/serverless";
+import { loadNeon } from "./neon-client.mjs";
 import { redactError, requireDatabaseUrl } from "./env-utils.mjs";
 import { loadLocalEnv } from "./local-env.mjs";
 
@@ -115,7 +115,7 @@ const initialKnowledgeMarkdown = `# DJAI Academy Voice Agent Knowledge
 `;
 
 async function migrate() {
-  const sql = neon(requireDatabaseUrl());
+  const sql = (await loadNeon())(requireDatabaseUrl());
 
   await sql.transaction((tx) => [
     tx`create extension if not exists pgcrypto`,

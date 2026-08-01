@@ -135,6 +135,30 @@ This validates every required variable, connects to Neon, prints the live settin
 session usage against the daily cap, and calls the OpenAI API with the configured key to confirm the
 key is valid and can see the configured Realtime model. It prints no secret values.
 
+### After changing DATABASE_URL
+
+A new Neon project or branch starts empty. The root build runs only `next:build`, so it never
+migrates, and the app cannot create its own schema. Until the migration runs, `/api/health` returns
+503 and `/api/session` returns 500 because `getCachedSettings()` cannot find the settings row.
+
+The migration cannot be run on a deployed Hostinger server: the build deletes
+`djai-web-promo-voice/node_modules`, and Next.js bundles the Neon driver into `.next/server/chunks`
+rather than tracing it into `.next/standalone/node_modules`, so no importable copy is left behind.
+The running app is unaffected because it uses the bundled copy.
+
+Neon accepts connections from anywhere, so run the migration from any machine with dependencies
+installed:
+
+```bash
+cd djai-web-promo-voice
+npm ci
+DATABASE_URL="<new Neon string>" npm run migrate
+DATABASE_URL="<new Neon string>" npm run verify:live-schema
+```
+
+Conversations and leads live in the database, so pointing at a new one leaves the previous history
+in the old database. Export anything worth keeping before decommissioning it.
+
 ### After rotating SESSION_PASSWORD
 
 Admin cookies are signed with `SESSION_PASSWORD` (falling back to `SESSION_SIGNING_SECRET`), so

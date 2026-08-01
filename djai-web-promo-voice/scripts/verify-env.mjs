@@ -1,4 +1,4 @@
-import { neon } from "@neondatabase/serverless";
+import { loadNeon } from "./neon-client.mjs";
 import { loadLocalEnv } from "./local-env.mjs";
 import { readEnv, requireDatabaseUrl } from "./env-utils.mjs";
 
@@ -22,7 +22,7 @@ if (missing.length) {
 }
 
 try {
-  neon(requireDatabaseUrl());
+  (await loadNeon())(requireDatabaseUrl());
 } catch (error) {
   console.error(
     error instanceof Error && !error.message.includes("Connection string:")

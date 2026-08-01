@@ -1,4 +1,4 @@
-import { neon } from "@neondatabase/serverless";
+import { loadNeon } from "./neon-client.mjs";
 import { loadLocalEnv } from "./local-env.mjs";
 import { redactError, requireDatabaseUrl } from "./env-utils.mjs";
 
@@ -86,7 +86,7 @@ function fail(message) {
 }
 
 async function main() {
-  const sql = neon(requireDatabaseUrl());
+  const sql = (await loadNeon())(requireDatabaseUrl());
   const columnRows = await sql`
     select table_name, column_name
     from information_schema.columns

@@ -6,7 +6,7 @@
 //
 //   node scripts/diagnose-voice-agent.mjs
 //   node scripts/diagnose-voice-agent.mjs --skip-network
-import { neon } from "@neondatabase/serverless";
+import { loadNeon } from "./neon-client.mjs";
 import { loadLocalEnv } from "./local-env.mjs";
 import { readEnv, redactError, requireDatabaseUrl } from "./env-utils.mjs";
 
@@ -162,7 +162,7 @@ if (!readEnv("DATABASE_URL")) {
   console.log("  skip  --skip-network was passed.");
 } else {
   try {
-    const sql = neon(requireDatabaseUrl());
+    const sql = (await loadNeon())(requireDatabaseUrl());
     const rows = await sql`select * from settings where id = 1 limit 1`;
     settings = rows[0] || null;
 
@@ -211,10 +211,30 @@ if (!readEnv("DATABASE_URL")) {
       }
     }
   } catch (error) {
-    fail(
-      `Database check failed: ${redactError(error)}`,
-      "Confirm DATABASE_URL is the current Neon connection string and the project is not suspended.",
-    );
+    const message = redactError(error);
+
+    // loadNeon() already explains itself; a generic connection hint would only
+    // point somewhere unrelated.
+    if (message.includes("Cannot find @neondatabase/serverless")) {
+      fail(message);
+    } else if (/relation .* does not exist|does not exist/i.test(message)) {
+      // A brand-new Neon project or branch has no schema at all, which is the
+      // usual state right after DATABASE_URL is repointed.
+      fail(
+        `The database has no voice-agent schema yet: ${message}`,
+        'This database has never been migrated. Run "npm run migrate" against it from a machine with dependencies installed.',
+      );
+    } else if (/password authentication|authentication failed/i.test(message)) {
+      fail(
+        `Neon rejected the credentials: ${message}`,
+        "Copy the connection string again from the Neon dashboard, and URL-encode any reserved characters in a hand-typed password.",
+      );
+    } else {
+      fail(
+        `Database check failed: ${message}`,
+        "Confirm DATABASE_URL is the current Neon connection string and the project is not suspended.",
+      );
+    }
   }
 }
 
