@@ -1,14 +1,17 @@
 import { NextResponse } from "next/server";
 import { buildVersion } from "@/lib/build-info";
 import { getSql } from "@/lib/db";
+import { describeEnv } from "@/lib/env-diagnostics";
 
 export const dynamic = "force-dynamic";
 export const runtime = "nodejs";
 
 export async function GET() {
+  const env = describeEnv();
   const checks = {
     database: false,
     settings: false,
+    env: env.ok,
   };
   let status = 200;
 
@@ -28,7 +31,7 @@ export async function GET() {
     status = 503;
   }
 
-  const ok = checks.database && checks.settings;
+  const ok = checks.database && checks.settings && checks.env;
 
   if (!ok) {
     status = 503;
@@ -40,6 +43,9 @@ export async function GET() {
       service: "djai-voice-sales-agent",
       buildVersion,
       checks,
+      // Names only. Values are never included in this response.
+      envMissing: env.missing,
+      envWarnings: env.warnings,
       time: new Date().toISOString(),
     },
     {

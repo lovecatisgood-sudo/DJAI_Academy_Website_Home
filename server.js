@@ -351,10 +351,54 @@ function waitForServer(internalPort, attempts = 100) {
   });
 }
 
+// The root Hostinger build runs the voice app's `next:build` only, so the
+// voice app's own `verify:env` never guards a production deploy. Log the same
+// findings at boot instead: a missing or malformed secret otherwise surfaces
+// only as an opaque 502 from /web_promo/api/session.
+function warnAboutVoiceEnv() {
+  const required = [
+    "DATABASE_URL",
+    "OPENAI_API_KEY",
+    "ADMIN_USERNAME",
+    "ADMIN_PASSWORD",
+    "SESSION_PASSWORD",
+    "SESSION_SIGNING_SECRET",
+    "WIDGET_ALLOWED_ORIGINS"
+  ];
+  const read = (name) => String(process.env[name] || "").trim();
+  const missing = required.filter((name) => !read(name));
+
+  if (missing.length) {
+    console.warn(
+      `Voice agent environment variables are missing: ${missing.join(", ")}. ` +
+        "/web_promo/api/session will fail until they are set in hPanel."
+    );
+  }
+
+  for (const name of ["SESSION_PASSWORD", "SESSION_SIGNING_SECRET"]) {
+    const value = read(name);
+    if (value && value.length < 32) {
+      console.warn(`${name} is ${value.length} characters; at least 32 are required.`);
+    }
+  }
+
+  const openaiKey = read("OPENAI_API_KEY");
+  if (openaiKey && !openaiKey.startsWith("sk-")) {
+    console.warn("OPENAI_API_KEY does not start with sk- and is not a server API key.");
+  }
+
+  for (const name of required) {
+    if (read(name).startsWith(`${name}=`)) {
+      console.warn(`${name} still contains the "${name}=" prefix in its value.`);
+    }
+  }
+}
+
 const children = [];
 let rootServer;
 
 async function start() {
+  warnAboutVoiceEnv();
   children.push(startStandalone("DJAI homepage", homepageDir, homepagePort));
   children.push(startStandalone("DJAI voice promo", voicePromoDir, voicePromoPort));
   await Promise.all([waitForServer(homepagePort), waitForServer(voicePromoPort)]);

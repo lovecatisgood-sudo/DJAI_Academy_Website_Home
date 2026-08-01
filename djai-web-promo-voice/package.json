@@ -26,7 +26,8 @@
     "hostinger:build": "npm run verify:env && npm run migrate && npm run verify:source && npm run verify:schema && npm run verify:live-schema && npm run typecheck && npm run next:build && npm run prepare:standalone && npm run verify:standalone",
     "deploy": "npm run hostinger:build",
     "package:source": "node scripts/create-source-archive.mjs",
-    "verify:archive": "node scripts/verify-archive.mjs"
+    "verify:archive": "node scripts/verify-archive.mjs",
+    "diagnose": "node --env-file-if-exists=.env.local scripts/diagnose-voice-agent.mjs"
   },
   "dependencies": {
     "@google/genai": "^2.11.0",

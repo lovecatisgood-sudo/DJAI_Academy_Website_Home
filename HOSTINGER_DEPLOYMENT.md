@@ -100,6 +100,69 @@ For blog content that must persist across deployments, set `DJAI_BLOG_DATA_FILE`
 writable, persistent server path. Without this override, posts are stored in
 `djai-academy-homepage/data/blog-posts.json` inside the deployed application.
 
+## Voice agent troubleshooting
+
+The root build runs only `next:build` for `djai-web-promo-voice`, so that project's `verify:env`
+check never guards a production deploy. A bad environment value therefore builds and starts cleanly
+and only fails when someone presses the call button. Work through these three steps in order.
+
+### 1. Read the health endpoint
+
+```bash
+curl -s https://www.djai.academy/web_promo/api/health
+```
+
+`envMissing` and `envWarnings` list variable **names** only; values are never returned. Any entry in
+`envMissing` means that variable is not reaching the app.
+
+### 2. Read the agent status
+
+```bash
+curl -s https://www.djai.academy/web_promo/api/session
+```
+
+`agentEnabled:false` means the kill switch in `/voice_admin` > Settings is off. Nothing else will
+work until it is on.
+
+### 3. Run the full diagnosis from the Hostinger shell
+
+```bash
+cd djai-web-promo-voice
+npm run diagnose
+```
+
+This validates every required variable, connects to Neon, prints the live settings row and today's
+session usage against the daily cap, and calls the OpenAI API with the configured key to confirm the
+key is valid and can see the configured Realtime model. It prints no secret values.
+
+### After rotating SESSION_PASSWORD
+
+Admin cookies are signed with `SESSION_PASSWORD` (falling back to `SESSION_SIGNING_SECRET`), so
+changing it signs every `/voice_admin` session out. That is expected. Log in again with
+`ADMIN_USERNAME` and `ADMIN_PASSWORD`.
+
+Call tokens are signed with `SESSION_SIGNING_SECRET` (falling back to `SESSION_PASSWORD`). While
+`SESSION_SIGNING_SECRET` is set, rotating `SESSION_PASSWORD` does not affect public calls. If it is
+not set, rotating `SESSION_PASSWORD` breaks calls that are already in progress; new calls are fine.
+
+### After rotating OPENAI_API_KEY
+
+`/api/session` returns HTTP 502 with a JSON `code` when minting fails. Check the app log for the
+matching `OpenAI client secret error` entry, which records the upstream status and request id.
+
+| Upstream status | Cause |
+| --- | --- |
+| 401 | Key revoked, mistyped, or truncated |
+| 403 | Restricted key without Realtime write access |
+| 404 | The new key's project cannot see the configured `model_id` |
+| 429 | Project out of quota or credit |
+
+A key from a different OpenAI project is the common case: `model_id` in `/voice_admin` > Settings
+must name a Realtime model that the new project can actually use.
+
+When pasting values into hPanel, paste the value only. Do not include surrounding quotes and do not
+paste the whole `NAME=value` line.
+
 ## Verification
 
 Run the production route audit after building:
