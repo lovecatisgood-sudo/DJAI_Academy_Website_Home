@@ -550,6 +550,29 @@ p {
   margin-bottom: 34px;
 }
 
+.account-entry-note {
+  max-width: 680px;
+  margin: -20px 0 30px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+.account-entry-note a,
+.price-card small a,
+.detail-account-login {
+  color: var(--cyan);
+  font-weight: 750;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.button[aria-busy="true"] {
+  cursor: progress;
+  opacity: 0.78;
+}
+
 .hero-metrics {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -2020,6 +2043,11 @@ blockquote span {
   font-size: 20px;
 }
 
+.detail-account-login {
+  font-size: 0.86rem;
+  text-align: center;
+}
+
 @media (max-width: 900px) {
   .detail-hero-content h1 {
     font-size: 54px;
@@ -2062,6 +2090,13 @@ blockquote span {
 
   .detail-hero-content > p {
     font-size: 15px;
+  }
+
+  .detail-hero-content .account-entry-note {
+    margin-top: -20px;
+    margin-bottom: 0;
+    font-size: 12px;
+    line-height: 1.45;
   }
 
   .detail-kicker {

@@ -245,6 +245,25 @@ async function verify() {
     if (!html.includes(check.mobileCopy)) failures.push(`${check.route}: missing mobile onboarding copy`);
   }
 
+  const courseRegistrationChecks = [
+    { route: "/course/", accountCopy: "ต้องมีบัญชี DJAI School" },
+    { route: "/course/en/", accountCopy: "A free DJAI School account" },
+    { route: "/course/detail/", accountCopy: "ต้องมีบัญชี DJAI School" },
+    { route: "/course/detail/en/", accountCopy: "A free DJAI School account" }
+  ];
+  const courseSignupHref =
+    "https://school.djai.academy/signup?intent=offline-course&amp;course_id=ai-masterclass";
+  const courseLoginHref =
+    "https://school.djai.academy/login?intent=offline-course&amp;course_id=ai-masterclass";
+
+  for (const check of courseRegistrationChecks) {
+    const html = await fetch(`${origin}${check.route}`).then((response) => response.text());
+    if (!html.includes(courseSignupHref)) failures.push(`${check.route}: missing account-first course signup URL`);
+    if (!html.includes(courseLoginHref)) failures.push(`${check.route}: missing existing-account login URL`);
+    if (!html.includes(check.accountCopy)) failures.push(`${check.route}: missing school-account requirement copy`);
+    if (html.includes("buy.stripe.com")) failures.push(`${check.route}: still exposes direct Stripe checkout`);
+  }
+
   const validOnboardingResponse = await fetch(`${origin}/api/academy-onboarding/`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },

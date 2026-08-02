@@ -15,6 +15,8 @@ import {
 } from "lucide-react";
 import SiteFooter from "../SiteFooter";
 import SiteHeader from "../SiteHeader";
+import CourseRegistrationLink from "../CourseRegistrationLink";
+import { courseRegistrationUrls } from "../lib/courseRegistration";
 
 export const metadata = {
   title: "DJAI Academy AI Masterclass in Thailand",
@@ -30,8 +32,6 @@ export const metadata = {
   }
 };
 
-const reserveHref =
-  "https://buy.stripe.com/aFa28r2F21L7dkxb0LgIo01";
 const detailHref = "https://www.djai.academy/course/detail/en/";
 const mapHref =
   "https://www.google.com/maps/search/?api=1&query=House%2C%2046%2F27%20Bangna-Trad%20Road%2C%20Bang%20Kaeo%2C%20Bang%20Phli%20District%2C%20Samut%20Prakan%2010540";
@@ -103,7 +103,7 @@ const faqs = [
   },
   {
     q: "How do I reserve a seat?",
-    a: "Use the Reserve Your Seat button to complete the secure Stripe payment. Seats are limited so the class stays practical, interactive, and hands-on."
+    a: "Create a free DJAI School account or sign in with an existing account. You will then return to complete your details, make the secure payment, and confirm your offline-class seat."
   }
 ];
 
@@ -154,13 +154,18 @@ export default function Home() {
           </div>
 
           <div className="hero-actions">
-            <a className="button" href={reserveHref}>
-              Reserve Seat for 22 August <ArrowRight size={18} />
-            </a>
+            <CourseRegistrationLink>
+              Create Free Account &amp; Reserve <ArrowRight size={18} />
+            </CourseRegistrationLink>
             <a className="button button-ghost" href={detailHref}>
               Explore Course <ArrowUpRight size={18} />
             </a>
           </div>
+
+          <p className="account-entry-note">
+            A free DJAI School account or higher is required.{" "}
+            <a href={courseRegistrationUrls.login}>Already have an account? Sign in</a>
+          </p>
 
           <div className="hero-metrics" aria-label="Workshop highlights">
             <div>
@@ -452,9 +457,9 @@ export default function Home() {
               <a className="button button-map" href={mapHref} target="_blank" rel="noreferrer">
                 View Google Map <MapPin size={18} />
               </a>
-              <a className="button" href={reserveHref}>
+              <CourseRegistrationLink>
                 Reserve Your Seat
-              </a>
+              </CourseRegistrationLink>
             </div>
           </div>
 
@@ -474,10 +479,13 @@ export default function Home() {
               <small>THB</small> 5,999 <del>8,999</del>
             </h3>
             <p>One-time payment per pax. Full workshop access included.</p>
-            <a className="button" href={reserveHref}>
+            <CourseRegistrationLink>
               Reserve Your Seat <ArrowRight size={18} />
-            </a>
-            <small>Secure your place in the next AI Masterclass.</small>
+            </CourseRegistrationLink>
+            <small>
+              DJAI School account required ·{" "}
+              <a href={courseRegistrationUrls.login}>Sign in with an existing account</a>
+            </small>
           </article>
 
           <article className="included-card">

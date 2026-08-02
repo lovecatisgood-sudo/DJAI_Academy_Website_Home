@@ -20,7 +20,7 @@ export const metadata = {
   openGraph: {
     title: "DJAI Academy | AI Masterclass ภาษาไทย",
     description:
-      "เรียนการสร้าง product ด้วย AI แบบลงมือทำจริง พร้อมจองที่นั่งผ่าน Stripe สำหรับ workshop รอบถัดไป",
+      "เรียนการสร้าง product ด้วย AI แบบลงมือทำจริง สร้างบัญชี DJAI School และจองที่นั่งสำหรับ workshop รอบถัดไป",
     url: `${BASE_PATH}/`,
     siteName: "DJAI Academy",
     images: [`${BASE_PATH}/assets/DJAI-logo.webp`],

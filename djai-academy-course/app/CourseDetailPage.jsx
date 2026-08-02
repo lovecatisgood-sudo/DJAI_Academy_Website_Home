@@ -10,8 +10,8 @@ import {
 } from "lucide-react";
 import SiteFooter from "./SiteFooter";
 import SiteHeader from "./SiteHeader";
-
-const checkoutHref = "https://buy.stripe.com/aFa28r2F21L7dkxb0LgIo01";
+import CourseRegistrationLink from "./CourseRegistrationLink";
+import { courseRegistrationUrls } from "./lib/courseRegistration";
 
 const content = {
   th: {
@@ -298,7 +298,7 @@ export default function CourseDetailPage({ locale = "th" }) {
           price: "5999",
           priceCurrency: "THB",
           availability: "https://schema.org/LimitedAvailability",
-          url: checkoutHref
+          url: courseRegistrationUrls.signup
         },
         organizer: {
           "@type": "Organization",
@@ -342,13 +342,21 @@ export default function CourseDetailPage({ locale = "th" }) {
           <h1>{copy.hero.title}</h1>
           <p>{copy.hero.copy}</p>
           <div className="hero-actions">
-            <a className="button" href={checkoutHref}>
+            <CourseRegistrationLink>
               {copy.hero.book} <ArrowRight size={18} />
-            </a>
+            </CourseRegistrationLink>
             <a className="button button-ghost" href="#schedule">
               {copy.hero.schedule}
             </a>
           </div>
+          <p className="account-entry-note">
+            {language === "en"
+              ? "A free DJAI School account or higher is required. "
+              : "ต้องมีบัญชี DJAI School ฟรีหรือแพ็กเกจสูงกว่า "}
+            <a href={courseRegistrationUrls.login}>
+              {language === "en" ? "Already have an account? Sign in" : "มีบัญชีแล้ว? เข้าสู่ระบบ"}
+            </a>
+          </p>
         </div>
       </section>
 
@@ -434,8 +442,11 @@ export default function CourseDetailPage({ locale = "th" }) {
         </div>
         <div className="detail-cta-action">
           <strong>{copy.cta.price}</strong>
-          <a className="button" href={checkoutHref}>
+          <CourseRegistrationLink>
             {copy.cta.book} <ArrowRight size={18} />
+          </CourseRegistrationLink>
+          <a className="detail-account-login" href={courseRegistrationUrls.login}>
+            {language === "en" ? "Already have an account? Sign in" : "มีบัญชีแล้ว? เข้าสู่ระบบ"}
           </a>
         </div>
       </section>
