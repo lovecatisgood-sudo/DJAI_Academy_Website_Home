@@ -225,13 +225,15 @@ async function verify() {
       route: "/academy/",
       language: "th",
       canonical: "https://www.djai.academy/academy/",
-      copy: "ยินดีต้อนรับสู่ DJAI Academy"
+      copy: "ยินดีต้อนรับสู่ DJAI Academy",
+      mobileCopy: "ดูรายละเอียด"
     },
     {
       route: "/academy/en/",
       language: "en",
       canonical: "https://www.djai.academy/academy/en/",
-      copy: "Welcome to DJAI Academy"
+      copy: "Welcome to DJAI Academy",
+      mobileCopy: "Read details"
     }
   ];
   for (const check of onboardingPageChecks) {
@@ -240,6 +242,7 @@ async function verify() {
     if (!html.includes(`<link rel="canonical" href="${check.canonical}"`)) failures.push(`${check.route}: missing self-canonical`);
     if (!html.includes('<meta name="robots" content="noindex, follow"')) failures.push(`${check.route}: missing noindex, follow directive`);
     if (!html.includes(check.copy)) failures.push(`${check.route}: missing crawlable onboarding copy`);
+    if (!html.includes(check.mobileCopy)) failures.push(`${check.route}: missing mobile onboarding copy`);
   }
 
   const validOnboardingResponse = await fetch(`${origin}/api/academy-onboarding/`, {

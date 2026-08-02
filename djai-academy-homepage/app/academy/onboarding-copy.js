@@ -18,6 +18,12 @@ export const onboardingCopy = {
     retry: "Try sending again",
     continueAnyway: "Continue to the Academy",
     submitting: "Saving your response…",
+    mobile: {
+      guidelineDetails: "Read details",
+      programmingLabel: "Programming",
+      programmingTitle: "Your programming background",
+      programmingIntro: "A programming background is helpful, but it is not required to learn and build with DJAI."
+    },
     steps: [
       {
         label: "Community",
@@ -132,6 +138,12 @@ export const onboardingCopy = {
     retry: "ลองส่งอีกครั้ง",
     continueAnyway: "เข้าสู่ Academy",
     submitting: "กำลังบันทึกคำตอบ…",
+    mobile: {
+      guidelineDetails: "ดูรายละเอียด",
+      programmingLabel: "การเขียนโปรแกรม",
+      programmingTitle: "พื้นฐานด้านการเขียนโปรแกรมของคุณ",
+      programmingIntro: "การมีพื้นฐานเขียนโปรแกรมอาจช่วยได้ แต่ไม่ใช่ข้อกำหนดสำหรับการเรียนรู้และลงมือสร้างกับ DJAI"
+    },
     steps: [
       {
         label: "ชุมชน",
