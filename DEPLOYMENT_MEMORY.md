@@ -19,6 +19,7 @@ Updated: 2026-08-02
 - Offline AI Masterclass August 22 date update commit: `47860c3`
 - Bilingual Academy onboarding release commit: `1fed087`
 - Academy onboarding mobile optimization commit: `1d541f8`
+- Account-first offline-course integration commit (local, release-gated): `a7cb611`
 - Current deployed `main` checkpoint: `1d541f8`
 - Live deployment verified on 2026-08-02 after Hostinger auto-deploy.
 
@@ -50,6 +51,30 @@ Updated: 2026-08-02
 - Required fix: integrate the school authentication system, save the response against the
   authenticated user in a transaction, store `onboarding_completed_at` plus a version, enforce the
   gate server-side before community access, and set completion only after a successful save.
+
+### Account-first offline-course integration — ready but not released
+
+- Academy source commit `85c2b64` implements the server-authoritative onboarding fix, offline-course
+  intent, and authenticated seat-registration flow. Its production dependency is migration
+  `0115_account_onboarding_and_course_intent.sql`.
+- Public-site commit `a7cb611` replaces direct Stripe links across Thai/English course landing and
+  detail pages with:
+  - signup: `https://school.djai.academy/signup?intent=offline-course&course_id=ai-masterclass`
+  - login: `https://school.djai.academy/login?intent=offline-course&course_id=ai-masterclass`
+  - signed-in destination: `https://school.djai.academy/reserve-seat?course_id=ai-masterclass`
+- The CTA performs the minimal credentialed session check. Signed-in users continue directly to
+  seat registration; unauthenticated users and any session-check failure fall back to the safe
+  signup URL. Existing users also receive a visible login link.
+- Validation passed: 3 focused registration-flow tests, the final composite Hostinger build, and
+  the 201-page/11-redirect/362-link Hostinger audit. The audit now prevents direct Stripe course
+  CTAs and requires account-first signup/login URLs on all four course routes.
+- **Release gate:** do not push public-site commit `a7cb611` until migration `0115` is applied and
+  Academy commit `85c2b64` is confirmed deployed. On 2026-08-02, the new session route and its
+  `OPTIONS` behavior appeared live, but `/api/health` still reported stale Academy SHA
+  `04a5fd8c2e158a051b0141d668795bb26ffa1c0b`; the production migration remained unconfirmed.
+- Academy production must set `PUBLIC_WEBSITE_ORIGIN=https://www.djai.academy`. The live session
+  response did not include `Access-Control-Allow-Origin`, and the matching preflight returned HTTP
+  403, proving that the public-site origin was not yet configured.
 
 ## Web Promotion and Voice Agent — Current Handoff
 
