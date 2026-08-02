@@ -43,9 +43,9 @@ export function slugify(value) {
     .slice(0, 96);
 }
 
-async function readBlogFile() {
+async function readBlogFile(filePath = DATA_FILE) {
   try {
-    const raw = await fs.readFile(DATA_FILE, "utf8");
+    const raw = await fs.readFile(filePath, "utf8");
     const parsed = JSON.parse(raw);
     return Array.isArray(parsed.posts) ? parsed.posts : [];
   } catch (error) {
@@ -157,8 +157,22 @@ function normalizeStoredGroup(post) {
 }
 
 async function readPostGroups() {
-  const posts = await readBlogFile();
-  return posts.map(normalizeStoredGroup);
+  const seededGroups = (await readBlogFile(defaultDataFile)).map(normalizeStoredGroup);
+
+  if (DATA_FILE === defaultDataFile) {
+    return seededGroups;
+  }
+
+  const persistentGroups = (await readBlogFile(DATA_FILE)).map(normalizeStoredGroup);
+  const groupsById = new Map(
+    seededGroups.map((post) => [post.translationGroupId, post])
+  );
+
+  for (const post of persistentGroups) {
+    groupsById.set(post.translationGroupId, post);
+  }
+
+  return [...groupsById.values()];
 }
 
 function flattenPost(group, locale = "en") {
