@@ -1,6 +1,6 @@
 # DJAI Deployment Memory
 
-Updated: 2026-07-30
+Updated: 2026-08-02
 
 ## Current Release
 
@@ -16,7 +16,40 @@ Updated: 2026-07-30
 - State and audit documentation base commit: `ce6fdaa`
 - Web-promotion and voice-admin integration commit: `426924a`
 - Web-promotion mobile and SEO remediation commit: `ab66f69`
-- Live deployment verified on 2026-07-30 after Hostinger auto-deploy.
+- Offline AI Masterclass August 22 date update commit: `47860c3`
+- Bilingual Academy onboarding release commit: `1fed087`
+- Academy onboarding mobile optimization commit: `1d541f8`
+- Current deployed `main` checkpoint: `1d541f8`
+- Live deployment verified on 2026-08-02 after Hostinger auto-deploy.
+
+## Academy Onboarding — Current Handoff
+
+- Public onboarding routes: `/academy/` (Thai) and `/academy/en/` (English); community destination:
+  `https://school.djai.academy/`.
+- Mobile uses six compact steps (guidelines, profile, technical experience, programming, goals,
+  commitment); desktop uses five steps and combines the two technical questions.
+- Mobile release includes sticky progress, fixed safe-area-aware actions, touch-friendly controls,
+  narrow-phone and short-landscape layouts, `vh`/`dvh` fallbacks, legacy `matchMedia` support, and
+  reduced-motion handling.
+- Focused responsive tests passed 5/5. Homepage lint had zero errors (with 10 pre-existing image
+  optimization warnings), the homepage and root Hostinger production builds passed, and the
+  composite audit passed 201 pages, 11 redirects, and 362 internal links/assets.
+- Clean Thai and English production URLs returned HTTP 200 and served the new CSS
+  `2nsagz4_ktbag.css` and JavaScript `1baalob89wr30.js`. Live assets contained the safe-area,
+  narrow/landscape responsive rules, and bilingual mobile copy.
+
+### Important account-persistence limitation
+
+- The onboarding is currently remembered only by browser `localStorage` key
+  `djai-academy-onboarding-complete-v1`; it is not stored as completion on a DJAI user account.
+- API responses are appended with a random response ID but no authenticated immutable user ID.
+- A different device/browser, private browsing, or cleared site data can show onboarding again;
+  direct navigation to `school.djai.academy` can bypass the landing-page gate.
+- The current client sets local completion even if the response API fails. Therefore do not claim
+  that a completed response was necessarily saved or that onboarding is enforced once per account.
+- Required fix: integrate the school authentication system, save the response against the
+  authenticated user in a transaction, store `onboarding_completed_at` plus a version, enforce the
+  gate server-side before community access, and set completion only after a successful save.
 
 ## Web Promotion and Voice Agent — Current Handoff
 
