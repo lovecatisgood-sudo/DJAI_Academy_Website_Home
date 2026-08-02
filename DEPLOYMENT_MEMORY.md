@@ -20,8 +20,19 @@ Updated: 2026-08-02
 - Bilingual Academy onboarding release commit: `1fed087`
 - Academy onboarding mobile optimization commit: `1d541f8`
 - Account-first offline-course integration commit (local, release-gated): `a7cb611`
+- Release-gate documentation commit (local, release-gated): `65d9029`
 - Current deployed `main` checkpoint: `1d541f8`
+- Local `main` is intentionally three commits ahead of `origin/main`; do not push these local commits
+  until the Academy migration, deployment, CORS, and health-SHA gates below are confirmed.
 - Live deployment verified on 2026-08-02 after Hostinger auto-deploy.
+
+## Google AdSense Account
+
+- Publisher ID: `pub-3624708289866566`
+- AdSense code/client value: `ca-pub-3624708289866566`
+- The ID is already present in the website advertising integrations, `ads.txt`, and `app-ads.txt`.
+- Do not report this Publisher ID as missing or not yet supplied. The workspace-level reference is
+  `../ADSENSE_ACCOUNT_INFO.md`.
 
 ## Academy Onboarding — Current Handoff
 
