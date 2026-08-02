@@ -99,7 +99,7 @@ const faqs = [
   },
   {
     q: "Is the workshop one day or four days?",
-    a: "This page is aligned around one intensive workshop day: 1 August 2026, 09:30 AM to 04:00 PM, with a full day of hands-on learning."
+    a: "This page is aligned around one intensive workshop day: 22 August 2026, 09:30 AM to 04:00 PM, with a full day of hands-on learning."
   },
   {
     q: "How do I reserve a seat?",
@@ -148,14 +148,14 @@ export default function Home() {
           <div className="event-strip">
             <span className="pulse-dot" />
             <strong>Next Workshop:</strong>
-            <span>1 August 2026 | 09:30 AM - 04:00 PM</span>
+            <span>22 August 2026 | 09:30 AM - 04:00 PM</span>
             <em>Limited Seats</em>
             <ChevronRight size={16} />
           </div>
 
           <div className="hero-actions">
             <a className="button" href={reserveHref}>
-              Reserve Seat for 1 August <ArrowRight size={18} />
+              Reserve Seat for 22 August <ArrowRight size={18} />
             </a>
             <a className="button button-ghost" href={detailHref}>
               Explore Course <ArrowUpRight size={18} />
@@ -427,7 +427,7 @@ export default function Home() {
             <div className="info-grid">
               <div>
                 <span>Date</span>
-                <strong>1 August 2026</strong>
+                <strong>22 August 2026</strong>
               </div>
               <div>
                 <span>Time</span>
@@ -460,7 +460,7 @@ export default function Home() {
 
           <aside className="date-tile" aria-label="Workshop date">
             <div>
-              <strong>01</strong>
+              <strong>22</strong>
               <span>August</span>
             </div>
             <p>Seats are filling fast</p>

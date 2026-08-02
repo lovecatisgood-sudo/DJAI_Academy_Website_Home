@@ -17,7 +17,7 @@ const content = {
   th: {
     languageSwitch: "https://www.djai.academy/course/detail/en/",
     hero: {
-      pill: "1 สิงหาคม 2026 | 09:30 - 16:00 น.",
+      pill: "22 สิงหาคม 2026 | 09:30 - 16:00 น.",
       eyebrow: "AI Masterclass แบบลงมือทำเต็มวัน",
       title: "จากไอเดียสู่โปรดักต์ที่ใช้งานได้จริง",
       copy: "เรียนกระบวนการครบถ้วนในการเปลี่ยนไอเดียเป็นเว็บไซต์ แอป ระบบอัตโนมัติ หรือ digital product ด้วย AI พร้อมลงมือสร้างและเผยแพร่ผลงานภายในวันเดียว",
@@ -129,7 +129,7 @@ const content = {
     cta: {
       eyebrow: "Workshop รอบถัดไป",
       title: "พร้อมเปลี่ยนไอเดียของคุณให้เป็นของจริงหรือยัง?",
-      copy: "1 สิงหาคม 2026 เวลา 09:30 - 16:00 น. ที่ Siamese Cat Learning Center ที่นั่งมีจำนวนจำกัดเพื่อให้ผู้สอนได้ดูแลทุกโปรเจกต์อย่างทั่วถึง",
+      copy: "22 สิงหาคม 2026 เวลา 09:30 - 16:00 น. ที่ Siamese Cat Learning Center ที่นั่งมีจำนวนจำกัดเพื่อให้ผู้สอนได้ดูแลทุกโปรเจกต์อย่างทั่วถึง",
       price: "5,999 บาทต่อท่าน",
       book: "จองตอนนี้"
     },
@@ -138,7 +138,7 @@ const content = {
   en: {
     languageSwitch: "https://www.djai.academy/course/detail/",
     hero: {
-      pill: "1 August 2026 | 09:30 AM - 04:00 PM",
+      pill: "22 August 2026 | 09:30 AM - 04:00 PM",
       eyebrow: "One-Day Hands-On AI Masterclass",
       title: "From Idea to a Live Product",
       copy: "Learn the complete process of turning an idea into a real website, application, automation, or digital product using AI, then build and launch it in one focused day.",
@@ -250,7 +250,7 @@ const content = {
     cta: {
       eyebrow: "Upcoming Workshop",
       title: "Ready to turn your idea into something real?",
-      copy: "1 August 2026, 09:30 AM - 04:00 PM at Siamese Cat Learning Center. Seats are limited so every project receives practical guidance.",
+      copy: "22 August 2026, 09:30 AM - 04:00 PM at Siamese Cat Learning Center. Seats are limited so every project receives practical guidance.",
       price: "THB 5,999 per person",
       book: "Book Now"
     },
@@ -277,8 +277,8 @@ export default function CourseDetailPage({ locale = "th" }) {
       {
         "@type": "Event",
         name: "DJAI Academy AI Masterclass: From Idea to Live Product",
-        startDate: "2026-08-01T09:30:00+07:00",
-        endDate: "2026-08-01T16:00:00+07:00",
+        startDate: "2026-08-22T09:30:00+07:00",
+        endDate: "2026-08-22T16:00:00+07:00",
         eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
         eventStatus: "https://schema.org/EventScheduled",
         location: {

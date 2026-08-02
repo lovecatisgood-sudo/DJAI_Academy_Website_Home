@@ -85,7 +85,7 @@ const faqs = [
   },
   {
     q: "Workshop หนึ่งวันหรือสี่วัน?",
-    a: "Workshop นี้จัดแบบเข้มข้น 1 วัน ในวันที่ 1 สิงหาคม 2026 เวลา 09:30 ถึง 16:00 น. พร้อมการเรียนและลงมือสร้างจริงตลอดวัน"
+    a: "Workshop นี้จัดแบบเข้มข้น 1 วัน ในวันที่ 22 สิงหาคม 2026 เวลา 09:30 ถึง 16:00 น. พร้อมการเรียนและลงมือสร้างจริงตลอดวัน"
   },
   {
     q: "จองที่นั่งอย่างไร?",
@@ -133,14 +133,14 @@ export default function Home() {
           <div className="event-strip">
             <span className="pulse-dot" />
             <strong>Workshop รอบถัดไป:</strong>
-            <span>1 สิงหาคม 2026 | 09:30 - 16:00 น.</span>
+            <span>22 สิงหาคม 2026 | 09:30 - 16:00 น.</span>
             <em>ที่นั่งจำกัด</em>
             <ChevronRight size={16} />
           </div>
 
           <div className="hero-actions">
             <a className="button" href={reserveHref}>
-              จองที่นั่งสำหรับ 1 สิงหาคม <ArrowRight size={18} />
+              จองที่นั่งสำหรับ 22 สิงหาคม <ArrowRight size={18} />
             </a>
             <a className="button button-ghost" href={detailHref}>
               ดูรายละเอียดคอร์ส <ArrowUpRight size={18} />
@@ -400,7 +400,7 @@ export default function Home() {
             <div className="info-grid">
               <div>
                 <span>วันที่</span>
-                <strong>1 สิงหาคม 2026</strong>
+                <strong>22 สิงหาคม 2026</strong>
               </div>
               <div>
                 <span>เวลา</span>
@@ -433,7 +433,7 @@ export default function Home() {
 
           <aside className="date-tile" aria-label="วันที่ workshop">
             <div>
-              <strong>01</strong>
+              <strong>22</strong>
               <span>สิงหาคม</span>
             </div>
             <p>ที่นั่งมีจำนวนจำกัด</p>
