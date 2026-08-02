@@ -25,7 +25,7 @@ const content = {
       {
         title: "Community",
         links: [
-          ["เข้าร่วม Online Community", "https://school.djai.academy/"],
+          ["เข้าร่วม Online Community", "https://www.djai.academy/academy/"],
           ["เครื่องมือฟรี", "https://www.djai.academy/tools/"],
           ["โปรเจกต์ Open-source", null]
         ]
@@ -56,7 +56,7 @@ const content = {
       {
         title: "Community",
         links: [
-          ["Join Online Community", "https://school.djai.academy/"],
+          ["Join Online Community", "https://www.djai.academy/academy/en/"],
           ["Tools", "https://www.djai.academy/tools/en/"],
           ["Open-source Projects", null]
         ]

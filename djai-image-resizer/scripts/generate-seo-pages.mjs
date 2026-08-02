@@ -164,7 +164,13 @@ function render(template, preset, language) {
     .replace("    <section class=\"how-section\">", `    ${guide}\n\n    <section class="how-section">`);
 }
 
-const templates = { th: readFileSync(join(publicDir, "index.html"), "utf8"), en: readFileSync(join(publicDir, "en", "index.html"), "utf8") };
+const templates = {
+  th: readFileSync(join(publicDir, "index.html"), "utf8")
+    .replaceAll("https://school.djai.academy/", "https://www.djai.academy/academy/"),
+  en: readFileSync(join(publicDir, "en", "index.html"), "utf8")
+    .replaceAll("https://school.djai.academy/", "https://www.djai.academy/academy/en/")
+    .replace(/https:\/\/www\.djai\.academy\/academy(?:\/en)*\//g, "https://www.djai.academy/academy/en/")
+};
 writeFileSync(join(publicDir, "index.html"), injectDiscovery(templates.th, discoveryMarkup("th")));
 writeFileSync(join(publicDir, "en", "index.html"), injectDiscovery(templates.en, discoveryMarkup("en")));
 for (const preset of presets) {

@@ -1,5 +1,4 @@
 export const SITE_URL = "https://www.djai.academy";
-export const COMMUNITY_URL = "https://school.djai.academy/";
 
 const paths = {
   home: {
@@ -31,8 +30,8 @@ const paths = {
     th: "/course/"
   },
   community: {
-    en: COMMUNITY_URL,
-    th: COMMUNITY_URL
+    en: "/academy/en/",
+    th: "/academy/"
   },
   promo: {
     en: "/web_promo/",

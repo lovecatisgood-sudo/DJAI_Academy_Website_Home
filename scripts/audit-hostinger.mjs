@@ -17,6 +17,8 @@ const serverDirectory = useQrCompatibilityEntry
 const publicRoutes = [
   "/",
   "/en/",
+  "/academy/",
+  "/academy/en/",
   "/portfolio/",
   "/portfolio/en/",
   "/development/",
@@ -149,6 +151,7 @@ const auditPassword = "djai-local-deployment-audit";
 const auditApiKey = "djai-local-api-key-audit";
 const auditDataDirectory = await mkdtemp(join(tmpdir(), "djai-blog-audit-"));
 const auditDataFile = join(auditDataDirectory, "blog-posts.json");
+const auditOnboardingDataFile = join(auditDataDirectory, "academy-onboarding-responses.jsonl");
 await copyFile(join(repositoryRoot, "djai-academy-homepage", "data", "blog-posts.json"), auditDataFile);
 
 const server = spawn(process.execPath, [serverEntry], {
@@ -160,7 +163,8 @@ const server = spawn(process.execPath, [serverEntry], {
     PORT: String(port),
     DJAI_BLOG_ADMIN_PASSWORD: auditPassword,
     DJAI_BLOG_API_KEY: auditApiKey,
-    DJAI_BLOG_DATA_FILE: auditDataFile
+    DJAI_BLOG_DATA_FILE: auditDataFile,
+    DJAI_ONBOARDING_DATA_FILE: auditOnboardingDataFile
   },
   stdio: ["ignore", "pipe", "pipe"]
 });
@@ -214,6 +218,58 @@ async function verify() {
     if (response.status !== 200) {
       failures.push(`${route}: expected 200, received ${response.status}`);
     }
+  }
+
+  const onboardingPageChecks = [
+    {
+      route: "/academy/",
+      language: "th",
+      canonical: "https://www.djai.academy/academy/",
+      copy: "ยินดีต้อนรับสู่ DJAI Academy"
+    },
+    {
+      route: "/academy/en/",
+      language: "en",
+      canonical: "https://www.djai.academy/academy/en/",
+      copy: "Welcome to DJAI Academy"
+    }
+  ];
+  for (const check of onboardingPageChecks) {
+    const html = await fetch(`${origin}${check.route}`).then((response) => response.text());
+    if (!html.includes(`<html lang="${check.language}"`)) failures.push(`${check.route}: expected html lang=${check.language}`);
+    if (!html.includes(`<link rel="canonical" href="${check.canonical}"`)) failures.push(`${check.route}: missing self-canonical`);
+    if (!html.includes('<meta name="robots" content="noindex, follow"')) failures.push(`${check.route}: missing noindex, follow directive`);
+    if (!html.includes(check.copy)) failures.push(`${check.route}: missing crawlable onboarding copy`);
+  }
+
+  const validOnboardingResponse = await fetch(`${origin}/api/academy-onboarding/`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      locale: "en",
+      acceptedGuidelines: true,
+      name: "Deployment Audit",
+      ageRange: "25-34",
+      profession: "Quality assurance",
+      experience: "intermediate",
+      knowsProgramming: "yes",
+      programmingLanguages: "JavaScript",
+      goals: ["app", "work"],
+      otherGoal: "",
+      acceptedDeclaration: true
+    })
+  });
+  if (validOnboardingResponse.status !== 201) {
+    failures.push(`/api/academy-onboarding/: expected 201 for a valid response, received ${validOnboardingResponse.status}`);
+  }
+
+  const invalidOnboardingResponse = await fetch(`${origin}/api/academy-onboarding/`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ locale: "en" })
+  });
+  if (invalidOnboardingResponse.status !== 400) {
+    failures.push(`/api/academy-onboarding/: expected 400 for an incomplete response, received ${invalidOnboardingResponse.status}`);
   }
 
   const toolDiscoveryRoutes = publicRoutes.filter(

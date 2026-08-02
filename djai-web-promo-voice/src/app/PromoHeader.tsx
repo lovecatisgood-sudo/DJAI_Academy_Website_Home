@@ -103,7 +103,7 @@ export default function PromoHeader() {
         aria-label="DJAI Academy navigation"
       >
         <a href={localePath(locale, "/course/", "/course/en/")}>{labels.courses}</a>
-        <a href="https://school.djai.academy/">{labels.community}</a>
+        <a href={localePath(locale, "/academy/", "/academy/en/")}>{labels.community}</a>
         <div className="academy-nav-dropdown">
           <a
             className="academy-nav-dropdown-trigger"
@@ -122,7 +122,7 @@ export default function PromoHeader() {
         <button className="academy-language-switch" type="button" onClick={switchLanguage}>
           {labels.switchLabel}
         </button>
-        <a className="academy-nav-subscribe" href="https://school.djai.academy/">
+        <a className="academy-nav-subscribe" href={localePath(locale, "/academy/", "/academy/en/")}>
           {labels.join}
         </a>
       </nav>

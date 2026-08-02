@@ -40,6 +40,7 @@ const englishHtml = readFileSync(indexPath, 'utf8')
   )
   .replace('อ่านบล็อก Siamese Cat Dev', 'Read the Siamese Cat Dev blog')
   .replace('เข้าร่วม DJAI Academy community', 'Join the DJAI Academy community')
+  .replace('https://www.djai.academy/academy/', 'https://www.djai.academy/academy/en/')
   .replace(
     'href="/siamese_cat/dev/blog/"',
     'href="/siamese_cat/dev/blog/en/"',

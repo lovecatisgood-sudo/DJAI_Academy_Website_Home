@@ -127,7 +127,7 @@ export default function Home({ toolSlug, pageCopy }: { toolSlug?: QrToolSlug; pa
           <a href="https://www.djai.academy/tools/resizeimg/en/" target="_blank" rel="noopener noreferrer">Image tools <span className="external-mark">↗</span></a>
           <a href="https://www.djai.academy/blog/en/" target="_blank" rel="noopener noreferrer">Blog <span className="external-mark">↗</span></a>
           <a href={languageHref} hrefLang="th">ไทย</a>
-          <a className="nav-cta" href="https://school.djai.academy/" target="_blank" rel="noopener noreferrer">Join community</a>
+          <a className="nav-cta" href="https://www.djai.academy/academy/en/">Join community</a>
         </nav>
       </header>
 
