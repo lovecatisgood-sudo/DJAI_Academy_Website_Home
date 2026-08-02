@@ -1,5 +1,6 @@
 import fs from "node:fs/promises";
 import path from "node:path";
+import seededBlogData from "../../data/blog-posts.json";
 
 export const SIAMESE_CAT_DEV_CATEGORY = "Siamese Cat Dev";
 export const BLOG_CATEGORIES = ["News", "Guides", "Tutorial", SIAMESE_CAT_DEV_CATEGORY];
@@ -157,12 +158,9 @@ function normalizeStoredGroup(post) {
 }
 
 async function readPostGroups() {
-  const seededGroups = (await readBlogFile(defaultDataFile)).map(normalizeStoredGroup);
-
-  if (DATA_FILE === defaultDataFile) {
-    return seededGroups;
-  }
-
+  const seededGroups = (Array.isArray(seededBlogData?.posts) ? seededBlogData.posts : []).map(
+    normalizeStoredGroup
+  );
   const persistentGroups = (await readBlogFile(DATA_FILE)).map(normalizeStoredGroup);
   const groupsById = new Map(
     seededGroups.map((post) => [post.translationGroupId, post])
