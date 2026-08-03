@@ -1,4 +1,5 @@
-export const COMMUNITY_DESTINATION = "https://school.djai.academy/";
+export const SIGNUP_DESTINATION = "https://school.djai.academy/signup?returnTo=%2Fonboarding%2Fprofile";
+export const LOGIN_DESTINATION = "https://school.djai.academy/login?returnTo=%2Fonboarding%2Fprofile";
 
 export const onboardingCopy = {
   en: {
@@ -18,6 +19,25 @@ export const onboardingCopy = {
     retry: "Try sending again",
     continueAnyway: "Continue to the Academy",
     submitting: "Saving your response…",
+    teaser: {
+      title: "Learn, build, and grow with DJAI",
+      body:
+        "DJAI School is a bilingual learning community for people building practical skills with AI. Create your School account to complete the learner survey securely and begin your journey.",
+      accountNote:
+        "Your onboarding answers are saved only after you sign in, so they stay connected to your account across browsers and devices.",
+      createAccount: "Create my School account",
+      signIn: "I already have an account",
+      processTitle: "How to begin",
+      process: [
+        "Create or sign in to your DJAI School account.",
+        "Complete the six-step learner survey securely.",
+        "Choose your community and start learning."
+      ],
+      guidelinesEyebrow: "OUR COMMUNITY",
+      guidelinesTitle: "A thoughtful place to learn together",
+      guidelinesBody:
+        "You will confirm these guidelines during authenticated onboarding. Here is what every DJAI School member can expect."
+    },
     mobile: {
       guidelineDetails: "Read details",
       programmingLabel: "Programming",
@@ -138,6 +158,25 @@ export const onboardingCopy = {
     retry: "ลองส่งอีกครั้ง",
     continueAnyway: "เข้าสู่ Academy",
     submitting: "กำลังบันทึกคำตอบ…",
+    teaser: {
+      title: "เรียนรู้ ลงมือสร้าง และเติบโตไปกับ DJAI",
+      body:
+        "DJAI School คือชุมชนการเรียนรู้สองภาษาสำหรับผู้ที่ต้องการพัฒนาทักษะ AI ผ่านการลงมือทำจริง สร้างบัญชี School เพื่อทำแบบสำรวจผู้เรียนอย่างปลอดภัยและเริ่มต้นเส้นทางของคุณ",
+      accountNote:
+        "คำตอบการเริ่มต้นใช้งานจะถูกบันทึกหลังจากเข้าสู่ระบบเท่านั้น จึงเชื่อมกับบัญชีของคุณได้อย่างถูกต้องในทุกเบราว์เซอร์และอุปกรณ์",
+      createAccount: "สร้างบัญชี School",
+      signIn: "ฉันมีบัญชีอยู่แล้ว",
+      processTitle: "เริ่มต้นอย่างไร",
+      process: [
+        "สร้างบัญชีหรือเข้าสู่ระบบ DJAI School",
+        "ทำแบบสำรวจผู้เรียน 6 ขั้นตอนอย่างปลอดภัย",
+        "เลือกชุมชนและเริ่มเรียนรู้"
+      ],
+      guidelinesEyebrow: "ชุมชนของเรา",
+      guidelinesTitle: "พื้นที่ที่ตั้งใจสร้างเพื่อการเรียนรู้ร่วมกัน",
+      guidelinesBody:
+        "คุณจะยืนยันแนวทางเหล่านี้ในขั้นตอนเริ่มต้นหลังเข้าสู่ระบบ และนี่คือสิ่งที่สมาชิก DJAI School ทุกคนคาดหวังได้"
+    },
     mobile: {
       guidelineDetails: "ดูรายละเอียด",
       programmingLabel: "การเขียนโปรแกรม",
