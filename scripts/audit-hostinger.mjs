@@ -17,8 +17,6 @@ const serverDirectory = useQrCompatibilityEntry
 const publicRoutes = [
   "/",
   "/en/",
-  "/academy/",
-  "/academy/en/",
   "/portfolio/",
   "/portfolio/en/",
   "/development/",
@@ -147,11 +145,11 @@ const redirects = [
   ["/tools/document/word-to-pdf/", "/tools/document/docx-to-pdf/"],
   ["/tools/document/word-to-pdf/en/", "/tools/document/docx-to-pdf/en/"]
 ];
+const accountOnboardingRedirects = ["/academy/", "/academy/en/"];
 const auditPassword = "djai-local-deployment-audit";
 const auditApiKey = "djai-local-api-key-audit";
 const auditDataDirectory = await mkdtemp(join(tmpdir(), "djai-blog-audit-"));
 const auditDataFile = join(auditDataDirectory, "blog-posts.json");
-const auditOnboardingDataFile = join(auditDataDirectory, "academy-onboarding-responses.jsonl");
 await copyFile(join(repositoryRoot, "djai-academy-homepage", "data", "blog-posts.json"), auditDataFile);
 
 const server = spawn(process.execPath, [serverEntry], {
@@ -163,8 +161,7 @@ const server = spawn(process.execPath, [serverEntry], {
     PORT: String(port),
     DJAI_BLOG_ADMIN_PASSWORD: auditPassword,
     DJAI_BLOG_API_KEY: auditApiKey,
-    DJAI_BLOG_DATA_FILE: auditDataFile,
-    DJAI_ONBOARDING_DATA_FILE: auditOnboardingDataFile
+    DJAI_BLOG_DATA_FILE: auditDataFile
   },
   stdio: ["ignore", "pipe", "pipe"]
 });
@@ -220,29 +217,11 @@ async function verify() {
     }
   }
 
-  const onboardingPageChecks = [
-    {
-      route: "/academy/",
-      language: "th",
-      canonical: "https://www.djai.academy/academy/",
-      copy: "ยินดีต้อนรับสู่ DJAI Academy",
-      mobileCopy: "ดูรายละเอียด"
-    },
-    {
-      route: "/academy/en/",
-      language: "en",
-      canonical: "https://www.djai.academy/academy/en/",
-      copy: "Welcome to DJAI Academy",
-      mobileCopy: "Read details"
+  for (const route of accountOnboardingRedirects) {
+    const response = await fetch(`${origin}${route}`, { redirect: "manual" });
+    if (response.status !== 308 || response.headers.get("location") !== "https://school.djai.academy/") {
+      failures.push(`${route}: expected 308 to the account-authoritative School`);
     }
-  ];
-  for (const check of onboardingPageChecks) {
-    const html = await fetch(`${origin}${check.route}`).then((response) => response.text());
-    if (!html.includes(`<html lang="${check.language}"`)) failures.push(`${check.route}: expected html lang=${check.language}`);
-    if (!html.includes(`<link rel="canonical" href="${check.canonical}"`)) failures.push(`${check.route}: missing self-canonical`);
-    if (!html.includes('<meta name="robots" content="noindex, follow"')) failures.push(`${check.route}: missing noindex, follow directive`);
-    if (!html.includes(check.copy)) failures.push(`${check.route}: missing crawlable onboarding copy`);
-    if (!html.includes(check.mobileCopy)) failures.push(`${check.route}: missing mobile onboarding copy`);
   }
 
   const courseRegistrationChecks = [
@@ -264,34 +243,13 @@ async function verify() {
     if (html.includes("buy.stripe.com")) failures.push(`${check.route}: still exposes direct Stripe checkout`);
   }
 
-  const validOnboardingResponse = await fetch(`${origin}/api/academy-onboarding/`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      locale: "en",
-      acceptedGuidelines: true,
-      name: "Deployment Audit",
-      ageRange: "25-34",
-      profession: "Quality assurance",
-      experience: "intermediate",
-      knowsProgramming: "yes",
-      programmingLanguages: "JavaScript",
-      goals: ["app", "work"],
-      otherGoal: "",
-      acceptedDeclaration: true
-    })
-  });
-  if (validOnboardingResponse.status !== 201) {
-    failures.push(`/api/academy-onboarding/: expected 201 for a valid response, received ${validOnboardingResponse.status}`);
-  }
-
-  const invalidOnboardingResponse = await fetch(`${origin}/api/academy-onboarding/`, {
+  const retiredOnboardingResponse = await fetch(`${origin}/api/academy-onboarding/`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ locale: "en" })
   });
-  if (invalidOnboardingResponse.status !== 400) {
-    failures.push(`/api/academy-onboarding/: expected 400 for an incomplete response, received ${invalidOnboardingResponse.status}`);
+  if (retiredOnboardingResponse.status !== 410) {
+    failures.push(`/api/academy-onboarding/: expected retired endpoint status 410, received ${retiredOnboardingResponse.status}`);
   }
 
   const toolDiscoveryRoutes = publicRoutes.filter(
@@ -602,7 +560,7 @@ async function verify() {
   }
 
   console.log(
-    `Hostinger route audit passed: ${publicRoutes.length} pages, ${redirects.length} redirects, ` +
+    `Hostinger route audit passed: ${publicRoutes.length} pages, ${redirects.length + accountOnboardingRedirects.length} redirects, ` +
       `${discoveredRoutes.size} internal links/assets, admin API auth, and canonical host.`
   );
 }

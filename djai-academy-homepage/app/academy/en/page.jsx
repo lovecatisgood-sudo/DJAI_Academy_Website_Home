@@ -1,15 +1,7 @@
-import OnboardingFlow from "../OnboardingFlow";
+import { permanentRedirect } from "next/navigation";
 
-export const metadata = {
-  title: "Join DJAI Academy | Community Guidelines and Learner Survey",
-  description: "Review the community guidelines, share your learning goals, and get started with DJAI Academy.",
-  alternates: {
-    canonical: "/academy/en/",
-    languages: { th: "/academy/", en: "/academy/en/", "x-default": "/academy/" }
-  },
-  robots: { index: false, follow: true }
-};
+const COMMUNITY_DESTINATION = "https://school.djai.academy/";
 
 export default function EnglishAcademyOnboardingPage() {
-  return <OnboardingFlow locale="en" />;
+  permanentRedirect(COMMUNITY_DESTINATION);
 }

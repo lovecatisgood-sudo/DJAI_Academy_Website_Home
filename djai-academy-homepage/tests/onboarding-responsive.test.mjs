@@ -5,12 +5,28 @@ import test from "node:test";
 const componentPath = new URL("../app/academy/OnboardingFlow.jsx", import.meta.url);
 const stylesPath = new URL("../app/academy/OnboardingFlow.module.css", import.meta.url);
 const copyPath = new URL("../app/academy/onboarding-copy.js", import.meta.url);
+const thaiRoutePath = new URL("../app/academy/page.jsx", import.meta.url);
+const englishRoutePath = new URL("../app/academy/en/page.jsx", import.meta.url);
+const legacyApiPath = new URL("../app/api/academy-onboarding/route.js", import.meta.url);
 
-const [component, styles, copy] = await Promise.all([
+const [component, styles, copy, thaiRoute, englishRoute, legacyApi] = await Promise.all([
   readFile(componentPath, "utf8"),
   readFile(stylesPath, "utf8"),
-  readFile(copyPath, "utf8")
+  readFile(copyPath, "utf8"),
+  readFile(thaiRoutePath, "utf8"),
+  readFile(englishRoutePath, "utf8"),
+  readFile(legacyApiPath, "utf8")
 ]);
+
+test("public Academy routes delegate onboarding to the account-authoritative School", () => {
+  for (const route of [thaiRoute, englishRoute]) {
+    assert.match(route, /permanentRedirect\(COMMUNITY_DESTINATION\)/);
+    assert.match(route, /https:\/\/school\.djai\.academy\//);
+    assert.doesNotMatch(route, /OnboardingFlow/);
+  }
+  assert.match(legacyApi, /status: 410/);
+  assert.doesNotMatch(legacyApi, /appendFile|randomUUID|DJAI_ONBOARDING_DATA_FILE/);
+});
 
 test("mobile onboarding uses six semantic steps without changing the five-step desktop flow", () => {
   assert.match(component, /const DESKTOP_STEPS = \["guidelines", "profile", "experience", "goals", "commitment"\]/);
