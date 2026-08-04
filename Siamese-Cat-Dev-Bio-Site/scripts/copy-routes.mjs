@@ -71,7 +71,7 @@ const courseLocales = {
   },
   th: {
     title: 'Vibe Code สินค้าให้สร้างรายได้ | คลาสสดออนไลน์ฟรี',
-    description: 'เข้าร่วมคลาสสดภาษาไทยฟรี 1 ชั่วโมง วันที่ 22 สิงหาคม 2569 เรียนรู้วิธีพัฒนา MVP จาก Vibe Coding ให้เป็นสินค้าที่พร้อมเปิดตัวและสร้างรายได้',
+    description: 'หน้าลงทะเบียนภาษาไทยสำหรับคลาสสดภาษาอังกฤษฟรี 1 ชั่วโมง วันที่ 22 สิงหาคม 2569 เรียนรู้วิธีพัฒนา MVP จาก Vibe Coding ให้เป็นสินค้าที่พร้อมเปิดตัวและสร้างรายได้',
     canonical: 'https://www.djai.academy/siamese_cat/dev/course/th/',
     name: 'เส้นทางสู่การ Vibe Code สินค้าที่สร้างรายได้',
     fallback: `<div id="root"><header><a href="/"><img src="/siamese_cat/dev/djai-academy-logo.webp" alt="DJAI Academy"></a></header><main>
@@ -97,7 +97,7 @@ function buildCourseHtml(language) {
     eventAttendanceMode: 'https://schema.org/OnlineEventAttendanceMode',
     startDate: '2026-08-22T13:00:00+07:00',
     endDate: '2026-08-22T14:00:00+07:00',
-    inLanguage: language,
+    inLanguage: 'en',
     isAccessibleForFree: true,
     location: { '@type': 'VirtualLocation', url: 'https://school.djai.academy/' },
     organizer: [

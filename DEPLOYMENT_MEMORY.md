@@ -1,6 +1,6 @@
 # DJAI Deployment Memory
 
-Updated: 2026-08-02
+Updated: 2026-08-05
 
 ## Current Release
 
@@ -19,12 +19,14 @@ Updated: 2026-08-02
 - Offline AI Masterclass August 22 date update commit: `47860c3`
 - Bilingual Academy onboarding release commit: `1fed087`
 - Academy onboarding mobile optimization commit: `1d541f8`
-- Account-first offline-course integration commit (local, release-gated): `a7cb611`
-- Release-gate documentation commit (local, release-gated): `65d9029`
-- Current deployed `main` checkpoint: `1d541f8`
-- Local `main` is intentionally three commits ahead of `origin/main`; do not push these local commits
-  until the Academy migration, deployment, CORS, and health-SHA gates below are confirmed.
-- Live deployment verified on 2026-08-02 after Hostinger auto-deploy.
+- Account-first offline-course integration commit after rebase: `0109d3c`
+- Free-course landing and account handoff commit after rebase: `67660fa`
+- Bilingual course branding and two-trainer design commit: `d6a5d93`
+- Public `main` and `origin/main` are synchronized at `d6a5d93da96d5217896867ecbed614ded34a81c0`.
+- Academy School production reports SHA `db369be4ed6c06dccb0a3caa175a4801bfdf0e06`.
+- At the 2026-08-05 checkpoint, the live English course page returned 200 from the previous public
+  deployment, while the new Thai route returned 404. Redeploy the `www.djai.academy` Hostinger
+  application from current `main`, then verify both routes and the campaign redirect through CLI.
 
 ## Google AdSense Account
 
@@ -50,20 +52,17 @@ Updated: 2026-08-02
   `2nsagz4_ktbag.css` and JavaScript `1baalob89wr30.js`. Live assets contained the safe-area,
   narrow/landscape responsive rules, and bilingual mobile copy.
 
-### Important account-persistence limitation
+### Account-authoritative onboarding
 
-- The onboarding is currently remembered only by browser `localStorage` key
-  `djai-academy-onboarding-complete-v1`; it is not stored as completion on a DJAI user account.
-- API responses are appended with a random response ID but no authenticated immutable user ID.
-- A different device/browser, private browsing, or cleared site data can show onboarding again;
-  direct navigation to `school.djai.academy` can bypass the landing-page gate.
-- The current client sets local completion even if the response API fails. Therefore do not claim
-  that a completed response was necessarily saved or that onboarding is enforced once per account.
-- Required fix: integrate the school authentication system, save the response against the
-  authenticated user in a transaction, store `onboarding_completed_at` plus a version, enforce the
-  gate server-side before community access, and set completion only after a successful save.
+- The legacy public onboarding pages now redirect to `school.djai.academy`; they are no longer the
+  owner of completion state.
+- School production stores the versioned survey against the authenticated user and checks
+  `onboarding_completed_at` plus `onboarding_version`. A completed account is not prompted again
+  unless a future onboarding version explicitly requires it.
+- Registration and course-intent continuations remain server-authoritative. Do not reintroduce a
+  browser-only `localStorage` completion decision or mark completion after a failed save.
 
-### Account-first offline-course integration — ready but not released
+### Account-first offline-course integration — released to source
 
 - Academy source commit `85c2b64` implements the server-authoritative onboarding fix, offline-course
   intent, and authenticated seat-registration flow. Its production dependency is migration
@@ -79,35 +78,38 @@ Updated: 2026-08-02
 - Validation passed: 3 focused registration-flow tests, the final composite Hostinger build, and
   the 201-page/11-redirect/362-link Hostinger audit. The audit now prevents direct Stripe course
   CTAs and requires account-first signup/login URLs on all four course routes.
-- **Release gate:** do not push public-site commit `a7cb611` until migration `0115` is applied and
-  Academy commit `85c2b64` is confirmed deployed. On 2026-08-02, the new session route and its
-  `OPTIONS` behavior appeared live, but `/api/health` still reported stale Academy SHA
-  `04a5fd8c2e158a051b0141d668795bb26ffa1c0b`; the production migration remained unconfirmed.
-- Academy production must set `PUBLIC_WEBSITE_ORIGIN=https://www.djai.academy`. The live session
-  response did not include `Access-Control-Allow-Origin`, and the matching preflight returned HTTP
-  403, proving that the public-site origin was not yet configured.
+- The former release gate is satisfied: production migrations `0115` and `0116` are present,
+  Academy production runs `db369be`, and both session GET and OPTIONS return
+  `Access-Control-Allow-Origin: https://www.djai.academy` with credential support.
+- The rebased public implementation is on `main` at `0109d3c`. Re-verify all four public course
+  routes after every `www.djai.academy` deployment; none may expose direct Stripe checkout CTAs.
 
-### Free English money-making product course — ready but not released
+### Free English money-making product course — source ready, latest public deploy pending
 
 - Crawlable landing page: `/siamese_cat/dev/course/`; campaign handoff:
   `/MONEY_MAKING_PRODUCT/` redirects to the allowlisted School signup intent
   `free-course` with course ID `money-making-product-2026-08-22`.
-- Thai landing page: `/siamese_cat/dev/course/th/`. The English and Thai routes form a reciprocal
+- Thai-language landing page: `/siamese_cat/dev/course/th/`. It markets the same English-taught
+  session; it does not promise a separate Thai-language class. The English and Thai routes form a reciprocal
   `hreflang` cluster with English as `x-default`; both use the DJAI Academy header logo and feature
   Mr. A with the existing founder portrait as DJAI founder, CTO, and offline-course instructor.
 - Event details are fixed at 22 August 2026, 1:00–2:00 PM ICT, online, in English, and free.
   The public page contains truthful `EducationEvent` data and never publishes the Google Meet or
   participant WhatsApp links.
-- Academy source commit `a88e288` adds account-preserving auth intent, the post-survey confirmation
+- Academy source commit `a88e288`, merged as production SHA `db369be`, adds account-preserving auth intent, the post-survey confirmation
   route, idempotent user-bound registration, confirmation email, Google Calendar action, and
   authenticated participant links. Its production dependency is migration
   `0117_free_course_event_registration.sql`.
-- **Release gate:** Academy production must apply migration `0117`, deploy commit `a88e288` or a
-  descendant, and set a valid `MONEY_MAKING_PRODUCT_MEET_URL` whose host is `meet.google.com`
-  before the public campaign is released. Do not invent or expose a meeting URL.
+- Production migration `0117` is applied and verified: the registration table exists, RLS is
+  enabled, the own-record read policy exists, and the onboarding-gated registration RPC exists.
+- The operator reported configuring `MONEY_MAKING_PRODUCT_MEET_URL` in Hostinger. Keep the actual
+  meeting URL out of Git, public HTML, committed memory, and unauthenticated responses.
+- Public `main` contains the campaign at `67660fa` and the DJAI-logo, Mr. A founder portrait, and
+  reciprocal Thai landing enhancement at `d6a5d93`. The latest enhancement was not live at the
+  checkpoint; redeploy `www.djai.academy` and verify English 200, Thai 200, and campaign 307.
 - Validation passed: Academy typecheck, lint, full 342-test suite, production build, and database
   integration assertions; public course tests, homepage lint/build, root Hostinger build, and the
-  200-page/13-redirect/362-link composite audit. With `DJAI_BLOG_DATA_FILE` deliberately missing,
+  201-page/13-redirect/364-link composite audit. With `DJAI_BLOG_DATA_FILE` deliberately missing,
   both indexes still exposed 16 articles and all 32 article routes returned 200 with sitemap
   coverage.
 
