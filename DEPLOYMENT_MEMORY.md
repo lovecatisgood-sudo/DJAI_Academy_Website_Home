@@ -22,7 +22,8 @@ Updated: 2026-08-05
 - Account-first offline-course integration commit after rebase: `0109d3c`
 - Free-course landing and account handoff commit after rebase: `67660fa`
 - Bilingual course branding and two-trainer design commit: `d6a5d93`
-- Public `main` and `origin/main` are synchronized at `d6a5d93da96d5217896867ecbed614ded34a81c0`.
+- Public `main` and `origin/main` are synchronized. The visual implementation is `d6a5d93`; later
+  commits only correct the English-session wording and preserve this deployment memory.
 - Academy School production reports SHA `db369be4ed6c06dccb0a3caa175a4801bfdf0e06`.
 - At the 2026-08-05 checkpoint, the live English course page returned 200 from the previous public
   deployment, while the new Thai route returned 404. Redeploy the `www.djai.academy` Hostinger
@@ -106,7 +107,8 @@ Updated: 2026-08-05
   meeting URL out of Git, public HTML, committed memory, and unauthenticated responses.
 - Public `main` contains the campaign at `67660fa` and the DJAI-logo, Mr. A founder portrait, and
   reciprocal Thai landing enhancement at `d6a5d93`. The latest enhancement was not live at the
-  checkpoint; redeploy `www.djai.academy` and verify English 200, Thai 200, and campaign 307.
+  checkpoint; redeploy `www.djai.academy` from latest `main` and verify English 200, Thai 200, and
+  campaign 307.
 - Validation passed: Academy typecheck, lint, full 342-test suite, production build, and database
   integration assertions; public course tests, homepage lint/build, root Hostinger build, and the
   201-page/13-redirect/364-link composite audit. With `DJAI_BLOG_DATA_FILE` deliberately missing,
