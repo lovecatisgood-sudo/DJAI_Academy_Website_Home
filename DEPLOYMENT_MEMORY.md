@@ -92,6 +92,9 @@ Updated: 2026-08-02
 - Crawlable landing page: `/siamese_cat/dev/course/`; campaign handoff:
   `/MONEY_MAKING_PRODUCT/` redirects to the allowlisted School signup intent
   `free-course` with course ID `money-making-product-2026-08-22`.
+- Thai landing page: `/siamese_cat/dev/course/th/`. The English and Thai routes form a reciprocal
+  `hreflang` cluster with English as `x-default`; both use the DJAI Academy header logo and feature
+  Mr. A with the existing founder portrait as DJAI founder, CTO, and offline-course instructor.
 - Event details are fixed at 22 August 2026, 1:00–2:00 PM ICT, online, in English, and free.
   The public page contains truthful `EducationEvent` data and never publishes the Google Meet or
   participant WhatsApp links.

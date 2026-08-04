@@ -14,10 +14,18 @@ test('course page communicates the exact free live-session offer', () => {
   }
   assert.match(component, /href=\{registrationPath\}/);
   assert.match(component, /Free DJAI School account required/);
+  assert.match(component, /djai-academy-logo\.webp/);
+  assert.match(component, /founder-djai-display\.webp/);
+  assert.match(component, /Founder of DJAI Academy/);
+  assert.match(component, /ผู้ก่อตั้ง DJAI/);
 });
 
-test('initial HTML has self-canonical metadata and truthful Event schema', () => {
+test('English and Thai initial HTML form a truthful reciprocal language cluster', () => {
   assert.match(routeBuilder, /https:\/\/www\.djai\.academy\/siamese_cat\/dev\/course\//);
+  assert.match(routeBuilder, /https:\/\/www\.djai\.academy\/siamese_cat\/dev\/course\/th\//);
+  assert.match(routeBuilder, /buildCourseHtml\('en'\)/);
+  assert.match(routeBuilder, /buildCourseHtml\('th'\)/);
+  assert.match(routeBuilder, /hreflang=\"x-default\"/);
   assert.match(routeBuilder, /'@type': 'EducationEvent'/);
   assert.match(routeBuilder, /startDate: '2026-08-22T13:00:00\+07:00'/);
   assert.match(routeBuilder, /isAccessibleForFree: true/);
@@ -28,4 +36,5 @@ test('course layout protects mobile and reduced-motion users', () => {
   assert.match(styles, /@media \(max-width: 600px\)/);
   assert.match(styles, /@media \(prefers-reduced-motion: reduce\)/);
   assert.match(styles, /min-height: 54px/);
+  assert.match(styles, /\.trainer-grid/);
 });

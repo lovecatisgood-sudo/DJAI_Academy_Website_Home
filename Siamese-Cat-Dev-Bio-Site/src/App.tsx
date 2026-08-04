@@ -74,6 +74,7 @@ function Header() {
     ['เกี่ยวกับ', '#about'],
     ['เส้นทาง', '#journey'],
     ['งานที่ทำ', '#work'],
+    ['คลาสฟรี', '/siamese_cat/dev/course/th/'],
     ['บล็อก', '/siamese_cat/dev/blog/'],
     ['DJAI Academy', 'https://www.djai.academy/'],
     ['EN', '/siamese_cat/dev/en/'],
@@ -751,7 +752,8 @@ function ThaiApp() {
 
 export default function App() {
   const pathname = window.location.pathname.toLowerCase();
-  if (pathname.includes('/course')) return <CourseApp />;
+  if (pathname.includes('/course/th')) return <CourseApp language="th" />;
+  if (pathname.includes('/course')) return <CourseApp language="en" />;
   const isEnglish = pathname.includes('/en');
   return isEnglish ? <EnglishApp /> : <ThaiApp />;
 }

@@ -20,6 +20,7 @@ const requiredOutputs = [
   "Siamese-Cat-Dev-Bio-Site/dist/index.html",
   "Siamese-Cat-Dev-Bio-Site/dist/en/index.html",
   "Siamese-Cat-Dev-Bio-Site/dist/course/index.html",
+  "Siamese-Cat-Dev-Bio-Site/dist/course/th/index.html",
   "djai-image-resizer/public/index.html",
   "djai-image-resizer/public/en/index.html",
   "djai-media-tools/public/index.html",

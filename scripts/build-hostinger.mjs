@@ -178,7 +178,7 @@ const projects = [
     dir: "Siamese-Cat-Dev-Bio-Site",
     install: "ci",
     build: ["run", "build"],
-    outputs: ["dist/index.html", "dist/en/index.html", "dist/course/index.html", "dist/djai-academy-logo.webp", "dist/siamese-cat-dev-logo.webp"]
+    outputs: ["dist/index.html", "dist/en/index.html", "dist/course/index.html", "dist/course/th/index.html", "dist/djai-academy-logo.webp", "dist/siamese-cat-dev-logo.webp"]
   }
 ];
 
