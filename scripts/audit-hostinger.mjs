@@ -117,6 +117,7 @@ const publicRoutes = [
   "/siamese_cat/en/",
   "/siamese_cat/dev/",
   "/siamese_cat/dev/en/",
+  "/siamese_cat/dev/course/",
   "/siamese_cat/dev/blog/",
   "/siamese_cat/dev/blog/en/",
   "/admin/blog/",
@@ -146,6 +147,8 @@ const redirects = [
   ["/tools/document/word-to-pdf/en/", "/tools/document/docx-to-pdf/en/"]
 ];
 const accountOnboardingRedirects = ["/academy/", "/academy/en/"];
+const moneyMakingProductRegistrationUrl =
+  "https://school.djai.academy/signup?intent=free-course&course_id=money-making-product-2026-08-22";
 const auditPassword = "djai-local-deployment-audit";
 const auditApiKey = "djai-local-api-key-audit";
 const auditDataDirectory = await mkdtemp(join(tmpdir(), "djai-blog-audit-"));
@@ -222,6 +225,28 @@ async function verify() {
     if (response.status !== 308 || response.headers.get("location") !== "https://school.djai.academy/") {
       failures.push(`${route}: expected 308 to the account-authoritative School`);
     }
+  }
+
+  const campaignResponse = await fetch(`${origin}/MONEY_MAKING_PRODUCT/`, { redirect: "manual" });
+  if (campaignResponse.status !== 307 || campaignResponse.headers.get("location") !== moneyMakingProductRegistrationUrl) {
+    failures.push("/MONEY_MAKING_PRODUCT/: expected account-first free-course signup redirect");
+  }
+
+  const courseLandingHtml = await fetch(`${origin}/siamese_cat/dev/course/`).then((response) => response.text());
+  const courseLandingChecks = [
+    '<html lang="en"',
+    '<link rel="canonical" href="https://www.djai.academy/siamese_cat/dev/course/"',
+    '<h1>Vibe Code a Product That Can Make Money</h1>',
+    'href="/MONEY_MAKING_PRODUCT/"',
+    '"@type":"EducationEvent"',
+    '"startDate":"2026-08-22T13:00:00+07:00"',
+    '"isAccessibleForFree":true'
+  ];
+  for (const expected of courseLandingChecks) {
+    if (!courseLandingHtml.includes(expected)) failures.push(`/siamese_cat/dev/course/: missing ${expected}`);
+  }
+  if (courseLandingHtml.includes("chat.whatsapp.com") || courseLandingHtml.includes("meet.google.com")) {
+    failures.push("/siamese_cat/dev/course/: private participant links leaked into public HTML");
   }
 
   const courseRegistrationChecks = [
@@ -349,6 +374,12 @@ async function verify() {
   const sitemapBody = await fetch(`${origin}/sitemap.xml`).then((response) => response.text());
   for (const path of ["/tools/seo-screaming-toad/", "/tools/seo-screaming-toad/en/"]) {
     if (!sitemapBody.includes(`https://www.djai.academy${path}`)) failures.push(`/sitemap.xml: missing ${path}`);
+  }
+  if (!sitemapBody.includes("https://www.djai.academy/siamese_cat/dev/course/")) {
+    failures.push("/sitemap.xml: missing the money-making product course landing page");
+  }
+  if (sitemapBody.includes("/MONEY_MAKING_PRODUCT/")) {
+    failures.push("/sitemap.xml: redirect-only campaign URL must not be submitted");
   }
 
   const voiceAdminLoginResponse = await fetch(`${origin}/voice_admin/login`);

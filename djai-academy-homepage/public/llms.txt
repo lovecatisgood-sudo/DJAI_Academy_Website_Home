@@ -35,6 +35,7 @@ SEO Screaming Toad is an independent MIT-licensed release candidate. It is not a
 
 - [Siamese Cat Dev](https://www.djai.academy/siamese_cat/dev/): product design and software development profile
 - [Siamese Cat Dev Blog](https://www.djai.academy/siamese_cat/dev/blog/): product-building and AI-assisted development articles
+- [Free Vibe-Coding Course](https://www.djai.academy/siamese_cat/dev/course/): one-hour live English course on turning an MVP into a production-ready product that can be shipped and sold
 
 ## Canonical Source
 

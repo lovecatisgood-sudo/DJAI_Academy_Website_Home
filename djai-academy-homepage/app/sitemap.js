@@ -5,13 +5,14 @@ export const revalidate = 3600;
 
 const ORIGIN = "https://www.djai.academy";
 const STATIC_LAST_MODIFIED = new Date("2026-07-30T00:00:00.000Z");
+const COURSE_LAST_MODIFIED = new Date("2026-08-05T00:00:00.000Z");
 
 const corePaths = [
   "/", "/en/", "/portfolio/", "/portfolio/en/", "/development/", "/development/en/", "/web_promo/",
   "/service/", "/service/en/", "/tools/", "/tools/en/", "/tools/qrgen/", "/tools/qrgen/en/",
   "/tools/seo-screaming-toad/", "/tools/seo-screaming-toad/en/",
   "/course/", "/course/en/", "/course/detail/", "/course/detail/en/", "/siamese_cat/",
-  "/siamese_cat/en/", "/siamese_cat/dev/", "/siamese_cat/dev/en/", "/siamese_cat/dev/blog/",
+  "/siamese_cat/en/", "/siamese_cat/dev/", "/siamese_cat/dev/en/", "/siamese_cat/dev/course/", "/siamese_cat/dev/blog/",
   "/siamese_cat/dev/blog/en/", "/blog/", "/blog/en/", "/Cam_PDF_Scan_Signer_QR-Gen/",
   "/Cam_PDF_Scan_Signer_QR-Gen/privacy/", "/Cam_PDF_Scan_Signer_QR-Gen/terms/",
   "/Cam_PDF_Scan_Signer_QR-Gen/delete-account/"
@@ -75,9 +76,9 @@ export default async function sitemap() {
 
   const staticEntries = [...new Set(staticPaths)].map((path) => entry(
     path,
-    STATIC_LAST_MODIFIED,
+    path === "/siamese_cat/dev/course/" ? COURSE_LAST_MODIFIED : STATIC_LAST_MODIFIED,
     path === "/" || path === "/en/" ? "weekly" : "monthly",
-    path === "/" || path === "/en/" ? 1 : path.startsWith("/tools/") ? 0.8 : 0.7
+    path === "/" || path === "/en/" ? 1 : path === "/siamese_cat/dev/course/" ? 0.9 : path.startsWith("/tools/") ? 0.8 : 0.7
   ));
   const articleEntries = [
     ...englishPosts

@@ -31,6 +31,7 @@ import {
 } from 'lucide-react';
 import { ReactNode, useEffect, useRef, useState } from 'react';
 import EnglishApp from './EnglishApp';
+import CourseApp from './CourseApp';
 import SocialLinks, { HeaderSocialLinks } from './SocialLinks';
 
 const ease = [0.25, 0.1, 0.25, 1] as const;
@@ -749,6 +750,8 @@ function ThaiApp() {
 }
 
 export default function App() {
-  const isEnglish = window.location.pathname.toLowerCase().includes('/en');
+  const pathname = window.location.pathname.toLowerCase();
+  if (pathname.includes('/course')) return <CourseApp />;
+  const isEnglish = pathname.includes('/en');
   return isEnglish ? <EnglishApp /> : <ThaiApp />;
 }

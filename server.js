@@ -216,7 +216,8 @@ function serveHealth(req, res) {
     path.join(rootDir, "djai-pdf-tools", "out", "pdf.worker.min.mjs"),
     path.join(rootDir, "djai-document-tools", "out", "document", "index.html"),
     path.join(rootDir, "djai-document-tools", "out", "document", "pdf.worker.min.mjs"),
-    path.join(rootDir, "Siamese-Cat-Dev-Bio-Site", "dist", "index.html")
+    path.join(rootDir, "Siamese-Cat-Dev-Bio-Site", "dist", "index.html"),
+    path.join(rootDir, "Siamese-Cat-Dev-Bio-Site", "dist", "course", "index.html")
   ];
   const buildsReady = requiredOutputs.every((output) => fs.existsSync(output));
   const body = JSON.stringify({

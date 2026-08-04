@@ -72,6 +72,7 @@ function Header() {
     ['About', '#about'],
     ['Journey', '#journey'],
     ['What I Do', '#work'],
+    ['Free Course', '/siamese_cat/dev/course/'],
     ['Blog', '/siamese_cat/dev/blog/en/'],
     ['DJAI Academy', 'https://www.djai.academy/en/'],
     ['ไทย', '/siamese_cat/dev/'],

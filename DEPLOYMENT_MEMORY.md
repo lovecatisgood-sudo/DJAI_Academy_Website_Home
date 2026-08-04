@@ -87,6 +87,27 @@ Updated: 2026-08-02
   response did not include `Access-Control-Allow-Origin`, and the matching preflight returned HTTP
   403, proving that the public-site origin was not yet configured.
 
+### Free English money-making product course — ready but not released
+
+- Crawlable landing page: `/siamese_cat/dev/course/`; campaign handoff:
+  `/MONEY_MAKING_PRODUCT/` redirects to the allowlisted School signup intent
+  `free-course` with course ID `money-making-product-2026-08-22`.
+- Event details are fixed at 22 August 2026, 1:00–2:00 PM ICT, online, in English, and free.
+  The public page contains truthful `EducationEvent` data and never publishes the Google Meet or
+  participant WhatsApp links.
+- Academy source commit `a88e288` adds account-preserving auth intent, the post-survey confirmation
+  route, idempotent user-bound registration, confirmation email, Google Calendar action, and
+  authenticated participant links. Its production dependency is migration
+  `0117_free_course_event_registration.sql`.
+- **Release gate:** Academy production must apply migration `0117`, deploy commit `a88e288` or a
+  descendant, and set a valid `MONEY_MAKING_PRODUCT_MEET_URL` whose host is `meet.google.com`
+  before the public campaign is released. Do not invent or expose a meeting URL.
+- Validation passed: Academy typecheck, lint, full 342-test suite, production build, and database
+  integration assertions; public course tests, homepage lint/build, root Hostinger build, and the
+  200-page/13-redirect/362-link composite audit. With `DJAI_BLOG_DATA_FILE` deliberately missing,
+  both indexes still exposed 16 articles and all 32 article routes returned 200 with sitemap
+  coverage.
+
 ## Web Promotion and Voice Agent — Current Handoff
 
 - Public page: `/web_promo/`; protected admin: `/voice_admin/`.
