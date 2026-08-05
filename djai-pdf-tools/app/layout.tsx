@@ -22,14 +22,17 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="th">
-      <body>
-        {children}
-        <Script
+      <head>
+        {/* Raw tag, not next/script: AdSense verification reads the served HTML,
+            and next/script emits only a preload link, which Google cannot detect. */}
+        <script
           async
           src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
           crossOrigin="anonymous"
-          strategy="afterInteractive"
         />
+      </head>
+      <body>
+        {children}
         <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="lazyOnload" />
         <Script id="google-analytics" strategy="lazyOnload">
           {`

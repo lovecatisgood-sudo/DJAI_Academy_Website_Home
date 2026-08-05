@@ -52,15 +52,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="th">
-      <body>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": [{ "@type": "SoftwareApplication", name: "DJAI Free QR Code Generator", url: "https://www.djai.academy/tools/qrgen/", applicationCategory: "UtilitiesApplication", operatingSystem: "Web browser", isAccessibleForFree: true, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, publisher: { "@type": "Organization", name: "DJAI Academy", url: "https://www.djai.academy/" } }, { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "DJAI Academy", item: "https://www.djai.academy/" }, { "@type": "ListItem", position: 2, name: "Free QR Code Generator", item: "https://www.djai.academy/tools/qrgen/" }] }] }) }} />
-        {children}
-        <Script
+      <head>
+        {/* Raw tag, not next/script: AdSense verification reads the served HTML,
+            and next/script emits only a preload link, which Google cannot detect. */}
+        <script
           async
           src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
           crossOrigin="anonymous"
-          strategy="afterInteractive"
         />
+      </head>
+      <body>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": [{ "@type": "SoftwareApplication", name: "DJAI Free QR Code Generator", url: "https://www.djai.academy/tools/qrgen/", applicationCategory: "UtilitiesApplication", operatingSystem: "Web browser", isAccessibleForFree: true, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, publisher: { "@type": "Organization", name: "DJAI Academy", url: "https://www.djai.academy/" } }, { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "DJAI Academy", item: "https://www.djai.academy/" }, { "@type": "ListItem", position: 2, name: "Free QR Code Generator", item: "https://www.djai.academy/tools/qrgen/" }] }] }) }} />
+        {children}
         <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="lazyOnload" />
         <Script id="google-analytics" strategy="lazyOnload">
           {`
