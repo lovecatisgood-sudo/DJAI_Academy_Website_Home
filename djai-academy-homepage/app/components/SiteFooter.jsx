@@ -1,4 +1,5 @@
 import { urlFor } from "../lib/i18n";
+import CookieSettingsButton from "./CookieSettingsButton";
 
 const footerCopy = {
   en: {
@@ -33,7 +34,9 @@ const footerCopy = {
     ],
     contact: "Contact",
     email: "Email:contact@djai.academy",
-    copyright: "(c) 2026 DJAI Academy. All rights reserved."
+    copyright: "(c) 2026 DJAI Academy. All rights reserved.",
+    privacy: "Privacy & Cookie Policy",
+    cookieSettings: "Cookie settings"
   },
   th: {
     columns: [
@@ -67,7 +70,9 @@ const footerCopy = {
     ],
     contact: "ติดต่อ",
     email: "Email:contact@djai.academy",
-    copyright: "(c) 2026 DJAI Academy. All rights reserved."
+    copyright: "(c) 2026 DJAI Academy. All rights reserved.",
+    privacy: "นโยบายความเป็นส่วนตัวและคุกกี้",
+    cookieSettings: "ตั้งค่าคุกกี้"
   }
 };
 
@@ -107,7 +112,13 @@ export default function SiteFooter({ locale = "en" }) {
         </div>
       </div>
 
-      <div className="copyright">{copy.copyright}</div>
+      <div className="copyright">
+        <span>{copy.copyright}</span>
+        <nav className="footer-legal" aria-label={locale === "th" ? "ลิงก์ทางกฎหมาย" : "Legal links"}>
+          <a href={locale === "th" ? "/privacy/" : "/privacy/en/"}>{copy.privacy}</a>
+          <CookieSettingsButton>{copy.cookieSettings}</CookieSettingsButton>
+        </nav>
+      </div>
     </footer>
   );
 }

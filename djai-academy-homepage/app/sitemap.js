@@ -9,7 +9,7 @@ const COURSE_LAST_MODIFIED = new Date("2026-08-05T00:00:00.000Z");
 
 const corePaths = [
   "/", "/en/", "/portfolio/", "/portfolio/en/", "/development/", "/development/en/", "/web_promo/",
-  "/service/", "/service/en/", "/tools/", "/tools/en/", "/tools/qrgen/", "/tools/qrgen/en/",
+  "/service/", "/service/en/", "/privacy/", "/privacy/en/", "/tools/", "/tools/en/", "/tools/qrgen/", "/tools/qrgen/en/",
   "/tools/seo-screaming-toad/", "/tools/seo-screaming-toad/en/",
   "/course/", "/course/en/", "/course/detail/", "/course/detail/en/", "/siamese_cat/",
   "/siamese_cat/en/", "/siamese_cat/dev/", "/siamese_cat/dev/en/", "/siamese_cat/dev/course/", "/siamese_cat/dev/course/th/", "/siamese_cat/dev/blog/",

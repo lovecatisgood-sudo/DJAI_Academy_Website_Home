@@ -1,0 +1,137 @@
+.page {
+  min-height: 100vh;
+  padding: 136px 20px 90px;
+  color: #173252;
+  background:
+    radial-gradient(circle at 14% 4%, rgba(25, 227, 255, 0.16), transparent 24rem),
+    linear-gradient(180deg, #061a3d 0, #082655 360px, #f5f9ff 360px);
+}
+
+.hero,
+.policy {
+  width: min(920px, 100%);
+  margin: 0 auto;
+}
+
+.hero {
+  padding: 44px;
+  color: #ffffff;
+  background: rgba(3, 16, 38, 0.68);
+  border: 1px solid rgba(25, 227, 255, 0.25);
+  border-radius: 12px;
+  box-shadow: 0 24px 70px rgba(0, 19, 60, 0.3);
+}
+
+.hero p {
+  margin-bottom: 12px;
+  color: #19e3ff;
+  font-size: 0.78rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  margin: 0 0 18px;
+  font-size: clamp(2.5rem, 7vw, 5.2rem);
+  line-height: 0.98;
+}
+
+.hero span {
+  color: #b9cdec;
+}
+
+.policy {
+  margin-top: 34px;
+  padding: 46px;
+  background: #ffffff;
+  border: 1px solid rgba(22, 119, 255, 0.14);
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(8, 38, 85, 0.1);
+}
+
+.lead {
+  color: #294c76;
+  font-size: 1.15rem;
+  line-height: 1.8;
+}
+
+.policy section {
+  padding-top: 32px;
+  border-top: 1px solid rgba(22, 119, 255, 0.13);
+  margin-top: 32px;
+}
+
+.policy h2 {
+  margin-bottom: 16px;
+  color: #031026;
+  font-size: clamp(1.6rem, 4vw, 2.5rem);
+  line-height: 1.1;
+}
+
+.policy p,
+.policy li {
+  line-height: 1.78;
+}
+
+.policy a {
+  color: #075bbb;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.policy button {
+  min-height: 46px;
+  margin-top: 8px;
+  padding: 11px 16px;
+  color: #ffffff;
+  background: #075bbb;
+  border: 0;
+  border-radius: 8px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.tableWrap {
+  width: 100%;
+  margin: 20px 0;
+  overflow-x: auto;
+  border: 1px solid rgba(16, 60, 118, 0.16);
+  border-radius: 8px;
+}
+
+.tableWrap table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+.tableWrap th,
+.tableWrap td {
+  padding: 13px 14px;
+  border-bottom: 1px solid rgba(16, 60, 118, 0.12);
+  text-align: left;
+  vertical-align: top;
+}
+
+.tableWrap th {
+  color: #031026;
+  background: #eef5ff;
+}
+
+.tableWrap tr:last-child td {
+  border-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 112px 12px 60px;
+  }
+
+  .hero,
+  .policy {
+    padding: 28px 22px;
+  }
+}
