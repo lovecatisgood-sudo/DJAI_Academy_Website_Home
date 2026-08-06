@@ -144,7 +144,13 @@ function render(template, preset, language) {
   const switchUrl = language === "th" ? englishUrl : thaiUrl;
   const guide = `<section class="seo-guide section-shell" aria-labelledby="seo-guide-heading"><div><span class="section-kicker">${language === "th" ? "คู่มือเครื่องมือ" : "TOOL GUIDE"}</span><h2 id="seo-guide-heading">${escapeHtml(guideTitle)}</h2><p>${escapeHtml(intro)}</p></div><ol>${steps.map((step) => `<li><span>${escapeHtml(step)}</span></li>`).join("")}</ol></section>`;
 
-  return injectDiscovery(template, discoveryMarkup(language, preset.slug))
+  // The model attribution belongs on pages that actually run the model. Preset
+  // pages for other modes never load it, so the credit is stripped there.
+  const creditScoped = (html) => preset.mode === "background"
+    ? html
+    : html.replace(/\s*<p class="footer-credit">[\s\S]*?<\/p>/, "");
+
+  return creditScoped(injectDiscovery(template, discoveryMarkup(language, preset.slug)))
     .replace(/<title>.*?<\/title>/, `<title>${escapeHtml(title)}</title>`)
     .replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${escapeHtml(description)}">`)
     .replace(/<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${canonical}">`)
