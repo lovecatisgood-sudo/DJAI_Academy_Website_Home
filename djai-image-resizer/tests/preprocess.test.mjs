@@ -11,6 +11,18 @@ const solid = (size, r, g, b) => {
   return data;
 };
 
+const withPixels = (size, pixels) => {
+  const data = new Uint8ClampedArray(size * size * 4);
+  for (let i = 0; i < pixels.length; i += 1) {
+    const [idx, r, g, b] = pixels[i];
+    data[idx * 4] = r;
+    data[idx * 4 + 1] = g;
+    data[idx * 4 + 2] = b;
+    data[idx * 4 + 3] = 255;
+  }
+  return data;
+};
+
 test("produces a channel-first tensor of the right length", () => {
   const tensor = toTensor(solid(2, 255, 255, 255), 2, MODELS.u2netp);
   assert.equal(tensor.length, 3 * 2 * 2);
@@ -44,4 +56,32 @@ test("channels are separated into contiguous planes", () => {
   const plane = 4;
   assert.ok(tensor[0] > tensor[plane], "red plane should exceed green plane");
   assert.equal(tensor[plane], tensor[plane * 2], "green and blue planes should match");
+});
+
+test("scaleByMax scans all pixels, not just the first one", () => {
+  // Pixel 0: (10, 10, 10), Pixel 3: (200, 180, 90). Brightest is 200.
+  const model = MODELS.u2netp;
+  const rgba = withPixels(2, [
+    [0, 10, 10, 10],
+    [3, 200, 180, 90]
+  ]);
+  const tensor = toTensor(rgba, 2, model);
+  // Brightest pixel (index 3) red channel: (200/200 - 0.485) / 0.229
+  const expectedBrightestR = (1 - model.mean[0]) / model.std[0];
+  assert.ok(Math.abs(tensor[3] - expectedBrightestR) < 1e-5, `brightest pixel red: ${tensor[3]} vs ${expectedBrightestR}`);
+});
+
+test("planes are not swapped (distinct channel values per plane)", () => {
+  // All pixels (200, 100, 50) with isnet (mean=0.5, std=1, no scaleByMax).
+  // Expected: R = (200/255 - 0.5) / 1 ≈ 0.28431
+  //           G = (100/255 - 0.5) / 1 ≈ -0.10784
+  //           B = (50/255 - 0.5) / 1 ≈ -0.30392
+  const tensor = toTensor(solid(2, 200, 100, 50), 2, MODELS.isnet);
+  const plane = 4; // 2*2
+  const expectedR = (200 / 255 - 0.5) / 1;
+  const expectedG = (100 / 255 - 0.5) / 1;
+  const expectedB = (50 / 255 - 0.5) / 1;
+  assert.ok(Math.abs(tensor[0] - expectedR) < 1e-5, `R plane pixel 0: ${tensor[0]} vs ${expectedR}`);
+  assert.ok(Math.abs(tensor[plane] - expectedG) < 1e-5, `G plane pixel 0: ${tensor[plane]} vs ${expectedG}`);
+  assert.ok(Math.abs(tensor[plane * 2] - expectedB) < 1e-5, `B plane pixel 0: ${tensor[plane * 2]} vs ${expectedB}`);
 });
