@@ -1,0 +1,17 @@
+DJAI Image Tools
+Copyright (c) 2026 DJAI Academy
+
+This product includes software and model weights developed by third parties.
+
+U^2-Net (u2netp.onnx)
+  Copyright (c) 2020 Xuebin Qin
+  https://github.com/xuebinqin/U-2-Net
+  Licensed under the Apache License, Version 2.0.
+
+ONNX Runtime Web (onnxruntime-web)
+  Copyright (c) Microsoft Corporation
+  https://github.com/microsoft/onnxruntime
+  Licensed under the MIT License.
+
+The background-removal pipeline (image preprocessing, tensor construction,
+mask post-processing, and compositing) is original work by DJAI Academy.
