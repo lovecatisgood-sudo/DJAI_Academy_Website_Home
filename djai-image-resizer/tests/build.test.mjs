@@ -39,7 +39,30 @@ test("processing libraries are bundled locally", () => {
   assert.equal(existsSync(backgroundRemoval), true);
   assert.ok(readFileSync(heic).byteLength > 1_000_000);
   assert.ok(readFileSync(zip).byteLength > 50_000);
-  assert.ok(readFileSync(backgroundRemoval).byteLength > 500_000);
+  // The engine bundle is first-party glue plus the onnxruntime-web wasm loader.
+  // It is deliberately small; the weights and wasm are separate vendor assets.
+  assert.ok(readFileSync(backgroundRemoval).byteLength > 20_000);
+});
+
+test("background-removal runtime assets are self-hosted", () => {
+  const model = join(publicDir, "vendor", "models", "u2netp.onnx");
+  const wasm = join(publicDir, "vendor", "ort", "ort-wasm-simd-threaded.wasm");
+  assert.equal(existsSync(model), true, "u2netp.onnx must be fetched into public/vendor/models");
+  assert.equal(existsSync(wasm), true, "ORT wasm must be copied into public/vendor/ort");
+  assert.equal(readFileSync(model).byteLength, 4_574_861);
+  assert.ok(readFileSync(wasm).byteLength > 10_000_000);
+});
+
+test("no AGPL dependency remains", () => {
+  const pkg = readFileSync(join(projectDir, "package.json"), "utf8");
+  const lock = readFileSync(join(projectDir, "package-lock.json"), "utf8");
+  assert.doesNotMatch(pkg, /@imgly/);
+  assert.doesNotMatch(lock, /@imgly/);
+});
+
+test("the shipped engine bundle contacts no third-party CDN", () => {
+  const bundle = readFileSync(join(publicDir, "vendor", "background-removal.mjs"), "utf8");
+  assert.doesNotMatch(bundle, /staticimgly|unpkg\.com|cdn\.jsdelivr/i);
 });
 
 test("public image-tool code has no donor canonical or runtime CDN", () => {
