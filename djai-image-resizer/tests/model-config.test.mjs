@@ -11,6 +11,15 @@ test("default model is u2netp with U^2-Net preprocessing constants", () => {
   assert.equal(model.scaleByMax, true);
 });
 
+test("u2net shares u2netp normalization with correct file path", () => {
+  const model = MODELS.u2net;
+  assert.equal(model.file, "models/u2net.onnx");
+  assert.equal(model.size, 320);
+  assert.deepEqual(model.mean, [0.485, 0.456, 0.406]);
+  assert.deepEqual(model.std, [0.229, 0.224, 0.225]);
+  assert.equal(model.scaleByMax, true);
+});
+
 test("isnet fallback uses its own 1024px normalization", () => {
   const model = MODELS.isnet;
   assert.equal(model.size, 1024);
