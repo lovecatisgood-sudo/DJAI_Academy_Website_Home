@@ -434,6 +434,9 @@
     els.mainPreview.hidden = kind === 'compare';
     els.compareView.hidden = kind !== 'compare';
     els.emptyResult.hidden = true;
+    // Background-removal output has an alpha channel, so the compare layer needs
+    // its own backdrop or the original beneath it shows through the cutout.
+    els.compareView.classList.toggle('transparent-result', state.mode === 'background');
 
     if (kind === 'compare') {
       els.compareOriginal.src = state.objectUrl || '';

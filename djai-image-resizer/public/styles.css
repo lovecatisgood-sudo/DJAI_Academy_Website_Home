@@ -229,6 +229,10 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
 .compare-view { position: absolute; inset: 18px; overflow: hidden; }
 .compare-view > img, .compare-view > div, .compare-view > div img { position: absolute; inset: 0; width: 100%; height: 100%; max-height: none; object-fit: contain; }
 .compare-view > div { overflow: hidden; clip-path: inset(0 50% 0 0); }
+/* A background-removal result is transparent and sits directly on top of the
+   untouched original, so without its own backdrop the removed background shows
+   through pixel-perfectly and the cutout looks like nothing happened. */
+.compare-view.transparent-result > div { background-color: #fff; background-image: linear-gradient(45deg, #e8ecf2 25%, transparent 25%),linear-gradient(-45deg, #e8ecf2 25%, transparent 25%),linear-gradient(45deg, transparent 75%, #e8ecf2 75%),linear-gradient(-45deg, transparent 75%, #e8ecf2 75%); background-size: 20px 20px; background-position: 0 0,0 10px,10px -10px,-10px 0; }
 .compare-view input { position: absolute; z-index: 3; left: 5%; bottom: 14px; width: 90%; accent-color: var(--blue); }
 .compare-before, .compare-after { position: absolute; z-index: 2; top: 12px; padding: 5px 8px; border-radius: 6px; color: white; background: rgba(7, 28, 74, .78); font-size: 9px; font-weight: 700; }
 .compare-before { left: 12px; }

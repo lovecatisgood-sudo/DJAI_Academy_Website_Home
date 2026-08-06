@@ -18,10 +18,12 @@ await fetchModels();
 // Only the plain SIMD wasm ships: the site is not cross-origin isolated, so the
 // threaded/JSEP/JSPI variants (another ~63 MB) could never be used at runtime.
 mkdirSync(join(vendorDir, "ort"), { recursive: true });
-cpSync(
-  join(projectDir, "node_modules", "onnxruntime-web", "dist", "ort-wasm-simd-threaded.wasm"),
-  join(vendorDir, "ort", "ort-wasm-simd-threaded.wasm")
-);
+for (const file of ["ort-wasm-simd-threaded.wasm", "ort-wasm-simd-threaded.mjs"]) {
+  cpSync(
+    join(projectDir, "node_modules", "onnxruntime-web", "dist", file),
+    join(vendorDir, "ort", file)
+  );
+}
 
 await build({
   entryPoints: [join(projectDir, "src", "background-removal-entry.mjs")],
