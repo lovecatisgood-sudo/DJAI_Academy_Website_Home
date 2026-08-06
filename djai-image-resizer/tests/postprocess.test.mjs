@@ -20,3 +20,8 @@ test("a flat mask does not divide by zero", () => {
 test("output length matches input length", () => {
   assert.equal(toMask(new Float32Array(1024)).length, 1024);
 });
+
+test("rescales an all-negative range onto 0-255", () => {
+  const mask = toMask(new Float32Array([-6, -4, -2]));
+  assert.deepEqual(Array.from(mask), [0, 128, 255]);
+});
