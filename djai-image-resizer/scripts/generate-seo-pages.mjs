@@ -84,6 +84,26 @@ export const presets = [
   },
   {
     slug: "remove-background-image", mode: "background",
+    ctaEn: "Remove your first background for free.", ctaTh: "ลบพื้นหลังรูปแรกของคุณฟรี",
+    faqHeadingEn: "Questions about removing backgrounds.", faqHeadingTh: "คำถามเกี่ยวกับการลบพื้นหลัง",
+    faq: {
+      en: [
+        ["Is removing the background really free?", "Yes. There is no signup, no watermark, and no limit on how many images you process."],
+        ["What file do I get back?", "A PNG with a transparent background, so it keeps its transparency in design tools, slide decks, and online stores."],
+        ["Are my images uploaded?", "No. The AI model runs inside your browser, so the image never leaves your device."],
+        ["Does it handle hair and fine edges?", "Yes. The model produces a soft alpha edge rather than a hard cutout, which keeps hair and fur looking natural."],
+        ["Can I remove backgrounds from several images at once?", "Yes. Add a batch and download every transparent PNG together in a single ZIP."],
+        ["Which formats can I upload?", "JPG, PNG, WebP, HEIC, and HEIF, including photos straight from an iPhone."]
+      ],
+      th: [
+        ["ลบพื้นหลังฟรีจริงไหม", "ฟรีจริง ไม่ต้องสมัครสมาชิก ไม่มีลายน้ำ และไม่จำกัดจำนวนรูป"],
+        ["ได้ไฟล์อะไรกลับมา", "ไฟล์ PNG พื้นหลังโปร่งใส ใช้ต่อในงานออกแบบ สไลด์ และร้านค้าออนไลน์ได้ทันที"],
+        ["รูปของฉันถูกอัปโหลดไหม", "ไม่ถูกอัปโหลด โมเดล AI ทำงานใน browser รูปจึงไม่ออกจากอุปกรณ์ของคุณ"],
+        ["ลบพื้นหลังบริเวณเส้นผมได้ดีไหม", "ได้ โมเดลสร้างขอบแบบ alpha ที่นุ่มนวล ทำให้เส้นผมและขนดูเป็นธรรมชาติ"],
+        ["ลบพื้นหลังหลายรูปพร้อมกันได้ไหม", "ได้ เพิ่มรูปเป็นชุดแล้วดาวน์โหลด PNG โปร่งใสทั้งหมดเป็นไฟล์ ZIP เดียว"],
+        ["อัปโหลดไฟล์แบบไหนได้บ้าง", "JPG, PNG, WebP, HEIC และ HEIF รวมถึงรูปจาก iPhone โดยตรง"]
+      ]
+    },
     th: ["ลบพื้นหลังรูปฟรี ออนไลน์ | DJAI Image Tools", "ลบพื้นหลังรูปฟรี", "ลบพื้นหลังรูป JPG, PNG, WebP, HEIC หรือ HEIF ฟรีใน browser แล้วดาวน์โหลด PNG พื้นหลังโปร่งใส", "วิธีลบพื้นหลังรูป", "เลือกภาพสินค้า โปรไฟล์ หรือคอนเทนต์ social แล้วเครื่องมือจะใช้ AI segmentation ใน browser เพื่อสร้างไฟล์ PNG พื้นหลังโปร่งใส", ["เลือกรูปจากอุปกรณ์", "รอ AI ลบพื้นหลังใน browser", "ตรวจผลลัพธ์และดาวน์โหลด PNG โปร่งใส"]],
     en: ["Remove Image Background Free Online | DJAI Image Tools", "Remove an image background for free", "Remove the background from JPG, PNG, WebP, HEIC, or HEIF images free in your browser and download a transparent PNG.", "How to remove an image background", "Choose a product photo, profile image, or social content image and the tool uses browser-based AI segmentation to create a transparent PNG.", ["Choose an image from your device", "Let browser AI remove the background", "Review and download the transparent PNG"]]
   },
@@ -150,7 +170,33 @@ function render(template, preset, language) {
     ? html
     : html.replace(/\s*<p class="footer-credit">[\s\S]*?<\/p>/, "");
 
-  return creditScoped(injectDiscovery(template, discoveryMarkup(language, preset.slug)))
+  // Presets that define their own FAQ replace the shared resizer one, in both the
+  // visible copy and the FAQPage schema, so the two never disagree.
+  const faqScoped = (html) => {
+    if (!preset.faq) return html;
+    const entries = preset[`faq`][language];
+    const heading = language === "th" ? preset.faqHeadingTh : preset.faqHeadingEn;
+    const cta = language === "th" ? preset.ctaTh : preset.ctaEn;
+    const details = entries.map(([question, answer], index) =>
+      `<details${index === 0 ? " open" : ""}><summary>${escapeHtml(question)}<span></span></summary><p>${escapeHtml(answer)}</p></details>`
+    ).join("");
+    const schema = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: entries.map(([question, answer]) => ({
+        "@type": "Question",
+        name: question,
+        acceptedAnswer: { "@type": "Answer", text: answer }
+      }))
+    });
+    return html
+      .replace(/<script type="application\/ld\+json">\s*\{"@context":"https:\/\/schema\.org","@type":"FAQPage"[\s\S]*?<\/script>/, `<script type="application/ld+json">${schema}</script>`)
+      .replace(/(<section class="faq-section[\s\S]*?<h2>)[\s\S]*?(<\/h2>)/, `$1${escapeHtml(heading)}$2`)
+      .replace(/(<div class="faq-list">)[\s\S]*?(<\/div>\s*<\/section>)/, `$1${details}$2`)
+      .replace(/(<div><span>[^<]*<\/span><h2>)[\s\S]*?(<\/h2><\/div>)/, `$1${escapeHtml(cta)}$2`);
+  };
+
+  return faqScoped(creditScoped(injectDiscovery(template, discoveryMarkup(language, preset.slug))))
     .replace(/<title>.*?<\/title>/, `<title>${escapeHtml(title)}</title>`)
     .replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${escapeHtml(description)}">`)
     .replace(/<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${canonical}">`)

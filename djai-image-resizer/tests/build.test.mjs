@@ -96,3 +96,23 @@ test("base pages expose complete batch and comparison controls", () => {
     assert.match(html, /image\/avif/);
   }
 });
+
+test("the background-removal page carries its own FAQ, not the resizer default", () => {
+  for (const language of ["th", "en"]) {
+    const dir = join(publicDir, "remove-background-image", ...(language === "en" ? ["en"] : []));
+    const html = readFileSync(join(dir, "index.html"), "utf8");
+    assert.doesNotMatch(html, /Questions about image resizing/);
+    const schema = html.match(/\{"@context":"https:\/\/schema\.org","@type":"FAQPage"[\s\S]*?\}\]\}/);
+    assert.ok(schema, `FAQPage schema missing for ${language}`);
+    assert.doesNotMatch(schema[0], /100 KB/, "FAQ schema must not describe the resizer");
+    assert.match(schema[0], language === "th" ? /โปร่งใส/ : /transparent/i);
+  }
+});
+
+test("other preset pages keep the shared FAQ and carry no model credit", () => {
+  for (const slug of ["jpg-to-png", "compress-image", "heic-to-jpg"]) {
+    const html = readFileSync(join(publicDir, slug, "en", "index.html"), "utf8");
+    assert.match(html, /Questions about image resizing/, `${slug} lost the shared FAQ`);
+    assert.doesNotMatch(html, /footer-credit/, `${slug} must not carry the model credit`);
+  }
+});
