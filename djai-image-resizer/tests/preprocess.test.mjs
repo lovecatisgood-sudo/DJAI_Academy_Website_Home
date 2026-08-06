@@ -60,14 +60,13 @@ test("channels are separated into contiguous planes", () => {
 
 test("scaleByMax scans all pixels, not just the first one", () => {
   // Pixel 0: (10, 10, 10), Pixel 3: (200, 180, 90). Brightest is 200.
-  const model = MODELS.u2netp;
   const rgba = withPixels(2, [
     [0, 10, 10, 10],
     [3, 200, 180, 90]
   ]);
-  const tensor = toTensor(rgba, 2, model);
+  const tensor = toTensor(rgba, 2, MODELS.u2netp);
   // Brightest pixel (index 3) red channel: (200/200 - 0.485) / 0.229
-  const expectedBrightestR = (1 - model.mean[0]) / model.std[0];
+  const expectedBrightestR = (1 - 0.485) / 0.229;
   assert.ok(Math.abs(tensor[3] - expectedBrightestR) < 1e-5, `brightest pixel red: ${tensor[3]} vs ${expectedBrightestR}`);
 });
 
