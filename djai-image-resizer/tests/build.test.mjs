@@ -116,3 +116,71 @@ test("other preset pages keep the shared FAQ and carry no model credit", () => {
     assert.doesNotMatch(html, /footer-credit/, `${slug} must not carry the model credit`);
   }
 });
+
+test("the background-removal page describes background removal, not resizing", () => {
+  const html = readFileSync(join(publicDir, "remove-background-image", "en", "index.html"), "utf8");
+  for (const resizerCopy of [
+    "Smaller file. Same great image.",
+    "From oversized to optimized in three steps.",
+    "Your resized image will appear here",
+    "Pick a resize method",
+    "The complete resize process happens",
+    "Open image resizer",
+    ">IMAGE RESIZER<"
+  ]) {
+    assert.doesNotMatch(html, new RegExp(resizerCopy.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), `resizer copy left on the background page: ${resizerCopy}`);
+  }
+  assert.match(html, /Cut out the subject\. Keep a transparent PNG\./);
+  assert.match(html, /From photo to transparent PNG in three steps\./);
+});
+
+test("the scoped copy rewrite leaves the other preset pages untouched", () => {
+  for (const slug of ["jpg-to-png", "compress-image", "heic-to-jpg", "resize-image"]) {
+    const html = readFileSync(join(publicDir, slug, "en", "index.html"), "utf8");
+    assert.match(html, /Smaller file\. Same great image\./, `${slug} lost the shared tool heading`);
+    assert.match(html, /From oversized to optimized in three steps\./, `${slug} lost the shared how-section`);
+    assert.match(html, />IMAGE RESIZER</, `${slug} lost the shared kicker`);
+    assert.doesNotMatch(html, /bg-about-heading/, `${slug} must not carry the background prose block`);
+  }
+});
+
+test("the model's key facts are in the rendered prose, not only in hidden UI", () => {
+  for (const language of ["th", "en"]) {
+    const dir = join(publicDir, "remove-background-image", ...(language === "en" ? ["en"] : []));
+    const html = readFileSync(join(dir, "index.html"), "utf8");
+    const prose = html.match(/<section class="seo-guide section-shell" aria-labelledby="bg-about-heading">[\s\S]*?<\/section>/);
+    assert.ok(prose, `background prose block missing for ${language}`);
+    // The block sits outside #editor-view, which is hidden until a file is added.
+    assert.doesNotMatch(prose[0], /hidden/, "the prose block must not be inside hidden UI");
+    for (const fact of ["18 MB", "U²-Net", "ONNX Runtime", "20"]) {
+      assert.ok(prose[0].includes(fact), `${language} prose is missing the fact: ${fact}`);
+    }
+  }
+});
+
+test("the FAQ does not promise an unlimited batch the tool refuses", () => {
+  const appJs = readFileSync(join(publicDir, "app.js"), "utf8");
+  assert.match(appJs, /MAX_FILES = 20/, "batch cap moved; the FAQ copy needs rechecking");
+  for (const language of ["th", "en"]) {
+    const dir = join(publicDir, "remove-background-image", ...(language === "en" ? ["en"] : []));
+    const html = readFileSync(join(dir, "index.html"), "utf8");
+    assert.doesNotMatch(html, /no limit on how many images/);
+    assert.doesNotMatch(html, /ไม่จำกัดจำนวนรูป/);
+  }
+});
+
+test("the model credit is injected wherever the engine loads", () => {
+  const appJs = readFileSync(join(publicDir, "app.js"), "utf8");
+  assert.match(appJs, /const loadBackgroundRemoval = async \(\) => \{\s*showModelCredit\(\);/, "the credit must be shown when the model loads, on any preset page");
+  assert.match(appJs, /U²-Net \(Apache-2\.0\)/);
+  assert.match(appJs, /Xuebin Qin/);
+});
+
+test("the compare slider puts the result under the After label", () => {
+  const css = readFileSync(join(publicDir, "styles.css"), "utf8");
+  const appJs = readFileSync(join(publicDir, "app.js"), "utf8");
+  // .compare-after is anchored right, so the result must be clipped from the left.
+  assert.match(css, /\.compare-after \{ right: 12px; \}/);
+  assert.match(css, /\.compare-view > div \{ overflow: hidden; clip-path: inset\(0 0 0 50%\); \}/);
+  assert.match(appJs, /clipPath = `inset\(0 0 0 \$\{Number\(els\.compareSlider\.value\)\}%\)`/);
+});

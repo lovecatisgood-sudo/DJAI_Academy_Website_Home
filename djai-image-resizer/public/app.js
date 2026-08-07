@@ -21,6 +21,8 @@
     genericError: 'เกิดข้อผิดพลาดระหว่างประมวลผลรูปภาพ',
     smaller: (value) => `เล็กลง ${value}%`,
     larger: (value) => `ใหญ่ขึ้น ${value}%`,
+    transparentPng: 'PNG โปร่งใส',
+    modelCredit: 'การลบพื้นหลังทำงานด้วยระบบของเราเองใน browser โดยใช้โมเดล U²-Net (Apache-2.0) โดย Xuebin Qin ผ่าน ONNX Runtime (MIT)',
     fileCount: (value) => `${value} ไฟล์`,
     rotation: (value) => `หมุน ${value}°`,
     processing: (current, total) => `กำลังประมวลผล ${current}/${total}`,
@@ -78,6 +80,8 @@
     genericError: 'Something went wrong while processing the image.',
     smaller: (value) => `${value}% smaller`,
     larger: (value) => `${value}% larger`,
+    transparentPng: 'Transparent PNG',
+    modelCredit: 'Background removal runs on our own in-browser pipeline using the U²-Net model (Apache-2.0) by Xuebin Qin, via ONNX Runtime (MIT).',
     fileCount: (value) => `${value} files`,
     rotation: (value) => `${value}° rotation`,
     processing: (current, total) => `Processing ${current}/${total}`,
@@ -382,7 +386,20 @@
 
   const getResultForActive = () => state.results.find(result => result.itemId === currentItem()?.id) || null;
 
+  // Any preset page can reach background mode through the mode tabs, so the
+  // Apache-2.0 attribution is added wherever the model is actually loaded
+  // rather than being baked into one page's static footer.
+  const showModelCredit = () => {
+    const brand = document.querySelector('.footer-brand');
+    if (!brand || brand.querySelector('.footer-credit')) return;
+    const credit = document.createElement('p');
+    credit.className = 'footer-credit';
+    credit.textContent = copy.modelCredit;
+    brand.appendChild(credit);
+  };
+
   const loadBackgroundRemoval = async () => {
+    showModelCredit();
     if (state.backgroundRemoval) return state.backgroundRemoval;
     const moduleUrl = new URL('vendor/background-removal.mjs', document.baseURI).toString();
     const module = await import(moduleUrl);
@@ -858,8 +875,13 @@
       const reduction = Math.round((1 - afterTotal / beforeTotal) * 100);
       els.beforeSize.textContent = formatBytes(beforeTotal);
       els.afterSize.textContent = formatBytes(afterTotal);
-      els.savedBadge.textContent = reduction >= 0 ? copy.smaller(reduction) : copy.larger(Math.abs(reduction));
-      els.savedBadge.classList.toggle('larger', reduction < 0);
+      // A transparent PNG is almost always larger than the photo it came from,
+      // so a size-delta verdict would report a successful cutout as a failure.
+      const background = state.mode === 'background';
+      els.savedBadge.textContent = background
+        ? copy.transparentPng
+        : reduction >= 0 ? copy.smaller(reduction) : copy.larger(Math.abs(reduction));
+      els.savedBadge.classList.toggle('larger', !background && reduction < 0);
       els.resultSummaryText.textContent = state.mode === 'background'
         ? results.length > 1 ? copy.backgroundResultMany(results.length) : copy.backgroundResultOne
         : results.length > 1 ? copy.resultMany(results.length) : copy.resultOne;
@@ -1015,7 +1037,7 @@
     if (!tab.disabled) showPreview(tab.dataset.preview);
   }));
   els.compareSlider.addEventListener('input', () => {
-    els.compareResultWrap.style.clipPath = `inset(0 ${100 - Number(els.compareSlider.value)}% 0 0)`;
+    els.compareResultWrap.style.clipPath = `inset(0 0 0 ${Number(els.compareSlider.value)}%)`;
   });
   els.checkerToggle.addEventListener('click', () => {
     const active = els.previewStage.classList.toggle('checker');

@@ -88,20 +88,26 @@ export const presets = [
     faqHeadingEn: "Questions about removing backgrounds.", faqHeadingTh: "คำถามเกี่ยวกับการลบพื้นหลัง",
     faq: {
       en: [
-        ["Is removing the background really free?", "Yes. There is no signup, no watermark, and no limit on how many images you process."],
+        ["Is removing the background really free?", "Yes. There is no signup, no watermark, and no monthly quota. You can process up to 20 images per batch, as many batches as you like."],
         ["What file do I get back?", "A PNG with a transparent background, so it keeps its transparency in design tools, slide decks, and online stores."],
         ["Are my images uploaded?", "No. The AI model runs inside your browser, so the image never leaves your device."],
         ["Does it handle hair and fine edges?", "Yes. The model produces a soft alpha edge rather than a hard cutout, which keeps hair and fur looking natural."],
         ["Can I remove backgrounds from several images at once?", "Yes. Add a batch and download every transparent PNG together in a single ZIP."],
-        ["Which formats can I upload?", "JPG, PNG, WebP, HEIC, and HEIF, including photos straight from an iPhone."]
+        ["Which formats can I upload?", "JPG, PNG, WebP, HEIC, and HEIF, including photos straight from an iPhone."],
+        ["How long does it take?", "A few seconds per image once the model is loaded. The first run also downloads a one-time model of about 18 MB, so it takes longer depending on your connection."],
+        ["Does it work offline?", "After the first run the model is cached in your browser, so background removal keeps working without a connection."],
+        ["Can I use the results commercially?", "Yes. The images you process are yours, and the tool adds no watermark and claims no rights over your files."]
       ],
       th: [
-        ["ลบพื้นหลังฟรีจริงไหม", "ฟรีจริง ไม่ต้องสมัครสมาชิก ไม่มีลายน้ำ และไม่จำกัดจำนวนรูป"],
+        ["ลบพื้นหลังฟรีจริงไหม", "ฟรีจริง ไม่ต้องสมัครสมาชิก ไม่มีลายน้ำ และไม่มีโควตารายเดือน ประมวลผลได้ครั้งละไม่เกิน 20 รูป และทำซ้ำได้ไม่จำกัด"],
         ["ได้ไฟล์อะไรกลับมา", "ไฟล์ PNG พื้นหลังโปร่งใส ใช้ต่อในงานออกแบบ สไลด์ และร้านค้าออนไลน์ได้ทันที"],
         ["รูปของฉันถูกอัปโหลดไหม", "ไม่ถูกอัปโหลด โมเดล AI ทำงานใน browser รูปจึงไม่ออกจากอุปกรณ์ของคุณ"],
         ["ลบพื้นหลังบริเวณเส้นผมได้ดีไหม", "ได้ โมเดลสร้างขอบแบบ alpha ที่นุ่มนวล ทำให้เส้นผมและขนดูเป็นธรรมชาติ"],
         ["ลบพื้นหลังหลายรูปพร้อมกันได้ไหม", "ได้ เพิ่มรูปเป็นชุดแล้วดาวน์โหลด PNG โปร่งใสทั้งหมดเป็นไฟล์ ZIP เดียว"],
-        ["อัปโหลดไฟล์แบบไหนได้บ้าง", "JPG, PNG, WebP, HEIC และ HEIF รวมถึงรูปจาก iPhone โดยตรง"]
+        ["อัปโหลดไฟล์แบบไหนได้บ้าง", "JPG, PNG, WebP, HEIC และ HEIF รวมถึงรูปจาก iPhone โดยตรง"],
+        ["ใช้เวลานานแค่ไหน", "เมื่อโหลดโมเดลแล้วจะใช้เวลาไม่กี่วินาทีต่อรูป ครั้งแรกจะมีการดาวน์โหลดโมเดลขนาดประมาณ 18 MB หนึ่งครั้ง จึงใช้เวลานานกว่าตามความเร็วอินเทอร์เน็ตของคุณ"],
+        ["ใช้งานแบบออฟไลน์ได้ไหม", "ได้ หลังจากใช้งานครั้งแรก โมเดลจะถูก cache ไว้ใน browser การลบพื้นหลังจึงทำงานต่อได้แม้ไม่มีอินเทอร์เน็ต"],
+        ["นำผลลัพธ์ไปใช้เชิงพาณิชย์ได้ไหม", "ได้ รูปที่คุณประมวลผลเป็นของคุณ เครื่องมือไม่ใส่ลายน้ำและไม่อ้างสิทธิ์ใด ๆ ในไฟล์ของคุณ"]
       ]
     },
     th: ["ลบพื้นหลังรูปฟรี ออนไลน์ | DJAI Image Tools", "ลบพื้นหลังรูปฟรี", "ลบพื้นหลังรูป JPG, PNG, WebP, HEIC หรือ HEIF ฟรีใน browser แล้วดาวน์โหลด PNG พื้นหลังโปร่งใส", "วิธีลบพื้นหลังรูป", "เลือกภาพสินค้า โปรไฟล์ หรือคอนเทนต์ social แล้วเครื่องมือจะใช้ AI segmentation ใน browser เพื่อสร้างไฟล์ PNG พื้นหลังโปร่งใส", ["เลือกรูปจากอุปกรณ์", "รอ AI ลบพื้นหลังใน browser", "ตรวจผลลัพธ์และดาวน์โหลด PNG โปร่งใส"]],
@@ -164,11 +170,48 @@ function render(template, preset, language) {
   const switchUrl = language === "th" ? englishUrl : thaiUrl;
   const guide = `<section class="seo-guide section-shell" aria-labelledby="seo-guide-heading"><div><span class="section-kicker">${language === "th" ? "คู่มือเครื่องมือ" : "TOOL GUIDE"}</span><h2 id="seo-guide-heading">${escapeHtml(guideTitle)}</h2><p>${escapeHtml(intro)}</p></div><ol>${steps.map((step) => `<li><span>${escapeHtml(step)}</span></li>`).join("")}</ol></section>`;
 
-  // The model attribution belongs on pages that actually run the model. Preset
-  // pages for other modes never load it, so the credit is stripped there.
-  const creditScoped = (html) => preset.mode === "background"
-    ? html
-    : html.replace(/\s*<p class="footer-credit">[\s\S]*?<\/p>/, "");
+  // The shared template is written for the resizer. On a background-removal
+  // page that copy contradicts the h1, so the on-page prose is retargeted.
+  // Scoped to mode "background": every other preset keeps the template verbatim.
+  const copyScoped = (html) => {
+    if (preset.mode !== "background") return html;
+    const th = language === "th";
+    const prose = th
+      ? `<section class="seo-guide section-shell" aria-labelledby="bg-about-heading"><div><span class="section-kicker">เครื่องมือนี้ทำอะไร</span><h2 id="bg-about-heading">ลบพื้นหลังรูปฟรี ได้ไฟล์ PNG โปร่งใส</h2><p>DJAI Background Remover คือเครื่องมือออนไลน์ฟรีที่ลบพื้นหลังออกจากรูปถ่าย แล้วคืนไฟล์ PNG พื้นหลังโปร่งใสให้คุณ รองรับไฟล์ JPG, PNG, WebP, HEIC และ HEIF รวมถึงรูปที่ถ่ายจาก iPhone โดยตรง ไม่ต้องสมัครสมาชิก ไม่มีลายน้ำ และไม่มีโควตารายเดือน ประมวลผลได้ครั้งละไม่เกิน 20 รูป และดาวน์โหลดทั้งหมดเป็นไฟล์ ZIP เดียวได้</p><p>เครื่องมือทำงานใน browser ของคุณ ไม่ใช่บน server ของเรา ครั้งแรกที่ใช้งาน browser จะดาวน์โหลดโมเดล AI segmentation ขนาดประมาณ 18 MB จาก djai.academy หนึ่งครั้ง หลังจากนั้นจะถูก cache ไว้และทำงานได้ทันที โมเดลประมวลผลทั้งหมดบนอุปกรณ์ของคุณ รูปของคุณจึงไม่ถูกอัปโหลด ไม่ถูกจัดเก็บ และเราไม่เห็นรูปของคุณ รูปทั่วไปใช้เวลาไม่กี่วินาที โมเดลที่ใช้คือ U²-Net (สัญญาอนุญาต Apache-2.0) ทำงานผ่าน ONNX Runtime และสร้างขอบแบบ alpha ที่นุ่มนวล ทำให้เส้นผมและขนดูเป็นธรรมชาติแทนที่จะเป็นขอบตัดแข็ง</p></div></section>`
+      : `<section class="seo-guide section-shell" aria-labelledby="bg-about-heading"><div><span class="section-kicker">WHAT THIS TOOL DOES</span><h2 id="bg-about-heading">Remove an image background free and get a transparent PNG</h2><p>DJAI Background Remover is a free online tool that deletes the background from a photo and gives you back a PNG with a transparent background. It works on JPG, PNG, WebP, HEIC, and HEIF files, including photos taken straight from an iPhone. There is no signup, no watermark, and no monthly quota, and you can process up to 20 images in one batch and download them together as a ZIP.</p><p>It runs in your browser, not on our servers. The first time you use it, your browser downloads a one-time AI segmentation model of about 18 MB from djai.academy; after that it is cached and starts instantly. The model then does all of the work on your own device, so your photo is never uploaded, stored, or seen by us. A typical image takes a few seconds. The model is U²-Net (Apache-2.0 licensed), run through ONNX Runtime, and it produces a soft alpha edge, so hair and fur keep natural detail instead of a hard cutout line.</p></div></section>`;
+    const replacements = th ? [
+      [/(<span class="section-kicker">)เครื่องมือย่อรูป(<\/span>)/, "$1เครื่องมือลบพื้นหลัง$2"],
+      [/<h2 id="tool-heading">.*?<\/h2>/, '<h2 id="tool-heading">ตัดวัตถุออกจากพื้นหลัง ได้ PNG โปร่งใส</h2>'],
+      [/(<h2 id="tool-heading">.*?<\/h2>\s*<p>).*?(<\/p>)/s, "$1เลือกรูปหนึ่งไฟล์หรือหลายไฟล์ โมเดล AI ทำงานบนอุปกรณ์ของคุณโดยตรง แล้วคืนไฟล์ PNG พื้นหลังโปร่งใส$2"],
+      [/(<a class="primary-button hero-button" href="#resizer">\s*)ย่อรูปภาพ/, "$1ลบพื้นหลัง"],
+      [/<strong>รูปที่ย่อแล้วจะแสดงที่นี่<\/strong><small>.*?<\/small>/, "<strong>PNG พื้นหลังโปร่งใสจะแสดงที่นี่</strong><small>กด ลบพื้นหลัง เพื่อเริ่ม</small>"],
+      [/<h2>จากไฟล์ใหญ่เป็นไฟล์พร้อมใช้ใน 3 ขั้นตอน<\/h2>/, "<h2>จากรูปถ่ายสู่ PNG โปร่งใส ใน 3 ขั้นตอน</h2>"],
+      [/<p>เลือกไฟล์ JPG, PNG หรือ WebP จากอุปกรณ์ของคุณโดยตรง<\/p>/, "<p>เลือกไฟล์ JPG, PNG, WebP, HEIC หรือ HEIF จากอุปกรณ์ของคุณโดยตรง</p>"],
+      [/<h3>เลือกวิธีย่อรูป<\/h3>\s*<p>.*?<\/p>/, "<h3>ให้ AI หาวัตถุในภาพ</h3>\n            <p>โมเดล segmentation ทำงานใน browser ของคุณ รูปไม่ถูกอัปโหลดไปที่ใด</p>"],
+      [/<h3>ดาวน์โหลดผลลัพธ์<\/h3>\s*<p>.*?<\/p>/, "<h3>ดาวน์โหลด PNG โปร่งใส</h3>\n            <p>ตรวจผลลัพธ์แล้วบันทึกไฟล์ PNG พื้นหลังโปร่งใสได้ทันที</p>"],
+      [/<p>กระบวนการย่อรูปทั้งหมด.*?<\/p>/, "<p>กระบวนการลบพื้นหลังทั้งหมดเกิดขึ้นบนอุปกรณ์ของคุณ โมเดล AI ถูกดาวน์โหลดมาไว้ใน browser เพียงครั้งเดียวแล้วทำงานที่นั่น รูปของคุณไม่ถูกส่งออกไปที่ใด</p>"],
+      [/(<a class="cta-white-button" href="#resizer">)เปิดเครื่องมือย่อรูป/, "$1เปิดเครื่องมือลบพื้นหลัง"]
+    ] : [
+      [/(<span class="section-kicker">)IMAGE RESIZER(<\/span>)/, "$1BACKGROUND REMOVER$2"],
+      [/<h2 id="tool-heading">.*?<\/h2>/, '<h2 id="tool-heading">Cut out the subject. Keep a transparent PNG.</h2>'],
+      [/(<h2 id="tool-heading">.*?<\/h2>\s*<p>).*?(<\/p>)/s, "$1Choose one image or a batch. The AI model runs on your own device and returns a PNG with a transparent background.$2"],
+      [/(<a class="primary-button hero-button" href="#resizer">\s*)Resize an image/, "$1Remove a background"],
+      [/<strong>Your resized image will appear here<\/strong><small>.*?<\/small>/, "<strong>Your transparent PNG will appear here</strong><small>Press Remove background to start.</small>"],
+      [/<h2>From oversized to optimized in three steps\.<\/h2>/, "<h2>From photo to transparent PNG in three steps.</h2>"],
+      [/<p>Upload a JPG, PNG, or WebP file directly from your device\.<\/p>/, "<p>Upload a JPG, PNG, WebP, HEIC, or HEIF file directly from your device.</p>"],
+      [/<h3>Pick a resize method<\/h3>\s*<p>.*?<\/p>/, "<h3>Let the AI find the subject</h3>\n            <p>The segmentation model runs inside your browser. Nothing is uploaded.</p>"],
+      [/<h3>Download the result<\/h3>\s*<p>.*?<\/p>/, "<h3>Download the transparent PNG</h3>\n            <p>Review the cutout and save a PNG that keeps its transparency.</p>"],
+      [/<p>The complete resize process happens.*?<\/p>/, "<p>The complete background-removal process happens on your device. The AI model is downloaded to your browser once and runs there; the image is never sent anywhere.</p>"],
+      [/(<a class="cta-white-button" href="#resizer">)Open image resizer/, "$1Open the background remover"]
+    ];
+    let out = html;
+    for (const [pattern, value] of replacements) {
+      const next = out.replace(pattern, value);
+      if (next === out) throw new Error(`background copy replacement did not apply: ${pattern}`);
+      out = next;
+    }
+    return out.replace('    <section class="how-section">', `    ${prose}\n\n    <section class="how-section">`);
+  };
 
   // Presets that define their own FAQ replace the shared resizer one, in both the
   // visible copy and the FAQPage schema, so the two never disagree.
@@ -196,7 +239,7 @@ function render(template, preset, language) {
       .replace(/(<div><span>[^<]*<\/span><h2>)[\s\S]*?(<\/h2><\/div>)/, `$1${escapeHtml(cta)}$2`);
   };
 
-  return faqScoped(creditScoped(injectDiscovery(template, discoveryMarkup(language, preset.slug))))
+  return faqScoped(copyScoped(injectDiscovery(template, discoveryMarkup(language, preset.slug))))
     .replace(/<title>.*?<\/title>/, `<title>${escapeHtml(title)}</title>`)
     .replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${escapeHtml(description)}">`)
     .replace(/<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${canonical}">`)
