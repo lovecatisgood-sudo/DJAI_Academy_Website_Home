@@ -141,12 +141,10 @@ export default async function SiameseCatDevThaiPostPage({ params }) {
 
           <footer className="article-cta">
             <div>
-              <p className="eyebrow">Siamese Cat Dev</p>
-              <h2>รู้จักผลงานและวิธีคิดของ Siamese Cat Dev</h2>
+              <p className="eyebrow">ลองใช้โปรดักต์</p>
+              <h2>ดูแอปสแกนเอกสารและ workflow ที่สร้างจากเรื่องนี้</h2>
             </div>
-            <a className="button" href="/siamese_cat/dev/">
-              กลับไปหน้า Bio
-            </a>
+            <Link className="button" href="/Cam_PDF_Scan_Signer_QR-Gen/">ดู Cam PDF</Link>
           </footer>
 
           <ShareButtons url={postUrl} title={post.title} locale="th" compact />

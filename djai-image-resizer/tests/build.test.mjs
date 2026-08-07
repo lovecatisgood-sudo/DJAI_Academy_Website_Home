@@ -30,6 +30,45 @@ test("all SEO presets have Thai and English static pages", () => {
   }
 });
 
+test("popular and discovery links stay on canonical image-tool routes", () => {
+  const approvedRoutes = new Set(
+    presets.flatMap(({ slug }) => [
+      `/tools/resizeimg/${slug}/`,
+      `/tools/resizeimg/${slug}/en/`
+    ])
+  );
+
+  for (const language of ["th", "en"]) {
+    for (const currentSlug of [null, ...presets.map(({ slug }) => slug)]) {
+      const path = join(
+        publicDir,
+        ...(currentSlug ? [currentSlug] : []),
+        ...(language === "en" ? ["en"] : []),
+        "index.html"
+      );
+      const html = readFileSync(path, "utf8");
+      const blocks = [
+        html.match(/<div class="popular-links">([\s\S]*?)<\/div>/)?.[1],
+        html.match(/<div class="tool-discovery-links">([\s\S]*?)<\/div>/)?.[1]
+      ].filter(Boolean);
+
+      assert.ok(blocks.length > 0, `${path} is missing image-tool navigation`);
+      for (const block of blocks) {
+        const hrefs = [...block.matchAll(/<a href="([^"]+)"/g)].map((match) => match[1]);
+        assert.ok(hrefs.length > 0, `${path} has an empty image-tool navigation block`);
+        for (const href of hrefs) {
+          assert.equal(approvedRoutes.has(href), true, `${path} has a non-canonical image-tool link: ${href}`);
+          assert.equal(
+            language === "en" ? href.endsWith("/en/") : !href.endsWith("/en/"),
+            true,
+            `${path} links to the wrong locale: ${href}`
+          );
+        }
+      }
+    }
+  }
+});
+
 test("processing libraries are bundled locally", () => {
   const heic = join(publicDir, "vendor", "heic2any.min.js");
   const zip = join(publicDir, "vendor", "jszip.min.js");

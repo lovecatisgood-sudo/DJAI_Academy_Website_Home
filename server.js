@@ -99,6 +99,18 @@ const staticMounts = [
   }
 ];
 
+const slashCanonicalMountPrefixes = new Set([
+  "/course",
+  "/tools/qrgen",
+  "/tools/resizeimg",
+  "/tools/media",
+  "/tools/PDFTools",
+  "/tools/document",
+  "/tools/ai",
+  "/tools/spreadsheet",
+  "/siamese_cat/dev"
+]);
+
 function normalizePathname(url) {
   try {
     return decodeURIComponent(new URL(url, "http://localhost").pathname);
@@ -271,6 +283,26 @@ function tryServeMountedStatic(req, res, pathname) {
   if (pathname === "/tools/document/word-to-pdf/en" || pathname === "/tools/document/word-to-pdf/en/") {
     redirect(res, "/tools/document/docx-to-pdf/en/");
     return true;
+  }
+
+  if (
+    (req.method === "GET" || req.method === "HEAD")
+    && pathname !== "/"
+    && !pathname.endsWith("/")
+    && !path.extname(pathname)
+  ) {
+    for (const mount of staticMounts) {
+      if (!slashCanonicalMountPrefixes.has(mount.prefix)) continue;
+      if (!matchesMount(pathname, mount.prefix)) continue;
+      if ((mount.excludePrefixes || []).some((prefix) => matchesMount(pathname, prefix))) continue;
+
+      const filePath = resolveStaticFile(mount, pathname);
+      if (filePath && path.basename(filePath) === "index.html") {
+        const search = new URL(req.url || "/", "http://localhost").search;
+        redirect(res, `${pathname}/${search}`);
+        return true;
+      }
+    }
   }
 
   for (const mount of staticMounts) {

@@ -147,6 +147,22 @@ const redirects = [
   ["/tools/document/word-to-pdf/", "/tools/document/docx-to-pdf/"],
   ["/tools/document/word-to-pdf/en/", "/tools/document/docx-to-pdf/en/"]
 ];
+const slashCanonicalPrefixes = [
+  "/course/",
+  "/tools/qrgen/",
+  "/tools/resizeimg/",
+  "/tools/media/",
+  "/tools/PDFTools/",
+  "/tools/document/",
+  "/tools/ai/",
+  "/tools/spreadsheet/",
+  "/siamese_cat/dev/"
+];
+const slashCanonicalRoutes = publicRoutes.filter((route) =>
+  route.endsWith("/")
+  && slashCanonicalPrefixes.some((prefix) => route === prefix || route.startsWith(prefix))
+  && !route.startsWith("/siamese_cat/dev/blog/")
+);
 const accountOnboardingRedirects = ["/academy/", "/academy/en/"];
 const moneyMakingProductRegistrationUrl =
   "https://school.djai.academy/signup?intent=free-course&course_id=money-making-product-2026-08-22";
@@ -155,6 +171,10 @@ const auditApiKey = "djai-local-api-key-audit";
 const auditDataDirectory = await mkdtemp(join(tmpdir(), "djai-blog-audit-"));
 const auditDataFile = join(auditDataDirectory, "blog-posts.json");
 await copyFile(join(repositoryRoot, "djai-academy-homepage", "data", "blog-posts.json"), auditDataFile);
+
+function getHtmlAttribute(tag, name) {
+  return tag.match(new RegExp(`\\b${name}=["']([^"']*)["']`, "i"))?.[1] || "";
+}
 
 const server = spawn(process.execPath, [serverEntry], {
   cwd: serverDirectory,
@@ -396,6 +416,117 @@ async function verify() {
     failures.push("/sitemap.xml: redirect-only campaign URL must not be submitted");
   }
 
+  const sitemapUrls = [...sitemapBody.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1].trim());
+  const sitemapUrlSet = new Set(sitemapUrls);
+  if (sitemapUrls.length < 221) {
+    failures.push(`/sitemap.xml: expected at least the 221-page production baseline, received ${sitemapUrls.length}`);
+  }
+  if (sitemapUrlSet.size !== sitemapUrls.length) {
+    failures.push(`/sitemap.xml: contains ${sitemapUrls.length - sitemapUrlSet.size} duplicate URL entries`);
+  }
+
+  const sitemapHtml = new Map();
+  const sitemapAlternates = new Map();
+  for (const productionUrl of sitemapUrls) {
+    let parsedUrl;
+    try {
+      parsedUrl = new URL(productionUrl);
+    } catch {
+      failures.push(`/sitemap.xml: invalid URL ${productionUrl}`);
+      continue;
+    }
+    if (parsedUrl.origin !== "https://www.djai.academy") {
+      failures.push(`/sitemap.xml: out-of-scope origin ${productionUrl}`);
+      continue;
+    }
+
+    const route = `${parsedUrl.pathname}${parsedUrl.search}`;
+    const response = await fetch(`${origin}${route}`, { redirect: "manual" });
+    if (response.status !== 200) {
+      failures.push(`${route}: sitemap URL expected 200, received ${response.status}`);
+      continue;
+    }
+    const html = await response.text();
+    sitemapHtml.set(productionUrl, html);
+
+    const titles = [...html.matchAll(/<title\b[^>]*>([\s\S]*?)<\/title>/gi)]
+      .map((match) => match[1].replace(/<[^>]+>/g, "").trim())
+      .filter(Boolean);
+    if (titles.length !== 1) failures.push(`${route}: expected one non-empty title, received ${titles.length}`);
+
+    const metaTags = [...html.matchAll(/<meta\b[^>]*>/gi)].map((match) => match[0]);
+    const descriptions = metaTags.filter((tag) =>
+      getHtmlAttribute(tag, "name").toLowerCase() === "description"
+      && getHtmlAttribute(tag, "content").trim()
+    );
+    if (descriptions.length !== 1) {
+      failures.push(`${route}: expected one non-empty meta description, received ${descriptions.length}`);
+    }
+    if (metaTags.some((tag) =>
+      getHtmlAttribute(tag, "name").toLowerCase() === "robots"
+      && /(?:^|[,\s])noindex(?:[,\s]|$)/i.test(getHtmlAttribute(tag, "content"))
+    )) {
+      failures.push(`${route}: sitemap URL must not be noindex`);
+    }
+
+    const headings = [...html.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/gi)]
+      .map((match) => match[1].replace(/<[^>]+>/g, "").trim())
+      .filter(Boolean);
+    if (headings.length !== 1) failures.push(`${route}: expected one non-empty H1, received ${headings.length}`);
+
+    const htmlTag = html.match(/<html\b[^>]*>/i)?.[0] || "";
+    if (!/^(?:th|en)(?:-|$)/i.test(getHtmlAttribute(htmlTag, "lang"))) {
+      failures.push(`${route}: missing a valid Thai or English html lang`);
+    }
+
+    const linkTags = [...html.matchAll(/<link\b[^>]*>/gi)].map((match) => match[0]);
+    const canonicals = linkTags.filter((tag) =>
+      getHtmlAttribute(tag, "rel").toLowerCase().split(/\s+/).includes("canonical")
+    );
+    if (canonicals.length !== 1 || getHtmlAttribute(canonicals[0] || "", "href") !== productionUrl) {
+      failures.push(`${route}: canonical must be the exact sitemap URL ${productionUrl}`);
+    }
+
+    const alternates = new Map();
+    for (const tag of linkTags.filter((candidate) =>
+      getHtmlAttribute(candidate, "rel").toLowerCase().split(/\s+/).includes("alternate")
+      && getHtmlAttribute(candidate, "hreflang")
+    )) {
+      const language = getHtmlAttribute(tag, "hreflang").toLowerCase();
+      const href = getHtmlAttribute(tag, "href");
+      if (alternates.has(language)) failures.push(`${route}: duplicate ${language} hreflang`);
+      alternates.set(language, href);
+    }
+    sitemapAlternates.set(productionUrl, alternates);
+
+    for (const script of html.matchAll(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)) {
+      try {
+        JSON.parse(script[1]);
+      } catch {
+        failures.push(`${route}: invalid JSON-LD`);
+      }
+    }
+  }
+
+  for (const [productionUrl, alternates] of sitemapAlternates) {
+    if (alternates.size === 0) continue;
+    for (const language of ["th", "en", "x-default"]) {
+      const target = alternates.get(language);
+      if (!target) {
+        failures.push(`${new URL(productionUrl).pathname}: missing ${language} hreflang`);
+      } else if (!sitemapUrlSet.has(target)) {
+        failures.push(`${new URL(productionUrl).pathname}: ${language} hreflang is not a sitemap URL: ${target}`);
+      }
+    }
+    for (const language of ["th", "en"]) {
+      const target = alternates.get(language);
+      const targetAlternates = target ? sitemapAlternates.get(target) : null;
+      if (target && (!targetAlternates || targetAlternates.get("th") !== alternates.get("th") || targetAlternates.get("en") !== alternates.get("en"))) {
+        failures.push(`${new URL(productionUrl).pathname}: ${language} hreflang target is not reciprocal: ${target}`);
+      }
+    }
+  }
+
   const voiceAdminLoginResponse = await fetch(`${origin}/voice_admin/login`);
   const voiceAdminLoginBody = await voiceAdminLoginResponse.text();
   if (!String(voiceAdminLoginResponse.headers.get("x-robots-tag") || "").includes("noindex")) {
@@ -434,6 +565,23 @@ async function verify() {
     if (response.status !== 308 || normalizedLocation !== expectedLocation) {
       failures.push(
         `${route}: expected 308 to ${expectedLocation}, received ${response.status} to ${normalizedLocation || "(none)"}`
+      );
+    }
+  }
+
+  for (const canonicalRoute of slashCanonicalRoutes) {
+    const slashlessRoute = canonicalRoute.slice(0, -1);
+    const response = await fetch(`${origin}${slashlessRoute}?audit=slash`, { redirect: "manual" });
+    const location = response.headers.get("location");
+    const normalizedLocation = location ? new URL(location, origin) : null;
+    if (
+      response.status !== 308
+      || normalizedLocation?.pathname !== canonicalRoute
+      || normalizedLocation?.search !== "?audit=slash"
+    ) {
+      failures.push(
+        `${slashlessRoute}: expected one-hop 308 to ${canonicalRoute} with its query string, `
+        + `received ${response.status} to ${location || "(none)"}`
       );
     }
   }
@@ -606,7 +754,8 @@ async function verify() {
 
   console.log(
     `Hostinger route audit passed: ${publicRoutes.length} pages, ${redirects.length + accountOnboardingRedirects.length} redirects, ` +
-      `${discoveredRoutes.size} internal links/assets, admin API auth, and canonical host.`
+      `${sitemapUrls.length} sitemap URLs, ${slashCanonicalRoutes.length} slash redirects, `
+      + `${discoveredRoutes.size} internal links/assets, admin API auth, and canonical host.`
   );
 }
 

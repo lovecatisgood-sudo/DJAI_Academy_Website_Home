@@ -72,7 +72,7 @@ export default function BlogMarkdown({ content }) {
     const [headings, ...rows] = tableRows;
     tableRows = [];
     blocks.push(
-      <div className="article-table-wrap" key={`table-${blocks.length}`}>
+      <div className="article-table-wrap" key={`table-${blocks.length}`} tabIndex={0}>
         <table className="article-table">
           <thead>
             <tr>

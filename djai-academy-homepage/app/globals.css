@@ -2521,7 +2521,7 @@ pre {
 }
 
 .development-process-grid article > span {
-  color: var(--orange);
+  color: #a94300;
   font-size: 0.84rem;
   font-weight: 950;
   letter-spacing: 0.14em;

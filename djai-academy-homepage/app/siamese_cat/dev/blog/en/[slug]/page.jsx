@@ -143,12 +143,10 @@ export default async function SiameseCatDevEnglishPostPage({ params }) {
 
           <footer className="article-cta">
             <div>
-              <p className="eyebrow">Siamese Cat Dev</p>
-              <h2>See the work and thinking behind Siamese Cat Dev.</h2>
+              <p className="eyebrow">Use the product</p>
+              <h2>Try the scanner and document workflows from this build story.</h2>
             </div>
-            <a className="button" href="/siamese_cat/dev/en/">
-              Back to bio
-            </a>
+            <Link className="button" href="/Cam_PDF_Scan_Signer_QR-Gen/">Explore Cam PDF</Link>
           </footer>
 
           <ShareButtons url={postUrl} title={post.title} locale="en" compact />

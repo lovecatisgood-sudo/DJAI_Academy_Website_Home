@@ -6,6 +6,7 @@ import AdSenseAd from "../../components/AdSenseAd";
 import ShareButtons from "../../components/ShareButtons";
 import { SIAMESE_CAT_DEV_CATEGORY } from "../../lib/blogStore";
 import { getThaiPostBySlug } from "../../lib/thBlogPosts";
+import { getBlogJourney } from "../../lib/blogJourneys";
 
 function formatDate(value) {
   return new Intl.DateTimeFormat("th-TH", {
@@ -187,6 +188,7 @@ export default async function ThaiBlogPostPage({ params }) {
     },
     mainEntityOfPage: `https://www.djai.academy/blog/${post.slug}/`
   };
+  const journey = getBlogJourney(post, "th");
 
   return (
     <>
@@ -230,12 +232,10 @@ export default async function ThaiBlogPostPage({ params }) {
 
           <footer className="article-cta">
             <div>
-              <p className="eyebrow">เครื่องมือฟรีจาก DJAI</p>
-              <h2>เปิดใช้เครื่องมือจากบทความนี้</h2>
+              <p className="eyebrow">{journey.eyebrow}</p>
+              <h2>{journey.title}</h2>
             </div>
-            <a className="button" href="https://www.djai.academy/tools/">
-              เปิดเครื่องมือฟรี
-            </a>
+            <Link className="button" href={journey.href}>{journey.label}</Link>
           </footer>
 
           <ShareButtons url={`https://www.djai.academy/blog/${post.slug}/`} title={post.title} locale="th" compact />

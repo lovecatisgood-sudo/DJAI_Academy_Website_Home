@@ -6,6 +6,7 @@ import AdSenseAd from "../../../components/AdSenseAd";
 import ShareButtons from "../../../components/ShareButtons";
 import { SIAMESE_CAT_DEV_CATEGORY, getPostBySlug } from "../../../lib/blogStore";
 import { getSeededThaiPostBySlug } from "../../../lib/thBlogPosts";
+import { getBlogJourney } from "../../../lib/blogJourneys";
 
 export const dynamic = "force-dynamic";
 
@@ -190,6 +191,7 @@ export default async function BlogPostPage({ params }) {
     },
     mainEntityOfPage: `https://www.djai.academy/blog/en/${post.slug}/`
   };
+  const journey = getBlogJourney(post, "en");
 
   return (
     <>
@@ -227,12 +229,10 @@ export default async function BlogPostPage({ params }) {
 
           <footer className="article-cta">
             <div>
-              <p className="eyebrow">Free DJAI tools</p>
-              <h2>Use the tools from this tutorial.</h2>
+              <p className="eyebrow">{journey.eyebrow}</p>
+              <h2>{journey.title}</h2>
             </div>
-            <a className="button" href="https://www.djai.academy/tools/en/">
-              Open free tools
-            </a>
+            <Link className="button" href={journey.href}>{journey.label}</Link>
           </footer>
 
           <ShareButtons url={`https://www.djai.academy/blog/en/${post.slug}/`} title={post.title} locale="en" compact />
