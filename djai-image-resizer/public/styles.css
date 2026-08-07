@@ -183,7 +183,9 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
 .toggle-row i::after { content: ""; position: absolute; left: 3px; top: 3px; width: 14px; height: 14px; border-radius: 50%; background: white; box-shadow: 0 2px 5px rgba(0,0,0,.18); transition: .2s; }
 .toggle-row input:checked + i { background: var(--blue); }
 .toggle-row input:checked + i::after { transform: translateX(16px); }
-.setting-note { margin: 12px 0 0; color: #909bad; font-size: 9px; line-height: 1.45; }
+/* Was 9px #909bad — 2.81:1, well under WCAG AA, on copy that explains the
+   model download and the privacy guarantee. #5c6880 on #fff is 5.7:1. */
+.setting-note { margin: 12px 0 0; color: #5c6880; font-size: 11px; line-height: 1.5; }
 .preset-select { width: 100%; margin-bottom: 12px; padding: 9px 10px; border: 1px solid #cfdae9; border-radius: 8px; color: #38475e; background: white; font-size: 10px; font-weight: 600; }
 .range-value { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px; }
 .range-value strong { color: var(--blue); font: 700 28px "Space Grotesk", sans-serif; }

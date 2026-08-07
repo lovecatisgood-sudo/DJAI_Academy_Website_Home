@@ -210,6 +210,18 @@ function render(template, preset, language) {
       if (next === out) throw new Error(`background copy replacement did not apply: ${pattern}`);
       out = next;
     }
+
+    // The share buttons advertise the resizer index, so sharing this tool sends
+    // people to the wrong page. Rewritten inside the share blocks only, to keep
+    // the canonical/hreflang/language-switcher replacements below intact.
+    const indexUrl = `${siteRoot}/${language === "en" ? "en/" : ""}`;
+    const shareTitle = th ? "ลบพื้นหลังรูปฟรี โดย DJAI" : "Remove Image Background Free — DJAI";
+    out = out.replace(/<div class="share-buttons[\s\S]*?<\/div>/g, (block) => block
+      .replaceAll(encodeURIComponent(indexUrl), encodeURIComponent(canonical))
+      .replaceAll(indexUrl, canonical)
+      .replaceAll(encodeURIComponent("Free Image Converter and Resizer by DJAI"), encodeURIComponent(shareTitle))
+      .replaceAll("Free Image Converter and Resizer by DJAI", shareTitle));
+
     return out.replace('    <section class="how-section">', `    ${prose}\n\n    <section class="how-section">`);
   };
 

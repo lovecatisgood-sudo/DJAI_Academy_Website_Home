@@ -6,6 +6,14 @@ export const revalidate = 3600;
 const ORIGIN = "https://www.djai.academy";
 const STATIC_LAST_MODIFIED = new Date("2026-07-30T00:00:00.000Z");
 const COURSE_LAST_MODIFIED = new Date("2026-08-05T00:00:00.000Z");
+// The background-removal tool was rebuilt on its own first-party engine and
+// its pages rewritten. Dated separately so the other static pages keep an
+// honest lastModified rather than all claiming to have changed.
+const BACKGROUND_REMOVAL_LAST_MODIFIED = new Date("2026-08-07T00:00:00.000Z");
+const BACKGROUND_REMOVAL_PATHS = new Set([
+  "/tools/resizeimg/remove-background-image/",
+  "/tools/resizeimg/remove-background-image/en/"
+]);
 
 const corePaths = [
   "/", "/en/", "/portfolio/", "/portfolio/en/", "/development/", "/development/en/", "/web_promo/",
@@ -76,7 +84,9 @@ export default async function sitemap() {
 
   const staticEntries = [...new Set(staticPaths)].map((path) => entry(
     path,
-    path.startsWith("/siamese_cat/dev/course/") ? COURSE_LAST_MODIFIED : STATIC_LAST_MODIFIED,
+    BACKGROUND_REMOVAL_PATHS.has(path)
+      ? BACKGROUND_REMOVAL_LAST_MODIFIED
+      : path.startsWith("/siamese_cat/dev/course/") ? COURSE_LAST_MODIFIED : STATIC_LAST_MODIFIED,
     path === "/" || path === "/en/" ? "weekly" : "monthly",
     path === "/" || path === "/en/" ? 1 : path.startsWith("/siamese_cat/dev/course/") ? 0.9 : path.startsWith("/tools/") ? 0.8 : 0.7
   ));

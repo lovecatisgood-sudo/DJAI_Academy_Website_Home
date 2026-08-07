@@ -10,7 +10,10 @@ export const toMask = (output) => {
   }
   const range = max - min;
   const mask = new Uint8ClampedArray(output.length);
-  if (range === 0) return mask;
+  // A flat saliency map carries no subject/background distinction, so there is
+  // nothing to normalize. Return a fully opaque mask: the user gets their image
+  // back untouched rather than a silently blank, fully transparent PNG.
+  if (range === 0) return mask.fill(255);
   for (let i = 0; i < output.length; i += 1) {
     mask[i] = Math.round(((output[i] - min) / range) * 255);
   }

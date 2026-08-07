@@ -12,9 +12,12 @@ test("rescales an arbitrary range onto 0-255", () => {
   assert.deepEqual(Array.from(mask), [0, 128, 255]);
 });
 
-test("a flat mask does not divide by zero", () => {
-  const mask = toMask(new Float32Array([0.7, 0.7, 0.7]));
-  assert.deepEqual(Array.from(mask), [0, 0, 0]);
+test("a flat mask does not divide by zero, and keeps the image rather than blanking it", () => {
+  // A constant saliency map means the model found no subject/background split.
+  // Returning zeros would hand the user a fully transparent PNG with no error.
+  assert.deepEqual(Array.from(toMask(new Float32Array([0.7, 0.7, 0.7]))), [255, 255, 255]);
+  assert.deepEqual(Array.from(toMask(new Float32Array([0, 0, 0]))), [255, 255, 255]);
+  assert.deepEqual(Array.from(toMask(new Float32Array([-2, -2]))), [255, 255]);
 });
 
 test("output length matches input length", () => {

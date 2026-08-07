@@ -840,7 +840,12 @@
               progress: (key, current, total) => {
                 if (!String(key).startsWith('fetch:') || !Number.isFinite(total) || total <= 0) return;
                 const percent = Math.max(0, Math.min(100, Math.round(current / total * 100)));
-                els.processLabel.textContent = copy.downloadingModel(percent);
+                // Once the download is done, session creation and inference
+                // still take seconds. Hand the label back so it does not sit
+                // at "Downloading AI model 100%" through the actual work.
+                els.processLabel.textContent = percent >= 100
+                  ? copy.removingBackground(index + 1, state.items.length)
+                  : copy.downloadingModel(percent);
               }
             }).catch((error) => {
               console.error(error);
