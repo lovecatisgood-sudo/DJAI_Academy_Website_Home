@@ -6,6 +6,7 @@ const projectDir = join(dirname(fileURLToPath(import.meta.url)), "..");
 const publicDir = join(projectDir, "public");
 const origin = "https://www.djai.academy";
 const basePath = "/tools/media";
+const socialImage = `${origin}/social/djai-academy.webp`;
 
 export const tools = {
   "mp3-to-wav": { input: ".mp3,audio/mpeg", output: "wav", th: ["แปลง MP3 เป็น WAV ฟรี ออนไลน์", "แปลง MP3 เป็น WAV ฟรี", "แปลงไฟล์ MP3 เป็น WAV ฟรีใน browser เหมาะกับงานตัดต่อ เสียงคุณภาพสูง และโปรแกรมที่ต้องการ WAV"], en: ["Convert MP3 to WAV Free Online", "Convert MP3 to WAV for free", "Convert MP3 audio to WAV free in your browser for editing, lossless workflows, and software that requires WAV."] },
@@ -21,6 +22,20 @@ export const tools = {
 
 const escapeHtml = (value) => value.replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
 const href = (slug, lang) => `${basePath}/${slug}/${lang === "en" ? "en/" : ""}`;
+
+function socialHead({ title, description, canonical, lang }) {
+  const locale = lang === "en" ? "en_US" : "th_TH";
+  const alternateLocale = lang === "en" ? "th_TH" : "en_US";
+  const imageAlt = lang === "en" ? "DJAI Academy free browser tools" : "เครื่องมือฟรีบน browser จาก DJAI Academy";
+  return `<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1"><meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:url" content="${canonical}"><meta property="og:type" content="website"><meta property="og:site_name" content="DJAI Academy"><meta property="og:locale" content="${locale}"><meta property="og:locale:alternate" content="${alternateLocale}"><meta property="og:image" content="${socialImage}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="${imageAlt}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${escapeHtml(title)}"><meta name="twitter:description" content="${escapeHtml(description)}"><meta name="twitter:image" content="${socialImage}"><meta name="twitter:image:alt" content="${imageAlt}">`;
+}
+
+function enhanceHead(html, details) {
+  return html.replace(
+    /<meta property="og:title"[\s\S]*?(?=<meta name="google-adsense-account")/,
+    socialHead(details)
+  );
+}
 
 function categoryLinksFor(isEn) {
   const categories = isEn ? [
@@ -49,7 +64,27 @@ function render(slug, config, lang, pagePath, pageCopy) {
   ].join("");
   const categoryLinks = categoryLinksFor(isEn);
   const discovery = `<nav class="tool-discovery-footer" aria-labelledby="tool-discovery-${lang}" data-tool-discovery><div class="discovery-heading"><p class="eyebrow">${isEn ? "MEDIA WORKFLOWS" : "เครื่องมือเสียงและวิดีโอ"}</p><h2 id="tool-discovery-${lang}">${isEn ? "Continue with another audio or video task" : "ทำงานเสียงหรือวิดีโอต่อด้วยเครื่องมือที่ตรงงาน"}</h2><p>${isEn ? "Open a focused converter for each input, output, extraction, or compression workflow." : "เลือก converter ที่ตรงกับไฟล์ต้นฉบับ ผลลัพธ์ การดึงเสียง หรือการลดขนาดวิดีโอ"}</p></div><div class="discovery-links">${relatedLinks}</div><div class="category-links">${categoryLinks}</div></nav>`;
-  const schema = { "@context": "https://schema.org", "@type": "SoftwareApplication", name: h1, url: canonical, applicationCategory: "MultimediaApplication", operatingSystem: "Web browser", description, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, publisher: { "@type": "Organization", name: "DJAI Academy", url: `${origin}/` } };
+  const catalog = [
+    ...Object.entries(tools),
+    ...videoTools.filter((item) => !tools[item.slug]).map((item) => [item.slug, item])
+  ];
+  const schema = pagePath ? {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: h1,
+    url: canonical,
+    description,
+    inLanguage: lang,
+    publisher: { "@type": "Organization", name: "DJAI Academy", url: `${origin}/` },
+    hasPart: catalog.map(([itemSlug, item]) => ({
+      "@type": "SoftwareApplication",
+      name: item[lang]?.ui || item[lang]?.[1],
+      url: `${origin}${href(itemSlug, lang)}`,
+      applicationCategory: "MultimediaApplication",
+      operatingSystem: "Web browser",
+      offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }
+    }))
+  } : { "@context": "https://schema.org", "@type": "SoftwareApplication", name: h1, url: canonical, applicationCategory: "MultimediaApplication", operatingSystem: "Web browser", description, inLanguage: lang, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, publisher: { "@type": "Organization", name: "DJAI Academy", url: `${origin}/` } };
   return `<!doctype html><html lang="${lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(title)} | DJAI Media Tools</title><meta name="description" content="${escapeHtml(description)}"><link rel="canonical" href="${canonical}"><link rel="alternate" hreflang="th" href="${origin}${thaiAlternate}"><link rel="alternate" hreflang="en" href="${origin}${englishAlternate}"><link rel="alternate" hreflang="x-default" href="${origin}${thaiAlternate}"><meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:url" content="${canonical}"><meta property="og:type" content="website"><meta name="google-adsense-account" content="ca-pub-3624708289866566"><link rel="stylesheet" href="${basePath}/styles.css?v=20260808a"><script type="application/ld+json">${JSON.stringify(schema)}</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-CGJ5BTR44T"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-CGJ5BTR44T",{anonymize_ip:true});</script><script async crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3624708289866566"></script></head><body data-tool="${slug}" data-output="${config.output}" data-compress="${config.compress ? "true" : "false"}"><header><a class="brand" href="${isEn ? "/en/" : "/"}">DJAI <span>Media Tools</span></a><nav><a href="${isEn ? "/tools/en/" : "/tools/"}">${isEn ? "All tools" : "เครื่องมือทั้งหมด"}</a><a href="${other}" hreflang="${isEn ? "th" : "en"}">${isEn ? "ไทย" : "EN"}</a><a class="community" href="${isEn ? "/academy/en/" : "/academy/"}">${isEn ? "Community" : "ชุมชน"}</a></nav></header><main><section class="hero"><p class="eyebrow">${isEn ? "PRIVATE BROWSER PROCESSING" : "ประมวลผลใน BROWSER"}</p><h1>${escapeHtml(h1)}</h1><p>${escapeHtml(description)}</p></section><nav class="task-links" aria-label="${isEn ? "Media conversion tools" : "เครื่องมือแปลงไฟล์มีเดีย"}">${taskLinks}</nav><section class="tool" aria-labelledby="tool-title"><div class="tool-copy"><p class="eyebrow">${isEn ? "FREE CONVERTER" : "เครื่องมือฟรี"}</p><h2 id="tool-title">${escapeHtml(config[lang][1])}</h2><p>${isEn ? "Your file stays on this device. The conversion engine downloads once when you start." : "ไฟล์อยู่ในอุปกรณ์ของคุณ ระบบจะดาวน์โหลด conversion engine เมื่อเริ่มใช้งานครั้งแรก"}</p><ul><li>${isEn ? "Maximum recommended file size: 500 MB" : "ขนาดไฟล์ที่แนะนำไม่เกิน 500 MB"}</li><li>${isEn ? "Large videos need sufficient free memory and may take several minutes" : "วิดีโอขนาดใหญ่ต้องใช้หน่วยความจำและอาจใช้เวลาหลายนาที"}</li><li>${isEn ? "Codec support varies; an unsupported source will show an error" : "การรองรับ codec อาจต่างกัน ระบบจะแจ้งเมื่ออ่านต้นฉบับไม่ได้"}</li></ul></div><div class="converter"><label class="drop" for="media-input"><strong>${isEn ? "Choose a media file" : "เลือกไฟล์มีเดีย"}</strong><span>${isEn ? `Accepted input: ${config.input.split(",")[0]}` : `ไฟล์ที่รองรับ: ${config.input.split(",")[0]}`}</span></label><input id="media-input" type="file" accept="${config.input}" hidden><div id="file-info" class="file-info" hidden></div><label>${isEn ? "Output quality" : "คุณภาพผลลัพธ์"}<select id="quality"><option value="high">${isEn ? "High quality" : "คุณภาพสูง"}</option><option value="balanced" selected>${isEn ? "Balanced" : "สมดุล"}</option><option value="small">${isEn ? "Smaller file" : "ไฟล์เล็ก"}</option></select></label><button id="convert" type="button" disabled>${isEn ? `Convert to ${config.output.toUpperCase()}` : `แปลงเป็น ${config.output.toUpperCase()}`}</button><progress id="progress" max="1" value="0" hidden></progress><p id="status" role="status">${isEn ? "Select a file to begin." : "เลือกไฟล์เพื่อเริ่มต้น"}</p><a id="download" class="download" hidden>${isEn ? "Download converted file" : "ดาวน์โหลดไฟล์ที่แปลงแล้ว"}</a></div></section><section class="app-callout"><div><p class="eyebrow">${isEn ? "MOBILE DOCUMENT APP" : "แอปเอกสารบนมือถือ"}</p><h2>${isEn ? "Scan, sign PDFs, and generate QR codes on mobile" : "สแกน เซ็น PDF และสร้าง QR Code บนมือถือ"}</h2><p>${isEn ? "Discover the advanced Cam PDF Scan, Signer & QR Generator app." : "ดูความสามารถขั้นสูงของแอป Cam PDF Scan, Signer & QR Generator"}</p></div><a href="/Cam_PDF_Scan_Signer_QR-Gen/">${isEn ? "View the app" : "ดูแอป"}</a></section><section class="details"><div><h2>${isEn ? "How it works" : "วิธีใช้งาน"}</h2><ol><li>${isEn ? "Choose a supported local file." : "เลือกไฟล์ต้นฉบับจากอุปกรณ์"}</li><li>${isEn ? "Choose quality and start conversion." : "เลือกคุณภาพแล้วเริ่มแปลง"}</li><li>${isEn ? "Review the size and download the result." : "ตรวจขนาดและดาวน์โหลดผลลัพธ์"}</li></ol></div><div><h2>${isEn ? "Privacy and limitations" : "ความเป็นส่วนตัวและข้อจำกัด"}</h2><p>${isEn ? "Processing uses FFmpeg WebAssembly locally. Files are not uploaded by this tool. Closing or refreshing the page clears the working file. Performance depends on the browser, device memory, source codec, duration, and resolution." : "เครื่องมือใช้ FFmpeg WebAssembly ประมวลผลในอุปกรณ์และไม่ upload ไฟล์ การปิดหรือ refresh หน้าจะล้างไฟล์ทำงาน ความเร็วขึ้นอยู่กับ browser หน่วยความจำ codec ระยะเวลา และความละเอียด"}</p></div></section>${discovery}</main><footer><span>DJAI Academy</span><a href="${isEn ? "/academy/en/" : "/academy/"}">${isEn ? "Join the Academy" : "เข้าสู่ Academy"}</a></footer><script type="module" src="${basePath}/app.js"></script></body></html>`;
 }
 
@@ -70,7 +105,7 @@ function renderVideo(config, lang) {
   const discovery = `<nav class="tool-discovery-footer" aria-labelledby="tool-discovery-${lang}" data-tool-discovery><div class="discovery-heading"><p class="eyebrow">${isEn ? "VIDEO WORKFLOWS" : "งานวิดีโอ"}</p><h2 id="tool-discovery-${lang}">${isEn ? "Continue with another video task" : "ทำงานวิดีโอต่อด้วยเครื่องมือที่ตรงงาน"}</h2><p>${isEn ? "Each tool keeps the controls that matter for one job, and every file stays on your device." : "แต่ละเครื่องมือเก็บ control ที่จำเป็นของงานนั้นไว้ และไฟล์ยังอยู่บนอุปกรณ์ของคุณ"}</p></div><div class="discovery-links">${relatedLinks}</div><div class="discovery-heading" style="margin-top:34px"><h2>${isEn ? "Audio tools" : "เครื่องมือเสียง"}</h2></div><div class="discovery-links">${audioLinks}</div><div class="category-links">${categoryLinksFor(isEn)}</div></nav>`;
   const faqHTML = copy.faq.map((item) => `<div class="faq-item"><h3>${escapeHtml(item.q)}</h3><p>${escapeHtml(item.a)}</p></div>`).join("");
   const schemas = [
-    { "@context": "https://schema.org", "@type": "SoftwareApplication", name: copy.h1, url: canonical, applicationCategory: "MultimediaApplication", operatingSystem: "Web browser", description: copy.meta, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, publisher: { "@type": "Organization", name: "DJAI Academy", url: `${origin}/` } },
+    { "@context": "https://schema.org", "@type": "SoftwareApplication", name: copy.h1, url: canonical, applicationCategory: "MultimediaApplication", operatingSystem: "Web browser", description: copy.meta, inLanguage: lang, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, publisher: { "@type": "Organization", name: "DJAI Academy", url: `${origin}/` } },
     { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [
       { "@type": "ListItem", position: 1, name: isEn ? "Free tools" : "เครื่องมือฟรี", item: `${origin}${isEn ? "/tools/en/" : "/tools/"}` },
       { "@type": "ListItem", position: 2, name: isEn ? "Audio and video tools" : "เครื่องมือเสียงและวิดีโอ", item: `${origin}${basePath}/${isEn ? "en/" : ""}` },
@@ -100,16 +135,33 @@ cpSync(join(projectDir, "src", "video-tools.css"), join(publicDir, "video-tools.
 for (const [slug, config] of Object.entries(tools)) for (const lang of ["th", "en"]) {
   const directory = join(publicDir, slug, ...(lang === "en" ? ["en"] : []));
   mkdirSync(directory, { recursive: true });
-  writeFileSync(join(directory, "index.html"), render(slug, config, lang));
+  const [title, , description] = config[lang];
+  const canonical = `${origin}${href(slug, lang)}`;
+  writeFileSync(join(directory, "index.html"), enhanceHead(render(slug, config, lang), {
+    title: `${title} | DJAI Media Tools`, description, canonical, lang
+  }));
 }
 for (const config of videoTools) for (const lang of ["th", "en"]) {
   const directory = join(publicDir, config.slug, ...(lang === "en" ? ["en"] : []));
   mkdirSync(directory, { recursive: true });
-  writeFileSync(join(directory, "index.html"), renderVideo(config, lang));
+  writeFileSync(join(directory, "index.html"), enhanceHead(renderVideo(config, lang), {
+    title: config[lang].title,
+    description: config[lang].meta,
+    canonical: `${origin}${href(config.slug, lang)}`,
+    lang
+  }));
 }
 const first = Object.entries(tools)[0];
-writeFileSync(join(publicDir, "index.html"), render(first[0], first[1], "th", `${basePath}/`, ["แปลงไฟล์เสียงและวิดีโอฟรี ออนไลน์", "เครื่องมือแปลงไฟล์เสียงและวิดีโอฟรี", "แปลง MP3 WAV M4A MP4 MOV และ WebM ดึงเสียงหรือบีบอัดวิดีโอฟรีใน browser โดยไม่ upload ไฟล์"]));
+const thaiHub = ["เครื่องมือวิดีโอและเสียงฟรี ออนไลน์", "เครื่องมือวิดีโอและเสียงฟรีใน browser", "แปลง ตัด บีบอัด ครอป resize รวม หมุน หรือดึง frame จากวิดีโอ และจัดการไฟล์เสียงฟรีใน browser โดยไม่ upload ไฟล์"];
+writeFileSync(join(publicDir, "index.html"), enhanceHead(
+  render(first[0], first[1], "th", `${basePath}/`, thaiHub),
+  { title: `${thaiHub[0]} | DJAI Media Tools`, description: thaiHub[2], canonical: `${origin}${basePath}/`, lang: "th" }
+));
 mkdirSync(join(publicDir, "en"), { recursive: true });
-writeFileSync(join(publicDir, "en", "index.html"), render(first[0], first[1], "en", `${basePath}/en/`, ["Free Audio and Video Converter Online", "Free audio and video converter", "Convert MP3, WAV, M4A, MP4, MOV, and WebM, extract audio, or compress video free in your browser without uploading files."]));
+const englishHub = ["Free Video and Audio Tools Online", "Free browser video and audio tools", "Convert, cut, compress, crop, resize, merge, rotate, or extract frames from video and manage audio files free in your browser without uploading files."];
+writeFileSync(join(publicDir, "en", "index.html"), enhanceHead(
+  render(first[0], first[1], "en", `${basePath}/en/`, englishHub),
+  { title: `${englishHub[0]} | DJAI Media Tools`, description: englishHub[2], canonical: `${origin}${basePath}/en/`, lang: "en" }
+));
 const uniqueToolCount = new Set([...Object.keys(tools), ...videoTools.map((item) => item.slug)]).size;
 console.log(`Built ${uniqueToolCount * 2 + 2} media-tool pages.`);

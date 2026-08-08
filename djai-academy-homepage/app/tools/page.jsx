@@ -3,9 +3,9 @@ import ShareButtons from "../components/ShareButtons";
 import ToolDirectorySection from "./ToolDirectorySection";
 
 export const metadata = {
-  title: "เครื่องมือฟรีจาก DJAI | PDF, DOCX, AI, CSV, QR และรูปภาพ",
+  title: "เครื่องมือออนไลน์ฟรี | วิดีโอ เสียง PDF รูปภาพ และ AI | DJAI",
   description:
-    "ใช้เครื่องมือฟรีจาก DJAI สำหรับ PDF, DOCX, OCR, AI context, CSV, QR code และรูปภาพ แบบ private ใน browser",
+    "ใช้เครื่องมือออนไลน์ฟรีจาก DJAI เพื่อแปลง ตัด บีบอัด และจัดการวิดีโอ เสียง PDF รูปภาพ เอกสาร QR และข้อมูล โดยหลาย workflow ทำงานใน browser ของคุณ",
   alternates: {
     canonical: "/tools/",
     languages: {
@@ -14,14 +14,33 @@ export const metadata = {
       "x-default": "/tools/"
     }
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1
+    }
+  },
   openGraph: {
-    title: "เครื่องมือฟรีจาก DJAI",
+    title: "เครื่องมือออนไลน์ฟรีสำหรับวิดีโอ เสียง PDF รูปภาพ และ AI",
     description:
-      "เครื่องมือฟรีบนเว็บจาก DJAI Academy สำหรับ creator, founder, นักเรียน และธุรกิจ",
+      "แปลงและจัดการวิดีโอ เสียง PDF รูปภาพ เอกสาร QR และข้อมูลด้วยเครื่องมือ browser จาก DJAI Academy",
     url: "/tools/",
     siteName: "DJAI Academy",
-    images: ["/djai-logo.webp"],
+    locale: "th_TH",
+    alternateLocale: ["en_US"],
+    images: [{ url: "/social/djai-academy.webp", width: 1200, height: 630, alt: "เครื่องมือออนไลน์ฟรีจาก DJAI Academy" }],
     type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "เครื่องมือออนไลน์ฟรีจาก DJAI",
+    description: "เครื่องมือ browser สำหรับวิดีโอ เสียง PDF รูปภาพ เอกสาร QR และ AI",
+    images: ["/social/djai-academy.webp"]
   }
 };
 
@@ -95,6 +114,10 @@ const popularWorkflows = [
   ["PDF เป็น JPG", "ส่งออกทุกหน้าเป็นรูปหรือ ZIP", "https://www.djai.academy/tools/PDFTools/pdf-to-jpg/"],
   ["MP4 เป็น MP3", "ดึงเสียงจากวิดีโอใน browser", "https://www.djai.academy/tools/media/mp4-to-mp3/"],
   ["บีบอัดวิดีโอ", "ลดขนาด MP4 MOV และ WebM", "https://www.djai.academy/tools/media/compress-video/"],
+  ["แปลงวิดีโอ", "เปลี่ยนระหว่าง MP4 MOV MKV WebM และ AVI", "https://www.djai.academy/tools/media/video-converter/"],
+  ["ตัดวิดีโอ", "เลือกเวลาเริ่มและจบแล้ว export เป็น MP4", "https://www.djai.academy/tools/media/video-cutter/"],
+  ["ดึงภาพจากวิดีโอ", "สร้าง JPG หรือ PNG พร้อมดาวน์โหลด ZIP", "https://www.djai.academy/tools/media/extract-frames-from-video/"],
+  ["รวมวิดีโอ", "เรียงหลายคลิปแล้วรวมเป็น MP4", "https://www.djai.academy/tools/media/video-merger/"],
   ["DOCX เป็น PDF", "แปลง Word แบบ private", "https://www.djai.academy/tools/document/docx-to-pdf/"],
   ["PDF เป็นข้อความ", "ดึงข้อความตามช่วงหน้า", "https://www.djai.academy/tools/document/pdf-to-text/"],
   ["นับ Token เอกสาร", "ตรวจ context ก่อนใช้กับ AI", "https://www.djai.academy/tools/ai/token-counter/"],
@@ -137,10 +160,11 @@ const ecosystem = [
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  name: "เครื่องมือฟรีจาก DJAI",
+  name: "เครื่องมือออนไลน์ฟรีจาก DJAI",
   url: "https://www.djai.academy/tools/",
   description:
-    "ชุดเครื่องมือฟรีบน browser จาก DJAI Academy สำหรับ PDF, เอกสาร, AI context, spreadsheet, QR code และรูปภาพ",
+    "ชุดเครื่องมือฟรีบน browser จาก DJAI Academy สำหรับวิดีโอ เสียง PDF รูปภาพ เอกสาร AI context, spreadsheet และ QR code",
+  inLanguage: "th",
   publisher: {
     "@type": "Organization",
     name: "DJAI Academy",
@@ -185,10 +209,10 @@ export default function ThaiToolsPage() {
 
       <section className="tools-hero">
         <p className="eyebrow">เครื่องมือฟรีจาก DJAI Academy</p>
-        <h1>เครื่องมือใช้งานจริงสำหรับคนสร้างงาน ครีเอเตอร์ และธุรกิจ</h1>
+        <h1>เครื่องมือออนไลน์ฟรีสำหรับวิดีโอ PDF รูปภาพ AI และงานดิจิทัล</h1>
         <p>
-          DJAI สร้างเครื่องมือฟรีเพื่อช่วยให้คนทำงานเร็วขึ้น แก้ปัญหาดิจิทัลในชีวิตประจำวัน
-          และเห็นแนวคิดการสร้าง product ที่ใช้งานได้จริง
+          แปลง ตัด บีบอัด หรือจัดการวิดีโอ เสียง PDF รูปภาพ เอกสาร QR และข้อมูลได้ทันที
+          เครื่องมือหลักทำงานใน browser โดยไม่ต้องสมัครบัญชี
         </p>
         <ShareButtons url="https://www.djai.academy/tools/" title="เครื่องมือฟรีจาก DJAI" locale="th" compact />
       </section>

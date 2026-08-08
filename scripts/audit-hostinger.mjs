@@ -338,6 +338,9 @@ async function verify() {
     if (!html.includes("/tools/media/video-tools.js?v=20260809b")) failures.push(`${route}: missing versioned video runtime`);
     if (!html.includes("/tools/media/video-tools.css?v=20260809a")) failures.push(`${route}: missing versioned video styles`);
     if (html.includes("cdn.jsdelivr.net/npm/@ffmpeg/core")) failures.push(`${route}: FFmpeg core must remain self-hosted`);
+    if (!html.includes('<meta name="twitter:card" content="summary_large_image">')) failures.push(`${route}: missing Twitter card metadata`);
+    if (!html.includes('<meta property="og:image" content="https://www.djai.academy/social/djai-academy.webp">')) failures.push(`${route}: missing absolute social preview image`);
+    if (!html.includes('max-image-preview:large')) failures.push(`${route}: missing index and preview directives`);
   }
   const frameToolHtml = await fetch(`${origin}/tools/media/extract-frames-from-video/en/`).then((response) => response.text());
   if (!frameToolHtml.includes("/tools/media/vendor/jszip/jszip.min.js?v=20260809a")) {
@@ -352,10 +355,10 @@ async function verify() {
   }
 
   const toolHubFooterChecks = [
-    ["/tools/", "สร้างโดยทีมที่มี product จริงและธุรกิจจริง", "SEO crawler โอเพนซอร์สพร้อมหลักฐาน Technical SEO"],
-    ["/tools/en/", "Built by connected teams with real products.", "Open-source SEO crawler with technical evidence"]
+    ["/tools/", "สร้างโดยทีมที่มี product จริงและธุรกิจจริง", "SEO crawler โอเพนซอร์สพร้อมหลักฐาน Technical SEO", "เครื่องมือออนไลน์ฟรี | วิดีโอ เสียง PDF รูปภาพ และ AI | DJAI"],
+    ["/tools/en/", "Built by connected teams with real products.", "Open-source SEO crawler with technical evidence", "Free Online Tools | Video, Audio, PDF, Images &amp; AI | DJAI"]
   ];
-  for (const [route, precedingContent, seoCardCopy] of toolHubFooterChecks) {
+  for (const [route, precedingContent, seoCardCopy, title] of toolHubFooterChecks) {
     const html = await fetch(`${origin}${route}`).then((response) => response.text());
     const directoryPosition = html.indexOf("data-tool-discovery");
     const precedingPosition = html.indexOf(precedingContent);
@@ -363,6 +366,10 @@ async function verify() {
       failures.push(`${route}: complete tool directory is not positioned as the final discovery footer`);
     }
     if (!html.includes(seoCardCopy)) failures.push(`${route}: SEO crawler footer card is incomplete`);
+    if (!html.includes(`<title>${title}</title>`)) failures.push(`${route}: title does not describe the complete tool catalog`);
+    if (!html.includes('name="twitter:card" content="summary_large_image"')) failures.push(`${route}: missing localized Twitter card`);
+    if (!html.includes('property="og:image" content="https://www.djai.academy/social/djai-academy.webp"')) failures.push(`${route}: missing social preview image`);
+    if (!html.includes('max-image-preview:large')) failures.push(`${route}: missing index and preview directives`);
   }
 
   const promoResponse = await fetch(`${origin}/web_promo/`);

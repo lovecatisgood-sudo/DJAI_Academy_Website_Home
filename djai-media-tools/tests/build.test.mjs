@@ -44,8 +44,14 @@ test("exports 23 differentiated bilingual video tools", () => {
 
       assert.match(html, new RegExp(`<html lang="${lang}"`));
       assert.match(html, new RegExp(`<link rel="canonical" href="${canonical}"`));
+      assert.match(html, new RegExp(`hreflang="${lang}" href="${canonical}"`));
       assert.match(html, new RegExp(`hreflang="${lang === "en" ? "th" : "en"}" href="${alternate}"`));
       assert.match(html, /hreflang="x-default"/);
+      assert.match(html, /<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">/);
+      assert.match(html, /<meta property="og:site_name" content="DJAI Academy">/);
+      assert.match(html, /<meta property="og:image" content="https:\/\/www\.djai\.academy\/social\/djai-academy\.webp">/);
+      assert.match(html, /<meta name="twitter:card" content="summary_large_image">/);
+      assert.match(html, /<meta name="twitter:title" content="[^\"]+">/);
       assert.equal((html.match(/<h1\b/g) || []).length, 1, `${tool.slug}/${lang}: H1 count`);
       assert.match(html, /id="video-tool-app"/);
       assert.match(html, /video-tools\.js\?v=20260809b/);
@@ -61,7 +67,11 @@ test("exports 23 differentiated bilingual video tools", () => {
 
       const schemas = [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)];
       assert.equal(schemas.length, 3, `${tool.slug}/${lang}: structured data count`);
-      for (const schema of schemas) assert.doesNotThrow(() => JSON.parse(schema[1]));
+      const parsedSchemas = schemas.map((schema) => JSON.parse(schema[1]));
+      assert.equal(parsedSchemas[0]["@type"], "SoftwareApplication");
+      assert.equal(parsedSchemas[0].inLanguage, lang);
+      assert.equal(parsedSchemas[1]["@type"], "BreadcrumbList");
+      assert.equal(parsedSchemas[2]["@type"], "FAQPage");
     }
   }
 });
@@ -78,6 +88,14 @@ test("ships frame ZIP support only where it is needed", () => {
 test("media hub discovers every video route", () => {
   for (const lang of ["th", "en"]) {
     const html = readFileSync(join(root, "public", ...(lang === "en" ? ["en"] : []), "index.html"), "utf8");
+    assert.match(html, lang === "en" ? /Free Video and Audio Tools Online/ : /เครื่องมือวิดีโอและเสียงฟรี ออนไลน์/);
+    assert.match(html, /<meta name="twitter:card" content="summary_large_image">/);
+    assert.match(html, /<meta property="og:image" content="https:\/\/www\.djai\.academy\/social\/djai-academy\.webp">/);
+    const schema = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
+    assert.equal(schema["@type"], "CollectionPage");
+    assert.equal(schema.inLanguage, lang);
+    assert.equal(schema.hasPart.length, 28);
+    assert.equal(new Set(schema.hasPart.map((item) => item.url)).size, 28);
     for (const tool of videoTools) {
       const suffix = lang === "en" ? "en/" : "";
       assert.match(html, new RegExp(`href="/tools/media/${tool.slug}/${suffix}"`), `${lang}: ${tool.slug}`);

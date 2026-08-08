@@ -33,3 +33,29 @@ test("tool directory exposes every bilingual video utility", () => {
     }
   }
 });
+
+test("tools hubs describe video and audio discovery in localized SEO metadata", () => {
+  const pages = [
+    {
+      path: join(homepageRoot, "app", "tools", "page.jsx"),
+      title: "เครื่องมือออนไลน์ฟรี | วิดีโอ เสียง PDF รูปภาพ และ AI | DJAI",
+      description: "แปลง ตัด บีบอัด",
+      twitter: "เครื่องมือออนไลน์ฟรีจาก DJAI"
+    },
+    {
+      path: join(homepageRoot, "app", "tools", "en", "page.jsx"),
+      title: "Free Online Tools | Video, Audio, PDF, Images & AI | DJAI",
+      description: "convert, cut, compress",
+      twitter: "Free Online Tools from DJAI"
+    }
+  ];
+
+  for (const page of pages) {
+    const source = readFileSync(page.path, "utf8");
+    assert.match(source, new RegExp(page.title.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.match(source.toLowerCase(), new RegExp(page.description.toLowerCase()));
+    assert.match(source, new RegExp(page.twitter));
+    assert.match(source, /summary_large_image/);
+    assert.match(source, /social\/djai-academy\.webp/);
+  }
+});
