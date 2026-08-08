@@ -1,11 +1,13 @@
 import { SIAMESE_CAT_DEV_CATEGORY, getAllPosts, getPostsByCategory } from "./lib/blogStore";
 import { getAllThaiPosts } from "./lib/thBlogPosts";
+import { videoToolSlugs } from "./lib/videoToolSlugs";
 
 export const revalidate = 3600;
 
 const ORIGIN = "https://www.djai.academy";
 const STATIC_LAST_MODIFIED = new Date("2026-07-30T00:00:00.000Z");
 const COURSE_LAST_MODIFIED = new Date("2026-08-05T00:00:00.000Z");
+const VIDEO_TOOLS_LAST_MODIFIED = new Date("2026-08-09T00:00:00.000Z");
 // The background-removal tool was rebuilt on its own first-party engine and
 // its pages rewritten. Dated separately so the other static pages keep an
 // honest lastModified rather than all claiming to have changed.
@@ -48,8 +50,13 @@ const pdfTools = [
 
 const mediaTools = [
   "mp3-to-wav", "wav-to-mp3", "m4a-to-mp3", "mp4-to-mp3", "extract-audio-from-video",
-  "mp4-to-webm", "webm-to-mp4", "mov-to-mp4", "compress-video"
+  ...videoToolSlugs
 ];
+
+const VIDEO_TOOL_PATHS = new Set(videoToolSlugs.flatMap((slug) => [
+  `/tools/media/${slug}/`,
+  `/tools/media/${slug}/en/`
+]));
 
 const suiteTools = {
   document: ["docx-to-pdf", "docx-to-html", "docx-to-markdown", "docx-to-text", "pdf-to-text", "pdf-to-word", "ocr"],
@@ -86,6 +93,7 @@ export default async function sitemap() {
     path,
     BACKGROUND_REMOVAL_PATHS.has(path)
       ? BACKGROUND_REMOVAL_LAST_MODIFIED
+      : VIDEO_TOOL_PATHS.has(path) ? VIDEO_TOOLS_LAST_MODIFIED
       : path.startsWith("/siamese_cat/dev/course/") ? COURSE_LAST_MODIFIED : STATIC_LAST_MODIFIED,
     path === "/" || path === "/en/" ? "weekly" : "monthly",
     path === "/" || path === "/en/" ? 1 : path.startsWith("/siamese_cat/dev/course/") ? 0.9 : path.startsWith("/tools/") ? 0.8 : 0.7

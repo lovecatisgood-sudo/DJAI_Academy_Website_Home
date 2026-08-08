@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint .",
     "test:blog": "node --test tests/blog-content.test.mjs tests/blog-journeys.test.mjs",
+    "test:tools": "node --test tests/video-tools-discovery.test.mjs",
     "test:onboarding": "node tests/onboarding-responsive.test.mjs"
   },
   "dependencies": {

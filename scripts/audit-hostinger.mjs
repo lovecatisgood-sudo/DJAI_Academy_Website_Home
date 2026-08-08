@@ -14,6 +14,15 @@ const serverEntry = useQrCompatibilityEntry
 const serverDirectory = useQrCompatibilityEntry
   ? new URL("../DJayTools-Free-QR-Generator-Source/", import.meta.url).pathname
   : repositoryRoot;
+const mediaToolSlugs = [
+  "mp3-to-wav", "wav-to-mp3", "m4a-to-mp3", "mp4-to-mp3", "extract-audio-from-video",
+  "video-converter", "mkv-to-mp4", "avi-to-mp4", "mp4-to-mov", "mp4-to-webm",
+  "webm-to-mp4", "mov-to-mp4", "video-cutter", "compress-video",
+  "compress-video-to-10mb", "compress-video-to-25mb", "compress-video-to-50mb",
+  "compress-video-to-100mb", "video-cropper", "video-resizer", "video-merger",
+  "video-to-gif", "gif-to-mp4", "remove-audio-from-video", "add-audio-to-video",
+  "video-speed-changer", "extract-frames-from-video", "rotate-video"
+];
 const publicRoutes = [
   "/",
   "/en/",
@@ -62,7 +71,7 @@ const publicRoutes = [
   ...["resize-image-to-200kb", "avif-to-jpg", "avif-to-png", "passport-photo-resizer"].flatMap((tool) => [`/tools/resizeimg/${tool}/`, `/tools/resizeimg/${tool}/en/`]),
   "/tools/media/",
   "/tools/media/en/",
-  ...["mp3-to-wav", "wav-to-mp3", "m4a-to-mp3", "mp4-to-mp3", "extract-audio-from-video", "mp4-to-webm", "webm-to-mp4", "mov-to-mp4", "compress-video"].flatMap((tool) => [`/tools/media/${tool}/`, `/tools/media/${tool}/en/`]),
+  ...mediaToolSlugs.flatMap((tool) => [`/tools/media/${tool}/`, `/tools/media/${tool}/en/`]),
   "/tools/PDFTools/",
   "/tools/PDFTools/en/",
   "/tools/PDFTools/merge-pdf/",
@@ -319,6 +328,22 @@ async function verify() {
     }
   }
 
+  for (const route of [
+    "/tools/media/video-converter/",
+    "/tools/media/compress-video-to-25mb/en/",
+    "/tools/media/extract-frames-from-video/en/"
+  ]) {
+    const html = await fetch(`${origin}${route}`).then((response) => response.text());
+    if (!html.includes('id="video-tool-app"')) failures.push(`${route}: missing interactive video workspace`);
+    if (!html.includes("/tools/media/video-tools.js?v=20260809b")) failures.push(`${route}: missing versioned video runtime`);
+    if (!html.includes("/tools/media/video-tools.css?v=20260809a")) failures.push(`${route}: missing versioned video styles`);
+    if (html.includes("cdn.jsdelivr.net/npm/@ffmpeg/core")) failures.push(`${route}: FFmpeg core must remain self-hosted`);
+  }
+  const frameToolHtml = await fetch(`${origin}/tools/media/extract-frames-from-video/en/`).then((response) => response.text());
+  if (!frameToolHtml.includes("/tools/media/vendor/jszip/jszip.min.js?v=20260809a")) {
+    failures.push("/tools/media/extract-frames-from-video/en/: missing self-hosted ZIP support");
+  }
+
   for (const route of ["/", "/blog/", "/course/", "/service/"]) {
     const html = await fetch(`${origin}${route}`).then((response) => response.text());
     if (html.includes("data-tool-discovery")) {
@@ -418,8 +443,8 @@ async function verify() {
 
   const sitemapUrls = [...sitemapBody.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1].trim());
   const sitemapUrlSet = new Set(sitemapUrls);
-  if (sitemapUrls.length < 221) {
-    failures.push(`/sitemap.xml: expected at least the 221-page production baseline, received ${sitemapUrls.length}`);
+  if (sitemapUrls.length < 259) {
+    failures.push(`/sitemap.xml: expected at least the 259-page video-tools baseline, received ${sitemapUrls.length}`);
   }
   if (sitemapUrlSet.size !== sitemapUrls.length) {
     failures.push(`/sitemap.xml: contains ${sitemapUrls.length - sitemapUrlSet.size} duplicate URL entries`);

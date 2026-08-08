@@ -143,7 +143,10 @@ const projects = [
     outputs: [
       "public/index.html", "public/en/index.html", "public/mp3-to-wav/index.html",
       "public/mp3-to-wav/en/index.html", "public/compress-video/index.html",
-      "public/compress-video/en/index.html", "public/vendor/core/ffmpeg-core.wasm",
+      "public/compress-video/en/index.html", "public/video-converter/index.html",
+      "public/video-cutter/en/index.html", "public/extract-frames-from-video/en/index.html",
+      "public/video-tools.js", "public/video-tools.css",
+      "public/vendor/jszip/jszip.min.js", "public/vendor/core/ffmpeg-core.wasm",
       "public/vendor/ffmpeg/worker.js"
     ]
   },

@@ -25,6 +25,11 @@ const requiredOutputs = [
   "djai-image-resizer/public/en/index.html",
   "djai-media-tools/public/index.html",
   "djai-media-tools/public/en/index.html",
+  "djai-media-tools/public/video-converter/index.html",
+  "djai-media-tools/public/video-cutter/en/index.html",
+  "djai-media-tools/public/video-tools.js",
+  "djai-media-tools/public/video-tools.css",
+  "djai-media-tools/public/vendor/jszip/jszip.min.js",
   "djai-media-tools/public/vendor/core/ffmpeg-core.wasm"
 ];
 

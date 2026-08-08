@@ -1,0 +1,1605 @@
+[
+ {
+  "slug": "video-converter",
+  "mode": "convert",
+  "fixedInput": null,
+  "fixedOutput": null,
+  "targetMB": null,
+  "th": {
+   "primary": "แปลงวิดีโอออนไลน์",
+   "title": "แปลงวิดีโอออนไลน์ฟรี MP4 MOV MKV WebM | DJAI",
+   "meta": "แปลงวิดีโอออนไลน์ระหว่าง MP4, MOV, WebM, MKV และ AVI เลือกคุณภาพและความละเอียดได้ ประมวลผลใน browser โดยไม่ต้องสมัครและไม่อัปโหลดไฟล์",
+   "h1": "แปลงวิดีโอออนไลน์ โดยไฟล์ไม่ต้องออกจากเครื่อง",
+   "hero": "เลือกวิดีโอที่มีอยู่จริง แล้วเปลี่ยนเป็น format ที่งานถัดไปต้องใช้ได้เลย ไม่ต้องรอ upload ไม่ต้องสมัครบัญชี และไม่ต้องเจอ paywall ตอนขั้นตอนสุดท้าย",
+   "ui": "ตัวแปลงวิดีโอ",
+   "why": "ตัวแปลงไฟล์ที่ดีควรทำให้เรื่อง format เป็นเรื่องเล็ก",
+   "note": "ถ้าต้องส่งไฟล์ให้คนทั่วไป MP4 ยังเป็นตัวเลือกที่ปลอดภัยที่สุด ส่วน WebM เหมาะกับงานเว็บ MOV พบได้บ่อยใน workflow ของ Apple และ MKV ยืดหยุ่นกับงาน media ภายใน เครื่องมือนี้แปลงวิดีโอหลักและเสียง track แรก",
+   "keywords": [
+    "video converter",
+    "แปลง mp4",
+    "แปลงไฟล์วิดีโอ",
+    "แปลง mov",
+    "แปลง mkv",
+    "แปลงวิดีโอฟรี"
+   ],
+   "faq": [
+    {
+     "q": "แค่เปลี่ยนนามสกุลไฟล์แทนได้ไหม?",
+     "a": "ไม่ได้ในหลายกรณี เพราะ container และ codec ข้างในยังเหมือนเดิม หน้านี้ทำ conversion จริง"
+    },
+    {
+     "q": "ไฟล์ถูกอัปโหลดขึ้น DJAI หรือไม่?",
+     "a": "ไม่ ตัวไฟล์ถูกอ่านและประมวลผลใน browser บนอุปกรณ์ของคุณ"
+    },
+    {
+     "q": "ทำไมครั้งแรกถึงช้ากว่า?",
+     "a": "ครั้งแรก browser ต้องโหลด FFmpeg WebAssembly core ประมาณ 31 MB หลังจากนั้น cache อาจช่วยให้เร็วขึ้น"
+    }
+   ]
+  },
+  "en": {
+   "primary": "video converter",
+   "title": "Video Converter Online – MP4, MOV, MKV, WebM | DJAI",
+   "meta": "Convert video online between MP4, MOV, WebM, MKV and AVI. Choose quality and resolution, then process the file privately in your browser with no account.",
+   "h1": "Convert video online without sending it to a server",
+   "hero": "Open the video you already have, choose the format you actually need, and convert it locally in your browser. No upload queue, no account, and no mystery step after you click Convert.",
+   "ui": "Video converter",
+   "why": "A converter is most useful when it gets out of the way",
+   "note": "MP4 is the safest default for everyday sharing. WebM makes sense for web-first delivery, MOV is useful in Apple-heavy workflows, while MKV is flexible for local media. This tool converts the main video stream and first audio stream.",
+   "keywords": [
+    "online video converter",
+    "convert video online",
+    "free video converter",
+    "mp4 converter",
+    "video format converter",
+    "private video converter"
+   ],
+   "faq": [
+    {
+     "q": "Can I just rename the file extension?",
+     "a": "Usually not. Renaming does not change the container or codecs inside; this page performs a real conversion."
+    },
+    {
+     "q": "Is my video uploaded to DJAI?",
+     "a": "No. The source file is read and processed in your browser on your device."
+    },
+    {
+     "q": "Why can the first run take longer?",
+     "a": "The browser downloads an FFmpeg WebAssembly core of roughly 31 MB the first time processing is needed; caching can help later runs."
+    }
+   ]
+  }
+ },
+ {
+  "slug": "mkv-to-mp4",
+  "mode": "convert",
+  "fixedInput": "mkv",
+  "fixedOutput": "mp4",
+  "targetMB": null,
+  "th": {
+   "primary": "แปลง MKV เป็น MP4",
+   "title": "แปลง MKV เป็น MP4 ออนไลน์ฟรี | DJAI",
+   "meta": "แปลง MKV เป็น MP4 ออนไลน์ใน browser เพื่อให้เปิด แชร์ และอัปโหลดง่ายขึ้น โดยไฟล์ต้นฉบับไม่ถูกส่งขึ้น server ของ DJAI",
+   "h1": "แปลง MKV เป็น MP4 เพื่อให้เปิดและแชร์ง่ายกว่าเดิม",
+   "hero": "MKV เก็บหลาย track ได้เก่ง แต่เวลาจะส่งเข้า browser มือถือ editor หรือแพลตฟอร์มทั่วไป MP4 มักใช้ง่ายกว่า หน้านี้แปลง video หลักและ audio track แรกเป็น MP4",
+   "ui": "MKV → MP4",
+   "why": "MKV ยืดหยุ่น แต่ MP4 มักไปต่อได้ง่ายกว่า",
+   "note": "ไฟล์ MKV อาจมีหลาย audio track, subtitle และ attachment เครื่องมือนี้ตั้งใจแปลงวิดีโอหลักกับเสียง track แรก เหมาะกับการดู แชร์ และนำไปใช้งานต่อมากกว่างาน archive",
+   "keywords": [
+    "mkv to mp4",
+    "แปลง mkv ออนไลน์",
+    "mkv converter",
+    "แปลงไฟล์ mkv",
+    "mkv เป็น mp4 ฟรี"
+   ],
+   "faq": [
+    {
+     "q": "แค่เปลี่ยนนามสกุลไฟล์แทนได้ไหม?",
+     "a": "ไม่ได้ในหลายกรณี เพราะ container และ codec ข้างในยังเหมือนเดิม หน้านี้ทำ conversion จริง"
+    },
+    {
+     "q": "ไฟล์ถูกอัปโหลดขึ้น DJAI หรือไม่?",
+     "a": "ไม่ ตัวไฟล์ถูกอ่านและประมวลผลใน browser บนอุปกรณ์ของคุณ"
+    },
+    {
+     "q": "ทำไมครั้งแรกถึงช้ากว่า?",
+     "a": "ครั้งแรก browser ต้องโหลด FFmpeg WebAssembly core ประมาณ 31 MB หลังจากนั้น cache อาจช่วยให้เร็วขึ้น"
+    }
+   ]
+  },
+  "en": {
+   "primary": "mkv to mp4",
+   "title": "Convert MKV to MP4 Online Free | DJAI",
+   "meta": "Convert MKV to MP4 online in your browser. Make MKV video easier to play, share and upload without sending the source file to DJAI.",
+   "h1": "Convert MKV to MP4 for easier playback and sharing",
+   "hero": "MKV is excellent at holding different streams, but it is not always the easiest file to hand to a phone, browser, editor, or social platform. Convert the main video and audio to MP4 here.",
+   "ui": "MKV to MP4",
+   "why": "MKV is flexible; MP4 is usually easier to hand off",
+   "note": "An MKV can contain several audio tracks, subtitles and attachments. This tool converts the main video stream and first audio stream into MP4 rather than preserving every MKV track.",
+   "keywords": [
+    "convert mkv to mp4",
+    "mkv to mp4 online",
+    "mkv converter",
+    "mkv to mp4 free",
+    "convert mkv online"
+   ],
+   "faq": [
+    {
+     "q": "Can I just rename the file extension?",
+     "a": "Usually not. Renaming does not change the container or codecs inside; this page performs a real conversion."
+    },
+    {
+     "q": "Is my video uploaded to DJAI?",
+     "a": "No. The source file is read and processed in your browser on your device."
+    },
+    {
+     "q": "Why can the first run take longer?",
+     "a": "The browser downloads an FFmpeg WebAssembly core of roughly 31 MB the first time processing is needed; caching can help later runs."
+    }
+   ]
+  }
+ },
+ {
+  "slug": "avi-to-mp4",
+  "mode": "convert",
+  "fixedInput": "avi",
+  "fixedOutput": "mp4",
+  "targetMB": null,
+  "th": {
+   "primary": "แปลง AVI เป็น MP4",
+   "title": "แปลง AVI เป็น MP4 ออนไลน์ฟรี | DJAI",
+   "meta": "แปลง AVI เป็น MP4 ออนไลน์ใน browser เปลี่ยนไฟล์วิดีโอเก่าให้เป็น MP4 ที่เปิด แชร์ และอัปโหลดง่ายกว่าโดยไม่ส่งไฟล์ขึ้น server",
+   "h1": "แปลง AVI เป็น MP4 เพื่อไม่ต้องลาก format เก่าไปงานถัดไป",
+   "hero": "AVI ยังโผล่มาจาก archive กล้องรุ่นเก่า และ software เดิม ๆ ถ้าปลายทางคือ browser มือถือ หรือระบบอัปโหลด การเปลี่ยนเป็น MP4 ตั้งแต่ตรงนี้มักง่ายกว่า",
+   "ui": "AVI → MP4",
+   "why": "AVI ยังอยู่ เพราะไฟล์เก่ายังอยู่",
+   "note": "AVI ใส่ codec ได้หลายแบบ บางไฟล์ browser จึง preview ไม่ได้โดยตรง แต่ FFmpeg WebAssembly ยังรองรับ AVI ได้หลายกรณีแม้ preview ต้นฉบับจะจำกัด",
+   "keywords": [
+    "avi to mp4",
+    "แปลง avi",
+    "avi converter",
+    "แปลง avi เป็น mp4",
+    "ไฟล์ avi เป็น mp4"
+   ],
+   "faq": [
+    {
+     "q": "แค่เปลี่ยนนามสกุลไฟล์แทนได้ไหม?",
+     "a": "ไม่ได้ในหลายกรณี เพราะ container และ codec ข้างในยังเหมือนเดิม หน้านี้ทำ conversion จริง"
+    },
+    {
+     "q": "ไฟล์ถูกอัปโหลดขึ้น DJAI หรือไม่?",
+     "a": "ไม่ ตัวไฟล์ถูกอ่านและประมวลผลใน browser บนอุปกรณ์ของคุณ"
+    },
+    {
+     "q": "ทำไมครั้งแรกถึงช้ากว่า?",
+     "a": "ครั้งแรก browser ต้องโหลด FFmpeg WebAssembly core ประมาณ 31 MB หลังจากนั้น cache อาจช่วยให้เร็วขึ้น"
+    }
+   ]
+  },
+  "en": {
+   "primary": "avi to mp4",
+   "title": "Convert AVI to MP4 Online Free | DJAI",
+   "meta": "Convert AVI to MP4 online in your browser. Turn older AVI video into a modern MP4 that is easier to play, share and upload.",
+   "h1": "Convert AVI to MP4 and stop carrying an old container forward",
+   "hero": "AVI files still turn up in archives, old cameras and legacy software. Convert the useful video into a modern MP4 before it reaches a browser, phone or upload system.",
+   "ui": "AVI to MP4",
+   "why": "AVI survives because old files survive",
+   "note": "AVI can contain many different codecs, including some modern browsers do not preview. FFmpeg WebAssembly still handles many of those files even when native preview is limited.",
+   "keywords": [
+    "avi to mp4",
+    "convert avi to mp4",
+    "avi converter online",
+    "avi to mp4 free",
+    "convert avi online"
+   ],
+   "faq": [
+    {
+     "q": "Can I just rename the file extension?",
+     "a": "Usually not. Renaming does not change the container or codecs inside; this page performs a real conversion."
+    },
+    {
+     "q": "Is my video uploaded to DJAI?",
+     "a": "No. The source file is read and processed in your browser on your device."
+    },
+    {
+     "q": "Why can the first run take longer?",
+     "a": "The browser downloads an FFmpeg WebAssembly core of roughly 31 MB the first time processing is needed; caching can help later runs."
+    }
+   ]
+  }
+ },
+ {
+  "slug": "mp4-to-mov",
+  "mode": "convert",
+  "fixedInput": "mp4",
+  "fixedOutput": "mov",
+  "targetMB": null,
+  "th": {
+   "primary": "แปลง MP4 เป็น MOV",
+   "title": "แปลง MP4 เป็น MOV ออนไลน์ฟรี | DJAI",
+   "meta": "แปลง MP4 เป็น MOV ออนไลน์ใน browser สำหรับ workflow ของ Apple หรืองานตัดต่อ เลือกคุณภาพและความละเอียดได้โดยไม่ต้องอัปโหลดไฟล์",
+   "h1": "แปลง MP4 เป็น MOV เมื่อ workflow ถัดไปต้องการ MOV จริง ๆ",
+   "hero": "งานแชร์ทั่วไปแทบไม่ต้องเปลี่ยนเป็น MOV แต่ถ้า editor หรือระบบที่ใช้อยู่ต้องการ MOV ก็แปลงให้ถูก container ตรงนี้ ดีกว่าเปลี่ยนนามสกุล",
+   "ui": "MP4 → MOV",
+   "why": "ใช้ MOV เพราะ workflow ต้องใช้ ไม่ใช่เพราะชื่อดู professional กว่า",
+   "note": "การเปลี่ยนชื่อไฟล์จาก .mp4 เป็น .mov ไม่ได้เปลี่ยน container หน้านี้สร้าง MOV ใหม่จริงด้วยการ re-encode video และ audio stream",
+   "keywords": [
+    "mp4 to mov",
+    "แปลง mp4 เป็น mov",
+    "mov converter",
+    "convert video to mov",
+    "แปลงวิดีโอเป็น mov"
+   ],
+   "faq": [
+    {
+     "q": "แค่เปลี่ยนนามสกุลไฟล์แทนได้ไหม?",
+     "a": "ไม่ได้ในหลายกรณี เพราะ container และ codec ข้างในยังเหมือนเดิม หน้านี้ทำ conversion จริง"
+    },
+    {
+     "q": "ไฟล์ถูกอัปโหลดขึ้น DJAI หรือไม่?",
+     "a": "ไม่ ตัวไฟล์ถูกอ่านและประมวลผลใน browser บนอุปกรณ์ของคุณ"
+    },
+    {
+     "q": "ทำไมครั้งแรกถึงช้ากว่า?",
+     "a": "ครั้งแรก browser ต้องโหลด FFmpeg WebAssembly core ประมาณ 31 MB หลังจากนั้น cache อาจช่วยให้เร็วขึ้น"
+    }
+   ]
+  },
+  "en": {
+   "primary": "mp4 to mov",
+   "title": "Convert MP4 to MOV Online Free | DJAI",
+   "meta": "Convert MP4 to MOV online in your browser for Apple or editing workflows. Choose quality and resolution with no account and no video upload.",
+   "h1": "Convert MP4 to MOV when the next workflow expects MOV",
+   "hero": "Most people do not need MOV for everyday sharing. But if an editing or Apple-heavy workflow specifically wants it, convert the MP4 here instead of renaming the file.",
+   "ui": "MP4 to MOV",
+   "why": "Use MOV because a workflow needs it, not because it sounds more professional",
+   "note": "Changing .mp4 to .mov in a filename does not change the container. This tool creates a real MOV output by re-encoding the selected video and audio streams.",
+   "keywords": [
+    "mp4 to mov",
+    "convert mp4 to mov",
+    "mp4 mov converter",
+    "mp4 to mov online",
+    "convert video to mov"
+   ],
+   "faq": [
+    {
+     "q": "Can I just rename the file extension?",
+     "a": "Usually not. Renaming does not change the container or codecs inside; this page performs a real conversion."
+    },
+    {
+     "q": "Is my video uploaded to DJAI?",
+     "a": "No. The source file is read and processed in your browser on your device."
+    },
+    {
+     "q": "Why can the first run take longer?",
+     "a": "The browser downloads an FFmpeg WebAssembly core of roughly 31 MB the first time processing is needed; caching can help later runs."
+    }
+   ]
+  }
+ },
+ {
+  "slug": "video-cutter",
+  "mode": "cutter",
+  "fixedInput": null,
+  "fixedOutput": null,
+  "targetMB": null,
+  "th": {
+   "primary": "ตัดวิดีโอออนไลน์",
+   "title": "ตัดวิดีโอออนไลน์ฟรี เลือกเวลา Start End | DJAI",
+   "meta": "ตัดวิดีโอออนไลน์ด้วย playback และ timestamp ตั้ง Start/End พรีวิวช่วงที่เลือก แล้ว export ใน browser โดยไฟล์ไม่ถูกอัปโหลด",
+   "h1": "ตัดวิดีโอจากสิ่งที่เห็นและได้ยิน ไม่ใช่เดา timestamp",
+   "hero": "เล่นวิดีโอ หยุดตรงจุดที่เนื้อหาจริงเริ่ม ตั้ง Start กับ End แล้วพรีวิวช่วงนั้นก่อน export ไฟล์ต้นฉบับยังอยู่บนอุปกรณ์ของคุณ",
+   "ui": "เครื่องมือตัดวิดีโอ",
+   "why": "งานยากของการตัดวิดีโอคือหาจังหวะ ไม่ใช่กดปุ่ม Cut",
+   "note": "เครื่องมือนี้ re-encode เฉพาะช่วงที่เลือกเพื่อให้จุดตัดแม่นกว่าแบบ copy ตาม keyframe จึงอาจใช้เวลามากกว่าเล็กน้อย แต่ลดปัญหาหัวคลิปขยับจากเวลาที่ตั้งไว้",
+   "keywords": [
+    "video cutter",
+    "ตัด mp4 ออนไลน์",
+    "ตัดคลิปออนไลน์",
+    "video trimmer",
+    "ตัดวิดีโอตามเวลา",
+    "ตัดวิดีโอฟรี"
+   ],
+   "faq": [
+    {
+     "q": "ตัดตาม timestamp ได้ละเอียดแค่ไหน?",
+     "a": "Start/End รับวินาทีหรือ นาที:วินาที.มิลลิวินาที และช่วงที่เลือกถูก re-encode เพื่อให้ตัดใกล้เวลาที่ตั้งไว้"
+    },
+    {
+     "q": "ไฟล์ถูกอัปโหลดขึ้น DJAI หรือไม่?",
+     "a": "ไม่ ตัวไฟล์ถูกอ่านและประมวลผลใน browser บนอุปกรณ์ของคุณ"
+    },
+    {
+     "q": "ทำไมครั้งแรกถึงช้ากว่า?",
+     "a": "ครั้งแรก browser ต้องโหลด FFmpeg WebAssembly core ประมาณ 31 MB หลังจากนั้น cache อาจช่วยให้เร็วขึ้น"
+    }
+   ]
+  },
+  "en": {
+   "primary": "video cutter",
+   "title": "Video Cutter Online – Trim Video by Timestamp | DJAI",
+   "meta": "Cut video online with playback, exact start and end timestamps, and preview. Trim MP4 and common video formats privately in your browser.",
+   "h1": "Cut a video by watching it, not by guessing timestamps",
+   "hero": "Play the video, pause where the useful part actually begins, set Start and End, preview the range, then export only that section. The source stays on your device.",
+   "ui": "Video cutter",
+   "why": "The hard part of trimming is finding the moment, not pressing Cut",
+   "note": "This tool re-encodes the selected section for more accurate cuts. That is slower than copying around keyframes, but avoids the common problem where a cut starts early or late.",
+   "keywords": [
+    "online video cutter",
+    "trim video online",
+    "video trimmer",
+    "mp4 cutter",
+    "cut video by timestamp",
+    "private video cutter"
+   ],
+   "faq": [
+    {
+     "q": "How precise are the timestamps?",
+     "a": "Start and End accept seconds or minute:second.millisecond values, and the selected range is re-encoded to follow that timing closely."
+    },
+    {
+     "q": "Is my video uploaded to DJAI?",
+     "a": "No. The source file is read and processed in your browser on your device."
+    },
+    {
+     "q": "Why can the first run take longer?",
+     "a": "The browser downloads an FFmpeg WebAssembly core of roughly 31 MB the first time processing is needed; caching can help later runs."
+    }
+   ]
+  }
+ },
+ {
+  "slug": "video-cropper",
+  "mode": "cropper",
+  "fixedInput": null,
+  "fixedOutput": null,
+  "targetMB": null,
+  "th": {
+   "primary": "ครอปวิดีโอออนไลน์",
+   "title": "ครอปวิดีโอออนไลน์ 16:9 9:16 1:1 ฟรี | DJAI",
+   "meta": "ครอปวิดีโอออนไลน์เป็น 16:9, 9:16, 1:1, 4:5 หรือ 3:2 ใช้ center crop สำหรับ social เว็บ และงานตัดต่อ โดยประมวลผลใน browser",
+   "h1": "ครอปวิดีโอให้ตรง frame ที่แพลตฟอร์มถัดไปต้องการ",
+   "hero": "เปลี่ยนคลิปแนวนอนเป็นแนวตั้ง สี่เหลี่ยม หรือ widescreen ที่สะอาดขึ้นได้โดยไม่ส่งต้นฉบับขึ้น server เลือก aspect ratio แล้วระบบจะครอปจากกึ่งกลาง",
+   "ui": "ครอปวิดีโอ",
+   "why": "หลายครั้ง aspect ratio เป็นข้อกำหนดของปลายทาง มากกว่าจะเป็นเรื่องสไตล์",
+   "note": "เวอร์ชันนี้ใช้ center crop ไม่ใช่ editor แบบลากกรอบ จุดเด่นคือเร็วและคาดเดาได้ ถ้าตัวแบบอยู่ชิดขอบมาก ควรใช้ editor ที่กำหนดตำแหน่ง crop ได้ละเอียดกว่า",
+   "keywords": [
+    "video cropper",
+    "ครอป mp4",
+    "ตัดขอบวิดีโอ",
+    "วิดีโอ 9:16",
+    "ครอปวิดีโอ 1:1",
+    "crop video"
+   ],
+   "faq": [
+    {
+     "q": "รองรับไฟล์อะไรบ้าง?",
+     "a": "รองรับ format ทั่วไปที่ FFmpeg core อ่านได้ เช่น MP4, MOV, WebM, MKV, AVI, MPEG, M4V, 3GP, TS และ WMV แต่ browser อาจ preview บาง format ไม่ได้"
+    },
+    {
+     "q": "ไฟล์ถูกอัปโหลดขึ้น DJAI หรือไม่?",
+     "a": "ไม่ ตัวไฟล์ถูกอ่านและประมวลผลใน browser บนอุปกรณ์ของคุณ"
+    },
+    {
+     "q": "ทำไมครั้งแรกถึงช้ากว่า?",
+     "a": "ครั้งแรก browser ต้องโหลด FFmpeg WebAssembly core ประมาณ 31 MB หลังจากนั้น cache อาจช่วยให้เร็วขึ้น"
+    }
+   ]
+  },
+  "en": {
+   "primary": "video cropper",
+   "title": "Video Cropper Online – Crop 16:9, 9:16, 1:1 | DJAI",
+   "meta": "Crop video online to 16:9, 9:16, 1:1, 4:5 or 3:2. Create a centered crop privately in your browser for social, web or editing workflows.",
+   "h1": "Crop a video to the frame your next platform expects",
+   "hero": "Turn a landscape clip into a vertical frame, square crop, or cleaner widescreen without sending the source to a server. Choose the aspect ratio and the tool makes a centered crop.",
+   "ui": "Video cropper",
+   "why": "Aspect ratio is often a delivery requirement, not a creative preference",
+   "note": "This version uses a centered crop rather than an interactive pan-and-scan editor. That keeps it predictable. If the subject sits far off-center, use an editor where crop position can be moved or keyframed.",
+   "keywords": [
+    "crop video online",
+    "video cropper online",
+    "crop mp4",
+    "crop video 9:16",
+    "crop video 1:1",
+    "vertical video cropper"
+   ],
+   "faq": [
+    {
+     "q": "Which video formats are supported?",
+     "a": "The FFmpeg core handles common formats such as MP4, MOV, WebM, MKV, AVI, MPEG, M4V, 3GP, TS and WMV, though the browser may not preview every format."
+    },
+    {
+     "q": "Is my video uploaded to DJAI?",
+     "a": "No. The source file is read and processed in your browser on your device."
+    },
+    {
+     "q": "Why can the first run take longer?",
+     "a": "The browser downloads an FFmpeg WebAssembly core of roughly 31 MB the first time processing is needed; caching can help later runs."
+    }
+   ]
+  }
+ },
+ {
+  "slug": "video-resizer",
+  "mode": "resizer",
+  "fixedInput": null,
+  "fixedOutput": null,
+  "targetMB": null,
+  "th": {
+   "primary": "ปรับขนาดวิดีโอออนไลน์",
+   "title": "ปรับขนาดวิดีโอ 1080p 720p 480p ออนไลน์ | DJAI",
+   "meta": "ปรับขนาดวิดีโอออนไลน์เป็น 1080p, 720p, 480p หรือต่ำกว่าโดยรักษาอัตราส่วนเดิม ประมวลผล MP4 และ format ทั่วไปใน browser",
+   "h1": "ปรับขนาดวิดีโอโดยไม่ยืดภาพให้เสียสัดส่วน",
+   "hero": "เลือกความกว้างสูงสุดที่ต้องการแล้วรักษา aspect ratio เดิม เหมาะก่อนอัปโหลด ฝังเว็บ ส่งเข้าโทรศัพท์ หรือเก็บสำเนาที่เบากว่าไฟล์ต้นฉบับ",
+   "ui": "ปรับขนาดวิดีโอ",
+   "why": "resolution ควรพอดีกับที่วิดีโอจะถูกดูจริง",
+   "note": "เครื่องมือคง aspect ratio แล้วคำนวณความสูงให้อัตโนมัติ การ upscale ไฟล์เล็กไม่ได้สร้างรายละเอียดจริง ดังนั้นถ้าไม่จำเป็นควรเลือกความกว้างเท่าหรือต่ำกว่าต้นฉบับ",
+   "keywords": [
+    "video resizer",
+    "resize mp4",
+    "ปรับ resolution วิดีโอ",
+    "ลดความละเอียดวิดีโอ",
+    "วิดีโอ 720p",
+    "resize video"
+   ],
+   "faq": [
+    {
+     "q": "รองรับไฟล์อะไรบ้าง?",
+     "a": "รองรับ format ทั่วไปที่ FFmpeg core อ่านได้ เช่น MP4, MOV, WebM, MKV, AVI, MPEG, M4V, 3GP, TS และ WMV แต่ browser อาจ preview บาง format ไม่ได้"
+    },
+    {
+     "q": "ไฟล์ถูกอัปโหลดขึ้น DJAI หรือไม่?",
+     "a": "ไม่ ตัวไฟล์ถูกอ่านและประมวลผลใน browser บนอุปกรณ์ของคุณ"
+    },
+    {
+     "q": "ทำไมครั้งแรกถึงช้ากว่า?",
+     "a": "ครั้งแรก browser ต้องโหลด FFmpeg WebAssembly core ประมาณ 31 MB หลังจากนั้น cache อาจช่วยให้เร็วขึ้น"
+    }
+   ]
+  },
+  "en": {
+   "primary": "video resizer",
+   "title": "Video Resizer Online – Resize to 1080p, 720p, 480p | DJAI",
+   "meta": "Resize video online to 1080p, 720p, 480p or smaller while keeping the aspect ratio. Process MP4 and common formats privately in your browser.",
+   "h1": "Resize video without stretching the picture",
+   "hero": "Choose the maximum width you need and keep the original aspect ratio. Useful before uploading, embedding, sending to a phone, or keeping a lightweight copy of a larger source.",
+   "ui": "Video resizer",
+   "why": "Resolution should match where the video will actually be seen",
+   "note": "The resizer preserves aspect ratio and calculates the matching height automatically. Upscaling a small source does not create real detail, so choose a width at or below the original whenever possible.",
+   "keywords": [
+    "resize video online",
+    "video resizer",
+    "resize mp4",
+    "change video resolution",
+    "resize video 720p",
+    "reduce video resolution"
+   ],
+   "faq": [
+    {
+     "q": "Which video formats are supported?",
+     "a": "The FFmpeg core handles common formats such as MP4, MOV, WebM, MKV, AVI, MPEG, M4V, 3GP, TS and WMV, though the browser may not preview every format."
+    },
+    {
+     "q": "Is my video uploaded to DJAI?",
+     "a": "No. The source file is read and processed in your browser on your device."
+    },
+    {
+     "q": "Why can the first run take longer?",
+     "a": "The browser downloads an FFmpeg WebAssembly core of roughly 31 MB the first time processing is needed; caching can help later runs."
+    }
+   ]
+  }
+ },
+ {
+  "slug": "video-merger",
+  "mode": "merger",
+  "fixedInput": null,
+  "fixedOutput": null,
+  "targetMB": null,
+  "th": {
+   "primary": "รวมวิดีโอออนไลน์",
+   "title": "รวมวิดีโอออนไลน์ เรียงคลิปแล้วรวมเป็น MP4 | DJAI",
+   "meta": "รวมวิดีโอหลายไฟล์ออนไลน์ เลือกคลิป เรียงลำดับ แล้ว export เป็น MP4 ไฟล์เดียว ประมวลผลใน browser โดยไม่ต้องสมัครบัญชี",
+   "h1": "รวมหลายคลิปเป็นวิดีโอเดียว ตามลำดับที่คุณเลือก",
+   "hero": "เลือกคลิป เลื่อนขึ้นลง กำหนด resolution แล้วรวมเป็น MP4 เดียว เหมาะกับงานที่ต้องการแค่ A + B + C โดยไม่อยากเปิด timeline editor เต็มตัว",
+   "ui": "รวมวิดีโอ",
+   "why": "บางงานไม่ต้องใช้ editor เต็มรูปแบบ",
+   "note": "เพื่อให้คลิปจากคนละไฟล์ต่อกันได้ เครื่องมือจะ normalize ให้เป็น resolution ที่เลือกและ 30 fps ก่อนรวม จึงมีการ re-encode และไฟล์ยาวหรือความละเอียดสูงหลายไฟล์พร้อมกันจะใช้ทรัพยากรมากขึ้น",
+   "keywords": [
+    "video merger",
+    "รวม mp4",
+    "รวมคลิปออนไลน์",
+    "รวมไฟล์วิดีโอ",
+    "combine videos",
+    "merge mp4"
+   ],
+   "faq": [
+    {
+     "q": "ทำไมต้อง re-encode ก่อนรวม?",
+     "a": "คลิปอาจต่าง resolution, frame rate หรือ codec ระบบจึง normalize ก่อนเพื่อให้ต่อกันได้เสถียรกว่า"
+    },
+    {
+     "q": "ไฟล์ถูกอัปโหลดขึ้น DJAI หรือไม่?",
+     "a": "ไม่ ตัวไฟล์ถูกอ่านและประมวลผลใน browser บนอุปกรณ์ของคุณ"
+    },
+    {
+     "q": "ทำไมครั้งแรกถึงช้ากว่า?",
+     "a": "ครั้งแรก browser ต้องโหลด FFmpeg WebAssembly core ประมาณ 31 MB หลังจากนั้น cache อาจช่วยให้เร็วขึ้น"
+    }
+   ]
+  },
+  "en": {
+   "primary": "video merger",
+   "title": "Video Merger Online – Combine Videos in Order | DJAI",
+   "meta": "Merge videos online by choosing several clips, reordering them and exporting one MP4. Processing happens locally in your browser with no account.",
+   "h1": "Merge several video clips into one file, in the order you choose",
+   "hero": "Pick the clips, move them up or down, choose an output resolution, and combine them into one MP4. It is intentionally simpler than a timeline editor when all you need is A + B + C.",
+   "ui": "Video merger",
+   "why": "Sometimes a full timeline is overkill",
+   "note": "To make different clips compatible, the tool normalizes them to the selected resolution and 30 fps before joining. That means re-encoding, so long or high-resolution batches can be demanding in a browser.",
+   "keywords": [
+    "merge videos online",
+    "video merger",
+    "combine videos",
+    "join mp4 files",
+    "merge mp4 online",
+    "combine video clips"
+   ],
+   "faq": [
+    {
+     "q": "Why are clips re-encoded before merging?",
+     "a": "Inputs can differ in resolution, frame rate and codec. Normalizing them first makes the final join more reliable."
+    },
+    {
+     "q": "Is my video uploaded to DJAI?",
+     "a": "No. The source file is read and processed in your browser on your device."
+    },
+    {
+     "q": "Why can the first run take longer?",
+     "a": "The browser downloads an FFmpeg WebAssembly core of roughly 31 MB the first time processing is needed; caching can help later runs."
+    }
+   ]
+  }
+ },
+ {
+  "slug": "compress-video-to-10mb",
+  "mode": "compressor",
+  "fixedInput": null,
+  "fixedOutput": null,
+  "targetMB": 10,
+  "th": {
+   "primary": "บีบอัดวิดีโอให้เหลือ 10 MB",
+   "title": "บีบอัดวิดีโอให้ประมาณ 10 MB ออนไลน์ | DJAI",
+   "meta": "บีบอัดวิดีโอให้ใกล้ 10 MB ออนไลน์ ระบบคำนวณ bitrate จากความยาวแล้วประมวลผลใน browser โดยไม่ต้องอัปโหลดไฟล์",
+   "h1": "บีบอัดวิดีโอให้ใกล้ 10 MB โดยไม่ต้องอัปโหลดไฟล์",
+   "hero": "ถ้ากฎจริงของงานคือ “ไฟล์ต้องประมาณ 10 MB” ก็เริ่มจากตัวเลขนั้น ไม่ต้องลอง Low, Medium, High ไปเรื่อย ๆ เครื่องมือคำนวณ bitrate จากความยาวแล้ว encode ในเครื่อง",
+   "ui": "บีบให้ใกล้ 10 MB",
+   "why": "10 MB มีความหมายก็ต่อเมื่อปลายทางมี limit จริง",
+   "note": "ค่า 10 MB เป็น target โดยประมาณ ความซับซ้อนของภาพ bitrate เสียง และ codec ทำให้ไฟล์สุดท้ายสูงหรือต่ำกว่านี้ได้ ถ้าเป็น hard limit ควรตั้งต่ำกว่าเล็กน้อยเพื่อเผื่อ margin",
+   "keywords": [
+    "compress video to 10mb",
+    "บีบ mp4 10mb",
+    "ลดวิดีโอเหลือ 10mb",
+    "ลดขนาด mp4 10mb",
+    "บีบวิดีโอ 10 mb"
+   ],
+   "faq": [
+    {
+     "q": "ขนาดไฟล์จะตรง target เป๊ะไหม?",
+     "a": "ควรมองเป็นเป้าหมายโดยประมาณ เครื่องมือคำนวณ bitrate เพื่อให้เข้าใกล้ตัวเลข ถ้ามี hard limit ให้เผื่อ margin"
+    },
+    {
+     "q": "ไฟล์ถูกอัปโหลดขึ้น DJAI หรือไม่?",
+     "a": "ไม่ ตัวไฟล์ถูกอ่านและประมวลผลใน browser บนอุปกรณ์ของคุณ"
+    },
+    {
+     "q": "ทำไมครั้งแรกถึงช้ากว่า?",
+     "a": "ครั้งแรก browser ต้องโหลด FFmpeg WebAssembly core ประมาณ 31 MB หลังจากนั้น cache อาจช่วยให้เร็วขึ้น"
+    }
+   ]
+  },
+  "en": {
+   "primary": "compress video to 10mb",
+   "title": "Compress Video to 10 MB Online | DJAI",
+   "meta": "Compress a video toward 10 MB online. The tool estimates bitrate from duration and processes the file privately in your browser with no upload.",
+   "h1": "Compress a video toward 10 MB without uploading it",
+   "hero": "If the actual rule is “the file must be around 10 MB,” start with that number instead of guessing Low, Medium or High. The tool estimates a workable bitrate from duration and encodes locally.",
+   "ui": "Compress to 10 MB",
+   "why": "10 MB is useful only when the destination has a real size limit",
+   "note": "The 10 MB setting is an approximate target. Video complexity, audio bitrate and codec behavior can move the result above or below it. For a hard ceiling, enter a slightly smaller number to leave margin.",
+   "keywords": [
+    "compress video to 10mb",
+    "compress mp4 to 10mb",
+    "reduce video to 10mb",
+    "video compressor 10mb",
+    "make video 10mb"
+   ],
+   "faq": [
+    {
+     "q": "Will the result hit the target size exactly?",
+     "a": "Treat it as an approximate target. The tool estimates bitrate to land near the number; leave margin for a hard limit."
+    },
+    {
+     "q": "Is my video uploaded to DJAI?",
+     "a": "No. The source file is read and processed in your browser on your device."
+    },
+    {
+     "q": "Why can the first run take longer?",
+     "a": "The browser downloads an FFmpeg WebAssembly core of roughly 31 MB the first time processing is needed; caching can help later runs."
+    }
+   ]
+  }
+ },
+ {
+  "slug": "compress-video-to-25mb",
+  "mode": "compressor",
+  "fixedInput": null,
+  "fixedOutput": null,
+  "targetMB": 25,
+  "th": {
+   "primary": "บีบอัดวิดีโอให้เหลือ 25 MB",
+   "title": "บีบอัดวิดีโอให้ประมาณ 25 MB ออนไลน์ | DJAI",
+   "meta": "บีบอัดวิดีโอให้ใกล้ 25 MB ออนไลน์ ระบบคำนวณ bitrate จากความยาวแล้วประมวลผลใน browser โดยไม่ต้องอัปโหลดไฟล์",
+   "h1": "บีบอัดวิดีโอให้ใกล้ 25 MB โดยไม่ต้องอัปโหลดไฟล์",
+   "hero": "ถ้ากฎจริงของงานคือ “ไฟล์ต้องประมาณ 25 MB” ก็เริ่มจากตัวเลขนั้น ไม่ต้องลอง Low, Medium, High ไปเรื่อย ๆ เครื่องมือคำนวณ bitrate จากความยาวแล้ว encode ในเครื่อง",
+   "ui": "บีบให้ใกล้ 25 MB",
+   "why": "25 MB มีความหมายก็ต่อเมื่อปลายทางมี limit จริง",
+   "note": "ค่า 25 MB เป็น target โดยประมาณ ความซับซ้อนของภาพ bitrate เสียง และ codec ทำให้ไฟล์สุดท้ายสูงหรือต่ำกว่านี้ได้ ถ้าเป็น hard limit ควรตั้งต่ำกว่าเล็กน้อยเพื่อเผื่อ margin",
+   "keywords": [
+    "compress video to 25mb",
+    "บีบ mp4 25mb",
+    "ลดวิดีโอเหลือ 25mb",
+    "ลดขนาด mp4 25mb",
+    "บีบวิดีโอ 25 mb"
+   ],
+   "faq": [
+    {
+     "q": "ขนาดไฟล์จะตรง target เป๊ะไหม?",
+     "a": "ควรมองเป็นเป้าหมายโดยประมาณ เครื่องมือคำนวณ bitrate เพื่อให้เข้าใกล้ตัวเลข ถ้ามี hard limit ให้เผื่อ margin"
+    },
+    {
+     "q": "ไฟล์ถูกอัปโหลดขึ้น DJAI หรือไม่?",
+     "a": "ไม่ ตัวไฟล์ถูกอ่านและประมวลผลใน browser บนอุปกรณ์ของคุณ"
+    },
+    {
+     "q": "ทำไมครั้งแรกถึงช้ากว่า?",
+     "a": "ครั้งแรก browser ต้องโหลด FFmpeg WebAssembly core ประมาณ 31 MB หลังจากนั้น cache อาจช่วยให้เร็วขึ้น"
+    }
+   ]
+  },
+  "en": {
+   "primary": "compress video to 25mb",
+   "title": "Compress Video to 25 MB Online | DJAI",
+   "meta": "Compress a video toward 25 MB online. The tool estimates bitrate from duration and processes the file privately in your browser with no upload.",
+   "h1": "Compress a video toward 25 MB without uploading it",
+   "hero": "If the actual rule is “the file must be around 25 MB,” start with that number instead of guessing Low, Medium or High. The tool estimates a workable bitrate from duration and encodes locally.",
+   "ui": "Compress to 25 MB",
+   "why": "25 MB is useful only when the destination has a real size limit",
+   "note": "The 25 MB setting is an approximate target. Video complexity, audio bitrate and codec behavior can move the result above or below it. For a hard ceiling, enter a slightly smaller number to leave margin.",
+   "keywords": [
+    "compress video to 25mb",
+    "compress mp4 to 25mb",
+    "reduce video to 25mb",
+    "video compressor 25mb",
+    "make video 25mb"
+   ],
+   "faq": [
+    {
+     "q": "Will the result hit the target size exactly?",
+     "a": "Treat it as an approximate target. The tool estimates bitrate to land near the number; leave margin for a hard limit."
+    },
+    {
+     "q": "Is my video uploaded to DJAI?",
+     "a": "No. The source file is read and processed in your browser on your device."
+    },
+    {
+     "q": "Why can the first run take longer?",
+     "a": "The browser downloads an FFmpeg WebAssembly core of roughly 31 MB the first time processing is needed; caching can help later runs."
+    }
+   ]
+  }
+ },
+ {
+  "slug": "compress-video-to-50mb",
+  "mode": "compressor",
+  "fixedInput": null,
+  "fixedOutput": null,
+  "targetMB": 50,
+  "th": {
+   "primary": "บีบอัดวิดีโอให้เหลือ 50 MB",
+   "title": "บีบอัดวิดีโอให้ประมาณ 50 MB ออนไลน์ | DJAI",
+   "meta": "บีบอัดวิดีโอให้ใกล้ 50 MB ออนไลน์ ระบบคำนวณ bitrate จากความยาวแล้วประมวลผลใน browser โดยไม่ต้องอัปโหลดไฟล์",
+   "h1": "บีบอัดวิดีโอให้ใกล้ 50 MB โดยไม่ต้องอัปโหลดไฟล์",
+   "hero": "ถ้ากฎจริงของงานคือ “ไฟล์ต้องประมาณ 50 MB” ก็เริ่มจากตัวเลขนั้น ไม่ต้องลอง Low, Medium, High ไปเรื่อย ๆ เครื่องมือคำนวณ bitrate จากความยาวแล้ว encode ในเครื่อง",
+   "ui": "บีบให้ใกล้ 50 MB",
+   "why": "50 MB มีความหมายก็ต่อเมื่อปลายทางมี limit จริง",
+   "note": "ค่า 50 MB เป็น target โดยประมาณ ความซับซ้อนของภาพ bitrate เสียง และ codec ทำให้ไฟล์สุดท้ายสูงหรือต่ำกว่านี้ได้ ถ้าเป็น hard limit ควรตั้งต่ำกว่าเล็กน้อยเพื่อเผื่อ margin",
+   "keywords": [
+    "compress video to 50mb",
+    "บีบ mp4 50mb",
+    "ลดวิดีโอเหลือ 50mb",
+    "ลดขนาด mp4 50mb",
+    "บีบวิดีโอ 50 mb"
+   ],
+   "faq": [
+    {
+     "q": "ขนาดไฟล์จะตรง target เป๊ะไหม?",
+     "a": "ควรมองเป็นเป้าหมายโดยประมาณ เครื่องมือคำนวณ bitrate เพื่อให้เข้าใกล้ตัวเลข ถ้ามี hard limit ให้เผื่อ margin"
+    },
+    {
+     "q": "ไฟล์ถูกอัปโหลดขึ้น DJAI หรือไม่?",
+     "a": "ไม่ ตัวไฟล์ถูกอ่านและประมวลผลใน browser บนอุปกรณ์ของคุณ"
+    },
+    {
+     "q": "ทำไมครั้งแรกถึงช้ากว่า?",
+     "a": "ครั้งแรก browser ต้องโหลด FFmpeg WebAssembly core ประมาณ 31 MB หลังจากนั้น cache อาจช่วยให้เร็วขึ้น"
+    }
+   ]
+  },
+  "en": {
+   "primary": "compress video to 50mb",
+   "title": "Compress Video to 50 MB Online | DJAI",
+   "meta": "Compress a video toward 50 MB online. The tool estimates bitrate from duration and processes the file privately in your browser with no upload.",
+   "h1": "Compress a video toward 50 MB without uploading it",
+   "hero": "If the actual rule is “the file must be around 50 MB,” start with that number instead of guessing Low, Medium or High. The tool estimates a workable bitrate from duration and encodes locally.",
+   "ui": "Compress to 50 MB",
+   "why": "50 MB is useful only when the destination has a real size limit",
+   "note": "The 50 MB setting is an approximate target. Video complexity, audio bitrate and codec behavior can move the result above or below it. For a hard ceiling, enter a slightly smaller number to leave margin.",
+   "keywords": [
+    "compress video to 50mb",
+    "compress mp4 to 50mb",
+    "reduce video to 50mb",
+    "video compressor 50mb",
+    "make video 50mb"
+   ],
+   "faq": [
+    {
+     "q": "Will the result hit the target size exactly?",
+     "a": "Treat it as an approximate target. The tool estimates bitrate to land near the number; leave margin for a hard limit."
+    },
+    {
+     "q": "Is my video uploaded to DJAI?",
+     "a": "No. The source file is read and processed in your browser on your device."
+    },
+    {
+     "q": "Why can the first run take longer?",
+     "a": "The browser downloads an FFmpeg WebAssembly core of roughly 31 MB the first time processing is needed; caching can help later runs."
+    }
+   ]
+  }
+ },
+ {
+  "slug": "compress-video-to-100mb",
+  "mode": "compressor",
+  "fixedInput": null,
+  "fixedOutput": null,
+  "targetMB": 100,
+  "th": {
+   "primary": "บีบอัดวิดีโอให้เหลือ 100 MB",
+   "title": "บีบอัดวิดีโอให้ประมาณ 100 MB ออนไลน์ | DJAI",
+   "meta": "บีบอัดวิดีโอให้ใกล้ 100 MB ออนไลน์ ระบบคำนวณ bitrate จากความยาวแล้วประมวลผลใน browser โดยไม่ต้องอัปโหลดไฟล์",
+   "h1": "บีบอัดวิดีโอให้ใกล้ 100 MB โดยไม่ต้องอัปโหลดไฟล์",
+   "hero": "ถ้ากฎจริงของงานคือ “ไฟล์ต้องประมาณ 100 MB” ก็เริ่มจากตัวเลขนั้น ไม่ต้องลอง Low, Medium, High ไปเรื่อย ๆ เครื่องมือคำนวณ bitrate จากความยาวแล้ว encode ในเครื่อง",
+   "ui": "บีบให้ใกล้ 100 MB",
+   "why": "100 MB มีความหมายก็ต่อเมื่อปลายทางมี limit จริง",
+   "note": "ค่า 100 MB เป็น target โดยประมาณ ความซับซ้อนของภาพ bitrate เสียง และ codec ทำให้ไฟล์สุดท้ายสูงหรือต่ำกว่านี้ได้ ถ้าเป็น hard limit ควรตั้งต่ำกว่าเล็กน้อยเพื่อเผื่อ margin",
+   "keywords": [
+    "compress video to 100mb",
+    "บีบ mp4 100mb",
+    "ลดวิดีโอเหลือ 100mb",
+    "ลดขนาด mp4 100mb",
+    "บีบวิดีโอ 100 mb"
+   ],
+   "faq": [
+    {
+     "q": "ขนาดไฟล์จะตรง target เป๊ะไหม?",
+     "a": "ควรมองเป็นเป้าหมายโดยประมาณ เครื่องมือคำนวณ bitrate เพื่อให้เข้าใกล้ตัวเลข ถ้ามี hard limit ให้เผื่อ margin"
+    },
+    {
+     "q": "ไฟล์ถูกอัปโหลดขึ้น DJAI หรือไม่?",
+     "a": "ไม่ ตัวไฟล์ถูกอ่านและประมวลผลใน browser บนอุปกรณ์ของคุณ"
+    },
+    {
+     "q": "ทำไมครั้งแรกถึงช้ากว่า?",
+     "a": "ครั้งแรก browser ต้องโหลด FFmpeg WebAssembly core ประมาณ 31 MB หลังจากนั้น cache อาจช่วยให้เร็วขึ้น"
+    }
+   ]
+  },
+  "en": {
+   "primary": "compress video to 100mb",
+   "title": "Compress Video to 100 MB Online | DJAI",
+   "meta": "Compress a video toward 100 MB online. The tool estimates bitrate from duration and processes the file privately in your browser with no upload.",
+   "h1": "Compress a video toward 100 MB without uploading it",
+   "hero": "If the actual rule is “the file must be around 100 MB,” start with that number instead of guessing Low, Medium or High. The tool estimates a workable bitrate from duration and encodes locally.",
+   "ui": "Compress to 100 MB",
+   "why": "100 MB is useful only when the destination has a real size limit",
+   "note": "The 100 MB setting is an approximate target. Video complexity, audio bitrate and codec behavior can move the result above or below it. For a hard ceiling, enter a slightly smaller number to leave margin.",
+   "keywords": [
+    "compress video to 100mb",
+    "compress mp4 to 100mb",
+    "reduce video to 100mb",
+    "video compressor 100mb",
+    "make video 100mb"
+   ],
+   "faq": [
+    {
+     "q": "Will the result hit the target size exactly?",
+     "a": "Treat it as an approximate target. The tool estimates bitrate to land near the number; leave margin for a hard limit."
+    },
+    {
+     "q": "Is my video uploaded to DJAI?",
+     "a": "No. The source file is read and processed in your browser on your device."
+    },
+    {
+     "q": "Why can the first run take longer?",
+     "a": "The browser downloads an FFmpeg WebAssembly core of roughly 31 MB the first time processing is needed; caching can help later runs."
+    }
+   ]
+  }
+ },
+ {
+  "slug": "video-to-gif",
+  "mode": "video-to-gif",
+  "fixedInput": null,
+  "fixedOutput": null,
+  "targetMB": null,
+  "th": {
+   "primary": "แปลงวิดีโอเป็น GIF",
+   "title": "แปลงวิดีโอเป็น GIF ออนไลน์ เลือกช่วงคลิป | DJAI",
+   "meta": "แปลงช่วงหนึ่งของวิดีโอเป็น GIF ออนไลน์ เลือก Start/End ความกว้าง และ FPS แล้วสร้าง GIF ใน browser โดยไม่ต้องอัปโหลดไฟล์",
+   "h1": "เปลี่ยนไม่กี่วินาทีที่สำคัญของวิดีโอให้เป็น GIF",
+   "hero": "ถ้า reaction, demo หรือ loop อยู่แค่หกวินาที ก็ไม่ต้องแปลงทั้งคลิป ตั้งช่วงให้ตรง เลือกความกว้างกับ FPS ที่พอดี แล้วสร้าง GIF ในเครื่อง",
+   "ui": "Video → GIF",
+   "why": "GIF ที่ดีมักเริ่มจากการเลือกช่วง ไม่ใช่แปลงทั้งวิดีโอ",
+   "note": "GIF ใช้ง่าย แต่ไม่ใช่ format วิดีโอที่ประหยัดพื้นที่ ควรทำคลิปสั้นและขนาดภาพพอดี ถ้าต้องการ motion ยาว MP4 หรือ WebM มักให้ภาพดีกว่าในไฟล์ที่เล็กกว่ามาก",
+   "keywords": [
+    "video to gif",
+    "mp4 to gif",
+    "แปลง mp4 เป็น gif",
+    "ทำ gif จากวิดีโอ",
+    "gif maker",
+    "video gif"
+   ],
+   "faq": [
+    {
+     "q": "รองรับไฟล์อะไรบ้าง?",
+     "a": "รองรับ format ทั่วไปที่ FFmpeg core อ่านได้ เช่น MP4, MOV, WebM, MKV, AVI, MPEG, M4V, 3GP, TS และ WMV แต่ browser อาจ preview บาง format ไม่ได้"
+    },
+    {
+     "q": "ไฟล์ถูกอัปโหลดขึ้น DJAI หรือไม่?",
+     "a": "ไม่ ตัวไฟล์ถูกอ่านและประมวลผลใน browser บนอุปกรณ์ของคุณ"
+    },
+    {
+     "q": "ทำไมครั้งแรกถึงช้ากว่า?",
+     "a": "ครั้งแรก browser ต้องโหลด FFmpeg WebAssembly core ประมาณ 31 MB หลังจากนั้น cache อาจช่วยให้เร็วขึ้น"
+    }
+   ]
+  },
+  "en": {
+   "primary": "video to gif",
+   "title": "Video to GIF Online – Make a GIF from a Clip | DJAI",
+   "meta": "Turn part of a video into a GIF online. Choose start and end time, width and frame rate, preview the clip and create the GIF in your browser.",
+   "h1": "Turn the useful few seconds of a video into a GIF",
+   "hero": "Do not convert the whole video when the reaction, demo or loop lives in six seconds. Mark the exact range, choose a practical width and frame rate, then build the GIF locally.",
+   "ui": "Video to GIF",
+   "why": "A good GIF is usually a short decision, not a full-video conversion",
+   "note": "GIF is convenient but not an efficient video format. Keep the clip short and dimensions sensible. For longer motion, MP4 or WebM will usually look better at a much smaller file size.",
+   "keywords": [
+    "video to gif",
+    "make gif from video",
+    "mp4 to gif",
+    "video to gif online",
+    "gif maker from video",
+    "convert video clip to gif"
+   ],
+   "faq": [
+    {
+     "q": "Which video formats are supported?",
+     "a": "The FFmpeg core handles common formats such as MP4, MOV, WebM, MKV, AVI, MPEG, M4V, 3GP, TS and WMV, though the browser may not preview every format."
+    },
+    {
+     "q": "Is my video uploaded to DJAI?",
+     "a": "No. The source file is read and processed in your browser on your device."
+    },
+    {
+     "q": "Why can the first run take longer?",
+     "a": "The browser downloads an FFmpeg WebAssembly core of roughly 31 MB the first time processing is needed; caching can help later runs."
+    }
+   ]
+  }
+ },
+ {
+  "slug": "gif-to-mp4",
+  "mode": "gif-to-mp4",
+  "fixedInput": null,
+  "fixedOutput": null,
+  "targetMB": null,
+  "th": {
+   "primary": "แปลง GIF เป็น MP4",
+   "title": "แปลง GIF เป็น MP4 ออนไลน์ฟรี | DJAI",
+   "meta": "แปลง GIF เคลื่อนไหวเป็น MP4 ออนไลน์ เพื่อให้ไฟล์เล็กและใช้ง่ายขึ้น ประมวลผลใน browser โดยไม่ต้องสมัครบัญชีหรืออัปโหลดไฟล์",
+   "h1": "แปลง GIF เป็น MP4 เมื่อ animation เริ่มหนักเกินเหตุ",
+   "hero": "GIF เคลื่อนไหวเปิดง่าย แต่บางครั้งไฟล์ใหญ่มากเมื่อเทียบกับสิ่งที่อยู่ข้างใน แปลงเป็น H.264 MP4 เพื่อแชร์ เล่น และเก็บได้สะดวกกว่า",
+   "ui": "GIF → MP4",
+   "why": "GIF แลกเปลี่ยนง่าย แต่ compression ไม่เก่ง",
+   "note": "MP4 ที่ได้จะมีเฉพาะภาพเพราะ GIF ไม่มี audio track เครื่องมือยังปรับ pixel dimension ให้เข้ากับ H.264 เพื่อให้เปิดใน player ทั่วไปได้ง่ายขึ้น",
+   "keywords": [
+    "gif to mp4",
+    "แปลง gif เป็น mp4",
+    "gif converter",
+    "gif เป็นวิดีโอ",
+    "animated gif mp4"
+   ],
+   "faq": [
+    {
+     "q": "รองรับไฟล์อะไรบ้าง?",
+     "a": "รองรับ format ทั่วไปที่ FFmpeg core อ่านได้ เช่น MP4, MOV, WebM, MKV, AVI, MPEG, M4V, 3GP, TS และ WMV แต่ browser อาจ preview บาง format ไม่ได้"
+    },
+    {
+     "q": "ไฟล์ถูกอัปโหลดขึ้น DJAI หรือไม่?",
+     "a": "ไม่ ตัวไฟล์ถูกอ่านและประมวลผลใน browser บนอุปกรณ์ของคุณ"
+    },
+    {
+     "q": "ทำไมครั้งแรกถึงช้ากว่า?",
+     "a": "ครั้งแรก browser ต้องโหลด FFmpeg WebAssembly core ประมาณ 31 MB หลังจากนั้น cache อาจช่วยให้เร็วขึ้น"
+    }
+   ]
+  },
+  "en": {
+   "primary": "gif to mp4",
+   "title": "GIF to MP4 Converter Online Free | DJAI",
+   "meta": "Convert an animated GIF to MP4 online for a smaller, easier-to-use video file. Processing happens locally in your browser with no account.",
+   "h1": "Convert a GIF to MP4 when the animation has grown too heavy",
+   "hero": "Animated GIFs are convenient, but they can be huge for what they contain. Turn the animation into an H.264 MP4 for easier sharing, playback and storage.",
+   "ui": "GIF to MP4",
+   "why": "GIF is a great interchange format and a poor compression format",
+   "note": "The MP4 output contains video only because a GIF has no audio track. The tool also forces browser-friendly pixel dimensions so the result plays reliably in common MP4 players.",
+   "keywords": [
+    "gif to mp4",
+    "convert gif to mp4",
+    "gif video converter",
+    "animated gif to mp4",
+    "gif to video"
+   ],
+   "faq": [
+    {
+     "q": "Which video formats are supported?",
+     "a": "The FFmpeg core handles common formats such as MP4, MOV, WebM, MKV, AVI, MPEG, M4V, 3GP, TS and WMV, though the browser may not preview every format."
+    },
+    {
+     "q": "Is my video uploaded to DJAI?",
+     "a": "No. The source file is read and processed in your browser on your device."
+    },
+    {
+     "q": "Why can the first run take longer?",
+     "a": "The browser downloads an FFmpeg WebAssembly core of roughly 31 MB the first time processing is needed; caching can help later runs."
+    }
+   ]
+  }
+ },
+ {
+  "slug": "remove-audio-from-video",
+  "mode": "remove-audio",
+  "fixedInput": null,
+  "fixedOutput": null,
+  "targetMB": null,
+  "th": {
+   "primary": "ลบเสียงออกจากวิดีโอ",
+   "title": "ลบเสียงออกจากวิดีโอออนไลน์ ทำ MP4 ไม่มีเสียง | DJAI",
+   "meta": "ลบเสียงออกจากวิดีโอออนไลน์แล้ว export เป็น MP4 ที่ไม่มี audio stream ไฟล์ประมวลผลใน browser โดยไม่ต้องอัปโหลดหรือสมัครบัญชี",
+   "h1": "ลบ audio track ออกจากวิดีโอ ไม่ใช่แค่ลด volume เป็นศูนย์",
+   "hero": "ถ้าไฟล์ปลายทางต้องเงียบจริง ก็เอา audio stream ออกไปเลย แทนที่จะเก็บ track ที่ถูก mute ไว้ เลือกวิดีโอแล้วสร้าง MP4 ไม่มีเสียงตรงใน browser",
+   "ui": "ลบเสียงจากวิดีโอ",
+   "why": "Mute กับ Remove ไม่เหมือนกันเสียทีเดียว",
+   "note": "ไฟล์ผลลัพธ์ไม่มี audio stream อยู่เลย เหมาะกับกรณีที่ privacy, กฎอัปโหลด หรือ workflow ตัดต่อถัดไปต้องการไฟล์เงียบจริง มากกว่า track ที่ volume เป็นศูนย์",
+   "keywords": [
+    "remove audio from video",
+    "ลบเสียง mp4",
+    "ปิดเสียงวิดีโอ",
+    "ลบเสียงวิดีโอออนไลน์",
+    "mute video"
+   ],
+   "faq": [
+    {
+     "q": "รองรับไฟล์อะไรบ้าง?",
+     "a": "รองรับ format ทั่วไปที่ FFmpeg core อ่านได้ เช่น MP4, MOV, WebM, MKV, AVI, MPEG, M4V, 3GP, TS และ WMV แต่ browser อาจ preview บาง format ไม่ได้"
+    },
+    {
+     "q": "ไฟล์ถูกอัปโหลดขึ้น DJAI หรือไม่?",
+     "a": "ไม่ ตัวไฟล์ถูกอ่านและประมวลผลใน browser บนอุปกรณ์ของคุณ"
+    },
+    {
+     "q": "ทำไมครั้งแรกถึงช้ากว่า?",
+     "a": "ครั้งแรก browser ต้องโหลด FFmpeg WebAssembly core ประมาณ 31 MB หลังจากนั้น cache อาจช่วยให้เร็วขึ้น"
+    }
+   ]
+  },
+  "en": {
+   "primary": "remove audio from video",
+   "title": "Remove Audio from Video Online – Mute Video | DJAI",
+   "meta": "Remove sound from a video online and export a silent MP4. The source video is processed privately in your browser without an upload or account.",
+   "h1": "Remove the audio track instead of turning the volume down",
+   "hero": "If the final video must be silent, delete the audio stream from the output instead of leaving a muted track behind. Process it locally and download a clean silent MP4.",
+   "ui": "Remove audio",
+   "why": "Mute and remove are not quite the same thing",
+   "note": "The output contains no audio stream at all. This is useful when privacy, upload rules or downstream editing is easier with a genuinely silent file rather than a zero-volume track.",
+   "keywords": [
+    "remove audio from video",
+    "mute video online",
+    "remove sound from video",
+    "remove audio from mp4",
+    "silent video maker"
+   ],
+   "faq": [
+    {
+     "q": "Which video formats are supported?",
+     "a": "The FFmpeg core handles common formats such as MP4, MOV, WebM, MKV, AVI, MPEG, M4V, 3GP, TS and WMV, though the browser may not preview every format."
+    },
+    {
+     "q": "Is my video uploaded to DJAI?",
+     "a": "No. The source file is read and processed in your browser on your device."
+    },
+    {
+     "q": "Why can the first run take longer?",
+     "a": "The browser downloads an FFmpeg WebAssembly core of roughly 31 MB the first time processing is needed; caching can help later runs."
+    }
+   ]
+  }
+ },
+ {
+  "slug": "add-audio-to-video",
+  "mode": "add-audio",
+  "fixedInput": null,
+  "fixedOutput": null,
+  "targetMB": null,
+  "th": {
+   "primary": "ใส่เสียงในวิดีโอ",
+   "title": "ใส่เสียงในวิดีโอออนไลน์ เพิ่มเพลงหรือ Voiceover | DJAI",
+   "meta": "ใส่ MP3, WAV หรือไฟล์เสียงลงในวิดีโอออนไลน์ เลือกแทนที่เสียงเดิมหรือผสมสอง track แล้ว export MP4 ใน browser",
+   "h1": "ใส่เสียงใหม่ในวิดีโอ โดยไม่ต้องเปิด editor เต็มตัว",
+   "hero": "เพิ่มเพลง background, voiceover, เสียงที่อัดใหม่ หรือ soundtrack ตัวใหม่ เลือกวิดีโอกับไฟล์เสียงแยกกัน แล้วเลือกว่าจะ replace หรือ mix กับเสียงเดิม",
+   "ui": "ใส่เสียงในวิดีโอ",
+   "why": "การเปลี่ยน track ไม่ควรบังคับให้เปิด timeline ที่มีปุ่มยี่สิบอย่าง",
+   "note": "โหมด Mix ต้องอาศัยวิดีโอต้นฉบับที่มี audio track ถ้าไม่มี เครื่องมือจะ fallback ไปใช้เสียงใหม่เป็น replacement และเสียงที่เพิ่มจะถูก pad หรือตัดให้พอดีกับความยาววิดีโอ",
+   "keywords": [
+    "add audio to video",
+    "ใส่เพลงในวิดีโอ",
+    "เพิ่มเสียง mp4",
+    "ใส่ voiceover",
+    "replace audio video"
+   ],
+   "faq": [
+    {
+     "q": "รองรับไฟล์อะไรบ้าง?",
+     "a": "รองรับ format ทั่วไปที่ FFmpeg core อ่านได้ เช่น MP4, MOV, WebM, MKV, AVI, MPEG, M4V, 3GP, TS และ WMV แต่ browser อาจ preview บาง format ไม่ได้"
+    },
+    {
+     "q": "ไฟล์ถูกอัปโหลดขึ้น DJAI หรือไม่?",
+     "a": "ไม่ ตัวไฟล์ถูกอ่านและประมวลผลใน browser บนอุปกรณ์ของคุณ"
+    },
+    {
+     "q": "ทำไมครั้งแรกถึงช้ากว่า?",
+     "a": "ครั้งแรก browser ต้องโหลด FFmpeg WebAssembly core ประมาณ 31 MB หลังจากนั้น cache อาจช่วยให้เร็วขึ้น"
+    }
+   ]
+  },
+  "en": {
+   "primary": "add audio to video",
+   "title": "Add Audio to Video Online – Replace or Mix Sound | DJAI",
+   "meta": "Add an MP3, WAV or other audio file to video online. Replace the original sound or mix both tracks, then export an MP4 privately in your browser.",
+   "h1": "Add a new audio track to video without opening a full editor",
+   "hero": "Use a music bed, voiceover, corrected recording or replacement soundtrack. Choose video and audio separately, then replace the original sound or mix both tracks.",
+   "ui": "Add audio to video",
+   "why": "Replacing a track should not require a twenty-button timeline",
+   "note": "Mix mode expects the source video to have audio. If it does not, the tool falls back to using the new audio as the replacement. Added audio is padded or trimmed to the video duration.",
+   "keywords": [
+    "add audio to video",
+    "add music to video",
+    "replace audio in video",
+    "add mp3 to mp4",
+    "mix audio with video"
+   ],
+   "faq": [
+    {
+     "q": "Which video formats are supported?",
+     "a": "The FFmpeg core handles common formats such as MP4, MOV, WebM, MKV, AVI, MPEG, M4V, 3GP, TS and WMV, though the browser may not preview every format."
+    },
+    {
+     "q": "Is my video uploaded to DJAI?",
+     "a": "No. The source file is read and processed in your browser on your device."
+    },
+    {
+     "q": "Why can the first run take longer?",
+     "a": "The browser downloads an FFmpeg WebAssembly core of roughly 31 MB the first time processing is needed; caching can help later runs."
+    }
+   ]
+  }
+ },
+ {
+  "slug": "video-speed-changer",
+  "mode": "speed",
+  "fixedInput": null,
+  "fixedOutput": null,
+  "targetMB": null,
+  "th": {
+   "primary": "ปรับความเร็ววิดีโอออนไลน์",
+   "title": "ปรับความเร็ววิดีโอ 0.5x ถึง 2x ออนไลน์ | DJAI",
+   "meta": "ปรับความเร็ววิดีโอออนไลน์ตั้งแต่ 0.5x ถึง 2x และซิงก์เสียงตามเมื่อมี audio track ประมวลผลใน browser แล้วดาวน์โหลดเป็น MP4",
+   "h1": "เร่งหรือชะลอวิดีโอโดยให้ภาพกับเสียงยังไปด้วยกัน",
+   "hero": "เลือก 0.5×, 0.75×, 1.25×, 1.5× หรือ 2× เครื่องมือจะเปลี่ยน timing ของภาพและปรับ timing ของเสียงด้วยเมื่อไฟล์มี audio track",
+   "ui": "ปรับความเร็ววิดีโอ",
+   "why": "การเปลี่ยน speed จริง ๆ คือแก้ timing สองอย่างพร้อมกัน: ภาพกับเสียง",
+   "note": "ระบบปรับ audio tempo ในช่วง 0.5× ถึง 2× เพื่อให้เสียงพูดรักษา pitch ได้ดีกว่าการเปลี่ยน sample rate ตรง ๆ ถ้าไฟล์ไม่มี audio stream เครื่องมือยังสร้างวิดีโอความเร็วใหม่แบบไม่มีเสียงได้",
+   "keywords": [
+    "video speed changer",
+    "เร่งวิดีโอ",
+    "ทำวิดีโอ 2x",
+    "slow video",
+    "ปรับสปีด mp4",
+    "speed up video"
+   ],
+   "faq": [
+    {
+     "q": "รองรับไฟล์อะไรบ้าง?",
+     "a": "รองรับ format ทั่วไปที่ FFmpeg core อ่านได้ เช่น MP4, MOV, WebM, MKV, AVI, MPEG, M4V, 3GP, TS และ WMV แต่ browser อาจ preview บาง format ไม่ได้"
+    },
+    {
+     "q": "ไฟล์ถูกอัปโหลดขึ้น DJAI หรือไม่?",
+     "a": "ไม่ ตัวไฟล์ถูกอ่านและประมวลผลใน browser บนอุปกรณ์ของคุณ"
+    },
+    {
+     "q": "ทำไมครั้งแรกถึงช้ากว่า?",
+     "a": "ครั้งแรก browser ต้องโหลด FFmpeg WebAssembly core ประมาณ 31 MB หลังจากนั้น cache อาจช่วยให้เร็วขึ้น"
+    }
+   ]
+  },
+  "en": {
+   "primary": "video speed changer",
+   "title": "Video Speed Changer Online – 0.5× to 2× | DJAI",
+   "meta": "Change video speed online from 0.5× to 2× and keep audio in sync when available. Process the video privately in your browser and download MP4.",
+   "h1": "Speed a video up or slow it down without losing sync",
+   "hero": "Choose 0.5×, 0.75×, 1.25×, 1.5× or 2×. The tool changes video timing and adjusts audio timing too when an audio track is present.",
+   "ui": "Video speed changer",
+   "why": "Changing speed is really two timing problems: picture and sound",
+   "note": "Audio tempo correction is applied between 0.5× and 2× so speech stays closer to its original pitch. If a file has no usable audio stream, the tool still creates changed-speed video without audio.",
+   "keywords": [
+    "video speed changer",
+    "speed up video online",
+    "slow down video online",
+    "change video speed",
+    "2x video maker",
+    "0.5x video"
+   ],
+   "faq": [
+    {
+     "q": "Which video formats are supported?",
+     "a": "The FFmpeg core handles common formats such as MP4, MOV, WebM, MKV, AVI, MPEG, M4V, 3GP, TS and WMV, though the browser may not preview every format."
+    },
+    {
+     "q": "Is my video uploaded to DJAI?",
+     "a": "No. The source file is read and processed in your browser on your device."
+    },
+    {
+     "q": "Why can the first run take longer?",
+     "a": "The browser downloads an FFmpeg WebAssembly core of roughly 31 MB the first time processing is needed; caching can help later runs."
+    }
+   ]
+  }
+ },
+ {
+  "slug": "extract-frames-from-video",
+  "mode": "frames",
+  "fixedInput": null,
+  "fixedOutput": null,
+  "targetMB": null,
+  "th": {
+   "primary": "ดึงภาพจากวิดีโอ",
+   "title": "ดึงภาพจากวิดีโอเป็น JPG PNG ออนไลน์ | DJAI",
+   "meta": "ดึง frame จากวิดีโอเป็น JPG หรือ PNG ทุก 1, 2, 5 หรือ 10 วินาที ประมวลผลใน browser แล้วดาวน์โหลดทีละภาพหรือ ZIP",
+   "h1": "ดึงภาพนิ่งจากวิดีโอโดยไม่ต้องเลื่อนหา timestamp ทีละจุด",
+   "hero": "เลือกว่าจะดึงภาพถี่แค่ไหน เลือก JPG หรือ PNG แล้วสร้างภาพได้สูงสุด 100 frame ต่อครั้ง เหมาะกับ thumbnail, review sheet, reference และงานเกมหรือ design",
+   "ui": "ดึง Frame จากวิดีโอ",
+   "why": "การหา still image ด้วยมือเริ่มน่าเบื่อตั้งแต่ timestamp ที่ห้า",
+   "note": "เครื่องมือจำกัดไว้ที่ 100 ภาพต่อครั้งเพื่อไม่ให้ browser tab กินหน่วยความจำจนเกินไป ถ้าวิดีโอยาวมาก ให้เพิ่ม interval หรือแบ่งทำหลายรอบ",
+   "keywords": [
+    "extract frames from video",
+    "ดึงภาพจาก mp4",
+    "video to jpg",
+    "วิดีโอเป็น png",
+    "ดึงเฟรมวิดีโอ",
+    "video frame extractor"
+   ],
+   "faq": [
+    {
+     "q": "ทำไมจำกัด 100 frame?",
+     "a": "การ decode วิดีโอและเก็บภาพจำนวนมากกิน RAM ใน browser การจำกัดต่อรอบช่วยลดโอกาส tab ค้าง"
+    },
+    {
+     "q": "ไฟล์ถูกอัปโหลดขึ้น DJAI หรือไม่?",
+     "a": "ไม่ ตัวไฟล์ถูกอ่านและประมวลผลใน browser บนอุปกรณ์ของคุณ"
+    },
+    {
+     "q": "ทำไมครั้งแรกถึงช้ากว่า?",
+     "a": "ครั้งแรก browser ต้องโหลด FFmpeg WebAssembly core ประมาณ 31 MB หลังจากนั้น cache อาจช่วยให้เร็วขึ้น"
+    }
+   ]
+  },
+  "en": {
+   "primary": "extract frames from video",
+   "title": "Extract Frames from Video Online – JPG or PNG | DJAI",
+   "meta": "Extract JPG or PNG frames from a video every 1, 2, 5 or 10 seconds. Process locally in your browser and download individual images or a ZIP.",
+   "h1": "Pull useful still frames out of a video without scrubbing by hand",
+   "hero": "Choose how often you want a frame, pick JPG or PNG, and extract up to 100 images in one run. Useful for thumbnails, review sheets, references and game or design work.",
+   "ui": "Extract video frames",
+   "why": "Finding still images manually gets old after the fifth timestamp",
+   "note": "The tool caps a run at 100 frames so a browser tab does not quietly consume all available memory. For a long video, increase the interval or run it in separate passes.",
+   "keywords": [
+    "extract frames from video",
+    "video to jpg",
+    "video to png",
+    "extract images from mp4",
+    "video frame extractor",
+    "get frames from video"
+   ],
+   "faq": [
+    {
+     "q": "Why is there a 100-frame cap?",
+     "a": "Decoding video and keeping many images in memory can consume a lot of RAM. The cap helps keep the browser stable."
+    },
+    {
+     "q": "Is my video uploaded to DJAI?",
+     "a": "No. The source file is read and processed in your browser on your device."
+    },
+    {
+     "q": "Why can the first run take longer?",
+     "a": "The browser downloads an FFmpeg WebAssembly core of roughly 31 MB the first time processing is needed; caching can help later runs."
+    }
+   ]
+  }
+ },
+ {
+  "slug": "rotate-video",
+  "mode": "rotate",
+  "fixedInput": null,
+  "fixedOutput": null,
+  "targetMB": null,
+  "th": {
+   "primary": "หมุนวิดีโอออนไลน์",
+   "title": "หมุนวิดีโอ 90 หรือ 180 องศา ออนไลน์ | DJAI",
+   "meta": "หมุนวิดีโอออนไลน์ 90° ตามเข็ม 90° ทวนเข็ม หรือ 180° แล้ว export MP4 ที่แก้ orientation แล้วใน browser โดยไม่อัปโหลดไฟล์",
+   "h1": "หมุนวิดีโอเมื่อกล้องถือผิดด้าน แต่ moment ยังใช้ได้",
+   "hero": "คลิปดีที่ถ่ายเอียงก็ยังเป็นคลิปดี หมุน 90° ตามเข็ม 90° ทวนเข็ม หรือ 180° แล้วสร้าง MP4 ที่แก้ orientation เรียบร้อยในเครื่อง",
+   "ui": "หมุนวิดีโอ",
+   "why": "ปัญหา orientation น่าเบื่อพอแล้ว วิธีแก้ไม่ควรซับซ้อน",
+   "note": "เครื่องมือ re-encode วิดีโอเพื่อให้ orientation ใหม่ถูกใส่ลงใน frame จริง ไม่ได้พึ่งแค่ rotation metadata ที่ player บางตัวตีความต่างกัน",
+   "keywords": [
+    "rotate video",
+    "หมุน mp4",
+    "หมุนคลิปออนไลน์",
+    "วิดีโอกลับด้าน",
+    "rotate mp4 90"
+   ],
+   "faq": [
+    {
+     "q": "รองรับไฟล์อะไรบ้าง?",
+     "a": "รองรับ format ทั่วไปที่ FFmpeg core อ่านได้ เช่น MP4, MOV, WebM, MKV, AVI, MPEG, M4V, 3GP, TS และ WMV แต่ browser อาจ preview บาง format ไม่ได้"
+    },
+    {
+     "q": "ไฟล์ถูกอัปโหลดขึ้น DJAI หรือไม่?",
+     "a": "ไม่ ตัวไฟล์ถูกอ่านและประมวลผลใน browser บนอุปกรณ์ของคุณ"
+    },
+    {
+     "q": "ทำไมครั้งแรกถึงช้ากว่า?",
+     "a": "ครั้งแรก browser ต้องโหลด FFmpeg WebAssembly core ประมาณ 31 MB หลังจากนั้น cache อาจช่วยให้เร็วขึ้น"
+    }
+   ]
+  },
+  "en": {
+   "primary": "rotate video online",
+   "title": "Rotate Video Online – 90° or 180° | DJAI",
+   "meta": "Rotate video online 90° clockwise, 90° counter-clockwise or 180°. Export a corrected MP4 privately in your browser with no source upload.",
+   "h1": "Rotate a video when the camera orientation was wrong, not the moment",
+   "hero": "A good clip shot sideways is still a good clip. Rotate it 90° clockwise, 90° counter-clockwise or 180° and export a corrected MP4 locally.",
+   "ui": "Rotate video",
+   "why": "Orientation mistakes are boring, which is exactly why the fix should be simple",
+   "note": "Rotation re-encodes the video so the corrected orientation is baked into the frames rather than relying only on display metadata that players may interpret differently.",
+   "keywords": [
+    "rotate video online",
+    "rotate mp4",
+    "turn video 90 degrees",
+    "rotate video 180",
+    "fix video orientation"
+   ],
+   "faq": [
+    {
+     "q": "Which video formats are supported?",
+     "a": "The FFmpeg core handles common formats such as MP4, MOV, WebM, MKV, AVI, MPEG, M4V, 3GP, TS and WMV, though the browser may not preview every format."
+    },
+    {
+     "q": "Is my video uploaded to DJAI?",
+     "a": "No. The source file is read and processed in your browser on your device."
+    },
+    {
+     "q": "Why can the first run take longer?",
+     "a": "The browser downloads an FFmpeg WebAssembly core of roughly 31 MB the first time processing is needed; caching can help later runs."
+    }
+   ]
+  }
+ },
+{
+  "slug": "webm-to-mp4",
+  "mode": "convert",
+  "fixedInput": "webm",
+  "fixedOutput": "mp4",
+  "en": {
+   "primary": "webm to mp4",
+   "title": "Convert WebM to MP4 Online Free | DJAI",
+   "meta": "Convert WebM to MP4 online with private browser processing. Create a widely compatible MP4 for sharing, editing or uploading without a file upload.",
+   "h1": "Convert WebM to MP4 when compatibility matters more",
+   "hero": "WebM is a sensible web format, but MP4 still fits more upload forms, editing apps and everyday devices. Re-encode your WebM into a broadly usable MP4 without uploading it.",
+   "ui": "WebM to MP4",
+   "why": "WebM is web-friendly; MP4 is still the safer hand-off format",
+   "note": "The conversion uses H.264 video and AAC audio for the MP4 result. Re-encoding takes longer than a simple container change, but avoids relying on whether the original WebM codecs fit MP4.",
+   "keywords": [
+    "convert webm to mp4",
+    "webm to mp4 online",
+    "webm converter",
+    "webm to mp4 free",
+    "convert webm online"
+   ],
+   "faq": [
+    {
+     "q": "Can I just rename the file extension?",
+     "a": "Usually not. Renaming does not change the container or codecs inside; this page performs a real conversion."
+    },
+    {
+     "q": "Is my video uploaded to DJAI?",
+     "a": "No. The source file is read and processed in your browser on your device."
+    },
+    {
+     "q": "Why can the first run take longer?",
+     "a": "The browser downloads an FFmpeg WebAssembly core of roughly 31 MB the first time processing is needed; caching can help later runs."
+    }
+   ]
+  },
+  "th": {
+   "primary": "แปลง WebM เป็น MP4",
+   "title": "แปลง WebM เป็น MP4 ออนไลน์ฟรี | DJAI",
+   "meta": "แปลง WebM เป็น MP4 ออนไลน์ด้วยการประมวลผลใน browser ได้ไฟล์ MP4 ที่เปิด แชร์ ตัดต่อ และอัปโหลดง่ายขึ้นโดยไม่ส่งไฟล์ขึ้น server",
+   "h1": "แปลง WebM เป็น MP4 เมื่ออยากให้ไฟล์ไปต่อได้ง่ายขึ้น",
+   "hero": "WebM เหมาะกับเว็บ แต่ MP4 ยังเข้ากับ upload form, editor และอุปกรณ์ทั่วไปได้กว้างกว่า หน้านี้ re-encode WebM เป็น MP4 โดยไฟล์ต้นฉบับอยู่บนเครื่องคุณ",
+   "ui": "WebM → MP4",
+   "why": "WebM เหมาะกับเว็บ ส่วน MP4 มักเหมาะกับการส่งต่อ",
+   "note": "ผลลัพธ์ MP4 ใช้ H.264 สำหรับภาพและ AAC สำหรับเสียง จึงเป็นการ re-encode ไม่ใช่แค่เปลี่ยนนามสกุล แต่ลดปัญหา codec เดิมใน WebM ไม่เข้ากับ MP4",
+   "keywords": [
+    "webm to mp4",
+    "แปลง webm",
+    "webm converter",
+    "แปลง webm เป็น mp4",
+    "แปลงวิดีโอ webm"
+   ],
+   "faq": [
+    {
+     "q": "แค่เปลี่ยนนามสกุลไฟล์แทนได้ไหม?",
+     "a": "ไม่ได้ในหลายกรณี เพราะ container และ codec ข้างในยังเหมือนเดิม หน้านี้ทำ conversion จริง"
+    },
+    {
+     "q": "ไฟล์ถูกอัปโหลดขึ้น DJAI หรือไม่?",
+     "a": "ไม่ ตัวไฟล์ถูกอ่านและประมวลผลใน browser บนอุปกรณ์ของคุณ"
+    },
+    {
+     "q": "ทำไมครั้งแรกถึงช้ากว่า?",
+     "a": "ครั้งแรก browser ต้องโหลด FFmpeg WebAssembly core ประมาณ 31 MB หลังจากนั้น cache อาจช่วยให้เร็วขึ้น"
+    }
+   ]
+  },
+  "targetMB": null
+ },
+ {
+  "slug": "mov-to-mp4",
+  "mode": "convert",
+  "fixedInput": "mov",
+  "fixedOutput": "mp4",
+  "en": {
+   "primary": "mov to mp4",
+   "title": "Convert MOV to MP4 Online Free | DJAI",
+   "meta": "Convert MOV to MP4 online for easier sharing and playback. Choose video quality and process the source locally in your browser with no account.",
+   "h1": "Convert MOV to MP4 before the file becomes someone else's problem",
+   "hero": "MOV is common from Apple devices, cameras and editing workflows. MP4 is usually less awkward when the next step is email, a website, a form, Windows, or a social upload.",
+   "ui": "MOV to MP4",
+   "why": "MOV is normal in production; MP4 is easier at the hand-off",
+   "note": "MOV is a container, not one codec. This tool re-encodes the main video as H.264 with AAC audio so the output behaves predictably as MP4.",
+   "keywords": [
+    "convert mov to mp4",
+    "mov to mp4 online",
+    "mov converter",
+    "quicktime to mp4",
+    "mov to mp4 free"
+   ],
+   "faq": [
+    {
+     "q": "Can I just rename the file extension?",
+     "a": "Usually not. Renaming does not change the container or codecs inside; this page performs a real conversion."
+    },
+    {
+     "q": "Is my video uploaded to DJAI?",
+     "a": "No. The source file is read and processed in your browser on your device."
+    },
+    {
+     "q": "Why can the first run take longer?",
+     "a": "The browser downloads an FFmpeg WebAssembly core of roughly 31 MB the first time processing is needed; caching can help later runs."
+    }
+   ]
+  },
+  "th": {
+   "primary": "แปลง MOV เป็น MP4",
+   "title": "แปลง MOV เป็น MP4 ออนไลน์ฟรี | DJAI",
+   "meta": "แปลง MOV เป็น MP4 ออนไลน์เพื่อแชร์ เปิด และอัปโหลดง่ายขึ้น เลือกคุณภาพได้และประมวลผลไฟล์ใน browser โดยไม่ต้องสมัครบัญชี",
+   "h1": "แปลง MOV เป็น MP4 ก่อนส่งไฟล์ต่อให้คนอื่น",
+   "hero": "MOV เจอบ่อยจาก iPhone, Mac, กล้อง และงานตัดต่อ แต่พอถึงขั้นตอนส่งอีเมล อัปเว็บ กรอก form หรือเปิดบนเครื่องอื่น MP4 มักสร้างปัญหาน้อยกว่า",
+   "ui": "MOV → MP4",
+   "why": "MOV เป็นเรื่องปกติในงานผลิต แต่ MP4 ส่งต่อง่ายกว่า",
+   "note": "MOV เป็น container ไม่ใช่ codec เดียว หน้านี้จึง re-encode วิดีโอหลักเป็น H.264 และเสียงเป็น AAC เพื่อให้ผลลัพธ์ MP4 คาดเดาได้ง่าย",
+   "keywords": [
+    "mov to mp4",
+    "แปลง mov เป็น mp4",
+    "mov converter",
+    "แปลงไฟล์ mov",
+    "quicktime to mp4"
+   ],
+   "faq": [
+    {
+     "q": "แค่เปลี่ยนนามสกุลไฟล์แทนได้ไหม?",
+     "a": "ไม่ได้ในหลายกรณี เพราะ container และ codec ข้างในยังเหมือนเดิม หน้านี้ทำ conversion จริง"
+    },
+    {
+     "q": "ไฟล์ถูกอัปโหลดขึ้น DJAI หรือไม่?",
+     "a": "ไม่ ตัวไฟล์ถูกอ่านและประมวลผลใน browser บนอุปกรณ์ของคุณ"
+    },
+    {
+     "q": "ทำไมครั้งแรกถึงช้ากว่า?",
+     "a": "ครั้งแรก browser ต้องโหลด FFmpeg WebAssembly core ประมาณ 31 MB หลังจากนั้น cache อาจช่วยให้เร็วขึ้น"
+    }
+   ]
+  },
+  "targetMB": null
+ },
+ {
+  "slug": "mp4-to-webm",
+  "mode": "convert",
+  "fixedInput": "mp4",
+  "fixedOutput": "webm",
+  "en": {
+   "primary": "mp4 to webm",
+   "title": "Convert MP4 to WebM Online Free | DJAI",
+   "meta": "Convert MP4 to WebM online for web delivery. Choose quality and resolution, then encode locally in your browser without uploading the source video.",
+   "h1": "Convert MP4 to WebM for a web-first video file",
+   "hero": "If the video is headed to a website rather than a general-purpose hand-off, WebM can be a useful target. Convert the MP4 locally and choose a sensible resolution.",
+   "ui": "MP4 to WebM",
+   "why": "WebM earns its place when the destination is the web",
+   "note": "This page encodes video with VP9 and WebM-compatible audio. VP9 can take noticeably longer to encode in WebAssembly than H.264, so lower resolution is often practical on phones.",
+   "keywords": [
+    "mp4 to webm",
+    "convert mp4 to webm",
+    "mp4 webm converter",
+    "mp4 to webm online",
+    "webm converter"
+   ],
+   "faq": [
+    {
+     "q": "Can I just rename the file extension?",
+     "a": "Usually not. Renaming does not change the container or codecs inside; this page performs a real conversion."
+    },
+    {
+     "q": "Is my video uploaded to DJAI?",
+     "a": "No. The source file is read and processed in your browser on your device."
+    },
+    {
+     "q": "Why can the first run take longer?",
+     "a": "The browser downloads an FFmpeg WebAssembly core of roughly 31 MB the first time processing is needed; caching can help later runs."
+    }
+   ]
+  },
+  "th": {
+   "primary": "แปลง MP4 เป็น WebM",
+   "title": "แปลง MP4 เป็น WebM ออนไลน์ฟรี | DJAI",
+   "meta": "แปลง MP4 เป็น WebM ออนไลน์สำหรับงานเว็บ เลือกคุณภาพและความละเอียดได้ แล้ว encode ใน browser โดยไม่ต้องอัปโหลดวิดีโอต้นฉบับ",
+   "h1": "แปลง MP4 เป็น WebM เมื่อปลายทางของวิดีโอคือเว็บ",
+   "hero": "ถ้าวิดีโอจะไปอยู่บนเว็บไซต์ WebM ก็เป็น target ที่น่าสนใจ เลือก resolution ให้พอดีแล้ว encode จาก MP4 ได้ตรงใน browser",
+   "ui": "MP4 → WebM",
+   "why": "WebM มีเหตุผลของมัน เมื่อปลายทางคือเว็บ",
+   "note": "หน้านี้ encode ภาพเป็น VP9 และเสียงที่เข้ากับ WebM การ encode VP9 ผ่าน WebAssembly อาจช้ากว่า H.264 โดยเฉพาะบนมือถือ จึงควรลด resolution ถ้าไม่จำเป็นต้องใช้ภาพเต็ม",
+   "keywords": [
+    "mp4 to webm",
+    "แปลง mp4 เป็น webm",
+    "webm converter",
+    "แปลง webm ออนไลน์",
+    "video webm"
+   ],
+   "faq": [
+    {
+     "q": "แค่เปลี่ยนนามสกุลไฟล์แทนได้ไหม?",
+     "a": "ไม่ได้ในหลายกรณี เพราะ container และ codec ข้างในยังเหมือนเดิม หน้านี้ทำ conversion จริง"
+    },
+    {
+     "q": "ไฟล์ถูกอัปโหลดขึ้น DJAI หรือไม่?",
+     "a": "ไม่ ตัวไฟล์ถูกอ่านและประมวลผลใน browser บนอุปกรณ์ของคุณ"
+    },
+    {
+     "q": "ทำไมครั้งแรกถึงช้ากว่า?",
+     "a": "ครั้งแรก browser ต้องโหลด FFmpeg WebAssembly core ประมาณ 31 MB หลังจากนั้น cache อาจช่วยให้เร็วขึ้น"
+    }
+   ]
+  },
+  "targetMB": null
+ },
+ {
+  "slug": "compress-video",
+  "mode": "compressor",
+  "en": {
+   "primary": "video compressor",
+   "title": "Video Compressor Online – Reduce Video File Size | DJAI",
+   "meta": "Compress video online by quality, resolution or target size. Reduce MP4 file size privately in your browser with no account or source upload.",
+   "h1": "Compress a video around the constraint you actually have",
+   "hero": "Sometimes the problem is quality. More often it is a 25 MB upload limit, an email attachment, or a phone that does not need 4K. Choose target size or resolution and let the browser do the work.",
+   "ui": "Video compressor",
+   "why": "Compression makes more sense when it starts with a real constraint",
+   "note": "Target-size mode estimates bitrate from duration and desired file size. It is designed to land near the target, not promise byte-perfect output; browser encoding can finish slightly above or below.",
+   "keywords": [
+    "compress video",
+    "compress mp4",
+    "reduce video file size",
+    "video compressor online",
+    "shrink mp4",
+    "compress video to smaller size"
+   ],
+   "faq": [
+    {
+     "q": "Can I just rename the file extension?",
+     "a": "Usually not. Renaming does not change the container or codecs inside; this page performs a real conversion."
+    },
+    {
+     "q": "Is my video uploaded to DJAI?",
+     "a": "No. The source file is read and processed in your browser on your device."
+    },
+    {
+     "q": "Why can the first run take longer?",
+     "a": "The browser downloads an FFmpeg WebAssembly core of roughly 31 MB the first time processing is needed; caching can help later runs."
+    }
+   ]
+  },
+  "th": {
+   "primary": "บีบอัดวิดีโอออนไลน์",
+   "title": "บีบอัดวิดีโอออนไลน์ ลดขนาด MP4 ฟรี | DJAI",
+   "meta": "บีบอัดวิดีโอออนไลน์ด้วยคุณภาพ ความละเอียด หรือขนาดเป้าหมาย ลดขนาด MP4 ใน browser โดยไม่ต้องสมัครและไม่อัปโหลดไฟล์ต้นฉบับ",
+   "h1": "บีบอัดวิดีโอจากข้อจำกัดจริงของงาน",
+   "hero": "หลายครั้งเราไม่ได้อยากบีบให้เล็กที่สุด แค่ต้องผ่าน limit 25 MB ส่งอีเมลได้ หรือไม่ต้องเก็บ 4K บนมือถือ เลือกขนาดเป้าหมายหรือ resolution ให้ตรงโจทย์แล้วค่อย encode",
+   "ui": "ตัวบีบอัดวิดีโอ",
+   "why": "การบีบอัดมีเหตุผลมากขึ้น เมื่อเริ่มจากข้อจำกัดจริง",
+   "note": "โหมด target size จะคำนวณ bitrate จากความยาววิดีโอและขนาดที่ต้องการ ผลลัพธ์ตั้งใจให้เข้าใกล้เป้าหมาย ไม่ได้สัญญาว่าตรงทุก byte เพราะการ encode ใน browser อาจสูงหรือต่ำกว่าตัวเลขเล็กน้อย",
+   "keywords": [
+    "video compressor",
+    "บีบอัด mp4",
+    "ลดขนาดวิดีโอ",
+    "ลดขนาดไฟล์ mp4",
+    "บีบวิดีโอออนไลน์",
+    "compress video"
+   ],
+   "faq": [
+    {
+     "q": "แค่เปลี่ยนนามสกุลไฟล์แทนได้ไหม?",
+     "a": "ไม่ได้ในหลายกรณี เพราะ container และ codec ข้างในยังเหมือนเดิม หน้านี้ทำ conversion จริง"
+    },
+    {
+     "q": "ไฟล์ถูกอัปโหลดขึ้น DJAI หรือไม่?",
+     "a": "ไม่ ตัวไฟล์ถูกอ่านและประมวลผลใน browser บนอุปกรณ์ของคุณ"
+    },
+    {
+     "q": "ทำไมครั้งแรกถึงช้ากว่า?",
+     "a": "ครั้งแรก browser ต้องโหลด FFmpeg WebAssembly core ประมาณ 31 MB หลังจากนั้น cache อาจช่วยให้เร็วขึ้น"
+    }
+   ]
+  },
+  "targetMB": null
+ }
+]
