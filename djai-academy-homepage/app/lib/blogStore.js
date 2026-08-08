@@ -1,6 +1,7 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import seededBlogData from "../../data/blog-posts.json";
+import seededBlogData from "../../data/blog-posts.json" with { type: "json" };
+import { normalizeInternalBlogHref } from "./blogContent.js";
 
 export const SIAMESE_CAT_DEV_CATEGORY = "Siamese Cat Dev";
 export const BLOG_CATEGORIES = ["News", "Guides", "Tutorial", SIAMESE_CAT_DEV_CATEGORY];
@@ -148,6 +149,10 @@ function normalizeStoredGroup(post) {
             ).trim(),
             keywords: parseKeywords(translation.keywords),
             content: String(translation.content || "").trim(),
+            ctaEyebrow: String(translation.ctaEyebrow || "").trim(),
+            ctaTitle: String(translation.ctaTitle || "").trim(),
+            ctaLabel: String(translation.ctaLabel || "").trim(),
+            ctaHref: String(translation.ctaHref || "").trim(),
             publishedAt: translation.publishedAt || post.publishedAt || post.updatedAt,
             updatedAt: translation.updatedAt || post.updatedAt || post.publishedAt
           }
@@ -213,6 +218,10 @@ function flattenPost(group, locale = "en") {
     readingTime: translation.readingTime,
     keywords: translation.keywords,
     content: translation.content,
+    ctaEyebrow: translation.ctaEyebrow,
+    ctaTitle: translation.ctaTitle,
+    ctaLabel: translation.ctaLabel,
+    ctaHref: translation.ctaHref,
     alternateSlugs,
     source: "admin"
   };
@@ -256,7 +265,11 @@ function hasTranslationInput(input) {
     "seoDescription",
     "readingTime",
     "keywords",
-    "content"
+    "content",
+    "ctaEyebrow",
+    "ctaTitle",
+    "ctaLabel",
+    "ctaHref"
   ].some((field) => String(input?.[field] || "").trim());
 }
 
@@ -270,6 +283,13 @@ function normalizeTranslationInput(input, { existing, locale, now }) {
   const status = input.status === "published" ? "published" : "draft";
   const excerpt = String(input.excerpt || "").trim();
   const content = String(input.content || "").trim();
+  const cta = {
+    eyebrow: String(input.ctaEyebrow || existing?.ctaEyebrow || "").trim(),
+    title: String(input.ctaTitle || existing?.ctaTitle || "").trim(),
+    label: String(input.ctaLabel || existing?.ctaLabel || "").trim(),
+    href: String(input.ctaHref || existing?.ctaHref || "").trim()
+  };
+  const ctaValues = Object.values(cta);
 
   if (!title) {
     throw new Error(`${locale.toUpperCase()} title is required.`);
@@ -287,6 +307,14 @@ function normalizeTranslationInput(input, { existing, locale, now }) {
     throw new Error(`${locale.toUpperCase()} content is required before publishing.`);
   }
 
+  if (ctaValues.some(Boolean) && !ctaValues.every(Boolean)) {
+    throw new Error(`${locale.toUpperCase()} CTA requires eyebrow, title, label, and href.`);
+  }
+
+  if (cta.href && !normalizeInternalBlogHref(cta.href)) {
+    throw new Error(`${locale.toUpperCase()} CTA href must be a root-relative internal path.`);
+  }
+
   return {
     title,
     slug,
@@ -299,6 +327,10 @@ function normalizeTranslationInput(input, { existing, locale, now }) {
     ).trim(),
     keywords: parseKeywords(input.keywords),
     content,
+    ctaEyebrow: cta.eyebrow,
+    ctaTitle: cta.title,
+    ctaLabel: cta.label,
+    ctaHref: cta.href ? normalizeInternalBlogHref(cta.href) : "",
     publishedAt: status === "published" ? input.publishedAt || existing?.publishedAt || now : existing?.publishedAt || "",
     updatedAt: now
   };

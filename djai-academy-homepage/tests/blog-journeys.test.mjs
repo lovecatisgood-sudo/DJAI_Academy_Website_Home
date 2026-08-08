@@ -31,3 +31,22 @@ test("seeded Thai utility guides use the same explicit journey map", () => {
     assert.equal(journey.mapped, true, `th:${slug} fell back to generic navigation`);
   }
 });
+
+test("API-authored articles can carry an intent-matched next step without route hard-coding", () => {
+  const journey = getBlogJourney({
+    translationGroupId: "new-api-article",
+    slug: "new-api-article",
+    ctaEyebrow: "Next lesson",
+    ctaTitle: "Build one small result before adding more features.",
+    ctaHref: "/blog/en/build-one-small-result/",
+    ctaLabel: "Build the next result"
+  }, "en");
+
+  assert.deepEqual(journey, {
+    eyebrow: "Next lesson",
+    title: "Build one small result before adding more features.",
+    href: "/blog/en/build-one-small-result/",
+    label: "Build the next result",
+    mapped: true
+  });
+});

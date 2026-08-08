@@ -67,6 +67,16 @@ const fallback = {
 };
 
 export function getBlogJourney(post, locale) {
+  if (post.ctaEyebrow && post.ctaTitle && post.ctaHref && post.ctaLabel) {
+    return {
+      eyebrow: post.ctaEyebrow,
+      title: post.ctaTitle,
+      href: post.ctaHref,
+      label: post.ctaLabel,
+      mapped: true
+    };
+  }
+
   const key = post.translationGroupId || post.slug;
   const mapped = Boolean(journeys[key]?.[locale]);
   const [eyebrow, title, href, label] = journeys[key]?.[locale] || fallback[locale];
