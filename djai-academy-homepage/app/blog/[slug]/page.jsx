@@ -5,6 +5,11 @@ import SiteHeader from "../../components/SiteHeader";
 import AdSenseAd from "../../components/AdSenseAd";
 import ShareButtons from "../../components/ShareButtons";
 import BlogMarkdown from "../../components/blog/BlogMarkdown";
+import {
+  ToolTutorialEvidence,
+  ToolTutorialNextStep,
+  hasToolTutorialEvidence
+} from "../../components/blog/ToolTutorialEvidence";
 import { SIAMESE_CAT_DEV_CATEGORY } from "../../lib/blogStore";
 import { getThaiPostBySlug } from "../../lib/thBlogPosts";
 import { getBlogJourney } from "../../lib/blogJourneys";
@@ -76,6 +81,8 @@ export default async function ThaiBlogPostPage({ params }) {
     permanentRedirect(`/siamese_cat/dev/blog/${post.slug}/`);
   }
 
+  const hasTutorialEvidence = hasToolTutorialEvidence(post.slug);
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -132,22 +139,29 @@ export default async function ThaiBlogPostPage({ params }) {
             </div>
             <h1>{post.title}</h1>
             <p>{post.excerpt}</p>
+            <p className="article-byline">
+              โดย {post.author || "DJAI Academy"} · อัปเดต {formatDate(post.updatedAt)}
+            </p>
             <ShareButtons url={`https://www.djai.academy/blog/${post.slug}/`} title={post.title} locale="th" />
           </header>
 
-          <AdSenseAd label="Article advertisement" variant="inArticle" />
+          {hasTutorialEvidence ? <ToolTutorialEvidence slug={post.slug} locale="th" /> : null}
 
           <div className="article-content"><BlogMarkdown content={post.content} /></div>
 
           <AdSenseAd label="Article advertisement" variant="inArticle" />
 
-          <footer className="article-cta">
-            <div>
-              <p className="eyebrow">{journey.eyebrow}</p>
-              <h2>{journey.title}</h2>
-            </div>
-            <Link className="button" href={journey.href}>{journey.label}</Link>
-          </footer>
+          {hasTutorialEvidence ? (
+            <ToolTutorialNextStep slug={post.slug} locale="th" />
+          ) : (
+            <footer className="article-cta">
+              <div>
+                <p className="eyebrow">{journey.eyebrow}</p>
+                <h2>{journey.title}</h2>
+              </div>
+              <Link className="button" href={journey.href}>{journey.label}</Link>
+            </footer>
+          )}
 
           <ShareButtons url={`https://www.djai.academy/blog/${post.slug}/`} title={post.title} locale="th" compact />
 

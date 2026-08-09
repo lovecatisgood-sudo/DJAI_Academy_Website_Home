@@ -16,7 +16,7 @@ const posts = [
       "คู่มือสร้าง QR code ฟรีด้วย DJAI QR Generator ไม่มี watermark ไม่ต้องสมัครบัญชี และรองรับ PNG/SVG",
     author: "DJAI Academy",
     publishedAt: "2026-07-17T03:00:00.000Z",
-    updatedAt: "2026-07-17T03:00:00.000Z",
+    updatedAt: "2026-08-09T00:00:00.000Z",
     readingTime: "อ่าน 5 นาที",
     keywords: ["สร้าง QR code ฟรี", "QR code เมนู", "QR code เว็บไซต์", "DJAI tools"],
     content: `## ทำไม QR Code ยังมีประโยชน์
@@ -83,7 +83,7 @@ QR code เป็นวิธีที่ง่ายที่สุดในก
       "แปลงรูป JPG PNG WebP ฟรีผ่าน browser พร้อมคำแนะนำว่าควรใช้ format ไหนสำหรับเว็บไซต์และงานธุรกิจ",
     author: "DJAI Academy",
     publishedAt: "2026-07-17T03:10:00.000Z",
-    updatedAt: "2026-07-17T03:10:00.000Z",
+    updatedAt: "2026-08-09T00:00:00.000Z",
     readingTime: "อ่าน 6 นาที",
     keywords: ["แปลงรูปฟรี", "JPG to PNG", "PNG to WebP", "WebP to JPG", "DJAI Image Tools"],
     content: `## ทำไม Image Format ถึงสำคัญ
@@ -160,7 +160,7 @@ Format ของรูปมีผลต่อคุณภาพ ขนาดไ
       "คู่มือบีบอัดรูปให้ได้ target KB size ผ่าน browser ด้วย DJAI Image Tools โดยไม่ต้อง upload รูปขึ้น server",
     author: "DJAI Academy",
     publishedAt: "2026-07-17T03:20:00.000Z",
-    updatedAt: "2026-07-17T03:20:00.000Z",
+    updatedAt: "2026-08-09T00:00:00.000Z",
     readingTime: "อ่าน 6 นาที",
     keywords: ["บีบอัดรูป 100 KB", "ลดขนาดรูป 500 KB", "compress image", "DJAI Image Tools"],
     content: `## ทำไม Target File Size ถึงมีประโยชน์
