@@ -19,7 +19,7 @@ const tutorials = {
         "Before printing a batch, scan the exported file on at least two phones and test it at the final physical size. Styling cannot rescue a broken destination URL or poor contrast.",
       primaryHref: "/tools/qrgen/en/",
       primaryLabel: "Create a QR code",
-      secondaryHref: "/tools/qrgen/url/en/",
+      secondaryHref: "/tools/qrgen/url-qr-code-generator/en/",
       secondaryLabel: "Open the URL QR preset",
       nextEyebrow: "Your next step",
       nextTitle: "Create one code for one stable destination, then test the downloaded file."
@@ -38,7 +38,7 @@ const tutorials = {
         "ก่อนพิมพ์จำนวนมาก ควร Scan ไฟล์ที่ Export ด้วยมือถืออย่างน้อยสองเครื่องและทดสอบที่ขนาดจริง การตกแต่ง QR ไม่สามารถแก้ URL ที่เสียหรือ Contrast ที่ต่ำได้",
       primaryHref: "/tools/qrgen/",
       primaryLabel: "สร้าง QR Code",
-      secondaryHref: "/tools/qrgen/url/",
+      secondaryHref: "/tools/qrgen/url-qr-code-generator/",
       secondaryLabel: "เปิด Preset สำหรับ URL",
       nextEyebrow: "ขั้นตอนถัดไป",
       nextTitle: "สร้างหนึ่ง QR สำหรับหนึ่งปลายทางที่คงที่ แล้วทดสอบไฟล์ที่ดาวน์โหลด"
