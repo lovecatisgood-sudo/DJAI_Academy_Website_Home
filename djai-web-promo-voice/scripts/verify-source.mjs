@@ -23,6 +23,7 @@ const sessionRoute = read("src/app/api/session/route.ts");
 const leadRoute = read("src/app/api/lead/route.ts");
 const conversationRoute = read("src/app/api/conversation/route.ts");
 const settingsCache = read("src/lib/settings-cache.ts");
+const rootLayout = read("src/app/layout.tsx");
 const dependencies = {
   ...packageJson.dependencies,
   ...packageJson.devDependencies,
@@ -43,6 +44,13 @@ for (const dependency of Object.keys(dependencies)) {
     assert(!pattern.test(dependency), `Forbidden V2-style dependency found: ${dependency}`);
   }
 }
+
+assert(
+  rootLayout.includes('const GA_ID = "G-CGJ5BTR44T"') &&
+    rootLayout.includes("https://www.googletagmanager.com/gtag/js?id=${GA_ID}") &&
+    rootLayout.includes("gtag('config', '${GA_ID}', { cookie_domain: 'auto' })"),
+  "Public web promotion pages must include the shared DJAI Google Analytics tag.",
+);
 
 assert(!browserWidget.includes("OPENAI_API_KEY"), "Browser widget references OPENAI_API_KEY.");
 assert(!browserWidget.includes("sk-"), "Browser widget appears to contain an OpenAI secret key.");

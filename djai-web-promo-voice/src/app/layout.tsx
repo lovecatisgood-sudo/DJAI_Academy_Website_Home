@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const GA_ID = "G-CGJ5BTR44T";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.djai.academy"),
   title: "โปรโมชันพัฒนาเว็บไซต์ พร้อม AI Voice Agent | DJAI Academy",
@@ -58,6 +60,18 @@ export default function RootLayout({
   return (
     <html lang="th">
       <head>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
+        <script
+          id="google-analytics"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_ID}', { cookie_domain: 'auto' });
+            `,
+          }}
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link
