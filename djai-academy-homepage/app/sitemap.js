@@ -22,6 +22,7 @@ const corePaths = [
   "/service/", "/service/en/", "/privacy/", "/privacy/en/", "/tools/", "/tools/en/", "/tools/qrgen/", "/tools/qrgen/en/",
   "/tools/seo-screaming-toad/", "/tools/seo-screaming-toad/en/",
   "/course/", "/course/en/", "/course/detail/", "/course/detail/en/", "/siamese_cat/",
+  "/tools/video-to-text/", "/tools/video-to-text/en/",
   "/siamese_cat/en/", "/siamese_cat/dev/", "/siamese_cat/dev/en/", "/siamese_cat/dev/course/", "/siamese_cat/dev/course/th/", "/siamese_cat/dev/blog/",
   "/siamese_cat/dev/blog/en/", "/blog/", "/blog/en/", "/Cam_PDF_Scan_Signer_QR-Gen/",
   "/Cam_PDF_Scan_Signer_QR-Gen/privacy/", "/Cam_PDF_Scan_Signer_QR-Gen/terms/",

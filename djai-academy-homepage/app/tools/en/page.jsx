@@ -46,6 +46,13 @@ export const metadata = {
 
 const tools = [
   {
+    label: "Video to Text",
+    title: "Video to Text Converter — Free, No Sign-Up",
+    text: "Transcribe video or audio with AI in your browser. No email, no account, and no media upload to DJAI. Download TXT, SRT, VTT, or JSON.",
+    href: "https://www.djai.academy/tools/video-to-text/en/",
+    tags: ["Video to Text", "No Sign-Up", "Local AI"]
+  },
+  {
     label: "Open SEO Tool",
     title: "SEO Screaming Toad — SEO Crawler + MCP",
     text: "Audit technical SEO, JavaScript, canonicals, hreflang, sitemaps, and structured data with local evidence and 23 MCP tools for AI agents.",
@@ -121,6 +128,7 @@ const popularWorkflows = [
   ["Cut video", "Choose exact start and end times, then export MP4", "https://www.djai.academy/tools/media/video-cutter/en/"],
   ["Extract video frames", "Create JPG or PNG images and download a ZIP", "https://www.djai.academy/tools/media/extract-frames-from-video/en/"],
   ["Merge videos", "Order several clips and combine them into MP4", "https://www.djai.academy/tools/media/video-merger/en/"],
+  ["Video to text", "Transcribe in your browser with no sign-up", "https://www.djai.academy/tools/video-to-text/en/"],
   ["DOCX to PDF", "Convert Word privately in your browser", "https://www.djai.academy/tools/document/docx-to-pdf/en/"],
   ["PDF to Text", "Extract text from selected pages", "https://www.djai.academy/tools/document/pdf-to-text/en/"],
   ["Document Token Counter", "Check context use before AI", "https://www.djai.academy/tools/ai/token-counter/en/"],

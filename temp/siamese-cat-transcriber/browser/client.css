@@ -1,0 +1,4 @@
+.local-select { margin-top: 8px; }
+.transcript-actions { flex-wrap: wrap; justify-content: flex-end; }
+.engine-loading .drop-zone { pointer-events: none; opacity: .76; }
+@media (max-width: 760px) { .transcript-actions { justify-content: flex-start; } }

@@ -1,6 +1,5 @@
 const fs = require("node:fs");
 const http = require("node:http");
-const https = require("node:https");
 const path = require("node:path");
 const zlib = require("node:zlib");
 const { spawn } = require("node:child_process");
@@ -16,9 +15,6 @@ const hostname = process.env.HOST || "0.0.0.0";
 // server and opt into development mode only when it is requested explicitly.
 const homepagePort = Number(process.env.DJAI_HOMEPAGE_PORT || port + 1);
 const voicePromoPort = Number(process.env.DJAI_VOICE_PROMO_PORT || port + 2);
-const transcriberOrigin = process.env.DJAI_TRANSCRIBER_ORIGIN
-  ? new URL(process.env.DJAI_TRANSCRIBER_ORIGIN)
-  : null;
 
 const mimeTypes = {
   ".html": "text/html; charset=utf-8",
@@ -67,6 +63,14 @@ const staticMounts = [
   {
     prefix: "/tools/media",
     dir: path.join(rootDir, "djai-media-tools", "public")
+  },
+  {
+    prefix: "/tools/video-to-text/static",
+    dir: path.join(rootDir, "temp", "siamese-cat-transcriber", "app", "static")
+  },
+  {
+    prefix: "/tools/video-to-text",
+    dir: path.join(rootDir, "temp", "siamese-cat-transcriber", "browser")
   },
   {
     prefix: "/tools/PDFTools",
@@ -345,36 +349,6 @@ function proxyRequest(req, res, targetPort) {
   req.pipe(upstream);
 }
 
-function proxyRequestToOrigin(req, res, target) {
-  const client = target.protocol === "https:" ? https : http;
-  const basePath = target.pathname.replace(/\/$/, "");
-  const upstream = client.request({
-    protocol: target.protocol,
-    hostname: target.hostname,
-    port: target.port || (target.protocol === "https:" ? 443 : 80),
-    method: req.method,
-    path: `${basePath}${req.url || "/"}`,
-    headers: {
-      ...req.headers,
-      host: target.host,
-      "x-forwarded-host": req.headers.host || "www.djai.academy",
-      "x-forwarded-proto": "https"
-    }
-  }, (upstreamResponse) => {
-    res.writeHead(upstreamResponse.statusCode || 502, upstreamResponse.headers);
-    upstreamResponse.pipe(res);
-  });
-
-  upstream.on("error", (error) => {
-    console.error(`Unable to proxy ${req.url} to DJAI transcriber.`, error);
-    if (!res.headersSent) {
-      res.writeHead(502, { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store", "X-Robots-Tag": "noindex" });
-    }
-    res.end("Video transcription service unavailable");
-  });
-  req.pipe(upstream);
-}
-
 function startStandalone(name, directory, internalPort) {
   const serverPath = path.join(directory, ".next", "standalone", "server.js");
   if (!fs.existsSync(serverPath)) {
@@ -480,17 +454,11 @@ async function start() {
       }
 
       if (matchesMount(pathname, "/tools/video-to-text")) {
-        if (!transcriberOrigin) {
-          res.writeHead(503, {
-            "Content-Type": "text/plain; charset=utf-8",
-            "Cache-Control": "no-store",
-            "X-Robots-Tag": "noindex, nofollow"
-          });
-          res.end("DJAI Video to Text is not configured yet.");
+        if (tryServeMountedStatic(req, res, pathname)) {
           return;
         }
-        rewriteRequestPath(req, "/tools/video-to-text", "");
-        proxyRequestToOrigin(req, res, transcriberOrigin);
+        res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store" });
+        res.end("Video to Text page not found");
         return;
       }
 
