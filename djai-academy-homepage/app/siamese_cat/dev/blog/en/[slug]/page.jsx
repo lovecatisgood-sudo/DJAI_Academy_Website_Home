@@ -6,6 +6,11 @@ import AdSenseAd from "../../../../../components/AdSenseAd";
 import ShareButtons from "../../../../../components/ShareButtons";
 import BlogMarkdown from "../../../../../components/blog/BlogMarkdown";
 import {
+  SCANNER_BUILD_STORY_SLUG,
+  ScannerBuildStoryEvidence,
+  ScannerBuildStoryNextStep
+} from "../../../../../components/blog/ScannerBuildStoryEvidence";
+import {
   SIAMESE_CAT_DEV_CATEGORY,
   getPostBySlugInCategory
 } from "../../../../../lib/blogStore";
@@ -77,6 +82,7 @@ export default async function SiameseCatDevEnglishPostPage({ params }) {
   }
 
   const postUrl = `https://www.djai.academy/siamese_cat/dev/blog/en/${post.slug}/`;
+  const isScannerBuildStory = post.slug === SCANNER_BUILD_STORY_SLUG;
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -130,14 +136,22 @@ export default async function SiameseCatDevEnglishPostPage({ params }) {
             </div>
             <h1>{post.title}</h1>
             <p>{post.excerpt}</p>
+            <p className="article-byline">
+              By {post.author || "Siamese Cat Dev"}
+              {post.updatedAt && post.updatedAt !== post.publishedAt
+                ? ` · Updated ${formatDate(post.updatedAt)}`
+                : ""}
+            </p>
             <ShareButtons url={postUrl} title={post.title} locale="en" />
           </header>
 
-          <AdSenseAd label="Article advertisement" variant="inArticle" />
+          {isScannerBuildStory && <ScannerBuildStoryEvidence locale="en" />}
 
           <div className="article-content">
             <BlogMarkdown content={post.content} />
           </div>
+
+          {isScannerBuildStory && <ScannerBuildStoryNextStep locale="en" />}
 
           <AdSenseAd label="Article advertisement" variant="inArticle" />
 

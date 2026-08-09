@@ -4,6 +4,11 @@ import SiteFooter from "../../../components/SiteFooter";
 import SiteHeader from "../../../components/SiteHeader";
 import AdSenseAd from "../../../components/AdSenseAd";
 import ShareButtons from "../../../components/ShareButtons";
+import {
+  ToolTutorialEvidence,
+  ToolTutorialNextStep,
+  hasToolTutorialEvidence
+} from "../../../components/blog/ToolTutorialEvidence";
 import { SIAMESE_CAT_DEV_CATEGORY, getPostBySlug } from "../../../lib/blogStore";
 import { getSeededThaiPostBySlug } from "../../../lib/thBlogPosts";
 
@@ -167,6 +172,8 @@ export default async function BlogPostPage({ params }) {
     permanentRedirect(`/siamese_cat/dev/blog/en/${post.slug}/`);
   }
 
+  const hasTutorialEvidence = hasToolTutorialEvidence(post.slug);
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -216,16 +223,19 @@ export default async function BlogPostPage({ params }) {
             </div>
             <h1>{post.title}</h1>
             <p>{post.excerpt}</p>
+            <p className="article-byline">
+              By {post.author || "DJAI Academy"} · Updated {formatDate(post.updatedAt)}
+            </p>
             <ShareButtons url={`https://www.djai.academy/blog/en/${post.slug}/`} title={post.title} locale="en" />
           </header>
 
-          <AdSenseAd label="Article advertisement" variant="inArticle" />
+          {hasTutorialEvidence ? <ToolTutorialEvidence slug={post.slug} locale="en" /> : null}
 
           <div className="article-content">{renderContent(post.content)}</div>
 
           <AdSenseAd label="Article advertisement" variant="inArticle" />
 
-          <footer className="article-cta">
+          {hasTutorialEvidence ? <ToolTutorialNextStep slug={post.slug} locale="en" /> : <footer className="article-cta">
             <div>
               <p className="eyebrow">Free DJAI tools</p>
               <h2>Use the tools from this tutorial.</h2>
@@ -233,7 +243,7 @@ export default async function BlogPostPage({ params }) {
             <a className="button" href="https://www.djai.academy/tools/en/">
               Open free tools
             </a>
-          </footer>
+          </footer>}
 
           <ShareButtons url={`https://www.djai.academy/blog/en/${post.slug}/`} title={post.title} locale="en" compact />
 

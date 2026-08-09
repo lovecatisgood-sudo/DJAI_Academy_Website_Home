@@ -4,6 +4,11 @@ import SiteFooter from "../../components/SiteFooter";
 import SiteHeader from "../../components/SiteHeader";
 import AdSenseAd from "../../components/AdSenseAd";
 import ShareButtons from "../../components/ShareButtons";
+import {
+  ToolTutorialEvidence,
+  ToolTutorialNextStep,
+  hasToolTutorialEvidence
+} from "../../components/blog/ToolTutorialEvidence";
 import { SIAMESE_CAT_DEV_CATEGORY } from "../../lib/blogStore";
 import { getThaiPostBySlug } from "../../lib/thBlogPosts";
 
@@ -164,6 +169,8 @@ export default async function ThaiBlogPostPage({ params }) {
     permanentRedirect(`/siamese_cat/dev/blog/${post.slug}/`);
   }
 
+  const hasTutorialEvidence = hasToolTutorialEvidence(post.slug);
+
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -219,16 +226,19 @@ export default async function ThaiBlogPostPage({ params }) {
             </div>
             <h1>{post.title}</h1>
             <p>{post.excerpt}</p>
+            <p className="article-byline">
+              โดย {post.author || "DJAI Academy"} · อัปเดต {formatDate(post.updatedAt)}
+            </p>
             <ShareButtons url={`https://www.djai.academy/blog/${post.slug}/`} title={post.title} locale="th" />
           </header>
 
-          <AdSenseAd label="Article advertisement" variant="inArticle" />
+          {hasTutorialEvidence ? <ToolTutorialEvidence slug={post.slug} locale="th" /> : null}
 
           <div className="article-content">{renderContent(post.content)}</div>
 
           <AdSenseAd label="Article advertisement" variant="inArticle" />
 
-          <footer className="article-cta">
+          {hasTutorialEvidence ? <ToolTutorialNextStep slug={post.slug} locale="th" /> : <footer className="article-cta">
             <div>
               <p className="eyebrow">เครื่องมือฟรีจาก DJAI</p>
               <h2>เปิดใช้เครื่องมือจากบทความนี้</h2>
@@ -236,7 +246,7 @@ export default async function ThaiBlogPostPage({ params }) {
             <a className="button" href="https://www.djai.academy/tools/">
               เปิดเครื่องมือฟรี
             </a>
-          </footer>
+          </footer>}
 
           <ShareButtons url={`https://www.djai.academy/blog/${post.slug}/`} title={post.title} locale="th" compact />
 
