@@ -1,0 +1,3 @@
+# Optional and deliberately separate: this installs PyTorch and is much larger
+# than the CPU Whisper service. Enable it only when speaker labels are offered.
+pyannote.audio>=4,<5
