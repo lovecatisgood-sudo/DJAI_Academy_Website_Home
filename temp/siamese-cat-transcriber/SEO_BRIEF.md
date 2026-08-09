@@ -30,9 +30,9 @@ The page therefore targets one canonical video-transcription workflow rather tha
 - English canonical: `https://www.djai.academy/tools/video-to-text/en/`
 - Each page includes its own canonical plus reciprocal `th`, `en`, and Thai `x-default` alternatives.
 - The HTML contains localized title, meta description, H1, first-screen promise, practical explanation, FAQs, SoftwareApplication, BreadcrumbList, and FAQPage structured data.
-- The no-sign-up statement is backed by the implementation: there is no account/email field; an anonymous HttpOnly browser session isolates jobs.
-- Do not claim browser-only processing, unlimited use, automatic deletion, or perfect transcription: none is guaranteed by the deployed product.
+- The no-sign-up statement is backed by the implementation: there is no account/email field. The selected media and transcript remain in the visitor's browser and are not uploaded to DJAI.
+- Do not claim unlimited use, automatic deletion, universal codec support, or perfect transcription. The first model download is served by Hugging Face, and speed/compatibility depend on the visitor's browser and device.
 
-## Measurement after the service is live
+## Measurement after launch
 
-Track Search Console impressions/clicks/CTR/query mix for the canonical URLs, index status, tool-start clicks, completed jobs, export type, deletion rate, clicks to related media tools, course interest, and service-interest clicks. Reassess titles and long-tail coverage only after enough query data exists.
+Track Search Console impressions/clicks/CTR/query mix for the canonical URLs, index status, local tool-start clicks, successful local transcripts, export type, compatibility failures, clicks to related media tools, course interest, and service-interest clicks. Reassess titles and long-tail coverage only after enough query data exists.

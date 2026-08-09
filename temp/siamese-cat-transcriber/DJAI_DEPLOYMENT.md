@@ -1,46 +1,29 @@
 # DJAI Video to Text deployment
 
-Public URL: `https://www.djai.academy/tools/video-to-text/`
+Public URLs:
 
-English URL: `https://www.djai.academy/tools/video-to-text/en/`
+- Thai: `https://www.djai.academy/tools/video-to-text/`
+- English: `https://www.djai.academy/tools/video-to-text/en/`
 
-The main DJAI Hostinger Node application is intentionally only a reverse proxy for this tool. The transcription worker needs Python, FFmpeg, persistent storage, and the Whisper model cache, so it must run as a separate long-lived Docker/Python service. Do not run it in mock mode for public users.
+This release is static and browser-first. The DJAI Hostinger Node app serves HTML, CSS, JavaScript, and brand assets only. It does **not** receive uploaded media, run FFmpeg, store transcripts, or run Whisper on DJAI infrastructure.
 
-## Service configuration
+## What the visitor's browser needs
 
-Deploy this folder to a service that supports Docker, persistent volumes, and enough CPU/RAM for Whisper. Set these production values:
+- A modern browser with Web Audio decoding support. Supported media is limited to audio/video codecs the browser can open; MP3, WAV, M4A, MP4, OGG, and WebM are the intended starting formats.
+- JavaScript and network access for the first model download from Hugging Face's model hosting. Browser cache may make subsequent starts faster.
+- WebGPU is used when available. The worker falls back to WebAssembly/CPU when WebGPU cannot load.
 
-```text
-TRANSCRIPTION_BACKEND=auto
-WHISPER_MODEL=small
-WHISPER_DEVICE=cpu
-WHISPER_COMPUTE_TYPE=int8
-TRANSCRIBER_DATA_DIR=/app/data
-TRANSCRIBER_PUBLIC_BASE_PATH=/tools/video-to-text
-TRANSCRIBER_SESSION_COOKIE_PATH=/tools/video-to-text
-TRANSCRIBER_COOKIE_SECURE=1
-ALLOW_MOCK_TRANSCRIPTION=0
-```
+The tool intentionally handles one file at a time. This keeps anonymous public usage and memory pressure predictable. It offers editable timed text plus TXT, SRT, VTT, and JSON downloads; it does not currently offer server-only features such as FFmpeg cleanup, speaker diarization, shared history, DOCX, or PDF.
 
-Attach persistent storage to `/app/data` and the Hugging Face cache. The default image installs faster-whisper only, which keeps a CPU deployment practical. Speaker recognition is an optional, much larger PyTorch/pyannote layer: set `INSTALL_DIARIZATION=1` and `HF_TOKEN` only if it is genuinely offered. Otherwise the option returns a clear setup error instead of pretending to label speakers.
+## Hostinger configuration
 
-## Main-site configuration
-
-In the Hostinger Node application's environment, set:
-
-```text
-DJAI_TRANSCRIBER_ORIGIN=https://your-private-transcriber-service.example
-```
-
-The root server then proxies the public route to the service without exposing the service URL. Keep the public route on `www.djai.academy`; the transcriber sets its anonymous, HttpOnly cookie only for `/tools/video-to-text`.
+No `DJAI_TRANSCRIBER_ORIGIN`, Python service, Docker worker, upload volume, or database is required. Deploy the normal root application build. `server.js` serves the static route from `temp/siamese-cat-transcriber/browser` and exposes the shared DJAI assets beneath `/tools/video-to-text/static/`.
 
 ## Go-live gate
 
-1. Start the service with real `faster-whisper` installed and confirm `/api/system` reports it ready.
-2. Upload a short real MP4 through the public DJAI URL, not the service URL.
-3. Confirm two separate browsers cannot list, open, download, edit, retry, or delete each other's jobs.
-4. Confirm TXT, SRT, VTT, CSV, JSON, DOCX, and PDF exports work.
-5. Confirm `https://www.djai.academy/tools/video-to-text/` and `/en/` return 200, self-canonical pages with reciprocal `th`, `en`, and `x-default` alternates.
-6. Only then add both URLs to the DJAI sitemap and tools directory, then submit the canonical Thai URL in Search Console.
-
-The last gate matters: do not link to or index the route while `DJAI_TRANSCRIBER_ORIGIN` is unset, unreachable, or in test/mock mode.
+1. Build the root Hostinger application.
+2. Verify both public URLs return 200 and render self-canonicals plus reciprocal Thai/English `hreflang` tags.
+3. Test a short MP3 and an MP4 on current Chrome/Edge with WebGPU, then a CPU-only browser fallback.
+4. Use browser developer tools to verify media is not posted to `www.djai.academy`; first-use model traffic may go to Hugging Face.
+5. Verify TXT, SRT, VTT, and JSON downloads and edit a timed segment before export.
+6. Confirm the directory entries and sitemap are live, then submit the Thai canonical URL in Search Console.

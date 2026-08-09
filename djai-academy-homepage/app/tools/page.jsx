@@ -27,6 +27,13 @@ export const metadata = {
 
 const tools = [
   {
+    label: "Video to Text",
+    title: "แปลงวิดีโอเป็นข้อความฟรี ไม่ต้องสมัคร",
+    text: "ถอดเสียงวิดีโอหรือเสียงด้วย AI ใน browser ของคุณ ไม่ต้องใช้อีเมล และไฟล์ไม่ถูกอัปโหลดไปยัง DJAI ดาวน์โหลด TXT, SRT, VTT หรือ JSON ได้",
+    href: "https://www.djai.academy/tools/video-to-text/",
+    tags: ["Video to Text", "No Sign-Up", "Local AI"]
+  },
+  {
     label: "Open SEO Tool",
     title: "SEO Screaming Toad — SEO Crawler + MCP",
     text: "ตรวจ Technical SEO, JavaScript, Canonical, Hreflang, Sitemap และ Structured Data พร้อมหลักฐานในเครื่องและ MCP 23 เครื่องมือสำหรับ AI Agent",
@@ -95,6 +102,7 @@ const popularWorkflows = [
   ["PDF เป็น JPG", "ส่งออกทุกหน้าเป็นรูปหรือ ZIP", "https://www.djai.academy/tools/PDFTools/pdf-to-jpg/"],
   ["MP4 เป็น MP3", "ดึงเสียงจากวิดีโอใน browser", "https://www.djai.academy/tools/media/mp4-to-mp3/"],
   ["บีบอัดวิดีโอ", "ลดขนาด MP4 MOV และ WebM", "https://www.djai.academy/tools/media/compress-video/"],
+  ["แปลงวิดีโอเป็นข้อความ", "ถอดเสียงด้วย AI ใน browser ไม่ต้องสมัคร", "https://www.djai.academy/tools/video-to-text/"],
   ["DOCX เป็น PDF", "แปลง Word แบบ private", "https://www.djai.academy/tools/document/docx-to-pdf/"],
   ["PDF เป็นข้อความ", "ดึงข้อความตามช่วงหน้า", "https://www.djai.academy/tools/document/pdf-to-text/"],
   ["นับ Token เอกสาร", "ตรวจ context ก่อนใช้กับ AI", "https://www.djai.academy/tools/ai/token-counter/"],
