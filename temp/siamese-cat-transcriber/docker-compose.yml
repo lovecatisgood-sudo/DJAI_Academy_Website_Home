@@ -1,0 +1,27 @@
+services:
+  transcriber:
+    build:
+      context: .
+      args:
+        INSTALL_ML: "1"
+        INSTALL_DIARIZATION: "0"
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - whisper-cache:/root/.cache/huggingface
+    environment:
+      TRANSCRIPTION_BACKEND: auto
+      WHISPER_MODEL: small
+      WHISPER_DEVICE: auto
+      WHISPER_COMPUTE_TYPE: auto
+      MAX_UPLOAD_MB: 500
+      JOB_WORKERS: 2
+      HF_TOKEN: ${HF_TOKEN:-}
+      TRANSCRIBER_PUBLIC_BASE_PATH: /tools/video-to-text
+      TRANSCRIBER_SESSION_COOKIE_PATH: /tools/video-to-text
+      TRANSCRIBER_COOKIE_SECURE: "1"
+    restart: unless-stopped
+
+volumes:
+  whisper-cache:
