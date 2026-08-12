@@ -5,7 +5,7 @@ export const metadata = {
   description: "How the DJAI Academy website uses information, browser storage, Google Analytics, and Google AdSense cookies.",
   alternates: {
     canonical: "/privacy/en/",
-    languages: { th: "/privacy/", en: "/privacy/en/", "x-default": "/privacy/" }
+    languages: { th: "/privacy/", en: "/privacy/en/", vi: "/privacy/vi/", "x-default": "/privacy/" }
   }
 };
 

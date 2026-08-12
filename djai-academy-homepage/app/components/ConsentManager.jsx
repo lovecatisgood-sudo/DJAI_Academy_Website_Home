@@ -43,6 +43,24 @@ const copy = {
     back: "ย้อนกลับ",
     policy: "นโยบายความเป็นส่วนตัวและคุกกี้",
     dialogLabel: "การตั้งค่าความยินยอมคุกกี้"
+  },
+  vi: {
+    title: "Lựa chọn quyền riêng tư của bạn",
+    summary:
+      "Chúng tôi dùng cookie Google Analytics không bắt buộc để hiểu cách website được sử dụng và cookie Google AdSense để hiển thị, đo lường quảng cáo. Bạn có thể đồng ý tất cả, từ chối cookie không bắt buộc hoặc chọn theo từng nhóm.",
+    necessary: "Lưu trữ cần thiết",
+    necessaryHelp: "Luôn bật để ghi nhớ lựa chọn quyền riêng tư và hỗ trợ bảo mật website.",
+    analytics: "Phân tích",
+    analyticsHelp: "Giúp chúng tôi hiểu lượt truy cập, trang được sử dụng, vị trí gần đúng và thông tin về thiết bị, trình duyệt.",
+    advertising: "Quảng cáo",
+    advertisingHelp: "Cho phép Google hiển thị, giới hạn tần suất, bảo vệ và đo lường quảng cáo không cá nhân hóa.",
+    accept: "Đồng ý tất cả",
+    reject: "Từ chối cookie không bắt buộc",
+    customize: "Tùy chỉnh",
+    save: "Lưu lựa chọn",
+    back: "Quay lại",
+    policy: "Chính sách quyền riêng tư và cookie",
+    dialogLabel: "Cài đặt chấp thuận cookie"
   }
 };
 
@@ -223,7 +241,7 @@ export default function ConsentManager({ gaId, locale = "en" }) {
           </div>
         )}
 
-        <a className="consent-policy-link" href={locale === "th" ? "/privacy/" : "/privacy/en/"}>
+        <a className="consent-policy-link" href={locale === "th" ? "/privacy/" : `/privacy/${locale}/`}>
           {text.policy}
         </a>
 

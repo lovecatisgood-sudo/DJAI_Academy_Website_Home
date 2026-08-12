@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { oppositeLocale, pathFor, urlFor } from "../lib/i18n";
+import { localeLinksFor, LOCALE_LABELS, oppositeLocale, pathFor, urlFor } from "../lib/i18n";
 
 const navCopy = {
   en: {
@@ -32,6 +32,20 @@ const navCopy = {
     join: "เข้าร่วมชุมชน",
     switchLabel: "EN",
     brandLabel: "DJAI Academy"
+  },
+  vi: {
+    courses: "Khóa học",
+    community: "Cộng đồng",
+    development: "Phát triển sản phẩm",
+    services: "Dịch vụ",
+    promo: "Ưu đãi làm website",
+    portfolio: "Dự án",
+    tools: "Công cụ",
+    blog: "Bài viết",
+    camPdf: "Ứng dụng Cam PDF",
+    join: "Tham gia cộng đồng",
+    switchLabel: "Ngôn ngữ",
+    brandLabel: "DJAI Academy"
   }
 };
 
@@ -59,11 +73,18 @@ function DevelopmentDropdown({ copy, locale }) {
   );
 }
 
-export default function SiteHeader({ locale = "en", currentRoute = "home", languageHref }) {
+export default function SiteHeader({ locale = "en", currentRoute = "home", languageHref, languageHrefs }) {
   const [open, setOpen] = useState(false);
   const copy = navCopy[locale] || navCopy.en;
   const switchLocale = oppositeLocale(locale);
   const switchHref = languageHref || pathFor(currentRoute, switchLocale);
+  const localeLinks = languageHrefs
+    ? Object.entries(languageHrefs)
+        .filter(([candidate, href]) => candidate !== locale && href)
+        .map(([candidate, href]) => ({ locale: candidate, label: LOCALE_LABELS[candidate] || candidate.toUpperCase(), href }))
+    : languageHref
+      ? [{ locale: switchLocale, label: LOCALE_LABELS[switchLocale], href: switchHref }]
+      : localeLinksFor(currentRoute, locale);
   const headerLinks = [
     [copy.courses, urlFor("course", locale)],
     [copy.community, urlFor("community", locale)],
@@ -102,9 +123,13 @@ export default function SiteHeader({ locale = "en", currentRoute = "home", langu
             {label}
           </a>
         ))}
-        <a className="language-switch" href={switchHref} hrefLang={switchLocale}>
-          {copy.switchLabel}
-        </a>
+        <div className="language-options" aria-label={locale === "vi" ? "Chọn ngôn ngữ" : "Choose language"}>
+          {localeLinks.map((item) => (
+            <a className="language-switch" href={item.href} hrefLang={item.locale} key={item.locale}>
+              {item.locale.toUpperCase()}
+            </a>
+          ))}
+        </div>
         <a className="nav-subscribe" href={urlFor("community", locale)}>
           {copy.join}
         </a>

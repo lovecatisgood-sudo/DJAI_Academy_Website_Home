@@ -13,6 +13,7 @@ import {
 import { SIAMESE_CAT_DEV_CATEGORY } from "../../lib/blogStore";
 import { getThaiPostBySlug } from "../../lib/thBlogPosts";
 import { getBlogJourney } from "../../lib/blogJourneys";
+import { getViPostByEnglishSlug } from "../../lib/viBlogPosts";
 
 function formatDate(value) {
   return new Intl.DateTimeFormat("th-TH", {
@@ -39,6 +40,8 @@ export async function generateMetadata({ params }) {
   };
   if (englishSlug) {
     languages.en = `/blog/en/${englishSlug}/`;
+    const vietnamesePost = getViPostByEnglishSlug(englishSlug);
+    if (vietnamesePost) languages.vi = `/blog/vi/${vietnamesePost.slug}/`;
   }
 
   return {

@@ -11,6 +11,7 @@ export const metadata = {
     languages: {
       en: "/tools/en/",
       th: "/tools/",
+      vi: "/tools/vi/",
       "x-default": "/tools/"
     }
   },

@@ -22,10 +22,11 @@ export function proxy(request) {
   }
 
   const requestHeaders = new Headers(request.headers);
+  const isVietnamesePage = /(?:^|\/)vi(?:\/|$)/.test(pathname);
   const isEnglishPage = /(?:^|\/)en(?:\/|$)/.test(pathname)
     || pathname === "/Cam_PDF_Scan_Signer_QR-Gen"
     || pathname.startsWith("/Cam_PDF_Scan_Signer_QR-Gen/");
-  requestHeaders.set("x-djai-language", isEnglishPage ? "en" : "th");
+  requestHeaders.set("x-djai-language", isVietnamesePage ? "vi" : isEnglishPage ? "en" : "th");
 
   return NextResponse.next({
     request: {

@@ -26,6 +26,9 @@ const siteLinks = {
     development: "https://www.djai.academy/development/en/",
     blog: "https://www.djai.academy/blog/en/",
     switchLanguage: "https://www.djai.academy/course/"
+  },
+  vi: {
+    academy: "https://www.djai.academy/vi/", tools: "https://www.djai.academy/tools/vi/", service: "https://www.djai.academy/service/vi/", course: "https://www.djai.academy/course/vi/", community: "https://www.djai.academy/academy/vi/", portfolio: "https://www.djai.academy/portfolio/vi/", promo: "https://www.djai.academy/course/vi/#pricing", development: "https://www.djai.academy/development/vi/", blog: "https://www.djai.academy/blog/vi/", switchLanguage: "https://www.djai.academy/course/"
   }
 };
 
@@ -61,6 +64,9 @@ const labels = {
     close: "Close navigation",
     nav: "Main navigation",
     switchLanguage: "ไทย"
+  },
+  vi: {
+    development: "Phát triển sản phẩm", developmentAria: "Liên kết phát triển sản phẩm", services: "Dịch vụ", promo: "Ưu đãi", portfolio: "Dự án", courses: "Khóa học", community: "Cộng đồng", tools: "Công cụ", blog: "Bài viết", join: "Tham gia cộng đồng", open: "Mở menu", close: "Đóng menu", nav: "Điều hướng chính", switchLanguage: "ไทย"
   }
 };
 
@@ -87,7 +93,7 @@ function DevelopmentDropdown({ links, copy }) {
 
 export default function SiteHeader({ locale = "th", switchLanguageHref }) {
   const [open, setOpen] = useState(false);
-  const lang = locale === "en" ? "en" : "th";
+  const lang = ["th", "en", "vi"].includes(locale) ? locale : "th";
   const links = siteLinks[lang];
   const copy = labels[lang];
   const headerLinks = [
@@ -128,9 +134,7 @@ export default function SiteHeader({ locale = "th", switchLanguageHref }) {
             {label}
           </a>
         ))}
-        <a href={switchLanguageHref || links.switchLanguage} hrefLang={lang === "en" ? "th" : "en"}>
-          {copy.switchLanguage}
-        </a>
+        {lang === "vi" ? <><a href="https://www.djai.academy/course/" hrefLang="th">TH</a><a href="https://www.djai.academy/course/en/" hrefLang="en">EN</a></> : <a href={switchLanguageHref || links.switchLanguage} hrefLang={lang === "en" ? "th" : "en"}>{copy.switchLanguage}</a>}
         <a className="nav-subscribe" href={links.community}>
           {copy.join}
         </a>

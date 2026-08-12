@@ -52,7 +52,8 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
   const requestHeaders = await headers();
-  const language = requestHeaders.get("x-djai-language") === "en" ? "en" : "th";
+  const requestedLanguage = requestHeaders.get("x-djai-language");
+  const language = ["en", "vi"].includes(requestedLanguage) ? requestedLanguage : "th";
 
   return (
     <html lang={language}>

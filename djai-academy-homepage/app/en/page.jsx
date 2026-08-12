@@ -13,7 +13,8 @@ const links = {
   promo: "https://www.djai.academy/web_promo/",
   development: "https://www.djai.academy/development/en/",
   blog: "https://www.djai.academy/blog/en/",
-  thai: "https://www.djai.academy/"
+  thai: "https://www.djai.academy/",
+  vietnamese: "https://www.djai.academy/vi/"
 };
 
 const developmentLinks = [
@@ -156,9 +157,10 @@ function Header() {
             {label}
           </a>
         ))}
-        <a className="language-switch" href={links.thai} hrefLang="th">
-          ไทย
-        </a>
+        <div className="language-options" aria-label="Choose language">
+          <a className="language-switch" href={links.thai} hrefLang="th">TH</a>
+          <a className="language-switch" href={links.vietnamese} hrefLang="vi">VI</a>
+        </div>
         <a className="nav-subscribe" href={links.community}>
           Join Community
         </a>
