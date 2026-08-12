@@ -104,6 +104,15 @@ test("the shipped engine bundle contacts no third-party CDN", () => {
   assert.doesNotMatch(bundle, /staticimgly|unpkg\.com|cdn\.jsdelivr/i);
 });
 
+test("the shared engine accepts an explicit asset base and cancellation signal", () => {
+  const source = readFileSync(join(projectDir, "src", "engine", "remove.mjs"), "utf8");
+  const entry = readFileSync(join(projectDir, "src", "background-removal-entry.mjs"), "utf8");
+  assert.match(source, /options\.assetBase/);
+  assert.match(source, /options\.signal/);
+  assert.match(source, /fetch\(`\$\{assetBase\}\$\{model\.file\}`,[\s\S]*signal/);
+  assert.match(entry, /ENGINE_VERSION/);
+});
+
 test("public image-tool code has no donor canonical or runtime CDN", () => {
   const files = ["app.js", "index.html", "en/index.html"];
   for (const file of files) {

@@ -23,7 +23,13 @@ const MIME_TYPES = {
   '.txt': 'text/plain; charset=utf-8'
 };
 
-function sendFile(res, filePath) {
+const ENGINE_ORIGINS = new Set([
+  'https://school.djai.academy',
+  'http://localhost:5493',
+  'http://localhost:5494',
+]);
+
+function sendFile(req, res, filePath) {
   fs.stat(filePath, (statError, stat) => {
     if (statError || !stat.isFile()) {
       const notFound = path.join(PUBLIC_DIR, '404.html');
@@ -39,7 +45,11 @@ function sendFile(res, filePath) {
       'Cache-Control': isHtml ? 'no-cache' : 'public, max-age=86400',
       'X-Content-Type-Options': 'nosniff',
       'Referrer-Policy': 'strict-origin-when-cross-origin',
-      'Permissions-Policy': 'camera=(), microphone=(), geolocation=()'
+      'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
+      'Vary': 'Origin',
+      ...(filePath.includes(`${path.sep}vendor${path.sep}`) && ENGINE_ORIGINS.has(req.headers.origin)
+        ? { 'Access-Control-Allow-Origin': req.headers.origin }
+        : {})
     });
     fs.createReadStream(filePath).pipe(res);
   });
@@ -77,7 +87,7 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  sendFile(res, filePath);
+  sendFile(req, res, filePath);
 });
 
 server.listen(PORT, '0.0.0.0', () => {

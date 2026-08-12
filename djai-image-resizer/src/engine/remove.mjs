@@ -5,7 +5,16 @@ import { toTensor } from "./preprocess.mjs";
 import { toMask } from "./postprocess.mjs";
 import { selectModel, writeMask, applyAlpha } from "./composite.mjs";
 
-const assetBase = () => new URL("vendor/", document.baseURI).toString();
+const defaultAssetBase = () => new URL("vendor/", document.baseURI).toString();
+
+const normalizeAssetBase = (value) => {
+  const url = new URL(value || defaultAssetBase(), document.baseURI).toString();
+  return url.endsWith("/") ? url : `${url}/`;
+};
+
+const throwIfAborted = (signal) => {
+  if (signal?.aborted) throw signal.reason || new DOMException("Aborted", "AbortError");
+};
 
 // SharedArrayBuffer is unavailable without cross-origin isolation, so threads
 // would silently fall back anyway. Ask for one up front to skip the warning.
@@ -16,12 +25,14 @@ ort.env.wasm.simd = true;
 // the 320x320 u2netp session and fail on tensor shape.
 const sessions = new Map();
 
-const loadSession = (model, onProgress) => {
-  const cached = sessions.get(model.file);
+const loadSession = (model, assetBase, onProgress, signal) => {
+  const sessionKey = `${assetBase}${model.file}`;
+  const cached = sessions.get(sessionKey);
   if (cached) return cached;
-  ort.env.wasm.wasmPaths = `${assetBase()}ort/`;
+  ort.env.wasm.wasmPaths = `${assetBase}ort/`;
   const sessionPromise = (async () => {
-    const response = await fetch(`${assetBase()}${model.file}`);
+    throwIfAborted(signal);
+    const response = await fetch(`${assetBase}${model.file}`, { signal });
     if (!response.ok) throw new Error(`model ${response.status}`);
     const total = Number(response.headers.get("content-length")) || 0;
     const chunks = [];
@@ -30,6 +41,7 @@ const loadSession = (model, onProgress) => {
     for (;;) {
       const { done, value } = await reader.read();
       if (done) break;
+      throwIfAborted(signal);
       chunks.push(value);
       loaded += value.length;
       if (total) onProgress?.("fetch:model", loaded, total);
@@ -40,12 +52,13 @@ const loadSession = (model, onProgress) => {
       buffer.set(chunk, offset);
       offset += chunk.length;
     }
+    throwIfAborted(signal);
     return ort.InferenceSession.create(buffer, { executionProviders: ["wasm"] });
   })().catch((error) => {
-    sessions.delete(model.file);
+    sessions.delete(sessionKey);
     throw error;
   });
-  sessions.set(model.file, sessionPromise);
+  sessions.set(sessionKey, sessionPromise);
   return sessionPromise;
 };
 
@@ -73,7 +86,10 @@ const release = (...canvases) => {
 
 export const remove = async (image, options = {}) => {
   const model = selectModel(options.model);
-  const session = await loadSession(model, options.progress);
+  const assetBase = normalizeAssetBase(options.assetBase);
+  throwIfAborted(options.signal);
+  const session = await loadSession(model, assetBase, options.progress, options.signal);
+  throwIfAborted(options.signal);
   const bitmap = await createImageBitmap(image);
   let smallCanvas = null;
   let maskCanvas = null;
@@ -89,7 +105,9 @@ export const remove = async (image, options = {}) => {
     release(smallCanvas);
 
     // 2. Run inference. U^2-Net exposes several side outputs; d0 is first.
+    throwIfAborted(options.signal);
     const outputs = await session.run({ [session.inputNames[0]]: tensor });
+    throwIfAborted(options.signal);
     const mask = toMask(outputs[session.outputNames[0]].data);
 
     // 3. Paint the mask so the canvas resamples it back to full size for us.
@@ -112,6 +130,7 @@ export const remove = async (image, options = {}) => {
     out.ctx.putImageData(full, 0, 0);
     release(maskCanvas, scaledMaskCanvas);
 
+    throwIfAborted(options.signal);
     return await new Promise((resolve, reject) => {
       outCanvas.toBlob((blob) => {
         release(outCanvas);

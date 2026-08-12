@@ -206,8 +206,19 @@ function serveStaticFile(req, res, filePath) {
     "X-Frame-Options": "SAMEORIGIN",
     "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
     "Permissions-Policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
-    "Vary": "Accept-Encoding"
+    "Vary": "Accept-Encoding, Origin"
   };
+  const engineOrigins = new Set([
+    "https://school.djai.academy",
+    "http://localhost:5493",
+    "http://localhost:5494"
+  ]);
+  if (
+    filePath.startsWith(path.join(rootDir, "djai-image-resizer", "public", "vendor"))
+    && engineOrigins.has(req.headers.origin)
+  ) {
+    headers["Access-Control-Allow-Origin"] = req.headers.origin;
+  }
   if (useCompression && acceptsBrotli) headers["Content-Encoding"] = "br";
   else if (useCompression && acceptsGzip) headers["Content-Encoding"] = "gzip";
   res.writeHead(200, headers);
