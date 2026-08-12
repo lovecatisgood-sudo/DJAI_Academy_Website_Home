@@ -11,6 +11,7 @@
     "build": "node scripts/build-hostinger.mjs",
     "prestart": "node scripts/ensure-hostinger-build.mjs",
     "start": "node server.js",
+    "test:supervisor": "node --test tests/service-supervisor.test.js",
     "verify:hostinger": "node scripts/audit-hostinger.mjs",
     "hostinger:build": "node scripts/build-hostinger.mjs",
     "hostinger:start": "node server.js"
