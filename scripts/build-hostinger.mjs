@@ -92,7 +92,9 @@ const projects = [
       "public/assets/siamese-cat-dev-transparent.webp",
       "public/vendor/background-removal.mjs",
       "public/vendor/heic2any.min.js",
-      "public/vendor/jszip.min.js"
+      "public/vendor/jszip.min.js",
+      "public/vendor/models/u2netp.onnx",
+      "public/vendor/ort/ort-wasm-simd-threaded.wasm"
     ]
   },
   {
