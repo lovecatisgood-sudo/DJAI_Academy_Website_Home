@@ -13,6 +13,7 @@ import {
 import { SIAMESE_CAT_DEV_CATEGORY, getPostBySlug } from "../../../lib/blogStore";
 import { getSeededThaiPostBySlug } from "../../../lib/thBlogPosts";
 import { getBlogJourney } from "../../../lib/blogJourneys";
+import { getViPostByEnglishSlug } from "../../../lib/viBlogPosts";
 
 export const dynamic = "force-dynamic";
 
@@ -45,6 +46,8 @@ export async function generateMetadata({ params }) {
   } else {
     languages["x-default"] = `/blog/en/${post.slug}/`;
   }
+  const vietnamesePost = getViPostByEnglishSlug(post.slug);
+  if (vietnamesePost) languages.vi = `/blog/vi/${vietnamesePost.slug}/`;
 
   return {
     title: post.seoTitle || post.title,

@@ -15,12 +15,13 @@ function shareUrls(url, title) {
 export default function ShareButtons({ url, title, locale = "en", compact = false }) {
   const [copied, setCopied] = useState(false);
   const en = locale === "en";
+  const vi = locale === "vi";
   const labels = {
-    title: en ? "Share this page" : "แชร์หน้านี้",
+    title: vi ? "Chia sẻ trang này" : en ? "Share this page" : "แชร์หน้านี้",
     facebook: "Facebook",
     x: "X",
     whatsapp: "WhatsApp",
-    copy: copied ? (en ? "Copied" : "คัดลอกแล้ว") : (en ? "Copy link" : "คัดลอกลิงก์")
+    copy: copied ? (vi ? "Đã sao chép" : en ? "Copied" : "คัดลอกแล้ว") : (vi ? "Sao chép liên kết" : en ? "Copy link" : "คัดลอกลิงก์")
   };
   const urls = shareUrls(url, title);
 
@@ -30,7 +31,7 @@ export default function ShareButtons({ url, title, locale = "en", compact = fals
       setCopied(true);
       window.setTimeout(() => setCopied(false), 1800);
     } catch {
-      window.prompt(en ? "Copy this link:" : "คัดลอกลิงก์นี้:", url);
+      window.prompt(vi ? "Sao chép liên kết này:" : en ? "Copy this link:" : "คัดลอกลิงก์นี้:", url);
     }
   }
 

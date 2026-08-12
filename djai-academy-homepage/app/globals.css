@@ -104,6 +104,12 @@ textarea {
   transition: color 180ms ease, opacity 180ms ease;
 }
 
+.language-options {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
 .nav a:hover,
 .nav-subscribe:hover,
 .language-switch:hover {

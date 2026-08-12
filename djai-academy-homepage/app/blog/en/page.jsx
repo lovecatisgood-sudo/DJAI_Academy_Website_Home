@@ -15,6 +15,7 @@ const defaultMetadata = {
     languages: {
       en: "/blog/en/",
       th: "/blog/",
+      vi: "/blog/vi/",
       "x-default": "/blog/"
     }
   },

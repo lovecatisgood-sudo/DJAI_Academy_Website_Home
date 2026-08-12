@@ -26,15 +26,20 @@ const mediaToolSlugs = [
 const publicRoutes = [
   "/",
   "/en/",
+  "/vi/",
   "/portfolio/",
   "/portfolio/en/",
+  "/portfolio/vi/",
   "/development/",
   "/development/en/",
+  "/development/vi/",
   "/web_promo/",
   "/service/",
   "/service/en/",
+  "/service/vi/",
   "/tools/",
   "/tools/en/",
+  "/tools/vi/",
   "/tools/seo-screaming-toad/",
   "/tools/seo-screaming-toad/en/",
   "/tools/qrgen/",
@@ -112,6 +117,10 @@ const publicRoutes = [
   ]),
   "/blog/",
   "/blog/en/",
+  "/blog/vi/",
+  "/blog/vi/vibe-coding-cho-nguoi-moi/",
+  "/blog/vi/nen-chon-jpg-png-hay-webp/",
+  "/blog/vi/tao-ma-qr-cho-menu-su-kien-website/",
   "/blog/how-to-create-free-qr-code/",
   "/blog/en/how-to-create-free-qr-code/",
   "/blog/how-to-convert-jpg-png-webp-free/",
@@ -120,8 +129,11 @@ const publicRoutes = [
   "/blog/en/compress-image-to-100kb-500kb/",
   "/course/",
   "/course/en/",
+  "/course/vi/",
   "/course/detail/",
   "/course/detail/en/",
+  "/course/detail/vi/",
+  "/privacy/vi/",
   "/siamese_cat/",
   "/siamese_cat/en/",
   "/siamese_cat/dev/",
@@ -172,7 +184,7 @@ const slashCanonicalRoutes = publicRoutes.filter((route) =>
   && slashCanonicalPrefixes.some((prefix) => route === prefix || route.startsWith(prefix))
   && !route.startsWith("/siamese_cat/dev/blog/")
 );
-const accountOnboardingRedirects = ["/academy/", "/academy/en/"];
+const accountOnboardingRedirects = ["/academy/", "/academy/en/", "/academy/vi/"];
 const moneyMakingProductRegistrationUrl =
   "https://school.djai.academy/signup?intent=free-course&course_id=money-making-product-2026-08-22";
 const auditPassword = "djai-local-deployment-audit";
@@ -294,7 +306,9 @@ async function verify() {
     { route: "/course/", accountCopy: "ต้องมีบัญชี DJAI School" },
     { route: "/course/en/", accountCopy: "A free DJAI School account" },
     { route: "/course/detail/", accountCopy: "ต้องมีบัญชี DJAI School" },
-    { route: "/course/detail/en/", accountCopy: "A free DJAI School account" }
+    { route: "/course/detail/en/", accountCopy: "A free DJAI School account" },
+    { route: "/course/vi/", accountCopy: "Cần tài khoản DJAI School miễn phí" },
+    { route: "/course/detail/vi/", accountCopy: "Cần tài khoản DJAI School miễn phí" }
   ];
   const courseSignupHref =
     "https://school.djai.academy/signup?intent=offline-course&amp;course_id=ai-masterclass";
@@ -399,6 +413,29 @@ async function verify() {
     failures.push("/blog/en/?category=Tutorial: noncanonical filter must not emit hreflang");
   }
 
+  const vietnameseSeoChecks = [
+    ["/vi/", "DJAI Academy"],
+    ["/portfolio/vi/", "Sản phẩm DJAI đã tham gia xây dựng"],
+    ["/development/vi/", "Mang bài toán đến. Chúng ta sẽ xác định thứ cần xây trước."],
+    ["/service/vi/", "Phát triển phần mềm theo bài toán, không theo danh sách công nghệ."],
+    ["/tools/vi/", "Xử lý việc nhỏ ngay, không cần cài thêm phần mềm"],
+    ["/blog/vi/", "Học AI bằng những quyết định bạn phải đưa ra khi xây thật"],
+    ["/privacy/vi/", "Chính sách quyền riêng tư và cookie"],
+    ["/course/vi/", "Tự xây một sản phẩm bằng AI"],
+    ["/course/detail/vi/", "Từ ý tưởng đến sản phẩm chạy được"],
+    ["/blog/vi/vibe-coding-cho-nguoi-moi/", "Vibe coding cho người mới"],
+    ["/blog/vi/nen-chon-jpg-png-hay-webp/", "Nên chọn JPG, PNG hay WebP"],
+    ["/blog/vi/tao-ma-qr-cho-menu-su-kien-website/", "Tạo mã QR cho menu, sự kiện hoặc website"]
+  ];
+  for (const [route, heading] of vietnameseSeoChecks) {
+    const html = await fetch(`${origin}${route}`).then((response) => response.text());
+    if (!html.includes('<html lang="vi"')) failures.push(`${route}: expected html lang=vi`);
+    if (!html.includes(`<link rel="canonical" href="https://www.djai.academy${route}"`)) failures.push(`${route}: missing Vietnamese self-canonical`);
+    if (!new RegExp('hreflang=["\']vi["\']', "i").test(html)) failures.push(`${route}: missing self-referencing vi hreflang`);
+    if (!html.includes("<h1") || !html.includes(heading)) failures.push(`${route}: missing expected Vietnamese H1 copy`);
+    if (html.includes('<meta name="robots" content="noindex')) failures.push(`${route}: unexpectedly noindexed`);
+  }
+
   const llmsResponse = await fetch(`${origin}/llms.txt`);
   const llmsBody = await llmsResponse.text();
   if (!llmsBody.includes("https://www.djai.academy/web_promo/")) {
@@ -443,6 +480,13 @@ async function verify() {
     if (!sitemapBody.includes(`https://www.djai.academy${path}`)) {
       failures.push(`/sitemap.xml: missing money-making product course landing page ${path}`);
     }
+  }
+  for (const path of [
+    "/vi/", "/portfolio/vi/", "/development/vi/", "/service/vi/", "/privacy/vi/", "/tools/vi/",
+    "/course/vi/", "/course/detail/vi/", "/blog/vi/", "/blog/vi/vibe-coding-cho-nguoi-moi/",
+    "/blog/vi/nen-chon-jpg-png-hay-webp/", "/blog/vi/tao-ma-qr-cho-menu-su-kien-website/"
+  ]) {
+    if (!sitemapBody.includes(`https://www.djai.academy${path}`)) failures.push(`/sitemap.xml: missing Vietnamese URL ${path}`);
   }
   if (sitemapBody.includes("/MONEY_MAKING_PRODUCT/")) {
     failures.push("/sitemap.xml: redirect-only campaign URL must not be submitted");
@@ -507,8 +551,9 @@ async function verify() {
     if (headings.length !== 1) failures.push(`${route}: expected one non-empty H1, received ${headings.length}`);
 
     const htmlTag = html.match(/<html\b[^>]*>/i)?.[0] || "";
-    if (!/^(?:th|en)(?:-|$)/i.test(getHtmlAttribute(htmlTag, "lang"))) {
-      failures.push(`${route}: missing a valid Thai or English html lang`);
+    const documentLanguage = getHtmlAttribute(htmlTag, "lang").toLowerCase().split("-")[0];
+    if (!["th", "en", "vi"].includes(documentLanguage)) {
+      failures.push(`${route}: missing a valid Thai, English, or Vietnamese html lang`);
     }
 
     const linkTags = [...html.matchAll(/<link\b[^>]*>/gi)].map((match) => match[0]);
@@ -529,7 +574,7 @@ async function verify() {
       if (alternates.has(language)) failures.push(`${route}: duplicate ${language} hreflang`);
       alternates.set(language, href);
     }
-    sitemapAlternates.set(productionUrl, alternates);
+    sitemapAlternates.set(productionUrl, { alternates, documentLanguage });
 
     for (const script of html.matchAll(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)) {
       try {
@@ -540,20 +585,24 @@ async function verify() {
     }
   }
 
-  for (const [productionUrl, alternates] of sitemapAlternates) {
+  for (const [productionUrl, page] of sitemapAlternates) {
+    const { alternates, documentLanguage } = page;
     if (alternates.size === 0) continue;
-    for (const language of ["th", "en", "x-default"]) {
-      const target = alternates.get(language);
-      if (!target) {
-        failures.push(`${new URL(productionUrl).pathname}: missing ${language} hreflang`);
-      } else if (!sitemapUrlSet.has(target)) {
+    if (alternates.get(documentLanguage) !== productionUrl) {
+      failures.push(`${new URL(productionUrl).pathname}: missing self-referencing ${documentLanguage} hreflang`);
+    }
+    const languageTargets = [...alternates.entries()].filter(([language]) => language !== "x-default");
+    if (languageTargets.length > 1 && !alternates.has("x-default")) {
+      failures.push(`${new URL(productionUrl).pathname}: multilingual cluster is missing x-default hreflang`);
+    }
+    for (const [language, target] of alternates) {
+      if (!sitemapUrlSet.has(target)) {
         failures.push(`${new URL(productionUrl).pathname}: ${language} hreflang is not a sitemap URL: ${target}`);
       }
     }
-    for (const language of ["th", "en"]) {
-      const target = alternates.get(language);
-      const targetAlternates = target ? sitemapAlternates.get(target) : null;
-      if (target && (!targetAlternates || targetAlternates.get("th") !== alternates.get("th") || targetAlternates.get("en") !== alternates.get("en"))) {
+    for (const [language, target] of languageTargets) {
+      const targetAlternates = sitemapAlternates.get(target)?.alternates;
+      if (!targetAlternates || targetAlternates.get(documentLanguage) !== productionUrl) {
         failures.push(`${new URL(productionUrl).pathname}: ${language} hreflang target is not reciprocal: ${target}`);
       }
     }

@@ -27,6 +27,7 @@ export const metadata = {
     languages: {
       th: "/course/",
       en: "/course/en/",
+      vi: "/course/vi/",
       "x-default": "/course/"
     }
   }

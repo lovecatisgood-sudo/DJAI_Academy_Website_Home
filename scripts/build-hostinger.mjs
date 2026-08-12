@@ -45,8 +45,10 @@ const projects = [
     outputs: [
       "out/index.html",
       "out/en/index.html",
+      "out/vi/index.html",
       "out/detail/index.html",
       "out/detail/en/index.html",
+      "out/detail/vi/index.html",
       "out/assets/DJAI-logo-small.webp",
       "out/assets/Instructor-DJAI-display.webp"
     ]
@@ -252,6 +254,16 @@ function setCourseExportLanguages(project) {
     const updatedHtml = html.replace('<html lang="th">', '<html lang="en">');
     if (updatedHtml === html) {
       throw new Error(`DJAI course could not set English document language: ${relativePath}`);
+    }
+    writeFileSync(outputPath, updatedHtml);
+  }
+
+  for (const relativePath of ["out/vi/index.html", "out/detail/vi/index.html"]) {
+    const outputPath = join(rootDir, project.dir, relativePath);
+    const html = readFileSync(outputPath, "utf8");
+    const updatedHtml = html.replace('<html lang="th">', '<html lang="vi">');
+    if (updatedHtml === html) {
+      throw new Error(`DJAI course could not set Vietnamese document language: ${relativePath}`);
     }
     writeFileSync(outputPath, updatedHtml);
   }
