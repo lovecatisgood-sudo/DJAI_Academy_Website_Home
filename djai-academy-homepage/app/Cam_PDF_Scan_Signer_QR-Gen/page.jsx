@@ -9,7 +9,10 @@ export const metadata = {
   title: "Cam PDF Scan Signer QR Gen for Android | DJAI",
   description:
     "Scan documents, organize files, edit and sign PDFs, create QR codes, and export clean files from one Android app by DJAI.",
-  alternates: { canonical: APP_PATH },
+  alternates: {
+    canonical: APP_PATH,
+    languages: { en: APP_PATH, vi: `${APP_PATH}vi/`, "x-default": APP_PATH }
+  },
   openGraph: {
     title: "Cam PDF Scan Signer QR Gen",
     description:

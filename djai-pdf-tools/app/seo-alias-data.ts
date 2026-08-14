@@ -13,8 +13,8 @@ export type PdfSeoPage = {
 export type PdfSeoAlias = {
   slug: string;
   tool: ToolSlug;
-  keywords: Record<Language, string[]>;
-  copy: Record<Language, PdfSeoPage>;
+  keywords: Record<Exclude<Language, "vi">, string[]>;
+  copy: Record<Exclude<Language, "vi">, PdfSeoPage>;
   initialOptions?: Partial<ProcessingOptions>;
   acceptedTypes?: string[];
   accept?: string;
@@ -142,6 +142,36 @@ export const pdfSeoAliases: Record<string, PdfSeoAlias> = {
 
 export const pdfSeoAliasSlugs = Object.keys(pdfSeoAliases);
 
+const vietnameseAliasNames: Record<string, [string, string, string]> = {
+  "jpg-to-pdf": ["JPG sang PDF", "Chuyển JPG sang PDF online miễn phí", "Ghép và sắp xếp nhiều ảnh JPG thành một PDF ngay trong trình duyệt mà không upload file."],
+  "pdf-to-jpg": ["PDF sang JPG", "Chuyển PDF sang JPG online miễn phí", "Xuất từng trang PDF thành ảnh JPG rồi tải riêng hoặc tải trong một tệp ZIP."],
+  "png-to-pdf": ["PNG sang PDF", "Chuyển PNG sang PDF online miễn phí", "Ghép một hoặc nhiều ảnh PNG thành PDF ngay trong trình duyệt mà không upload file."],
+  "webp-to-pdf": ["WebP sang PDF", "Chuyển WebP sang PDF online miễn phí", "Chuyển và ghép ảnh WebP thành PDF riêng tư ngay trên thiết bị của bạn."],
+  "pdf-to-png": ["PDF sang PNG", "Chuyển PDF sang PNG online miễn phí", "Xuất các trang PDF thành ảnh PNG sắc nét mà không gửi tài liệu lên máy chủ."],
+  "extract-pdf-pages": ["Trích xuất trang PDF", "Trích xuất trang từ PDF miễn phí", "Chọn trang hoặc khoảng trang và tạo một PDF mới chỉ chứa nội dung bạn cần."],
+  "delete-pages-from-pdf": ["Xóa trang PDF", "Xóa trang khỏi PDF online miễn phí", "Xóa các trang không cần thiết và tạo bản PDF mới ngay trong trình duyệt."],
+  "reorder-pdf-pages": ["Sắp xếp trang PDF", "Sắp xếp lại trang PDF online miễn phí", "Nhập thứ tự trang mong muốn rồi tạo một PDF mới mà không sửa tệp gốc."]
+};
+
+export function pdfAliasCopy(alias: PdfSeoAlias, language: Language): PdfSeoPage {
+  if (language !== "vi") return alias.copy[language];
+  const [label, title, description] = vietnameseAliasNames[alias.slug];
+  return {
+    slug: alias.slug, label, title, short: description, description,
+    guide: {
+      title: `Cách ${label.toLowerCase()}`,
+      intro: "Tệp được xử lý cục bộ trong trình duyệt. Hãy kiểm tra kết quả trước khi dùng cho công việc quan trọng.",
+      steps: ["Chọn tệp từ thiết bị", "Kiểm tra và điều chỉnh tùy chọn", "Xử lý rồi tải kết quả"]
+    }
+  };
+}
+
+export function pdfAliasKeywords(alias: PdfSeoAlias, language: Language) {
+  if (language !== "vi") return alias.keywords[language];
+  const [label] = vietnameseAliasNames[alias.slug];
+  return [label.toLowerCase(), `${label.toLowerCase()} miễn phí`, `${label.toLowerCase()} online`];
+}
+
 export function pdfAliasHref(alias: PdfSeoAlias, language: Language) {
-  return `/tools/PDFTools/${alias.slug}/${language === "en" ? "en/" : ""}`;
+  return `/tools/PDFTools/${alias.slug}/${language === "th" ? "" : `${language}/`}`;
 }

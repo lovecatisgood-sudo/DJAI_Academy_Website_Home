@@ -7,7 +7,8 @@ import { categoryHref, toolHref, toolsFor, type Language, type ToolDefinition } 
 
 export default function ToolPage({ tool, language }: { tool: ToolDefinition; language: Language }) {
   const en = language === "en";
-  const specializedGuidance = {
+  const vi = language === "vi";
+  const specializedGuidance = vi ? null : ({
     "docx-to-markdown": en
       ? {
           eyebrow: "STRUCTURED OUTPUT",
@@ -42,13 +43,17 @@ export default function ToolPage({ tool, language }: { tool: ToolDefinition; lan
           limit:
             "เมื่อ formatting ถูกตัด table อาจกลายเป็นข้อความตามลำดับการอ่านและความสัมพันธ์ทางภาพอาจหายไป หาก heading, list, link หรือ table มีความหมาย ควรใช้เครื่องมือ DOCX เป็น Markdown แทน"
         }
-  }[tool.slug];
+  }[tool.slug]);
   const canonical = `https://www.djai.academy${toolHref(tool, language)}`;
   const tokenCounter = tool.slug === "token-counter";
-  const steps = tokenCounter
+  const steps = vi ? ["Chọn file được hỗ trợ hoặc dán văn bản", "Kiểm tra các thiết lập phù hợp với kết quả cần dùng", "Xử lý cục bộ rồi tải hoặc sao chép kết quả"] : tokenCounter
     ? (en ? ["Paste text or import a supported document", "Choose a tokenizer encoding and context size", "Review live tokens, words, characters, context use, and cost"] : ["วางข้อความหรือนำเข้าเอกสารที่รองรับ", "เลือก tokenizer encoding และขนาด context", "ดู token คำ ตัวอักษร context และค่าใช้จ่ายแบบ live"])
     : (en ? ["Choose a supported file or paste text", "Review the relevant settings", "Process locally and download or copy the result"] : ["เลือกไฟล์ที่รองรับหรือวางข้อความ", "ตรวจตัวเลือกที่เกี่ยวข้อง", "ประมวลผลในเครื่องแล้วดาวน์โหลดหรือคัดลอกผลลัพธ์"]);
-  const faq = tokenCounter ? (en ? [
+  const faq = vi ? [
+    ["File hoặc văn bản có bị upload không?", "Không. Dữ liệu được đọc và xử lý trong bộ nhớ trình duyệt trên thiết bị của bạn."],
+    ["Công cụ có miễn phí không?", "Có. Xử lý cốt lõi miễn phí, không cần tài khoản và không thêm watermark."],
+    ["Tại sao định dạng có thể thay đổi?", "Mỗi định dạng lưu cấu trúc khác nhau. Hãy kiểm tra kết quả trước khi dùng cho tài liệu quan trọng."]
+  ] : tokenCounter ? (en ? [
     ["Does the token counter upload my text?", "No. Text and imported documents are read and counted locally in your browser."],
     ["Why is a token count different from a word count?", "AI tokenizers split text into model-readable units. One word can use one or several tokens, and the ratio varies by language and content."],
     ["Can it count Thai, Chinese, Japanese, and English words?", "Yes. Word and character statistics use browser language segmentation for multilingual text, while AI tokens use the selected tokenizer encoding."],
@@ -72,21 +77,21 @@ export default function ToolPage({ tool, language }: { tool: ToolDefinition; lan
     { "@context": "https://schema.org", "@type": "SoftwareApplication", name: tool.title[language], description: tool.description[language], url: canonical, applicationCategory: "UtilitiesApplication", operatingSystem: "Web browser", isAccessibleForFree: true, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, publisher: { "@type": "Organization", name: "DJAI Academy", url: "https://www.djai.academy/" } },
     { "@context": "https://schema.org", "@type": "HowTo", name: tool.title[language], totalTime: "PT3M", step: steps.map((text, index) => ({ "@type": "HowToStep", position: index + 1, name: text, text })) },
     { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faq.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) },
-    { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "DJAI Academy", item: en ? "https://www.djai.academy/en/" : "https://www.djai.academy/" }, { "@type": "ListItem", position: 2, name: en ? "All Tools" : "เครื่องมือทั้งหมด", item: en ? "https://www.djai.academy/tools/en/" : "https://www.djai.academy/tools/" }, { "@type": "ListItem", position: 3, name: tool.category, item: `https://www.djai.academy${categoryHref(tool.category, language)}` }, { "@type": "ListItem", position: 4, name: tool.title[language], item: canonical }] }
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "DJAI Academy", item: vi ? "https://www.djai.academy/vi/" : en ? "https://www.djai.academy/en/" : "https://www.djai.academy/" }, { "@type": "ListItem", position: 2, name: vi ? "Tất cả công cụ" : en ? "All Tools" : "เครื่องมือทั้งหมด", item: vi ? "https://www.djai.academy/tools/vi/" : en ? "https://www.djai.academy/tools/en/" : "https://www.djai.academy/tools/" }, { "@type": "ListItem", position: 3, name: tool.category, item: `https://www.djai.academy${categoryHref(tool.category, language)}` }, { "@type": "ListItem", position: 4, name: tool.title[language], item: canonical }] }
   ];
   return <main>
     <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
     <SuiteHeader category={tool.category} language={language} tool={tool} />
-    <section className="tool-intro"><a href={categoryHref(tool.category, language)}><ArrowLeft />{en ? `Back to ${tool.category} tools` : "กลับไปหน้าเครื่องมือ"}</a><p className="eyebrow">{tool.label[language]}</p><h1>{tool.title[language]}</h1><p>{tool.description[language]}</p><ShareButtons url={canonical} title={tool.title[language]} language={language} compact /><div><span><ShieldCheck />{en ? "Private browser processing" : "ประมวลผลแบบ private ใน browser"}</span><span>{en ? "No account" : "ไม่ต้องสมัคร"}</span><span>{en ? "Free" : "ใช้ฟรี"}</span></div></section>
+    <section className="tool-intro"><a href={categoryHref(tool.category, language)}><ArrowLeft />{vi ? "Quay lại nhóm công cụ" : en ? `Back to ${tool.category} tools` : "กลับไปหน้าเครื่องมือ"}</a><p className="eyebrow">{tool.label[language]}</p><h1>{tool.title[language]}</h1><p>{tool.description[language]}</p><ShareButtons url={canonical} title={tool.title[language]} language={language} compact /><div><span><ShieldCheck />{vi ? "Xử lý riêng tư trong trình duyệt" : en ? "Private browser processing" : "ประมวลผลแบบ private ใน browser"}</span><span>{vi ? "Không cần tài khoản" : en ? "No account" : "ไม่ต้องสมัคร"}</span><span>{vi ? "Miễn phí" : en ? "Free" : "ใช้ฟรี"}</span></div></section>
     <AdSenseAd label="Tool advertisement" />
     <ToolWorkspace tool={tool} language={language} />
     <AdSenseAd label="Tool advertisement" variant="display2" />
     <CamPdfAppCallout language={language} />
-    <section className="how-to"><div><p className="eyebrow">HOW TO</p><h2>{en ? `How to use ${tool.label.en}` : `วิธีใช้ ${tool.label.th}`}</h2><p>{tool.intent[language]}</p></div><ol>{steps.map((step, index) => <li key={step}><span>{index + 1}</span><p>{step}</p></li>)}</ol></section>
+    <section className="how-to"><div><p className="eyebrow">HOW TO</p><h2>{vi ? `Cách dùng ${tool.label.vi}` : en ? `How to use ${tool.label.en}` : `วิธีใช้ ${tool.label.th}`}</h2><p>{tool.intent[language]}</p></div><ol>{steps.map((step, index) => <li key={step}><span>{index + 1}</span><p>{step}</p></li>)}</ol></section>
     {specializedGuidance ? <section className="how-to tool-specific-guidance"><div><p className="eyebrow">{specializedGuidance.eyebrow}</p><h2>{specializedGuidance.title}</h2><p>{specializedGuidance.copy}</p></div><div><p>{specializedGuidance.limit}</p></div></section> : null}
-    <section className="related-tools" data-tool-discovery><div className="section-heading"><p className="eyebrow">{en ? "CONTINUE WITH" : "ทำงานต่อ"}</p><h2>{en ? "Related free tools" : "เครื่องมือฟรีที่เกี่ยวข้อง"}</h2></div><div>{related.map((item) => <a href={toolHref(item, language)} key={item.slug}><strong>{item.label[language]}</strong><span>{item.intent[language]}</span><ArrowRight /></a>)}</div></section>
+    <section className="related-tools" data-tool-discovery><div className="section-heading"><p className="eyebrow">{vi ? "TIẾP TỤC VỚI" : en ? "CONTINUE WITH" : "ทำงานต่อ"}</p><h2>{vi ? "Công cụ miễn phí liên quan" : en ? "Related free tools" : "เครื่องมือฟรีที่เกี่ยวข้อง"}</h2></div><div>{related.map((item) => <a href={toolHref(item, language)} key={item.slug}><strong>{item.label[language]}</strong><span>{item.intent[language]}</span><ArrowRight /></a>)}</div></section>
     <AdSenseAd label="Related content advertisement" variant="multiplex" />
-    <section className="faq-section"><div><p className="eyebrow">FAQ</p><h2>{en ? "Common questions" : "คำถามที่พบบ่อย"}</h2></div><div>{faq.map(([question, answer]) => <details key={question}><summary>{question}<span>+</span></summary><p>{answer}</p></details>)}</div></section>
+    <section className="faq-section"><div><p className="eyebrow">FAQ</p><h2>{vi ? "Câu hỏi thường gặp" : en ? "Common questions" : "คำถามที่พบบ่อย"}</h2></div><div>{faq.map(([question, answer]) => <details key={question}><summary>{question}<span>+</span></summary><p>{answer}</p></details>)}</div></section>
     <ServiceBands language={language} category={tool.category} /><ToolEcosystemDirectory language={language} /><SuiteFooter language={language} />
   </main>;
 }

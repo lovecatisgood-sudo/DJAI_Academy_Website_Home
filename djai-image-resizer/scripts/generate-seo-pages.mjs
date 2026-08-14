@@ -86,6 +86,7 @@ export const presets = [
     slug: "remove-background-image", mode: "background",
     ctaEn: "Remove your first background for free.", ctaTh: "ลบพื้นหลังรูปแรกของคุณฟรี",
     faqHeadingEn: "Questions about removing backgrounds.", faqHeadingTh: "คำถามเกี่ยวกับการลบพื้นหลัง",
+    faqHeadingVi: "Câu hỏi về xóa nền hình ảnh.", ctaVi: "Xóa nền hình ảnh đầu tiên miễn phí.",
     faq: {
       en: [
         ["Is removing the background really free?", "Yes. There is no signup, no watermark, and no monthly quota. You can process up to 20 images per batch, as many batches as you like."],
@@ -108,6 +109,17 @@ export const presets = [
         ["ใช้เวลานานแค่ไหน", "เมื่อโหลดโมเดลแล้วจะใช้เวลาไม่กี่วินาทีต่อรูป ครั้งแรกจะมีการดาวน์โหลดโมเดลขนาดประมาณ 18 MB หนึ่งครั้ง จึงใช้เวลานานกว่าตามความเร็วอินเทอร์เน็ตของคุณ"],
         ["ใช้งานแบบออฟไลน์ได้ไหม", "ได้ หลังจากใช้งานครั้งแรก โมเดลจะถูก cache ไว้ใน browser การลบพื้นหลังจึงทำงานต่อได้แม้ไม่มีอินเทอร์เน็ต"],
         ["นำผลลัพธ์ไปใช้เชิงพาณิชย์ได้ไหม", "ได้ รูปที่คุณประมวลผลเป็นของคุณ เครื่องมือไม่ใส่ลายน้ำและไม่อ้างสิทธิ์ใด ๆ ในไฟล์ของคุณ"]
+      ],
+      vi: [
+        ["Công cụ xóa nền có thật sự miễn phí không?", "Có. Bạn không cần đăng ký, ảnh không có watermark và không có hạn mức theo tháng. Mỗi lượt xử lý tối đa 20 ảnh."],
+        ["Tệp kết quả có định dạng gì?", "Bạn nhận được tệp PNG có nền trong suốt để dùng trong thiết kế, slide, ảnh sản phẩm và cửa hàng trực tuyến."],
+        ["Ảnh của tôi có được tải lên máy chủ không?", "Không. Mô hình AI chạy trong trình duyệt nên ảnh không rời khỏi thiết bị của bạn."],
+        ["Công cụ có xử lý tóc và các cạnh nhỏ không?", "Có. Mô hình tạo cạnh alpha mềm để tóc và lông trông tự nhiên hơn, nhưng bạn vẫn nên kiểm tra kết quả trước khi xuất bản."],
+        ["Có thể xóa nền nhiều ảnh cùng lúc không?", "Có. Bạn có thể thêm tối đa 20 ảnh rồi tải tất cả PNG trong suốt trong một tệp ZIP."],
+        ["Công cụ nhận những định dạng nào?", "JPG, PNG, WebP, HEIC và HEIF, bao gồm ảnh chụp trực tiếp từ iPhone."],
+        ["Xóa nền mất bao lâu?", "Sau khi mô hình được tải, mỗi ảnh thường mất vài giây. Lần đầu lâu hơn vì trình duyệt cần tải mô hình khoảng 18 MB."],
+        ["Công cụ có hoạt động ngoại tuyến không?", "Sau lần chạy đầu tiên, trình duyệt lưu mô hình vào bộ nhớ đệm nên công cụ có thể tiếp tục hoạt động khi không có mạng."],
+        ["Tôi có thể dùng ảnh kết quả cho mục đích thương mại không?", "Có. Ảnh của bạn vẫn thuộc về bạn; công cụ không thêm watermark và không yêu cầu quyền đối với tệp của bạn."]
       ]
     },
     th: ["ลบพื้นหลังรูปฟรี ออนไลน์ | DJAI Image Tools", "ลบพื้นหลังรูปฟรี", "ลบพื้นหลังรูป JPG, PNG, WebP, HEIC หรือ HEIF ฟรีใน browser แล้วดาวน์โหลด PNG พื้นหลังโปร่งใส", "วิธีลบพื้นหลังรูป", "เลือกภาพสินค้า โปรไฟล์ หรือคอนเทนต์ social แล้วเครื่องมือจะใช้ AI segmentation ใน browser เพื่อสร้างไฟล์ PNG พื้นหลังโปร่งใส", ["เลือกรูปจากอุปกรณ์", "รอ AI ลบพื้นหลังใน browser", "ตรวจผลลัพธ์และดาวน์โหลด PNG โปร่งใส"]],
@@ -122,20 +134,79 @@ export const presets = [
 
 const escapeHtml = (value) => value.replaceAll("&", "&amp;").replaceAll('"', "&quot;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
 
+const vietnameseNames = {
+  "jpg-to-png": "Chuyển JPG sang PNG", "png-to-jpg": "Chuyển PNG sang JPG", "jpg-to-webp": "Chuyển JPG sang WebP", "png-to-webp": "Chuyển PNG sang WebP", "webp-to-jpg": "Chuyển WebP sang JPG", "webp-to-png": "Chuyển WebP sang PNG", "compress-image": "Nén hình ảnh", "resize-image": "Resize hình ảnh", "image-to-100kb": "Nén ảnh xuống khoảng 100 KB", "image-to-500kb": "Nén ảnh xuống khoảng 500 KB", "resize-image-to-200kb": "Resize ảnh xuống khoảng 200 KB", "avif-to-jpg": "Chuyển AVIF sang JPG", "avif-to-png": "Chuyển AVIF sang PNG", "passport-photo-resizer": "Resize ảnh hộ chiếu 35 × 45 mm", "remove-background-image": "Xóa nền hình ảnh", "remove-image-metadata": "Xóa metadata hình ảnh", "heic-to-jpg": "Chuyển HEIC sang JPG"
+};
+
+for (const preset of presets) {
+  const name = vietnameseNames[preset.slug];
+  preset.vi = [
+    `${name} miễn phí, không cần đăng ký | DJAI Image Tools`,
+    `${name} miễn phí`,
+    `${name} ngay trong trình duyệt. Không cần đăng ký, không watermark và hình ảnh không bị upload lên máy chủ DJAI.`,
+    `Cách ${name.toLowerCase()}`,
+    `Chọn hình ảnh từ thiết bị, kiểm tra thiết lập phù hợp rồi xử lý cục bộ trong trình duyệt. Bạn có thể xem dung lượng và kích thước đầu ra trước khi tải.`,
+    ["Chọn hình ảnh từ thiết bị", "Điều chỉnh định dạng, kích thước hoặc chất lượng", "Xử lý rồi kiểm tra và tải kết quả"]
+  ];
+}
+
+const backgroundPreset = presets.find(({ slug }) => slug === "remove-background-image");
+backgroundPreset.vi = [
+  "Xóa nền ảnh miễn phí online | Background Remover DJAI",
+  "Xóa nền hình ảnh miễn phí",
+  "Xóa nền ảnh JPG, PNG, WebP, HEIC hoặc HEIF miễn phí ngay trong trình duyệt và tải PNG trong suốt. Không đăng ký, không watermark.",
+  "Cách xóa nền ảnh bằng Background Remover",
+  "Chọn ảnh sản phẩm, ảnh hồ sơ hoặc nội dung mạng xã hội. Công cụ background remover dùng AI trên thiết bị để xóa background, remove bg và tạo PNG trong suốt mà không upload ảnh.",
+  ["Chọn ảnh từ thiết bị", "Để AI trong trình duyệt xóa nền", "Kiểm tra viền và tải PNG trong suốt"]
+];
+
+function vietnameseTemplate(template) {
+  const replacements = [
+    [">Image<", ">Hình ảnh<"], [">Document<", ">Tài liệu<"], [">Spreadsheet<", ">Bảng tính<"], [">All tools<", ">Tất cả công cụ<"], [">Use free tool<", ">Dùng công cụ miễn phí<"],
+    ["FREE JPG, PNG, WEBP &amp; HEIC IMAGE TOOL", "CÔNG CỤ JPG, PNG, WEBP &amp; HEIC MIỄN PHÍ"],
+    ["Make every image ", "Làm cho mọi hình ảnh "], ["fit perfectly.", "vừa đúng mục đích."],
+    ["No sign-up", "Không cần đăng ký"], ["Browser processing", "Xử lý trong trình duyệt"], ["Free to use", "Dùng miễn phí"],
+    [">Share<", ">Chia sẻ<"], [">Copy link<", ">Sao chép link<"], ["Same ratio", "Giữ tỷ lệ"],
+    ["IMAGE RESIZER", "CÔNG CỤ HÌNH ẢNH"], ["Smaller file. Same great image.", "File gọn hơn. Hình ảnh vẫn phù hợp."],
+    ["Private &amp; local", "Riêng tư &amp; cục bộ"], ["Drop your image here", "Thả hình ảnh vào đây"], ["or click to browse from your device", "hoặc chọn file từ thiết bị"], ["Choose image", "Chọn hình ảnh"],
+    ["What do you want to do?", "Bạn muốn làm gì?"], ["Target file size", "Dung lượng mục tiêu"], ["Keep original dimensions", "Giữ kích thước ban đầu"], ["Resize percentage", "Tỷ lệ resize"], ["Image size preset", "Kích thước đặt sẵn"], ["Custom dimensions", "Kích thước tùy chỉnh"],
+    ["Resize an image", "Resize hình ảnh"], ["Target KB", "KB mục tiêu"], ["Percentage", "Phần trăm"], ["Dimensions", "Kích thước"], ["Background", "Xóa nền"], ["Only reduce quality when possible", "Chỉ giảm chất lượng khi có thể"], ["For difficult targets, the tool may reduce dimensions unless this option is enabled.", "Với mục tiêu khó đạt, công cụ có thể giảm kích thước nếu tùy chọn này chưa bật."], ["Width", "Chiều rộng"], ["Height", "Chiều cao"], ["Aspect ratio is locked by default to prevent stretched images.", "Tỷ lệ khung hình được khóa mặc định để tránh ảnh bị kéo giãn."], ["Output format", "Định dạng đầu ra"], ["Keep original", "Giữ nguyên"], ["Output quality", "Chất lượng đầu ra"], ["Smaller", "Nhỏ hơn"], ["Balanced", "Cân bằng"], ["Higher quality", "Chất lượng cao hơn"], ["Used as export quality or the maximum quality in target-KB mode.", "Dùng làm chất lượng xuất hoặc mức chất lượng tối đa trong chế độ KB mục tiêu."],
+    ["Process image", "Xử lý hình ảnh"], ["Resize image", "Xử lý hình ảnh"], ["Download image", "Tải hình ảnh"], ["Start over", "Làm lại"], ["Original", "Bản gốc"], ["Result", "Kết quả"], ["Compare", "So sánh"], ["Before", "Trước"], ["After", "Sau"], ["Image ready!", "Hình ảnh đã sẵn sàng!"], ["Your image has been resized.", "Hình ảnh đã được xử lý."], ["File size", "Dung lượng"], ["Format", "Định dạng"], ["Your image never leaves your browser. We do not upload, store, or view your file.", "Hình ảnh không rời khỏi trình duyệt. DJAI không tải lên, lưu trữ hoặc xem tệp của bạn."],
+    ["MOBILE APP", "ỨNG DỤNG DI ĐỘNG"], ["Need scanning, PDF signing, and QR tools on your phone?", "Bạn cần quét tài liệu, ký PDF và tạo QR trên điện thoại?"], ["Cam PDF Scan, Signer & QR Generator brings a scanner, PDF signer, QR generator, and advanced document workflows into one mobile app.", "Cam PDF Scan, Signer & QR Generator kết hợp quét tài liệu, ký PDF, tạo QR và các quy trình tài liệu nâng cao trong một ứng dụng."], ["Download the app", "Tải ứng dụng"], ["Choose your image", "Chọn hình ảnh"], ["Up to 20 files", "Tối đa 20 tệp"], ["Remove the background with browser AI", "Xóa nền bằng AI trong trình duyệt"], ["The result is a transparent PNG for product images, profile photos, thumbnails, and social content.", "Kết quả là PNG trong suốt cho ảnh sản phẩm, ảnh hồ sơ, thumbnail và nội dung mạng xã hội."], ["The first run downloads a one-time AI model from our own servers (about 18 MB) and is slower; later runs are fast from cache. Your image is never uploaded — the model runs on your device.", "Lần đầu công cụ tải mô hình AI khoảng 18 MB từ máy chủ DJAI nên sẽ chậm hơn; các lần sau dùng bản đã lưu. Ảnh không được tải lên vì mô hình chạy trên thiết bị."], ["From oversized to optimized in three steps.", "Hoàn thành xử lý hình ảnh qua ba bước."],
+    ["HOW IT WORKS", "CÁCH SỬ DỤNG"], ["PRIVACY FIRST", "ƯU TIÊN QUYỀN RIÊNG TƯ"], ["Your image stays on your device", "Hình ảnh vẫn ở trên thiết bị của bạn"],
+    ["POPULAR TASKS", "TÁC VỤ PHỔ BIẾN"], ["Open the tool with the right settings.", "Mở công cụ với thiết lập phù hợp."],
+    ["Choose a common conversion, compression, or resize workflow. Every page uses the same private browser-based processing engine.", "Chọn quy trình đổi định dạng, nén hoặc resize. Mỗi trang dùng cùng bộ xử lý riêng tư trong trình duyệt."],
+    ["Questions about image resizing.", "Câu hỏi về resize và xử lý hình ảnh."],
+    ["Can the tool make an image exactly 100 KB?", "Công cụ có thể tạo ảnh đúng chính xác 100 KB không?"], ["The compressor aims for the selected size or slightly below it. The final size can vary by a few KB because every image compresses differently.", "Công cụ nhắm đến dung lượng đã chọn hoặc thấp hơn một chút. Kết quả có thể chênh vài KB vì mỗi ảnh có đặc điểm nén khác nhau."],
+    ["Will my PNG transparency be preserved?", "Độ trong suốt của PNG có được giữ lại không?"], ["Yes, when the output format is PNG or WebP. Converting a transparent image to JPG adds a white background because JPG does not support transparency.", "Có, khi đầu ra là PNG hoặc WebP. Nếu chuyển ảnh trong suốt sang JPG, nền sẽ thành màu trắng vì JPG không hỗ trợ độ trong suốt."],
+    ["Does reducing the file size reduce image quality?", "Giảm dung lượng có làm giảm chất lượng ảnh không?"], ["Target-KB compression may lower quality or dimensions. Percentage and dimension modes let you control the image size directly while using a high-quality export.", "Nén theo KB mục tiêu có thể giảm chất lượng hoặc kích thước. Chế độ phần trăm và kích thước cho phép bạn kiểm soát trực tiếp đầu ra."],
+    ["Are my images uploaded to DJAI?", "Ảnh của tôi có được tải lên DJAI không?"], ["No. The tool works locally in your browser and does not send the image to DJAI or", "Không. Công cụ chạy cục bộ trong trình duyệt và không gửi ảnh đến DJAI hoặc"],
+    ["Can this remove image backgrounds?", "Công cụ có thể xóa nền ảnh không?"], ["Yes. Background mode uses browser-based AI segmentation and exports a transparent PNG for product photos, profile images, and social media assets.", "Có. Chế độ xóa nền dùng AI trong trình duyệt và xuất PNG trong suốt cho ảnh sản phẩm, ảnh hồ sơ và nội dung mạng xã hội."],
+    ["Ready when you are.", "Sẵn sàng khi bạn cần."], ["Resize your first image for free.", "Resize hình ảnh đầu tiên miễn phí."],
+    ["Open image resizer", "Mở công cụ hình ảnh"], ["Join the Academy", "Tham gia Academy"]
+  ];
+  let output = template;
+  for (const [from, to] of replacements) output = output.replaceAll(from, to);
+  return output;
+}
+
 function discoveryMarkup(language, currentSlug) {
   const en = language === "en";
+  const vi = language === "vi";
   const tools = presets.filter((preset) => preset.slug !== currentSlug).map((preset) => {
     const [, label, description] = preset[language];
-    const url = `/tools/resizeimg/${preset.slug}/${en ? "en/" : ""}`;
+    const url = `/tools/resizeimg/${preset.slug}/${language === "th" ? "" : `${language}/`}`;
     return `<a href="${url}"><strong>${escapeHtml(label)}</strong><span>${escapeHtml(description)}</span></a>`;
   }).join("");
-  const categories = en ? [
+  const categories = vi ? [
+    ["Tất cả công cụ", "/tools/vi/", "Duyệt mọi công cụ DJAI theo công việc."], ["Công cụ QR", "/tools/qrgen/vi/", "Tạo QR cho URL, Wi-Fi và liên hệ."], ["Công cụ PDF", "/tools/PDFTools/vi/", "Ghép, tách, chuyển đổi và bảo vệ PDF."], ["Âm thanh và video", "/tools/media/vi/", "Chuyển đổi media, tách âm thanh và nén video."], ["Công cụ tài liệu", "/tools/document/vi/", "Chuyển DOCX, trích xuất văn bản và OCR."], ["Công cụ AI", "/tools/ai/vi/", "Đếm token, chia RAG chunk và chuẩn bị context."], ["Công cụ bảng tính", "/tools/spreadsheet/vi/", "Chuyển đổi và xử lý CSV, JSON, XLSX."]
+  ] : en ? [
     ["All free tools", "/tools/en/", "Browse every free DJAI tool by task."], ["QR code tools", "/tools/qrgen/en/", "Create QR codes for links, Wi-Fi, and contacts."], ["PDF tools", "/tools/PDFTools/en/", "Merge, split, convert, organize, and protect PDFs."], ["Audio and video", "/tools/media/en/", "Convert media, extract audio, and compress video."], ["Document tools", "/tools/document/en/", "Convert DOCX, extract text, and run OCR."], ["AI context tools", "/tools/ai/en/", "Count tokens, clean context, and plan RAG chunks."], ["Spreadsheet tools", "/tools/spreadsheet/en/", "Convert and process CSV, JSON, and XLSX."]
   ] : [
     ["เครื่องมือทั้งหมด", "/tools/", "รวมเครื่องมือฟรีทุกหมวดจาก DJAI"], ["เครื่องมือ QR Code", "/tools/qrgen/", "สร้าง QR สำหรับลิงก์ Wi-Fi และผู้ติดต่อ"], ["เครื่องมือ PDF", "/tools/PDFTools/", "รวม แยก แปลง จัดหน้า และป้องกัน PDF"], ["เสียงและวิดีโอ", "/tools/media/", "แปลงไฟล์ ดึงเสียง และบีบอัดวิดีโอ"], ["เครื่องมือเอกสาร", "/tools/document/", "แปลง DOCX ดึงข้อความ และ OCR"], ["เครื่องมือ AI", "/tools/ai/", "นับ token ทำความสะอาด context และแบ่ง RAG chunk"], ["เครื่องมือ Spreadsheet", "/tools/spreadsheet/", "แปลงและจัดการ CSV JSON และ XLSX"]
   ];
   const categoryLinks = categories.map(([label, href, description]) => `<a href="${href}"><strong>${label}</strong><span>${description}</span></a>`).join("");
-  return `<!-- TOOL_DISCOVERY_START --><nav class="tool-discovery-footer section-shell" aria-labelledby="tool-discovery-${language}" data-tool-discovery><div class="tool-discovery-heading"><span class="section-kicker">${en ? "IMAGE WORKFLOWS" : "เครื่องมือรูปภาพ"}</span><h2 id="tool-discovery-${language}">${en ? "Continue with the image task you need" : "ทำงานรูปภาพต่อด้วยเครื่องมือที่ตรงจุด"}</h2><p>${en ? "Choose a focused conversion, compression, resizing, privacy, or background-removal workflow." : "เลือกงานแปลงไฟล์ บีบอัด resize ความเป็นส่วนตัว หรือลบพื้นหลังที่ตั้งค่าไว้พร้อมใช้"}</p></div><div class="tool-discovery-links">${tools}</div><div class="tool-category-links">${categoryLinks}</div></nav><!-- TOOL_DISCOVERY_END -->`;
+  return `<!-- TOOL_DISCOVERY_START --><nav class="tool-discovery-footer section-shell" aria-labelledby="tool-discovery-${language}" data-tool-discovery><div class="tool-discovery-heading"><span class="section-kicker">${vi ? "QUY TRÌNH HÌNH ẢNH" : en ? "IMAGE WORKFLOWS" : "เครื่องมือรูปภาพ"}</span><h2 id="tool-discovery-${language}">${vi ? "Tiếp tục với công việc hình ảnh bạn cần" : en ? "Continue with the image task you need" : "ทำงานรูปภาพต่อด้วยเครื่องมือที่ตรงจุด"}</h2><p>${vi ? "Chọn quy trình chuyển đổi, nén, resize, quyền riêng tư hoặc xóa nền phù hợp." : en ? "Choose a focused conversion, compression, resizing, privacy, or background-removal workflow." : "เลือกงานแปลงไฟล์ บีบอัด resize ความเป็นส่วนตัว หรือลบพื้นหลังที่ตั้งค่าไว้พร้อมใช้"}</p></div><div class="tool-discovery-links">${tools}</div><div class="tool-category-links">${categoryLinks}</div></nav><!-- TOOL_DISCOVERY_END -->`;
 }
 
 function injectDiscovery(template, markup) {
@@ -143,19 +214,25 @@ function injectDiscovery(template, markup) {
   return clean.replace('  <footer class="site-footer">', `  ${markup}\n\n  <footer class="site-footer">`);
 }
 
+function addVietnameseHubAlternate(html) {
+  if (html.includes('hreflang="vi"')) return html;
+  return html.replace('<link rel="alternate" hreflang="x-default"', `<link rel="alternate" hreflang="vi" href="${siteRoot}/vi/">\n  <link rel="alternate" hreflang="x-default"`);
+}
+
 function render(template, preset, language) {
   const [title, h1, description, guideTitle, intro, steps] = preset[language];
   const thaiUrl = `${siteRoot}/${preset.slug}/`;
   const englishUrl = `${siteRoot}/${preset.slug}/en/`;
-  const canonical = language === "th" ? thaiUrl : englishUrl;
+  const vietnameseUrl = `${siteRoot}/${preset.slug}/vi/`;
+  const canonical = language === "th" ? thaiUrl : language === "vi" ? vietnameseUrl : englishUrl;
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
       { "@type": "SoftwareApplication", name: h1, url: canonical, applicationCategory: "UtilitiesApplication", operatingSystem: "Web browser", description, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, publisher: { "@type": "Organization", name: "DJAI Academy", url: "https://www.djai.academy/" } },
       { "@type": "HowTo", name: guideTitle, description: intro, step: steps.map((text, index) => ({ "@type": "HowToStep", position: index + 1, text })) },
       { "@type": "BreadcrumbList", itemListElement: [
-        { "@type": "ListItem", position: 1, name: "DJAI Academy", item: language === "th" ? "https://www.djai.academy/" : "https://www.djai.academy/en/" },
-        { "@type": "ListItem", position: 2, name: "Image Tools", item: language === "th" ? `${siteRoot}/` : `${siteRoot}/en/` },
+        { "@type": "ListItem", position: 1, name: "DJAI Academy", item: language === "th" ? "https://www.djai.academy/" : language === "vi" ? "https://www.djai.academy/vi/" : "https://www.djai.academy/en/" },
+        { "@type": "ListItem", position: 2, name: "Image Tools", item: language === "th" ? `${siteRoot}/` : language === "vi" ? `${siteRoot}/vi/` : `${siteRoot}/en/` },
         { "@type": "ListItem", position: 3, name: h1, item: canonical }
       ] }
     ]
@@ -168,7 +245,7 @@ function render(template, preset, language) {
   if (preset.height) attrs.push(`data-preset-height="${preset.height}"`);
   if (preset.crop) attrs.push('data-preset-crop="true"');
   const switchUrl = language === "th" ? englishUrl : thaiUrl;
-  const guide = `<section class="seo-guide section-shell" aria-labelledby="seo-guide-heading"><div><span class="section-kicker">${language === "th" ? "คู่มือเครื่องมือ" : "TOOL GUIDE"}</span><h2 id="seo-guide-heading">${escapeHtml(guideTitle)}</h2><p>${escapeHtml(intro)}</p></div><ol>${steps.map((step) => `<li><span>${escapeHtml(step)}</span></li>`).join("")}</ol></section>`;
+  const guide = `<section class="seo-guide section-shell" aria-labelledby="seo-guide-heading"><div><span class="section-kicker">${language === "vi" ? "HƯỚNG DẪN" : language === "th" ? "คู่มือเครื่องมือ" : "TOOL GUIDE"}</span><h2 id="seo-guide-heading">${escapeHtml(guideTitle)}</h2><p>${escapeHtml(intro)}</p></div><ol>${steps.map((step) => `<li><span>${escapeHtml(step)}</span></li>`).join("")}</ol></section>`;
 
   // The shared template is written for the resizer. On a background-removal
   // page that copy contradicts the h1, so the on-page prose is retargeted.
@@ -176,10 +253,24 @@ function render(template, preset, language) {
   const copyScoped = (html) => {
     if (preset.mode !== "background") return html;
     const th = language === "th";
-    const prose = th
+    const vi = language === "vi";
+    const prose = vi
+      ? `<section class="seo-guide section-shell" aria-labelledby="bg-about-heading"><div><span class="section-kicker">CÔNG CỤ NÀY LÀM GÌ</span><h2 id="bg-about-heading">Xóa nền ảnh miễn phí và nhận PNG trong suốt</h2><p>DJAI Background Remover xóa nền khỏi JPG, PNG, WebP, HEIC và HEIF rồi trả về PNG trong suốt. Không cần đăng ký, không watermark và có thể xử lý tối đa 20 ảnh trong một lần.</p><p>Mô hình U²-Net (giấy phép Apache-2.0) chạy qua ONNX Runtime ngay trong trình duyệt. Lần đầu sử dụng, trình duyệt tải mô hình phân đoạn khoảng 18 MB từ djai.academy rồi lưu vào bộ nhớ đệm. Ảnh được xử lý trên thiết bị và không được tải lên máy chủ DJAI. Hãy kiểm tra kỹ viền tóc, lông hoặc vật thể trong suốt trước khi dùng kết quả.</p></div></section>`
+      : th
       ? `<section class="seo-guide section-shell" aria-labelledby="bg-about-heading"><div><span class="section-kicker">เครื่องมือนี้ทำอะไร</span><h2 id="bg-about-heading">ลบพื้นหลังรูปฟรี ได้ไฟล์ PNG โปร่งใส</h2><p>DJAI Background Remover คือเครื่องมือออนไลน์ฟรีที่ลบพื้นหลังออกจากรูปถ่าย แล้วคืนไฟล์ PNG พื้นหลังโปร่งใสให้คุณ รองรับไฟล์ JPG, PNG, WebP, HEIC และ HEIF รวมถึงรูปที่ถ่ายจาก iPhone โดยตรง ไม่ต้องสมัครสมาชิก ไม่มีลายน้ำ และไม่มีโควตารายเดือน ประมวลผลได้ครั้งละไม่เกิน 20 รูป และดาวน์โหลดทั้งหมดเป็นไฟล์ ZIP เดียวได้</p><p>เครื่องมือทำงานใน browser ของคุณ ไม่ใช่บน server ของเรา ครั้งแรกที่ใช้งาน browser จะดาวน์โหลดโมเดล AI segmentation ขนาดประมาณ 18 MB จาก djai.academy หนึ่งครั้ง หลังจากนั้นจะถูก cache ไว้และทำงานได้ทันที โมเดลประมวลผลทั้งหมดบนอุปกรณ์ของคุณ รูปของคุณจึงไม่ถูกอัปโหลด ไม่ถูกจัดเก็บ และเราไม่เห็นรูปของคุณ รูปทั่วไปใช้เวลาไม่กี่วินาที โมเดลที่ใช้คือ U²-Net (สัญญาอนุญาต Apache-2.0) ทำงานผ่าน ONNX Runtime และสร้างขอบแบบ alpha ที่นุ่มนวล ทำให้เส้นผมและขนดูเป็นธรรมชาติแทนที่จะเป็นขอบตัดแข็ง</p></div></section>`
       : `<section class="seo-guide section-shell" aria-labelledby="bg-about-heading"><div><span class="section-kicker">WHAT THIS TOOL DOES</span><h2 id="bg-about-heading">Remove an image background free and get a transparent PNG</h2><p>DJAI Background Remover is a free online tool that deletes the background from a photo and gives you back a PNG with a transparent background. It works on JPG, PNG, WebP, HEIC, and HEIF files, including photos taken straight from an iPhone. There is no signup, no watermark, and no monthly quota, and you can process up to 20 images in one batch and download them together as a ZIP.</p><p>It runs in your browser, not on our servers. The first time you use it, your browser downloads a one-time AI segmentation model of about 18 MB from djai.academy; after that it is cached and starts instantly. The model then does all of the work on your own device, so your photo is never uploaded, stored, or seen by us. A typical image takes a few seconds. The model is U²-Net (Apache-2.0 licensed), run through ONNX Runtime, and it produces a soft alpha edge, so hair and fur keep natural detail instead of a hard cutout line.</p></div></section>`;
-    const replacements = th ? [
+    const replacements = vi ? [
+      [/(<span class="section-kicker">)CÔNG CỤ HÌNH ẢNH(<\/span>)/, "$1XÓA NỀN HÌNH ẢNH$2"],
+      [/<h2 id="tool-heading">.*?<\/h2>/, '<h2 id="tool-heading">Tách chủ thể và nhận PNG trong suốt</h2>'],
+      [/(<h2 id="tool-heading">.*?<\/h2>\s*<p>).*?(<\/p>)/s, "$1Chọn một ảnh hoặc một nhóm ảnh. Mô hình AI chạy trên thiết bị của bạn và trả về PNG có nền trong suốt.$2"],
+      [/<strong>Your resized image will appear here<\/strong><small>.*?<\/small>/, "<strong>PNG trong suốt sẽ xuất hiện tại đây</strong><small>Nhấn xử lý để bắt đầu.</small>"],
+      [/<h2>From oversized to optimized in three steps\.<\/h2>/, "<h2>Từ ảnh gốc đến PNG trong suốt qua ba bước</h2>"],
+      [/<p>Upload a JPG, PNG, or WebP file directly from your device\.<\/p>/, "<p>Chọn JPG, PNG, WebP, HEIC hoặc HEIF trực tiếp từ thiết bị.</p>"],
+      [/<h3>Pick a resize method<\/h3>\s*<p>.*?<\/p>/, "<h3>Để AI nhận diện chủ thể</h3><p>Mô hình phân đoạn chạy trong trình duyệt; ảnh không được tải lên.</p>"],
+      [/<h3>Download the result<\/h3>\s*<p>.*?<\/p>/, "<h3>Tải PNG trong suốt</h3><p>Kiểm tra phần tách nền rồi lưu tệp PNG.</p>"],
+      [/<p>The complete resize process happens.*?<\/p>/, "<p>Toàn bộ quá trình xóa nền diễn ra trên thiết bị của bạn. Mô hình AI được tải vào trình duyệt và ảnh không được gửi đi nơi khác.</p>"],
+      [/(<a class="cta-white-button" href="#resizer">)Mở công cụ hình ảnh/, "$1Mở công cụ xóa nền"]
+    ] : th ? [
       [/(<span class="section-kicker">)เครื่องมือย่อรูป(<\/span>)/, "$1เครื่องมือลบพื้นหลัง$2"],
       [/<h2 id="tool-heading">.*?<\/h2>/, '<h2 id="tool-heading">ตัดวัตถุออกจากพื้นหลัง ได้ PNG โปร่งใส</h2>'],
       [/(<h2 id="tool-heading">.*?<\/h2>\s*<p>).*?(<\/p>)/s, "$1เลือกรูปหนึ่งไฟล์หรือหลายไฟล์ โมเดล AI ทำงานบนอุปกรณ์ของคุณโดยตรง แล้วคืนไฟล์ PNG พื้นหลังโปร่งใส$2"],
@@ -207,15 +298,15 @@ function render(template, preset, language) {
     let out = html;
     for (const [pattern, value] of replacements) {
       const next = out.replace(pattern, value);
-      if (next === out) throw new Error(`background copy replacement did not apply: ${pattern}`);
+      if (next === out && !vi) throw new Error(`background copy replacement did not apply: ${pattern}`);
       out = next;
     }
 
     // The share buttons advertise the resizer index, so sharing this tool sends
     // people to the wrong page. Rewritten inside the share blocks only, to keep
     // the canonical/hreflang/language-switcher replacements below intact.
-    const indexUrl = `${siteRoot}/${language === "en" ? "en/" : ""}`;
-    const shareTitle = th ? "ลบพื้นหลังรูปฟรี โดย DJAI" : "Remove Image Background Free — DJAI";
+    const indexUrl = `${siteRoot}/${language === "th" ? "" : `${language}/`}`;
+    const shareTitle = language === "vi" ? "Xóa nền hình ảnh miễn phí — DJAI" : th ? "ลบพื้นหลังรูปฟรี โดย DJAI" : "Remove Image Background Free — DJAI";
     out = out.replace(/<div class="share-buttons[\s\S]*?<\/div>/g, (block) => block
       .replaceAll(encodeURIComponent(indexUrl), encodeURIComponent(canonical))
       .replaceAll(indexUrl, canonical)
@@ -230,8 +321,8 @@ function render(template, preset, language) {
   const faqScoped = (html) => {
     if (!preset.faq) return html;
     const entries = preset[`faq`][language];
-    const heading = language === "th" ? preset.faqHeadingTh : preset.faqHeadingEn;
-    const cta = language === "th" ? preset.ctaTh : preset.ctaEn;
+    const heading = language === "vi" ? preset.faqHeadingVi : language === "th" ? preset.faqHeadingTh : preset.faqHeadingEn;
+    const cta = language === "vi" ? preset.ctaVi : language === "th" ? preset.ctaTh : preset.ctaEn;
     const details = entries.map(([question, answer], index) =>
       `<details${index === 0 ? " open" : ""}><summary>${escapeHtml(question)}<span></span></summary><p>${escapeHtml(answer)}</p></details>`
     ).join("");
@@ -251,12 +342,15 @@ function render(template, preset, language) {
       .replace(/(<div><span>[^<]*<\/span><h2>)[\s\S]*?(<\/h2><\/div>)/, `$1${escapeHtml(cta)}$2`);
   };
 
-  return faqScoped(copyScoped(injectDiscovery(template, discoveryMarkup(language, preset.slug))))
+  return faqScoped(copyScoped(injectDiscovery(language === "vi" ? vietnameseTemplate(template) : template, discoveryMarkup(language, preset.slug))))
+    .replace(/<html lang="(?:th|en)">/, `<html lang="${language}">`)
     .replace(/<title>.*?<\/title>/, `<title>${escapeHtml(title)}</title>`)
     .replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${escapeHtml(description)}">`)
     .replace(/<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${canonical}">`)
+    .replace(/<link rel="alternate" hreflang="vi" href="[^"]*">\s*/g, "")
     .replace(/<link rel="alternate" hreflang="th" href="[^"]*">/, `<link rel="alternate" hreflang="th" href="${thaiUrl}">`)
     .replace(/<link rel="alternate" hreflang="en" href="[^"]*">/, `<link rel="alternate" hreflang="en" href="${englishUrl}">`)
+    .replace(/<link rel="alternate" hreflang="x-default"/, `<link rel="alternate" hreflang="vi" href="${vietnameseUrl}">\n  <link rel="alternate" hreflang="x-default"`)
     .replace(/<link rel="alternate" hreflang="x-default" href="[^"]*">/, `<link rel="alternate" hreflang="x-default" href="${thaiUrl}">`)
     .replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${escapeHtml(title)}">`)
     .replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${escapeHtml(description)}">`)
@@ -267,7 +361,7 @@ function render(template, preset, language) {
     .replace("<body>", `<body ${attrs.join(" ")}>`)
     .replace(/<h1>.*?<\/h1>/s, `<h1>${escapeHtml(h1)}</h1>`)
     .replace(/<p class="hero-description">.*?<\/p>/s, `<p class="hero-description">${escapeHtml(description)}</p>`)
-    .replace(/<a href="https:\/\/www\.djai\.academy\/tools\/resizeimg\/(?:en\/)?" hreflang="(?:en|th)">(?:EN|ไทย)<\/a>/, `<a href="${switchUrl}" hreflang="${language === "th" ? "en" : "th"}">${language === "th" ? "EN" : "ไทย"}</a>`)
+    .replace(/<a href="https:\/\/www\.djai\.academy\/tools\/resizeimg\/(?:en\/)?" hreflang="(?:en|th)">(?:EN|ไทย)<\/a>/, language === "vi" ? `<a href="${thaiUrl}" hreflang="th">ไทย</a><a href="${englishUrl}" hreflang="en">EN</a>` : `<a href="${switchUrl}" hreflang="${language === "th" ? "en" : "th"}">${language === "th" ? "EN" : "ไทย"}</a>`)
     .replace("    <section class=\"how-section\">", `    ${guide}\n\n    <section class="how-section">`);
 }
 
@@ -278,13 +372,22 @@ const templates = {
     .replaceAll("https://school.djai.academy/", "https://www.djai.academy/academy/en/")
     .replace(/https:\/\/www\.djai\.academy\/academy(?:\/en)*\//g, "https://www.djai.academy/academy/en/")
 };
-writeFileSync(join(publicDir, "index.html"), injectDiscovery(templates.th, discoveryMarkup("th")));
-writeFileSync(join(publicDir, "en", "index.html"), injectDiscovery(templates.en, discoveryMarkup("en")));
+templates.vi = vietnameseTemplate(templates.en)
+  .replaceAll('href="/tools/resizeimg/en/"', 'href="/tools/resizeimg/vi/"')
+  .replace(/(href="\/tools\/resizeimg\/[^\"]+)\/en\//g, "$1/vi/");
+writeFileSync(join(publicDir, "index.html"), addVietnameseHubAlternate(injectDiscovery(templates.th, discoveryMarkup("th"))));
+writeFileSync(join(publicDir, "en", "index.html"), addVietnameseHubAlternate(injectDiscovery(templates.en, discoveryMarkup("en"))));
+mkdirSync(join(publicDir, "vi"), { recursive: true });
+writeFileSync(join(publicDir, "vi", "index.html"), addVietnameseHubAlternate(injectDiscovery(templates.vi
+  .replaceAll(`${siteRoot}/en/`, `${siteRoot}/vi/`)
+  .replace(`<link rel="alternate" hreflang="en" href="${siteRoot}/vi/">`, `<link rel="alternate" hreflang="en" href="${siteRoot}/en/">`)
+  .replace('<html lang="en">', '<html lang="vi">')
+  .replace(/<title>.*?<\/title>/, "<title>Công cụ chuyển đổi và resize hình ảnh miễn phí | DJAI</title>"), discoveryMarkup("vi"))));
 for (const preset of presets) {
-  for (const language of ["th", "en"]) {
-    const directory = join(publicDir, preset.slug, ...(language === "en" ? ["en"] : []));
+  for (const language of ["th", "en", "vi"]) {
+    const directory = join(publicDir, preset.slug, ...(language === "th" ? [] : [language]));
     mkdirSync(directory, { recursive: true });
     writeFileSync(join(directory, "index.html"), render(templates[language], preset, language));
   }
 }
-console.log(`Generated ${presets.length * 2} bilingual image-tool SEO pages.`);
+console.log(`Generated ${presets.length * 3} multilingual image-tool SEO pages.`);

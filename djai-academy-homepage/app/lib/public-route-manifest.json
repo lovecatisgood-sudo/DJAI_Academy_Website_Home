@@ -1,0 +1,54 @@
+{
+  "locales": ["th", "en", "vi"],
+  "defaultLocale": "th",
+  "toolFamilies": {
+    "qr": {
+      "base": "/tools/qrgen/",
+      "outputProject": "DJayTools-Free-QR-Generator-Source",
+      "outputRoot": "out",
+      "slugs": ["url-qr-code-generator", "wifi-qr-code-generator", "vcard-qr-code-generator", "text-qr-code-generator", "email-qr-code-generator", "whatsapp-qr-code-generator", "qr-code-generator-with-logo"]
+    },
+    "image": {
+      "base": "/tools/resizeimg/",
+      "outputProject": "djai-image-resizer",
+      "outputRoot": "public",
+      "slugs": ["jpg-to-png", "png-to-jpg", "jpg-to-webp", "png-to-webp", "webp-to-jpg", "webp-to-png", "compress-image", "resize-image", "image-to-100kb", "image-to-500kb", "heic-to-jpg", "remove-image-metadata", "remove-background-image", "resize-image-to-200kb", "avif-to-jpg", "avif-to-png", "passport-photo-resizer"]
+    },
+    "pdf": {
+      "base": "/tools/PDFTools/",
+      "outputProject": "djai-pdf-tools",
+      "outputRoot": "out",
+      "slugs": ["merge-pdf", "split-pdf", "compress-pdf", "images-to-pdf", "pdf-to-images", "rotate-pdf", "watermark-pdf", "protect-pdf", "organize-pdf", "add-page-numbers", "remove-pdf-metadata", "jpg-to-pdf", "pdf-to-jpg", "png-to-pdf", "webp-to-pdf", "pdf-to-png", "extract-pdf-pages", "delete-pages-from-pdf", "reorder-pdf-pages"]
+    },
+    "media": {
+      "base": "/tools/media/",
+      "outputProject": "djai-media-tools",
+      "outputRoot": "public",
+      "slugs": ["mp3-to-wav", "wav-to-mp3", "m4a-to-mp3", "mp4-to-mp3", "extract-audio-from-video", "video-converter", "mkv-to-mp4", "avi-to-mp4", "mp4-to-mov", "mp4-to-webm", "webm-to-mp4", "mov-to-mp4", "video-cutter", "compress-video", "compress-video-to-10mb", "compress-video-to-25mb", "compress-video-to-50mb", "compress-video-to-100mb", "video-cropper", "video-resizer", "video-merger", "video-to-gif", "gif-to-mp4", "remove-audio-from-video", "add-audio-to-video", "video-speed-changer", "extract-frames-from-video", "rotate-video"]
+    },
+    "document": {
+      "base": "/tools/document/",
+      "outputProject": "djai-document-tools",
+      "outputRoot": "out/document",
+      "slugs": ["docx-to-pdf", "docx-to-html", "docx-to-markdown", "docx-to-text", "pdf-to-text", "pdf-to-word", "ocr"]
+    },
+    "ai": {
+      "base": "/tools/ai/",
+      "outputProject": "djai-document-tools",
+      "outputRoot": "out/ai",
+      "slugs": ["token-counter", "pdf-to-ai-markdown", "context-optimizer", "rag-chunk-calculator", "prompt-packager"]
+    },
+    "spreadsheet": {
+      "base": "/tools/spreadsheet/",
+      "outputProject": "djai-document-tools",
+      "outputRoot": "out/spreadsheet",
+      "slugs": ["csv-to-json", "json-to-csv", "csv-cleaner", "merge-csv", "split-csv", "csv-to-xlsx", "xlsx-to-csv"]
+    }
+  },
+  "explicitExemptions": [
+    { "path": "/MONEY_MAKING_PRODUCT/", "owner": "DJAI Academy", "reason": "Campaign redirect to School registration; not a canonical localized content page." },
+    { "path": "/Cam_PDF_Scan_Signer_QR-Gen/privacy/", "owner": "DJAI legal/product", "reason": "Vietnamese legal translation requires qualified review before publication." },
+    { "path": "/Cam_PDF_Scan_Signer_QR-Gen/terms/", "owner": "DJAI legal/product", "reason": "Vietnamese legal translation requires qualified review before publication." },
+    { "path": "/Cam_PDF_Scan_Signer_QR-Gen/delete-account/", "owner": "DJAI legal/product", "reason": "Account-deletion instructions require product and legal review before localization." }
+  ]
+}

@@ -16,7 +16,7 @@ import {
 import { useEffect } from 'react';
 import './course.css';
 
-type CourseLanguage = 'en' | 'th';
+type CourseLanguage = 'en' | 'th' | 'vi';
 
 const assetPath = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 const registrationPath = '/MONEY_MAKING_PRODUCT/';
@@ -107,16 +107,40 @@ const courseCopy = {
     register: ['สินค้าถัดไปของคุณเริ่มตรงนี้', 'ให้เวลาเรา 1 ชั่วโมง', 'กลับไปพร้อมเส้นทางที่ชัดขึ้น', 'ลงทะเบียนด้วยบัญชี DJAI School ฟรี สมาชิกใหม่ทำแบบสำรวจผู้เรียนเพียงครั้งเดียว ยืนยันการลงทะเบียน แล้วรับรายละเอียดคลาสทางอีเมล', 'ลงทะเบียนคลาสสดฟรี', 'อีเมลยืนยันจะมีลิงก์เข้าคลาส ปุ่มเพิ่ม Google Calendar และกลุ่ม WhatsApp สำหรับผู้เรียน'],
     footer: ['สร้างโดยคนทำงานจริง จัดคลาสร่วมกับ DJAI Academy', 'รู้จัก Siamese Cat Dev', 'DJAI Academy'],
   },
+  vi: {
+    htmlLang: 'vi',
+    title: 'Vibe Code sản phẩm tạo doanh thu | Lớp học trực tiếp miễn phí',
+    description: 'Trang tiếng Việt cho lớp học trực tiếp bằng tiếng Anh kéo dài một giờ ngày 22 tháng 8 năm 2026, hướng dẫn biến MVP vibe-coded thành sản phẩm có thể phát hành và bán.',
+    canonical: 'https://www.djai.academy/siamese_cat/dev/course/vi/',
+    languageSwitch: ['EN', '/siamese_cat/dev/course/'],
+    nav: ['Nội dung học', 'Giảng viên', 'Đăng ký miễn phí'],
+    kicker: ['LỚP HỌC TRỰC TIẾP MIỄN PHÍ', 'SIAMESE CAT DEV × DJAI ACADEMY'],
+    hero: ['VIBE CODE MỘT SẢN PHẨM CÓ THỂ', 'TẠO DOANH THU.', 'Tạo MVP đã dễ hơn trước, nhưng làm ra thứ đáng tin cậy, hữu ích và sẵn sàng thương mại vẫn khó. Hãy học cách người xây sản phẩm có kinh nghiệm đưa prototype do AI hỗ trợ thành sản phẩm người dùng thật có thể sử dụng và trả tiền.', 'Xem chi tiết và đăng ký miễn phí', 'Xem lịch trình một giờ', 'Cần tài khoản DJAI School miễn phí. Hoàn thành khảo sát người học một lần rồi xác nhận chỗ.'],
+    facts: [['Ngày', '22 tháng 8 năm 2026'], ['Giờ', '13:00–14:00 ICT'], ['Hình thức', 'Trực tuyến trực tiếp'], ['Ngôn ngữ giảng dạy', 'Tiếng Anh']],
+    price: ['ĐẦU TƯ CỦA BẠN', '1 GIỜ', 'MIỄN PHÍ'],
+    problem: ['KHOẢNG CÁCH THẬT', 'BẠN ĐÃ TẠO MVP. VÌ SAO NÓ CHƯA THÀNH', 'SẢN PHẨM?', 'Nhiều người học vibe coding, nhưng ít người phát hành phần mềm đủ ổn định cho khách hàng thật hoặc mục đích thương mại.', 'Rào cản thường xuất hiện sau prototype đầu tiên: người dùng chưa rõ, quyết định sản phẩm yếu, kiến trúc mong manh, thiếu quy trình chất lượng, chiến lược ra mắt và con đường doanh thu.', 'Biết cần xây gì, cho ai và vì sao quan trọng hơn việc tạo thêm mã. Buổi học cung cấp tư duy sản phẩm và phát triển phần mềm mà công cụ AI không thể quyết định thay bạn.'],
+    curriculumHeading: ['NỘI DUNG HỌC', 'TỪ PROMPT ĐẾN', 'PRODUCTION.', 'Không cường điệu và không trình diễn hàng loạt công cụ. Đây là buổi làm việc tập trung về quyết định sản phẩm tốt hơn và phát hành có trách nhiệm.'],
+    lessons: [['Chọn sản phẩm người dùng sẵn sàng trả tiền', 'Bắt đầu từ nhóm người dùng thật, vấn đề đau và kết quả thương mại rõ ràng, không phải danh sách tính năng đang đi tìm thị trường.'], ['Áp dụng tiêu chuẩn phát triển chuyên nghiệp', 'Dùng tư duy sản phẩm, kiến trúc, chất lượng, bảo mật và phát hành để bản build có AI hỗ trợ đi xa hơn demo.'], ['Đưa MVP thành sản phẩm có thể phát hành', 'Hiểu việc cần làm sau prototype: xác thực, gia cố, onboarding, định giá, phân phối, hỗ trợ và lặp cải tiến.'], ['Biến ý tưởng tiếp theo thành kế hoạch', 'Mang theo ý tưởng hoặc điểm đang mắc và hỏi trực tiếp giảng viên nên xây gì tiếp theo, bắt đầu thế nào.']],
+    agendaHeading: ['MỘT GIỜ THẬT', 'KHÔNG LAN MAN.', 'ĐI THẲNG VÀO VIỆC.'],
+    agenda: [['00–10 phút', 'Vì sao MVP vibe-coded đầy hứa hẹn không trở thành sản phẩm thương mại'], ['10–25 phút', 'Nhóm sản phẩm có kinh nghiệm quyết định điều gì đáng xây'], ['25–40 phút', 'Tiêu chuẩn phát triển phần mềm quan trọng khi AI viết mã'], ['40–50 phút', 'Đường ra mắt thực tế: xác thực, phát hành, tiếp cận người dùng, học và cải thiện'], ['50–60 phút', 'Hỏi đáp trực tiếp và hướng dẫn cho ý tưởng tạo doanh thu tiếp theo']],
+    trainersHeading: ['GẶP HAI GIẢNG VIÊN', 'XÂY TRONG THỰC TẾ.', 'DẠY TỪ KINH NGHIỆM.', 'Học trực tiếp từ hai người lãnh đạo sản phẩm và công nghệ đang xây, quản lý và giảng dạy công việc phần mềm thật.'],
+    trainers: [['NGƯỜI XÂY SẢN PHẨM & LEAD PHÁT TRIỂN', 'Siamese Cat Dev', 'Hơn mười năm trong thiết kế sản phẩm, quản lý dự án, phát triển phần mềm và lãnh đạo đội phát triển; hiện xây sản phẩm khách hàng, công cụ mở, trò chơi và hệ thống học tập với AI.'], ['NHÀ SÁNG LẬP DJAI, CTO & GIẢNG VIÊN', 'Mr. A', 'Nhà sáng lập DJAI Academy, CTO giàu kinh nghiệm, lãnh đạo sản phẩm kỹ thuật và giảng viên khóa học trực tiếp của DJAI, mang kinh nghiệm production và lãnh đạo thật vào lớp.']],
+    fit: ['BUỔI HỌC PHÙ HỢP NẾU', 'BẠN MỆT MỎI VÌ XÂY NHƯNG CHƯA CÓ ĐƯỜNG ĐẾN', 'DOANH THU.', ['Bạn tạo được prototype nhưng khó hoàn thiện và ra mắt.', 'Bạn có quá nhiều ý tưởng và chưa biết ý tưởng nào có tiềm năng thương mại.', 'Mã do AI tạo chạy được khi demo nhưng thiếu an toàn hoặc khó bảo trì.', 'Bạn muốn chiến lược sản phẩm và ra mắt thực tế, không phải thêm một danh sách prompt.', 'Bạn muốn phản hồi trực tiếp từ người xây và quản lý sản phẩm phần mềm chuyên nghiệp.']],
+    register: ['SẢN PHẨM TIẾP THEO BẮT ĐẦU TẠI ĐÂY', 'CHO CHÚNG TÔI MỘT GIỜ.', 'RỜI ĐI VỚI CON ĐƯỜNG RÕ HƠN.', 'Đăng ký bằng tài khoản DJAI School miễn phí. Thành viên mới hoàn thành khảo sát một lần, xác nhận khóa học rồi nhận thông tin qua email.', 'Đăng ký lớp trực tiếp miễn phí', 'Email xác nhận gồm liên kết buổi học, thao tác Google Calendar và nhóm WhatsApp riêng cho người tham gia.'],
+    footer: ['Được xây bởi người làm thực tế. Tổ chức cùng DJAI Academy.', 'Tìm hiểu Siamese Cat Dev', 'DJAI Academy'],
+  },
 } as const;
 
 function CourseHeader({ language }: { language: CourseLanguage }) {
   const copy = courseCopy[language];
+  const homePath = language === 'th' ? '/' : `/${language}/`;
+  const navLabel = language === 'th' ? 'เมนูคลาส' : language === 'vi' ? 'Điều hướng khóa học' : 'Course navigation';
   return (
     <header className="course-header">
-      <a className="course-brand" href={language === 'th' ? '/' : '/en/'} aria-label={language === 'th' ? 'หน้าแรก DJAI Academy' : 'DJAI Academy home'}>
+      <a className="course-brand" href={homePath} aria-label={language === 'th' ? 'หน้าแรก DJAI Academy' : language === 'vi' ? 'Trang chủ DJAI Academy' : 'DJAI Academy home'}>
         <img src={assetPath('djai-academy-logo.webp')} alt="DJAI Academy" />
       </a>
-      <nav aria-label={language === 'th' ? 'เมนูคลาส' : 'Course navigation'}>
+      <nav aria-label={navLabel}>
         <a href="#curriculum">{copy.nav[0]}</a>
         <a href="#trainers">{copy.nav[1]}</a>
         <a href={copy.languageSwitch[1]}>{copy.languageSwitch[0]}</a>
@@ -130,7 +154,7 @@ function EventFacts({ language }: { language: CourseLanguage }) {
   const facts = courseCopy[language].facts;
   const icons = [CalendarDays, Clock3, Video, Globe2];
   return (
-    <dl className="event-facts" aria-label={language === 'th' ? 'รายละเอียดคลาสสด' : 'Live course details'}>
+    <dl className="event-facts" aria-label={language === 'th' ? 'รายละเอียดคลาสสด' : language === 'vi' ? 'Chi tiết lớp học trực tiếp' : 'Live course details'}>
       {facts.map(([label, value], index) => {
         const Icon = icons[index];
         return <div key={label}><Icon aria-hidden="true" /><dt>{label}</dt><dd>{value}</dd></div>;
@@ -167,7 +191,7 @@ function CourseApp({ language = 'en' }: { language?: CourseLanguage }) {
           </div>
           <div className="course-hero-visual">
             <div className="course-mascot-orbit" aria-hidden="true"><span>IDEA</span><span>BUILD</span><span>SHIP</span><span>SELL</span></div>
-            <img src={assetPath('siamese-cat-dev-character.webp')} alt={language === 'th' ? 'Siamese Cat Dev กำลังพัฒนาซอฟต์แวร์' : 'Siamese Cat Dev building software on a laptop'} />
+            <img src={assetPath('siamese-cat-dev-character.webp')} alt={language === 'th' ? 'Siamese Cat Dev กำลังพัฒนาซอฟต์แวร์' : language === 'vi' ? 'Siamese Cat Dev đang phát triển phần mềm trên laptop' : 'Siamese Cat Dev building software on a laptop'} />
             <div className="course-price-card"><span>{copy.price[0]}</span><strong>{copy.price[1]}</strong><b>{copy.price[2]}</b></div>
           </div>
           <EventFacts language={language} />
@@ -201,7 +225,7 @@ function CourseApp({ language = 'en' }: { language?: CourseLanguage }) {
               <div className="trainer-copy"><p className="trainer-role">{copy.trainers[0][0]}</p><h3>{copy.trainers[0][1]}</h3><p>{copy.trainers[0][2]}</p></div>
             </article>
             <article className="trainer-card trainer-card-founder">
-              <div className="trainer-portrait"><img src="/founder-djai-display.webp" alt={language === 'th' ? 'Mr. A ผู้ก่อตั้ง DJAI Academy, CTO และผู้สอน' : 'Mr. A, founder of DJAI Academy, CTO, and course instructor'} loading="lazy" /></div>
+              <div className="trainer-portrait"><img src="/founder-djai-display.webp" alt={language === 'th' ? 'Mr. A ผู้ก่อตั้ง DJAI Academy, CTO และผู้สอน' : language === 'vi' ? 'Mr. A, nhà sáng lập DJAI Academy, CTO và giảng viên' : 'Mr. A, founder of DJAI Academy, CTO, and course instructor'} loading="lazy" /></div>
               <div className="trainer-copy"><p className="trainer-role">{copy.trainers[1][0]}</p><h3>{copy.trainers[1][1]}</h3><p>{copy.trainers[1][2]}</p></div>
             </article>
           </div>
@@ -224,7 +248,7 @@ function CourseApp({ language = 'en' }: { language?: CourseLanguage }) {
       <footer className="course-footer">
         <img src={assetPath('djai-academy-logo.webp')} alt="DJAI Academy" />
         <p>{copy.footer[0]}</p>
-        <div><a href={language === 'th' ? '/siamese_cat/dev/' : '/siamese_cat/dev/en/'}>{copy.footer[1]}</a><a href={language === 'th' ? '/' : '/en/'}>{copy.footer[2]} <ExternalLink aria-hidden="true" /></a></div>
+        <div><a href={language === 'th' ? '/siamese_cat/dev/' : `/siamese_cat/dev/${language}/`}>{copy.footer[1]}</a><a href={language === 'th' ? '/' : `/${language}/`}>{copy.footer[2]} <ExternalLink aria-hidden="true" /></a></div>
       </footer>
     </div>
   );

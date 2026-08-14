@@ -1,11 +1,13 @@
 export const productUrls = {
   th: "https://www.djai.academy/tools/seo-screaming-toad/",
-  en: "https://www.djai.academy/tools/seo-screaming-toad/en/"
+  en: "https://www.djai.academy/tools/seo-screaming-toad/en/",
+  vi: "https://www.djai.academy/tools/seo-screaming-toad/vi/"
 };
 
 export const repositoryUrls = {
   th: "https://github.com/DJAI-Academy/-Screaming-Frog-Screaming-Toad-SEO-100M-URL",
-  en: "https://github.com/lovecatisgood-sudo/Free-Opensource-SEO-Screaming-Toad-not-Frog-tool-with-100million-url-crawl-potential"
+  en: "https://github.com/lovecatisgood-sudo/Free-Opensource-SEO-Screaming-Toad-not-Frog-tool-with-100million-url-crawl-potential",
+  vi: "https://github.com/lovecatisgood-sudo/Free-Opensource-SEO-Screaming-Toad-not-Frog-tool-with-100million-url-crawl-potential"
 };
 
 const sharedTools = [
@@ -401,4 +403,98 @@ export const content = {
     legal:
       "SEO Screaming Toad is an independent project. It is not affiliated with or endorsed by Screaming Frog Ltd. Screaming Frog is a trademark or trade name of its respective owner."
   }
+};
+
+content.vi = {
+  locale: "vi",
+  repository: repositoryUrls.vi,
+  repositoryLabel: "Mở kho mã nguồn",
+  secondaryCta: "Đọc hướng dẫn cài đặt",
+  languageLabel: "English",
+  eyebrow: "SEO CRAWLER MÃ NGUỒN MỞ + MCP CHO AI AGENT",
+  h1: "SEO Screaming Toad: trình thu thập SEO mã nguồn mở cho quy trình AI",
+  lead:
+    "Kiểm tra SEO kỹ thuật, JavaScript SEO, canonical, hreflang, sitemap, structured data và liên kết nội bộ bằng bằng chứng lưu trên máy; sau đó dùng 23 công cụ MCP có giới hạn để AI agent đọc và so sánh kết quả crawl thật.",
+  note:
+    "Miễn phí theo giấy phép MIT · Dữ liệu ưu tiên lưu cục bộ · Phiên bản hiện tại là release candidate · Không liên kết hoặc được Screaming Frog Ltd. chứng thực.",
+  nav: [["Tổng quan", "#overview"], ["Tính năng", "#features"], ["Cách dùng", "#how-to-use"], ["MCP", "#mcp"], ["AI Search", "#ai-search"], ["Câu hỏi", "#faq"]],
+  proof: [["23", "công cụ MCP cho AI agent"], ["13", "nhóm quy tắc SEO có phiên bản"], ["Raw + rendered", "tách bằng chứng HTML và JavaScript"], ["Local-first", "SQLite/WAL trên máy của bạn"]],
+  overviewTitle: "SEO Screaming Toad là gì?",
+  overviewCopy: [
+    "SEO Screaming Toad, còn gọi là DJAI Toad, là SEO crawler và công cụ kiểm tra website mã nguồn mở dành cho những website bạn sở hữu hoặc được phép kiểm tra. Công cụ khám phá trang và tài nguyên, kiểm tra tín hiệu SEO kỹ thuật, rồi lưu danh sách URL, bằng chứng từng trang, quan hệ liên kết và phát hiện vào SQLite để xem lại, so sánh và xuất báo cáo.",
+    "Điểm khác biệt chính là MCP server được thiết kế riêng cho AI agent. Thay vì cấp shell hoặc HTTP client không giới hạn, Toad cung cấp các công cụ có phạm vi rõ ràng để quản lý profile, xem trước phạm vi crawl, điều khiển tác vụ, đọc lỗi và bằng chứng trang, so sánh các lần chạy và tạo báo cáo."
+  ],
+  audienceTitle: "Phù hợp với ai",
+  audiences: [
+    ["Lập trình viên web", "Phát hiện lỗi canonical, metadata, hreflang, sitemap và JavaScript SEO trước khi phát hành."],
+    ["Chuyên viên SEO kỹ thuật", "Kiểm tra với mã quy tắc, bằng chứng, giới hạn và phép so sánh sau khi crawl lại."],
+    ["Nhóm nội dung và tăng trưởng", "Tìm metadata trùng lặp, trang nằm sâu, đích liên kết hỏng và cơ hội liên kết nội bộ."],
+    ["Người xây AI agent", "Kết nối crawler với Codex, Claude hoặc MCP client hỗ trợ stdio."],
+    ["Agency và doanh nghiệp", "Giữ cơ sở dữ liệu crawl và file xuất trên máy thay vì tải dữ liệu khách hàng lên dịch vụ bên ngoài."],
+    ["Người học SEO", "Đọc bằng chứng thật và giải thích quy tắc để hiểu vì sao mỗi phát hiện xuất hiện."]
+  ],
+  featuresEyebrow: "NĂNG LỰC CỐT LÕI",
+  featuresTitle: "Từ khám phá URL đến bằng chứng có thể hành động",
+  featuresIntro: "Đây không chỉ là danh sách cảnh báo. Quy trình nối việc khám phá URL có kiểm soát, trích xuất dữ liệu, quy tắc có phiên bản, bằng chứng được lưu và lần crawl đối chiếu sau khi sửa.",
+  features: [
+    ["Crawler có lớp bảo vệ", "Crawl đồng thời bằng Go với robots.txt, khám phá sitemap, chuẩn hóa URL, loại trùng, TLS, kiểm tra redirect và giới hạn tốc độ theo host."],
+    ["Kiểm tra raw + JavaScript", "Giữ HTML từ server tách khỏi bằng chứng render bằng Playwright để thấy rõ thay đổi phía client."],
+    ["Phát hiện kèm bằng chứng", "Mỗi phát hiện lưu mã và phiên bản quy tắc, mức độ, đối tượng, bằng chứng, cách khắc phục và giới hạn."],
+    ["Canonical và indexability", "Kiểm tra canonical thiếu, xung đột, sai, tạo chuỗi, trỏ tới trang lỗi hoặc noindex cùng các chỉ thị robots."],
+    ["SEO đa ngôn ngữ", "Kiểm tra mã hreflang, khả năng truy cập đích và quan hệ ngôn ngữ hai chiều."],
+    ["Nội dung và metadata", "Kiểm tra title, description, H1, nội dung trùng hoàn toàn, tín hiệu gần trùng và ngưỡng độ dài tùy chỉnh."],
+    ["Kiến trúc liên kết", "Xem inlink, outlink, độ sâu crawl, đích nội bộ hỏng, nofollow và các trang có dấu hiệu bị cô lập."],
+    ["Structured data", "Phát hiện lỗi cú pháp JSON-LD và cấu trúc cơ bản, đồng thời nêu rõ giới hạn về từ vựng và rich result."],
+    ["Tác vụ có thể phục hồi", "Tạm dừng, tiếp tục, hủy, timeline, hàng đợi bền vững, checkpoint và phục hồi cho lượt crawl dài."],
+    ["Báo cáo và so sánh", "Xuất CSV, NDJSON hoặc XLSX và so sánh trang thêm, xóa, thay đổi, lỗi mới và lỗi đã sửa."],
+    ["Giao diện sẵn cho agent", "Dùng cùng một kho bằng chứng qua dashboard, JSON CLI, API cục bộ hoặc MCP server 23 công cụ."],
+    ["Mã nguồn mở thực sự", "Crawler, dashboard, CLI, API cục bộ, báo cáo và MCP server đều phát hành theo giấy phép MIT."]
+  ],
+  coverageTitle: "Phạm vi kiểm tra SEO quan trọng",
+  coverageIntro: "Engine hiện có 13 nhóm kiểm tra có phiên bản. Kết quả là quan sát kỹ thuật, không phải cam kết được index hoặc xếp hạng.",
+  coverageHeaders: ["Khu vực", "Nội dung kiểm tra", "Điều cần nhớ"],
+  coverage: [
+    ["Phản hồi", "Trang lỗi, redirect và đích liên kết nội bộ hỏng", "Lỗi có thể chỉ xảy ra tạm thời"],
+    ["Metadata", "Title và description thiếu, ngắn, dài hoặc trùng", "Ngưỡng độ dài chỉ là hướng dẫn biên tập"],
+    ["Canonical", "Đích thiếu, xung đột, sai, tạo chuỗi, lỗi hoặc noindex", "Canonical là một tín hiệu gợi ý"],
+    ["Indexability", "Non-200, noindex, robots và độ phủ sitemap", "Công cụ tìm kiếm còn áp dụng chính sách khác"],
+    ["Đa ngôn ngữ", "Mã, đích và tính đối ứng của hreflang", "Ý định thị trường cần con người đánh giá"],
+    ["Kiến trúc", "Độ sâu, inlink, outlink, nofollow và trang có dấu hiệu bị cô lập", "Một số trang tiện ích được tách riêng có chủ đích"],
+    ["Media", "Ảnh thiếu alt và tài nguyên ảnh lỗi", "Crawler không thể suy ra ý nghĩa hình ảnh"],
+    ["Structured data", "Cú pháp JSON-LD và tính nhất quán cấu trúc", "Không bảo đảm Google rich result"]
+  ],
+  flowTitle: "Crawler biến website thành bằng chứng SEO như thế nào",
+  flow: [["1", "Xác định phạm vi", "Đặt URL đầu vào, host được phép, đường dẫn loại trừ, giới hạn URL, độ sâu, tốc độ và chế độ raw hoặc rendered."], ["2", "Xem trước khi tải", "Chuẩn hóa URL ứng viên và giải thích profile hiện tại có bao gồm URL đó hay không."], ["3", "Crawl có trách nhiệm", "Tuân thủ robots, lớp bảo vệ DNS/IP, TLS, redirect, giới hạn phản hồi và độ trễ theo host."], ["4", "Trích xuất và kiểm tra", "Lưu metadata, liên kết, ảnh, hreflang, structured data và phát hiện có phiên bản."], ["5", "Sửa rồi crawl lại", "So sánh kết quả thêm, xóa, thay đổi, lỗi mới và lỗi đã sửa giữa các lần chạy."]],
+  howTitle: "Cách cài đặt và sử dụng SEO crawler",
+  howIntro: "Dự án hiện là release candidate và chưa có bản stable được ký. Cách minh bạch nhất là clone repository, đọc mã nguồn và build trên máy.",
+  requirements: "Dùng phiên bản Go ghi trong .go-version. Cần Node.js và pnpm nếu muốn build dashboard hoặc JavaScript renderer tùy chọn.",
+  installCode: `git clone ${repositoryUrls.vi}.git\ncd Free-Opensource-SEO-Screaming-Toad-not-Frog-tool-with-100million-url-crawl-potential\nmake bootstrap\ngo run ./cmd/seo-auditor`,
+  howSteps: ["Mở http://127.0.0.1:7331.", "Tạo project cho website hoặc khách hàng.", "Tạo profile với giới hạn URL thận trọng.", "Xem trước phạm vi và xác nhận đường dẫn cùng subdomain được đưa vào.", "Bắt đầu kiểm tra và theo dõi số URL discovered, queued, fetched, analysed và failed.", "Đọc tổng kết, giải thích lỗi và bằng chứng từng trang trước khi sửa website.", "Crawl lại bằng cấu hình tương đương để xác nhận kết quả."],
+  mcpEyebrow: "MCP CHO AI SEO",
+  mcpTitle: "Cấp cho AI agent một SEO crawler, không phải toàn bộ shell",
+  mcpIntro: "MCP server giao tiếp qua stdio và gọi loopback API có xác thực của Toad. Agent có thể thực hiện quy trình SEO thật mà không được cấp shell tổng quát, SQL tùy ý, filesystem, trình duyệt hoặc quyền tải HTTP không giới hạn.",
+  mcpDiagram: ["AI agent / MCP client", "seo-auditor-mcp (stdio)", "API cục bộ có xác thực", "Crawler có bảo vệ + bằng chứng SQLite"],
+  mcpConfigTitle: "Ví dụ cấu hình MCP",
+  mcpConfig: content.en.mcpConfig,
+  mcpGroups: [["Project và profile", sharedTools.slice(1, 6)], ["Vòng đời crawl", sharedTools.slice(6, 13)], ["Bằng chứng kiểm tra", sharedTools.slice(13, 20)], ["Báo cáo và chẩn đoán", sharedTools.slice(20)]],
+  agentWorkflowTitle: "Quy trình đề xuất cho AI agent",
+  agentWorkflow: ["Gọi health_get để xác nhận MCP và API đã sẵn sàng.", "Đọc project_list và profile_list trước khi tạo dữ liệu mới.", "Dùng crawl_preview_scope và trình bày rõ giới hạn cùng phần loại trừ.", "Gọi crawl_start với idempotency key sau khi ý định của người vận hành đã rõ.", "Kiểm tra crawl_status mỗi hai đến năm giây cho đến trạng thái kết thúc.", "Đọc audit_summary, sau đó phân trang issue_list và page_list.", "Dùng issue_explain và page_get trước khi đề xuất cách sửa.", "Chỉ tạo report_export khi được yêu cầu."],
+  aiSearchTitle: "AI Search Optimization, AEO, GEO và mức sẵn sàng cho AI Search",
+  aiSearchCopy: ["AI Search Optimization hướng tới việc làm cho nội dung và thực thể dễ crawl, dễ hiểu, có nguồn rõ ràng và hữu ích cho hệ thống truy xuất câu trả lời. Các tên gọi liên quan gồm AEO và GEO. ASO thường có nghĩa là App Store Optimization, dù đôi khi cũng được dùng cho AI Search Optimization.", "SEO Screaming Toad không thể bảo đảm website được AI trích dẫn. Công cụ có thể kiểm tra nền tảng kỹ thuật mà crawler và hệ thống truy xuất dựa vào: trạng thái phản hồi, canonical, indexability, quan hệ ngôn ngữ, liên kết nội bộ, structured data, nội dung raw/rendered và tín hiệu trùng lặp."],
+  aiSearchChecks: [["Khả năng crawl", "Trang và liên kết quan trọng có thể được khám phá mà không cần tương tác ẩn."], ["Thực thể rõ ràng", "Title, H1, canonical, ngôn ngữ và structured data phù hợp với nội dung hiển thị."], ["Câu trả lời có thể truy xuất", "Định nghĩa, bước làm, giới hạn và bằng chứng xuất hiện trong HTML đọc được."], ["Nhất quán đa ngôn ngữ", "URL tiếng Thái, Anh và Việt dùng self-canonical cùng hreflang đối ứng."], ["Độ tin cậy nguồn", "Tác giả, tổ chức, repository, giấy phép và giới hạn được nêu rõ."], ["Tương đồng sau render", "Thông tin quan trọng không biến mất hoặc thay đổi sai sau khi JavaScript chạy."]],
+  comparisonTitle: "Có thể thay thế Screaming Frog không?",
+  comparisonCopy: "SEO Screaming Toad là dự án độc lập và chỉ dùng tên 'Screaming Frog' để so sánh mô tả. Dự án không tuyên bố ngang bằng tính năng và không liên kết với Screaming Frog Ltd. Điểm khác biệt là mã mở, bằng chứng cục bộ, mô hình phát hiện có phiên bản và giao diện MCP được ưu tiên. Nếu phụ thuộc vào tích hợp thương mại trưởng thành, hãy thử cả hai công cụ trên một website đại diện mà bạn được phép kiểm tra rồi so sánh độ phủ, false positive, kết quả render, file xuất và chi phí vận hành.",
+  comparisonHeaders: ["Khu vực", "SEO Screaming Toad", "Điều cần đánh giá"],
+  comparison: [["Giấy phép", "Mã nguồn mở MIT", "Nhóm của bạn có thể đọc và điều chỉnh mã"], ["Dữ liệu", "SQLite/WAL cục bộ", "Bạn tự quản thời hạn lưu và sao lưu"], ["Tự động hóa AI", "23 công cụ MCP có giới hạn", "Supervisor cục bộ phải đang chạy"], ["JavaScript", "Renderer cô lập tùy chọn", "Bằng chứng raw và rendered được tách riêng"], ["Độ trưởng thành", "Release candidate", "Xác minh trên môi trường thật trước khi chuyển quy trình"]],
+  scaleTitle: "100 triệu URL: kiến trúc lý thuyết, không phải cam kết công suất",
+  scaleCopy: "Dự án đã hoàn thành các chiến dịch tổng hợp theo đường chạy production ở mức một triệu và năm triệu URL. Lần chạy 5 triệu lưu 5.000.000 trang, 4.999.999 liên kết và 15.884.167 phát hiện trong khoảng 11,1 GB SQLite. Thử nghiệm không dùng mạng thật nên không chứng minh DNS, TLS, robots, redirect, băng thông, lập lịch host hoặc JavaScript rendering ở quy mô đó. Thiết kế 100M+ vẫn là hướng nghiên cứu theo chiến dịch phân đoạn.",
+  safetyTitle: "Bảo mật, quyền riêng tư và cách dùng có trách nhiệm",
+  safety: ["Chỉ crawl website bạn sở hữu hoặc được phép kiểm tra.", "Bắt đầu với giới hạn URL và mức đồng thời thấp, sau đó tăng theo năng lực server.", "Không tắt TLS, robots, lớp bảo vệ DNS/IP hoặc kiểm tra redirect để ép crawler chạy qua.", "Cơ sở dữ liệu và file xuất có thể chứa URL hoặc bằng chứng của khách hàng; hãy bảo vệ bằng chính sách truy cập và lưu giữ.", "MCP hiện tại không nhận thông tin đăng nhập, header tùy ý hoặc đích mạng riêng.", "Dùng phát hiện làm bằng chứng cho quyết định của con người, không tự động sửa mọi cảnh báo."],
+  faqTitle: "Câu hỏi thường gặp về SEO crawler và MCP",
+  faqs: [["SEO Screaming Toad có miễn phí không?", "Có. Mã nguồn phát hành theo giấy phép MIT và có thể được đọc, build và chạy cục bộ."], ["Công cụ có thay Screaming Frog cho mọi quy trình không?", "Không có tuyên bố đó. Toad đang ở giai đoạn release candidate và không tuyên bố ngang bằng tính năng. Hãy kiểm tra với website và quy trình của bạn."], ["MCP hỗ trợ công việc SEO như thế nào?", "MCP cho phép agent bắt đầu và theo dõi crawl, đọc phát hiện, xem bằng chứng trang, so sánh lần chạy và tạo báo cáo qua các công cụ có giới hạn."], ["Crawler có thể cải thiện AI Search Optimization không?", "Công cụ có thể kiểm tra khả năng crawl, canonical, ngôn ngữ, structured data, liên kết và nội dung raw/rendered, nhưng không thể bảo đảm được trích dẫn."], ["Dữ liệu crawl có được gửi lên cloud không?", "Crawler và cơ sở dữ liệu SQLite mặc định nằm cục bộ. Người vận hành vẫn cần xem lại renderer, môi trường và quy trình xuất dữ liệu."], ["Hiện tại có thể crawl 100 triệu URL không?", "100M+ là mục tiêu kiến trúc chưa được xác minh. Bằng chứng hiện tại là một chiến dịch tổng hợp theo đường chạy production ở mức năm triệu URL."], ["Có luôn cần JavaScript rendering không?", "Không. Raw mode là đường cơ sở nhanh hơn. Dùng rendered mode khi JavaScript phía client thay đổi bằng chứng SEO quan trọng."], ["Nên bắt đầu an toàn thế nào?", "Xác nhận quyền kiểm tra, đặt phạm vi và ngân sách thận trọng, xem trước URL, rồi đọc trạng thái kết thúc và bằng chứng trước khi thay đổi."]],
+  finalTitle: "Bắt đầu với công cụ SEO mở mà AI agent có thể hiểu",
+  finalCopy: "Mở repository, đọc các giới hạn, xem mã nguồn và bắt đầu bằng một lượt crawl nhỏ trên website được phép. Dùng bằng chứng đã lưu cùng những lần crawl có thể so sánh để cải thiện SEO kỹ thuật mà không phải đoán.",
+  finalPrimary: "Mở mã nguồn",
+  finalSecondary: "Xem tất cả công cụ DJAI miễn phí",
+  legal: "SEO Screaming Toad là dự án độc lập. Dự án không liên kết hoặc được Screaming Frog Ltd. chứng thực. Screaming Frog là nhãn hiệu hoặc tên thương mại của chủ sở hữu tương ứng."
 };

@@ -61,6 +61,7 @@ export default function Home({ toolSlug, pageCopy }: { toolSlug?: QrToolSlug; pa
 
   const canonical = toolSlug ? `https://www.djai.academy${qrToolHref(toolSlug, "th")}` : "https://www.djai.academy/tools/qrgen/";
   const languageHref = toolSlug ? qrToolHref(toolSlug, "en") : "/tools/qrgen/en/";
+  const vietnameseHref = toolSlug ? qrToolHref(toolSlug, "vi") : "/tools/qrgen/vi/";
   const title = pageCopy?.title || "สร้าง QR Code ฟรี";
 
   useEffect(() => {
@@ -127,6 +128,7 @@ export default function Home({ toolSlug, pageCopy }: { toolSlug?: QrToolSlug; pa
           <a href="https://www.djai.academy/tools/resizeimg/" target="_blank" rel="noopener noreferrer">เครื่องมือรูปภาพ <span className="external-mark">↗</span></a>
           <a href="https://www.djai.academy/blog/" target="_blank" rel="noopener noreferrer">บล็อก <span className="external-mark">↗</span></a>
           <a href={languageHref} hrefLang="en">EN</a>
+          <a href={vietnameseHref} hrefLang="vi">VI</a>
           <a className="nav-cta" href="https://www.djai.academy/academy/">เข้าร่วมชุมชน</a>
         </nav>
       </header>

@@ -9,19 +9,22 @@ import { presets } from "../scripts/generate-seo-pages.mjs";
 const projectDir = join(dirname(fileURLToPath(import.meta.url)), "..");
 const publicDir = join(projectDir, "public");
 
-test("all SEO presets have Thai and English static pages", () => {
+test("all SEO presets have Thai, English, and Vietnamese static pages", () => {
   assert.equal(presets.length, 17);
   assert.equal(presets.some((preset) => preset.slug === "remove-background-image"), true);
   for (const preset of presets) {
-    for (const language of ["th", "en"]) {
-      const path = join(publicDir, preset.slug, ...(language === "en" ? ["en"] : []), "index.html");
+    for (const language of ["th", "en", "vi"]) {
+      const path = join(publicDir, preset.slug, ...(language === "th" ? [] : [language]), "index.html");
       assert.equal(existsSync(path), true, path);
       const html = readFileSync(path, "utf8");
-      const canonical = `https://www.djai.academy/tools/resizeimg/${preset.slug}/${language === "en" ? "en/" : ""}`;
+      const canonical = `https://www.djai.academy/tools/resizeimg/${preset.slug}/${language === "th" ? "" : `${language}/`}`;
       assert.match(html, new RegExp(`<link rel="canonical" href="${canonical}">`));
+      assert.match(html, new RegExp(`<html lang="${language}">`));
       assert.match(html, /hreflang="th"/);
       assert.match(html, /hreflang="en"/);
+      assert.match(html, /hreflang="vi"/);
       assert.match(html, /hreflang="x-default"/);
+      assert.equal((html.match(/hreflang="vi"/g) || []).length, 1, `${path} has duplicate Vietnamese alternates`);
       assert.match(html, new RegExp(`data-preset="${preset.slug}"`));
       assert.match(html, /"@type":"HowTo"/);
       assert.match(html, /"@type":"BreadcrumbList"/);
@@ -34,16 +37,17 @@ test("popular and discovery links stay on canonical image-tool routes", () => {
   const approvedRoutes = new Set(
     presets.flatMap(({ slug }) => [
       `/tools/resizeimg/${slug}/`,
-      `/tools/resizeimg/${slug}/en/`
+      `/tools/resizeimg/${slug}/en/`,
+      `/tools/resizeimg/${slug}/vi/`
     ])
   );
 
-  for (const language of ["th", "en"]) {
+  for (const language of ["th", "en", "vi"]) {
     for (const currentSlug of [null, ...presets.map(({ slug }) => slug)]) {
       const path = join(
         publicDir,
         ...(currentSlug ? [currentSlug] : []),
-        ...(language === "en" ? ["en"] : []),
+        ...(language === "th" ? [] : [language]),
         "index.html"
       );
       const html = readFileSync(path, "utf8");
@@ -59,7 +63,7 @@ test("popular and discovery links stay on canonical image-tool routes", () => {
         for (const href of hrefs) {
           assert.equal(approvedRoutes.has(href), true, `${path} has a non-canonical image-tool link: ${href}`);
           assert.equal(
-            language === "en" ? href.endsWith("/en/") : !href.endsWith("/en/"),
+            language === "th" ? !/\/(?:en|vi)\/$/.test(href) : href.endsWith(`/${language}/`),
             true,
             `${path} links to the wrong locale: ${href}`
           );
@@ -146,14 +150,14 @@ test("base pages expose complete batch and comparison controls", () => {
 });
 
 test("the background-removal page carries its own FAQ, not the resizer default", () => {
-  for (const language of ["th", "en"]) {
-    const dir = join(publicDir, "remove-background-image", ...(language === "en" ? ["en"] : []));
+  for (const language of ["th", "en", "vi"]) {
+    const dir = join(publicDir, "remove-background-image", ...(language === "th" ? [] : [language]));
     const html = readFileSync(join(dir, "index.html"), "utf8");
     assert.doesNotMatch(html, /Questions about image resizing/);
     const schema = html.match(/\{"@context":"https:\/\/schema\.org","@type":"FAQPage"[\s\S]*?\}\]\}/);
     assert.ok(schema, `FAQPage schema missing for ${language}`);
     assert.doesNotMatch(schema[0], /100 KB/, "FAQ schema must not describe the resizer");
-    assert.match(schema[0], language === "th" ? /โปร่งใส/ : /transparent/i);
+    assert.match(schema[0], language === "th" ? /โปร่งใส/ : language === "vi" ? /trong suốt/i : /transparent/i);
   }
 });
 
@@ -193,8 +197,8 @@ test("the scoped copy rewrite leaves the other preset pages untouched", () => {
 });
 
 test("the model's key facts are in the rendered prose, not only in hidden UI", () => {
-  for (const language of ["th", "en"]) {
-    const dir = join(publicDir, "remove-background-image", ...(language === "en" ? ["en"] : []));
+  for (const language of ["th", "en", "vi"]) {
+    const dir = join(publicDir, "remove-background-image", ...(language === "th" ? [] : [language]));
     const html = readFileSync(join(dir, "index.html"), "utf8");
     const prose = html.match(/<section class="seo-guide section-shell" aria-labelledby="bg-about-heading">[\s\S]*?<\/section>/);
     assert.ok(prose, `background prose block missing for ${language}`);
@@ -209,12 +213,22 @@ test("the model's key facts are in the rendered prose, not only in hidden UI", (
 test("the FAQ does not promise an unlimited batch the tool refuses", () => {
   const appJs = readFileSync(join(publicDir, "app.js"), "utf8");
   assert.match(appJs, /MAX_FILES = 20/, "batch cap moved; the FAQ copy needs rechecking");
-  for (const language of ["th", "en"]) {
-    const dir = join(publicDir, "remove-background-image", ...(language === "en" ? ["en"] : []));
+  for (const language of ["th", "en", "vi"]) {
+    const dir = join(publicDir, "remove-background-image", ...(language === "th" ? [] : [language]));
     const html = readFileSync(join(dir, "index.html"), "utf8");
     assert.doesNotMatch(html, /no limit on how many images/);
     assert.doesNotMatch(html, /ไม่จำกัดจำนวนรูป/);
   }
+});
+
+test("Vietnamese background remover uses the canonical route and search language", () => {
+  const html = readFileSync(join(publicDir, "remove-background-image", "vi", "index.html"), "utf8");
+  assert.match(html, /<title>Xóa nền ảnh miễn phí online \| Background Remover DJAI<\/title>/);
+  assert.match(html, /<h1>Xóa nền hình ảnh miễn phí<\/h1>/);
+  assert.match(html, /background remover/i);
+  assert.match(html, /remove bg/i);
+  assert.doesNotMatch(html, /remove-background-image\/vi\/en\//);
+  assert.doesNotMatch(html, /Questions about image resizing/);
 });
 
 test("the model credit is injected wherever the engine loads", () => {

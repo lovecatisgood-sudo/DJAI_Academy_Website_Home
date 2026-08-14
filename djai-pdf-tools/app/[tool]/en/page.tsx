@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ tool: str
     const copy = alias.copy.en;
     return {
       title: `${copy.title} | DJTools by DJAI Academy`, description: copy.description, keywords: alias.keywords.en,
-      alternates: { canonical: pdfAliasHref(alias, "en"), languages: { th: pdfAliasHref(alias, "th"), en: pdfAliasHref(alias, "en"), "x-default": pdfAliasHref(alias, "th") } },
+      alternates: { canonical: pdfAliasHref(alias, "en"), languages: { th: pdfAliasHref(alias, "th"), en: pdfAliasHref(alias, "en"), vi: pdfAliasHref(alias, "vi"), "x-default": pdfAliasHref(alias, "th") } },
       openGraph: { title: copy.title, description: copy.description, url: pdfAliasHref(alias, "en"), siteName: "DJAI Academy", images: ["/tools/PDFTools/djai-academy-logo.webp"], type: "website" }
     };
   }
@@ -33,6 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ tool: str
       languages: {
         th: toolHref(slug, "th"),
         en: toolHref(slug, "en"),
+        vi: toolHref(slug, "vi"),
         "x-default": toolHref(slug, "th")
       }
     },

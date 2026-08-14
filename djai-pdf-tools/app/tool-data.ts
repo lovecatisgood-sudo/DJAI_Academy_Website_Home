@@ -16,7 +16,7 @@ export const toolSlugs = [
 ] as const;
 
 export type ToolSlug = (typeof toolSlugs)[number];
-export type Language = "th" | "en";
+export type Language = "th" | "en" | "vi";
 
 type ToolCopy = {
   label: string;
@@ -184,6 +184,19 @@ export const toolCopy: Record<Language, Record<ToolSlug, ToolCopy>> = {
       description: "Create a privacy-safe PDF copy with identifying metadata removed locally in your browser.",
       keywords: ["remove PDF metadata", "remove PDF author", "PDF privacy tool"]
     }
+  },
+  vi: {
+    "merge-pdf": { label: "Ghép PDF", title: "Ghép file PDF miễn phí", short: "Kết hợp nhiều PDF theo thứ tự bạn chọn.", description: "Ghép nhiều file PDF thành một tài liệu ngay trong trình duyệt. Miễn phí, không cần đăng ký, không upload và không watermark.", keywords: ["ghép PDF miễn phí", "gộp file PDF", "nối PDF online"] },
+    "split-pdf": { label: "Tách PDF", title: "Tách trang PDF miễn phí", short: "Tách theo khoảng trang, mỗi N trang hoặc lấy trang đã chọn.", description: "Tách PDF theo khoảng, lấy trang cần dùng hoặc chia tài liệu mỗi N trang. File được xử lý trên thiết bị và không bị upload.", keywords: ["tách PDF miễn phí", "lấy trang PDF", "chia file PDF"] },
+    "compress-pdf": { label: "Nén PDF", title: "Nén PDF giảm dung lượng miễn phí", short: "Giảm dung lượng với ba mức nén.", description: "Nén file PDF trong trình duyệt với ba mức chất lượng và so sánh dung lượng trước khi tải. Miễn phí, không cần email.", keywords: ["nén PDF miễn phí", "giảm dung lượng PDF", "compress PDF online"] },
+    "images-to-pdf": { label: "Ảnh sang PDF", title: "Chuyển JPG, PNG sang PDF miễn phí", short: "Ghép ảnh JPG, PNG hoặc WebP thành một PDF.", description: "Chuyển JPG, PNG và WebP sang PDF miễn phí. Sắp xếp ảnh, chọn khổ và chiều trang mà không upload file.", keywords: ["JPG sang PDF", "PNG sang PDF", "chuyển ảnh thành PDF"] },
+    "pdf-to-images": { label: "PDF sang ảnh", title: "Chuyển PDF sang JPG hoặc PNG miễn phí", short: "Xuất từng trang thành JPG hoặc PNG và tải ZIP.", description: "Chuyển các trang PDF thành ảnh JPG hoặc PNG chất lượng cao ngay trong trình duyệt, không cần đăng ký.", keywords: ["PDF sang JPG", "PDF sang PNG", "chuyển PDF thành ảnh"] },
+    "rotate-pdf": { label: "Xoay PDF", title: "Xoay trang PDF miễn phí", short: "Xoay toàn bộ hoặc trang đã chọn 90, 180 hay 270 độ.", description: "Xoay mọi trang hoặc chỉ các trang được chọn. Tài liệu được xử lý riêng tư và không rời khỏi thiết bị.", keywords: ["xoay PDF", "xoay trang PDF", "PDF rotator"] },
+    "watermark-pdf": { label: "Đóng watermark", title: "Thêm watermark vào PDF miễn phí", short: "Thêm chữ hoặc ảnh với điều khiển vị trí và độ mờ.", description: "Thêm chữ, logo hoặc ảnh watermark vào PDF miễn phí; điều chỉnh kích thước, vị trí và độ mờ trong trình duyệt.", keywords: ["đóng watermark PDF", "chèn logo vào PDF", "thêm chữ vào PDF"] },
+    "protect-pdf": { label: "Khóa PDF", title: "Đặt mật khẩu PDF bằng AES-256", short: "Bảo vệ PDF bằng mật khẩu và quyền sử dụng.", description: "Đặt mật khẩu PDF bằng mã hóa AES-256 và kiểm soát quyền in, sao chép, chỉnh sửa cùng điền form.", keywords: ["đặt mật khẩu PDF", "khóa file PDF", "mã hóa PDF AES-256"] },
+    "organize-pdf": { label: "Sắp xếp PDF", title: "Sắp xếp và xóa trang PDF miễn phí", short: "Chọn thứ tự mới và loại trang không cần dùng.", description: "Đổi thứ tự hoặc xóa trang PDF miễn phí bằng cách nhập thứ tự cuối cùng, ví dụ 3, 1, 2, 5.", keywords: ["sắp xếp trang PDF", "xóa trang PDF", "đổi thứ tự PDF"] },
+    "add-page-numbers": { label: "Đánh số trang", title: "Thêm số trang vào PDF miễn phí", short: "Đặt số trang ở đầu hoặc cuối với số bắt đầu tùy chọn.", description: "Thêm số trang vào PDF miễn phí, chọn vị trí và số bắt đầu; toàn bộ xử lý diễn ra trên thiết bị.", keywords: ["đánh số trang PDF", "thêm số trang PDF", "PDF page number"] },
+    "remove-pdf-metadata": { label: "Xóa metadata", title: "Xóa metadata PDF miễn phí", short: "Xóa title, author, subject, keywords và creator.", description: "Tạo bản sao PDF đã xóa metadata nhận dạng ngay trong trình duyệt, không upload tài liệu.", keywords: ["xóa metadata PDF", "xóa author PDF", "bảo mật PDF"] }
   }
 };
 
@@ -307,13 +320,18 @@ export const toolGuides: Record<Language, Record<ToolSlug, ToolGuide>> = {
       intro: "Clear title, author, subject, keywords, creator, and producer details before sharing a document.",
       steps: ["Select a PDF file", "Review what information will be cleared", "Create and download the metadata-safe copy"]
     }
-  }
+  },
+  vi: Object.fromEntries(toolSlugs.map((slug) => [slug, {
+    title: `Cách dùng công cụ ${toolCopy.vi[slug].label.toLowerCase()}`,
+    intro: `${toolCopy.vi[slug].short} File được xử lý trong bộ nhớ trình duyệt và không gửi lên máy chủ DJAI.`,
+    steps: ["Chọn file phù hợp từ thiết bị", "Kiểm tra và điều chỉnh thiết lập đầu ra", "Xử lý rồi tải file kết quả"]
+  }])) as Record<ToolSlug, ToolGuide>
 };
 
 export function toolHref(slug: ToolSlug, language: Language) {
-  return `${BASE_PATH}/${slug}/${language === "en" ? "en/" : ""}`;
+  return `${BASE_PATH}/${slug}/${language === "th" ? "" : `${language}/`}`;
 }
 
 export function homeHref(language: Language) {
-  return `${BASE_PATH}/${language === "en" ? "en/" : ""}`;
+  return `${BASE_PATH}/${language === "th" ? "" : `${language}/`}`;
 }

@@ -34,7 +34,7 @@ function JsonLd({ copy }) {
         "@id": "https://www.djai.academy/#website",
         url: "https://www.djai.academy/",
         name: "DJAI Academy",
-        inLanguage: ["th", "en"]
+        inLanguage: ["th", "en", "vi"]
       },
       {
         "@type": "WebPage",
@@ -55,14 +55,14 @@ function JsonLd({ copy }) {
           {
             "@type": "ListItem",
             position: 1,
-            name: copy.locale === "en" ? "DJAI Academy" : "DJAI Academy",
-            item: copy.locale === "en" ? "https://www.djai.academy/en/" : "https://www.djai.academy/"
+            name: "DJAI Academy",
+            item: copy.locale === "th" ? "https://www.djai.academy/" : `https://www.djai.academy/${copy.locale}/`
           },
           {
             "@type": "ListItem",
             position: 2,
-            name: copy.locale === "en" ? "Free tools" : "เครื่องมือฟรี",
-            item: copy.locale === "en" ? "https://www.djai.academy/tools/en/" : "https://www.djai.academy/tools/"
+            name: copy.locale === "th" ? "เครื่องมือฟรี" : copy.locale === "vi" ? "Công cụ miễn phí" : "Free tools",
+            item: copy.locale === "th" ? "https://www.djai.academy/tools/" : `https://www.djai.academy/tools/${copy.locale}/`
           },
           {
             "@type": "ListItem",
@@ -118,7 +118,13 @@ function DataTable({ headers, rows, label }) {
 export default function ProductLanding({ locale }) {
   const copy = content[locale];
   const languageHref = locale === "en" ? productUrls.th : productUrls.en;
-  const toolsHref = locale === "en" ? "https://www.djai.academy/tools/en/" : "https://www.djai.academy/tools/";
+  const languageHrefLang = locale === "en" ? "th" : "en";
+  const toolsHref = locale === "th" ? "https://www.djai.academy/tools/" : `https://www.djai.academy/tools/${locale}/`;
+  const interfaceCopy = {
+    th: { architecture: "สถาปัตยกรรมผลิตภัณฑ์ SEO Screaming Toad", toad: "คางคก", onPage: "หัวข้อในหน้านี้", evidence: "หลักฐานก่อนคำกล่าวอ้าง", regression: "เกณฑ์ regression", synthetic: "หลักฐานสังเคราะห์", oneRun: "การทดสอบสังเคราะห์หนึ่งครั้ง", theoretical: "เป็นเพียงทฤษฎี" },
+    en: { architecture: "SEO Screaming Toad product architecture", toad: "Toad", onPage: "On this page", evidence: "Evidence before claims", regression: "regression gate", synthetic: "synthetic evidence", oneRun: "one synthetic run", theoretical: "theoretical only" },
+    vi: { architecture: "Kiến trúc sản phẩm SEO Screaming Toad", toad: "Cóc", onPage: "Nội dung trên trang", evidence: "Bằng chứng trước tuyên bố", regression: "ngưỡng kiểm thử", synthetic: "bằng chứng tổng hợp", oneRun: "một lần chạy tổng hợp", theoretical: "chỉ là lý thuyết" }
+  }[locale];
 
   return (
     <main className={styles.page}>
@@ -142,9 +148,9 @@ export default function ProductLanding({ locale }) {
             <ShareButtons url={productUrls[locale]} title={copy.h1} locale={locale} compact />
           </div>
 
-          <div className={styles.productVisual} aria-label={locale === "en" ? "SEO Screaming Toad product architecture" : "สถาปัตยกรรมผลิตภัณฑ์ SEO Screaming Toad"}>
+          <div className={styles.productVisual} aria-label={interfaceCopy.architecture}>
             <div className={styles.visualTop}>
-              <span className={styles.toad} role="img" aria-label={locale === "en" ? "Toad" : "คางคก"}>🐸</span>
+              <span className={styles.toad} role="img" aria-label={interfaceCopy.toad}>🐸</span>
               <div><strong>SEO Screaming Toad</strong><small>DJAI Toad · local-first</small></div>
               <span className={styles.openBadge}>MIT</span>
             </div>
@@ -171,7 +177,7 @@ export default function ProductLanding({ locale }) {
         </div>
       </section>
 
-      <nav className={styles.anchorNav} aria-label={locale === "en" ? "On this page" : "หัวข้อในหน้านี้"}>
+      <nav className={styles.anchorNav} aria-label={interfaceCopy.onPage}>
         {copy.nav.map(([label, href]) => <a href={href} key={href}>{label}</a>)}
       </nav>
 
@@ -273,12 +279,12 @@ export default function ProductLanding({ locale }) {
 
       <section className={styles.truthSection} aria-labelledby="scale-title">
         <div className={styles.truthInner}>
-          <div><p className={styles.eyebrow}>EVIDENCE BEFORE CLAIMS</p><h2 id="scale-title">{copy.scaleTitle}</h2><p>{copy.scaleCopy}</p></div>
+          <div><p className={styles.eyebrow}>{interfaceCopy.evidence}</p><h2 id="scale-title">{copy.scaleTitle}</h2><p>{copy.scaleCopy}</p></div>
           <div className={styles.scaleMeters}>
-            <span><strong>100K</strong><small>regression gate</small></span>
-            <span><strong>1M</strong><small>synthetic evidence</small></span>
-            <span><strong>5M</strong><small>one synthetic run</small></span>
-            <span className={styles.theoretical}><strong>100M+</strong><small>theoretical only</small></span>
+            <span><strong>100K</strong><small>{interfaceCopy.regression}</small></span>
+            <span><strong>1M</strong><small>{interfaceCopy.synthetic}</small></span>
+            <span><strong>5M</strong><small>{interfaceCopy.oneRun}</small></span>
+            <span className={styles.theoretical}><strong>100M+</strong><small>{interfaceCopy.theoretical}</small></span>
           </div>
         </div>
       </section>
@@ -309,7 +315,7 @@ export default function ProductLanding({ locale }) {
 
       <footer className={styles.legalFooter}>
         <p>{copy.legal}</p>
-        <a href={languageHref} hrefLang={locale === "en" ? "th" : "en"}>{copy.languageLabel}</a>
+        <a href={languageHref} hrefLang={languageHrefLang}>{copy.languageLabel}</a>
       </footer>
     </main>
   );

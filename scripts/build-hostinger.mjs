@@ -185,16 +185,23 @@ const projects = [
     dir: "Siamese-Cat-Dev-Bio-Site",
     install: "ci",
     build: ["run", "build"],
-    outputs: ["dist/index.html", "dist/en/index.html", "dist/course/index.html", "dist/course/th/index.html", "dist/djai-academy-logo.webp", "dist/siamese-cat-dev-logo.webp"]
+    outputs: ["dist/index.html", "dist/en/index.html", "dist/vi/index.html", "dist/course/index.html", "dist/course/th/index.html", "dist/course/vi/index.html", "dist/djai-academy-logo.webp", "dist/siamese-cat-dev-logo.webp"]
   }
 ];
 
 function run(command, args, cwd) {
   console.log(`\n> ${command} ${args.join(" ")} (${cwd})`);
+  const childEnvironment = { ...process.env };
+  // `npm run` forwards user-level allow-scripts as an environment setting.
+  // Newer npm versions reject that setting inside nested project installs,
+  // even when install scripts are explicitly disabled for this reproducible build.
+  delete childEnvironment.npm_config_allow_scripts;
+  delete childEnvironment.NPM_CONFIG_ALLOW_SCRIPTS;
   const result = spawnSync(command, args, {
     cwd,
     stdio: "inherit",
-    shell: false
+    shell: false,
+    env: childEnvironment
   });
 
   if (result.status !== 0) {
@@ -215,7 +222,7 @@ function ensureDependencies(project) {
     const dependencyCheck = spawnSync("npm", ["ls", "--depth=0"], {
       cwd,
       stdio: "ignore",
-      env: process.env
+      env: Object.fromEntries(Object.entries(process.env).filter(([key]) => key.toLowerCase() !== "npm_config_allow_scripts"))
     });
 
     if (dependencyCheck.status === 0 && (fingerprintMatches || !existsSync(marker))) {
@@ -225,8 +232,8 @@ function ensureDependencies(project) {
   }
 
   const installCommand = project.install === "ci" && existsSync(lockfile)
-    ? ["ci"]
-    : ["install"];
+    ? ["ci", "--ignore-scripts", "--userconfig=/dev/null"]
+    : ["install", "--ignore-scripts", "--userconfig=/dev/null"];
 
   run("npm", installCommand, cwd);
   writeFileSync(marker, `${fingerprint}\n`);
@@ -315,5 +322,7 @@ for (const project of projects) {
   setCourseExportLanguages(project);
   prepareRuntimeArtifact(project);
 }
+
+run("node", ["scripts/verify-locale-coverage.mjs"], rootDir);
 
 console.log("\nHostinger build completed. Start with: npm start");

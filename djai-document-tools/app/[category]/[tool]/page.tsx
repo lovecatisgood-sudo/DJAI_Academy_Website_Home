@@ -8,7 +8,7 @@ export function generateStaticParams() { return tools.map((tool) => ({ category:
 
 export async function generateMetadata({ params }: { params: Promise<{ category: string; tool: string }> }): Promise<Metadata> {
   const { category, tool: slug } = await params; const tool = findTool(category, slug); if (!tool) return {};
-  return { title: `${tool.title.th} | DJTools`, description: tool.description.th, keywords: tool.keywords.th, alternates: { canonical: toolHref(tool, "th"), languages: { th: toolHref(tool, "th"), en: toolHref(tool, "en"), "x-default": toolHref(tool, "th") } }, openGraph: { title: tool.title.th, description: tool.description.th, url: toolHref(tool, "th"), siteName: "DJAI Academy", images: ["/tools/djai-assets/djai-academy-logo.webp"], type: "website" } };
+  return { title: `${tool.title.th} | DJTools`, description: tool.description.th, keywords: tool.keywords.th, alternates: { canonical: toolHref(tool, "th"), languages: { th: toolHref(tool, "th"), en: toolHref(tool, "en"), vi: toolHref(tool, "vi"), "x-default": toolHref(tool, "th") } }, openGraph: { title: tool.title.th, description: tool.description.th, url: toolHref(tool, "th"), siteName: "DJAI Academy", images: ["/tools/djai-assets/djai-academy-logo.webp"], type: "website" } };
 }
 
 export default async function Page({ params }: { params: Promise<{ category: string; tool: string }> }) {

@@ -7,13 +7,14 @@ import { fileURLToPath } from "node:url";
 import { tools, videoTools } from "../scripts/build.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
-test("exports functional bilingual media routes", () => {
+test("exports functional trilingual media routes", () => {
   assert.equal(Object.keys(tools).length, 9);
-  for (const slug of Object.keys(tools)) for (const lang of ["th", "en"]) {
-    const path = join(root, "public", slug, ...(lang === "en" ? ["en"] : []), "index.html");
+  for (const slug of Object.keys(tools)) for (const lang of ["th", "en", "vi"]) {
+    const path = join(root, "public", slug, ...(lang === "th" ? [] : [lang]), "index.html");
     assert.equal(existsSync(path), true, path);
     const html = readFileSync(path, "utf8");
-    assert.match(html, new RegExp(`<link rel="canonical" href="https://www.djai.academy/tools/media/${slug}/${lang === "en" ? "en/" : ""}">`));
+    assert.match(html, new RegExp(`<link rel="canonical" href="https://www.djai.academy/tools/media/${slug}/${lang === "th" ? "" : `${lang}/`}">`));
+    assert.match(html, /hreflang="vi"/);
     assert.match(html, /hreflang="x-default"/);
     assert.match(html, /data-tool=/);
   }
@@ -23,29 +24,28 @@ test("ships FFmpeg core locally", () => {
   assert.ok(readFileSync(join(root, "public/vendor/core/ffmpeg-core.wasm")).byteLength > 10_000_000);
 });
 
-test("exports 23 differentiated bilingual video tools", () => {
+test("exports 23 differentiated trilingual video tools", () => {
   assert.equal(videoTools.length, 23);
   assert.equal(new Set(videoTools.map((tool) => tool.slug)).size, 23);
 
-  const titles = { th: new Set(), en: new Set() };
-  const descriptions = { th: new Set(), en: new Set() };
+  const titles = { th: new Set(), en: new Set(), vi: new Set() };
+  const descriptions = { th: new Set(), en: new Set(), vi: new Set() };
   for (const tool of videoTools) {
     assert.ok(tool.mode, `${tool.slug}: missing mode`);
-    for (const lang of ["th", "en"]) {
-      const directory = join(root, "public", tool.slug, ...(lang === "en" ? ["en"] : []));
+    for (const lang of ["th", "en", "vi"]) {
+      const directory = join(root, "public", tool.slug, ...(lang === "th" ? [] : [lang]));
       const path = join(directory, "index.html");
       assert.equal(existsSync(path), true, path);
       const html = readFileSync(path, "utf8");
-      const suffix = lang === "en" ? "en/" : "";
+      const suffix = lang === "th" ? "" : `${lang}/`;
       const canonical = `https://www.djai.academy/tools/media/${tool.slug}/${suffix}`;
-      const alternate = lang === "en"
-        ? `https://www.djai.academy/tools/media/${tool.slug}/`
-        : `https://www.djai.academy/tools/media/${tool.slug}/en/`;
 
       assert.match(html, new RegExp(`<html lang="${lang}"`));
       assert.match(html, new RegExp(`<link rel="canonical" href="${canonical}"`));
       assert.match(html, new RegExp(`hreflang="${lang}" href="${canonical}"`));
-      assert.match(html, new RegExp(`hreflang="${lang === "en" ? "th" : "en"}" href="${alternate}"`));
+      assert.match(html, /hreflang="th"/);
+      assert.match(html, /hreflang="en"/);
+      assert.match(html, /hreflang="vi"/);
       assert.match(html, /hreflang="x-default"/);
       assert.match(html, /<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">/);
       assert.match(html, /<meta property="og:site_name" content="DJAI Academy">/);
@@ -86,9 +86,9 @@ test("ships frame ZIP support only where it is needed", () => {
 });
 
 test("media hub discovers every video route", () => {
-  for (const lang of ["th", "en"]) {
-    const html = readFileSync(join(root, "public", ...(lang === "en" ? ["en"] : []), "index.html"), "utf8");
-    assert.match(html, lang === "en" ? /Free Video and Audio Tools Online/ : /เครื่องมือวิดีโอและเสียงฟรี ออนไลน์/);
+  for (const lang of ["th", "en", "vi"]) {
+    const html = readFileSync(join(root, "public", ...(lang === "th" ? [] : [lang]), "index.html"), "utf8");
+    assert.match(html, lang === "vi" ? /Công cụ âm thanh và video miễn phí online/ : lang === "en" ? /Free Video and Audio Tools Online/ : /เครื่องมือวิดีโอและเสียงฟรี ออนไลน์/);
     assert.match(html, /<meta name="twitter:card" content="summary_large_image">/);
     assert.match(html, /<meta property="og:image" content="https:\/\/www\.djai\.academy\/social\/djai-academy\.webp">/);
     const schema = JSON.parse(html.match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/)[1]);
@@ -97,7 +97,7 @@ test("media hub discovers every video route", () => {
     assert.equal(schema.hasPart.length, 28);
     assert.equal(new Set(schema.hasPart.map((item) => item.url)).size, 28);
     for (const tool of videoTools) {
-      const suffix = lang === "en" ? "en/" : "";
+      const suffix = lang === "th" ? "" : `${lang}/`;
       assert.match(html, new RegExp(`href="/tools/media/${tool.slug}/${suffix}"`), `${lang}: ${tool.slug}`);
     }
   }

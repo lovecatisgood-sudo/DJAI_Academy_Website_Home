@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     languages: {
       th: `${BASE_PATH}/`,
       en: `${BASE_PATH}/en/`,
+      vi: `${BASE_PATH}/vi/`,
       "x-default": `${BASE_PATH}/`,
     },
   },

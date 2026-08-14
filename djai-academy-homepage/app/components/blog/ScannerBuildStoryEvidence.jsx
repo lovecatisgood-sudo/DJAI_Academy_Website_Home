@@ -34,6 +34,17 @@ const copy = {
     nextEyebrow: "ไปต่อจาก Build Story",
     nextTitle: "ลองดู Product จริง แล้วเรียนรู้ Workflow ที่ใช้สร้างมัน",
     academy: "ดูเส้นทางการเรียนของ DJAI"
+  },
+  vi: {
+    eyebrow: "Bằng chứng sản phẩm",
+    title: "Ứng dụng trong câu chuyện này là sản phẩm hoạt động thật, không phải mockup.",
+    body: "Các màn hình cho thấy quy trình tài liệu Android hiện tại trong lúc bản Google Play đang được chuẩn bị. Trang sản phẩm ghi riêng tính năng, trạng thái phát hành và ranh giới quyền riêng tư để phân biệt bằng chứng sản phẩm với bài học trong bài viết.",
+    product: "Khám phá sản phẩm Cam PDF",
+    privacy: "Đọc chính sách quyền riêng tư tài liệu",
+    screens: [["home.png", "Thư viện tài liệu", "Tệp gần đây, thao tác quét và quản lý tài liệu."], ["editor.png", "Chỉnh đường biên", "Trang đã chụp có thể được kiểm tra và sửa trước khi xuất."], ["export.png", "Đặt tên khi xuất", "Người dùng chọn tên tệp, định dạng, kích thước trang và chất lượng."]],
+    nextEyebrow: "Tiếp tục từ câu chuyện xây sản phẩm",
+    nextTitle: "Xem sản phẩm thật rồi học quy trình phía sau.",
+    academy: "Xem lộ trình học DJAI"
   }
 };
 
@@ -49,7 +60,7 @@ export function ScannerBuildStoryEvidence({ locale = "en" }) {
         <h2 id="scanner-evidence-title">{text.title}</h2>
         <p>{text.body}</p>
         <div className="article-evidence-links">
-          <a href={APP_PATH}>{text.product}</a>
+          <a href={locale === "vi" ? `${APP_PATH}vi/` : APP_PATH}>{text.product}</a>
           <a href={`${APP_PATH}privacy/`}>{text.privacy}</a>
         </div>
       </div>
@@ -77,7 +88,8 @@ export function ScannerBuildStoryEvidence({ locale = "en" }) {
 
 export function ScannerBuildStoryNextStep({ locale = "en" }) {
   const text = copy[locale] || copy.en;
-  const academyHref = locale === "th" ? "/academy/" : "/academy/en/";
+  const academyHref = locale === "th" ? "/academy/" : `/academy/${locale}/`;
+  const productHref = locale === "vi" ? `${APP_PATH}vi/` : APP_PATH;
 
   return (
     <aside className="article-next-step" aria-label={text.nextEyebrow}>
@@ -86,7 +98,7 @@ export function ScannerBuildStoryNextStep({ locale = "en" }) {
         <h2>{text.nextTitle}</h2>
       </div>
       <div className="article-next-step-actions">
-        <a className="button" href={APP_PATH}>{text.product}</a>
+        <a className="button" href={productHref}>{text.product}</a>
         <a className="text-link" href={academyHref}>{text.academy}</a>
       </div>
     </aside>

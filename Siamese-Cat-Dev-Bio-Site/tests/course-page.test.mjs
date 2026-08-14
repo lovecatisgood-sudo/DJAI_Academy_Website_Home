@@ -20,11 +20,13 @@ test('course page communicates the exact free live-session offer', () => {
   assert.match(component, /ผู้ก่อตั้ง DJAI/);
 });
 
-test('English and Thai initial HTML form a truthful reciprocal language cluster', () => {
+test('English, Thai, and Vietnamese initial HTML form a truthful reciprocal language cluster', () => {
   assert.match(routeBuilder, /https:\/\/www\.djai\.academy\/siamese_cat\/dev\/course\//);
   assert.match(routeBuilder, /https:\/\/www\.djai\.academy\/siamese_cat\/dev\/course\/th\//);
+  assert.match(routeBuilder, /https:\/\/www\.djai\.academy\/siamese_cat\/dev\/course\/vi\//);
   assert.match(routeBuilder, /buildCourseHtml\('en'\)/);
   assert.match(routeBuilder, /buildCourseHtml\('th'\)/);
+  assert.match(routeBuilder, /buildCourseHtml\('vi'\)/);
   assert.match(routeBuilder, /hreflang=\"x-default\"/);
   assert.match(routeBuilder, /'@type': 'EducationEvent'/);
   assert.match(routeBuilder, /startDate: '2026-08-22T13:00:00\+07:00'/);

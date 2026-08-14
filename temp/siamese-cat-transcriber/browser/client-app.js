@@ -1,8 +1,10 @@
 (() => {
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
-  const locale = document.body.dataset.locale === "th" ? "th" : "en";
-  const copy = locale === "th" ? {
+  const locale = ["th", "vi"].includes(document.body.dataset.locale) ? document.body.dataset.locale : "en";
+  const copy = locale === "vi" ? {
+    choose: "Chọn một file để bắt đầu.", selected: "Đã chọn", decoding: "Đang chuẩn bị âm thanh trên thiết bị…", working: "Đang chép lời trên thiết bị…", ready: "Sẵn sàng trong trình duyệt", webgpu: "WebGPU sẵn sàng", cpu: "CPU trình duyệt", done: "Chép lời hoàn tất", failed: "Không thể chép lời file này", decodeFail: "Trình duyệt không đọc được âm thanh từ file này. Hãy thử MP3, WAV, M4A, MP4 hoặc WebM có thể phát trong trình duyệt.", copied: "Đã sao chép bản chép lời", exportReady: "File xuất đã sẵn sàng", edit: "Chỉnh sửa văn bản", processing: "Đang xử lý trên thiết bị…", file: "File", minutes: "phút", model: "mô hình"
+  } : locale === "th" ? {
     choose: "เลือกไฟล์หนึ่งไฟล์เพื่อเริ่ม", selected: "เลือกแล้ว", decoding: "กำลังเตรียมเสียงในอุปกรณ์นี้…", working: "กำลังถอดเสียง…", ready: "พร้อมใช้งานใน browser", webgpu: "WebGPU พร้อม", cpu: "CPU ใน browser", done: "ถอดเสียงเสร็จแล้ว", failed: "ไม่สามารถถอดเสียงได้", decodeFail: "Browser นี้ไม่สามารถอ่านเสียงจากไฟล์นี้ได้ ลอง MP3, WAV, M4A, MP4 หรือ WebM ที่เปิดใน browser นี้ได้", copied: "คัดลอก transcript แล้ว", exportReady: "เตรียมไฟล์ส่งออกแล้ว", edit: "แก้ไขข้อความ", processing: "กำลังประมวลผลในอุปกรณ์นี้…", file: "ไฟล์", minutes: "นาที", model: "โมเดล"
   } : {
     choose: "Choose one file to begin.", selected: "Selected", decoding: "Preparing audio on this device…", working: "Transcribing on this device…", ready: "Ready in your browser", webgpu: "WebGPU ready", cpu: "Browser CPU", done: "Transcription complete", failed: "Unable to transcribe this file", decodeFail: "This browser could not read audio from that file. Try an MP3, WAV, M4A, MP4, or WebM file that plays in this browser.", copied: "Transcript copied", exportReady: "Export ready", edit: "Edit text", processing: "Processing on this device…", file: "File", minutes: "minutes", model: "model"
@@ -22,7 +24,7 @@
   const formatTime = (seconds) => { const value = Math.max(0, Number(seconds) || 0); const hours = Math.floor(value / 3600); const minutes = Math.floor((value % 3600) / 60); const remainder = Math.floor(value % 60); return hours ? `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}:${String(remainder).padStart(2, "0")}` : `${String(minutes).padStart(2, "0")}:${String(remainder).padStart(2, "0")}`; };
   const toast = (message) => { els.toast.textContent = message; els.toast.classList.add("show"); clearTimeout(toastTimer); toastTimer = setTimeout(() => els.toast.classList.remove("show"), 2800); };
   const setEngine = (message, badge, tone = "") => { els.engineBadge.textContent = badge; els.engineNotice.className = `status ${tone}`.trim(); els.engineNotice.innerHTML = `<span class="status-dot"></span><span>${escapeHtml(message)}</span>`; };
-  const setBusy = (busy, label = null) => { els.transcribe.disabled = busy || !selectedFile; if (label) els.transcribe.textContent = label; else els.transcribe.textContent = locale === "th" ? "ถอดเสียงในอุปกรณ์นี้" : "Transcribe on this device"; document.body.classList.toggle("engine-loading", busy); };
+  const setBusy = (busy, label = null) => { els.transcribe.disabled = busy || !selectedFile; if (label) els.transcribe.textContent = label; else els.transcribe.textContent = locale === "vi" ? "Chép lời trên thiết bị" : locale === "th" ? "ถอดเสียงในอุปกรณ์นี้" : "Transcribe on this device"; document.body.classList.toggle("engine-loading", busy); };
 
   function addFile(file) {
     if (!file) return;
@@ -76,17 +78,17 @@
       if (data.type === "complete") finishTranscription(data);
       if (data.type === "error") failTranscription(data.message);
     };
-    worker.onerror = () => failTranscription(locale === "th" ? "Worker สำหรับ AI หยุดทำงาน ลองรีเฟรชหน้าและเริ่มด้วยโมเดล Tiny หรือ Base" : "The local AI worker stopped. Refresh the page and try Tiny or Base first.");
+    worker.onerror = () => failTranscription(locale === "vi" ? "AI worker cục bộ đã dừng. Hãy tải lại trang và thử mô hình Tiny hoặc Base trước." : locale === "th" ? "Worker สำหรับ AI หยุดทำงาน ลองรีเฟรชหน้าและเริ่มด้วยโมเดล Tiny หรือ Base" : "The local AI worker stopped. Refresh the page and try Tiny or Base first.");
     return worker;
   }
 
   async function startTranscription() {
     if (!selectedFile) return;
-    setBusy(true, locale === "th" ? "กำลังเตรียมไฟล์…" : "Preparing file…");
+    setBusy(true, locale === "vi" ? "Đang chuẩn bị file…" : locale === "th" ? "กำลังเตรียมไฟล์…" : "Preparing file…");
     setEngine(copy.decoding, "Local");
     try {
       const samples = await audioSamples(selectedFile);
-      setBusy(true, locale === "th" ? "กำลังถอดเสียง…" : "Transcribing…");
+      setBusy(true, locale === "vi" ? "Đang chép lời…" : locale === "th" ? "กำลังถอดเสียง…" : "Transcribing…");
       getWorker().postMessage({ type: "transcribe", samples: samples.buffer, model: els.model.value, language: els.language.value }, [samples.buffer]);
     } catch (error) {
       failTranscription(error instanceof Error ? error.message : String(error));
@@ -100,7 +102,7 @@
     objectUrl = URL.createObjectURL(selectedFile);
     els.audio.src = objectUrl;
     els.title.textContent = selectedFile.name;
-    els.meta.textContent = [data.engine, els.model.options[els.model.selectedIndex].text, `${segments.length} ${locale === "th" ? "ช่วงข้อความ" : "timed segments"}`].join(" · ");
+    els.meta.textContent = [data.engine, els.model.options[els.model.selectedIndex].text, `${segments.length} ${locale === "vi" ? "đoạn có thời gian" : locale === "th" ? "ช่วงข้อความ" : "timed segments"}`].join(" · ");
     els.upload.hidden = true;
     els.transcript.hidden = false;
     renderSegments();
@@ -112,7 +114,7 @@
 
   function failTranscription(message) {
     setBusy(false);
-    setEngine(message || copy.failed, locale === "th" ? "ลองใหม่" : "Try again", "error");
+    setEngine(message || copy.failed, locale === "vi" ? "Thử lại" : locale === "th" ? "ลองใหม่" : "Try again", "error");
     toast(message || copy.failed);
   }
 
@@ -141,7 +143,7 @@
   els.dropZone.addEventListener("drop", (event) => addFile(event.dataTransfer.files[0]));
   els.selectedFile.addEventListener("click", (event) => { if (event.target.closest("#clearFile")) clearFile(); });
   els.transcribe.addEventListener("click", startTranscription);
-  els.model.addEventListener("change", () => { els.modelHint.textContent = els.model.value === "tiny" ? (locale === "th" ? "เบาสุด" : "Smallest") : els.model.value === "small" ? (locale === "th" ? "คุณภาพสูง" : "Higher") : (locale === "th" ? "แนะนำ" : "Recommended"); });
+  els.model.addEventListener("change", () => { els.modelHint.textContent = els.model.value === "tiny" ? (locale === "vi" ? "Nhẹ nhất" : locale === "th" ? "เบาสุด" : "Smallest") : els.model.value === "small" ? (locale === "vi" ? "Chính xác hơn" : locale === "th" ? "คุณภาพสูง" : "Higher") : (locale === "vi" ? "Khuyến nghị" : locale === "th" ? "แนะนำ" : "Recommended"); });
   els.back.addEventListener("click", backToUpload); els.copy.addEventListener("click", copyTranscript); els.search.addEventListener("input", filterTranscript); els.speed.addEventListener("change", () => { els.audio.playbackRate = Number(els.speed.value) || 1; }); els.audio.addEventListener("timeupdate", highlightCurrentSegment); els.segments.addEventListener("input", (event) => { if (event.target.matches(".segment-text")) autoGrow(event.target); }); els.segments.addEventListener("click", (event) => { const segment = event.target.closest(".segment"); if (segment && event.target.closest(".segment-time")) { els.audio.currentTime = Number(segment.dataset.start) || 0; els.audio.play(); } });
   els.exportButton.addEventListener("click", () => { els.exportMenu.hidden = !els.exportMenu.hidden; }); els.exportMenu.addEventListener("click", (event) => { const button = event.target.closest("button[data-format]"); if (!button || !result) return; els.exportMenu.hidden = true; exportText(button.dataset.format); }); document.addEventListener("click", (event) => { if (!event.target.closest(".export-menu-wrap")) els.exportMenu.hidden = true; }); els.menu.addEventListener("click", () => els.nav.classList.toggle("open")); els.nav.addEventListener("click", (event) => { if (event.target.tagName === "A") els.nav.classList.remove("open"); });
   setEngine(navigator.gpu ? copy.webgpu : copy.cpu, navigator.gpu ? "WebGPU" : "CPU");
