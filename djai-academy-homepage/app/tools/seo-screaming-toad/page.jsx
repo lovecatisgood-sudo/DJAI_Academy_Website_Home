@@ -9,6 +9,7 @@ export const metadata = {
     languages: {
       th: "/tools/seo-screaming-toad/",
       en: "/tools/seo-screaming-toad/en/",
+      vi: "/tools/seo-screaming-toad/vi/",
       "x-default": "/tools/seo-screaming-toad/"
     }
   },

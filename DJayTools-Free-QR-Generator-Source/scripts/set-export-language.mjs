@@ -10,9 +10,11 @@ function visit(directory) {
       visit(path);
       continue;
     }
-    if (entry !== "index.html" || !path.includes("/en/")) continue;
+    if (entry !== "index.html") continue;
+    const locale = path.includes("/vi/") ? "vi" : path.includes("/en/") ? "en" : null;
+    if (!locale) continue;
     const html = readFileSync(path, "utf8");
-    writeFileSync(path, html.replace('<html lang="th">', '<html lang="en">'));
+    writeFileSync(path, html.replace('<html lang="th">', `<html lang="${locale}">`));
   }
 }
 

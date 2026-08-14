@@ -10,19 +10,21 @@ const groups = {
   spreadsheet: ["csv-to-json", "json-to-csv", "csv-cleaner", "merge-csv", "split-csv", "csv-to-xlsx", "xlsx-to-csv"]
 };
 
-test("every tool exports Thai and English SEO pages", () => {
+test("every tool exports Thai, English, and Vietnamese SEO pages", () => {
   for (const [category, tools] of Object.entries(groups)) {
     for (const slug of tools) {
-      for (const languagePath of [[], ["en"]]) {
+      for (const languagePath of [[], ["en"], ["vi"]]) {
         const file = join(root, "out", category, slug, ...languagePath, "index.html");
         assert.equal(existsSync(file), true, `missing ${file}`);
         const html = readFileSync(file, "utf8");
         assert.match(html, /rel="canonical"/);
         assert.match(html, /hreflang="th"/i);
         assert.match(html, /hreflang="en"/i);
+        assert.match(html, /hreflang="vi"/i);
         assert.match(html, /application\/ld\+json/);
         assert.doesNotMatch(html, /noindex/i);
-        assert.match(html, languagePath.length ? /<html lang="en">/ : /<html lang="th">/);
+        const language = languagePath[0] || "th";
+        assert.match(html, new RegExp(`<html lang="${language}">`));
       }
     }
   }
@@ -32,6 +34,7 @@ test("category hubs and local processing assets exist", () => {
   for (const category of Object.keys(groups)) {
     assert.equal(existsSync(join(root, "out", category, "index.html")), true);
     assert.equal(existsSync(join(root, "out", category, "en", "index.html")), true);
+    assert.equal(existsSync(join(root, "out", category, "vi", "index.html")), true);
   }
   for (const asset of [
     "out/document/pdf.worker.min.mjs",

@@ -17,6 +17,7 @@ export const metadata = {
     languages: {
       th: "/siamese_cat/dev/blog/",
       en: "/siamese_cat/dev/blog/en/",
+      vi: "/siamese_cat/dev/blog/vi/",
       "x-default": "/siamese_cat/dev/blog/"
     }
   },

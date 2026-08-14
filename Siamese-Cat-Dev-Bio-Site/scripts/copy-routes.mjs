@@ -3,16 +3,22 @@ import { join } from 'node:path';
 
 const distDir = new URL('../dist/', import.meta.url);
 const englishDir = join(distDir.pathname, 'en');
+const vietnameseDir = join(distDir.pathname, 'vi');
 const courseDir = join(distDir.pathname, 'course');
 const courseThaiDir = join(courseDir, 'th');
+const courseVietnameseDir = join(courseDir, 'vi');
 const indexPath = join(distDir.pathname, 'index.html');
 const englishIndexPath = join(englishDir, 'index.html');
+const vietnameseIndexPath = join(vietnameseDir, 'index.html');
 const courseIndexPath = join(courseDir, 'index.html');
 const courseThaiIndexPath = join(courseThaiDir, 'index.html');
+const courseVietnameseIndexPath = join(courseVietnameseDir, 'index.html');
 
 mkdirSync(englishDir, { recursive: true });
+mkdirSync(vietnameseDir, { recursive: true });
 mkdirSync(courseDir, { recursive: true });
 mkdirSync(courseThaiDir, { recursive: true });
+mkdirSync(courseVietnameseDir, { recursive: true });
 
 const englishHtml = readFileSync(indexPath, 'utf8')
   .replace('<html lang="th">', '<html lang="en">')
@@ -54,6 +60,41 @@ const englishHtml = readFileSync(indexPath, 'utf8')
 
 writeFileSync(englishIndexPath, englishHtml);
 
+const vietnameseDescription = 'Siamese Cat Dev là đối tác thiết kế sản phẩm, quản lý dự án và phát triển phần mềm, xây sản phẩm số bằng Vibe Coding và quy trình hỗ trợ bởi AI.';
+const vietnameseTitle = 'Siamese Cat Dev | Thiết kế sản phẩm, phát triển và Vibe Coding';
+const vietnameseCanonical = 'https://www.djai.academy/siamese_cat/dev/vi/';
+const vietnameseFallback = `<div id="root"><main>
+  <h1>Siamese Cat Dev: Thiết kế sản phẩm, phát triển phần mềm và Vibe Coding</h1>
+  <p>Biến ý tưởng sản phẩm thành phần mềm hoạt động thật bằng tư duy sản phẩm, kỹ thuật và quy trình hỗ trợ bởi AI.</p>
+  <section><h2>Từ vấn đề đến sản phẩm đã triển khai</h2><p>Thiết kế, phát triển, kiểm thử và đưa website, ứng dụng, tự động hóa cùng công cụ hữu ích vào vận hành.</p></section>
+  <section><h2>Đối tác phát triển và đào tạo của DJAI Academy</h2><p>Học qua việc xây sản phẩm thật rồi chia sẻ lại quy trình cho doanh nghiệp, nhà phát triển và người học.</p></section>
+  <nav aria-label="Liên kết Siamese Cat Dev"><a href="/siamese_cat/dev/blog/en/">Đọc bài viết hiện có</a><a href="https://www.djai.academy/course/vi/">Xem lộ trình học DJAI</a><a href="https://www.djai.academy/service/vi/">Trao đổi về dự án</a></nav>
+</main></div>`;
+const vietnameseSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Siamese Cat Dev',
+  url: vietnameseCanonical,
+  logo: 'https://www.djai.academy/siamese_cat/dev/siamese-cat-dev-logo.webp',
+  inLanguage: 'vi',
+  description: vietnameseDescription,
+  sameAs: ['https://www.djai.academy/', 'https://x.com/siamesecatdev', 'https://www.instagram.com/djcatdev/', 'https://www.facebook.com/people/Siamese-Cat-Dev/61592514145429/']
+};
+const vietnameseHtml = readFileSync(indexPath, 'utf8')
+  .replace('<html lang="th">', '<html lang="vi">')
+  .replace(/<meta\s+name="description"[\s\S]*?\/>/, `<meta name="description" content="${vietnameseDescription}" />`)
+  .replace(/<link rel="canonical"[^>]*>/, `<link rel="canonical" href="${vietnameseCanonical}" />`)
+  .replace(/<meta property="og:title"[^>]*>/, `<meta property="og:title" content="${vietnameseTitle}" />`)
+  .replace(/<meta\s+property="og:description"[\s\S]*?\/>/, `<meta property="og:description" content="${vietnameseDescription}" />`)
+  .replace(/<meta property="og:url"[^>]*>/, `<meta property="og:url" content="${vietnameseCanonical}" />`)
+  .replace(/<meta name="twitter:title"[^>]*>/, `<meta name="twitter:title" content="${vietnameseTitle}" />`)
+  .replace(/<meta\s+name="twitter:description"[\s\S]*?\/>/, `<meta name="twitter:description" content="${vietnameseDescription}" />`)
+  .replace(/<title>[\s\S]*?<\/title>/, `<title>${vietnameseTitle}</title>`)
+  .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/, `<script type="application/ld+json">${JSON.stringify(vietnameseSchema)}</script>`)
+  .replace(/<div id="root">[\s\S]*?<\/div>/, vietnameseFallback);
+
+writeFileSync(vietnameseIndexPath, vietnameseHtml);
+
 const courseLocales = {
   en: {
     title: 'Vibe Code a Money-Making Product | Free Live Course',
@@ -81,6 +122,20 @@ const courseLocales = {
       <section><h2>จากการ Prompt สู่ Production</h2><p>เลือกสินค้าที่มีคุณค่า ใช้มาตรฐานพัฒนาซอฟต์แวร์ ปรับ MVP ให้แข็งแรง และวางแผนเปิดตัวอย่างเป็นระบบ</p></section>
       <section><h2>พบกับผู้สอนทั้งสองคน</h2><img src="/founder-djai-display.webp" alt="Mr. A ผู้ก่อตั้ง DJAI Academy, CTO และผู้สอน"><p>เรียนกับ Siamese Cat Dev และ Mr. A ผู้ก่อตั้ง DJAI Academy, CTO ที่มีประสบการณ์ และผู้สอนคอร์สออฟไลน์ของ DJAI</p></section>
       <a href="/MONEY_MAKING_PRODUCT/">ดูรายละเอียดและลงทะเบียนฟรี</a><a href="/siamese_cat/dev/course/" hreflang="en">Read in English</a>
+    </main></div>`,
+  },
+  vi: {
+    title: 'Vibe Code sản phẩm tạo doanh thu | Lớp học trực tiếp miễn phí',
+    description: 'Trang tiếng Việt cho lớp học trực tiếp bằng tiếng Anh kéo dài một giờ ngày 22 tháng 8 năm 2026, hướng dẫn biến MVP vibe-coded thành sản phẩm có thể phát hành và bán.',
+    canonical: 'https://www.djai.academy/siamese_cat/dev/course/vi/',
+    name: 'Hành trình Vibe Code một sản phẩm tạo doanh thu',
+    fallback: `<div id="root"><header><a href="/vi/"><img src="/siamese_cat/dev/djai-academy-logo.webp" alt="DJAI Academy"></a></header><main>
+      <p>Lớp học trực tiếp miễn phí bằng tiếng Anh · 22 tháng 8 năm 2026 · 13:00–14:00 ICT</p>
+      <h1>Vibe Code một sản phẩm có thể tạo doanh thu</h1>
+      <p>Học cách người xây sản phẩm có kinh nghiệm đưa MVP do AI hỗ trợ thành phần mềm đáng tin cậy, có thể phát hành, sử dụng và bán.</p>
+      <section><h2>Từ prompt đến production</h2><p>Chọn sản phẩm có giá trị, áp dụng tiêu chuẩn phát triển chuyên nghiệp, gia cố MVP và lập kế hoạch ra mắt thực tế.</p></section>
+      <section><h2>Gặp hai giảng viên</h2><img src="/founder-djai-display.webp" alt="Mr. A, nhà sáng lập DJAI Academy, CTO và giảng viên"><p>Học cùng Siamese Cat Dev và Mr. A, nhà sáng lập DJAI Academy, CTO giàu kinh nghiệm và giảng viên khóa học trực tiếp của DJAI.</p></section>
+      <a href="/MONEY_MAKING_PRODUCT/">Xem chi tiết và đăng ký miễn phí</a><a href="/siamese_cat/dev/course/" hreflang="en">Read in English</a>
     </main></div>`,
   },
 };
@@ -112,6 +167,7 @@ function buildCourseHtml(language) {
   };
   const alternates = `<link rel="alternate" hreflang="en" href="https://www.djai.academy/siamese_cat/dev/course/" />
     <link rel="alternate" hreflang="th" href="https://www.djai.academy/siamese_cat/dev/course/th/" />
+    <link rel="alternate" hreflang="vi" href="https://www.djai.academy/siamese_cat/dev/course/vi/" />
     <link rel="alternate" hreflang="x-default" href="https://www.djai.academy/siamese_cat/dev/course/" />`;
 
   return readFileSync(indexPath, 'utf8')
@@ -135,3 +191,4 @@ function buildCourseHtml(language) {
 
 writeFileSync(courseIndexPath, buildCourseHtml('en'));
 writeFileSync(courseThaiIndexPath, buildCourseHtml('th'));
+writeFileSync(courseVietnameseIndexPath, buildCourseHtml('vi'));

@@ -42,6 +42,9 @@ export async function generateMetadata({ params }) {
   if (post.alternateSlugs?.en) {
     languages.en = `/siamese_cat/dev/blog/en/${post.alternateSlugs.en}/`;
   }
+  if (post.slug === SCANNER_BUILD_STORY_SLUG) {
+    languages.vi = `/siamese_cat/dev/blog/vi/${post.slug}/`;
+  }
 
   return {
     title: post.seoTitle || post.title,

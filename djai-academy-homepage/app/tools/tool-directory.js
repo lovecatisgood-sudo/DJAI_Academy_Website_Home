@@ -42,7 +42,7 @@ const categoryData = [
       ["image-to-100kb", "รูปใกล้ 100 KB", "เตรียมรูปสำหรับแบบฟอร์มขนาดเล็ก", "Image to 100 KB", "Prepare an image for a 100 KB upload limit."],
       ["resize-image-to-200kb", "รูปใกล้ 200 KB", "ลดรูปให้ใกล้เป้าหมาย 200 KB", "Image to 200 KB", "Reduce an image toward a 200 KB target."],
       ["image-to-500kb", "รูปใกล้ 500 KB", "รักษารายละเอียดภายใต้เป้าหมาย 500 KB", "Image to 500 KB", "Preserve useful detail under a 500 KB target."],
-      ["remove-background-image", "ลบพื้นหลังรูป", "สร้าง PNG พื้นหลังโปร่งใส", "Remove Image Background", "Create a transparent-background PNG."],
+      ["remove-background-image", "ลบพื้นหลังรูป", "สร้าง PNG พื้นหลังโปร่งใส", "Free Background Remover", "Remove an image background and create a transparent PNG."],
       ["remove-image-metadata", "ลบ Metadata รูป", "ลบ EXIF และข้อมูลระบุตัวตน", "Remove Image Metadata", "Remove EXIF and identifying metadata."],
       ["passport-photo-resizer", "Resize รูปพาสปอร์ต", "ครอปและปรับรูปตามขนาดเอกสาร", "Passport Photo Resizer", "Crop and size a photo for documents."]
     ]

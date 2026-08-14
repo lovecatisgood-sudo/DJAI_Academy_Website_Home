@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: `${copy.title} | DJTools by DJAI Academy`,
   description: copy.description,
   keywords: alias.keywords.en,
-  alternates: { canonical: pdfAliasHref(alias, "en"), languages: { th: pdfAliasHref(alias, "th"), en: pdfAliasHref(alias, "en"), "x-default": pdfAliasHref(alias, "th") } },
+  alternates: { canonical: pdfAliasHref(alias, "en"), languages: { th: pdfAliasHref(alias, "th"), en: pdfAliasHref(alias, "en"), vi: "/tools/PDFTools/jpg-to-pdf/vi/", "x-default": pdfAliasHref(alias, "th") } },
   openGraph: { title: copy.title, description: copy.description, url: pdfAliasHref(alias, "en"), siteName: "DJAI Academy", images: ["/tools/PDFTools/djai-academy-logo.webp"], type: "website" }
 };
 

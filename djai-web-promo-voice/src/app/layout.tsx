@@ -23,6 +23,11 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "/web_promo/",
+    languages: {
+      th: "/web_promo/",
+      vi: "/web_promo/vi",
+      "x-default": "/web_promo/",
+    },
   },
   robots: {
     index: true,

@@ -3,10 +3,21 @@ import { copyFile, mkdtemp, rm } from "node:fs/promises";
 import { request } from "node:http";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
+import { readFileSync } from "node:fs";
 
 const port = Number(process.env.DJAI_AUDIT_PORT || 3147);
 const origin = `http://127.0.0.1:${port}`;
 const repositoryRoot = new URL("..", import.meta.url).pathname;
+const localeManifest = JSON.parse(readFileSync(join(repositoryRoot, "djai-academy-homepage", "app", "lib", "public-route-manifest.json"), "utf8"));
+const manifestToolRoutes = Object.values(localeManifest.toolFamilies).flatMap((family) =>
+  localeManifest.locales.flatMap((locale) => {
+    const suffix = locale === localeManifest.defaultLocale ? "" : `${locale}/`;
+    return [
+      `${family.base}${suffix}`,
+      ...family.slugs.map((slug) => `${family.base}${slug}/${suffix}`)
+    ];
+  })
+);
 const useQrCompatibilityEntry = process.env.DJAI_AUDIT_ENTRY === "qr";
 const serverEntry = useQrCompatibilityEntry
   ? "scripts/start-root-hostinger.mjs"
@@ -24,6 +35,7 @@ const mediaToolSlugs = [
   "video-speed-changer", "extract-frames-from-video", "rotate-video"
 ];
 const publicRoutes = [
+  ...manifestToolRoutes,
   "/",
   "/en/",
   "/vi/",
@@ -34,6 +46,7 @@ const publicRoutes = [
   "/development/en/",
   "/development/vi/",
   "/web_promo/",
+  "/web_promo/vi",
   "/service/",
   "/service/en/",
   "/service/vi/",
@@ -42,6 +55,10 @@ const publicRoutes = [
   "/tools/vi/",
   "/tools/seo-screaming-toad/",
   "/tools/seo-screaming-toad/en/",
+  "/tools/seo-screaming-toad/vi/",
+  "/tools/video-to-text/",
+  "/tools/video-to-text/en/",
+  "/tools/video-to-text/vi/",
   "/tools/qrgen/",
   "/tools/qrgen/en/",
   ...["url-qr-code-generator", "wifi-qr-code-generator", "vcard-qr-code-generator", "text-qr-code-generator", "email-qr-code-generator", "whatsapp-qr-code-generator", "qr-code-generator-with-logo"].flatMap((tool) => [`/tools/qrgen/${tool}/`, `/tools/qrgen/${tool}/en/`]),
@@ -136,15 +153,21 @@ const publicRoutes = [
   "/privacy/vi/",
   "/siamese_cat/",
   "/siamese_cat/en/",
+  "/siamese_cat/vi/",
   "/siamese_cat/dev/",
   "/siamese_cat/dev/en/",
+  "/siamese_cat/dev/vi/",
   "/siamese_cat/dev/course/",
   "/siamese_cat/dev/course/th/",
+  "/siamese_cat/dev/course/vi/",
   "/siamese_cat/dev/blog/",
   "/siamese_cat/dev/blog/en/",
+  "/siamese_cat/dev/blog/vi/",
+  "/siamese_cat/dev/blog/vi/vibe-coded-free-scanner-app-real-product/",
   "/admin/blog/",
   "/voice_admin/login",
   "/Cam_PDF_Scan_Signer_QR-Gen/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/vi/",
   "/Cam_PDF_Scan_Signer_QR-Gen/privacy/",
   "/Cam_PDF_Scan_Signer_QR-Gen/terms/",
   "/Cam_PDF_Scan_Signer_QR-Gen/delete-account/",
@@ -425,7 +448,14 @@ async function verify() {
     ["/course/detail/vi/", "Từ ý tưởng đến sản phẩm chạy được"],
     ["/blog/vi/vibe-coding-cho-nguoi-moi/", "Vibe coding cho người mới"],
     ["/blog/vi/nen-chon-jpg-png-hay-webp/", "Nên chọn JPG, PNG hay WebP"],
-    ["/blog/vi/tao-ma-qr-cho-menu-su-kien-website/", "Tạo mã QR cho menu, sự kiện hoặc website"]
+    ["/blog/vi/tao-ma-qr-cho-menu-su-kien-website/", "Tạo mã QR cho menu, sự kiện hoặc website"],
+    ["/siamese_cat/vi/", "DJAI × Siamese Cat"],
+    ["/siamese_cat/dev/vi/", "Siamese Cat Dev: Thiết kế sản phẩm, phát triển phần mềm và Vibe Coding"],
+    ["/siamese_cat/dev/course/vi/", "Vibe Code một sản phẩm có thể tạo doanh thu"],
+    ["/siamese_cat/dev/blog/vi/", "Ghi chép về việc xây sản phẩm, phần mềm và quy trình AI"],
+    ["/siamese_cat/dev/blog/vi/vibe-coded-free-scanner-app-real-product/", "Tôi đã vibe code một ứng dụng quét tài liệu miễn phí thành sản phẩm thật"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/vi/", "Cam PDF Scan Signer QR Gen"],
+    ["/web_promo/vi", "Website sẵn sàng ra mắt, được tìm thấy và tạo khách hàng"]
   ];
   for (const [route, heading] of vietnameseSeoChecks) {
     const html = await fetch(`${origin}${route}`).then((response) => response.text());
@@ -457,13 +487,19 @@ async function verify() {
       language: "en",
       canonical: "https://www.djai.academy/tools/seo-screaming-toad/en/",
       repository: "https://github.com/lovecatisgood-sudo/Free-Opensource-SEO-Screaming-Toad-not-Frog-tool-with-100million-url-crawl-potential"
+    },
+    {
+      route: "/tools/seo-screaming-toad/vi/",
+      language: "vi",
+      canonical: "https://www.djai.academy/tools/seo-screaming-toad/vi/",
+      repository: "https://github.com/lovecatisgood-sudo/Free-Opensource-SEO-Screaming-Toad-not-Frog-tool-with-100million-url-crawl-potential"
     }
   ];
   for (const check of screamingToadChecks) {
     const html = await fetch(`${origin}${check.route}`).then((response) => response.text());
     if (!html.includes(`<html lang="${check.language}"`)) failures.push(`${check.route}: expected html lang=${check.language}`);
     if (!html.includes(`<link rel="canonical" href="${check.canonical}"`)) failures.push(`${check.route}: missing self-canonical`);
-    for (const language of ["th", "en", "x-default"]) {
+    for (const language of ["th", "en", "vi", "x-default"]) {
       if (!new RegExp(`hreflang=["']${language}["']`, "i").test(html)) failures.push(`${check.route}: missing ${language} hreflang`);
     }
     if (!html.includes(check.repository)) failures.push(`${check.route}: missing locale-specific source repository`);
@@ -472,11 +508,31 @@ async function verify() {
     if (!html.includes("SEO Screaming Toad")) failures.push(`${check.route}: missing crawlable product content`);
   }
 
+  const videoToTextChecks = [
+    { route: "/tools/video-to-text/", language: "th", canonical: "https://www.djai.academy/tools/video-to-text/", heading: "แปลงวิดีโอเป็นข้อความ" },
+    { route: "/tools/video-to-text/en/", language: "en", canonical: "https://www.djai.academy/tools/video-to-text/en/", heading: "Convert video to text" },
+    { route: "/tools/video-to-text/vi/", language: "vi", canonical: "https://www.djai.academy/tools/video-to-text/vi/", heading: "Chuyển video thành văn bản" }
+  ];
+  for (const check of videoToTextChecks) {
+    const html = await fetch(`${origin}${check.route}`).then((response) => response.text());
+    if (!html.includes(`<html lang="${check.language}"`)) failures.push(`${check.route}: expected html lang=${check.language}`);
+    if (!html.includes(`<link rel="canonical" href="${check.canonical}"`)) failures.push(`${check.route}: missing self-canonical`);
+    for (const language of ["th", "en", "vi", "x-default"]) {
+      const matches = html.match(new RegExp(`<link\\s+rel=["']alternate["'][^>]*hreflang=["']${language}["']`, "gi")) || [];
+      if (matches.length !== 1) failures.push(`${check.route}: expected exactly one ${language} hreflang, received ${matches.length}`);
+    }
+    if (!html.includes(`<h1>${check.heading}`)) failures.push(`${check.route}: missing localized H1`);
+    if (!html.includes('"@type":"SoftwareApplication"')) failures.push(`${check.route}: missing SoftwareApplication structured data`);
+  }
+
   const sitemapBody = await fetch(`${origin}/sitemap.xml`).then((response) => response.text());
-  for (const path of ["/tools/seo-screaming-toad/", "/tools/seo-screaming-toad/en/"]) {
+  for (const path of [
+    "/tools/seo-screaming-toad/", "/tools/seo-screaming-toad/en/", "/tools/seo-screaming-toad/vi/",
+    "/tools/video-to-text/", "/tools/video-to-text/en/", "/tools/video-to-text/vi/"
+  ]) {
     if (!sitemapBody.includes(`https://www.djai.academy${path}`)) failures.push(`/sitemap.xml: missing ${path}`);
   }
-  for (const path of ["/siamese_cat/dev/course/", "/siamese_cat/dev/course/th/"]) {
+  for (const path of ["/siamese_cat/dev/course/", "/siamese_cat/dev/course/th/", "/siamese_cat/dev/course/vi/"]) {
     if (!sitemapBody.includes(`https://www.djai.academy${path}`)) {
       failures.push(`/sitemap.xml: missing money-making product course landing page ${path}`);
     }
@@ -484,7 +540,9 @@ async function verify() {
   for (const path of [
     "/vi/", "/portfolio/vi/", "/development/vi/", "/service/vi/", "/privacy/vi/", "/tools/vi/",
     "/course/vi/", "/course/detail/vi/", "/blog/vi/", "/blog/vi/vibe-coding-cho-nguoi-moi/",
-    "/blog/vi/nen-chon-jpg-png-hay-webp/", "/blog/vi/tao-ma-qr-cho-menu-su-kien-website/"
+    "/blog/vi/nen-chon-jpg-png-hay-webp/", "/blog/vi/tao-ma-qr-cho-menu-su-kien-website/",
+    "/siamese_cat/vi/", "/siamese_cat/dev/vi/", "/siamese_cat/dev/course/vi/", "/siamese_cat/dev/blog/vi/",
+    "/siamese_cat/dev/blog/vi/vibe-coded-free-scanner-app-real-product/", "/Cam_PDF_Scan_Signer_QR-Gen/vi/", "/web_promo/vi"
   ]) {
     if (!sitemapBody.includes(`https://www.djai.academy${path}`)) failures.push(`/sitemap.xml: missing Vietnamese URL ${path}`);
   }

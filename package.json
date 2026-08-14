@@ -13,6 +13,7 @@
     "start": "node server.js",
     "test:supervisor": "node --test tests/service-supervisor.test.js",
     "verify:hostinger": "node scripts/audit-hostinger.mjs",
+    "verify:locales": "node scripts/verify-locale-coverage.mjs",
     "hostinger:build": "node scripts/build-hostinger.mjs",
     "hostinger:start": "node server.js"
   }

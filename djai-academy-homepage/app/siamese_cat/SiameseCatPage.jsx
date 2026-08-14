@@ -84,27 +84,60 @@ const copy = {
     finalText: "Bring your requirements to DJAI. We will help define a practical scope, choose a cost-effective approach, and move toward a launchable product quickly.",
     finalPrimary: "Discuss your project",
     finalSecondary: "Explore the Vibe Coding course"
+  },
+  vi: {
+    eyebrow: "DJAI ACADEMY × SIAMESE CAT",
+    title: "DJAI × Siamese Cat",
+    heroStatement: "Quan hệ đối tác kinh doanh và công nghệ biến ý tưởng thành sản phẩm hoạt động thật.",
+    intro: "DJAI Academy và nhóm Siamese Cat hợp tác trong đào tạo, sản phẩm, phần mềm và tăng trưởng kinh doanh để biến nhu cầu vận hành thành sản phẩm số đã được đưa vào sử dụng.",
+    devButton: "Tìm hiểu Siamese Cat Dev",
+    serviceButton: "Phát triển cùng DJAI",
+    relationEyebrow: "MỐI QUAN HỆ CỦA CHÚNG TÔI",
+    relationTitle: "Cùng học, cùng xây và trưởng thành qua việc thực hiện.",
+    relationText: "Siamese Cat Dev vừa là học viên của DJAI Academy, vừa là đối tác về sản phẩm, phát triển và đào tạo, giúp biến yêu cầu thành website, ứng dụng, tự động hóa và công cụ hữu ích. Mối quan hệ này kết nối kiến thức từ Academy với kinh nghiệm thực tế khi xây doanh nghiệp và phần mềm cho người dùng thật.",
+    relationshipPoints: [["Đào tạo", "Chia sẻ kiến thức thực tế về AI, vibe coding, tư duy sản phẩm và hệ thống."], ["Xây dựng", "Thiết kế, phát triển, kiểm thử và triển khai sản phẩm số dựa trên vấn đề vận hành thật."], ["Tăng trưởng", "Dùng công nghệ và dữ liệu để đội ngũ làm việc nhanh hơn, phục vụ khách hàng và mở rộng dịch vụ."]],
+    ecosystemEyebrow: "HỆ SINH THÁI KINH DOANH",
+    ecosystemTitle: "DJAI hỗ trợ công nghệ cho các doanh nghiệp Siamese Cat.",
+    ecosystemText: "DJAI hợp tác chặt chẽ với Siamese Cat Cafe, Siamese Cat Hotel và Siamese Cat Creative Club, hỗ trợ hiện diện số, triển khai sản phẩm và công nghệ vận hành. Quan hệ này giúp từng thương hiệu thử nghiệm, ra mắt và cải thiện ý tưởng mới nhanh hơn.",
+    partnerCopy: {
+      cafe: ["Siamese Cat Cafe", "Quán cà phê cộng đồng kết nối con người, hoạt động và trải nghiệm thương hiệu tại cả điểm chạm trực tiếp lẫn kỹ thuật số.", "Ghé Siamese Cat Cafe"],
+      hotel: ["Siamese Cat Hotel", "Dịch vụ lưu trú thú cưng mở rộng trải nghiệm khách hàng bằng giao tiếp số và cơ hội tự động hóa đặt chỗ.", "Ghé Siamese Cat Hotel"],
+      creative: ["Siamese Cat Creative Club", "Không gian học sáng tạo, sản xuất hình ảnh, nội dung xã hội và quy trình giúp nhà sáng tạo biến ý tưởng thành tác phẩm đã xuất bản.", "Ghé Creative Club"]
+    },
+    growthEyebrow: "HỢP TÁC TRONG THỰC TẾ",
+    growthTitle: "Doanh nghiệp phát triển vững hơn khi làm việc với đội ngũ có thể xây và triển khai.",
+    growthText: "Hỗ trợ công nghệ của DJAI giúp hệ sinh thái Siamese Cat đi từ ý tưởng đến website, công cụ và quy trình đang hoạt động nhanh hơn. Sự phối hợp giữa đội kinh doanh và đội phát triển giúp học từ khách hàng, cải thiện dịch vụ và hỗ trợ tăng trưởng có hệ thống.",
+    growthLink: "Xem các dự án được phép giới thiệu",
+    finalTitle: "Bạn có ý tưởng kinh doanh hoặc quy trình có thể cải thiện bằng công nghệ?",
+    finalText: "Hãy mang yêu cầu đến DJAI. Chúng tôi sẽ giúp xác định phạm vi thực tế, chọn cách tiếp cận hiệu quả về chi phí và nhanh chóng tiến tới một sản phẩm có thể ra mắt.",
+    finalPrimary: "Trao đổi về dự án",
+    finalSecondary: "Xem khóa Vibe Coding"
   }
 };
 
 export default function SiameseCatPage({ locale }) {
-  const en = locale === "en";
   const text = copy[locale];
-  const devHref = en ? "/siamese_cat/dev/en/" : "/siamese_cat/dev/";
+  const localeSuffix = locale === "th" ? "" : `${locale}/`;
+  const devHref = `/siamese_cat/dev/${localeSuffix}`;
+  const homeHref = locale === "th" ? "/" : `/${locale}/`;
+  const pageHref = `/siamese_cat/${localeSuffix}`;
+  const localizedName = locale === "th" ? "ความร่วมมือระหว่าง DJAI Academy และ Siamese Cat" : locale === "vi" ? "Quan hệ đối tác giữa DJAI Academy và Siamese Cat" : "DJAI Academy and Siamese Cat Partnership";
+  const ecosystemName = locale === "th" ? "ธุรกิจใน Siamese Cat ecosystem" : locale === "vi" ? "Hệ sinh thái doanh nghiệp Siamese Cat" : "Siamese Cat business ecosystem";
 
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "AboutPage",
-        name: en ? "DJAI Academy and Siamese Cat Partnership" : "ความร่วมมือระหว่าง DJAI Academy และ Siamese Cat",
-        url: `https://www.djai.academy${en ? "/siamese_cat/en/" : "/siamese_cat/"}`,
+        name: localizedName,
+        url: `https://www.djai.academy${pageHref}`,
+        inLanguage: locale,
         description: text.intro,
         about: ["DJAI Academy", "Siamese Cat Dev", "Siamese Cat Cafe", "Siamese Cat Hotel", "Siamese Cat Creative Club"]
       },
       {
         "@type": "ItemList",
-        name: en ? "Siamese Cat business ecosystem" : "ธุรกิจใน Siamese Cat ecosystem",
+        name: ecosystemName,
         itemListElement: partners.map((partner, index) => ({
           "@type": "ListItem",
           position: index + 1,
@@ -115,8 +148,8 @@ export default function SiameseCatPage({ locale }) {
       {
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "DJAI Academy", item: en ? "https://www.djai.academy/en/" : "https://www.djai.academy/" },
-          { "@type": "ListItem", position: 2, name: "Siamese Cat", item: `https://www.djai.academy${en ? "/siamese_cat/en/" : "/siamese_cat/"}` }
+          { "@type": "ListItem", position: 1, name: "DJAI Academy", item: `https://www.djai.academy${homeHref}` },
+          { "@type": "ListItem", position: 2, name: "Siamese Cat", item: `https://www.djai.academy${pageHref}` }
         ]
       }
     ]
@@ -136,7 +169,7 @@ export default function SiameseCatPage({ locale }) {
             <p>{text.intro}</p>
             <div className="siamese-partnership-actions">
               <a className="button primary" href={devHref}>{text.devButton}</a>
-              <a className="button secondary dark" href={en ? "/development/en/" : "/development/"}>{text.serviceButton}</a>
+              <a className="button secondary dark" href={`/development/${localeSuffix}`}>{text.serviceButton}</a>
             </div>
           </div>
           <div className="partnership-lockup" aria-label="DJAI Academy and Siamese Cat Dev partnership">
@@ -184,14 +217,14 @@ export default function SiameseCatPage({ locale }) {
 
         <section className="partnership-growth">
           <div><p className="eyebrow">{text.growthEyebrow}</p><h2>{text.growthTitle}</h2></div>
-          <div><p>{text.growthText}</p><a href={en ? "/portfolio/en/" : "/portfolio/"}>{text.growthLink} <span aria-hidden="true">→</span></a></div>
+          <div><p>{text.growthText}</p><a href={`/portfolio/${localeSuffix}`}>{text.growthLink} <span aria-hidden="true">→</span></a></div>
         </section>
 
         <section className="partnership-cta">
           <div><h2>{text.finalTitle}</h2><p>{text.finalText}</p></div>
           <div className="siamese-partnership-actions">
-            <a className="button primary" href={en ? "/development/en/" : "/development/"}>{text.finalPrimary}</a>
-            <a className="button secondary" href={en ? "/course/detail/en/" : "/course/detail/"}>{text.finalSecondary}</a>
+            <a className="button primary" href={`/development/${localeSuffix}`}>{text.finalPrimary}</a>
+            <a className="button secondary" href={`/course/detail/${localeSuffix}`}>{text.finalSecondary}</a>
           </div>
         </section>
       </main>

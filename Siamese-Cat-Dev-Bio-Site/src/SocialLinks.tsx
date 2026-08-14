@@ -36,14 +36,15 @@ const socialLinks = [
 ];
 
 type SocialLinksProps = {
-  language: 'th' | 'en';
+  language: 'th' | 'en' | 'vi';
 };
 
 export function HeaderSocialLinks({ language }: SocialLinksProps) {
   const thai = language === 'th';
+  const vietnamese = language === 'vi';
 
   return (
-    <nav className="header-social-links" aria-label={thai ? 'Social Media ของ Siamese Cat Dev' : 'Siamese Cat Dev social media'}>
+    <nav className="header-social-links" aria-label={thai ? 'Social Media ของ Siamese Cat Dev' : vietnamese ? 'Mạng xã hội của Siamese Cat Dev' : 'Siamese Cat Dev social media'}>
       {socialLinks.map((social) => (
         <a
           className="header-social-link"
@@ -52,7 +53,7 @@ export function HeaderSocialLinks({ language }: SocialLinksProps) {
           target="_blank"
           rel="noreferrer"
           title={`${social.name}: ${social.handle}`}
-          aria-label={thai ? `ติดตาม ${social.handle} บน ${social.name}` : `Follow ${social.handle} on ${social.name}`}
+          aria-label={thai ? `ติดตาม ${social.handle} บน ${social.name}` : vietnamese ? `Theo dõi ${social.handle} trên ${social.name}` : `Follow ${social.handle} on ${social.name}`}
         >
           <img src={assetPath(social.image)} alt="" width="20" height="20" decoding="async" />
         </a>
@@ -63,11 +64,12 @@ export function HeaderSocialLinks({ language }: SocialLinksProps) {
 
 export default function SocialLinks({ language }: SocialLinksProps) {
   const thai = language === 'th';
+  const vietnamese = language === 'vi';
 
   return (
-    <div className="social-follow" aria-label={thai ? 'ติดตาม Siamese Cat Dev บน Social Media' : 'Follow Siamese Cat Dev on social media'}>
+    <div className="social-follow" aria-label={thai ? 'ติดตาม Siamese Cat Dev บน Social Media' : vietnamese ? 'Theo dõi Siamese Cat Dev trên mạng xã hội' : 'Follow Siamese Cat Dev on social media'}>
       <p className="social-follow-label">
-        {thai ? 'ติดตามผลงาน เครื่องมือใหม่ และเบื้องหลังการพัฒนา' : 'Follow new tools, releases, and behind-the-scenes development'}
+        {thai ? 'ติดตามผลงาน เครื่องมือใหม่ และเบื้องหลังการพัฒนา' : vietnamese ? 'Theo dõi công cụ mới, sản phẩm phát hành và quá trình phát triển' : 'Follow new tools, releases, and behind-the-scenes development'}
       </p>
       <div className="social-links">
         {socialLinks.map((social) => (
@@ -77,11 +79,11 @@ export default function SocialLinks({ language }: SocialLinksProps) {
             key={social.name}
             target="_blank"
             rel="noreferrer"
-            aria-label={thai ? `ติดตาม ${social.handle} บน ${social.name}` : `Follow ${social.handle} on ${social.name}`}
+            aria-label={thai ? `ติดตาม ${social.handle} บน ${social.name}` : vietnamese ? `Theo dõi ${social.handle} trên ${social.name}` : `Follow ${social.handle} on ${social.name}`}
           >
             <img src={assetPath(social.image)} alt="" width="32" height="32" loading="lazy" decoding="async" />
             <span>
-              <small>{thai ? 'ติดตามบน' : 'FOLLOW ON'}</small>
+              <small>{thai ? 'ติดตามบน' : vietnamese ? 'THEO DÕI TRÊN' : 'FOLLOW ON'}</small>
               <strong>{social.name}</strong>
             </span>
             <ArrowUpRight aria-hidden="true" />

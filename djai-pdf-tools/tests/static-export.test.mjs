@@ -10,10 +10,11 @@ const tools = ["merge-pdf", "split-pdf", "compress-pdf", "images-to-pdf", "pdf-t
 const pages = [
   ["index.html", "th"],
   ["en/index.html", "en"],
-  ...tools.flatMap((tool) => [[`${tool}/index.html`, "th"], [`${tool}/en/index.html`, "en"]])
+  ["vi/index.html", "vi"],
+  ...tools.flatMap((tool) => [[`${tool}/index.html`, "th"], [`${tool}/en/index.html`, "en"], [`${tool}/vi/index.html`, "vi"]])
 ];
 
-test("all bilingual PDF tool pages are exported with metadata", () => {
+test("all trilingual PDF tool pages are exported with metadata", () => {
   for (const [relativePath, language] of pages) {
     const path = join(outDir, relativePath);
     assert.ok(existsSync(path), `${relativePath} should exist`);
@@ -25,6 +26,7 @@ test("all bilingual PDF tool pages are exported with metadata", () => {
     assert.match(html, /rel="canonical"/);
     assert.match(html, /hrefLang="th"/i);
     assert.match(html, /hrefLang="en"/i);
+    assert.match(html, /hrefLang="vi"/i);
   }
 });
 
