@@ -252,7 +252,130 @@ img { max-width: 100%; height: auto; }
 .document-render-surface table { width: 100%; border-collapse: collapse; }
 .document-render-surface td, .document-render-surface th { padding: 6px; border: 1px solid #777; }
 
+/* Brand tools use the established DJAI palette with a denser creator workspace. */
+.brand-page { min-height: 100vh; color: #eaf3ff; background: #071327; }
+.brand-page h1, .brand-page h2, .brand-page h3 { letter-spacing: -.035em; }
+.brand-header { position: sticky; z-index: 40; top: 0; display: flex; min-height: 74px; align-items: center; justify-content: space-between; gap: 24px; padding: 8px max(22px, calc((100vw - 1240px) / 2)); background: rgba(7,19,39,.95); border-bottom: 1px solid rgba(25,227,255,.2); backdrop-filter: blur(14px); }
+.brand-logo img { display: block; width: 94px; height: 54px; object-fit: contain; }
+.brand-header nav { display: flex; align-items: center; gap: 8px; }
+.brand-header nav a { min-height: 39px; display: inline-flex; align-items: center; gap: 7px; padding: 0 12px; color: #c5d4e6; font-size: .78rem; font-weight: 850; }
+.brand-header nav a svg { width: 16px; }
+.brand-header nav .brand-language { color: #071327; background: #19e3ff; border-radius: 5px; }
+.brand-kicker { margin: 0 0 12px; color: #19e3ff; font-size: .7rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
+.brand-hub-hero { min-height: 570px; display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(320px, .75fr); align-items: center; gap: 80px; padding: 82px max(24px, calc((100vw - 1180px) / 2)); }
+.brand-hub-hero h1, .favicon-hero h1 { max-width: 860px; margin: 0; font-size: clamp(2.5rem, 5.5vw, 5.2rem); line-height: .98; }
+.brand-hub-hero > div:first-child > p:not(.brand-kicker), .favicon-hero > p:not(.brand-kicker) { max-width: 760px; margin: 24px 0 0; color: #b9c9dd; font-size: 1.04rem; line-height: 1.75; }
+.brand-primary { min-height: 50px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 0 18px; color: #071327; background: #19e3ff; border: 0; border-radius: 5px; font-weight: 900; }
+.brand-primary svg { width: 18px; }
+.brand-hub-hero .brand-primary { margin-top: 28px; }
+.brand-icon-board { position: relative; min-height: 360px; display: grid; grid-template-columns: repeat(2, 1fr); align-content: center; gap: 14px; padding: 40px; color: #071327; background: #19e3ff; box-shadow: 18px 18px 0 #c9343a; }
+.brand-icon-board strong { grid-column: 1 / -1; padding-top: 12px; text-align: center; font-size: 1rem; letter-spacing: .12em; }
+.brand-icon-tile { aspect-ratio: 1; display: grid; place-items: center; color: white; background: #071327; font-weight: 900; }
+.tile-16 { width: 44px; align-self: end; justify-self: end; font-size: .7rem; }
+.tile-32 { width: 72px; align-self: end; font-size: .8rem; }
+.tile-180 { width: 104px; justify-self: end; font-size: 1rem; }
+.tile-512 { width: 138px; font-size: 1.2rem; }
+.brand-trust { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(255,255,255,.14); border-bottom: 1px solid rgba(255,255,255,.14); }
+.brand-trust span { min-height: 70px; display: flex; align-items: center; justify-content: center; gap: 9px; padding: 14px; color: #ccdaeb; border-right: 1px solid rgba(255,255,255,.14); font-size: .75rem; font-weight: 850; text-align: center; }
+.brand-trust span:last-child { border-right: 0; }
+.brand-trust svg { width: 17px; color: #19e3ff; }
+.brand-hub-tools { padding: 95px max(24px, calc((100vw - 1120px) / 2)); background: #edf3f8; color: #102039; }
+.brand-section-heading { max-width: 760px; margin-bottom: 36px; }
+.brand-section-heading .brand-kicker { color: #1256d8; }
+.brand-section-heading h2 { margin: 0; font-size: clamp(2rem, 4vw, 3.7rem); line-height: 1.02; }
+.brand-feature-card { display: grid; min-height: 260px; grid-template-columns: 70px minmax(0, 1fr) 210px; align-items: center; gap: 30px; padding: 36px; color: white; background: #0d2342; box-shadow: 12px 12px 0 #19e3ff; }
+.brand-feature-number { align-self: start; color: #19e3ff; font-weight: 900; }
+.brand-feature-card h3 { margin: 0; font-size: clamp(1.8rem, 3vw, 3rem); }
+.brand-feature-card p { max-width: 650px; color: #bdcde0; line-height: 1.7; }
+.brand-feature-card strong { display: inline-flex; align-items: center; gap: 8px; color: #19e3ff; font-size: .82rem; }
+.brand-feature-card strong svg { width: 17px; }
+.brand-favicon-mark { aspect-ratio: 1; display: grid; place-items: center; color: #071327; background: #19e3ff; font-size: 5rem; font-weight: 950; }
+.brand-note-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-top: 72px; background: #cbd8e5; border: 1px solid #cbd8e5; }
+.brand-note-grid article { padding: 32px; background: white; }
+.brand-note-grid h3 { margin: 0 0 12px; font-size: 1.35rem; }
+.brand-note-grid p { margin: 0; color: #5c6b7f; line-height: 1.7; }
+
+.favicon-hero { padding: 78px max(24px, calc((100vw - 1050px) / 2)) 64px; }
+.favicon-hero h1 { font-size: clamp(2.5rem, 5vw, 4.6rem); }
+.favicon-hero > div { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 25px; }
+.favicon-hero > div span { display: inline-flex; align-items: center; gap: 7px; padding: 8px 10px; color: #d2dfef; border: 1px solid rgba(255,255,255,.18); border-radius: 4px; font-size: .7rem; font-weight: 850; }
+.favicon-hero > div svg { width: 15px; color: #19e3ff; }
+.favicon-workspace { padding: 72px max(24px, calc((100vw - 1180px) / 2)); color: #102039; background: #e8eef5; }
+.favicon-workspace-heading { margin-bottom: 25px; }
+.favicon-workspace-heading .brand-kicker { color: #1256d8; }
+.favicon-workspace-heading h2 { margin: 0; font-size: clamp(1.8rem, 3vw, 2.8rem); }
+.favicon-workspace-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(340px, .9fr); background: white; border: 1px solid #cbd8e5; box-shadow: 0 20px 55px rgba(7,19,39,.13); }
+.favicon-source-panel, .favicon-control-panel { min-width: 0; padding: 30px; }
+.favicon-control-panel { display: grid; align-content: start; gap: 25px; background: #f8fafc; border-left: 1px solid #d6e0eb; }
+.favicon-dropzone { width: 100%; min-height: 390px; display: grid; place-items: center; align-content: center; gap: 12px; padding: 28px; color: #102039; background: white; border: 2px dashed #9cb0c6; border-radius: 6px; text-align: center; }
+.favicon-dropzone:hover, .favicon-dropzone:focus-visible { background: #effbff; border-color: #1256d8; }
+.favicon-dropzone svg { width: 46px; height: 46px; color: #1256d8; }
+.favicon-dropzone strong { font-size: 1.08rem; }
+.favicon-dropzone span { color: #5c6b7f; font-size: .78rem; }
+.favicon-dropzone em { margin-top: 6px; padding: 9px 15px; color: white; background: #1256d8; border-radius: 4px; font-size: .75rem; font-style: normal; font-weight: 900; }
+.favicon-source-preview { min-height: 390px; display: grid; grid-template-columns: 1fr auto; align-content: center; gap: 16px; text-align: left; }
+.favicon-source-preview > .transparency-grid { grid-column: 1 / -1; min-height: 290px; display: grid; place-items: center; }
+.transparency-grid { background-color: white; background-image: linear-gradient(45deg,#e3e9ef 25%,transparent 25%),linear-gradient(-45deg,#e3e9ef 25%,transparent 25%),linear-gradient(45deg,transparent 75%,#e3e9ef 75%),linear-gradient(-45deg,transparent 75%,#e3e9ef 75%); background-size: 16px 16px; background-position: 0 0,0 8px,8px -8px,-8px 0; }
+.favicon-source-preview img { max-width: 250px; max-height: 250px; }
+.favicon-source-preview > div:nth-child(2) { display: grid; gap: 5px; min-width: 0; }
+.favicon-source-preview > div:nth-child(2) strong { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.favicon-source-preview > div:nth-child(2) span { color: #5c6b7f; font-size: .75rem; }
+.favicon-source-preview button { align-self: center; padding: 9px 12px; color: #1256d8; background: white; border: 1px solid #9fb1c6; border-radius: 4px; font-size: .74rem; font-weight: 850; }
+.favicon-error { margin: 14px 0 0; padding: 12px; color: #8e1e24; background: #ffebec; border-left: 4px solid #c9343a; font-size: .78rem; }
+.favicon-control-panel > label { display: grid; grid-template-columns: 1fr auto; gap: 12px; font-size: .78rem; font-weight: 900; }
+.favicon-control-panel output { color: #1256d8; }
+.favicon-control-panel input[type="range"] { grid-column: 1 / -1; width: 100%; accent-color: #1256d8; }
+.favicon-control-panel fieldset { display: grid; grid-template-columns: 1fr 1fr auto; align-items: center; gap: 10px; padding: 0; border: 0; }
+.favicon-control-panel legend { margin-bottom: 12px; font-size: .78rem; font-weight: 900; }
+.favicon-control-panel fieldset label { display: flex; align-items: center; gap: 6px; font-size: .75rem; }
+.favicon-control-panel input[type="color"] { width: 38px; height: 34px; padding: 2px; background: white; border: 1px solid #9fb1c6; }
+.favicon-size-previews > strong { display: block; margin-bottom: 12px; font-size: .78rem; }
+.favicon-size-previews > div { display: flex; align-items: end; gap: 15px; min-height: 200px; padding: 18px; overflow-x: auto; background: #e8eef5; }
+.favicon-size-previews > div > span { display: grid; justify-items: center; gap: 7px; }
+.favicon-size-previews > div > span > span { display: grid; place-items: center; min-width: max(48px, 100%); min-height: max(48px, 100%); padding: 5px; }
+.favicon-size-previews small { color: #5c6b7f; font-size: .66rem; }
+.favicon-generate { width: 100%; }
+.favicon-generate:disabled { cursor: not-allowed; opacity: .42; }
+.favicon-result { display: grid; grid-template-columns: auto 1fr; gap: 22px; margin-top: 34px; padding: 30px; color: white; background: #0d2342; border-left: 7px solid #19e3ff; }
+.favicon-result-check { width: 50px; height: 50px; display: grid; place-items: center; color: #071327; background: #19e3ff; border-radius: 50%; }
+.favicon-result-check svg { width: 25px; }
+.favicon-result h2 { max-width: 700px; margin: 0; font-size: clamp(1.5rem, 3vw, 2.35rem); }
+.favicon-result-actions { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 20px; }
+.favicon-result-actions button { min-height: 50px; display: inline-flex; align-items: center; gap: 8px; padding: 0 15px; color: white; background: #1256d8; border: 0; border-radius: 5px; font-weight: 850; }
+.favicon-result-actions button:last-child { color: #c8d6e8; background: transparent; border: 1px solid #536b88; }
+.favicon-result-actions svg { width: 17px; }
+.favicon-result details { grid-column: 2; margin-top: 7px; }
+.favicon-result summary { cursor: pointer; color: #19e3ff; font-size: .78rem; font-weight: 850; }
+.favicon-result ul { display: grid; grid-template-columns: 1fr 1fr; gap: 5px 20px; padding-left: 18px; color: #c3d2e4; font-size: .72rem; }
+.favicon-result li span { float: right; color: #8fa5bf; }
+.favicon-local-note { display: flex; align-items: center; justify-content: center; gap: 7px; margin: 18px 0 0; color: #5c6b7f; font-size: .72rem; font-weight: 800; }
+.favicon-local-note svg { width: 15px; color: #0a8f6a; }
+.favicon-explainer, .favicon-faq { display: grid; grid-template-columns: .75fr 1.25fr; gap: 70px; padding: 90px max(24px, calc((100vw - 1100px) / 2)); color: #102039; background: white; }
+.favicon-explainer h2, .favicon-file-guide h2, .favicon-faq h2 { margin: 0; font-size: clamp(1.8rem, 3.5vw, 3rem); line-height: 1.08; }
+.favicon-explainer .brand-kicker, .favicon-faq .brand-kicker { color: #1256d8; }
+.favicon-explainer ol { margin: 0; padding: 0; list-style: none; border-top: 1px solid #d6e0eb; }
+.favicon-explainer li { min-height: 88px; display: grid; grid-template-columns: 42px 1fr; align-items: center; gap: 12px; border-bottom: 1px solid #d6e0eb; }
+.favicon-explainer li span { width: 34px; height: 34px; display: grid; place-items: center; color: white; background: #1256d8; border-radius: 50%; font-weight: 900; }
+.favicon-explainer li p { line-height: 1.55; }
+.favicon-file-guide { display: grid; grid-template-columns: 64px 1fr; gap: 28px; padding: 65px max(24px, calc((100vw - 1000px) / 2)); color: white; background: #1256d8; }
+.favicon-file-guide > svg { width: 54px; height: 54px; color: #19e3ff; }
+.favicon-file-guide p { max-width: 820px; color: #dce7fa; line-height: 1.7; }
+.favicon-faq details { border-bottom: 1px solid #d6e0eb; }
+.favicon-faq summary { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 15px; cursor: pointer; font-weight: 850; }
+.favicon-faq summary span { color: #1256d8; font-size: 1.2rem; }
+.favicon-faq details p { margin: 0 0 22px; color: #5c6b7f; line-height: 1.65; }
+.brand-discovery { padding: 78px max(24px, calc((100vw - 1100px) / 2)); color: #102039; background: #e9f7f2; }
+.brand-discovery h2 { margin: 0 0 28px; font-size: clamp(1.7rem, 3vw, 2.7rem); }
+.brand-discovery > div { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid #b8d8cd; border-left: 1px solid #b8d8cd; }
+.brand-discovery a { min-height: 130px; display: grid; align-content: center; gap: 8px; padding: 22px; background: rgba(255,255,255,.42); border-right: 1px solid #b8d8cd; border-bottom: 1px solid #b8d8cd; }
+.brand-discovery a:hover { background: white; }
+.brand-discovery span { color: #5c6b7f; font-size: .78rem; line-height: 1.55; }
+
 @media (max-width: 960px) {
+  .brand-hub-hero { grid-template-columns: 1fr .65fr; gap: 36px; }
+  .brand-feature-card { grid-template-columns: 55px 1fr 150px; }
+  .favicon-workspace-grid { grid-template-columns: 1fr; }
+  .favicon-control-panel { border-top: 1px solid #d6e0eb; border-left: 0; }
   .tool-ecosystem-directory > div:last-child { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .suite-header { align-items: flex-start; padding-top: 10px; padding-bottom: 10px; }
   .suite-header nav { overflow-x: auto; max-width: 70vw; }
@@ -266,6 +389,29 @@ img { max-width: 100%; height: auto; }
   .mobile-app-callout { grid-template-columns: 1fr; }
   .mobile-app-callout .primary-button { justify-self: start; }
   .course-band > svg { display: none; }
+}
+
+@media (max-width: 680px) {
+  .brand-header { min-height: 64px; }
+  .brand-logo img { width: 72px; height: 44px; }
+  .brand-header nav a:first-child { display: none; }
+  .brand-hub-hero { min-height: auto; grid-template-columns: 1fr; padding-top: 62px; padding-bottom: 70px; }
+  .brand-icon-board { min-height: 300px; margin-right: 14px; padding: 28px; }
+  .brand-trust { grid-template-columns: 1fr 1fr; }
+  .brand-trust span:nth-child(2) { border-right: 0; }
+  .brand-trust span:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,.14); }
+  .brand-feature-card { grid-template-columns: 38px 1fr; padding: 24px; }
+  .brand-favicon-mark { grid-column: 2; width: 130px; }
+  .brand-note-grid, .favicon-explainer, .favicon-faq { grid-template-columns: 1fr; gap: 35px; }
+  .brand-discovery > div { grid-template-columns: 1fr; }
+  .favicon-hero { padding-top: 58px; }
+  .favicon-workspace, .brand-hub-tools { padding-top: 60px; padding-bottom: 60px; }
+  .favicon-source-panel, .favicon-control-panel { padding: 20px; }
+  .favicon-dropzone, .favicon-source-preview { min-height: 320px; }
+  .favicon-result { grid-template-columns: 1fr; padding: 23px; }
+  .favicon-result details { grid-column: 1; }
+  .favicon-result ul { grid-template-columns: 1fr; }
+  .favicon-file-guide { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 700px) {

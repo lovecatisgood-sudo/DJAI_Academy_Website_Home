@@ -1,4 +1,4 @@
-export type Language = "th" | "en";
+export type Language = "th" | "en" | "vi";
 export type Category = "document" | "ai" | "spreadsheet";
 
 export type ToolDefinition = {
@@ -6,17 +6,17 @@ export type ToolDefinition = {
   category: Category;
   input: "docx" | "pdf" | "document" | "text" | "mixed" | "csv" | "json" | "spreadsheet";
   multiple?: boolean;
-  title: Record<Language, string>;
-  label: Record<Language, string>;
-  description: Record<Language, string>;
-  intent: Record<Language, string>;
-  keywords: Record<Language, string[]>;
-  warning?: Record<Language, string>;
+  title: Record<string, string>;
+  label: Record<string, string>;
+  description: Record<string, string>;
+  intent: Record<string, string>;
+  keywords: Record<string, string[]>;
+  warning?: Record<string, string>;
 };
 
 export const categories: Record<Category, {
-  title: Record<Language, string>;
-  description: Record<Language, string>;
+  title: Record<string, string>;
+  description: Record<string, string>;
 }> = {
   document: {
     title: { th: "เครื่องมือแปลงเอกสารฟรี", en: "Free Document Converter" },
@@ -194,6 +194,49 @@ export const tools: ToolDefinition[] = [
 
 export const categoryOrder: Category[] = ["document", "ai", "spreadsheet"];
 
+const vietnameseCategories: Record<Category, [string, string]> = {
+  document: ["Công cụ chuyển đổi tài liệu miễn phí", "Chuyển DOCX, PDF, HTML, Markdown và văn bản ngay trong trình duyệt mà không upload tài liệu lên máy chủ."],
+  ai: ["Công cụ chuẩn bị tài liệu cho AI", "Đếm token, làm sạch context, chia chunk và đóng gói file cho ChatGPT, Claude, Cursor, Codex cùng hệ thống RAG."],
+  spreadsheet: ["Công cụ CSV và bảng tính miễn phí", "Chuyển đổi, làm sạch, ghép và chia CSV, JSON, XLSX trong trình duyệt; dữ liệu không rời khỏi thiết bị."]
+};
+
+for (const category of categoryOrder) {
+  categories[category].title.vi = vietnameseCategories[category][0];
+  categories[category].description.vi = vietnameseCategories[category][1];
+}
+
+const vietnameseToolNames: Record<string, [string, string]> = {
+  "docx-to-pdf": ["DOCX sang PDF", "Chuyển DOCX sang PDF miễn phí"],
+  "docx-to-html": ["DOCX sang HTML", "Chuyển DOCX sang HTML sạch"],
+  "docx-to-markdown": ["DOCX sang Markdown", "Chuyển DOCX sang Markdown miễn phí"],
+  "docx-to-text": ["DOCX sang văn bản", "Trích xuất văn bản từ DOCX miễn phí"],
+  "pdf-to-text": ["PDF sang văn bản", "Trích xuất văn bản từ PDF miễn phí"],
+  "pdf-to-word": ["PDF sang Word", "Chuyển văn bản PDF sang Word"],
+  ocr: ["OCR tài liệu", "OCR PDF và hình ảnh thành văn bản"],
+  "token-counter": ["Đếm token cho Vibe Coding", "Công cụ đếm token miễn phí cho Vibe Coding"],
+  "pdf-to-ai-markdown": ["PDF sang AI Markdown", "Chuyển PDF sang Markdown cho AI"],
+  "context-optimizer": ["Tối ưu context", "Làm sạch tài liệu cho AI context"],
+  "rag-chunk-calculator": ["Tính RAG chunk", "Tính và xem trước RAG chunk"],
+  "prompt-packager": ["Đóng gói prompt", "Ghép file thành gói prompt cho AI"],
+  "csv-to-json": ["CSV sang JSON", "Chuyển CSV sang JSON miễn phí"],
+  "json-to-csv": ["JSON sang CSV", "Chuyển JSON sang CSV miễn phí"],
+  "csv-cleaner": ["Làm sạch CSV", "Làm sạch dữ liệu CSV miễn phí"],
+  "merge-csv": ["Ghép CSV", "Ghép nhiều file CSV"],
+  "split-csv": ["Chia CSV", "Chia CSV theo số hàng"],
+  "csv-to-xlsx": ["CSV sang XLSX", "Chuyển CSV sang Excel XLSX"],
+  "xlsx-to-csv": ["XLSX sang CSV", "Chuyển Excel XLSX sang CSV"]
+};
+
+for (const tool of tools) {
+  const [label, title] = vietnameseToolNames[tool.slug];
+  tool.label.vi = label;
+  tool.title.vi = title;
+  tool.description.vi = `${title} ngay trong trình duyệt. File được xử lý cục bộ, không cần đăng ký, không watermark và không gửi lên máy chủ DJAI.`;
+  tool.intent.vi = `Phù hợp khi bạn cần ${label.toLowerCase()} nhanh, riêng tư và có thể tải kết quả để dùng tiếp.`;
+  tool.keywords.vi = [label.toLowerCase(), `${label.toLowerCase()} miễn phí`, `${label.toLowerCase()} không cần đăng ký`];
+  if (tool.warning) tool.warning.vi = "Kết quả phụ thuộc vào cấu trúc và chất lượng file nguồn. Hãy kiểm tra file đầu ra trước khi dùng cho công việc quan trọng.";
+}
+
 export function toolsFor(category: Category) {
   return tools.filter((tool) => tool.category === category);
 }
@@ -203,9 +246,9 @@ export function findTool(category: string, slug: string) {
 }
 
 export function categoryHref(category: Category, language: Language) {
-  return `/tools/${category}/${language === "en" ? "en/" : ""}`;
+  return `/tools/${category}/${language === "th" ? "" : `${language}/`}`;
 }
 
 export function toolHref(tool: ToolDefinition, language: Language) {
-  return `/tools/${tool.category}/${tool.slug}/${language === "en" ? "en/" : ""}`;
+  return `/tools/${tool.category}/${tool.slug}/${language === "th" ? "" : `${language}/`}`;
 }

@@ -11,7 +11,7 @@ export async function generateMetadata({ params }: { params: Promise<{ tool: str
   if (!qrToolSlugs.includes(tool as QrToolSlug)) return {};
   const slug = tool as QrToolSlug;
   const copy = qrToolCopy[slug].en;
-  return { title: `${copy.title} | DJayTools`, description: copy.description, keywords: copy.keywords, alternates: { canonical: qrToolHref(slug, "en"), languages: { th: qrToolHref(slug, "th"), en: qrToolHref(slug, "en"), "x-default": qrToolHref(slug, "th") } }, openGraph: { title: copy.title, description: copy.description, url: qrToolHref(slug, "en"), type: "website", siteName: "DJAI Academy" } };
+  return { title: `${copy.title} | DJayTools`, description: copy.description, keywords: copy.keywords, alternates: { canonical: qrToolHref(slug, "en"), languages: { th: qrToolHref(slug, "th"), en: qrToolHref(slug, "en"), vi: qrToolHref(slug, "vi"), "x-default": qrToolHref(slug, "th") } }, openGraph: { title: copy.title, description: copy.description, url: qrToolHref(slug, "en"), type: "website", siteName: "DJAI Academy" } };
 }
 
 export default async function EnglishQrToolPage({ params }: { params: Promise<{ tool: string }> }) {

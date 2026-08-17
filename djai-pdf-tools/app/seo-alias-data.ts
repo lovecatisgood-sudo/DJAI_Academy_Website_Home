@@ -13,8 +13,8 @@ export type PdfSeoPage = {
 export type PdfSeoAlias = {
   slug: string;
   tool: ToolSlug;
-  keywords: Record<Language, string[]>;
-  copy: Record<Language, PdfSeoPage>;
+  keywords: Record<Exclude<Language, "vi">, string[]>;
+  copy: Record<Exclude<Language, "vi">, PdfSeoPage>;
   initialOptions?: Partial<ProcessingOptions>;
   acceptedTypes?: string[];
   accept?: string;

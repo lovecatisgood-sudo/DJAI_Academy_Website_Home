@@ -13,7 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ category:
   const title = `${categories[key].title.en} | DJTools`;
   const description = categories[key].description.en;
   const canonical = categoryHref(key, "en");
-  return { title, description, alternates: { canonical, languages: { th: categoryHref(key, "th"), en: canonical, "x-default": categoryHref(key, "th") } }, openGraph: { title, description, url: canonical, siteName: "DJAI Academy", images: ["/social/djai-tools.webp"], type: "website" }, twitter: { card: "summary_large_image", title, description, images: ["/social/djai-tools.webp"] } };
+  return { title, description, alternates: { canonical, languages: { th: categoryHref(key, "th"), en: canonical, vi: categoryHref(key, "vi"), "x-default": categoryHref(key, "th") } }, openGraph: { title, description, url: canonical, siteName: "DJAI Academy", images: ["/social/djai-tools.webp"], type: "website" }, twitter: { card: "summary_large_image", title, description, images: ["/social/djai-tools.webp"] } };
 }
 
 export default async function Page({ params }: { params: Promise<{ category: string }> }) {

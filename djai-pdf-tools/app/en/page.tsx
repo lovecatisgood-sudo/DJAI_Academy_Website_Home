@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     languages: {
       th: "/tools/PDFTools/",
       en: "/tools/PDFTools/en/",
+      vi: "/tools/PDFTools/vi/",
       "x-default": "/tools/PDFTools/"
     }
   },

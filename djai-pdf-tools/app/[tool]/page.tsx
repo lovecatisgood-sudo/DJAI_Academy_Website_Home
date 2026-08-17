@@ -33,6 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ tool: str
       languages: {
         th: toolHref(slug, "th"),
         en: toolHref(slug, "en"),
+        vi: toolHref(slug, "vi"),
         "x-default": toolHref(slug, "th")
       }
     },

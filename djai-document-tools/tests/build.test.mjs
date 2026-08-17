@@ -45,6 +45,28 @@ test("category hubs and local processing assets exist", () => {
   ]) assert.equal(existsSync(join(root, asset)), true, `missing ${asset}`);
 });
 
+test("brand hub and favicon generator export reciprocal locale pages", () => {
+  for (const [route, language] of [
+    ["out/brand/index.html", "th"],
+    ["out/brand/en/index.html", "en"],
+    ["out/brand/vi/index.html", "vi"],
+    ["out/brand/favicon-generator/index.html", "th"],
+    ["out/brand/favicon-generator/en/index.html", "en"],
+    ["out/brand/favicon-generator/vi/index.html", "vi"]
+  ]) {
+    const file = join(root, route);
+    assert.equal(existsSync(file), true, `missing ${file}`);
+    const html = readFileSync(file, "utf8");
+    assert.match(html, new RegExp(`<html lang="${language}">`));
+    assert.match(html, /rel="canonical"/);
+    assert.match(html, /hreflang="th"/i);
+    assert.match(html, /hreflang="en"/i);
+    assert.match(html, /hreflang="vi"/i);
+    assert.match(html, /application\/ld\+json/);
+    assert.doesNotMatch(html, /noindex/i);
+  }
+});
+
 test("privacy copy does not make server-processing claims", () => {
   const source = readFileSync(join(root, "app", "tool-data.ts"), "utf8");
   assert.doesNotMatch(source, /pixel-perfect/i);

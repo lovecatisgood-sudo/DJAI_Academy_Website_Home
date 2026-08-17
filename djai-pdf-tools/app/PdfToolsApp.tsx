@@ -88,6 +88,15 @@ const toolCategories = {
     ["Document tools", "/tools/document/en/", "Convert DOCX, extract text, and run OCR."],
     ["AI context tools", "/tools/ai/en/", "Count tokens, plan RAG chunks, and package prompts."],
     ["Spreadsheet tools", "/tools/spreadsheet/en/", "Convert and process CSV, JSON, and XLSX."]
+  ],
+  vi: [
+    ["Tất cả công cụ", "/tools/vi/", "Duyệt toàn bộ công cụ miễn phí theo công việc."],
+    ["Công cụ QR", "/tools/qrgen/vi/", "Tạo QR cho URL, Wi-Fi và liên hệ."],
+    ["Công cụ hình ảnh", "/tools/resizeimg/vi/", "Chuyển đổi, resize, nén và xóa nền."],
+    ["Âm thanh và video", "/tools/media/vi/", "Chuyển đổi media, tách âm thanh và nén video."],
+    ["Công cụ tài liệu", "/tools/document/vi/", "Chuyển DOCX, trích xuất văn bản và OCR."],
+    ["Công cụ AI", "/tools/ai/vi/", "Đếm token, chia RAG chunk và chuẩn bị prompt."],
+    ["Công cụ bảng tính", "/tools/spreadsheet/vi/", "Chuyển đổi và xử lý CSV, JSON, XLSX."]
   ]
 } as const;
 
@@ -237,6 +246,26 @@ const ui = {
     ],
     footerPrivacy: "Privacy-first PDF tools",
     copyright: "DJTools by DJAI Academy"
+  },
+  vi: {
+    nav: { tools: "Tất cả công cụ", course: "Khóa Vibe Coding", development: "Phát triển website", blog: "Bài viết", language: "ไทย / EN" },
+    heroEyebrow: "DJTools by DJAI Academy",
+    heroTitle: "Bộ công cụ PDF chuyên nghiệp, hoàn toàn miễn phí",
+    heroText: "Ghép, tách, nén, chuyển đổi, xoay, đóng watermark và bảo vệ PDF ngay trong trình duyệt. File không rời khỏi thiết bị.",
+    heroButton: "Dùng công cụ miễn phí",
+    trust: ["Miễn phí 100%", "Không cần đăng ký", "Không watermark", "Xử lý trên thiết bị"],
+    allTools: "11 công cụ PDF thực dụng",
+    allToolsText: "Chọn công việc cần làm. File được xử lý cục bộ trong trình duyệt và không gửi lên máy chủ.",
+    open: "Mở công cụ", workspace: "Không gian xử lý PDF", uploadTitle: "Thả file vào đây", uploadPdf: "Chọn PDF", uploadImages: "Chọn ảnh", uploadHint: "Tối đa 100 MB mỗi file", files: "File đã chọn", settings: "Thiết lập đầu ra", process: "Xử lý file", processing: "Đang xử lý trong trình duyệt...", clear: "Làm lại", resultTitle: "File đã sẵn sàng", resultText: "Quá trình đã hoàn tất trên thiết bị này. Không file nào được gửi lên máy chủ.", download: "Tải file", original: "Ban đầu", result: "Kết quả", items: "Mục", continue: "Tiếp tục với công cụ khác",
+    privacyTitle: "Riêng tư từ thiết kế",
+    privacyText: "PDF, ảnh và mật khẩu chỉ tồn tại trong bộ nhớ trình duyệt. DJAI và Siamese Cat Dev không nhận, lưu hay xem file. Dữ liệu làm việc mất khi bạn đóng hoặc tải lại trang.",
+    devEyebrow: "Từ tài liệu đến hệ thống doanh nghiệp", devTitle: "Cần portal tài liệu hoặc workflow cho công ty?", devText: "DJAI và Siamese Cat Dev xây website, ứng dụng web, hệ thống tài liệu, CRM, tự động hóa và AI workflow dựa trên quy trình kinh doanh thực tế.", devButton: "Trao đổi về phát triển", portfolioButton: "Xem dự án",
+    courseEyebrow: "Tự xây công cụ", courseTitle: "Học Vibe Coding và biến workflow thành sản phẩm", courseText: "Học từ ý tưởng, lập kế hoạch đến xây và ra mắt website, ứng dụng cùng tự động hóa bằng AI.", courseButton: "Khám phá khóa học",
+    builderEyebrow: "Được xây dựng bởi", builderTitle: "Siamese Cat Dev", builderText: "Siamese Cat Dev là đối tác thiết kế sản phẩm, quản lý dự án và phát triển phần mềm, đồng thời là học viên và đối tác đào tạo của DJAI Academy.", builderLink: "Tìm hiểu nhà phát triển",
+    seoTitle: "Công cụ PDF miễn phí đặt quyền riêng tư lên trước", seoText: "DJTools xử lý các công việc PDF hằng ngày mà không cần cài phần mềm hoặc tạo tài khoản. Công cụ phù hợp khi bạn không muốn gửi tài liệu đến máy chủ chuyển đổi bên ngoài.",
+    faqTitle: "Câu hỏi về DJTools PDF",
+    faq: [["Các công cụ PDF có thực sự miễn phí?", "Có. Tất cả công cụ cốt lõi đều miễn phí, không cần tài khoản, không watermark và không thu phí sau khi xử lý."], ["File PDF được upload ở đâu?", "Không ở đâu cả. Việc đọc, chỉnh sửa và tạo kết quả diễn ra trong trình duyệt trên thiết bị."], ["Nén PDF có giảm chất lượng không?", "Mức Light giữ cấu trúc tài liệu. Recommended và Strong có thể render trang thành ảnh để giảm dung lượng, làm form phẳng và mất khả năng tìm kiếm văn bản."], ["Có dùng trên điện thoại được không?", "Có, trong trình duyệt hiện đại. PDF rất lớn hoặc có hàng trăm trang phù hợp hơn với máy tính có nhiều bộ nhớ."]],
+    footerPrivacy: "Công cụ PDF ưu tiên quyền riêng tư", copyright: "DJTools by DJAI Academy"
   }
 };
 
@@ -264,20 +293,22 @@ function Segmented<T extends string | number>({ values, value, onChange }: {
 
 function CamPdfAppCallout({ language }: { language: Language }) {
   const en = language === "en";
+  const vi = language === "vi";
   return (
     <section className="mobile-app-callout" aria-labelledby="cam-pdf-app-title">
       <div className="app-device-mark"><Smartphone /><ScanLine /></div>
       <div>
-        <p className="eyebrow">{en ? "MOBILE APP" : "แอปมือถือ"}</p>
-        <h2 id="cam-pdf-app-title">{en ? "Need these tools on your phone?" : "อยากใช้เครื่องมือเหล่านี้บนมือถือ?"}</h2>
+        <p className="eyebrow">{vi ? "ỨNG DỤNG DI ĐỘNG" : en ? "MOBILE APP" : "แอปมือถือ"}</p>
+        <h2 id="cam-pdf-app-title">{vi ? "Cần dùng các công cụ này trên điện thoại?" : en ? "Need these tools on your phone?" : "อยากใช้เครื่องมือเหล่านี้บนมือถือ?"}</h2>
         <p>
-          {en
+          {vi ? "Cam PDF Scan, Signer & QR Generator kết hợp quét tài liệu, ký PDF, tạo QR và các quy trình năng suất trong một ứng dụng di động."
+            : en
             ? "Cam PDF Scan, Signer & QR Generator brings document scanning, PDF signing, QR tools, and advanced productivity features into one mobile app."
             : "Cam PDF Scan, Signer & QR Generator รวมการสแกนเอกสาร เซ็น PDF เครื่องมือ QR และฟีเจอร์ productivity ขั้นสูงไว้ในแอปมือถือเดียว"}
         </p>
       </div>
       <a className="primary-button" href="https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/">
-        {en ? "Download the app" : "ดาวน์โหลดแอป"}<ArrowRight />
+        {vi ? "Tải ứng dụng" : en ? "Download the app" : "ดาวน์โหลดแอป"}<ArrowRight />
       </a>
     </section>
   );
@@ -290,19 +321,21 @@ function ToolSettings({ tool, language, options, update }: {
   update: <K extends keyof ProcessingOptions>(key: K, value: ProcessingOptions[K]) => void;
 }) {
   const en = language === "en";
-  if (tool === "merge-pdf") return <p className="setting-note">{en ? "Use the arrow buttons to arrange PDFs before merging." : "ใช้ปุ่มลูกศรเพื่อจัดลำดับ PDF ก่อนรวมไฟล์"}</p>;
+  const vi = language === "vi";
+  const t = (enText: string, thText: string, viText: string) => vi ? viText : en ? enText : thText;
+  if (tool === "merge-pdf") return <p className="setting-note">{t("Use the arrow buttons to arrange PDFs before merging.", "ใช้ปุ่มลูกศรเพื่อจัดลำดับ PDF ก่อนรวมไฟล์", "Dùng các nút mũi tên để sắp xếp PDF trước khi ghép.")}</p>;
   if (tool === "split-pdf") return (
     <>
-      <label>{en ? "Split method" : "วิธีแยกไฟล์"}</label>
+      <label>{t("Split method", "วิธีแยกไฟล์", "Cách tách tệp")}</label>
       <Segmented values={[
-        { value: "extract", label: en ? "Extract pages" : "ดึงหน้า" },
-        { value: "ranges", label: en ? "Page groups" : "แบ่งช่วง" },
-        { value: "every", label: en ? "Every N pages" : "ทุก N หน้า" }
+        { value: "extract", label: t("Extract pages", "ดึงหน้า", "Trích xuất trang") },
+        { value: "ranges", label: t("Page groups", "แบ่งช่วง", "Nhóm trang") },
+        { value: "every", label: t("Every N pages", "ทุก N หน้า", "Mỗi N trang") }
       ]} value={options.splitMode} onChange={(value) => update("splitMode", value)} />
       {options.splitMode === "every" ? (
-        <label className="field-label">{en ? "Pages per file" : "จำนวนหน้าต่อไฟล์"}<input type="number" min="1" value={options.everyPages} onChange={(event) => update("everyPages", Number(event.target.value))} /></label>
+        <label className="field-label">{t("Pages per file", "จำนวนหน้าต่อไฟล์", "Số trang mỗi tệp")}<input type="number" min="1" value={options.everyPages} onChange={(event) => update("everyPages", Number(event.target.value))} /></label>
       ) : (
-        <label className="field-label">{options.splitMode === "ranges" ? (en ? "Groups separated by semicolons" : "แยกแต่ละกลุ่มด้วย ;") : (en ? "Pages to extract" : "หน้าที่ต้องการดึง")}
+        <label className="field-label">{options.splitMode === "ranges" ? t("Groups separated by semicolons", "แยกแต่ละกลุ่มด้วย ;", "Phân cách các nhóm bằng dấu chấm phẩy") : t("Pages to extract", "หน้าที่ต้องการดึง", "Các trang cần trích xuất")}
           <input value={options.pageRanges} onChange={(event) => update("pageRanges", event.target.value)} placeholder={options.splitMode === "ranges" ? "1-3; 4-6; 8" : "1-3, 5, 8"} />
         </label>
       )}
@@ -310,80 +343,80 @@ function ToolSettings({ tool, language, options, update }: {
   );
   if (tool === "compress-pdf") return (
     <>
-      <label>{en ? "Compression level" : "ระดับการบีบอัด"}</label>
+      <label>{t("Compression level", "ระดับการบีบอัด", "Mức nén")}</label>
       <Segmented values={[
         { value: "light", label: "Light" },
-        { value: "recommended", label: en ? "Recommended" : "แนะนำ" },
+        { value: "recommended", label: t("Recommended", "แนะนำ", "Đề xuất") },
         { value: "strong", label: "Strong" }
       ]} value={options.compression} onChange={(value) => update("compression", value)} />
       <p className="setting-note warning">{options.compression === "light"
-        ? (en ? "Lossless structure optimization. Savings depend on the source PDF." : "ปรับโครงสร้างโดยไม่ลดคุณภาพ ขนาดที่ลดได้ขึ้นอยู่กับไฟล์ต้นฉบับ")
-        : (en ? "Pages are flattened as images for smaller files. Links, forms, and searchable text may be lost." : "หน้า PDF จะถูก flatten เป็นรูปเพื่อลดขนาด link, form และข้อความที่ค้นหาได้อาจหายไป")}</p>
+        ? t("Lossless structure optimization. Savings depend on the source PDF.", "ปรับโครงสร้างโดยไม่ลดคุณภาพ ขนาดที่ลดได้ขึ้นอยู่กับไฟล์ต้นฉบับ", "Tối ưu cấu trúc không làm giảm chất lượng; mức giảm tùy thuộc PDF gốc.")
+        : t("Pages are flattened as images for smaller files. Links, forms, and searchable text may be lost.", "หน้า PDF จะถูก flatten เป็นรูปเพื่อลดขนาด link, form และข้อความที่ค้นหาได้อาจหายไป", "Các trang được làm phẳng thành ảnh để giảm dung lượng; liên kết, biểu mẫu và văn bản tìm kiếm được có thể bị mất.")}</p>
     </>
   );
   if (tool === "images-to-pdf") return (
     <div className="setting-grid">
-      <label className="field-label">{en ? "Page size" : "ขนาดกระดาษ"}<select value={options.imagePageSize} onChange={(event) => update("imagePageSize", event.target.value as ProcessingOptions["imagePageSize"])}><option value="auto">Auto</option><option value="a4">A4</option><option value="letter">Letter</option></select></label>
-      <label className="field-label">{en ? "Orientation" : "แนวกระดาษ"}<select value={options.imageOrientation} onChange={(event) => update("imageOrientation", event.target.value as ProcessingOptions["imageOrientation"])}><option value="auto">Auto</option><option value="portrait">{en ? "Portrait" : "แนวตั้ง"}</option><option value="landscape">{en ? "Landscape" : "แนวนอน"}</option></select></label>
+      <label className="field-label">{t("Page size", "ขนาดกระดาษ", "Khổ trang")}<select value={options.imagePageSize} onChange={(event) => update("imagePageSize", event.target.value as ProcessingOptions["imagePageSize"])}><option value="auto">Auto</option><option value="a4">A4</option><option value="letter">Letter</option></select></label>
+      <label className="field-label">{t("Orientation", "แนวกระดาษ", "Hướng trang")}<select value={options.imageOrientation} onChange={(event) => update("imageOrientation", event.target.value as ProcessingOptions["imageOrientation"])}><option value="auto">Auto</option><option value="portrait">{t("Portrait", "แนวตั้ง", "Dọc")}</option><option value="landscape">{t("Landscape", "แนวนอน", "Ngang")}</option></select></label>
     </div>
   );
   if (tool === "pdf-to-images") return (
     <div className="setting-grid">
-      <div><label>{en ? "Image format" : "รูปแบบไฟล์"}</label><Segmented values={[{ value: "jpg", label: "JPG" }, { value: "png", label: "PNG" }]} value={options.imageFormat} onChange={(value) => update("imageFormat", value)} /></div>
-      <label className="field-label">{en ? "Resolution" : "ความละเอียด"}<select value={options.imageScale} onChange={(event) => update("imageScale", Number(event.target.value))}><option value="1">Standard</option><option value="1.5">High</option><option value="2">Very high</option></select></label>
+      <div><label>{t("Image format", "รูปแบบไฟล์", "Định dạng ảnh")}</label><Segmented values={[{ value: "jpg", label: "JPG" }, { value: "png", label: "PNG" }]} value={options.imageFormat} onChange={(value) => update("imageFormat", value)} /></div>
+      <label className="field-label">{t("Resolution", "ความละเอียด", "Độ phân giải")}<select value={options.imageScale} onChange={(event) => update("imageScale", Number(event.target.value))}><option value="1">Standard</option><option value="1.5">High</option><option value="2">Very high</option></select></label>
     </div>
   );
   if (tool === "rotate-pdf") return (
     <>
-      <label>{en ? "Rotate clockwise" : "หมุนตามเข็มนาฬิกา"}</label>
+      <label>{t("Rotate clockwise", "หมุนตามเข็มนาฬิกา", "Xoay theo chiều kim đồng hồ")}</label>
       <Segmented values={[{ value: 90, label: "90°" }, { value: 180, label: "180°" }, { value: 270, label: "270°" }]} value={options.rotation} onChange={(value) => update("rotation", value)} />
-      <label className="field-label">{en ? "Pages (leave blank for all)" : "ระบุหน้า (เว้นว่างเพื่อหมุนทุกหน้า)"}<input value={options.selectedPages} onChange={(event) => update("selectedPages", event.target.value)} placeholder="1-3, 5" /></label>
+      <label className="field-label">{t("Pages (leave blank for all)", "ระบุหน้า (เว้นว่างเพื่อหมุนทุกหน้า)", "Trang (để trống để chọn tất cả)")}<input value={options.selectedPages} onChange={(event) => update("selectedPages", event.target.value)} placeholder="1-3, 5" /></label>
     </>
   );
   if (tool === "organize-pdf") return (
     <>
       {options.organizeMode === "delete" ? (
-        <label className="field-label">{en ? "Pages to delete" : "หน้าที่ต้องการลบ"}<input value={options.deletePages} onChange={(event) => update("deletePages", event.target.value)} placeholder="2, 4-6" /></label>
+        <label className="field-label">{t("Pages to delete", "หน้าที่ต้องการลบ", "Các trang cần xóa")}<input value={options.deletePages} onChange={(event) => update("deletePages", event.target.value)} placeholder="2, 4-6" /></label>
       ) : (
-        <label className="field-label">{en ? "Final page order" : "ลำดับหน้าสุดท้าย"}<input value={options.pageOrder} onChange={(event) => update("pageOrder", event.target.value)} placeholder="3, 1-2, 5" /></label>
+        <label className="field-label">{t("Final page order", "ลำดับหน้าสุดท้าย", "Thứ tự trang cuối cùng")}<input value={options.pageOrder} onChange={(event) => update("pageOrder", event.target.value)} placeholder="3, 1-2, 5" /></label>
       )}
-      <p className="setting-note warning">{options.organizeMode === "delete" ? (en ? "Selected pages are removed from a new copy. The original stays unchanged." : "หน้าที่ระบุจะถูกลบจากสำเนาใหม่ โดยไฟล์ต้นฉบับไม่เปลี่ยนแปลง") : (en ? "Pages left out are removed. You can repeat a page if a duplicate is needed." : "หน้าที่ไม่ระบุจะถูกลบ และสามารถระบุหน้าเดิมซ้ำเพื่อทำสำเนาได้")}</p>
+      <p className="setting-note warning">{options.organizeMode === "delete" ? t("Selected pages are removed from a new copy. The original stays unchanged.", "หน้าที่ระบุจะถูกลบจากสำเนาใหม่ โดยไฟล์ต้นฉบับไม่เปลี่ยนแปลง", "Các trang đã chọn chỉ bị xóa khỏi bản sao mới; tệp gốc không thay đổi.") : t("Pages left out are removed. You can repeat a page if a duplicate is needed.", "หน้าที่ไม่ระบุจะถูกลบ และสามารถระบุหน้าเดิมซ้ำเพื่อทำสำเนาได้", "Các trang không được liệt kê sẽ bị xóa; bạn có thể lặp lại một trang nếu cần nhân bản.")}</p>
     </>
   );
   if (tool === "add-page-numbers") return (
     <div className="setting-grid">
-      <label className="field-label">{en ? "Position" : "ตำแหน่ง"}<select value={options.pageNumberPosition} onChange={(event) => update("pageNumberPosition", event.target.value as ProcessingOptions["pageNumberPosition"])}><option value="bottom-left">{en ? "Bottom left" : "ล่างซ้าย"}</option><option value="bottom-center">{en ? "Bottom center" : "ล่างกลาง"}</option><option value="bottom-right">{en ? "Bottom right" : "ล่างขวา"}</option><option value="top-left">{en ? "Top left" : "บนซ้าย"}</option><option value="top-center">{en ? "Top center" : "บนกลาง"}</option><option value="top-right">{en ? "Top right" : "บนขวา"}</option></select></label>
-      <label className="field-label">{en ? "Start at" : "เริ่มที่เลข"}<input type="number" min="0" value={options.pageNumberStart} onChange={(event) => update("pageNumberStart", Number(event.target.value))} /></label>
+      <label className="field-label">{t("Position", "ตำแหน่ง", "Vị trí")}<select value={options.pageNumberPosition} onChange={(event) => update("pageNumberPosition", event.target.value as ProcessingOptions["pageNumberPosition"])}><option value="bottom-left">{t("Bottom left", "ล่างซ้าย", "Dưới trái")}</option><option value="bottom-center">{t("Bottom center", "ล่างกลาง", "Dưới giữa")}</option><option value="bottom-right">{t("Bottom right", "ล่างขวา", "Dưới phải")}</option><option value="top-left">{t("Top left", "บนซ้าย", "Trên trái")}</option><option value="top-center">{t("Top center", "บนกลาง", "Trên giữa")}</option><option value="top-right">{t("Top right", "บนขวา", "Trên phải")}</option></select></label>
+      <label className="field-label">{t("Start at", "เริ่มที่เลข", "Bắt đầu từ")}<input type="number" min="0" value={options.pageNumberStart} onChange={(event) => update("pageNumberStart", Number(event.target.value))} /></label>
     </div>
   );
-  if (tool === "remove-pdf-metadata") return <p className="setting-note warning">{en ? "This clears title, author, subject, keywords, creator, producer, and document dates. Page content is not changed." : "ระบบจะลบ title, author, subject, keywords, creator, producer และวันที่ของเอกสาร โดยไม่เปลี่ยนเนื้อหาในหน้า"}</p>;
+  if (tool === "remove-pdf-metadata") return <p className="setting-note warning">{t("This clears title, author, subject, keywords, creator, producer, and document dates. Page content is not changed.", "ระบบจะลบ title, author, subject, keywords, creator, producer และวันที่ของเอกสาร โดยไม่เปลี่ยนเนื้อหาในหน้า", "Thao tác này xóa tiêu đề, tác giả, chủ đề, từ khóa, ứng dụng tạo tệp và ngày tài liệu; nội dung trang không thay đổi.")}</p>;
   if (tool === "watermark-pdf") return (
     <>
-      <label>{en ? "Watermark type" : "ประเภทลายน้ำ"}</label>
-      <Segmented values={[{ value: "text", label: en ? "Text" : "ข้อความ" }, { value: "image", label: en ? "Image" : "รูปภาพ" }]} value={options.watermarkType} onChange={(value) => update("watermarkType", value)} />
+      <label>{t("Watermark type", "ประเภทลายน้ำ", "Loại watermark")}</label>
+      <Segmented values={[{ value: "text", label: t("Text", "ข้อความ", "Văn bản") }, { value: "image", label: t("Image", "รูปภาพ", "Hình ảnh") }]} value={options.watermarkType} onChange={(value) => update("watermarkType", value)} />
       {options.watermarkType === "text" ? (
-        <label className="field-label">{en ? "Watermark text" : "ข้อความลายน้ำ"}<input value={options.watermarkText} onChange={(event) => update("watermarkText", event.target.value)} /></label>
+        <label className="field-label">{t("Watermark text", "ข้อความลายน้ำ", "Nội dung watermark")}<input value={options.watermarkText} onChange={(event) => update("watermarkText", event.target.value)} /></label>
       ) : (
-        <label className="field-label">{en ? "PNG or JPG logo" : "โลโก้ PNG หรือ JPG"}<input type="file" accept="image/png,image/jpeg" onChange={(event) => update("watermarkImage", event.target.files?.[0] || null)} /></label>
+        <label className="field-label">{t("PNG or JPG logo", "โลโก้ PNG หรือ JPG", "Logo PNG hoặc JPG")}<input type="file" accept="image/png,image/jpeg" onChange={(event) => update("watermarkImage", event.target.files?.[0] || null)} /></label>
       )}
       <div className="setting-grid">
-        <label className="field-label">{en ? "Position" : "ตำแหน่ง"}<select value={options.watermarkPosition} onChange={(event) => update("watermarkPosition", event.target.value as ProcessingOptions["watermarkPosition"])}><option value="center">{en ? "Center" : "กลาง"}</option><option value="top-left">{en ? "Top left" : "ซ้ายบน"}</option><option value="top-right">{en ? "Top right" : "ขวาบน"}</option><option value="bottom-left">{en ? "Bottom left" : "ซ้ายล่าง"}</option><option value="bottom-right">{en ? "Bottom right" : "ขวาล่าง"}</option></select></label>
-        <label className="range-label">{en ? "Opacity" : "ความโปร่งใส"} <strong>{options.watermarkOpacity}%</strong><input type="range" min="5" max="100" value={options.watermarkOpacity} onChange={(event) => update("watermarkOpacity", Number(event.target.value))} /></label>
-        <label className="range-label">{en ? "Width" : "ความกว้าง"} <strong>{options.watermarkSize}%</strong><input type="range" min="10" max="85" value={options.watermarkSize} onChange={(event) => update("watermarkSize", Number(event.target.value))} /></label>
-        <label className="field-label">{en ? "Pages (blank for all)" : "ระบุหน้า (ว่าง = ทุกหน้า)"}<input value={options.selectedPages} onChange={(event) => update("selectedPages", event.target.value)} placeholder="1-3, 5" /></label>
+        <label className="field-label">{t("Position", "ตำแหน่ง", "Vị trí")}<select value={options.watermarkPosition} onChange={(event) => update("watermarkPosition", event.target.value as ProcessingOptions["watermarkPosition"])}><option value="center">{t("Center", "กลาง", "Giữa")}</option><option value="top-left">{t("Top left", "ซ้ายบน", "Trên trái")}</option><option value="top-right">{t("Top right", "ขวาบน", "Trên phải")}</option><option value="bottom-left">{t("Bottom left", "ซ้ายล่าง", "Dưới trái")}</option><option value="bottom-right">{t("Bottom right", "ขวาล่าง", "Dưới phải")}</option></select></label>
+        <label className="range-label">{t("Opacity", "ความโปร่งใส", "Độ mờ")} <strong>{options.watermarkOpacity}%</strong><input type="range" min="5" max="100" value={options.watermarkOpacity} onChange={(event) => update("watermarkOpacity", Number(event.target.value))} /></label>
+        <label className="range-label">{t("Width", "ความกว้าง", "Chiều rộng")} <strong>{options.watermarkSize}%</strong><input type="range" min="10" max="85" value={options.watermarkSize} onChange={(event) => update("watermarkSize", Number(event.target.value))} /></label>
+        <label className="field-label">{t("Pages (blank for all)", "ระบุหน้า (ว่าง = ทุกหน้า)", "Trang (để trống để chọn tất cả)")}<input value={options.selectedPages} onChange={(event) => update("selectedPages", event.target.value)} placeholder="1-3, 5" /></label>
       </div>
     </>
   );
   return (
     <>
-      <label className="field-label">{en ? "Password" : "รหัสผ่าน"}<input type="password" autoComplete="new-password" value={options.password} onChange={(event) => update("password", event.target.value)} minLength={8} /></label>
-      <p className="setting-note"><LockKeyhole size={15} /> AES-256 · {en ? "Keep this password safe. DJAI cannot recover it." : "เก็บรหัสผ่านให้ปลอดภัย DJAI ไม่สามารถกู้คืนได้"}</p>
+      <label className="field-label">{t("Password", "รหัสผ่าน", "Mật khẩu")}<input type="password" autoComplete="new-password" value={options.password} onChange={(event) => update("password", event.target.value)} minLength={8} /></label>
+      <p className="setting-note"><LockKeyhole size={15} /> AES-256 · {t("Keep this password safe. DJAI cannot recover it.", "เก็บรหัสผ่านให้ปลอดภัย DJAI ไม่สามารถกู้คืนได้", "Hãy lưu mật khẩu an toàn. DJAI không thể khôi phục mật khẩu này.")}</p>
       <div className="permission-grid">
         {([
-          ["allowPrint", en ? "Allow printing" : "อนุญาตให้พิมพ์"],
-          ["allowCopy", en ? "Allow copying" : "อนุญาตให้ copy"],
-          ["allowModify", en ? "Allow editing" : "อนุญาตให้แก้ไข"],
-          ["allowForms", en ? "Allow form filling" : "อนุญาตให้กรอก form"]
+          ["allowPrint", t("Allow printing", "อนุญาตให้พิมพ์", "Cho phép in")],
+          ["allowCopy", t("Allow copying", "อนุญาตให้ copy", "Cho phép sao chép")],
+          ["allowModify", t("Allow editing", "อนุญาตให้แก้ไข", "Cho phép chỉnh sửa")],
+          ["allowForms", t("Allow form filling", "อนุญาตให้กรอก form", "Cho phép điền biểu mẫu")]
         ] as Array<[keyof ProcessingOptions, string]>).map(([key, label]) => (
           <label className="check-label" key={key}><input type="checkbox" checked={Boolean(options[key])} onChange={(event) => update(key, event.target.checked as never)} /> <span><Check size={14} /></span>{label}</label>
         ))}
@@ -395,7 +428,9 @@ function ToolSettings({ tool, language, options, update }: {
 export default function PdfToolsApp({ language, initialTool, seoPage, initialOptions, acceptedTypes, acceptOverride, fileTypeLabel }: { language: Language; initialTool?: ToolSlug; seoPage?: PdfSeoPage; initialOptions?: Partial<ProcessingOptions>; acceptedTypes?: string[]; acceptOverride?: string; fileTypeLabel?: string }) {
   const copy = ui[language];
   const en = language === "en";
-  const devHref = en ? "https://www.djai.academy/siamese_cat/dev/en/" : "https://www.djai.academy/siamese_cat/dev/";
+  const vi = language === "vi";
+  const localePath = (th: string, enPath: string, viPath: string) => vi ? viPath : en ? enPath : th;
+  const devHref = localePath("https://www.djai.academy/siamese_cat/dev/", "https://www.djai.academy/siamese_cat/dev/en/", "https://www.djai.academy/siamese_cat/dev/");
   const activeTool = initialTool || "merge-pdf";
   const activeCopy = seoPage || toolCopy[language][activeTool];
   const activeGuide = seoPage?.guide || toolGuides[language][activeTool];
@@ -453,7 +488,7 @@ export default function PdfToolsApp({ language, initialTool, seoPage, initialOpt
   async function run() {
     setError("");
     if (activeTool === "protect-pdf" && options.password.length < 8) {
-      setError(en ? "Use a password with at least 8 characters." : "กรุณาใช้รหัสผ่านอย่างน้อย 8 ตัวอักษร");
+      setError(vi ? "Mật khẩu phải có ít nhất 8 ký tự." : en ? "Use a password with at least 8 characters." : "กรุณาใช้รหัสผ่านอย่างน้อย 8 ตัวอักษร");
       return;
     }
     setProcessing(true);
@@ -473,10 +508,10 @@ export default function PdfToolsApp({ language, initialTool, seoPage, initialOpt
   }
 
   const publicSlug = seoPage?.slug || initialTool;
-  const canonical = publicSlug ? `${SITE_URL}/${publicSlug}/${en ? "en/" : ""}` : `${SITE_URL}/${en ? "en/" : ""}`;
-  const languageHref = seoPage
-    ? `${BASE_PATH}/${seoPage.slug}/${en ? "" : "en/"}`
-    : initialTool ? toolHref(initialTool, en ? "th" : "en") : homeHref(en ? "th" : "en");
+  const localeSuffix = language === "th" ? "" : `${language}/`;
+  const canonical = publicSlug ? `${SITE_URL}/${publicSlug}/${localeSuffix}` : `${SITE_URL}/${localeSuffix}`;
+  const thaiHref = initialTool ? toolHref(initialTool, "th") : homeHref("th");
+  const englishHref = initialTool ? toolHref(initialTool, "en") : homeHref("en");
   const structuredData = [
     {
       "@context": "https://schema.org",
@@ -488,7 +523,7 @@ export default function PdfToolsApp({ language, initialTool, seoPage, initialOpt
       description: initialTool ? activeCopy.description : copy.heroText,
       featureList: toolSlugs.map((slug) => toolCopy[language][slug].label),
       offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-      publisher: { "@type": "Organization", name: "DJAI Academy", url: en ? "https://www.djai.academy/en/" : "https://www.djai.academy/" }
+      publisher: { "@type": "Organization", name: "DJAI Academy", url: localePath("https://www.djai.academy/", "https://www.djai.academy/en/", "https://www.djai.academy/vi/") }
     },
     {
       "@context": "https://schema.org",
@@ -499,8 +534,8 @@ export default function PdfToolsApp({ language, initialTool, seoPage, initialOpt
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "DJAI Academy", item: en ? "https://www.djai.academy/en/" : "https://www.djai.academy/" },
-        { "@type": "ListItem", position: 2, name: en ? "Free Tools" : "เครื่องมือฟรี", item: en ? "https://www.djai.academy/tools/en/" : "https://www.djai.academy/tools/" },
+        { "@type": "ListItem", position: 1, name: "DJAI Academy", item: localePath("https://www.djai.academy/", "https://www.djai.academy/en/", "https://www.djai.academy/vi/") },
+        { "@type": "ListItem", position: 2, name: vi ? "Công cụ miễn phí" : en ? "Free Tools" : "เครื่องมือฟรี", item: localePath("https://www.djai.academy/tools/", "https://www.djai.academy/tools/en/", "https://www.djai.academy/tools/vi/") },
         { "@type": "ListItem", position: 3, name: initialTool ? activeCopy.title : "DJTools PDF", item: canonical }
       ]
     },
@@ -525,12 +560,12 @@ export default function PdfToolsApp({ language, initialTool, seoPage, initialOpt
         <button className="menu-button" type="button" aria-label={menuOpen ? "Close menu" : "Open menu"} aria-expanded={menuOpen} onClick={() => setMenuOpen((open) => !open)}>{menuOpen ? <X /> : <Menu />}</button>
         <nav className={menuOpen ? "open" : ""} aria-label="Main navigation">
           <a className="active" href={homeHref(language)}>PDF</a>
-          <a href={en ? "https://www.djai.academy/tools/resizeimg/en/" : "https://www.djai.academy/tools/resizeimg/"}>{en ? "Image" : "รูปภาพ"}</a>
-          <a href={en ? "https://www.djai.academy/tools/document/en/" : "https://www.djai.academy/tools/document/"}>{en ? "Document" : "เอกสาร"}</a>
-          <a href={en ? "https://www.djai.academy/tools/ai/en/" : "https://www.djai.academy/tools/ai/"}>AI</a>
-          <a href={en ? "https://www.djai.academy/tools/spreadsheet/en/" : "https://www.djai.academy/tools/spreadsheet/"}>{en ? "Spreadsheet" : "ตารางข้อมูล"}</a>
-          <a href={en ? "https://www.djai.academy/tools/en/" : "https://www.djai.academy/tools/"}>{copy.nav.tools}</a>
-          <a className="language-link" href={languageHref} hrefLang={en ? "th" : "en"}>{copy.nav.language}</a>
+          <a href={localePath("/tools/resizeimg/", "/tools/resizeimg/en/", "/tools/resizeimg/vi/")}>{vi ? "Hình ảnh" : en ? "Image" : "รูปภาพ"}</a>
+          <a href={localePath("/tools/document/", "/tools/document/en/", "/tools/document/vi/")}>{vi ? "Tài liệu" : en ? "Document" : "เอกสาร"}</a>
+          <a href={localePath("/tools/ai/", "/tools/ai/en/", "/tools/ai/vi/")}>AI</a>
+          <a href={localePath("/tools/spreadsheet/", "/tools/spreadsheet/en/", "/tools/spreadsheet/vi/")}>{vi ? "Bảng tính" : en ? "Spreadsheet" : "ตารางข้อมูล"}</a>
+          <a href={localePath("/tools/", "/tools/en/", "/tools/vi/")}>{copy.nav.tools}</a>
+          {vi ? <><a className="language-link" href={thaiHref} hrefLang="th">ไทย</a><a className="language-link" href={englishHref} hrefLang="en">EN</a></> : <a className="language-link" href={en ? thaiHref : englishHref} hrefLang={en ? "th" : "en"}>{copy.nav.language}</a>}
         </nav>
       </header>
 
@@ -566,9 +601,9 @@ export default function PdfToolsApp({ language, initialTool, seoPage, initialOpt
               return <a className={`tool-card accent-${index % 4}`} href={toolHref(slug, language)} key={slug}><span className="tool-icon"><Icon /></span><div><small>{String(index + 1).padStart(2, "0")}</small><h3>{item.label}</h3><p>{item.short}</p></div><strong>{copy.open}<ArrowRight size={16} /></strong></a>;
             })}
           </div>
-          <div className="popular-task-links" aria-label={en ? "Popular PDF tasks" : "งาน PDF ยอดนิยม"}>
+          {!vi && <div className="popular-task-links" aria-label={en ? "Popular PDF tasks" : "งาน PDF ยอดนิยม"}>
             {Object.values(pdfSeoAliases).map((alias) => <a href={`${BASE_PATH}/${alias.slug}/${en ? "en/" : ""}`} key={alias.slug}>{alias.copy[language].label}<ArrowRight size={15} /></a>)}
-          </div>
+          </div>}
         </section>
       )}
 
@@ -587,7 +622,7 @@ export default function PdfToolsApp({ language, initialTool, seoPage, initialOpt
             >
               <span><Upload /></span><strong>{copy.uploadTitle}</strong><small>{fileTypeLabel || (isImageInput ? "JPG · PNG · WebP" : "PDF")} · {copy.uploadHint}</small><b>{isImageInput ? copy.uploadImages : copy.uploadPdf}</b>
             </button>
-            <input ref={fileInput} className="visually-hidden" type="file" accept={accept} multiple={allowsMultiple} aria-label={en ? "Choose files to process" : "เลือกไฟล์ที่ต้องการประมวลผล"} onChange={(event) => event.target.files && addFiles(event.target.files)} />
+            <input ref={fileInput} className="visually-hidden" type="file" accept={accept} multiple={allowsMultiple} aria-label={vi ? "Chọn file cần xử lý" : en ? "Choose files to process" : "เลือกไฟล์ที่ต้องการประมวลผล"} onChange={(event) => event.target.files && addFiles(event.target.files)} />
             {files.length > 0 && <div className="file-list"><div className="file-list-title"><strong>{copy.files}</strong><span>{files.length}</span></div>{files.map((file, index) => <div className="file-row" key={`${file.name}-${file.lastModified}-${index}`}><span className="file-type">{isImageInput ? <FileImage /> : <FileArchive />}</span><div><strong>{file.name}</strong><small>{formatBytes(file.size)}</small></div>{allowsMultiple && <div className="file-order"><button type="button" aria-label="Move up" title="Move up" onClick={() => moveFile(index, -1)} disabled={index === 0}><ArrowUp /></button><button type="button" aria-label="Move down" title="Move down" onClick={() => moveFile(index, 1)} disabled={index === files.length - 1}><ArrowDown /></button></div>}<button className="remove-file" type="button" aria-label="Remove file" title="Remove file" onClick={() => setFiles((current) => current.filter((_, itemIndex) => itemIndex !== index))}><Trash2 /></button></div>)}</div>}
           </div>
           <div className="settings-column">
@@ -621,19 +656,19 @@ export default function PdfToolsApp({ language, initialTool, seoPage, initialOpt
 
       <section className="privacy-band"><ShieldCheck /><div><h2>{copy.privacyTitle}</h2><p>{linkedBuilderName(copy.privacyText, devHref)}</p></div></section>
 
-      <section className="conversion-band development-band"><div><p className="eyebrow">{copy.devEyebrow}</p><h2>{copy.devTitle}</h2><p>{linkedBuilderName(copy.devText, devHref)}</p><div className="button-row"><a className="primary-button" href={en ? "https://www.djai.academy/development/en/" : "https://www.djai.academy/development/"}>{copy.devButton}<ArrowRight /></a><a className="secondary-button" href={en ? "https://www.djai.academy/portfolio/en/" : "https://www.djai.academy/portfolio/"}>{copy.portfolioButton}</a></div></div><div className="system-visual"><span><Files /></span><ArrowRight /><span><WandSparkles /></span><ArrowRight /><span><ShieldCheck /></span></div></section>
+      <section className="conversion-band development-band"><div><p className="eyebrow">{copy.devEyebrow}</p><h2>{copy.devTitle}</h2><p>{linkedBuilderName(copy.devText, devHref)}</p><div className="button-row"><a className="primary-button" href={localePath("/development/", "/development/en/", "/development/vi/")}>{copy.devButton}<ArrowRight /></a><a className="secondary-button" href={localePath("/portfolio/", "/portfolio/en/", "/portfolio/vi/")}>{copy.portfolioButton}</a></div></div><div className="system-visual"><span><Files /></span><ArrowRight /><span><WandSparkles /></span><ArrowRight /><span><ShieldCheck /></span></div></section>
 
-      <section className="conversion-band course-band"><div className="course-symbol"><GraduationCap /></div><div><p className="eyebrow">{copy.courseEyebrow}</p><h2>{copy.courseTitle}</h2><p>{copy.courseText}</p><a className="secondary-button" href={en ? "https://www.djai.academy/course/detail/en/" : "https://www.djai.academy/course/detail/"}>{copy.courseButton}<BookOpen /></a></div></section>
+      <section className="conversion-band course-band"><div className="course-symbol"><GraduationCap /></div><div><p className="eyebrow">{copy.courseEyebrow}</p><h2>{copy.courseTitle}</h2><p>{copy.courseText}</p><a className="secondary-button" href={localePath("/course/detail/", "/course/detail/en/", "/course/detail/vi/")}>{copy.courseButton}<BookOpen /></a></div></section>
 
       <section className="builder-section" id="builder"><a className="builder-logo" href={devHref}><Image src={`${BASE_PATH}/siamese-cat-dev-logo.webp`} alt="Siamese Cat Dev logo" width={640} height={540} loading="lazy" unoptimized /></a><div><p className="eyebrow">{copy.builderEyebrow}</p><h2>{linkedBuilderName(copy.builderTitle, devHref)}</h2><p>{linkedBuilderName(copy.builderText, devHref)}</p><a className="text-link" href={devHref}>{copy.builderLink}<ArrowRight /></a></div></section>
 
       <section className="seo-section"><div><p className="eyebrow">FREE PDF TOOLS</p><h2>{copy.seoTitle}</h2><p>{copy.seoText}</p></div><div className="faq-list"><h2>{copy.faqTitle}</h2>{copy.faq.map(([question, answer]) => <details key={question}><summary>{question}<span>+</span></summary><p>{answer}</p></details>)}</div></section>
 
       <nav className="tool-ecosystem-directory" aria-labelledby={`tool-ecosystem-${language}`} data-tool-discovery>
-        <div><p className="eyebrow">{en ? "EXPLORE DJAI TOOLS" : "สำรวจเครื่องมือ DJAI"}</p><h2 id={`tool-ecosystem-${language}`}>{en ? "Continue with another free workflow" : "ทำงานต่อด้วยเครื่องมือฟรีหมวดอื่น"}</h2></div>
+        <div><p className="eyebrow">{vi ? "KHÁM PHÁ CÔNG CỤ DJAI" : en ? "EXPLORE DJAI TOOLS" : "สำรวจเครื่องมือ DJAI"}</p><h2 id={`tool-ecosystem-${language}`}>{vi ? "Tiếp tục với một quy trình miễn phí khác" : en ? "Continue with another free workflow" : "ทำงานต่อด้วยเครื่องมือฟรีหมวดอื่น"}</h2></div>
         <div>{toolCategories[language].map(([label, href, description]) => <a href={href} key={href}><strong>{label}</strong><span>{description}</span><ArrowRight /></a>)}</div>
       </nav>
-      <footer><div className="footer-brand"><a className="brand" href={homeHref(language)}><Image src={`${BASE_PATH}/djai-academy-logo-display.webp`} alt="DJAI Academy" width={114} height={61} loading="lazy" unoptimized /><span><strong>DJTools</strong><small>PDF · by DJAI Academy</small></span></a><p>{copy.footerPrivacy}</p></div><div className="footer-links"><div><strong>DJAI</strong><a href={en ? "https://www.djai.academy/en/" : "https://www.djai.academy/"}>DJAI Academy</a><a href={en ? "https://www.djai.academy/course/en/" : "https://www.djai.academy/course/"}>{copy.nav.course}</a><a href={en ? "https://www.djai.academy/blog/en/" : "https://www.djai.academy/blog/"}>{copy.nav.blog}</a></div><div><strong>BUILD</strong><a href={en ? "https://www.djai.academy/development/en/" : "https://www.djai.academy/development/"}>{copy.nav.development}</a><a href={en ? "https://www.djai.academy/portfolio/en/" : "https://www.djai.academy/portfolio/"}>{copy.portfolioButton}</a><a href={en ? "https://www.djai.academy/siamese_cat/dev/en/" : "https://www.djai.academy/siamese_cat/dev/"}>Siamese Cat Dev</a></div><div><strong>TOOLS</strong>{related.slice(0, 4).map((slug) => <a href={toolHref(slug, language)} key={slug}>{toolCopy[language][slug].label}</a>)}</div></div><p className="copyright">© 2026 {copy.copyright}</p></footer>
+      <footer><div className="footer-brand"><a className="brand" href={homeHref(language)}><Image src={`${BASE_PATH}/djai-academy-logo-display.webp`} alt="DJAI Academy" width={114} height={61} loading="lazy" unoptimized /><span><strong>DJTools</strong><small>PDF · by DJAI Academy</small></span></a><p>{copy.footerPrivacy}</p></div><div className="footer-links"><div><strong>DJAI</strong><a href={localePath("/", "/en/", "/vi/")}>DJAI Academy</a><a href={localePath("/course/", "/course/en/", "/course/vi/")}>{copy.nav.course}</a><a href={localePath("/blog/", "/blog/en/", "/blog/vi/")}>{copy.nav.blog}</a></div><div><strong>BUILD</strong><a href={localePath("/development/", "/development/en/", "/development/vi/")}>{copy.nav.development}</a><a href={localePath("/portfolio/", "/portfolio/en/", "/portfolio/vi/")}>{copy.portfolioButton}</a><a href={devHref}>Siamese Cat Dev</a></div><div><strong>TOOLS</strong>{related.slice(0, 4).map((slug) => <a href={toolHref(slug, language)} key={slug}>{toolCopy[language][slug].label}</a>)}</div></div><p className="copyright">© 2026 {copy.copyright}</p></footer>
       <ToolPromoModal language={language} type={promoType} onClose={() => setPromoType(null)} />
     </main>
   );
