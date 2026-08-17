@@ -153,6 +153,10 @@ const publicRoutes = [
   "/siamese_cat/dev/en/",
   "/siamese_cat/dev/course/",
   "/siamese_cat/dev/course/th/",
+  "/siamese_cat/dev/courses/",
+  "/siamese_cat/dev/courses/build-first-app/",
+  "/siamese_cat/dev/courses/make-a-game/",
+  "/siamese_cat/dev/courses/coding-with-ai/",
   "/siamese_cat/dev/blog/",
   "/siamese_cat/dev/blog/en/",
   "/admin/blog/",
@@ -293,6 +297,28 @@ async function verify() {
     if (html.includes("chat.whatsapp.com") || html.includes("meet.google.com")) {
       failures.push(`${variant.route}: private participant links leaked into public HTML`);
     }
+  }
+
+  const courseCatalogVariants = [
+    { route: "/siamese_cat/dev/courses/", canonical: "https://www.djai.academy/siamese_cat/dev/courses/", h1: "Build with AI. Understand what you ship.", schemaType: '"@type":"CollectionPage"' },
+    { route: "/siamese_cat/dev/courses/build-first-app/", canonical: "https://www.djai.academy/siamese_cat/dev/courses/build-first-app/", h1: "Build Your First App with AI", schemaType: '"@type":"Course"' },
+    { route: "/siamese_cat/dev/courses/make-a-game/", canonical: "https://www.djai.academy/siamese_cat/dev/courses/make-a-game/", h1: "Make a Game with AI", schemaType: '"@type":"Course"' },
+    { route: "/siamese_cat/dev/courses/coding-with-ai/", canonical: "https://www.djai.academy/siamese_cat/dev/courses/coding-with-ai/", h1: "Coding with AI for Real Applications", schemaType: '"@type":"Course"' }
+  ];
+  for (const variant of courseCatalogVariants) {
+    const html = await fetch(`${origin}${variant.route}`).then((response) => response.text());
+    const checks = [
+      '<html lang="en"',
+      `<link rel="canonical" href="${variant.canonical}"`,
+      `<h1>${variant.h1}</h1>`,
+      variant.schemaType,
+      'https://wa.me/66804803802',
+      'Siamese Cat Dev'
+    ];
+    for (const expected of checks) {
+      if (!html.includes(expected)) failures.push(`${variant.route}: missing ${expected}`);
+    }
+    if (html.includes('hreflang=')) failures.push(`${variant.route}: English-only course page exposes hreflang tags`);
   }
 
   const courseRegistrationChecks = [

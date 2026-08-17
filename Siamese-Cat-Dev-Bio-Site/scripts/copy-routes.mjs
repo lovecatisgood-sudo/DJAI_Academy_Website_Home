@@ -2,17 +2,24 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 
 const distDir = new URL('../dist/', import.meta.url);
+const catalog = JSON.parse(readFileSync(new URL('../src/courses-data.json', import.meta.url), 'utf8'));
 const englishDir = join(distDir.pathname, 'en');
 const courseDir = join(distDir.pathname, 'course');
 const courseThaiDir = join(courseDir, 'th');
+const coursesDir = join(distDir.pathname, 'courses');
 const indexPath = join(distDir.pathname, 'index.html');
 const englishIndexPath = join(englishDir, 'index.html');
 const courseIndexPath = join(courseDir, 'index.html');
 const courseThaiIndexPath = join(courseThaiDir, 'index.html');
+const coursesIndexPath = join(coursesDir, 'index.html');
 
 mkdirSync(englishDir, { recursive: true });
 mkdirSync(courseDir, { recursive: true });
 mkdirSync(courseThaiDir, { recursive: true });
+mkdirSync(coursesDir, { recursive: true });
+for (const course of catalog.courses) {
+  mkdirSync(join(coursesDir, course.slug), { recursive: true });
+}
 
 const englishHtml = readFileSync(indexPath, 'utf8')
   .replace('<html lang="th">', '<html lang="en">')
@@ -135,3 +142,125 @@ function buildCourseHtml(language) {
 
 writeFileSync(courseIndexPath, buildCourseHtml('en'));
 writeFileSync(courseThaiIndexPath, buildCourseHtml('th'));
+
+const escapeHtml = (value) => String(value).replace(/[&<>"']/g, (character) => ({
+  '&': '&amp;',
+  '<': '&lt;',
+  '>': '&gt;',
+  '"': '&quot;',
+  "'": '&#39;',
+}[character]));
+
+const catalogCoursePath = (course) => `/siamese_cat/dev/courses/${course.slug}/`;
+const catalogWhatsAppHref = (courseTitle) => {
+  const title = courseTitle || 'one of the English courses';
+  const message = `Hi Siamese Cat Dev, I would like to check a 30-minute trial class for ${title}. My preferred times are `;
+  return `https://wa.me/66804803802?text=${encodeURIComponent(message)}`;
+};
+
+function catalogSchema(course) {
+  const organization = {
+    '@type': 'Organization',
+    '@id': 'https://www.djai.academy/siamese_cat/dev/#organization',
+    name: 'Siamese Cat Dev',
+    url: 'https://www.djai.academy/siamese_cat/dev/',
+    logo: 'https://www.djai.academy/siamese_cat/dev/siamese-cat-dev-logo.webp',
+  };
+
+  if (!course) {
+    return {
+      '@context': 'https://schema.org',
+      '@graph': [
+        organization,
+        {
+          '@type': 'CollectionPage',
+          '@id': `${catalog.hub.canonical}#webpage`,
+          name: catalog.hub.title,
+          description: catalog.hub.description,
+          url: catalog.hub.canonical,
+          inLanguage: 'en',
+          mainEntity: { '@id': `${catalog.hub.canonical}#course-list` },
+        },
+        {
+          '@type': 'ItemList',
+          '@id': `${catalog.hub.canonical}#course-list`,
+          name: 'Siamese Cat Dev English courses',
+          itemListElement: catalog.courses.map((item, index) => ({
+            '@type': 'ListItem',
+            position: index + 1,
+            name: item.title,
+            url: `https://www.djai.academy${catalogCoursePath(item)}`,
+          })),
+        },
+      ],
+    };
+  }
+
+  return {
+    '@context': 'https://schema.org',
+    '@graph': [
+      organization,
+      {
+        '@type': 'Course',
+        '@id': `${course.canonical}#course`,
+        name: course.title,
+        description: course.promise,
+        url: course.canonical,
+        provider: { '@id': 'https://www.djai.academy/siamese_cat/dev/#organization' },
+        educationalLevel: course.level,
+        inLanguage: 'en',
+      },
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Siamese Cat Dev', item: 'https://www.djai.academy/siamese_cat/dev/en/' },
+          { '@type': 'ListItem', position: 2, name: 'Courses', item: catalog.hub.canonical },
+          { '@type': 'ListItem', position: 3, name: course.title, item: course.canonical },
+        ],
+      },
+    ],
+  };
+}
+
+function catalogFallback(course) {
+  if (!course) {
+    const links = catalog.courses
+      .map((item) => `<li><a href="${catalogCoursePath(item)}">${escapeHtml(item.title)}</a><p>${escapeHtml(item.cardDescription)}</p></li>`)
+      .join('');
+    return `<div id="root"><main><p>${escapeHtml(catalog.hub.eyebrow)}</p><h1>${escapeHtml(catalog.hub.heading)}</h1><p>${escapeHtml(catalog.hub.lead)}</p><h2>${escapeHtml(catalog.hub.sectionHeading)}</h2><ul>${links}</ul><p>${escapeHtml(catalog.hub.trialLead)}</p><a href="${catalogWhatsAppHref()}">Check a trial slot on WhatsApp</a></main></div>`;
+  }
+
+  const practice = course.practice
+    .map((item) => `<li><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.body)}</p></li>`)
+    .join('');
+  return `<div id="root"><main><nav aria-label="Breadcrumb"><a href="${catalog.hub.canonical}">Courses</a> / <span>${escapeHtml(course.title)}</span></nav><p>${escapeHtml(course.heroEyebrow)}</p><h1>${escapeHtml(course.title)}</h1><p>${escapeHtml(course.heroLead)}</p><h2>${escapeHtml(course.practiceHeading)}</h2><p>${escapeHtml(course.practiceLead)}</p><ul>${practice}</ul><a href="${catalogWhatsAppHref(course.title)}">Check a trial slot on WhatsApp</a><a href="${catalog.hub.canonical}">See all courses</a></main></div>`;
+}
+
+function buildCatalogHtml(course) {
+  const page = course || catalog.hub;
+  const title = course?.metaTitle || catalog.hub.title;
+  const description = course?.metaDescription || catalog.hub.description;
+  const schema = JSON.stringify(catalogSchema(course)).replace(/</g, '\\u003c');
+
+  return readFileSync(indexPath, 'utf8')
+    .replace('<html lang="th">', '<html lang="en">')
+    .replace(/<meta\s+name="description"[^>]*>/, `<meta name="description" content="${escapeHtml(description)}" />`)
+    .replace(/<link rel="canonical"[^>]*>/, `<link rel="canonical" href="${escapeHtml(page.canonical)}" />`)
+    .replace(/\s*<link rel="alternate"[^>]*>/g, '')
+    .replace(/<meta property="og:type"[^>]*>/, '<meta property="og:type" content="website" />')
+    .replace(/<meta property="og:title"[^>]*>/, `<meta property="og:title" content="${escapeHtml(title)}" />`)
+    .replace(/<meta\s+property="og:description"[^>]*>/, `<meta property="og:description" content="${escapeHtml(description)}" />`)
+    .replace(/<meta property="og:url"[^>]*>/, `<meta property="og:url" content="${escapeHtml(page.canonical)}" />`)
+    .replace(/<meta property="og:image"[^>]*>/, `<meta property="og:image" content="${escapeHtml(page.ogImage)}" />`)
+    .replace(/<meta name="twitter:title"[^>]*>/, `<meta name="twitter:title" content="${escapeHtml(title)}" />`)
+    .replace(/<meta\s+name="twitter:description"[^>]*>/, `<meta name="twitter:description" content="${escapeHtml(description)}" />`)
+    .replace(/<meta name="twitter:image"[^>]*>/, `<meta name="twitter:image" content="${escapeHtml(page.ogImage)}" />`)
+    .replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeHtml(title)}</title>`)
+    .replace(/<script type="application\/ld\+json">[\s\S]*?<\/script>/, `<script type="application/ld+json">${schema}</script>`)
+    .replace(/<div id="root">[\s\S]*?<\/div>/, catalogFallback(course));
+}
+
+writeFileSync(coursesIndexPath, buildCatalogHtml());
+for (const course of catalog.courses) {
+  writeFileSync(join(coursesDir, course.slug, 'index.html'), buildCatalogHtml(course));
+}

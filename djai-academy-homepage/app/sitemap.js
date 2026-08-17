@@ -7,6 +7,7 @@ export const revalidate = 3600;
 const ORIGIN = "https://www.djai.academy";
 const STATIC_LAST_MODIFIED = new Date("2026-07-30T00:00:00.000Z");
 const COURSE_LAST_MODIFIED = new Date("2026-08-05T00:00:00.000Z");
+const SIAMESE_COURSES_LAST_MODIFIED = new Date("2026-08-17T00:00:00.000Z");
 const VIETNAMESE_LAST_MODIFIED = new Date("2026-08-12T00:00:00.000Z");
 const BRAND_TOOLS_LAST_MODIFIED = new Date("2026-08-13T00:00:00.000Z");
 const BRAND_TOOL_PATHS = new Set([
@@ -28,7 +29,7 @@ const corePaths = [
   "/tools/seo-screaming-toad/", "/tools/seo-screaming-toad/en/",
   "/course/", "/course/en/", "/course/vi/", "/course/detail/", "/course/detail/en/", "/course/detail/vi/", "/siamese_cat/",
   "/tools/video-to-text/", "/tools/video-to-text/en/",
-  "/siamese_cat/en/", "/siamese_cat/dev/", "/siamese_cat/dev/en/", "/siamese_cat/dev/course/", "/siamese_cat/dev/course/th/", "/siamese_cat/dev/blog/",
+  "/siamese_cat/en/", "/siamese_cat/dev/", "/siamese_cat/dev/en/", "/siamese_cat/dev/course/", "/siamese_cat/dev/course/th/", "/siamese_cat/dev/courses/", "/siamese_cat/dev/courses/build-first-app/", "/siamese_cat/dev/courses/make-a-game/", "/siamese_cat/dev/courses/coding-with-ai/", "/siamese_cat/dev/blog/",
   "/siamese_cat/dev/blog/en/", "/blog/", "/blog/en/", "/blog/vi/", "/Cam_PDF_Scan_Signer_QR-Gen/",
   "/Cam_PDF_Scan_Signer_QR-Gen/privacy/", "/Cam_PDF_Scan_Signer_QR-Gen/terms/",
   "/Cam_PDF_Scan_Signer_QR-Gen/delete-account/"
@@ -107,9 +108,9 @@ export default async function sitemap() {
       ? BRAND_TOOLS_LAST_MODIFIED
       : BACKGROUND_REMOVAL_PATHS.has(path)
       ? BACKGROUND_REMOVAL_LAST_MODIFIED
-      : path.includes("/vi/") || path === "/vi/" ? VIETNAMESE_LAST_MODIFIED : path.startsWith("/siamese_cat/dev/course/") ? COURSE_LAST_MODIFIED : STATIC_LAST_MODIFIED,
+      : path.includes("/vi/") || path === "/vi/" ? VIETNAMESE_LAST_MODIFIED : path.startsWith("/siamese_cat/dev/courses/") ? SIAMESE_COURSES_LAST_MODIFIED : path.startsWith("/siamese_cat/dev/course/") ? COURSE_LAST_MODIFIED : STATIC_LAST_MODIFIED,
     ["/", "/en/", "/vi/"].includes(path) ? "weekly" : "monthly",
-    ["/", "/en/", "/vi/"].includes(path) ? 1 : path.startsWith("/siamese_cat/dev/course/") ? 0.9 : path.startsWith("/tools/") ? 0.8 : 0.7
+    ["/", "/en/", "/vi/"].includes(path) ? 1 : path.startsWith("/siamese_cat/dev/course/") || path.startsWith("/siamese_cat/dev/courses/") ? 0.9 : path.startsWith("/tools/") ? 0.8 : 0.7
   ));
   const articleEntries = [
     ...englishPosts

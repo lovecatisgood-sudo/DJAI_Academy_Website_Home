@@ -1,0 +1,242 @@
+{
+  "hub": {
+    "title": "AI Coding Courses and Vibe Coding | Siamese Cat Dev",
+    "description": "English AI coding courses from Siamese Cat Dev. Build a first app, make a game, or learn a clearer workflow for coding with AI.",
+    "canonical": "https://www.djai.academy/siamese_cat/dev/courses/",
+    "ogImage": "https://www.djai.academy/siamese_cat/dev/siamese-cat-dev-character.webp",
+    "eyebrow": "English courses by Siamese Cat Dev",
+    "heading": "Build with AI. Understand what you ship.",
+    "lead": "English courses for learners who want to build apps, games, and useful software with AI.",
+    "sectionHeading": "Choose your starting point",
+    "sectionLead": "Each course begins with a project and teaches the decisions behind it. Start small, then move toward more demanding software work.",
+    "trialHeading": "Not sure where to begin?",
+    "trialLead": "Send your idea, current experience, and preferred times on WhatsApp. We will help you check the next available 30-minute trial class.",
+    "trialNote": "Teaching is in English. Course timing is arranged directly by WhatsApp.",
+    "methodHeading": "The point is not more prompts",
+    "methodLead": "Good AI-assisted work still needs a clear goal, a small next step, and someone willing to check the result.",
+    "method": [
+      {
+        "title": "Make the idea smaller",
+        "body": "Turn a big idea into one useful result that can be built and checked.",
+        "icon": "Target"
+      },
+      {
+        "title": "Give AI better direction",
+        "body": "Use examples, constraints, and clear acceptance criteria instead of hoping for a perfect prompt.",
+        "icon": "Sparkles"
+      },
+      {
+        "title": "Check what changed",
+        "body": "Learn to inspect behaviour, find mistakes, and decide what to fix next.",
+        "icon": "SearchCheck"
+      },
+      {
+        "title": "Keep moving toward a release",
+        "body": "Build a habit of finishing useful slices rather than collecting unfinished demos.",
+        "icon": "Rocket"
+      }
+    ],
+    "faq": [
+      {
+        "question": "Are the courses taught in English?",
+        "answer": "Yes. The course content and teaching are in English. Message on WhatsApp if you want to check whether the pace is right for you."
+      },
+      {
+        "question": "Do I need coding experience?",
+        "answer": "No coding background is required for Build Your First App with AI. The other courses are better suited to learners who already have a project or some experience with AI-assisted building."
+      },
+      {
+        "question": "How do I book a trial class?",
+        "answer": "Use the WhatsApp button, tell us which course interests you, and send a few preferred times. We will reply with the available options."
+      }
+    ]
+  },
+  "courses": [
+    {
+      "slug": "build-first-app",
+      "title": "Build Your First App with AI",
+      "metaTitle": "Build Your First App with AI | Siamese Cat Dev",
+      "metaDescription": "A beginner English course for turning a simple idea into a working app with AI, with a free 30-minute trial class by Siamese Cat Dev.",
+      "canonical": "https://www.djai.academy/siamese_cat/dev/courses/build-first-app/",
+      "ogImage": "https://www.djai.academy/siamese_cat/dev/siamese-cat-dev-character.webp",
+      "level": "Beginner",
+      "cardDescription": "Start with a simple idea and learn the decisions behind a working app.",
+      "accent": "#f0713d",
+      "icon": "Code2",
+      "heroEyebrow": "Beginner AI coding course",
+      "heroLead": "Start with a simple idea and turn it into a small app you can explain, test, and improve.",
+      "heroAlt": "Siamese Cat Dev character building a first app with AI",
+      "outcomeLabel": "Your starting point",
+      "outcome": "A first working app and a clearer way to think about what the app is doing.",
+      "promiseHeading": "Make a first app you understand",
+      "promise": "This course is for learners who want to see how an app responds, remembers information, and follows rules. You do not need a coding background to begin.",
+      "details": "The work stays small on purpose. You will make decisions, ask AI for focused help, and check whether the result behaves as expected.",
+      "practiceHeading": "What you will practice",
+      "practiceLead": "The first project is a way to learn the building blocks without getting buried in technical vocabulary.",
+      "practice": [
+        {
+          "title": "Choose one useful idea",
+          "body": "Turn a broad idea into one small result that a person could actually use.",
+          "icon": "Target"
+        },
+        {
+          "title": "Describe how it should behave",
+          "body": "Explain the inputs, decisions, and outputs before asking AI to change the app.",
+          "icon": "ListChecks"
+        },
+        {
+          "title": "Build one change at a time",
+          "body": "Use AI as a coding partner while keeping track of what each change is meant to do.",
+          "icon": "Code2"
+        },
+        {
+          "title": "Check the result",
+          "body": "Try the app, notice what is wrong, and use the failure to decide what to inspect next.",
+          "icon": "SearchCheck"
+        }
+      ],
+      "fitHeading": "This is a good place to start if",
+      "fitLead": "You have an idea but do not know how to turn it into something that works.",
+      "fit": [
+        "You have little or no coding experience.",
+        "You want to learn by making a real, small project.",
+        "You want to understand AI-generated code instead of copying it blindly.",
+        "You are ready to explain what your app should do before building it."
+      ],
+      "faq": [
+        {
+          "question": "Do I need to know how to code?",
+          "answer": "No coding background is required for this starting course. The class focuses on making a small project and understanding the decisions behind it."
+        },
+        {
+          "question": "What will I build?",
+          "answer": "The exact project is chosen around your starting idea. The goal is a small working app that you can explain, test, and continue improving."
+        }
+      ]
+    },
+    {
+      "slug": "make-a-game",
+      "title": "Make a Game with AI",
+      "metaTitle": "Make a Game with AI | Siamese Cat Dev",
+      "metaDescription": "Learn to turn a game idea into a playable project with AI. Explore rules, characters, levels, testing, and iteration in English.",
+      "canonical": "https://www.djai.academy/siamese_cat/dev/courses/make-a-game/",
+      "ogImage": "https://www.djai.academy/siamese_cat/dev/siamese-cat-dev-character.webp",
+      "level": "Project-led",
+      "cardDescription": "Design the rules, characters, and levels that turn an idea into a playable project.",
+      "accent": "#2878ff",
+      "icon": "Gamepad2",
+      "heroEyebrow": "AI game development course",
+      "heroLead": "Turn game ideas into a playable project by working through rules, characters, levels, and the loop that keeps a game moving.",
+      "heroAlt": "Siamese Cat Dev character designing a game with AI",
+      "outcomeLabel": "Your project",
+      "outcome": "A playable game concept with rules you can explain and decisions you can improve.",
+      "promiseHeading": "Make the game idea playable",
+      "promise": "A game is more than a character on a screen. It needs a clear loop: what the player does, what changes, and what counts as progress.",
+      "details": "AI can help with parts of the build, but you still need to decide how the game should feel and how to tell whether it is working.",
+      "practiceHeading": "What you will practice",
+      "practiceLead": "Build the idea from the player's point of view, then test the parts that make the project feel like a game.",
+      "practice": [
+        {
+          "title": "Define the game loop",
+          "body": "Describe the repeatable action that gives the player a reason to continue.",
+          "icon": "RefreshCw"
+        },
+        {
+          "title": "Design the rules",
+          "body": "Decide what can happen, what cannot happen, and what changes when the player acts.",
+          "icon": "ListChecks"
+        },
+        {
+          "title": "Shape a playable level",
+          "body": "Use characters, obstacles, goals, and feedback to give the player a clear next move.",
+          "icon": "Map"
+        },
+        {
+          "title": "Test and revise",
+          "body": "Play the project, find the confusing or broken parts, and make one focused improvement at a time.",
+          "icon": "SearchCheck"
+        }
+      ],
+      "fitHeading": "This is a good place to start if",
+      "fitLead": "You have a game idea and want to understand how an idea becomes a playable system.",
+      "fit": [
+        "You enjoy games and want to explore how they are made.",
+        "You want a project with visible rules and immediate feedback.",
+        "You are ready to test your idea instead of only describing it.",
+        "You want to use AI without handing over every design decision."
+      ],
+      "faq": [
+        {
+          "question": "Do I need to be a game designer?",
+          "answer": "No. You can start with a simple game idea. The course helps you turn that idea into rules, player actions, and a small playable project."
+        },
+        {
+          "question": "Will the course use a specific game engine?",
+          "answer": "The right starting tool depends on the project and your current experience. Use the trial conversation to describe your idea before choosing a tool."
+        }
+      ]
+    },
+    {
+      "slug": "coding-with-ai",
+      "title": "Coding with AI for Real Applications",
+      "metaTitle": "Coding with AI | Plan, Build and Deploy | Siamese Cat Dev",
+      "metaDescription": "Move beyond quick demos with an English vibe coding course about planning, designing, building, checking, and deploying applications with AI.",
+      "canonical": "https://www.djai.academy/siamese_cat/dev/courses/coding-with-ai/",
+      "ogImage": "https://www.djai.academy/siamese_cat/dev/siamese-cat-dev-character.webp",
+      "level": "Intermediate",
+      "cardDescription": "Move from quick demos to a workflow for planning, checking, and deploying software.",
+      "accent": "#12d6e6",
+      "icon": "Rocket",
+      "heroEyebrow": "Intermediate vibe coding course",
+      "heroLead": "Move beyond a quick demo. Learn a practical workflow to plan, design, build, and deploy software with AI.",
+      "heroAlt": "Siamese Cat Dev character working through an AI-assisted software workflow",
+      "outcomeLabel": "Your next level",
+      "outcome": "A repeatable plan for taking an AI-assisted project from idea to a more reliable release.",
+      "promiseHeading": "Build with more control",
+      "promise": "This course is for learners who have used AI to make prototypes and want a more dependable way to work.",
+      "details": "You will look at the decisions around architecture, data, debugging, security, and deployment. The aim is not more prompts. It is better control over the system you are building.",
+      "practiceHeading": "Plan, design, build, deploy",
+      "practiceLead": "A useful AI workflow has a shape. It starts with a decision, creates a small change, and ends with a check.",
+      "practice": [
+        {
+          "title": "Plan the system",
+          "body": "Break the product into a clear first release and identify the parts that need to work together.",
+          "icon": "Map"
+        },
+        {
+          "title": "Design the boundaries",
+          "body": "Make sensible decisions about data, users, permissions, and what the first version should not do.",
+          "icon": "Layers3"
+        },
+        {
+          "title": "Guide the build",
+          "body": "Give an AI coding agent useful context, examples, and checks so its changes remain understandable.",
+          "icon": "Bot"
+        },
+        {
+          "title": "Verify before release",
+          "body": "Use tests, manual checks, security questions, and deployment habits that expose problems before users do.",
+          "icon": "ShieldCheck"
+        }
+      ],
+      "fitHeading": "This is a good place to start if",
+      "fitLead": "You can make a prototype but want a clearer path to software that other people can use.",
+      "fit": [
+        "You have already tried vibe coding or AI-assisted development.",
+        "You want to understand architecture, data, debugging, and deployment.",
+        "You are willing to inspect and test what AI creates.",
+        "You want a process that scales better than copying one prompt after another."
+      ],
+      "faq": [
+        {
+          "question": "Is this course for complete beginners?",
+          "answer": "It is better suited to learners who have already made a prototype or understand the basic idea of building with AI. Start with the first app course if you are new to the workflow."
+        },
+        {
+          "question": "Does this course teach one specific AI tool?",
+          "answer": "The focus is the workflow and the engineering decisions, not a temporary list of tools. The best tools to use depend on the project you bring."
+        }
+      ]
+    }
+  ]
+}

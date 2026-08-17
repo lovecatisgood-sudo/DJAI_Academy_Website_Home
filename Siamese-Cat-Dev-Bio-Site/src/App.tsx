@@ -32,6 +32,7 @@ import {
 import { ReactNode, useEffect, useRef, useState } from 'react';
 import EnglishApp from './EnglishApp';
 import CourseApp from './CourseApp';
+import CoursesApp from './CoursesApp';
 import SocialLinks, { HeaderSocialLinks } from './SocialLinks';
 
 const ease = [0.25, 0.1, 0.25, 1] as const;
@@ -752,6 +753,7 @@ function ThaiApp() {
 
 export default function App() {
   const pathname = window.location.pathname.toLowerCase();
+  if (pathname.includes('/courses')) return <CoursesApp />;
   if (pathname.includes('/course/th')) return <CourseApp language="th" />;
   if (pathname.includes('/course')) return <CourseApp language="en" />;
   const isEnglish = pathname.includes('/en');
