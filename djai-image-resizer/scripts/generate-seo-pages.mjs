@@ -177,7 +177,7 @@ function discoveryMarkup(language, currentSlug) {
     return `<a href="${url}"><strong>${escapeHtml(label)}</strong><span>${escapeHtml(description)}</span></a>`;
   }).join("");
   const categories = vi ? [
-    ["Tất cả công cụ", "/tools/vi/", "Duyệt mọi công cụ DJAI theo công việc."], ["Công cụ QR", "/tools/qrgen/vi/", "Tạo QR cho URL, Wi-Fi và liên hệ."], ["Công cụ PDF", "/tools/PDFTools/vi/", "Ghép, tách, chuyển đổi và bảo vệ PDF."], ["Âm thanh và video", "/tools/media/vi/", "Chuyển đổi media, tách âm thanh và nén video."], ["Công cụ tài liệu", "/tools/document/vi/", "Chuyển DOCX, trích xuất văn bản và OCR."], ["Công cụ AI", "/tools/ai/vi/", "Đếm token, chia RAG chunk và chuẩn bị context."], ["Công cụ bảng tính", "/tools/spreadsheet/vi/", "Chuyển đổi và xử lý CSV, JSON, XLSX."]
+    ["Tất cả công cụ", "/tools/vi/", "Duyệt mọi công cụ DJAI theo công việc."], ["Công cụ QR", "/tools/qrgen/vi/", "Tạo QR cho URL, Wi-Fi và liên hệ."], ["Công cụ PDF", "/tools/PDFTools/vi/", "Ghép, tách, chuyển đổi và bảo vệ PDF."], ["Âm thanh và video", "/tools/media/", "Chuyển đổi media, tách âm thanh và nén video."], ["Công cụ tài liệu", "/tools/document/vi/", "Chuyển DOCX, trích xuất văn bản và OCR."], ["Công cụ AI", "/tools/ai/vi/", "Đếm token, chia RAG chunk và chuẩn bị context."], ["Công cụ bảng tính", "/tools/spreadsheet/vi/", "Chuyển đổi và xử lý CSV, JSON, XLSX."]
   ] : en ? [
     ["All free tools", "/tools/en/", "Browse every free DJAI tool by task."], ["QR code tools", "/tools/qrgen/en/", "Create QR codes for links, Wi-Fi, and contacts."], ["PDF tools", "/tools/PDFTools/en/", "Merge, split, convert, organize, and protect PDFs."], ["Audio and video", "/tools/media/en/", "Convert media, extract audio, and compress video."], ["Document tools", "/tools/document/en/", "Convert DOCX, extract text, and run OCR."], ["AI context tools", "/tools/ai/en/", "Count tokens, clean context, and plan RAG chunks."], ["Spreadsheet tools", "/tools/spreadsheet/en/", "Convert and process CSV, JSON, and XLSX."]
   ] : [
@@ -193,8 +193,8 @@ function injectDiscovery(template, markup) {
 }
 
 function addVietnameseHubAlternate(html) {
-  if (html.includes('hreflang="vi"')) return html;
-  return html.replace('<link rel="alternate" hreflang="x-default"', `<link rel="alternate" hreflang="vi" href="${siteRoot}/vi/">\n  <link rel="alternate" hreflang="x-default"`);
+  const withoutVietnameseAlternate = html.replace(/^[ \t]*<link rel="alternate" hreflang="vi" href="[^"]*">\r?\n/gm, "");
+  return withoutVietnameseAlternate.replace('<link rel="alternate" hreflang="x-default"', `<link rel="alternate" hreflang="vi" href="${siteRoot}/vi/">\n  <link rel="alternate" hreflang="x-default"`);
 }
 
 function render(template, preset, language) {
@@ -320,7 +320,9 @@ function render(template, preset, language) {
       .replace(/(<div><span>[^<]*<\/span><h2>)[\s\S]*?(<\/h2><\/div>)/, `$1${escapeHtml(cta)}$2`);
   };
 
-  return faqScoped(copyScoped(injectDiscovery(language === "vi" ? vietnameseTemplate(template) : template, discoveryMarkup(language, preset.slug))))
+  const localizedTemplate = language === "vi" ? vietnameseTemplate(template) : template;
+  const templateWithoutVietnameseAlternates = localizedTemplate.replace(/^[ \t]*<link rel="alternate" hreflang="vi" href="[^"]*">\r?\n/gm, "");
+  return faqScoped(copyScoped(injectDiscovery(templateWithoutVietnameseAlternates, discoveryMarkup(language, preset.slug))))
     .replace(/<html lang="(?:th|en)">/, `<html lang="${language}">`)
     .replace(/<title>.*?<\/title>/, `<title>${escapeHtml(title)}</title>`)
     .replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${escapeHtml(description)}">`)

@@ -109,3 +109,11 @@ test("shared video runtime parses", () => {
   });
   assert.equal(result.status, 0, result.stderr);
 });
+
+test("fixed-input video routes constrain picker and drop uploads", () => {
+  const runtime = readFileSync(join(root, "src", "video-tools.js"), "utf8");
+  assert.match(runtime, /function fixedInputExtension\(\)/);
+  assert.match(runtime, /acceptsInput\(file\)/);
+  assert.match(runtime, /accept=\"\$\{acceptedInputSpec\(\)\}\"/);
+  assert.match(runtime, /extOf\(file\?\.name\)===fixed/);
+});

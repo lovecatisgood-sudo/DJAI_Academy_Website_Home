@@ -17,11 +17,12 @@ const VIDEO_TOOLS_LAST_MODIFIED = new Date("2026-08-09T00:00:00.000Z");
 const BACKGROUND_REMOVAL_LAST_MODIFIED = new Date("2026-08-07T00:00:00.000Z");
 const BACKGROUND_REMOVAL_PATHS = new Set([
   "/tools/resizeimg/remove-background-image/",
-  "/tools/resizeimg/remove-background-image/en/"
+  "/tools/resizeimg/remove-background-image/en/",
+  "/tools/resizeimg/remove-background-image/vi/"
 ]);
 
 const corePaths = [
-  "/", "/en/", "/vi/", "/portfolio/", "/portfolio/en/", "/portfolio/vi/", "/development/", "/development/en/", "/development/vi/", "/web_promo/",
+  "/", "/en/", "/vi/", "/portfolio/", "/portfolio/en/", "/portfolio/vi/", "/development/", "/development/en/", "/development/vi/", "/web_promo/", "/web_promo/vi/",
   "/service/", "/service/en/", "/service/vi/", "/privacy/", "/privacy/en/", "/privacy/vi/", "/tools/", "/tools/en/", "/tools/vi/", "/tools/qrgen/", "/tools/qrgen/en/",
   "/tools/seo-screaming-toad/", "/tools/seo-screaming-toad/en/",
   "/course/", "/course/en/", "/course/vi/", "/course/detail/", "/course/detail/en/", "/course/detail/vi/", "/siamese_cat/",
@@ -51,6 +52,10 @@ const pdfTools = [
   "jpg-to-pdf", "pdf-to-jpg", "png-to-pdf", "webp-to-pdf", "pdf-to-png",
   "extract-pdf-pages", "delete-pages-from-pdf", "reorder-pdf-pages"
 ];
+const pdfVietnameseTools = [
+  "merge-pdf", "split-pdf", "compress-pdf", "images-to-pdf", "pdf-to-images", "rotate-pdf",
+  "watermark-pdf", "protect-pdf", "organize-pdf", "add-page-numbers", "remove-pdf-metadata"
+];
 
 const mediaTools = [
   "mp3-to-wav", "wav-to-mp3", "m4a-to-mp3", "mp4-to-mp3", "extract-audio-from-video",
@@ -67,18 +72,35 @@ const suiteTools = {
   ai: ["token-counter", "pdf-to-ai-markdown", "context-optimizer", "rag-chunk-calculator", "prompt-packager"],
   spreadsheet: ["csv-to-json", "json-to-csv", "csv-cleaner", "merge-csv", "split-csv", "csv-to-xlsx", "xlsx-to-csv"]
 };
+const brandTools = ["favicon-generator"];
 
 function bilingual(base, slugs = []) {
   return [base, `${base}en/`, ...slugs.flatMap((slug) => [`${base}${slug}/`, `${base}${slug}/en/`])];
 }
 
+function multilingual(base, slugs = []) {
+  return [
+    base,
+    `${base}en/`,
+    `${base}vi/`,
+    ...slugs.flatMap((slug) => [
+      `${base}${slug}/`,
+      `${base}${slug}/en/`,
+      `${base}${slug}/vi/`
+    ])
+  ];
+}
+
 const staticPaths = [
   ...corePaths,
-  ...bilingual("/tools/qrgen/", qrTools),
-  ...bilingual("/tools/resizeimg/", imageTools),
+  ...multilingual("/tools/qrgen/", qrTools),
+  ...multilingual("/tools/resizeimg/", imageTools),
   ...bilingual("/tools/PDFTools/", pdfTools),
+  "/tools/PDFTools/vi/",
+  ...pdfVietnameseTools.map((slug) => `/tools/PDFTools/${slug}/vi/`),
   ...bilingual("/tools/media/", mediaTools),
-  ...Object.entries(suiteTools).flatMap(([category, slugs]) => bilingual(`/tools/${category}/`, slugs))
+  ...Object.entries(suiteTools).flatMap(([category, slugs]) => multilingual(`/tools/${category}/`, slugs)),
+  ...multilingual("/tools/brand/", brandTools)
 ];
 
 function entry(path, lastModified, changeFrequency = "monthly", priority = 0.7) {

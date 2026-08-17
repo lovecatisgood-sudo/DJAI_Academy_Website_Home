@@ -23,7 +23,7 @@ const categoryLinks = {
     ["Tất cả công cụ miễn phí", "/tools/vi/", "Duyệt toàn bộ công cụ DJAI theo công việc."],
     ["Công cụ hình ảnh", "/tools/resizeimg/vi/", "Chuyển đổi, resize, nén và xóa nền."],
     ["Công cụ PDF", "/tools/PDFTools/vi/", "Ghép, tách, chuyển đổi và bảo vệ PDF."],
-    ["Âm thanh và video", "/tools/media/vi/", "Chuyển đổi media, tách âm thanh và nén video."],
+    ["Âm thanh và video", "/tools/media/", "Chuyển đổi media, tách âm thanh và nén video."],
     ["Công cụ tài liệu", "/tools/document/vi/", "Chuyển DOCX, trích xuất văn bản và OCR."],
     ["Công cụ ngữ cảnh AI", "/tools/ai/vi/", "Đếm token, chia RAG chunk và chuẩn bị context."],
     ["Công cụ bảng tính", "/tools/spreadsheet/vi/", "Chuyển đổi và xử lý CSV, JSON, XLSX."]

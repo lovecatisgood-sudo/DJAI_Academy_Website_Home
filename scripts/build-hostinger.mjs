@@ -205,12 +205,34 @@ function run(command, args, cwd) {
   const result = spawnSync(command, args, {
     cwd,
     stdio: "inherit",
-    shell: false
+    shell: false,
+    env: command === "npm" ? npmEnvironment() : process.env
   });
 
   if (result.status !== 0) {
     process.exit(result.status || 1);
   }
+}
+
+// npm 12 treats a user-level `allow-scripts` setting as a project-scoped
+// install policy. A deployment build must not inherit an unrelated developer
+// workstation policy, so use project configuration plus npm defaults unless a
+// caller deliberately supplied a user config to this build.
+function npmEnvironment() {
+  const environment = { ...process.env };
+  delete environment.npm_config_allow_scripts;
+  delete environment.NPM_CONFIG_ALLOW_SCRIPTS;
+
+  // `npm run` itself exports a lower-case npm_config_userconfig even when the
+  // caller did not explicitly choose one. Treat only the upper-case variable
+  // as deliberate input so the parent npm process cannot leak its user config.
+  if (process.env.NPM_CONFIG_USERCONFIG) {
+    environment.npm_config_userconfig = process.env.NPM_CONFIG_USERCONFIG;
+    return environment;
+  }
+  environment.NPM_CONFIG_USERCONFIG = "/dev/null";
+  environment.npm_config_userconfig = "/dev/null";
+  return environment;
 }
 
 function ensureDependencies(project) {
@@ -226,7 +248,7 @@ function ensureDependencies(project) {
     const dependencyCheck = spawnSync("npm", ["ls", "--depth=0"], {
       cwd,
       stdio: "ignore",
-      env: process.env
+      env: npmEnvironment()
     });
 
     if (dependencyCheck.status === 0 && (fingerprintMatches || !existsSync(marker))) {

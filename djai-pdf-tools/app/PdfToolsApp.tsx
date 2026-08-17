@@ -93,7 +93,7 @@ const toolCategories = {
     ["Tất cả công cụ", "/tools/vi/", "Duyệt toàn bộ công cụ miễn phí theo công việc."],
     ["Công cụ QR", "/tools/qrgen/vi/", "Tạo QR cho URL, Wi-Fi và liên hệ."],
     ["Công cụ hình ảnh", "/tools/resizeimg/vi/", "Chuyển đổi, resize, nén và xóa nền."],
-    ["Âm thanh và video", "/tools/media/vi/", "Chuyển đổi media, tách âm thanh và nén video."],
+    ["Âm thanh và video", "/tools/media/", "Chuyển đổi media, tách âm thanh và nén video."],
     ["Công cụ tài liệu", "/tools/document/vi/", "Chuyển DOCX, trích xuất văn bản và OCR."],
     ["Công cụ AI", "/tools/ai/vi/", "Đếm token, chia RAG chunk và chuẩn bị prompt."],
     ["Công cụ bảng tính", "/tools/spreadsheet/vi/", "Chuyển đổi và xử lý CSV, JSON, XLSX."]

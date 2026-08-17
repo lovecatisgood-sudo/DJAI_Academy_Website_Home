@@ -86,6 +86,16 @@ function cleanName(name){return String(name||'video').replace(/\.[^.]+$/,'').rep
 function mimeFor(ext){
   return ({mp4:'video/mp4',mov:'video/quicktime',webm:'video/webm',mkv:'video/x-matroska',avi:'video/x-msvideo',gif:'image/gif',jpg:'image/jpeg',jpeg:'image/jpeg',png:'image/png'})[ext]||'application/octet-stream'
 }
+function fixedInputExtension(){return String(CFG.fixedInput||'').trim().toLowerCase()}
+function acceptedInputSpec(){
+  const fixed=fixedInputExtension();
+  if(fixed)return `.${fixed},${mimeFor(fixed)}`;
+  return CFG.mode==='gif-to-mp4'?'.gif,image/gif':'video/*,.mp4,.mov,.webm,.mkv,.avi,.mpeg,.mpg,.m4v,.3gp,.ts,.mts,.m2ts,.flv,.wmv,.gif'
+}
+function acceptsInput(file){
+  const fixed=fixedInputExtension();
+  return !fixed||extOf(file?.name)===fixed
+}
 function humanSize(n){if(!Number.isFinite(n))return'';const u=['B','KB','MB','GB'];let i=0;while(n>=1024&&i<u.length-1){n/=1024;i++}return `${n.toFixed(i?2:0)} ${u[i]}`}
 function fileToBytes(file){return file.arrayBuffer().then(b=>new Uint8Array(b))}
 function safeInputName(file,i=0){let e=extOf(file.name).replace(/[^a-z0-9]/g,'')||'bin';return `input${i}.${e}`}
@@ -239,13 +249,14 @@ async function execChecked(args){
 function buildUI(){
   const root=document.getElementById('video-tool-app');
   const multi=CFG.mode==='merger';
+  const formats=CFG.fixedInput?CFG.fixedInput.toUpperCase():(CFG.mode==='gif-to-mp4'?'GIF':L.formats);
   root.innerHTML=`
     <div id="dropzone" class="drop">
       <strong>${multi?L.dropMulti:L.drop}</strong>
       <p>${L.browse} · ${L.limit}</p>
       <button id="chooseBtn" class="btn primary" type="button">${L.choose}</button>
-      <input id="fileInput" class="hidden-input" type="file" ${multi?'multiple':''} accept="${CFG.mode==='gif-to-mp4'?'.gif,image/gif':'video/*,.mp4,.mov,.webm,.mkv,.avi,.mpeg,.mpg,.m4v,.3gp,.ts,.mts,.m2ts,.flv,.wmv,.gif'}">
-      <div class="formats">${L.formats}</div>
+      <input id="fileInput" class="hidden-input" type="file" ${multi?'multiple':''} accept="${acceptedInputSpec()}">
+      <div class="formats">${esc(formats)}</div>
     </div>
     <div id="work" class="work">
       <div class="file-row">
@@ -378,7 +389,9 @@ function bindUpload(){
   document.getElementById('processBtn').addEventListener('click',process)
 }
 function handleFiles(incoming){
-  const valid=incoming.filter(f=>f&&f.size<=350*1024*1024);
+  const valid=incoming.filter(f=>f&&f.size<=350*1024*1024&&acceptsInput(f));
+  const rejectedType=fixedInputExtension()&&incoming.some(f=>f&&!acceptsInput(f));
+  if(rejectedType){status(L.invalid,'error');return}
   if(!valid.length){status(incoming.some(f=>f.size>350*1024*1024)?L.tooLarge:L.invalid,'error');return}
   clearResults();
   if(CFG.mode==='merger'){files=[...files,...valid];currentFile=files[0];renderMergeList();document.getElementById('fileName').textContent=`${files.length} ${TH?'ไฟล์':'files'}`;document.getElementById('fileInfo').textContent=files.map(f=>f.name).join(' · ');createPreview(files[0])}

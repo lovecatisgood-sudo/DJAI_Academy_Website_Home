@@ -139,7 +139,7 @@ export function ToolEcosystemDirectory({ language }: { language: Language }) {
     ["Công cụ QR", "/tools/qrgen/vi/", "Tạo QR cho đường dẫn, Wi-Fi, liên hệ và tin nhắn."],
     ["Công cụ hình ảnh", "/tools/resizeimg/vi/", "Đổi định dạng, resize, nén và xóa nền ảnh."],
     ["Công cụ PDF", "/tools/PDFTools/vi/", "Ghép, tách, chuyển đổi, sắp xếp và bảo vệ PDF."],
-    ["Âm thanh và video", "/tools/media/vi/", "Đổi định dạng media, tách âm thanh và nén video."],
+    ["Âm thanh và video", "/tools/media/", "Đổi định dạng media, tách âm thanh và nén video."],
     ["Công cụ tài liệu", "/tools/document/vi/", "Chuyển DOCX, trích xuất văn bản PDF và OCR."],
     ["Công cụ ngữ cảnh AI", "/tools/ai/vi/", "Đếm token, làm sạch context và chia RAG chunk."],
     ["Công cụ bảng tính", "/tools/spreadsheet/vi/", "Chuyển đổi và xử lý CSV, JSON và XLSX."]
