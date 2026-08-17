@@ -1325,5 +1325,281 @@
     }
    ]
   }
+ },
+{
+  "slug": "webm-to-mp4",
+  "mode": "convert",
+  "fixedInput": "webm",
+  "fixedOutput": "mp4",
+  "en": {
+   "primary": "webm to mp4",
+   "title": "Convert WebM to MP4 Online Free | DJAI",
+   "meta": "Convert WebM to MP4 online with private browser processing. Create a widely compatible MP4 for sharing, editing or uploading without a file upload.",
+   "h1": "Convert WebM to MP4 when compatibility matters more",
+   "hero": "WebM is a sensible web format, but MP4 still fits more upload forms, editing apps and everyday devices. Re-encode your WebM into a broadly usable MP4 without uploading it.",
+   "ui": "WebM to MP4",
+   "why": "WebM is web-friendly; MP4 is still the safer hand-off format",
+   "note": "The conversion uses H.264 video and AAC audio for the MP4 result. Re-encoding takes longer than a simple container change, but avoids relying on whether the original WebM codecs fit MP4.",
+   "keywords": [
+    "convert webm to mp4",
+    "webm to mp4 online",
+    "webm converter",
+    "webm to mp4 free",
+    "convert webm online"
+   ],
+   "faq": [
+    {
+     "q": "Can I just rename the file extension?",
+     "a": "Usually not. Renaming does not change the container or codecs inside; this page performs a real conversion."
+    },
+    {
+     "q": "Is my video uploaded to DJAI?",
+     "a": "No. The source file is read and processed in your browser on your device."
+    },
+    {
+     "q": "Why can the first run take longer?",
+     "a": "The browser downloads an FFmpeg WebAssembly core of roughly 31 MB the first time processing is needed; caching can help later runs."
+    }
+   ]
+  },
+  "th": {
+   "primary": "แปลง WebM เป็น MP4",
+   "title": "แปลง WebM เป็น MP4 ออนไลน์ฟรี | DJAI",
+   "meta": "แปลง WebM เป็น MP4 ออนไลน์ด้วยการประมวลผลใน browser ได้ไฟล์ MP4 ที่เปิด แชร์ ตัดต่อ และอัปโหลดง่ายขึ้นโดยไม่ส่งไฟล์ขึ้น server",
+   "h1": "แปลง WebM เป็น MP4 เมื่ออยากให้ไฟล์ไปต่อได้ง่ายขึ้น",
+   "hero": "WebM เหมาะกับเว็บ แต่ MP4 ยังเข้ากับ upload form, editor และอุปกรณ์ทั่วไปได้กว้างกว่า หน้านี้ re-encode WebM เป็น MP4 โดยไฟล์ต้นฉบับอยู่บนเครื่องคุณ",
+   "ui": "WebM → MP4",
+   "why": "WebM เหมาะกับเว็บ ส่วน MP4 มักเหมาะกับการส่งต่อ",
+   "note": "ผลลัพธ์ MP4 ใช้ H.264 สำหรับภาพและ AAC สำหรับเสียง จึงเป็นการ re-encode ไม่ใช่แค่เปลี่ยนนามสกุล แต่ลดปัญหา codec เดิมใน WebM ไม่เข้ากับ MP4",
+   "keywords": [
+    "webm to mp4",
+    "แปลง webm",
+    "webm converter",
+    "แปลง webm เป็น mp4",
+    "แปลงวิดีโอ webm"
+   ],
+   "faq": [
+    {
+     "q": "แค่เปลี่ยนนามสกุลไฟล์แทนได้ไหม?",
+     "a": "ไม่ได้ในหลายกรณี เพราะ container และ codec ข้างในยังเหมือนเดิม หน้านี้ทำ conversion จริง"
+    },
+    {
+     "q": "ไฟล์ถูกอัปโหลดขึ้น DJAI หรือไม่?",
+     "a": "ไม่ ตัวไฟล์ถูกอ่านและประมวลผลใน browser บนอุปกรณ์ของคุณ"
+    },
+    {
+     "q": "ทำไมครั้งแรกถึงช้ากว่า?",
+     "a": "ครั้งแรก browser ต้องโหลด FFmpeg WebAssembly core ประมาณ 31 MB หลังจากนั้น cache อาจช่วยให้เร็วขึ้น"
+    }
+   ]
+  },
+  "targetMB": null
+ },
+ {
+  "slug": "mov-to-mp4",
+  "mode": "convert",
+  "fixedInput": "mov",
+  "fixedOutput": "mp4",
+  "en": {
+   "primary": "mov to mp4",
+   "title": "Convert MOV to MP4 Online Free | DJAI",
+   "meta": "Convert MOV to MP4 online for easier sharing and playback. Choose video quality and process the source locally in your browser with no account.",
+   "h1": "Convert MOV to MP4 before the file becomes someone else's problem",
+   "hero": "MOV is common from Apple devices, cameras and editing workflows. MP4 is usually less awkward when the next step is email, a website, a form, Windows, or a social upload.",
+   "ui": "MOV to MP4",
+   "why": "MOV is normal in production; MP4 is easier at the hand-off",
+   "note": "MOV is a container, not one codec. This tool re-encodes the main video as H.264 with AAC audio so the output behaves predictably as MP4.",
+   "keywords": [
+    "convert mov to mp4",
+    "mov to mp4 online",
+    "mov converter",
+    "quicktime to mp4",
+    "mov to mp4 free"
+   ],
+   "faq": [
+    {
+     "q": "Can I just rename the file extension?",
+     "a": "Usually not. Renaming does not change the container or codecs inside; this page performs a real conversion."
+    },
+    {
+     "q": "Is my video uploaded to DJAI?",
+     "a": "No. The source file is read and processed in your browser on your device."
+    },
+    {
+     "q": "Why can the first run take longer?",
+     "a": "The browser downloads an FFmpeg WebAssembly core of roughly 31 MB the first time processing is needed; caching can help later runs."
+    }
+   ]
+  },
+  "th": {
+   "primary": "แปลง MOV เป็น MP4",
+   "title": "แปลง MOV เป็น MP4 ออนไลน์ฟรี | DJAI",
+   "meta": "แปลง MOV เป็น MP4 ออนไลน์เพื่อแชร์ เปิด และอัปโหลดง่ายขึ้น เลือกคุณภาพได้และประมวลผลไฟล์ใน browser โดยไม่ต้องสมัครบัญชี",
+   "h1": "แปลง MOV เป็น MP4 ก่อนส่งไฟล์ต่อให้คนอื่น",
+   "hero": "MOV เจอบ่อยจาก iPhone, Mac, กล้อง และงานตัดต่อ แต่พอถึงขั้นตอนส่งอีเมล อัปเว็บ กรอก form หรือเปิดบนเครื่องอื่น MP4 มักสร้างปัญหาน้อยกว่า",
+   "ui": "MOV → MP4",
+   "why": "MOV เป็นเรื่องปกติในงานผลิต แต่ MP4 ส่งต่อง่ายกว่า",
+   "note": "MOV เป็น container ไม่ใช่ codec เดียว หน้านี้จึง re-encode วิดีโอหลักเป็น H.264 และเสียงเป็น AAC เพื่อให้ผลลัพธ์ MP4 คาดเดาได้ง่าย",
+   "keywords": [
+    "mov to mp4",
+    "แปลง mov เป็น mp4",
+    "mov converter",
+    "แปลงไฟล์ mov",
+    "quicktime to mp4"
+   ],
+   "faq": [
+    {
+     "q": "แค่เปลี่ยนนามสกุลไฟล์แทนได้ไหม?",
+     "a": "ไม่ได้ในหลายกรณี เพราะ container และ codec ข้างในยังเหมือนเดิม หน้านี้ทำ conversion จริง"
+    },
+    {
+     "q": "ไฟล์ถูกอัปโหลดขึ้น DJAI หรือไม่?",
+     "a": "ไม่ ตัวไฟล์ถูกอ่านและประมวลผลใน browser บนอุปกรณ์ของคุณ"
+    },
+    {
+     "q": "ทำไมครั้งแรกถึงช้ากว่า?",
+     "a": "ครั้งแรก browser ต้องโหลด FFmpeg WebAssembly core ประมาณ 31 MB หลังจากนั้น cache อาจช่วยให้เร็วขึ้น"
+    }
+   ]
+  },
+  "targetMB": null
+ },
+ {
+  "slug": "mp4-to-webm",
+  "mode": "convert",
+  "fixedInput": "mp4",
+  "fixedOutput": "webm",
+  "en": {
+   "primary": "mp4 to webm",
+   "title": "Convert MP4 to WebM Online Free | DJAI",
+   "meta": "Convert MP4 to WebM online for web delivery. Choose quality and resolution, then encode locally in your browser without uploading the source video.",
+   "h1": "Convert MP4 to WebM for a web-first video file",
+   "hero": "If the video is headed to a website rather than a general-purpose hand-off, WebM can be a useful target. Convert the MP4 locally and choose a sensible resolution.",
+   "ui": "MP4 to WebM",
+   "why": "WebM earns its place when the destination is the web",
+   "note": "This page encodes video with VP9 and WebM-compatible audio. VP9 can take noticeably longer to encode in WebAssembly than H.264, so lower resolution is often practical on phones.",
+   "keywords": [
+    "mp4 to webm",
+    "convert mp4 to webm",
+    "mp4 webm converter",
+    "mp4 to webm online",
+    "webm converter"
+   ],
+   "faq": [
+    {
+     "q": "Can I just rename the file extension?",
+     "a": "Usually not. Renaming does not change the container or codecs inside; this page performs a real conversion."
+    },
+    {
+     "q": "Is my video uploaded to DJAI?",
+     "a": "No. The source file is read and processed in your browser on your device."
+    },
+    {
+     "q": "Why can the first run take longer?",
+     "a": "The browser downloads an FFmpeg WebAssembly core of roughly 31 MB the first time processing is needed; caching can help later runs."
+    }
+   ]
+  },
+  "th": {
+   "primary": "แปลง MP4 เป็น WebM",
+   "title": "แปลง MP4 เป็น WebM ออนไลน์ฟรี | DJAI",
+   "meta": "แปลง MP4 เป็น WebM ออนไลน์สำหรับงานเว็บ เลือกคุณภาพและความละเอียดได้ แล้ว encode ใน browser โดยไม่ต้องอัปโหลดวิดีโอต้นฉบับ",
+   "h1": "แปลง MP4 เป็น WebM เมื่อปลายทางของวิดีโอคือเว็บ",
+   "hero": "ถ้าวิดีโอจะไปอยู่บนเว็บไซต์ WebM ก็เป็น target ที่น่าสนใจ เลือก resolution ให้พอดีแล้ว encode จาก MP4 ได้ตรงใน browser",
+   "ui": "MP4 → WebM",
+   "why": "WebM มีเหตุผลของมัน เมื่อปลายทางคือเว็บ",
+   "note": "หน้านี้ encode ภาพเป็น VP9 และเสียงที่เข้ากับ WebM การ encode VP9 ผ่าน WebAssembly อาจช้ากว่า H.264 โดยเฉพาะบนมือถือ จึงควรลด resolution ถ้าไม่จำเป็นต้องใช้ภาพเต็ม",
+   "keywords": [
+    "mp4 to webm",
+    "แปลง mp4 เป็น webm",
+    "webm converter",
+    "แปลง webm ออนไลน์",
+    "video webm"
+   ],
+   "faq": [
+    {
+     "q": "แค่เปลี่ยนนามสกุลไฟล์แทนได้ไหม?",
+     "a": "ไม่ได้ในหลายกรณี เพราะ container และ codec ข้างในยังเหมือนเดิม หน้านี้ทำ conversion จริง"
+    },
+    {
+     "q": "ไฟล์ถูกอัปโหลดขึ้น DJAI หรือไม่?",
+     "a": "ไม่ ตัวไฟล์ถูกอ่านและประมวลผลใน browser บนอุปกรณ์ของคุณ"
+    },
+    {
+     "q": "ทำไมครั้งแรกถึงช้ากว่า?",
+     "a": "ครั้งแรก browser ต้องโหลด FFmpeg WebAssembly core ประมาณ 31 MB หลังจากนั้น cache อาจช่วยให้เร็วขึ้น"
+    }
+   ]
+  },
+  "targetMB": null
+ },
+ {
+  "slug": "compress-video",
+  "mode": "compressor",
+  "en": {
+   "primary": "video compressor",
+   "title": "Video Compressor Online – Reduce Video File Size | DJAI",
+   "meta": "Compress video online by quality, resolution or target size. Reduce MP4 file size privately in your browser with no account or source upload.",
+   "h1": "Compress a video around the constraint you actually have",
+   "hero": "Sometimes the problem is quality. More often it is a 25 MB upload limit, an email attachment, or a phone that does not need 4K. Choose target size or resolution and let the browser do the work.",
+   "ui": "Video compressor",
+   "why": "Compression makes more sense when it starts with a real constraint",
+   "note": "Target-size mode estimates bitrate from duration and desired file size. It is designed to land near the target, not promise byte-perfect output; browser encoding can finish slightly above or below.",
+   "keywords": [
+    "compress video",
+    "compress mp4",
+    "reduce video file size",
+    "video compressor online",
+    "shrink mp4",
+    "compress video to smaller size"
+   ],
+   "faq": [
+    {
+     "q": "Can I just rename the file extension?",
+     "a": "Usually not. Renaming does not change the container or codecs inside; this page performs a real conversion."
+    },
+    {
+     "q": "Is my video uploaded to DJAI?",
+     "a": "No. The source file is read and processed in your browser on your device."
+    },
+    {
+     "q": "Why can the first run take longer?",
+     "a": "The browser downloads an FFmpeg WebAssembly core of roughly 31 MB the first time processing is needed; caching can help later runs."
+    }
+   ]
+  },
+  "th": {
+   "primary": "บีบอัดวิดีโอออนไลน์",
+   "title": "บีบอัดวิดีโอออนไลน์ ลดขนาด MP4 ฟรี | DJAI",
+   "meta": "บีบอัดวิดีโอออนไลน์ด้วยคุณภาพ ความละเอียด หรือขนาดเป้าหมาย ลดขนาด MP4 ใน browser โดยไม่ต้องสมัครและไม่อัปโหลดไฟล์ต้นฉบับ",
+   "h1": "บีบอัดวิดีโอจากข้อจำกัดจริงของงาน",
+   "hero": "หลายครั้งเราไม่ได้อยากบีบให้เล็กที่สุด แค่ต้องผ่าน limit 25 MB ส่งอีเมลได้ หรือไม่ต้องเก็บ 4K บนมือถือ เลือกขนาดเป้าหมายหรือ resolution ให้ตรงโจทย์แล้วค่อย encode",
+   "ui": "ตัวบีบอัดวิดีโอ",
+   "why": "การบีบอัดมีเหตุผลมากขึ้น เมื่อเริ่มจากข้อจำกัดจริง",
+   "note": "โหมด target size จะคำนวณ bitrate จากความยาววิดีโอและขนาดที่ต้องการ ผลลัพธ์ตั้งใจให้เข้าใกล้เป้าหมาย ไม่ได้สัญญาว่าตรงทุก byte เพราะการ encode ใน browser อาจสูงหรือต่ำกว่าตัวเลขเล็กน้อย",
+   "keywords": [
+    "video compressor",
+    "บีบอัด mp4",
+    "ลดขนาดวิดีโอ",
+    "ลดขนาดไฟล์ mp4",
+    "บีบวิดีโอออนไลน์",
+    "compress video"
+   ],
+   "faq": [
+    {
+     "q": "แค่เปลี่ยนนามสกุลไฟล์แทนได้ไหม?",
+     "a": "ไม่ได้ในหลายกรณี เพราะ container และ codec ข้างในยังเหมือนเดิม หน้านี้ทำ conversion จริง"
+    },
+    {
+     "q": "ไฟล์ถูกอัปโหลดขึ้น DJAI หรือไม่?",
+     "a": "ไม่ ตัวไฟล์ถูกอ่านและประมวลผลใน browser บนอุปกรณ์ของคุณ"
+    },
+    {
+     "q": "ทำไมครั้งแรกถึงช้ากว่า?",
+     "a": "ครั้งแรก browser ต้องโหลด FFmpeg WebAssembly core ประมาณ 31 MB หลังจากนั้น cache อาจช่วยให้เร็วขึ้น"
+    }
+   ]
+  },
+  "targetMB": null
  }
 ]

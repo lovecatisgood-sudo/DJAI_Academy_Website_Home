@@ -12,6 +12,8 @@ import {
 } from "../../components/blog/ToolTutorialEvidence";
 import { SIAMESE_CAT_DEV_CATEGORY } from "../../lib/blogStore";
 import { getThaiPostBySlug } from "../../lib/thBlogPosts";
+import { getBlogJourney } from "../../lib/blogJourneys";
+import { getViPostByEnglishSlug } from "../../lib/viBlogPosts";
 
 function formatDate(value) {
   return new Intl.DateTimeFormat("th-TH", {
@@ -38,6 +40,8 @@ export async function generateMetadata({ params }) {
   };
   if (englishSlug) {
     languages.en = `/blog/en/${englishSlug}/`;
+    const vietnamesePost = getViPostByEnglishSlug(englishSlug);
+    if (vietnamesePost) languages.vi = `/blog/vi/${vietnamesePost.slug}/`;
   }
 
   return {
@@ -105,6 +109,7 @@ export default async function ThaiBlogPostPage({ params }) {
     },
     mainEntityOfPage: `https://www.djai.academy/blog/${post.slug}/`
   };
+  const journey = getBlogJourney(post, "th");
 
   return (
     <>
@@ -145,21 +150,21 @@ export default async function ThaiBlogPostPage({ params }) {
 
           {hasTutorialEvidence ? <ToolTutorialEvidence slug={post.slug} locale="th" /> : null}
 
-          <div className="article-content">
-            <BlogMarkdown content={post.content} />
-          </div>
+          <div className="article-content"><BlogMarkdown content={post.content} /></div>
 
           <AdSenseAd label="Article advertisement" variant="inArticle" />
 
-          {hasTutorialEvidence ? <ToolTutorialNextStep slug={post.slug} locale="th" /> : <footer className="article-cta">
-            <div>
-              <p className="eyebrow">เครื่องมือฟรีจาก DJAI</p>
-              <h2>เปิดใช้เครื่องมือจากบทความนี้</h2>
-            </div>
-            <a className="button" href="https://www.djai.academy/tools/">
-              เปิดเครื่องมือฟรี
-            </a>
-          </footer>}
+          {hasTutorialEvidence ? (
+            <ToolTutorialNextStep slug={post.slug} locale="th" />
+          ) : (
+            <footer className="article-cta">
+              <div>
+                <p className="eyebrow">{journey.eyebrow}</p>
+                <h2>{journey.title}</h2>
+              </div>
+              <Link className="button" href={journey.href}>{journey.label}</Link>
+            </footer>
+          )}
 
           <ShareButtons url={`https://www.djai.academy/blog/${post.slug}/`} title={post.title} locale="th" compact />
 

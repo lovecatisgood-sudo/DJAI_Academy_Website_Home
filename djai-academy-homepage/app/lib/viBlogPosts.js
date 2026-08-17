@@ -180,3 +180,4 @@ Mã QR không sửa được một trang đích kém. Hãy dành thời gian cho
 ];
 
 export function getViPost(slug) { return viBlogPosts.find((post) => post.slug === slug); }
+export function getViPostByEnglishSlug(slug) { return viBlogPosts.find((post) => post.alternateEn === slug); }

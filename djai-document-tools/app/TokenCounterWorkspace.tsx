@@ -140,7 +140,7 @@ export default function TokenCounterWorkspace({ tool, language }: { tool: ToolDe
         <button className={`token-import ${dragging ? "dragging" : ""}`} type="button" onClick={() => inputRef.current?.click()} onDragEnter={(event) => { event.preventDefault(); setDragging(true); }} onDragOver={(event) => event.preventDefault()} onDragLeave={() => setDragging(false)} onDrop={(event) => { event.preventDefault(); setDragging(false); importFiles(event.dataTransfer.files); }}>
           {importing ? <LoaderCircle className="spin" /> : <Upload />}<span><strong>{importing ? (en ? "Reading locally..." : "กำลังอ่านในเครื่อง...") : (en ? "Import a document" : "นำเข้าเอกสาร")}</strong><small>DOCX, PDF, TXT, Markdown, CSV, JSON, code · {en ? "up to 10 files" : "สูงสุด 10 ไฟล์"}</small></span>
         </button>
-        <input ref={inputRef} className="visually-hidden" type="file" multiple accept=".docx,.pdf,.txt,.md,.csv,.json,.js,.ts,.tsx,.jsx,.py,.html,.css,.xml,.yaml,.yml,text/*,application/pdf" onChange={(event) => event.target.files && importFiles(event.target.files)} />
+        <input ref={inputRef} className="visually-hidden" type="file" multiple accept=".docx,.pdf,.txt,.md,.csv,.json,.js,.ts,.tsx,.jsx,.py,.html,.css,.xml,.yaml,.yml,text/*,application/pdf" aria-label={en ? "Choose documents to analyze" : "เลือกเอกสารที่ต้องการวิเคราะห์"} onChange={(event) => event.target.files && importFiles(event.target.files)} />
         {importedNames.length > 0 && <div className="token-imported"><FileText />{importedNames.join(" · ")}</div>}
       </div>
       <aside className="token-options">

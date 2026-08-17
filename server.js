@@ -2,7 +2,7 @@ const fs = require("node:fs");
 const http = require("node:http");
 const path = require("node:path");
 const zlib = require("node:zlib");
-const { spawn } = require("node:child_process");
+const { createServiceSupervisor } = require("./service-supervisor");
 
 const rootDir = __dirname;
 const homepageDir = path.join(rootDir, "djai-academy-homepage");
@@ -111,6 +111,18 @@ const staticMounts = [
   }
 ];
 
+const slashCanonicalMountPrefixes = new Set([
+  "/course",
+  "/tools/qrgen",
+  "/tools/resizeimg",
+  "/tools/media",
+  "/tools/PDFTools",
+  "/tools/document",
+  "/tools/ai",
+  "/tools/spreadsheet",
+  "/siamese_cat/dev"
+]);
+
 function normalizePathname(url) {
   try {
     return decodeURIComponent(new URL(url, "http://localhost").pathname);
@@ -198,7 +210,7 @@ function serveStaticFile(req, res, filePath) {
     "X-Frame-Options": "SAMEORIGIN",
     "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
     "Permissions-Policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
-    "Vary": "Accept-Encoding"
+    "Vary": "Accept-Encoding, Origin"
   };
   const engineOrigins = new Set([
     "https://school.djai.academy",
@@ -245,14 +257,21 @@ function serveHealth(req, res) {
     path.join(rootDir, "Siamese-Cat-Dev-Bio-Site", "dist", "course", "th", "index.html")
   ];
   const buildsReady = requiredOutputs.every((output) => fs.existsSync(output));
+  const serviceHealth = Object.fromEntries(
+    Object.entries(services).map(([key, service]) => [key, service.snapshot()])
+  );
+  const servicesReady = Object.values(services).every((service) => service.isReady());
+  const healthy = buildsReady && servicesReady;
   const body = JSON.stringify({
-    status: buildsReady ? "ok" : "degraded",
+    status: healthy ? "ok" : "degraded",
     app: packageMetadata.name,
     version: packageMetadata.version,
-    buildsReady
+    buildsReady,
+    servicesReady,
+    services: serviceHealth
   });
 
-  res.writeHead(buildsReady ? 200 : 503, {
+  res.writeHead(healthy ? 200 : 503, {
     "Content-Type": "application/json; charset=utf-8",
     "Content-Length": Buffer.byteLength(body),
     "Cache-Control": "no-store",
@@ -297,6 +316,26 @@ function tryServeMountedStatic(req, res, pathname) {
     return true;
   }
 
+  if (
+    (req.method === "GET" || req.method === "HEAD")
+    && pathname !== "/"
+    && !pathname.endsWith("/")
+    && !path.extname(pathname)
+  ) {
+    for (const mount of staticMounts) {
+      if (!slashCanonicalMountPrefixes.has(mount.prefix)) continue;
+      if (!matchesMount(pathname, mount.prefix)) continue;
+      if ((mount.excludePrefixes || []).some((prefix) => matchesMount(pathname, prefix))) continue;
+
+      const filePath = resolveStaticFile(mount, pathname);
+      if (filePath && path.basename(filePath) === "index.html") {
+        const search = new URL(req.url || "/", "http://localhost").search;
+        redirect(res, `${pathname}/${search}`);
+        return true;
+      }
+    }
+  }
+
   for (const mount of staticMounts) {
     if (!matchesMount(pathname, mount.prefix)) continue;
     if ((mount.excludePrefixes || []).some((prefix) => matchesMount(pathname, prefix))) continue;
@@ -333,13 +372,16 @@ function proxyRequest(req, res, targetPort) {
   req.pipe(upstream);
 }
 
-function startStandalone(name, directory, internalPort) {
+function createStandaloneService(name, directory, internalPort) {
   const serverPath = path.join(directory, ".next", "standalone", "server.js");
   if (!fs.existsSync(serverPath)) {
     throw new Error(`${name} standalone server is missing: ${serverPath}`);
   }
 
-  const child = spawn(process.execPath, [serverPath], {
+  return createServiceSupervisor({
+    name,
+    command: process.execPath,
+    args: [serverPath],
     cwd: path.dirname(serverPath),
     env: {
       ...process.env,
@@ -347,14 +389,8 @@ function startStandalone(name, directory, internalPort) {
       PORT: String(internalPort),
       HOSTNAME: "127.0.0.1"
     },
-    stdio: "inherit"
+    readinessCheck: () => waitForServer(internalPort)
   });
-  child.on("exit", (code, signal) => {
-    if (code !== 0 && signal !== "SIGTERM") {
-      console.error(`${name} exited unexpectedly (code ${code}, signal ${signal || "none"}).`);
-    }
-  });
-  return child;
 }
 
 function waitForServer(internalPort, attempts = 100) {
@@ -377,13 +413,18 @@ function waitForServer(internalPort, attempts = 100) {
   });
 }
 
-const children = [];
+const services = {};
 let rootServer;
 
 async function start() {
-  children.push(startStandalone("DJAI homepage", homepageDir, homepagePort));
-  children.push(startStandalone("DJAI voice promo", voicePromoDir, voicePromoPort));
-  await Promise.all([waitForServer(homepagePort), waitForServer(voicePromoPort)]);
+  services.homepage = createStandaloneService("DJAI homepage", homepageDir, homepagePort);
+  services.voicePromo = createStandaloneService("DJAI voice promo", voicePromoDir, voicePromoPort);
+  services.homepage.start();
+  services.voicePromo.start();
+  await Promise.all([
+    services.homepage.waitUntilReady(),
+    services.voicePromo.waitUntilReady()
+  ]);
 
   return http
     .createServer((req, res) => {
@@ -464,14 +505,12 @@ async function start() {
     });
 }
 
-function stopChildren() {
-  for (const child of children) {
-    if (!child.killed) child.kill("SIGTERM");
-  }
+function stopServices() {
+  for (const service of Object.values(services)) service.stop();
 }
 
 function shutdown() {
-  stopChildren();
+  stopServices();
   if (rootServer) {
     rootServer.close(() => process.exit(0));
     return;
@@ -486,6 +525,6 @@ start().then((server) => {
   rootServer = server;
 }).catch((error) => {
   console.error("Unable to start DJAI Academy website.", error);
-  stopChildren();
+  stopServices();
   process.exit(1);
 });

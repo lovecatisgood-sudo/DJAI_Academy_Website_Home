@@ -46,6 +46,7 @@ function sendFile(req, res, filePath) {
       'X-Content-Type-Options': 'nosniff',
       'Referrer-Policy': 'strict-origin-when-cross-origin',
       'Permissions-Policy': 'camera=(), microphone=(), geolocation=()',
+      'Vary': 'Origin',
       ...(filePath.includes(`${path.sep}vendor${path.sep}`) && ENGINE_ORIGINS.has(req.headers.origin)
         ? { 'Access-Control-Allow-Origin': req.headers.origin }
         : {})

@@ -1,6 +1,7 @@
 import { SIAMESE_CAT_DEV_CATEGORY, getAllPosts, getPostsByCategory } from "./lib/blogStore";
 import { getAllThaiPosts } from "./lib/thBlogPosts";
 import { viBlogPosts } from "./lib/viBlogPosts";
+import { videoToolSlugs } from "./lib/videoToolSlugs";
 
 export const revalidate = 3600;
 
@@ -9,11 +10,7 @@ const STATIC_LAST_MODIFIED = new Date("2026-07-30T00:00:00.000Z");
 const COURSE_LAST_MODIFIED = new Date("2026-08-05T00:00:00.000Z");
 const SIAMESE_COURSES_LAST_MODIFIED = new Date("2026-08-17T00:00:00.000Z");
 const VIETNAMESE_LAST_MODIFIED = new Date("2026-08-12T00:00:00.000Z");
-const BRAND_TOOLS_LAST_MODIFIED = new Date("2026-08-13T00:00:00.000Z");
-const BRAND_TOOL_PATHS = new Set([
-  "/tools/brand/", "/tools/brand/en/", "/tools/brand/vi/",
-  "/tools/brand/favicon-generator/", "/tools/brand/favicon-generator/en/", "/tools/brand/favicon-generator/vi/"
-]);
+const VIDEO_TOOLS_LAST_MODIFIED = new Date("2026-08-09T00:00:00.000Z");
 // The background-removal tool was rebuilt on its own first-party engine and
 // its pages rewritten. Dated separately so the other static pages keep an
 // honest lastModified rather than all claiming to have changed.
@@ -24,7 +21,7 @@ const BACKGROUND_REMOVAL_PATHS = new Set([
 ]);
 
 const corePaths = [
-  "/", "/en/", "/vi/", "/portfolio/", "/portfolio/en/", "/portfolio/vi/", "/development/", "/development/en/", "/development/vi/", "/web_promo/", "/web_promo/vi/",
+  "/", "/en/", "/vi/", "/portfolio/", "/portfolio/en/", "/portfolio/vi/", "/development/", "/development/en/", "/development/vi/", "/web_promo/",
   "/service/", "/service/en/", "/service/vi/", "/privacy/", "/privacy/en/", "/privacy/vi/", "/tools/", "/tools/en/", "/tools/vi/", "/tools/qrgen/", "/tools/qrgen/en/",
   "/tools/seo-screaming-toad/", "/tools/seo-screaming-toad/en/",
   "/course/", "/course/en/", "/course/vi/", "/course/detail/", "/course/detail/en/", "/course/detail/vi/", "/siamese_cat/",
@@ -57,12 +54,13 @@ const pdfTools = [
 
 const mediaTools = [
   "mp3-to-wav", "wav-to-mp3", "m4a-to-mp3", "mp4-to-mp3", "extract-audio-from-video",
-  "mp4-to-webm", "webm-to-mp4", "mov-to-mp4", "compress-video", "video-converter",
-  "mkv-to-mp4", "avi-to-mp4", "mp4-to-mov", "video-cutter", "video-cropper", "video-resizer",
-  "video-merger", "compress-video-to-10mb", "compress-video-to-25mb", "compress-video-to-50mb",
-  "compress-video-to-100mb", "video-to-gif", "gif-to-mp4", "remove-audio-from-video",
-  "add-audio-to-video", "video-speed-changer", "extract-frames-from-video", "rotate-video"
+  ...videoToolSlugs
 ];
+
+const VIDEO_TOOL_PATHS = new Set(videoToolSlugs.flatMap((slug) => [
+  `/tools/media/${slug}/`,
+  `/tools/media/${slug}/en/`
+]));
 
 const suiteTools = {
   document: ["docx-to-pdf", "docx-to-html", "docx-to-markdown", "docx-to-text", "pdf-to-text", "pdf-to-word", "ocr"],
@@ -74,20 +72,13 @@ function bilingual(base, slugs = []) {
   return [base, `${base}en/`, ...slugs.flatMap((slug) => [`${base}${slug}/`, `${base}${slug}/en/`])];
 }
 
-function trilingual(base, slugs = []) {
-  return [base, `${base}en/`, `${base}vi/`, ...slugs.flatMap((slug) => [`${base}${slug}/`, `${base}${slug}/en/`, `${base}${slug}/vi/`])];
-}
-
 const staticPaths = [
   ...corePaths,
-  ...trilingual("/tools/qrgen/", qrTools),
-  ...trilingual("/tools/resizeimg/", imageTools),
+  ...bilingual("/tools/qrgen/", qrTools),
+  ...bilingual("/tools/resizeimg/", imageTools),
   ...bilingual("/tools/PDFTools/", pdfTools),
-  "/tools/PDFTools/vi/",
-  ...pdfTools.slice(0, 11).map((slug) => `/tools/PDFTools/${slug}/vi/`),
-  ...trilingual("/tools/media/", mediaTools),
-  ...trilingual("/tools/brand/", ["favicon-generator"]),
-  ...Object.entries(suiteTools).flatMap(([category, slugs]) => trilingual(`/tools/${category}/`, slugs))
+  ...bilingual("/tools/media/", mediaTools),
+  ...Object.entries(suiteTools).flatMap(([category, slugs]) => bilingual(`/tools/${category}/`, slugs))
 ];
 
 function entry(path, lastModified, changeFrequency = "monthly", priority = 0.7) {
@@ -104,13 +95,14 @@ export default async function sitemap() {
 
   const staticEntries = [...new Set(staticPaths)].map((path) => entry(
     path,
-    BRAND_TOOL_PATHS.has(path)
-      ? BRAND_TOOLS_LAST_MODIFIED
-      : BACKGROUND_REMOVAL_PATHS.has(path)
+    BACKGROUND_REMOVAL_PATHS.has(path)
       ? BACKGROUND_REMOVAL_LAST_MODIFIED
-      : path.includes("/vi/") || path === "/vi/" ? VIETNAMESE_LAST_MODIFIED : path.startsWith("/siamese_cat/dev/courses/") ? SIAMESE_COURSES_LAST_MODIFIED : path.startsWith("/siamese_cat/dev/course/") ? COURSE_LAST_MODIFIED : STATIC_LAST_MODIFIED,
+      : VIDEO_TOOL_PATHS.has(path) ? VIDEO_TOOLS_LAST_MODIFIED
+      : path.includes("/vi/") || path === "/vi/" ? VIETNAMESE_LAST_MODIFIED
+      : path.startsWith("/siamese_cat/dev/courses/") ? SIAMESE_COURSES_LAST_MODIFIED
+      : path.startsWith("/siamese_cat/dev/course/") ? COURSE_LAST_MODIFIED : STATIC_LAST_MODIFIED,
     ["/", "/en/", "/vi/"].includes(path) ? "weekly" : "monthly",
-    ["/", "/en/", "/vi/"].includes(path) ? 1 : path.startsWith("/siamese_cat/dev/course/") || path.startsWith("/siamese_cat/dev/courses/") ? 0.9 : path.startsWith("/tools/") ? 0.8 : 0.7
+    ["/", "/en/", "/vi/"].includes(path) ? 1 : path.startsWith("/siamese_cat/dev/courses/") || path.startsWith("/siamese_cat/dev/course/") ? 0.9 : path.startsWith("/tools/") ? 0.8 : 0.7
   ));
   const articleEntries = [
     ...englishPosts

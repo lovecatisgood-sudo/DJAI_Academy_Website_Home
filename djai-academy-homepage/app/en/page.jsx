@@ -134,8 +134,10 @@ function Header() {
 
       <button
         className="menu-button"
+        type="button"
         aria-expanded={open}
         aria-controls="site-navigation"
+        aria-label={open ? "Close navigation" : "Open navigation"}
         onClick={() => setOpen((value) => !value)}
       >
         <span />

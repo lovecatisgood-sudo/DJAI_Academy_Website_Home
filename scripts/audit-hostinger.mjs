@@ -1,5 +1,4 @@
 import { spawn } from "node:child_process";
-import { randomUUID } from "node:crypto";
 import { copyFile, mkdtemp, rm } from "node:fs/promises";
 import { request } from "node:http";
 import { tmpdir } from "node:os";
@@ -15,6 +14,15 @@ const serverEntry = useQrCompatibilityEntry
 const serverDirectory = useQrCompatibilityEntry
   ? new URL("../DJayTools-Free-QR-Generator-Source/", import.meta.url).pathname
   : repositoryRoot;
+const mediaToolSlugs = [
+  "mp3-to-wav", "wav-to-mp3", "m4a-to-mp3", "mp4-to-mp3", "extract-audio-from-video",
+  "video-converter", "mkv-to-mp4", "avi-to-mp4", "mp4-to-mov", "mp4-to-webm",
+  "webm-to-mp4", "mov-to-mp4", "video-cutter", "compress-video",
+  "compress-video-to-10mb", "compress-video-to-25mb", "compress-video-to-50mb",
+  "compress-video-to-100mb", "video-cropper", "video-resizer", "video-merger",
+  "video-to-gif", "gif-to-mp4", "remove-audio-from-video", "add-audio-to-video",
+  "video-speed-changer", "extract-frames-from-video", "rotate-video"
+];
 const publicRoutes = [
   "/",
   "/en/",
@@ -26,7 +34,6 @@ const publicRoutes = [
   "/development/en/",
   "/development/vi/",
   "/web_promo/",
-  "/web_promo/vi/",
   "/service/",
   "/service/en/",
   "/service/vi/",
@@ -37,12 +44,6 @@ const publicRoutes = [
   "/tools/seo-screaming-toad/en/",
   "/tools/qrgen/",
   "/tools/qrgen/en/",
-  "/tools/brand/",
-  "/tools/brand/en/",
-  "/tools/brand/vi/",
-  "/tools/brand/favicon-generator/",
-  "/tools/brand/favicon-generator/en/",
-  "/tools/brand/favicon-generator/vi/",
   ...["url-qr-code-generator", "wifi-qr-code-generator", "vcard-qr-code-generator", "text-qr-code-generator", "email-qr-code-generator", "whatsapp-qr-code-generator", "qr-code-generator-with-logo"].flatMap((tool) => [`/tools/qrgen/${tool}/`, `/tools/qrgen/${tool}/en/`]),
   "/tools/resizeimg/",
   "/tools/resizeimg/en/",
@@ -75,8 +76,7 @@ const publicRoutes = [
   ...["resize-image-to-200kb", "avif-to-jpg", "avif-to-png", "passport-photo-resizer"].flatMap((tool) => [`/tools/resizeimg/${tool}/`, `/tools/resizeimg/${tool}/en/`]),
   "/tools/media/",
   "/tools/media/en/",
-  ...["mp3-to-wav", "wav-to-mp3", "m4a-to-mp3", "mp4-to-mp3", "extract-audio-from-video", "mp4-to-webm", "webm-to-mp4", "mov-to-mp4", "compress-video"].flatMap((tool) => [`/tools/media/${tool}/`, `/tools/media/${tool}/en/`]),
-  ...["video-converter", "mkv-to-mp4", "avi-to-mp4", "mp4-to-mov", "video-cutter", "video-cropper", "video-resizer", "video-merger", "compress-video-to-10mb", "compress-video-to-25mb", "compress-video-to-50mb", "compress-video-to-100mb", "video-to-gif", "gif-to-mp4", "remove-audio-from-video", "add-audio-to-video", "video-speed-changer", "extract-frames-from-video", "rotate-video"].flatMap((tool) => [`/tools/media/${tool}/`, `/tools/media/${tool}/en/`]),
+  ...mediaToolSlugs.flatMap((tool) => [`/tools/media/${tool}/`, `/tools/media/${tool}/en/`]),
   "/tools/PDFTools/",
   "/tools/PDFTools/en/",
   "/tools/PDFTools/merge-pdf/",
@@ -115,19 +115,6 @@ const publicRoutes = [
     `/tools/${category}/en/`,
     ...tools.flatMap((tool) => [`/tools/${category}/${tool}/`, `/tools/${category}/${tool}/en/`])
   ]),
-  "/tools/qrgen/vi/",
-  ...["url-qr-code-generator", "wifi-qr-code-generator", "vcard-qr-code-generator", "text-qr-code-generator", "email-qr-code-generator", "whatsapp-qr-code-generator", "qr-code-generator-with-logo"].map((tool) => `/tools/qrgen/${tool}/vi/`),
-  "/tools/resizeimg/vi/",
-  ...["jpg-to-png", "png-to-jpg", "jpg-to-webp", "png-to-webp", "webp-to-jpg", "webp-to-png", "compress-image", "resize-image", "image-to-100kb", "image-to-500kb", "heic-to-jpg", "remove-image-metadata", "remove-background-image", "resize-image-to-200kb", "avif-to-jpg", "avif-to-png", "passport-photo-resizer"].map((tool) => `/tools/resizeimg/${tool}/vi/`),
-  "/tools/media/vi/",
-  ...["mp3-to-wav", "wav-to-mp3", "m4a-to-mp3", "mp4-to-mp3", "extract-audio-from-video", "mp4-to-webm", "webm-to-mp4", "mov-to-mp4", "compress-video", "video-converter", "mkv-to-mp4", "avi-to-mp4", "mp4-to-mov", "video-cutter", "video-cropper", "video-resizer", "video-merger", "compress-video-to-10mb", "compress-video-to-25mb", "compress-video-to-50mb", "compress-video-to-100mb", "video-to-gif", "gif-to-mp4", "remove-audio-from-video", "add-audio-to-video", "video-speed-changer", "extract-frames-from-video", "rotate-video"].map((tool) => `/tools/media/${tool}/vi/`),
-  "/tools/PDFTools/vi/",
-  ...["merge-pdf", "split-pdf", "compress-pdf", "images-to-pdf", "pdf-to-images", "rotate-pdf", "watermark-pdf", "protect-pdf", "organize-pdf", "add-page-numbers", "remove-pdf-metadata"].map((tool) => `/tools/PDFTools/${tool}/vi/`),
-  ...[
-    { category: "document", tools: ["docx-to-pdf", "docx-to-html", "docx-to-markdown", "docx-to-text", "pdf-to-text", "pdf-to-word", "ocr"] },
-    { category: "ai", tools: ["token-counter", "pdf-to-ai-markdown", "context-optimizer", "rag-chunk-calculator", "prompt-packager"] },
-    { category: "spreadsheet", tools: ["csv-to-json", "json-to-csv", "csv-cleaner", "merge-csv", "split-csv", "csv-to-xlsx", "xlsx-to-csv"] }
-  ].flatMap(({ category, tools }) => [`/tools/${category}/vi/`, ...tools.map((tool) => `/tools/${category}/${tool}/vi/`)]),
   "/blog/",
   "/blog/en/",
   "/blog/vi/",
@@ -185,14 +172,34 @@ const redirects = [
   ["/tools/document/word-to-pdf/", "/tools/document/docx-to-pdf/"],
   ["/tools/document/word-to-pdf/en/", "/tools/document/docx-to-pdf/en/"]
 ];
+const slashCanonicalPrefixes = [
+  "/course/",
+  "/tools/qrgen/",
+  "/tools/resizeimg/",
+  "/tools/media/",
+  "/tools/PDFTools/",
+  "/tools/document/",
+  "/tools/ai/",
+  "/tools/spreadsheet/",
+  "/siamese_cat/dev/"
+];
+const slashCanonicalRoutes = publicRoutes.filter((route) =>
+  route.endsWith("/")
+  && slashCanonicalPrefixes.some((prefix) => route === prefix || route.startsWith(prefix))
+  && !route.startsWith("/siamese_cat/dev/blog/")
+);
 const accountOnboardingRedirects = ["/academy/", "/academy/en/", "/academy/vi/"];
 const moneyMakingProductRegistrationUrl =
   "https://school.djai.academy/signup?intent=free-course&course_id=money-making-product-2026-08-22";
-const auditPassword = process.env.DJAI_AUDIT_PASSWORD || `djai-local-deployment-${randomUUID()}`;
-const auditApiKey = process.env.DJAI_AUDIT_API_KEY || `djai-local-api-key-${randomUUID()}`;
+const auditPassword = "djai-local-deployment-audit";
+const auditApiKey = "djai-local-api-key-audit";
 const auditDataDirectory = await mkdtemp(join(tmpdir(), "djai-blog-audit-"));
 const auditDataFile = join(auditDataDirectory, "blog-posts.json");
 await copyFile(join(repositoryRoot, "djai-academy-homepage", "data", "blog-posts.json"), auditDataFile);
+
+function getHtmlAttribute(tag, name) {
+  return tag.match(new RegExp(`\\b${name}=["']([^"']*)["']`, "i"))?.[1] || "";
+}
 
 const server = spawn(process.execPath, [serverEntry], {
   cwd: serverDirectory,
@@ -361,26 +368,23 @@ async function verify() {
     }
   }
 
-  const vietnameseRepresentativeRoutes = [
-    "/web_promo/vi/",
-    "/tools/qrgen/url-qr-code-generator/vi/",
-    "/tools/resizeimg/remove-background-image/vi/",
-    "/tools/PDFTools/merge-pdf/vi/",
-    "/tools/media/video-converter/vi/",
-    "/tools/document/docx-to-pdf/vi/",
-    "/tools/ai/token-counter/vi/",
-    "/tools/spreadsheet/csv-to-json/vi/",
-    "/tools/brand/favicon-generator/vi/"
-  ];
-  for (const route of vietnameseRepresentativeRoutes) {
+  for (const route of [
+    "/tools/media/video-converter/",
+    "/tools/media/compress-video-to-25mb/en/",
+    "/tools/media/extract-frames-from-video/en/"
+  ]) {
     const html = await fetch(`${origin}${route}`).then((response) => response.text());
-    if (!html.includes('<html lang="vi"')) failures.push(`${route}: html lang is not Vietnamese`);
-    if (!html.includes(`<link rel="canonical" href="https://www.djai.academy${route}"`)) {
-      failures.push(`${route}: missing self-referencing Vietnamese canonical`);
-    }
-    if (!html.includes('hreflang="vi"') && !html.includes('hrefLang="vi"') && !html.includes('hrefLang":"vi"')) {
-      failures.push(`${route}: missing self-inclusive Vietnamese hreflang`);
-    }
+    if (!html.includes('id="video-tool-app"')) failures.push(`${route}: missing interactive video workspace`);
+    if (!html.includes("/tools/media/video-tools.js?v=20260809b")) failures.push(`${route}: missing versioned video runtime`);
+    if (!html.includes("/tools/media/video-tools.css?v=20260809a")) failures.push(`${route}: missing versioned video styles`);
+    if (html.includes("cdn.jsdelivr.net/npm/@ffmpeg/core")) failures.push(`${route}: FFmpeg core must remain self-hosted`);
+    if (!html.includes('<meta name="twitter:card" content="summary_large_image">')) failures.push(`${route}: missing Twitter card metadata`);
+    if (!html.includes('<meta property="og:image" content="https://www.djai.academy/social/djai-academy.webp">')) failures.push(`${route}: missing absolute social preview image`);
+    if (!html.includes('max-image-preview:large')) failures.push(`${route}: missing index and preview directives`);
+  }
+  const frameToolHtml = await fetch(`${origin}/tools/media/extract-frames-from-video/en/`).then((response) => response.text());
+  if (!frameToolHtml.includes("/tools/media/vendor/jszip/jszip.min.js?v=20260809a")) {
+    failures.push("/tools/media/extract-frames-from-video/en/: missing self-hosted ZIP support");
   }
 
   for (const route of ["/", "/blog/", "/course/", "/service/"]) {
@@ -391,10 +395,10 @@ async function verify() {
   }
 
   const toolHubFooterChecks = [
-    ["/tools/", "สร้างโดยทีมที่มี product จริงและธุรกิจจริง", "SEO crawler โอเพนซอร์สพร้อมหลักฐาน Technical SEO"],
-    ["/tools/en/", "Built by connected teams with real products.", "Open-source SEO crawler with technical evidence"]
+    ["/tools/", "สร้างโดยทีมที่มี product จริงและธุรกิจจริง", "SEO crawler โอเพนซอร์สพร้อมหลักฐาน Technical SEO", "เครื่องมือออนไลน์ฟรี | วิดีโอ เสียง PDF รูปภาพ และ AI | DJAI"],
+    ["/tools/en/", "Built by connected teams with real products.", "Open-source SEO crawler with technical evidence", "Free Online Tools | Video, Audio, PDF, Images &amp; AI | DJAI"]
   ];
-  for (const [route, precedingContent, seoCardCopy] of toolHubFooterChecks) {
+  for (const [route, precedingContent, seoCardCopy, title] of toolHubFooterChecks) {
     const html = await fetch(`${origin}${route}`).then((response) => response.text());
     const directoryPosition = html.indexOf("data-tool-discovery");
     const precedingPosition = html.indexOf(precedingContent);
@@ -402,6 +406,10 @@ async function verify() {
       failures.push(`${route}: complete tool directory is not positioned as the final discovery footer`);
     }
     if (!html.includes(seoCardCopy)) failures.push(`${route}: SEO crawler footer card is incomplete`);
+    if (!html.includes(`<title>${title}</title>`)) failures.push(`${route}: title does not describe the complete tool catalog`);
+    if (!html.includes('name="twitter:card" content="summary_large_image"')) failures.push(`${route}: missing localized Twitter card`);
+    if (!html.includes('property="og:image" content="https://www.djai.academy/social/djai-academy.webp"')) failures.push(`${route}: missing social preview image`);
+    if (!html.includes('max-image-preview:large')) failures.push(`${route}: missing index and preview directives`);
   }
 
   const promoResponse = await fetch(`${origin}/web_promo/`);
@@ -494,12 +502,19 @@ async function verify() {
   for (const path of ["/tools/seo-screaming-toad/", "/tools/seo-screaming-toad/en/"]) {
     if (!sitemapBody.includes(`https://www.djai.academy${path}`)) failures.push(`/sitemap.xml: missing ${path}`);
   }
-  for (const path of ["/tools/brand/", "/tools/brand/en/", "/tools/brand/vi/", "/tools/brand/favicon-generator/", "/tools/brand/favicon-generator/en/", "/tools/brand/favicon-generator/vi/"]) {
-    if (!sitemapBody.includes(`https://www.djai.academy${path}`)) failures.push(`/sitemap.xml: missing ${path}`);
-  }
   for (const path of ["/siamese_cat/dev/course/", "/siamese_cat/dev/course/th/"]) {
     if (!sitemapBody.includes(`https://www.djai.academy${path}`)) {
       failures.push(`/sitemap.xml: missing money-making product course landing page ${path}`);
+    }
+  }
+  for (const path of [
+    "/siamese_cat/dev/courses/",
+    "/siamese_cat/dev/courses/build-first-app/",
+    "/siamese_cat/dev/courses/make-a-game/",
+    "/siamese_cat/dev/courses/coding-with-ai/"
+  ]) {
+    if (!sitemapBody.includes(`https://www.djai.academy${path}`)) {
+      failures.push(`/sitemap.xml: missing Siamese Cat Dev English course page ${path}`);
     }
   }
   for (const path of [
@@ -511,6 +526,122 @@ async function verify() {
   }
   if (sitemapBody.includes("/MONEY_MAKING_PRODUCT/")) {
     failures.push("/sitemap.xml: redirect-only campaign URL must not be submitted");
+  }
+
+  const sitemapUrls = [...sitemapBody.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1].trim());
+  const sitemapUrlSet = new Set(sitemapUrls);
+  if (sitemapUrls.length < 259) {
+    failures.push(`/sitemap.xml: expected at least the 259-page video-tools baseline, received ${sitemapUrls.length}`);
+  }
+  if (sitemapUrlSet.size !== sitemapUrls.length) {
+    failures.push(`/sitemap.xml: contains ${sitemapUrls.length - sitemapUrlSet.size} duplicate URL entries`);
+  }
+
+  const sitemapHtml = new Map();
+  const sitemapAlternates = new Map();
+  for (const productionUrl of sitemapUrls) {
+    let parsedUrl;
+    try {
+      parsedUrl = new URL(productionUrl);
+    } catch {
+      failures.push(`/sitemap.xml: invalid URL ${productionUrl}`);
+      continue;
+    }
+    if (parsedUrl.origin !== "https://www.djai.academy") {
+      failures.push(`/sitemap.xml: out-of-scope origin ${productionUrl}`);
+      continue;
+    }
+
+    const route = `${parsedUrl.pathname}${parsedUrl.search}`;
+    const response = await fetch(`${origin}${route}`, { redirect: "manual" });
+    if (response.status !== 200) {
+      failures.push(`${route}: sitemap URL expected 200, received ${response.status}`);
+      continue;
+    }
+    const html = await response.text();
+    sitemapHtml.set(productionUrl, html);
+
+    const titles = [...html.matchAll(/<title\b[^>]*>([\s\S]*?)<\/title>/gi)]
+      .map((match) => match[1].replace(/<[^>]+>/g, "").trim())
+      .filter(Boolean);
+    if (titles.length !== 1) failures.push(`${route}: expected one non-empty title, received ${titles.length}`);
+
+    const metaTags = [...html.matchAll(/<meta\b[^>]*>/gi)].map((match) => match[0]);
+    const descriptions = metaTags.filter((tag) =>
+      getHtmlAttribute(tag, "name").toLowerCase() === "description"
+      && getHtmlAttribute(tag, "content").trim()
+    );
+    if (descriptions.length !== 1) {
+      failures.push(`${route}: expected one non-empty meta description, received ${descriptions.length}`);
+    }
+    if (metaTags.some((tag) =>
+      getHtmlAttribute(tag, "name").toLowerCase() === "robots"
+      && /(?:^|[,\s])noindex(?:[,\s]|$)/i.test(getHtmlAttribute(tag, "content"))
+    )) {
+      failures.push(`${route}: sitemap URL must not be noindex`);
+    }
+
+    const headings = [...html.matchAll(/<h1\b[^>]*>([\s\S]*?)<\/h1>/gi)]
+      .map((match) => match[1].replace(/<[^>]+>/g, "").trim())
+      .filter(Boolean);
+    if (headings.length !== 1) failures.push(`${route}: expected one non-empty H1, received ${headings.length}`);
+
+    const htmlTag = html.match(/<html\b[^>]*>/i)?.[0] || "";
+    const documentLanguage = getHtmlAttribute(htmlTag, "lang").toLowerCase().split("-")[0];
+    if (!["th", "en", "vi"].includes(documentLanguage)) {
+      failures.push(`${route}: missing a valid Thai, English, or Vietnamese html lang`);
+    }
+
+    const linkTags = [...html.matchAll(/<link\b[^>]*>/gi)].map((match) => match[0]);
+    const canonicals = linkTags.filter((tag) =>
+      getHtmlAttribute(tag, "rel").toLowerCase().split(/\s+/).includes("canonical")
+    );
+    if (canonicals.length !== 1 || getHtmlAttribute(canonicals[0] || "", "href") !== productionUrl) {
+      failures.push(`${route}: canonical must be the exact sitemap URL ${productionUrl}`);
+    }
+
+    const alternates = new Map();
+    for (const tag of linkTags.filter((candidate) =>
+      getHtmlAttribute(candidate, "rel").toLowerCase().split(/\s+/).includes("alternate")
+      && getHtmlAttribute(candidate, "hreflang")
+    )) {
+      const language = getHtmlAttribute(tag, "hreflang").toLowerCase();
+      const href = getHtmlAttribute(tag, "href");
+      if (alternates.has(language)) failures.push(`${route}: duplicate ${language} hreflang`);
+      alternates.set(language, href);
+    }
+    sitemapAlternates.set(productionUrl, { alternates, documentLanguage });
+
+    for (const script of html.matchAll(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)) {
+      try {
+        JSON.parse(script[1]);
+      } catch {
+        failures.push(`${route}: invalid JSON-LD`);
+      }
+    }
+  }
+
+  for (const [productionUrl, page] of sitemapAlternates) {
+    const { alternates, documentLanguage } = page;
+    if (alternates.size === 0) continue;
+    if (alternates.get(documentLanguage) !== productionUrl) {
+      failures.push(`${new URL(productionUrl).pathname}: missing self-referencing ${documentLanguage} hreflang`);
+    }
+    const languageTargets = [...alternates.entries()].filter(([language]) => language !== "x-default");
+    if (languageTargets.length > 1 && !alternates.has("x-default")) {
+      failures.push(`${new URL(productionUrl).pathname}: multilingual cluster is missing x-default hreflang`);
+    }
+    for (const [language, target] of alternates) {
+      if (!sitemapUrlSet.has(target)) {
+        failures.push(`${new URL(productionUrl).pathname}: ${language} hreflang is not a sitemap URL: ${target}`);
+      }
+    }
+    for (const [language, target] of languageTargets) {
+      const targetAlternates = sitemapAlternates.get(target)?.alternates;
+      if (!targetAlternates || targetAlternates.get(documentLanguage) !== productionUrl) {
+        failures.push(`${new URL(productionUrl).pathname}: ${language} hreflang target is not reciprocal: ${target}`);
+      }
+    }
   }
 
   const voiceAdminLoginResponse = await fetch(`${origin}/voice_admin/login`);
@@ -551,6 +682,23 @@ async function verify() {
     if (response.status !== 308 || normalizedLocation !== expectedLocation) {
       failures.push(
         `${route}: expected 308 to ${expectedLocation}, received ${response.status} to ${normalizedLocation || "(none)"}`
+      );
+    }
+  }
+
+  for (const canonicalRoute of slashCanonicalRoutes) {
+    const slashlessRoute = canonicalRoute.slice(0, -1);
+    const response = await fetch(`${origin}${slashlessRoute}?audit=slash`, { redirect: "manual" });
+    const location = response.headers.get("location");
+    const normalizedLocation = location ? new URL(location, origin) : null;
+    if (
+      response.status !== 308
+      || normalizedLocation?.pathname !== canonicalRoute
+      || normalizedLocation?.search !== "?audit=slash"
+    ) {
+      failures.push(
+        `${slashlessRoute}: expected one-hop 308 to ${canonicalRoute} with its query string, `
+        + `received ${response.status} to ${location || "(none)"}`
       );
     }
   }
@@ -723,7 +871,8 @@ async function verify() {
 
   console.log(
     `Hostinger route audit passed: ${publicRoutes.length} pages, ${redirects.length + accountOnboardingRedirects.length} redirects, ` +
-      `${discoveredRoutes.size} internal links/assets, admin API auth, and canonical host.`
+      `${sitemapUrls.length} sitemap URLs, ${slashCanonicalRoutes.length} slash redirects, `
+      + `${discoveredRoutes.size} internal links/assets, admin API auth, and canonical host.`
   );
 }
 

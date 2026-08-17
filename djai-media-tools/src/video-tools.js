@@ -6,9 +6,8 @@ const configEl = document.getElementById('tool-config');
 if (!configEl) return;
 const CFG = JSON.parse(configEl.textContent);
 const TH = document.documentElement.lang === 'th';
-const VI = document.documentElement.lang === 'vi';
 
-let L = TH ? {
+const L = TH ? {
   choose:'เลือกไฟล์', drop:'ลากไฟล์วิดีโอมาวางตรงนี้', dropMulti:'ลากวิดีโอหลายไฟล์มาวางตรงนี้',
   browse:'หรือเลือกจากคอมพิวเตอร์ โทรศัพท์ หรือแท็บเล็ต', limit:'สูงสุด 350 MB ต่อไฟล์',
   formats:'MP4 · MOV · WebM · MKV · AVI · MPEG · M4V · 3GP · TS · WMV และ format ทั่วไป',
@@ -61,37 +60,13 @@ let L = TH ? {
   localNote:'The file itself is processed in WebAssembly on your device.'
 };
 
-if (VI) Object.assign(L, {
-  choose:'Chọn tệp', drop:'Thả video vào đây', dropMulti:'Thả nhiều video vào đây',
-  browse:'Hoặc chọn từ máy tính, điện thoại hay máy tính bảng', limit:'Tối đa 350 MB mỗi tệp',
-  formats:'MP4 · MOV · WebM · MKV · AVI · MPEG · M4V · 3GP · TS · WMV và các định dạng phổ biến',
-  change:'Đổi tệp', addMore:'Thêm video', ready:'Đã sẵn sàng. Chọn cài đặt rồi bắt đầu xử lý.',
-  browserPreview:'Xem trước trong trình duyệt', noPreview:'Trình duyệt không thể phát trực tiếp định dạng này', buildPreview:'Đang tạo bản xem trước tạm thời bằng FFmpeg…',
-  engineLoad:'Đang tải bộ xử lý video lần đầu (~31 MB)…', engineReady:'Bộ xử lý video đã sẵn sàng',
-  preparing:'Đang chuẩn bị tệp…', processing:'Đang xử lý video…', done:'Hoàn tất. Tệp đã sẵn sàng để tải xuống.',
-  failed:'Xử lý không thành công. Hãy thử tệp nhỏ hơn hoặc cài đặt đầu ra khác.', tooLarge:'Tệp vượt quá giới hạn 350 MB.',
-  invalid:'Hãy chọn một tệp được hỗ trợ.', download:'Tải xuống', result:'Kết quả',
-  output:'Định dạng đầu ra', quality:'Chất lượng video', resolution:'Độ phân giải', original:'Giữ nguyên',
-  smaller:'Tệp nhỏ hơn', balanced:'Cân bằng', high:'Chất lượng cao hơn', target:'Dung lượng mục tiêu (MB)',
-  targetHelp:'Đây là mục tiêu gần đúng; quá trình mã hóa trong trình duyệt có thể chênh lệch đôi chút.',
-  start:'Bắt đầu', end:'Kết thúc', current:'Thời gian hiện tại', setStart:'Đặt điểm bắt đầu tại đây', setEnd:'Đặt điểm kết thúc tại đây',
-  previewSelection:'Xem trước đoạn đã chọn', aspect:'Tỷ lệ khung hình', width:'Chiều rộng', interval:'Trích một khung hình sau mỗi',
-  frameFormat:'Định dạng ảnh', speed:'Tốc độ phát', angle:'Góc xoay', audioFile:'Tệp âm thanh',
-  audioMode:'Chế độ âm thanh', replace:'Thay âm thanh gốc', mix:'Trộn với âm thanh gốc', mergeOrder:'Thứ tự video',
-  up:'Lên', down:'Xuống', remove:'Xóa', process:'Xử lý video', addAudio:'Chọn tệp âm thanh',
-  fps:'Khung hình mỗi giây', gifWidth:'Chiều rộng GIF', noUpload:'Video của bạn không được tải lên DJAI',
-  nativeFail:'Tệp vẫn có thể được xử lý, nhưng trình duyệt có thể không xem trước được định dạng gốc.',
-  needAudio:'Hãy chọn thêm một tệp âm thanh.', needMulti:'Hãy chọn ít nhất hai video.', needRange:'Điểm kết thúc phải nằm sau điểm bắt đầu.',
-  framesReady:'Các khung hình đã sẵn sàng', zip:'Tải tất cả dưới dạng ZIP', maxFrames:'Giới hạn 100 khung hình mỗi lần để bảo vệ bộ nhớ trình duyệt.',
-  unsupportedResult:'Trình duyệt có thể không xem trước định dạng đầu ra này, nhưng bạn vẫn có thể tải xuống.',
-  alreadyUnder:mb=>`Tệp gốc đã nhỏ hơn ${mb} MB, nên công cụ sẽ nén nhỏ hơn thay vì tăng dung lượng.`,
-  localNote:'Tệp được xử lý bằng WebAssembly ngay trên thiết bị của bạn.'
-});
-
 const CORE_BASE='/tools/media/vendor/core';
 let coreJSBlob='', coreWasmBlob='';
 
 function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function track(name,details={}){
+  if(typeof window.gtag==='function')window.gtag('event',name,{tool_name:CFG.slug,tool_mode:CFG.mode,...details})
+}
 function fmtTime(sec){
   sec = Number.isFinite(sec) ? Math.max(0, sec) : 0;
   const h=Math.floor(sec/3600),m=Math.floor((sec%3600)/60),s=Math.floor(sec%60),ms=Math.floor((sec-Math.floor(sec))*1000);
@@ -265,7 +240,7 @@ function buildUI(){
   const root=document.getElementById('video-tool-app');
   const multi=CFG.mode==='merger';
   root.innerHTML=`
-    <div id="dropzone" class="drop" role="button">
+    <div id="dropzone" class="drop">
       <strong>${multi?L.dropMulti:L.drop}</strong>
       <p>${L.browse} · ${L.limit}</p>
       <button id="chooseBtn" class="btn primary" type="button">${L.choose}</button>
@@ -307,8 +282,8 @@ function baseVideoOptions(includeOutput=true){
 function timelineHTML(){
   return `<div class="timeline">
     <div class="split"><div class="field"><label for="startTime">${L.start}</label><input id="startTime" type="text" value="00:00.000"></div><div class="field"><label for="endTime">${L.end}</label><input id="endTime" type="text" value="00:00.000"></div></div>
-    <input id="startRange" class="range" type="range" min="0" max="1" step=".001" value="0">
-    <input id="endRange" class="range" type="range" min="0" max="1" step=".001" value="1">
+    <input id="startRange" class="range" type="range" min="0" max="1" step=".001" value="0" aria-label="${esc(L.start)}">
+    <input id="endRange" class="range" type="range" min="0" max="1" step=".001" value="1" aria-label="${esc(L.end)}">
     <div class="timeline-line"><span id="timelineSelected" class="timeline-selected"></span><span id="timelinePlay" class="timeline-play"></span></div>
     <div class="time-row"><span>${L.current}: <strong id="currentTime">00:00.000</strong></span><span id="totalTime">00:00.000</span></div>
     <div class="set-row"><button id="setStart" class="btn mini" type="button">${L.setStart}</button><button id="previewSelection" class="btn mini soft" type="button">${L.previewSelection}</button><button id="setEnd" class="btn mini" type="button">${L.setEnd}</button></div>
@@ -425,6 +400,7 @@ async function process(){
   if(CFG.mode==='add-audio'&&!audioFile){status(L.needAudio,'error');return}
   if((CFG.mode==='cutter'||CFG.mode==='video-to-gif')&&selectionEnd<=selectionStart){status(L.needRange,'error');return}
   const btn=document.getElementById('processBtn');btn.disabled=true;resultNote='';
+  track('tool_start');
   try{
     await ensureEngine();status(L.preparing);progress(7,true);
     if(CFG.mode==='convert')await doConvert();
@@ -440,8 +416,9 @@ async function process(){
     else if(CFG.mode==='speed')await doSpeed();
     else if(CFG.mode==='frames')await doFrames();
     else if(CFG.mode==='rotate')await doRotate();
+    track('tool_success');
     status(resultNote||L.done,resultNote?'warn':'ok');progress(100,true);setTimeout(()=>progress(0,false),700)
-  }catch(e){console.error(e);status(L.failed,'error');progress(0,false)}
+  }catch(e){console.error(e);track('tool_error');status(L.failed,'error');progress(0,false)}
   finally{btn.disabled=false}
 }
 async function readOutput(out,kind='video'){
@@ -539,14 +516,19 @@ async function doSpeed(){
 // the reader asked for JPG.
 async function pngToJpeg(blob){
   const bitmap=await createImageBitmap(blob);
-  const canvas=new OffscreenCanvas(bitmap.width,bitmap.height);
+  const canvas=document.createElement('canvas');
+  canvas.width=bitmap.width;canvas.height=bitmap.height;
   canvas.getContext('2d').drawImage(bitmap,0,0);
   bitmap.close();
-  return canvas.convertToBlob({type:'image/jpeg',quality:.85})
+  return new Promise((resolve,reject)=>canvas.toBlob((result)=>result?resolve(result):reject(new Error('JPG conversion failed')),'image/jpeg',.85))
 }
 async function doFrames(){
   const input=await writePrimary(),ext=document.getElementById('frameFormat').value,ival=Number(document.getElementById('frameInterval').value),pattern='frame-%03d.png';
-  await execChecked(['-hide_banner','-loglevel','error','-i',input,'-vf',`fps=1/${ival}`,'-frames:v','100',pattern]);const nodes=await engine.listDir('/');const names=nodes.map(n=>n.name).filter(n=>/^frame-\d+\.png$/.test(n)).sort();
+  // Select the first frame explicitly, then enforce the requested interval.
+  // FFmpeg's fps filter can legitimately emit zero frames when a clip is
+  // shorter than the interval (for example, a 2-second clip at 1/5 fps).
+  const vf=`select=eq(n\\,0)+gte(t-prev_selected_t\\,${ival})`;
+  await execChecked(['-hide_banner','-loglevel','error','-i',input,'-vf',vf,'-vsync','vfr','-frames:v','100',pattern]);const nodes=await engine.listDir('/');const names=nodes.map(n=>n.name).filter(n=>/^frame-\d+\.png$/.test(n)).sort();
   const res=document.getElementById('result');res.classList.add('on');document.getElementById('resultMeta').textContent=`${L.framesReady} · ${names.length} ${TH?'ภาพ':'images'}`;const dl=document.getElementById('downloads');dl.innerHTML='';
   const blobs=[];
   for(const n of names){

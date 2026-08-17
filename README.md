@@ -14,8 +14,16 @@ npm run build
 npm start
 ```
 
-The production entry file is `server.js`. After deployment, `GET /healthz` must return JSON with
-`"app":"djai-academy-website"` and `"buildsReady":true`.
+The production entry file is `server.js`. It supervises the homepage and voice-promo Next.js
+processes and restarts either process with capped exponential backoff if it exits. After deployment,
+`GET /healthz` must return JSON with `"app":"djai-academy-website"`, `"buildsReady":true`, and
+`"servicesReady":true`. A missing build or unavailable child process returns HTTP 503.
+
+Run the supervisor regression tests with:
+
+```bash
+npm run test:supervisor
+```
 
 See `HOSTINGER_DEPLOYMENT.md` for the exact hPanel settings and troubleshooting checklist.
 

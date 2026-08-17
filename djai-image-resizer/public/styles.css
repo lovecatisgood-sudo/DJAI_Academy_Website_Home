@@ -125,7 +125,7 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
 .tool-title div { display: flex; flex-direction: column; }
 .tool-title strong { font: 700 16px system-ui, sans-serif; color: var(--navy); }
 .tool-title small { margin-top: 2px; color: #8a96aa; font-size: 11px; }
-.local-badge { display: flex; align-items: center; gap: 7px; padding: 8px 11px; border-radius: 999px; background: #ebf9f3; color: #17815a; font-size: 11px; font-weight: 700; }
+.local-badge { display: flex; align-items: center; gap: 7px; padding: 8px 11px; border-radius: 999px; background: #ebf9f3; color: #116b49; font-size: 11px; font-weight: 700; }
 .local-badge span { width: 7px; height: 7px; border-radius: 50%; background: #1abc79; box-shadow: 0 0 0 4px rgba(26,188,121,.12); }
 .upload-view { padding: 24px; }
 .drop-zone { width: 100%; min-height: 420px; border: 2px dashed #cddbef; border-radius: 21px; background: linear-gradient(145deg, #f8fbff, #fbfaff); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px; color: var(--muted); cursor: pointer; transition: .22s ease; }
@@ -364,7 +364,8 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round
 .tool-discovery-links a, .tool-category-links a { display: grid; align-content: start; gap: 7px; min-height: 118px; padding: 18px; border: 1px solid #dfe8f3; border-radius: 10px; background: #fff; box-shadow: 0 10px 28px rgba(26,54,99,.055); }
 .tool-discovery-links a:hover, .tool-discovery-links a:focus-visible, .tool-category-links a:hover, .tool-category-links a:focus-visible { border-color: rgba(11,115,255,.48); }
 .tool-discovery-links strong, .tool-category-links strong { color: var(--navy); font: 700 14px "Space Grotesk", sans-serif; }
-.tool-discovery-links span, .tool-category-links span { color: var(--muted); font-size: 11px; line-height: 1.55; }
+.tool-discovery-links span { color: var(--muted); font-size: 11px; line-height: 1.55; }
+.tool-category-links span { color: #59677f; font-size: 11px; line-height: 1.55; }
 .tool-category-links a { min-height: 105px; background: #f5f9ff; }
 .site-footer { color: rgba(255,255,255,.7); background: #051432; }
 .footer-main { padding: 68px 0 46px; display: grid; grid-template-columns: 1.7fr repeat(3, 1fr); gap: 50px; }

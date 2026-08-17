@@ -55,6 +55,10 @@ curl -X POST "https://www.djai.academy/api/admin/blog" \
           "seoDescription": "A practical guide to using DJAI Token Counter for prompt planning, context windows, and AI coding workflows.",
           "readingTime": "5 min read",
           "keywords": ["token counter", "vibe coding", "AI coding tools"],
+          "ctaEyebrow": "Next lesson",
+          "ctaTitle": "Use context limits to plan a safer AI coding session.",
+          "ctaLabel": "Learn how context limits work",
+          "ctaHref": "/blog/en/context-limits-for-ai-coding/",
           "content": "## Why token counting matters\n\nWrite the article body in Markdown-style text."
         },
         "th": {
@@ -66,6 +70,10 @@ curl -X POST "https://www.djai.academy/api/admin/blog" \
           "seoDescription": "คู่มือใช้ DJAI Token Counter เพื่อวางแผน prompt, context window และงานเขียนโค้ดด้วย AI",
           "readingTime": "อ่าน 5 นาที",
           "keywords": ["token counter", "vibe coding", "AI coding"],
+          "ctaEyebrow": "บทถัดไป",
+          "ctaTitle": "ใช้ Context Limit วางแผนคุยกับ AI ให้ปลอดภัยขึ้น",
+          "ctaLabel": "ทำความเข้าใจ Context Limit",
+          "ctaHref": "/blog/context-limit-ai-coding/",
           "content": "## ทำไมการนับ token จึงสำคัญ\n\nเขียนเนื้อหาด้วยรูปแบบ Markdown-style"
         }
       }
@@ -84,6 +92,9 @@ For each published language:
 
 Draft languages can be saved with partial content. English and Thai publishing status is controlled
 separately.
+
+The four `cta*` fields are optional. When all four are present, the article uses that localized,
+intent-matched next step. Existing posts without them retain their mapped or generic fallback CTA.
 
 ## Read Existing Posts
 

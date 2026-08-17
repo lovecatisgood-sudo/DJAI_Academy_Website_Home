@@ -1,4 +1,4 @@
-:root { --ink:#10233d; --muted:#596778; --line:#d8dde3; --paper:#f6f7f8; --white:#fff; --coral:#d5674d; --teal:#087d7a; --yellow:#f4c95d; }
+:root { --ink:#10233d; --muted:#596778; --line:#d8dde3; --paper:#f6f7f8; --white:#fff; --coral:#a9432f; --teal:#087d7a; --yellow:#f4c95d; }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body { margin:0; background:var(--paper); color:var(--ink); font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }

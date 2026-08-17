@@ -3,9 +3,9 @@ import ShareButtons from "../../components/ShareButtons";
 import ToolDirectorySection from "../ToolDirectorySection";
 
 export const metadata = {
-  title: "Free DJAI Tools | PDF, DOCX, AI, CSV, QR and Image Tools",
+  title: "Free Online Tools | Video, Audio, PDF, Images & AI | DJAI",
   description:
-    "Use free DJAI tools for PDF, DOCX, OCR, AI context, CSV, QR codes, and images. Private browser processing with no account.",
+    "Use free DJAI tools to convert, cut, compress, and manage video, audio, PDFs, images, documents, QR codes, and data. Many file workflows run in your browser.",
   alternates: {
     canonical: "/tools/en/",
     languages: {
@@ -15,25 +15,37 @@ export const metadata = {
       "x-default": "/tools/"
     }
   },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1
+    }
+  },
   openGraph: {
-    title: "Free DJAI Tools",
+    title: "Free Online Tools for Video, Audio, PDFs, Images, and AI",
     description:
-      "Free browser-based tools from DJAI Academy, built for creators, founders, students, and businesses.",
+      "Convert and manage video, audio, PDFs, images, documents, QR codes, and data with browser tools from DJAI Academy.",
     url: "/tools/en/",
     siteName: "DJAI Academy",
-    images: ["/djai-logo.webp"],
+    locale: "en_US",
+    alternateLocale: ["th_TH"],
+    images: [{ url: "/social/djai-academy.webp", width: 1200, height: 630, alt: "Free online tools from DJAI Academy" }],
     type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Online Tools from DJAI",
+    description: "Browser tools for video, audio, PDFs, images, documents, QR codes, and AI workflows.",
+    images: ["/social/djai-academy.webp"]
   }
 };
 
 const tools = [
-  {
-    label: "Brand Tools",
-    title: "Favicon and Website Icon Generator",
-    text: "Generate favicon.ico, PNG icons, an Apple touch icon, a maskable icon, a web manifest, and installation code from one image in your browser.",
-    href: "https://www.djai.academy/tools/brand/en/",
-    tags: ["Favicon", "ICO", "Private"]
-  },
   {
     label: "Video to Text",
     title: "Video to Text Converter — Free, No Sign-Up",
@@ -100,11 +112,11 @@ const tools = [
 ];
 
 const comingSoon = [
+  "Favicon generator",
   "High-fidelity Office conversion"
 ];
 
 const popularWorkflows = [
-  ["Generate a favicon", "Download ICO, PNG, and manifest files from one image", "https://www.djai.academy/tools/brand/favicon-generator/en/"],
   ["Remove image background", "Create a transparent PNG in your browser", "https://www.djai.academy/tools/resizeimg/remove-background-image/en/"],
   ["JPG to PNG", "Convert an image without uploading", "https://www.djai.academy/tools/resizeimg/jpg-to-png/en/"],
   ["HEIC to JPG", "Convert an iPhone photo in your browser", "https://www.djai.academy/tools/resizeimg/heic-to-jpg/en/"],
@@ -113,6 +125,10 @@ const popularWorkflows = [
   ["PDF to JPG", "Export every page as an image or ZIP", "https://www.djai.academy/tools/PDFTools/pdf-to-jpg/en/"],
   ["MP4 to MP3", "Extract video audio in your browser", "https://www.djai.academy/tools/media/mp4-to-mp3/en/"],
   ["Compress video", "Reduce MP4, MOV, and WebM files", "https://www.djai.academy/tools/media/compress-video/en/"],
+  ["Convert video", "Switch between MP4, MOV, MKV, WebM, and AVI", "https://www.djai.academy/tools/media/video-converter/en/"],
+  ["Cut video", "Choose exact start and end times, then export MP4", "https://www.djai.academy/tools/media/video-cutter/en/"],
+  ["Extract video frames", "Create JPG or PNG images and download a ZIP", "https://www.djai.academy/tools/media/extract-frames-from-video/en/"],
+  ["Merge videos", "Order several clips and combine them into MP4", "https://www.djai.academy/tools/media/video-merger/en/"],
   ["Video to text", "Transcribe in your browser with no sign-up", "https://www.djai.academy/tools/video-to-text/en/"],
   ["DOCX to PDF", "Convert Word privately in your browser", "https://www.djai.academy/tools/document/docx-to-pdf/en/"],
   ["PDF to Text", "Extract text from selected pages", "https://www.djai.academy/tools/document/pdf-to-text/en/"],
@@ -156,10 +172,11 @@ const ecosystem = [
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  name: "Free DJAI Tools",
+  name: "Free Online Tools from DJAI",
   url: "https://www.djai.academy/tools/en/",
   description:
-    "A collection of free browser tools from DJAI Academy for PDFs, documents, AI context, spreadsheets, QR codes, and images.",
+    "A collection of free browser tools from DJAI Academy for video, audio, PDFs, images, documents, AI context, spreadsheets, and QR codes.",
+  inLanguage: "en",
   publisher: {
     "@type": "Organization",
     name: "DJAI Academy",
@@ -204,10 +221,10 @@ export default function ToolsPage() {
 
       <section className="tools-hero">
         <p className="eyebrow">Free public tools by DJAI Academy</p>
-        <h1>Useful tools for builders, creators, and businesses.</h1>
+        <h1>Free online tools for video, PDFs, images, AI, and digital work.</h1>
         <p>
-          DJAI publishes free tools to help people build faster, work smarter, and solve everyday
-          digital problems without accounts, paywalls, or unnecessary friction.
+          Convert, cut, compress, or manage video, audio, PDFs, images, documents, QR codes, and
+          data immediately. Core tools run in your browser with no account required.
         </p>
         <ShareButtons url="https://www.djai.academy/tools/en/" title="Free DJAI Tools" locale="en" compact />
       </section>
