@@ -1,5 +1,12 @@
 const categoryData = [
   {
+    id: "brand", base: "/tools/brand", title: { th: "เครื่องมือแบรนด์และ Favicon", en: "Brand and favicon tools" },
+    description: { th: "สร้าง favicon, app icon, manifest และโค้ดติดตั้งจากรูปเดียวใน browser", en: "Create favicons, app icons, a manifest, and installation code from one image in your browser." },
+    tools: [
+      ["favicon-generator", "สร้าง Favicon", "สร้าง ICO, PNG, Apple touch icon, maskable icon และ web manifest", "Favicon Generator", "Generate ICO, PNG, Apple touch, maskable icon, and web manifest files."]
+    ]
+  },
+  {
     id: "seo",
     base: "/tools/seo-screaming-toad",
     title: { th: "SEO Crawler และ MCP", en: "SEO crawler and MCP" },

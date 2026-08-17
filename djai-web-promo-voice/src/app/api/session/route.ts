@@ -153,7 +153,7 @@ export async function POST(request: Request) {
     }
 
     const pageUrl = sanitizePageUrl(body.pageUrl);
-    const preferredLanguage = body.preferredLanguage === "th" || body.preferredLanguage === "en"
+    const preferredLanguage = body.preferredLanguage === "th" || body.preferredLanguage === "en" || body.preferredLanguage === "vi"
       ? body.preferredLanguage
       : "auto";
     const prompt = buildVoiceAgentSystemPrompt({

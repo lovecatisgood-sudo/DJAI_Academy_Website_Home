@@ -73,6 +73,42 @@ const footerCopy = {
     copyright: "(c) 2026 DJAI Academy. All rights reserved.",
     privacy: "นโยบายความเป็นส่วนตัวและคุกกี้",
     cookieSettings: "ตั้งค่าคุกกี้"
+  },
+  vi: {
+    columns: [
+      {
+        title: "Học",
+        links: [
+          ["Khóa học thực hành", "course"],
+          ["Lộ trình cho người mới", "course"],
+          ["Bài viết", "blog"]
+        ]
+      },
+      {
+        title: "Xây dựng",
+        links: [
+          ["Phát triển sản phẩm", "development"],
+          ["Dịch vụ", "service"],
+          ["Dự án đã thực hiện", "portfolio"],
+          ["Ưu đãi hiện tại", "promo"],
+          ["Ứng dụng Cam PDF Android", "/Cam_PDF_Scan_Signer_QR-Gen/"]
+        ]
+      },
+      {
+        title: "Cộng đồng",
+        links: [
+          ["Tham gia cộng đồng", "community"],
+          ["Công cụ miễn phí", "tools"],
+          ["Hệ sinh thái Siamese Cat", "siameseCat"],
+          ["Dự án mã nguồn mở", null]
+        ]
+      }
+    ],
+    contact: "Liên hệ",
+    email: "Email: contact@djai.academy",
+    copyright: "© 2026 DJAI Academy. Bảo lưu mọi quyền.",
+    privacy: "Quyền riêng tư và cookie",
+    cookieSettings: "Cài đặt cookie"
   }
 };
 
@@ -114,8 +150,8 @@ export default function SiteFooter({ locale = "en" }) {
 
       <div className="copyright">
         <span>{copy.copyright}</span>
-        <nav className="footer-legal" aria-label={locale === "th" ? "ลิงก์ทางกฎหมาย" : "Legal links"}>
-          <a href={locale === "th" ? "/privacy/" : "/privacy/en/"}>{copy.privacy}</a>
+        <nav className="footer-legal" aria-label={locale === "th" ? "ลิงก์ทางกฎหมาย" : locale === "vi" ? "Liên kết pháp lý" : "Legal links"}>
+          <a href={locale === "th" ? "/privacy/" : `/privacy/${locale}/`}>{copy.privacy}</a>
           <CookieSettingsButton>{copy.cookieSettings}</CookieSettingsButton>
         </nav>
       </div>

@@ -1,6 +1,6 @@
 export type ContactType = "phone" | "line" | "email" | "other";
 export type LeadStatus = "pending_follow_up" | "appointment_set" | "follow_up_later" | "deal_closed" | "no_deal";
-export type ConversationLanguage = "th" | "en" | "mixed";
+export type ConversationLanguage = "th" | "en" | "vi" | "mixed";
 export type VoiceProvider = "openai" | "gemini";
 export type InterestLevel = "low" | "medium" | "high" | "unknown";
 export type AnalysisStatus = "pending" | "completed" | "failed" | "skipped";

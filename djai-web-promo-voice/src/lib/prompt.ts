@@ -3,7 +3,7 @@ import type { Settings, VoiceProvider } from "./types";
 export type PromptInput = {
   settings: Settings;
   pageUrl: string;
-  preferredLanguage?: "th" | "en" | "auto";
+  preferredLanguage?: "th" | "en" | "vi" | "auto";
   provider?: VoiceProvider;
   now: Date;
 };
@@ -553,7 +553,7 @@ export function buildVoiceAgentSystemPrompt({
     knowledge,
     "",
     "# Dynamic Session Context",
-    `Visitor selected page language: ${preferredLanguage}. If this is th, start the first greeting in Thai unless the visitor speaks another language first. If this is en, start in English unless the visitor speaks another language first.`,
+    `Visitor selected page language: ${preferredLanguage}. Start in Thai for th, English for en, and Vietnamese for vi unless the visitor speaks another language first.`,
     `Untrusted page URL metadata, origin and path only: ${pageUrl || "unknown"}`,
     `Current date/time in Asia/Bangkok: ${formatBangkokTime(now)}`,
   ].join("\n");

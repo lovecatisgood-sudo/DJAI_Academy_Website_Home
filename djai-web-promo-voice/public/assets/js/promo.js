@@ -3,6 +3,8 @@ const basePromoData = {
   voucher: {
     storageKey: "djai-web-voucher-v1",
     durationMs: 4 * 60 * 60 * 1000,
+    welcomeEyebrow: "DJAI Academy welcome offer",
+    voucherEyebrow: "฿10,000 DJAI voucher",
     title: "Spin to reveal your guaranteed welcome voucher",
     intro: "Every new visitor receives a 10,000 THB web-development voucher in this welcome spin.",
     spin: "Spin the wheel",
@@ -448,6 +450,136 @@ const thaiPromoOverrides = {
   },
 };
 
+const vietnamesePromoOverrides = {
+  voucher: {
+    welcomeEyebrow: "Ưu đãi chào mừng từ DJAI Academy",
+    voucherEyebrow: "Voucher DJAI trị giá 10.000 THB",
+    title: "Quay để mở voucher chào mừng của bạn",
+    intro: "Mỗi khách truy cập mới nhận voucher phát triển website trị giá 10.000 THB trong lượt quay chào mừng này.",
+    spin: "Quay ngay",
+    skip: "Xem các gói trước",
+    disclosure: "Lượt quay chào mừng luôn trao voucher 10.000 THB. Các nhãn khác trên vòng quay chỉ minh họa phần thưởng của chiến dịch và không được trao trong lượt này.",
+    winnerEyebrow: "Chúc mừng!",
+    winnerTitle: "Bạn đã mở voucher 10.000 THB",
+    winnerCopy: "Hãy giữ quyền sử dụng trong 4 giờ để đội ngũ DJAI áp dụng voucher vào báo giá dự án.",
+    lock: "Giữ ưu đãi này",
+    later: "Để sau",
+    reopen: "Mở voucher ฿10.000",
+    formTitle: "Giữ voucher của bạn",
+    formCopy: "Nhập email để DJAI ghi nhận nhu cầu và liên hệ về dự án website.",
+    emailLabel: "Địa chỉ email",
+    consent: "Tôi đồng ý để DJAI Academy liên hệ về ưu đãi website này. Tôi có thể yêu cầu ngừng liên hệ bất cứ lúc nào.",
+    submit: "Giữ voucher",
+    submitting: "Đang lưu…",
+    successTitle: "Voucher đã được giữ",
+    successCopy: "Cảm ơn bạn. Đội ngũ DJAI đã nhận được email để liên hệ lại.",
+    error: "Chưa thể lưu email. Vui lòng thử lại.",
+    expired: "Thời gian giữ voucher đã hết",
+    terms: "Toàn bộ giá trị 10.000 THB áp dụng cho gói Complete Website có giá gốc 20.000 THB. Với gói khác, mức giảm tối đa là 50% giá gốc. Mỗi khách hàng dùng một voucher; DJAI sẽ xác nhận phạm vi công việc cuối cùng.",
+    prizes: ["10.000\nTHB", "5.000\nTHB", "2.500\nTHB", "eBook\nmiễn phí", "Chúc may mắn\nlần sau", "100.000\nTHB"],
+  },
+  ui: {
+    skipToPackages: "Chuyển đến các gói dịch vụ",
+    languageLabel: "Ngôn ngữ",
+    countdownLabels: { days: "Ngày", hours: "Giờ", minutes: "Phút", seconds: "Giây" },
+    includesTitle: "Mỗi gói đã bao gồm các hạng mục này",
+    includesSubtitle: "Phạm vi rõ ràng để website có thể đi vào hoạt động.",
+    leadSummaryTitle: "Tóm tắt yêu cầu dự án",
+    leadPackageInterest: "Gói quan tâm",
+    leadBusinessType: "Loại hình kinh doanh",
+    leadContact: "Thông tin liên hệ",
+    leadPackageDefault: "Landing Page",
+    leadBusinessDefault: "Quán cà phê hoặc dịch vụ địa phương",
+    leadContactDefault: "Đang chờ thông tin từ khách hàng",
+    leadSubmit: "Gửi yêu cầu",
+    leadEdit: "Chỉnh sửa",
+    voiceCardTitle: "Trợ lý tư vấn bằng giọng nói DJAI",
+    voiceReady: "Sẵn sàng trò chuyện",
+    voiceState: "Hỏi về website, AI, phần mềm, tự động hóa hoặc kế hoạch học tập.",
+    voiceStart: "Bắt đầu cuộc gọi",
+    voiceMute: "Tắt mic",
+    voiceEnd: "Kết thúc",
+    voicePrivacy: "Micro chỉ kết nối với dịch vụ AI sau khi bạn nhấn bắt đầu. DJAI lưu nội dung trao đổi và thông tin liên hệ để hỗ trợ tiếp theo.",
+    aiDesktopHeading: "Trao đổi với trợ lý tư vấn của DJAI",
+    aiMobileHeading: "Trao đổi với DJAI trước khi chọn gói",
+    aiDesktopIntro: "Dùng thử trợ lý tư vấn bằng giọng nói mà DJAI có thể triển khai cho doanh nghiệp. Trợ lý giúp làm rõ nhu cầu, giải thích dịch vụ phù hợp và ghi nhận thông tin dự án.",
+    aiMobileIntro: "Bạn có thể nói tiếng Việt. Trợ lý giúp so sánh gói, hiểu dự án và ghi nhận thông tin để đội ngũ liên hệ lại.",
+    aiDesktopSupport: "Trợ lý chỉ sử dụng giá và thông tin dịch vụ trong tài liệu đã được DJAI phê duyệt. Phạm vi tùy chỉnh sẽ do đội ngũ xác nhận sau khi xem xét.",
+    progressLabel: "Tiến trình trang",
+    progressGoto: "Chuyển đến trang",
+    aiTypingLabel: "Trợ lý DJAI đang trả lời",
+    fallbackContact: "Được. Hãy gửi tên cùng số điện thoại, WhatsApp hoặc LINE để đội ngũ liên hệ lại.",
+    fallbackLanding: "Gói Landing Page hiện có giá 5.000 THB, từ giá gốc 10.000 THB. Gói này phù hợp cho chương trình khuyến mãi, menu, chiến dịch, portfolio hoặc bước ra mắt đơn giản. Bạn có muốn để lại thông tin liên hệ cho gói này không?",
+    fallbackFull: "Gói Complete Website hiện có giá 10.000 THB, từ giá gốc 20.000 THB. Gói gồm website doanh nghiệp 5 trang, giao diện responsive, thiết lập SEO, dùng thử AI chatbot và hosting cùng bảo trì năm đầu. Bạn có muốn nhận báo giá không?",
+    fallbackAdditional: "Trang bổ sung có giá 3.000 THB mỗi trang, từ giá gốc 5.000 THB. Lựa chọn này phù hợp khi bạn đã có website và cần mở rộng nội dung.",
+    fallbackCustom: "Được. Trước tiên, website dành cho loại hình kinh doanh nào và bạn cần những tính năng gì?",
+    fallbackCompare: "Landing Page phù hợp với một đề nghị trọng tâm. Trang bổ sung dùng để mở rộng website hiện có. Complete Website phù hợp khi bạn cần website doanh nghiệp 5 trang có cấu trúc đầy đủ.",
+    fallbackDefault: "DJAI có thể hỗ trợ thiết kế, giao diện responsive, nền tảng SEO, lựa chọn AI chatbot và hosting năm đầu. Bạn đang muốn xây loại website nào?",
+  },
+  urgency: {
+    label: "Thời gian giữ voucher",
+    offer: "Giữ quyền sử dụng trong 4 giờ",
+    dates: "Giảm đến 50% cho gói đủ điều kiện",
+  },
+  header: {
+    badge: "Gói phát triển website",
+    title: "Website của bạn, sẵn sàng ra mắt",
+    subtitle: "Thiết kế chuyên nghiệp, nền tảng SEO, AI chatbot và hosting &mdash; được đưa vào phạm vi từng gói.",
+  },
+  packages: [
+    {
+      title: "Landing Page",
+      description: "Một trang tập trung vào việc giới thiệu ý tưởng, chiến dịch hoặc đề nghị chính.",
+      originalBadge: "Giảm 50%",
+      popularTag: "Được chọn nhiều",
+      cta: "Bắt đầu dự án",
+      renewalNote: "3.000 THB/năm sau năm đầu",
+      features: ["1 trang &mdash; thiết kế riêng", "Thiết lập SEO", "AI Chatbot (Auto CTA) &mdash; <span class=\"highlight-offer\">dùng thử 1 tháng</span>", "Hosting năm đầu", "Giao diện responsive", "Tiến độ gọn"],
+    },
+    {
+      title: "Trang bổ sung",
+      description: "Mở rộng website hiện có bằng trang mới có thiết kế nhất quán.",
+      cta: "Thêm trang",
+      renewalNote: "Được tính trong kế hoạch bảo trì",
+      features: ["Thêm vào dự án hiện có", "Giữ nhất quán thiết kế", "Tối ưu SEO", "AI Chatbot &mdash; <span class=\"highlight-offer\">dùng thử 1 tháng</span>", "Triển khai gọn", "Giao diện responsive"],
+    },
+    {
+      title: "Complete Website",
+      description: "Website doanh nghiệp 5 trang với cấu trúc cần thiết để bắt đầu hoạt động trực tuyến.",
+      featuredRibbon: "Giá trị tốt",
+      originalBadge: "Giảm 50%",
+      cta: "Xây website",
+      renewalNote: "3.000 THB/năm sau năm đầu",
+      comparison: [["Mua riêng 5 trang", "15.000 THB", ""], ["Giá theo gói", "10.000 THB", "comparison-save"], ["Phần tiết kiệm", "5.000 THB", "comparison-highlight"]],
+      features: ["5 trang &mdash; thiết kế riêng", "Thiết lập SEO", "AI Chatbot (Auto CTA) &mdash; <span class=\"highlight-offer\">dùng thử 1 tháng</span>", "Hosting năm đầu", "Form liên hệ", "Kết nối mạng xã hội", "Giao diện responsive", "Hỗ trợ ưu tiên"],
+    },
+  ],
+  chatbot: {
+    title: "AI Chatbot (Auto CTA)",
+    description: "Hỗ trợ khách truy cập và ghi nhận lead 24/7 &mdash; <span>dùng thử 1 tháng</span>",
+    cta: "Nhận bản dùng thử",
+  },
+  trustItems: ["Phạm vi minh bạch", "Có vòng chỉnh sửa", "Hỗ trợ sau bàn giao"],
+  includes: [
+    { title: "Thiết kế riêng cho doanh nghiệp", description: "Thiết kế theo thương hiệu và mục tiêu của bạn &mdash; không dùng một mẫu cho mọi dự án." },
+    { title: "Nền tảng SEO", description: "Cấu trúc kỹ thuật và nội dung được chuẩn bị để công cụ tìm kiếm có thể hiểu website." },
+    { title: "AI Chatbot (Auto CTA)", description: "Hỗ trợ khách truy cập và ghi nhận lead 24/7 &mdash; <span class=\"include-highlight\">dùng thử 1 tháng</span>" },
+    { title: "Hosting năm đầu", description: "Hosting được bao gồm trong năm đầu; từ năm sau là 3.000 THB/năm." },
+  ],
+  aiConsultant: {
+    badge: "Trợ lý tư vấn bằng giọng nói",
+    desktopTitle: "Trao đổi với trợ lý AI của DJAI",
+    desktopSubtitle: "Chưa rõ gói nào phù hợp? Hỏi về giá, phạm vi, AI chatbot, SEO, hosting, bảo trì hoặc yêu cầu tùy chỉnh.",
+    desktopSupport: "Trợ lý giúp so sánh lựa chọn và ghi nhận thông tin dự án; đội ngũ DJAI xác nhận báo giá cuối cùng.",
+    mobileTitle: "Chưa rõ gói nào phù hợp với doanh nghiệp?",
+    mobileSubtitle: "Trao đổi để so sánh gói, đặt câu hỏi và yêu cầu báo giá.",
+    benefits: ["So sánh các gói", "Hiểu giá và phạm vi", "Yêu cầu báo giá tùy chỉnh", "Để lại thông tin liên hệ"],
+    welcome: "Xin chào, tôi là trợ lý tư vấn của DJAI. Tôi có thể giúp bạn chọn gói website, giải thích giá hoặc ghi nhận yêu cầu để chuẩn bị báo giá. Bạn muốn xây sản phẩm gì?",
+    initialChips: [["landing", "Landing Page &mdash; 5.000 THB"], ["full", "Website 5 trang &mdash; 10.000 THB"], ["additional", "Trang bổ sung &mdash; 3.000 THB/trang"], ["custom", "Báo giá tùy chỉnh"]],
+    ctaChips: [["contact", "Để lại liên hệ"], ["compare", "So sánh các gói"], ["custom", "Cần báo giá riêng"]],
+  },
+};
+
 function deepMerge(base, override) {
   if (Array.isArray(base) && Array.isArray(override)) {
     return base.map((item, index) => deepMerge(item, index < override.length ? override[index] : undefined));
@@ -470,16 +602,19 @@ function deepMerge(base, override) {
 }
 
 function getInitialLanguage() {
+  if (window.location.pathname.replace(/\/+$/, "").endsWith("/vi")) return "vi";
   const queryLanguage = new URLSearchParams(window.location.search).get("lang");
   const storedLanguage = window.localStorage.getItem("djai-language");
-  if (queryLanguage === "en" || queryLanguage === "th") {
+  if (queryLanguage === "en" || queryLanguage === "th" || queryLanguage === "vi") {
     return queryLanguage;
   }
-  return storedLanguage === "en" ? "en" : "th";
+  return storedLanguage === "en" || storedLanguage === "vi" ? storedLanguage : "th";
 }
 
 let currentLanguage = getInitialLanguage();
-let promoData = currentLanguage === "en" ? basePromoData : deepMerge(basePromoData, thaiPromoOverrides);
+let promoData = currentLanguage === "en"
+  ? basePromoData
+  : deepMerge(basePromoData, currentLanguage === "vi" ? vietnamesePromoOverrides : thaiPromoOverrides);
 
 function escapeHtml(value) {
   return value.replace(/[&<>"']/g, (char) => {
@@ -934,6 +1069,7 @@ function renderLanguageSwitch() {
       <div class="language-switch" role="group" aria-label="${promoData.ui.languageLabel}">
         <button type="button" data-language="th" class="${currentLanguage === "th" ? "is-active" : ""}" aria-pressed="${currentLanguage === "th"}">TH</button>
         <button type="button" data-language="en" class="${currentLanguage === "en" ? "is-active" : ""}" aria-pressed="${currentLanguage === "en"}">EN</button>
+        <button type="button" data-language="vi" class="${currentLanguage === "vi" ? "is-active" : ""}" aria-pressed="${currentLanguage === "vi"}">VI</button>
       </div>
     </div>
   `;
@@ -955,7 +1091,7 @@ function renderVoucherExperience() {
       <div class="voucher-backdrop" aria-hidden="true"></div>
       <div class="voucher-dialog" role="dialog" aria-modal="true" aria-labelledby="voucher-title">
         <div class="voucher-panel" data-voucher-panel="spin">
-          <p class="voucher-eyebrow">DJAI Academy welcome offer</p>
+          <p class="voucher-eyebrow">${promoData.voucher.welcomeEyebrow}</p>
           <h2 id="voucher-title">${promoData.voucher.title}</h2>
           <p class="voucher-intro">${promoData.voucher.intro}</p>
           <div class="voucher-wheel-stage">
@@ -986,7 +1122,7 @@ function renderVoucherExperience() {
         </div>
 
         <div class="voucher-panel" data-voucher-panel="form" hidden>
-          <p class="voucher-eyebrow">฿10,000 DJAI voucher</p>
+          <p class="voucher-eyebrow">${promoData.voucher.voucherEyebrow}</p>
           <h2>${promoData.voucher.formTitle}</h2>
           <p class="voucher-intro">${promoData.voucher.formCopy}</p>
           <form class="voucher-form" data-voucher-form>
@@ -1024,7 +1160,7 @@ function renderVoucherExperience() {
 function renderPage() {
   const app = document.querySelector("#app");
   const voucherRoot = document.querySelector("#voucher-welcome-root");
-  document.documentElement.lang = currentLanguage === "th" ? "th" : "en";
+  document.documentElement.lang = currentLanguage;
 
   if (voucherRoot) {
     voucherRoot.innerHTML = renderVoucherExperience();
@@ -1456,12 +1592,10 @@ function bindAiChatbots() {
 function bindLanguageSwitch() {
   document.querySelectorAll("[data-language]").forEach((button) => {
     button.addEventListener("click", () => {
-      const language = button.dataset.language === "en" ? "en" : "th";
+      const language = ["th", "en", "vi"].includes(button.dataset.language) ? button.dataset.language : "th";
       window.localStorage.setItem("djai-language", language);
-
-      const url = new URL(window.location.href);
-      url.searchParams.set("lang", language);
-      window.location.href = url.toString();
+      const destination = language === "vi" ? "/web_promo/vi/" : "/web_promo/";
+      window.location.href = `${destination}?lang=${language}`;
     });
   });
 }

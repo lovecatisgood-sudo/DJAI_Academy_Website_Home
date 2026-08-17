@@ -89,6 +89,10 @@ const staticMounts = [
     dir: path.join(rootDir, "djai-document-tools", "out", "spreadsheet")
   },
   {
+    prefix: "/tools/brand",
+    dir: path.join(rootDir, "djai-document-tools", "out", "brand")
+  },
+  {
     prefix: "/tools/_next",
     dir: path.join(rootDir, "djai-document-tools", "out", "_next")
   },
@@ -196,6 +200,17 @@ function serveStaticFile(req, res, filePath) {
     "Permissions-Policy": "camera=(), microphone=(), geolocation=(), payment=(), usb=()",
     "Vary": "Accept-Encoding"
   };
+  const engineOrigins = new Set([
+    "https://school.djai.academy",
+    "http://localhost:5493",
+    "http://localhost:5494"
+  ]);
+  if (
+    filePath.startsWith(path.join(rootDir, "djai-image-resizer", "public", "vendor"))
+    && engineOrigins.has(req.headers.origin)
+  ) {
+    headers["Access-Control-Allow-Origin"] = req.headers.origin;
+  }
   if (useCompression && acceptsBrotli) headers["Content-Encoding"] = "br";
   else if (useCompression && acceptsGzip) headers["Content-Encoding"] = "gzip";
   res.writeHead(200, headers);
@@ -223,6 +238,7 @@ function serveHealth(req, res) {
     path.join(rootDir, "djai-pdf-tools", "out", "index.html"),
     path.join(rootDir, "djai-pdf-tools", "out", "pdf.worker.min.mjs"),
     path.join(rootDir, "djai-document-tools", "out", "document", "index.html"),
+    path.join(rootDir, "djai-document-tools", "out", "brand", "favicon-generator", "index.html"),
     path.join(rootDir, "djai-document-tools", "out", "document", "pdf.worker.min.mjs"),
     path.join(rootDir, "Siamese-Cat-Dev-Bio-Site", "dist", "index.html"),
     path.join(rootDir, "Siamese-Cat-Dev-Bio-Site", "dist", "course", "index.html"),
@@ -399,6 +415,13 @@ async function start() {
           return;
         }
         rewriteRequestPath(req, "/web_promo", "");
+        // Keep the public locale URL aligned with the site's trailing-slash
+        // convention while sending Next.js its internal non-slash route.
+        if (pathname === "/web_promo/vi/") {
+          const internalUrl = new URL(req.url || "/vi", "http://localhost");
+          internalUrl.pathname = "/vi";
+          req.url = `${internalUrl.pathname}${internalUrl.search}`;
+        }
         proxyRequest(req, res, voicePromoPort);
         return;
       }

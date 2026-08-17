@@ -103,7 +103,7 @@ export async function POST(request: Request) {
     }
 
     const email = cleanString(body.email, 254).toLowerCase();
-    const language = body.language === "en" ? "en" : "th";
+    const language = body.language === "en" || body.language === "vi" ? body.language : "th";
     const deadline = typeof body.deadline === "number" ? Math.round(body.deadline) : 0;
     const pageUrl = cleanString(body.pageUrl, 1000);
     const now = Date.now();

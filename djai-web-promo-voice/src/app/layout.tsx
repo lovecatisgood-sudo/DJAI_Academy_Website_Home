@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import "./globals.css";
+
+const GA_ID = "G-CGJ5BTR44T";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.djai.academy"),
@@ -21,6 +24,11 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "/web_promo/",
+    languages: {
+      th: "/web_promo/",
+      vi: "/web_promo/vi/",
+      "x-default": "/web_promo/",
+    },
   },
   robots: {
     index: true,
@@ -50,14 +58,27 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = (await headers()).get("x-djai-locale") === "vi" ? "vi" : "th";
   return (
-    <html lang="th">
+    <html lang={locale}>
       <head>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
+        <script
+          id="google-analytics"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${GA_ID}', { cookie_domain: 'auto' });
+            `,
+          }}
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
         <link

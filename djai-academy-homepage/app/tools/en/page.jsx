@@ -11,6 +11,7 @@ export const metadata = {
     languages: {
       en: "/tools/en/",
       th: "/tools/",
+      vi: "/tools/vi/",
       "x-default": "/tools/"
     }
   },
@@ -26,6 +27,13 @@ export const metadata = {
 };
 
 const tools = [
+  {
+    label: "Brand Tools",
+    title: "Favicon and Website Icon Generator",
+    text: "Generate favicon.ico, PNG icons, an Apple touch icon, a maskable icon, a web manifest, and installation code from one image in your browser.",
+    href: "https://www.djai.academy/tools/brand/en/",
+    tags: ["Favicon", "ICO", "Private"]
+  },
   {
     label: "Video to Text",
     title: "Video to Text Converter — Free, No Sign-Up",
@@ -92,11 +100,11 @@ const tools = [
 ];
 
 const comingSoon = [
-  "Favicon generator",
   "High-fidelity Office conversion"
 ];
 
 const popularWorkflows = [
+  ["Generate a favicon", "Download ICO, PNG, and manifest files from one image", "https://www.djai.academy/tools/brand/favicon-generator/en/"],
   ["Remove image background", "Create a transparent PNG in your browser", "https://www.djai.academy/tools/resizeimg/remove-background-image/en/"],
   ["JPG to PNG", "Convert an image without uploading", "https://www.djai.academy/tools/resizeimg/jpg-to-png/en/"],
   ["HEIC to JPG", "Convert an iPhone photo in your browser", "https://www.djai.academy/tools/resizeimg/heic-to-jpg/en/"],

@@ -43,3 +43,6 @@ djai-image-pdf-tools-production/
 # Generated static tool outputs (rebuilt by the Hostinger build)
 djai-media-tools/public/
 djai-image-resizer/public/*/
+
+# Isolated development worktrees
+.worktrees/

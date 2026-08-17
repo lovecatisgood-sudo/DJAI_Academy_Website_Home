@@ -11,6 +11,7 @@ export const metadata = {
     languages: {
       en: "/tools/en/",
       th: "/tools/",
+      vi: "/tools/vi/",
       "x-default": "/tools/"
     }
   },
@@ -26,6 +27,13 @@ export const metadata = {
 };
 
 const tools = [
+  {
+    label: "Brand Tools",
+    title: "Favicon Generator และไอคอนเว็บไซต์",
+    text: "สร้าง favicon.ico, PNG, Apple touch icon, maskable icon, web manifest และโค้ดติดตั้งจากรูปเดียว โดยประมวลผลใน browser",
+    href: "https://www.djai.academy/tools/brand/",
+    tags: ["Favicon", "ICO", "Private"]
+  },
   {
     label: "Video to Text",
     title: "แปลงวิดีโอเป็นข้อความฟรี ไม่ต้องสมัคร",
@@ -91,9 +99,10 @@ const tools = [
   }
 ];
 
-const comingSoon = ["Favicon generator", "High-fidelity Office conversion"];
+const comingSoon = ["High-fidelity Office conversion"];
 
 const popularWorkflows = [
+  ["สร้าง Favicon", "ดาวน์โหลด ICO, PNG และ manifest จากรูปเดียว", "https://www.djai.academy/tools/brand/favicon-generator/"],
   ["ลบพื้นหลังรูป", "สร้าง PNG โปร่งใสใน browser", "https://www.djai.academy/tools/resizeimg/remove-background-image/"],
   ["JPG เป็น PNG", "แปลงไฟล์รูปโดยไม่ upload", "https://www.djai.academy/tools/resizeimg/jpg-to-png/"],
   ["HEIC เป็น JPG", "แปลงรูปจาก iPhone ใน browser", "https://www.djai.academy/tools/resizeimg/heic-to-jpg/"],

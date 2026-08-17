@@ -4,6 +4,7 @@ import SiteFooter from "../../components/SiteFooter";
 import SiteHeader from "../../components/SiteHeader";
 import AdSenseAd from "../../components/AdSenseAd";
 import ShareButtons from "../../components/ShareButtons";
+import BlogMarkdown from "../../components/blog/BlogMarkdown";
 import {
   ToolTutorialEvidence,
   ToolTutorialNextStep,
@@ -18,96 +19,6 @@ function formatDate(value) {
     day: "numeric",
     year: "numeric"
   }).format(new Date(value));
-}
-
-function renderInline(text) {
-  const parts = String(text).split(/(\[[^\]]+\]\([^)]+\))/g);
-
-  return parts.map((part, index) => {
-    const match = part.match(/^\[([^\]]+)\(([^)]+)\)$/);
-    const normalMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
-    const linkMatch = normalMatch || match;
-    if (!linkMatch) {
-      return part;
-    }
-
-    const [, label, href] = linkMatch;
-    const isExternal = href.startsWith("http");
-    return (
-      <a
-        href={href}
-        key={`${href}-${index}`}
-        target={isExternal ? "_blank" : undefined}
-        rel={isExternal ? "noopener noreferrer" : undefined}
-      >
-        {label}
-      </a>
-    );
-  });
-}
-
-function renderContent(content) {
-  const blocks = [];
-  let listItems = [];
-
-  function flushList() {
-    if (!listItems.length) {
-      return;
-    }
-    const items = listItems;
-    listItems = [];
-    blocks.push(
-      <ul key={`list-${blocks.length}`}>
-        {items.map((item) => (
-          <li key={item}>{renderInline(item)}</li>
-        ))}
-      </ul>
-    );
-  }
-
-  content.split("\n").forEach((line) => {
-    const trimmed = line.trim();
-
-    if (!trimmed) {
-      flushList();
-      return;
-    }
-
-    if (trimmed.startsWith("### ")) {
-      flushList();
-      blocks.push(<h3 key={`h3-${blocks.length}`}>{renderInline(trimmed.slice(4))}</h3>);
-      return;
-    }
-
-    if (trimmed.startsWith("## ")) {
-      flushList();
-      blocks.push(<h2 key={`h2-${blocks.length}`}>{renderInline(trimmed.slice(3))}</h2>);
-      return;
-    }
-
-    const imageMatch = trimmed.match(/^!\[([^\]]*)\]\(([^)]+)\)$/);
-    if (imageMatch) {
-      flushList();
-      const [, alt, src] = imageMatch;
-      blocks.push(
-        <figure className="article-image" key={`image-${blocks.length}`}>
-          <img alt={alt} src={src} loading="lazy" decoding="async" />
-        </figure>
-      );
-      return;
-    }
-
-    if (trimmed.startsWith("- ")) {
-      listItems.push(trimmed.slice(2));
-      return;
-    }
-
-    flushList();
-    blocks.push(<p key={`p-${blocks.length}`}>{renderInline(trimmed)}</p>);
-  });
-
-  flushList();
-  return blocks;
 }
 
 export async function generateMetadata({ params }) {
@@ -234,7 +145,9 @@ export default async function ThaiBlogPostPage({ params }) {
 
           {hasTutorialEvidence ? <ToolTutorialEvidence slug={post.slug} locale="th" /> : null}
 
-          <div className="article-content">{renderContent(post.content)}</div>
+          <div className="article-content">
+            <BlogMarkdown content={post.content} />
+          </div>
 
           <AdSenseAd label="Article advertisement" variant="inArticle" />
 

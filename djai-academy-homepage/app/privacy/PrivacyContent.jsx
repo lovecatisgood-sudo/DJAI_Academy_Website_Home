@@ -4,6 +4,41 @@ import CookieSettingsButton from "../components/CookieSettingsButton";
 import styles from "./privacy.module.css";
 
 const content = {
+  vi: {
+    eyebrow: "Quyền riêng tư tại DJAI Academy",
+    title: "Chính sách quyền riêng tư và cookie",
+    updated: "Có hiệu lực và cập nhật lần cuối: 2 tháng 8, 2026",
+    intro: "Chính sách này giải thích cách website DJAI Academy sử dụng thông tin, cookie và các hình thức lưu trữ tương tự trên trình duyệt. Chính sách áp dụng cho www.djai.academy và không thay thế chính sách riêng của sản phẩm hoặc ứng dụng di động, nếu sản phẩm đó có chính sách riêng.",
+    sections: [
+      { title: "Đơn vị chịu trách nhiệm", paragraphs: ["DJAI Academy vận hành website này. Bạn có thể gửi câu hỏi hoặc yêu cầu về quyền riêng tư đến contact@djai.academy."] },
+      { title: "Thông tin được xử lý khi bạn truy cập", paragraphs: [
+        "Hạ tầng lưu trữ và bảo mật cần tiếp nhận một số thông tin kỹ thuật của yêu cầu, chẳng hạn địa chỉ IP, URL được truy cập, ngày giờ, header của trình duyệt và sự kiện chẩn đoán hoặc bảo mật.",
+        "Nếu bạn cho phép phân tích, Google Analytics có thể xử lý mã định danh trình duyệt, trang đã xem, hoạt động trong phiên, nguồn giới thiệu, vị trí gần đúng và đặc điểm của trình duyệt hoặc thiết bị. Chúng tôi dùng thông tin này để hiểu trang và công cụ nào hữu ích, đồng thời cải thiện hiệu suất và nội dung website.",
+        "Nếu bạn cho phép quảng cáo, Google AdSense và các đối tác quảng cáo có thể xử lý mã định danh cookie, lượt hiển thị, lượt nhấp, vị trí gần đúng, thông tin trình duyệt hoặc thiết bị và các tín hiệu dùng để phân phối, giới hạn, bảo vệ và đo lường quảng cáo. Hiện DJAI yêu cầu quảng cáo không cá nhân hóa; chủ đề của trang vẫn có thể ảnh hưởng đến quảng cáo được hiển thị."
+      ] },
+      { title: "Cookie và dữ liệu trình duyệt chúng tôi sử dụng", table: [
+        ["djai_consent_v1", "Local storage của DJAI Academy", "Cần thiết", "Ghi nhớ lựa chọn phân tích và quảng cáo", "Tối đa 6 tháng"],
+        ["_ga", "Google Analytics", "Phân tích", "Phân biệt trình duyệt để đo lường người truy cập và phiên", "Tối đa 2 năm; trình duyệt có thể rút ngắn"],
+        ["_ga_<property>", "Google Analytics", "Phân tích", "Duy trì trạng thái đo lường cho thuộc tính Analytics", "Tối đa 2 năm; trình duyệt có thể rút ngắn"],
+        ["IDE và cookie quảng cáo có thể được dùng", "Google / DoubleClick", "Quảng cáo", "Phân phối quảng cáo không cá nhân hóa, giới hạn tần suất, chống gian lận và đo lường", "Tùy cookie, khu vực, trình duyệt và cài đặt Google"]
+      ], paragraphs: ["Cookie quảng cáo thực tế có thể khác nhau tùy khu vực, giới hạn của trình duyệt, nguồn quảng cáo và cài đặt Google của bạn. Cookie không bắt buộc để sử dụng các trang và công cụ chính của website."] },
+      { title: "Lựa chọn của bạn", paragraphs: [
+        "Mặc định, website từ chối lưu trữ cho phân tích và quảng cáo. Google Analytics chỉ tải sau khi bạn đồng ý với phân tích; Google AdSense chỉ tải sau khi bạn đồng ý với quảng cáo. Bạn có thể chấp nhận tất cả, từ chối, chọn từng nhóm hoặc thay đổi lựa chọn sau này.",
+        "Khi rút lại sự đồng ý, các dịch vụ tùy chọn sẽ không tải ở những lần xem trang tiếp theo và website sẽ xóa cookie Google Analytics trên tên miền DJAI mà nó có thể truy cập. Cookie bên thứ ba do Google kiểm soát cần được quản lý trong trình duyệt hoặc cài đặt quyền riêng tư của Google."
+      ], settings: "Mở cài đặt cookie" },
+      { title: "Công cụ xử lý tệp", paragraphs: ["Khi một công cụ nêu rõ rằng việc xử lý diễn ra trong trình duyệt, các tệp được hỗ trợ sẽ được xử lý cục bộ và nội dung tệp không được chủ ý tải lên DJAI Analytics hoặc AdSense. Nếu bạn đã cho phép các nhóm đó, dịch vụ phân tích và quảng cáo vẫn có thể nhận thông tin truy cập trang hoặc tương tác quảng cáo thông thường. Hãy đọc thông báo trên từng công cụ trước khi xử lý tài liệu mật."] },
+      { title: "Nhà cung cấp dịch vụ và xử lý dữ liệu quốc tế", paragraphs: ["Chúng tôi sử dụng nhà cung cấp lưu trữ và phân phối website để vận hành và bảo vệ dịch vụ. Hoạt động đo lường và quảng cáo tùy chọn sử dụng Google Analytics và Google AdSense. Các nhà cung cấp này có thể xử lý thông tin tại quốc gia khác theo điều khoản và cơ chế bảo vệ dữ liệu của họ."], links: [
+        ["Cách Google sử dụng thông tin từ website đối tác", "https://policies.google.com/technologies/partner-sites?hl=vi"],
+        ["Cách Google sử dụng cookie", "https://policies.google.com/technologies/cookies?hl=vi"],
+        ["Các công cụ kiểm soát quyền riêng tư của Google", "https://myaccount.google.com/data-and-privacy?hl=vi"]
+      ] },
+      { title: "Thời gian lưu giữ và quyền của bạn", paragraphs: [
+        "Nhật ký kỹ thuật, dữ liệu phân tích và dữ liệu quảng cáo được lưu theo nhu cầu vận hành, cấu hình của nhà cung cấp, nghĩa vụ pháp lý và thời hạn nêu trên. Chúng tôi không cam kết có thể xác định mọi bản ghi từ tên của bạn vì nhiều bản ghi sử dụng mã định danh trình duyệt.",
+        "Tùy luật áp dụng, bạn có thể có quyền hỏi, truy cập, sửa, xóa, hạn chế, phản đối, nhận bản sao thông tin cá nhân hoặc rút lại sự đồng ý. Hãy cung cấp đủ thông tin để chúng tôi hiểu yêu cầu. Bạn cũng có thể khiếu nại đến cơ quan bảo vệ dữ liệu tại nơi mình sinh sống."
+      ] },
+      { title: "Thay đổi chính sách", paragraphs: ["Chúng tôi có thể cập nhật chính sách khi tính năng, nhà cung cấp hoặc yêu cầu pháp lý thay đổi. Thay đổi quan trọng sẽ được phản ánh bằng ngày cập nhật ở trên và, khi phù hợp, bằng một yêu cầu đồng ý mới."] }
+    ]
+  },
   en: {
     eyebrow: "Privacy at DJAI Academy",
     title: "Privacy & Cookie Policy",
@@ -154,7 +189,8 @@ const content = {
 
 const headers = {
   en: ["Item", "Provider", "Category", "Purpose", "Typical retention"],
-  th: ["รายการ", "ผู้ให้บริการ", "หมวดหมู่", "วัตถุประสงค์", "ระยะเวลาทั่วไป"]
+  th: ["รายการ", "ผู้ให้บริการ", "หมวดหมู่", "วัตถุประสงค์", "ระยะเวลาทั่วไป"],
+  vi: ["Mục", "Nhà cung cấp", "Phân loại", "Mục đích", "Thời gian lưu thông thường"]
 };
 
 export default function PrivacyContent({ locale = "en" }) {
@@ -162,7 +198,7 @@ export default function PrivacyContent({ locale = "en" }) {
 
   return (
     <>
-      <SiteHeader locale={locale} currentRoute="home" languageHref={locale === "th" ? "/privacy/en/" : "/privacy/"} />
+      <SiteHeader locale={locale} currentRoute="home" languageHrefs={{ th: "/privacy/", en: "/privacy/en/", vi: "/privacy/vi/" }} />
       <main className={styles.page}>
         <header className={styles.hero}>
           <p>{page.eyebrow}</p>

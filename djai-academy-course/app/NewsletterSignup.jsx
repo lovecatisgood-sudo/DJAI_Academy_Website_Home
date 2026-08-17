@@ -42,6 +42,9 @@ const copyByLocale = {
     namePlaceholder: "Your name",
     email: "Email",
     confirm: "Confirm Subscription"
+  },
+  vi: {
+    label: "Bản tin", title: "Nhận tin mới hằng tuần từ DJAI", intro: "Cập nhật khóa học, công cụ miễn phí, hoạt động cộng đồng và ghi chép xây sản phẩm.", emailLabel: "Địa chỉ email", emailPlaceholder: "Địa chỉ email", subscribe: "Đăng ký", closeAria: "Đóng cửa sổ đăng ký bản tin", subscribed: "Đã đăng ký", thanks: "Cảm ơn bạn đã tham gia.", success: "Yêu cầu nhận bản tin DJAI Academy của bạn đã sẵn sàng.", close: "Đóng", weekly: "DJAI Weekly", complete: "Hoàn tất đăng ký", confirmCopy: "Xác nhận email mà DJAI Academy sẽ dùng để gửi tin khóa học, cộng đồng và công cụ.", name: "Tên", namePlaceholder: "Tên của bạn", email: "Email", confirm: "Xác nhận đăng ký"
   }
 };
 
@@ -50,7 +53,7 @@ export default function NewsletterSignup({ locale = "th" }) {
   const [name, setName] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const copy = copyByLocale[locale === "en" ? "en" : "th"];
+  const copy = copyByLocale[["th", "en", "vi"].includes(locale) ? locale : "th"];
 
   function openPopup(event) {
     event.preventDefault();

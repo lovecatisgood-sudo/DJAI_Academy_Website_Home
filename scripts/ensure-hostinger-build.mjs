@@ -11,6 +11,8 @@ const requiredOutputs = [
   "djai-web-promo-voice/.next/standalone/server.js",
   "djai-academy-course/out/index.html",
   "djai-academy-course/out/en/index.html",
+  "djai-academy-course/out/vi/index.html",
+  "djai-academy-course/out/detail/vi/index.html",
   "DJayTools-Free-QR-Generator-Source/out/index.html",
   "DJayTools-Free-QR-Generator-Source/out/en/index.html",
   "djai-pdf-tools/out/index.html",
@@ -25,6 +27,9 @@ const requiredOutputs = [
   "djai-image-resizer/public/en/index.html",
   "djai-media-tools/public/index.html",
   "djai-media-tools/public/en/index.html",
+  "djai-media-tools/public/video-converter/index.html",
+  "djai-media-tools/public/video-converter/en/index.html",
+  "djai-media-tools/public/video-tools.css",
   "djai-media-tools/public/vendor/core/ffmpeg-core.wasm"
 ];
 

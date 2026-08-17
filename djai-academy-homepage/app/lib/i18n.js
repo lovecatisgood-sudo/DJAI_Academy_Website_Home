@@ -1,41 +1,52 @@
 export const SITE_URL = "https://www.djai.academy";
+export const SUPPORTED_LOCALES = ["th", "en", "vi"];
+export const LOCALE_LABELS = { th: "ไทย", en: "English", vi: "Tiếng Việt" };
 
 const paths = {
   home: {
     en: "/en/",
-    th: "/"
+    th: "/",
+    vi: "/vi/"
   },
   portfolio: {
     en: "/portfolio/en/",
-    th: "/portfolio/"
+    th: "/portfolio/",
+    vi: "/portfolio/vi/"
   },
   tools: {
     en: "/tools/en/",
-    th: "/tools/"
+    th: "/tools/",
+    vi: "/tools/vi/"
   },
   service: {
     en: "/service/en/",
-    th: "/service/"
+    th: "/service/",
+    vi: "/service/vi/"
   },
   development: {
     en: "/development/en/",
-    th: "/development/"
+    th: "/development/",
+    vi: "/development/vi/"
   },
   blog: {
     en: "/blog/en/",
-    th: "/blog/"
+    th: "/blog/",
+    vi: "/blog/vi/"
   },
   course: {
     en: "/course/en/",
-    th: "/course/"
+    th: "/course/",
+    vi: "/course/vi/"
   },
   community: {
     en: "/academy/en/",
-    th: "/academy/"
+    th: "/academy/",
+    vi: "/academy/vi/"
   },
   promo: {
     en: "/web_promo/",
-    th: "/web_promo/"
+    th: "/web_promo/",
+    vi: "/web_promo/vi/"
   },
   siameseCatDev: {
     en: "/siamese_cat/dev/en/",
@@ -57,7 +68,8 @@ export function urlFor(route, locale = "en") {
 }
 
 export function blogPostPath(slug, locale = "en") {
-  return locale === "th" ? `/blog/${slug}/` : `/blog/en/${slug}/`;
+  if (locale === "th") return `/blog/${slug}/`;
+  return `/blog/${locale}/${slug}/`;
 }
 
 export function blogPostUrl(slug, locale = "en") {
@@ -69,11 +81,23 @@ export function alternateFor(route, locale = "en") {
     canonical: pathFor(route, locale),
     languages: {
       en: pathFor(route, "en"),
-      th: pathFor(route, "th")
+      th: pathFor(route, "th"),
+      vi: pathFor(route, "vi"),
+      "x-default": pathFor(route, "th")
     }
   };
 }
 
 export function oppositeLocale(locale = "en") {
   return locale === "th" ? "en" : "th";
+}
+
+export function localeLinksFor(route, locale, availableLocales = SUPPORTED_LOCALES) {
+  return availableLocales
+    .filter((candidate) => candidate !== locale && paths[route]?.[candidate])
+    .map((candidate) => ({
+      locale: candidate,
+      label: LOCALE_LABELS[candidate],
+      href: pathFor(route, candidate)
+    }));
 }

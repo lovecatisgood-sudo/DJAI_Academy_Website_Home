@@ -1,4 +1,5 @@
 import { spawn } from "node:child_process";
+import { randomUUID } from "node:crypto";
 import { copyFile, mkdtemp, rm } from "node:fs/promises";
 import { request } from "node:http";
 import { tmpdir } from "node:os";
@@ -17,19 +18,31 @@ const serverDirectory = useQrCompatibilityEntry
 const publicRoutes = [
   "/",
   "/en/",
+  "/vi/",
   "/portfolio/",
   "/portfolio/en/",
+  "/portfolio/vi/",
   "/development/",
   "/development/en/",
+  "/development/vi/",
   "/web_promo/",
+  "/web_promo/vi/",
   "/service/",
   "/service/en/",
+  "/service/vi/",
   "/tools/",
   "/tools/en/",
+  "/tools/vi/",
   "/tools/seo-screaming-toad/",
   "/tools/seo-screaming-toad/en/",
   "/tools/qrgen/",
   "/tools/qrgen/en/",
+  "/tools/brand/",
+  "/tools/brand/en/",
+  "/tools/brand/vi/",
+  "/tools/brand/favicon-generator/",
+  "/tools/brand/favicon-generator/en/",
+  "/tools/brand/favicon-generator/vi/",
   ...["url-qr-code-generator", "wifi-qr-code-generator", "vcard-qr-code-generator", "text-qr-code-generator", "email-qr-code-generator", "whatsapp-qr-code-generator", "qr-code-generator-with-logo"].flatMap((tool) => [`/tools/qrgen/${tool}/`, `/tools/qrgen/${tool}/en/`]),
   "/tools/resizeimg/",
   "/tools/resizeimg/en/",
@@ -63,6 +76,7 @@ const publicRoutes = [
   "/tools/media/",
   "/tools/media/en/",
   ...["mp3-to-wav", "wav-to-mp3", "m4a-to-mp3", "mp4-to-mp3", "extract-audio-from-video", "mp4-to-webm", "webm-to-mp4", "mov-to-mp4", "compress-video"].flatMap((tool) => [`/tools/media/${tool}/`, `/tools/media/${tool}/en/`]),
+  ...["video-converter", "mkv-to-mp4", "avi-to-mp4", "mp4-to-mov", "video-cutter", "video-cropper", "video-resizer", "video-merger", "compress-video-to-10mb", "compress-video-to-25mb", "compress-video-to-50mb", "compress-video-to-100mb", "video-to-gif", "gif-to-mp4", "remove-audio-from-video", "add-audio-to-video", "video-speed-changer", "extract-frames-from-video", "rotate-video"].flatMap((tool) => [`/tools/media/${tool}/`, `/tools/media/${tool}/en/`]),
   "/tools/PDFTools/",
   "/tools/PDFTools/en/",
   "/tools/PDFTools/merge-pdf/",
@@ -101,8 +115,25 @@ const publicRoutes = [
     `/tools/${category}/en/`,
     ...tools.flatMap((tool) => [`/tools/${category}/${tool}/`, `/tools/${category}/${tool}/en/`])
   ]),
+  "/tools/qrgen/vi/",
+  ...["url-qr-code-generator", "wifi-qr-code-generator", "vcard-qr-code-generator", "text-qr-code-generator", "email-qr-code-generator", "whatsapp-qr-code-generator", "qr-code-generator-with-logo"].map((tool) => `/tools/qrgen/${tool}/vi/`),
+  "/tools/resizeimg/vi/",
+  ...["jpg-to-png", "png-to-jpg", "jpg-to-webp", "png-to-webp", "webp-to-jpg", "webp-to-png", "compress-image", "resize-image", "image-to-100kb", "image-to-500kb", "heic-to-jpg", "remove-image-metadata", "remove-background-image", "resize-image-to-200kb", "avif-to-jpg", "avif-to-png", "passport-photo-resizer"].map((tool) => `/tools/resizeimg/${tool}/vi/`),
+  "/tools/media/vi/",
+  ...["mp3-to-wav", "wav-to-mp3", "m4a-to-mp3", "mp4-to-mp3", "extract-audio-from-video", "mp4-to-webm", "webm-to-mp4", "mov-to-mp4", "compress-video", "video-converter", "mkv-to-mp4", "avi-to-mp4", "mp4-to-mov", "video-cutter", "video-cropper", "video-resizer", "video-merger", "compress-video-to-10mb", "compress-video-to-25mb", "compress-video-to-50mb", "compress-video-to-100mb", "video-to-gif", "gif-to-mp4", "remove-audio-from-video", "add-audio-to-video", "video-speed-changer", "extract-frames-from-video", "rotate-video"].map((tool) => `/tools/media/${tool}/vi/`),
+  "/tools/PDFTools/vi/",
+  ...["merge-pdf", "split-pdf", "compress-pdf", "images-to-pdf", "pdf-to-images", "rotate-pdf", "watermark-pdf", "protect-pdf", "organize-pdf", "add-page-numbers", "remove-pdf-metadata"].map((tool) => `/tools/PDFTools/${tool}/vi/`),
+  ...[
+    { category: "document", tools: ["docx-to-pdf", "docx-to-html", "docx-to-markdown", "docx-to-text", "pdf-to-text", "pdf-to-word", "ocr"] },
+    { category: "ai", tools: ["token-counter", "pdf-to-ai-markdown", "context-optimizer", "rag-chunk-calculator", "prompt-packager"] },
+    { category: "spreadsheet", tools: ["csv-to-json", "json-to-csv", "csv-cleaner", "merge-csv", "split-csv", "csv-to-xlsx", "xlsx-to-csv"] }
+  ].flatMap(({ category, tools }) => [`/tools/${category}/vi/`, ...tools.map((tool) => `/tools/${category}/${tool}/vi/`)]),
   "/blog/",
   "/blog/en/",
+  "/blog/vi/",
+  "/blog/vi/vibe-coding-cho-nguoi-moi/",
+  "/blog/vi/nen-chon-jpg-png-hay-webp/",
+  "/blog/vi/tao-ma-qr-cho-menu-su-kien-website/",
   "/blog/how-to-create-free-qr-code/",
   "/blog/en/how-to-create-free-qr-code/",
   "/blog/how-to-convert-jpg-png-webp-free/",
@@ -111,8 +142,11 @@ const publicRoutes = [
   "/blog/en/compress-image-to-100kb-500kb/",
   "/course/",
   "/course/en/",
+  "/course/vi/",
   "/course/detail/",
   "/course/detail/en/",
+  "/course/detail/vi/",
+  "/privacy/vi/",
   "/siamese_cat/",
   "/siamese_cat/en/",
   "/siamese_cat/dev/",
@@ -147,11 +181,11 @@ const redirects = [
   ["/tools/document/word-to-pdf/", "/tools/document/docx-to-pdf/"],
   ["/tools/document/word-to-pdf/en/", "/tools/document/docx-to-pdf/en/"]
 ];
-const accountOnboardingRedirects = ["/academy/", "/academy/en/"];
+const accountOnboardingRedirects = ["/academy/", "/academy/en/", "/academy/vi/"];
 const moneyMakingProductRegistrationUrl =
   "https://school.djai.academy/signup?intent=free-course&course_id=money-making-product-2026-08-22";
-const auditPassword = "djai-local-deployment-audit";
-const auditApiKey = "djai-local-api-key-audit";
+const auditPassword = process.env.DJAI_AUDIT_PASSWORD || `djai-local-deployment-${randomUUID()}`;
+const auditApiKey = process.env.DJAI_AUDIT_API_KEY || `djai-local-api-key-${randomUUID()}`;
 const auditDataDirectory = await mkdtemp(join(tmpdir(), "djai-blog-audit-"));
 const auditDataFile = join(auditDataDirectory, "blog-posts.json");
 await copyFile(join(repositoryRoot, "djai-academy-homepage", "data", "blog-posts.json"), auditDataFile);
@@ -265,7 +299,9 @@ async function verify() {
     { route: "/course/", accountCopy: "ต้องมีบัญชี DJAI School" },
     { route: "/course/en/", accountCopy: "A free DJAI School account" },
     { route: "/course/detail/", accountCopy: "ต้องมีบัญชี DJAI School" },
-    { route: "/course/detail/en/", accountCopy: "A free DJAI School account" }
+    { route: "/course/detail/en/", accountCopy: "A free DJAI School account" },
+    { route: "/course/vi/", accountCopy: "Cần tài khoản DJAI School miễn phí" },
+    { route: "/course/detail/vi/", accountCopy: "Cần tài khoản DJAI School miễn phí" }
   ];
   const courseSignupHref =
     "https://school.djai.academy/signup?intent=offline-course&amp;course_id=ai-masterclass";
@@ -296,6 +332,28 @@ async function verify() {
     const html = await fetch(`${origin}${route}`).then((response) => response.text());
     if (!html.includes("data-tool-discovery")) {
       failures.push(`${route}: missing crawlable tool discovery navigation`);
+    }
+  }
+
+  const vietnameseRepresentativeRoutes = [
+    "/web_promo/vi/",
+    "/tools/qrgen/url-qr-code-generator/vi/",
+    "/tools/resizeimg/remove-background-image/vi/",
+    "/tools/PDFTools/merge-pdf/vi/",
+    "/tools/media/video-converter/vi/",
+    "/tools/document/docx-to-pdf/vi/",
+    "/tools/ai/token-counter/vi/",
+    "/tools/spreadsheet/csv-to-json/vi/",
+    "/tools/brand/favicon-generator/vi/"
+  ];
+  for (const route of vietnameseRepresentativeRoutes) {
+    const html = await fetch(`${origin}${route}`).then((response) => response.text());
+    if (!html.includes('<html lang="vi"')) failures.push(`${route}: html lang is not Vietnamese`);
+    if (!html.includes(`<link rel="canonical" href="https://www.djai.academy${route}"`)) {
+      failures.push(`${route}: missing self-referencing Vietnamese canonical`);
+    }
+    if (!html.includes('hreflang="vi"') && !html.includes('hrefLang="vi"') && !html.includes('hrefLang":"vi"')) {
+      failures.push(`${route}: missing self-inclusive Vietnamese hreflang`);
     }
   }
 
@@ -347,6 +405,29 @@ async function verify() {
     failures.push("/blog/en/?category=Tutorial: noncanonical filter must not emit hreflang");
   }
 
+  const vietnameseSeoChecks = [
+    ["/vi/", "DJAI Academy"],
+    ["/portfolio/vi/", "Sản phẩm DJAI đã tham gia xây dựng"],
+    ["/development/vi/", "Mang bài toán đến. Chúng ta sẽ xác định thứ cần xây trước."],
+    ["/service/vi/", "Phát triển phần mềm theo bài toán, không theo danh sách công nghệ."],
+    ["/tools/vi/", "Xử lý việc nhỏ ngay, không cần cài thêm phần mềm"],
+    ["/blog/vi/", "Học AI bằng những quyết định bạn phải đưa ra khi xây thật"],
+    ["/privacy/vi/", "Chính sách quyền riêng tư và cookie"],
+    ["/course/vi/", "Tự xây một sản phẩm bằng AI"],
+    ["/course/detail/vi/", "Từ ý tưởng đến sản phẩm chạy được"],
+    ["/blog/vi/vibe-coding-cho-nguoi-moi/", "Vibe coding cho người mới"],
+    ["/blog/vi/nen-chon-jpg-png-hay-webp/", "Nên chọn JPG, PNG hay WebP"],
+    ["/blog/vi/tao-ma-qr-cho-menu-su-kien-website/", "Tạo mã QR cho menu, sự kiện hoặc website"]
+  ];
+  for (const [route, heading] of vietnameseSeoChecks) {
+    const html = await fetch(`${origin}${route}`).then((response) => response.text());
+    if (!html.includes('<html lang="vi"')) failures.push(`${route}: expected html lang=vi`);
+    if (!html.includes(`<link rel="canonical" href="https://www.djai.academy${route}"`)) failures.push(`${route}: missing Vietnamese self-canonical`);
+    if (!new RegExp('hreflang=["\']vi["\']', "i").test(html)) failures.push(`${route}: missing self-referencing vi hreflang`);
+    if (!html.includes("<h1") || !html.includes(heading)) failures.push(`${route}: missing expected Vietnamese H1 copy`);
+    if (html.includes('<meta name="robots" content="noindex')) failures.push(`${route}: unexpectedly noindexed`);
+  }
+
   const llmsResponse = await fetch(`${origin}/llms.txt`);
   const llmsBody = await llmsResponse.text();
   if (!llmsBody.includes("https://www.djai.academy/web_promo/")) {
@@ -387,10 +468,20 @@ async function verify() {
   for (const path of ["/tools/seo-screaming-toad/", "/tools/seo-screaming-toad/en/"]) {
     if (!sitemapBody.includes(`https://www.djai.academy${path}`)) failures.push(`/sitemap.xml: missing ${path}`);
   }
+  for (const path of ["/tools/brand/", "/tools/brand/en/", "/tools/brand/vi/", "/tools/brand/favicon-generator/", "/tools/brand/favicon-generator/en/", "/tools/brand/favicon-generator/vi/"]) {
+    if (!sitemapBody.includes(`https://www.djai.academy${path}`)) failures.push(`/sitemap.xml: missing ${path}`);
+  }
   for (const path of ["/siamese_cat/dev/course/", "/siamese_cat/dev/course/th/"]) {
     if (!sitemapBody.includes(`https://www.djai.academy${path}`)) {
       failures.push(`/sitemap.xml: missing money-making product course landing page ${path}`);
     }
+  }
+  for (const path of [
+    "/vi/", "/portfolio/vi/", "/development/vi/", "/service/vi/", "/privacy/vi/", "/tools/vi/",
+    "/course/vi/", "/course/detail/vi/", "/blog/vi/", "/blog/vi/vibe-coding-cho-nguoi-moi/",
+    "/blog/vi/nen-chon-jpg-png-hay-webp/", "/blog/vi/tao-ma-qr-cho-menu-su-kien-website/"
+  ]) {
+    if (!sitemapBody.includes(`https://www.djai.academy${path}`)) failures.push(`/sitemap.xml: missing Vietnamese URL ${path}`);
   }
   if (sitemapBody.includes("/MONEY_MAKING_PRODUCT/")) {
     failures.push("/sitemap.xml: redirect-only campaign URL must not be submitted");

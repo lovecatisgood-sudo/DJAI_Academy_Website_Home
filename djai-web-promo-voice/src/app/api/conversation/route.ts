@@ -38,7 +38,7 @@ function parseTranscript(value: unknown): TranscriptItem[] {
 }
 
 function parseLanguage(value: unknown): ConversationLanguage {
-  return value === "th" || value === "en" || value === "mixed" ? value : "mixed";
+  return value === "th" || value === "en" || value === "vi" || value === "mixed" ? value : "mixed";
 }
 
 export async function POST(request: Request) {

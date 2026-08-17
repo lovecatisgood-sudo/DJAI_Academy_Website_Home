@@ -64,11 +64,19 @@ const content = {
     ],
     contact: "Contact",
     copyright: "(c) 2026 DJAI Academy. All rights reserved."
+  },
+  vi: {
+    columns: [
+      { title: "Học", links: [["Tham gia lớp trực tiếp", "https://www.djai.academy/course/vi/"], ["Chi tiết chương trình", "https://www.djai.academy/course/detail/vi/"], ["Bài viết", "https://www.djai.academy/blog/vi/"]] },
+      { title: "Xây cùng DJAI", links: [["Phát triển sản phẩm", "https://www.djai.academy/development/vi/"], ["Dịch vụ", "https://www.djai.academy/service/vi/"], ["Dự án", "https://www.djai.academy/portfolio/vi/"], ["Ưu đãi hiện tại", "https://www.djai.academy/course/vi/#pricing"]] },
+      { title: "Cộng đồng", links: [["Tham gia cộng đồng online", "https://www.djai.academy/academy/vi/"], ["Công cụ miễn phí", "https://www.djai.academy/tools/vi/"], ["Dự án mã nguồn mở", null]] }
+    ],
+    contact: "Liên hệ", copyright: "(c) 2026 DJAI Academy. Bảo lưu mọi quyền."
   }
 };
 
 export default function SiteFooter({ locale = "th" }) {
-  const language = locale === "en" ? "en" : "th";
+  const language = ["th", "en", "vi"].includes(locale) ? locale : "th";
   const copy = content[language];
 
   return (

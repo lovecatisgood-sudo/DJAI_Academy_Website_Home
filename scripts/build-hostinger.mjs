@@ -45,8 +45,10 @@ const projects = [
     outputs: [
       "out/index.html",
       "out/en/index.html",
+      "out/vi/index.html",
       "out/detail/index.html",
       "out/detail/en/index.html",
+      "out/detail/vi/index.html",
       "out/assets/DJAI-logo-small.webp",
       "out/assets/Instructor-DJAI-display.webp"
     ]
@@ -90,7 +92,9 @@ const projects = [
       "public/assets/siamese-cat-dev-transparent.webp",
       "public/vendor/background-removal.mjs",
       "public/vendor/heic2any.min.js",
-      "public/vendor/jszip.min.js"
+      "public/vendor/jszip.min.js",
+      "public/vendor/models/u2netp.onnx",
+      "public/vendor/ort/ort-wasm-simd-threaded.wasm"
     ]
   },
   {
@@ -144,11 +148,14 @@ const projects = [
       "public/index.html", "public/en/index.html", "public/mp3-to-wav/index.html",
       "public/mp3-to-wav/en/index.html", "public/compress-video/index.html",
       "public/compress-video/en/index.html", "public/vendor/core/ffmpeg-core.wasm",
-      "public/vendor/ffmpeg/worker.js"
+      "public/vendor/ffmpeg/worker.js", "public/video-tools.css", "public/video-tools.js",
+      "public/video-converter/index.html", "public/video-converter/en/index.html",
+      "public/video-cutter/index.html", "public/video-cutter/en/index.html",
+      "public/extract-frames-from-video/index.html", "public/extract-frames-from-video/en/index.html"
     ]
   },
   {
-    name: "DJAI document, AI, and spreadsheet tools",
+    name: "DJAI document, AI, spreadsheet, and brand tools",
     dir: "djai-document-tools",
     install: "ci",
     build: ["run", "build"],
@@ -163,6 +170,12 @@ const projects = [
       "out/ai/context-optimizer/en/index.html",
       "out/spreadsheet/csv-to-json/index.html",
       "out/spreadsheet/xlsx-to-csv/en/index.html",
+      "out/brand/index.html",
+      "out/brand/en/index.html",
+      "out/brand/vi/index.html",
+      "out/brand/favicon-generator/index.html",
+      "out/brand/favicon-generator/en/index.html",
+      "out/brand/favicon-generator/vi/index.html",
       "out/document/pdf.worker.min.mjs",
       "out/document/ocr-runtime/worker.min.js",
       "out/document/ocr-data/eng.traineddata.gz",
@@ -250,6 +263,14 @@ function setCourseExportLanguages(project) {
     if (updatedHtml === html) {
       throw new Error(`DJAI course could not set English document language: ${relativePath}`);
     }
+    writeFileSync(outputPath, updatedHtml);
+  }
+
+  for (const relativePath of ["out/vi/index.html", "out/detail/vi/index.html"]) {
+    const outputPath = join(rootDir, project.dir, relativePath);
+    const html = readFileSync(outputPath, "utf8");
+    const updatedHtml = html.replace('<html lang="th">', '<html lang="vi">');
+    if (updatedHtml === html) throw new Error(`DJAI course could not set Vietnamese document language: ${relativePath}`);
     writeFileSync(outputPath, updatedHtml);
   }
 }

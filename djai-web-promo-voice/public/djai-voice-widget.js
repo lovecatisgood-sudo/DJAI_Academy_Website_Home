@@ -129,7 +129,9 @@
   function inferLanguage(transcript) {
     const joined = transcript.map((item) => item.text).join(" ");
     const hasThai = /[\u0E00-\u0E7F]/.test(joined);
+    const hasVietnamese = /[ăâđêôơưĂÂĐÊÔƠƯàáạảãằắặẳẵầấậẩẫèéẹẻẽềếệểễìíịỉĩòóọỏõồốộổỗờớợởỡùúụủũừứựửữỳýỵỷỹ]/i.test(joined);
     const hasLatin = /[A-Za-z]/.test(joined);
+    if (hasVietnamese) return "vi";
     if (hasThai && hasLatin) return "mixed";
     if (hasThai) return "th";
     if (hasLatin) return "en";
@@ -138,16 +140,16 @@
 
   function getSelectedLanguage() {
     const queryLanguage = new URLSearchParams(window.location.search).get("lang");
-    if (queryLanguage === "th" || queryLanguage === "en") return queryLanguage;
+    if (queryLanguage === "th" || queryLanguage === "en" || queryLanguage === "vi") return queryLanguage;
 
     try {
       const storedLanguage = window.localStorage.getItem("djai-language");
-      if (storedLanguage === "th" || storedLanguage === "en") return storedLanguage;
+      if (storedLanguage === "th" || storedLanguage === "en" || storedLanguage === "vi") return storedLanguage;
     } catch {
     }
 
     const documentLanguage = document.documentElement.lang?.slice(0, 2).toLowerCase();
-    return documentLanguage === "en" ? "en" : "th";
+    return ["th", "en", "vi"].includes(documentLanguage) ? documentLanguage : "th";
   }
 
   class VoiceController {
