@@ -164,6 +164,7 @@ const publicRoutes = [
   "/voice_admin/login",
   "/Cam_PDF_Scan_Signer_QR-Gen/",
   "/Cam_PDF_Scan_Signer_QR-Gen/privacy/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/",
   "/Cam_PDF_Scan_Signer_QR-Gen/terms/",
   "/Cam_PDF_Scan_Signer_QR-Gen/delete-account/",
   "/app-ads.txt",
@@ -675,14 +676,15 @@ async function verify() {
   }
 
   const camPdfChecks = [
-    ["/Cam_PDF_Scan_Signer_QR-Gen/", "Cam PDF Scan Signer QR Gen"],
-    ["/Cam_PDF_Scan_Signer_QR-Gen/privacy/", "Privacy Policy"],
-    ["/Cam_PDF_Scan_Signer_QR-Gen/terms/", "Terms of Service"],
-    ["/Cam_PDF_Scan_Signer_QR-Gen/delete-account/", "Delete your account"]
+    ["/Cam_PDF_Scan_Signer_QR-Gen/", "Cam PDF Scan Signer QR Gen", "en"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/privacy/", "Privacy Policy", "en"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/", "นโยบายความเป็นส่วนตัว", "th"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/terms/", "Terms of Service", "en"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/delete-account/", "Delete your account", "en"]
   ];
-  for (const [route, heading] of camPdfChecks) {
+  for (const [route, heading, language] of camPdfChecks) {
     const html = await fetch(`${origin}${route}`).then((response) => response.text());
-    if (!html.includes('<html lang="en"')) failures.push(`${route}: expected html lang=en`);
+    if (!html.includes(`<html lang="${language}"`)) failures.push(`${route}: expected html lang=${language}`);
     if (!html.includes(`<link rel="canonical" href="https://www.djai.academy${route}"`)) {
       failures.push(`${route}: missing self-canonical`);
     }
