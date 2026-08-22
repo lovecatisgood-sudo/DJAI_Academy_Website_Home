@@ -3,6 +3,7 @@ const http = require("node:http");
 const path = require("node:path");
 const zlib = require("node:zlib");
 const { createServiceSupervisor } = require("./service-supervisor");
+const { resolveInternalPorts } = require("./runtime-ports");
 
 const rootDir = __dirname;
 const homepageDir = path.join(rootDir, "djai-academy-homepage");
@@ -13,8 +14,15 @@ const port = Number(process.env.PORT || 3000);
 const hostname = process.env.HOST || "0.0.0.0";
 // Hosting providers do not always set NODE_ENV. Default to the production
 // server and opt into development mode only when it is requested explicitly.
-const homepagePort = Number(process.env.DJAI_HOMEPAGE_PORT || port + 1);
-const voicePromoPort = Number(process.env.DJAI_VOICE_PROMO_PORT || port + 2);
+// Hostinger may overlap old and new application instances during a rolling
+// deploy. Deriving child ports from the process ID prevents those instances
+// from competing for the same fixed PORT+1/PORT+2 pair.
+const { homepagePort, voicePromoPort } = resolveInternalPorts({
+  processId: process.pid,
+  rootPort: port,
+  homepageOverride: process.env.DJAI_HOMEPAGE_PORT,
+  voicePromoOverride: process.env.DJAI_VOICE_PROMO_PORT
+});
 
 const mimeTypes = {
   ".html": "text/html; charset=utf-8",
