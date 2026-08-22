@@ -11,14 +11,12 @@ const copy = {
   en: {
     title: "Your privacy choices",
     summary:
-      "We use optional Google Analytics cookies to understand site usage and Google AdSense cookies to show and measure advertising. You can accept all, reject optional cookies, or choose each category.",
+      "We use optional Google Analytics cookies to understand site usage. Advertising cookies and ad serving are disabled during publisher approval recovery.",
     necessary: "Necessary storage",
     necessaryHelp: "Always on. Remembers your privacy choice and supports website security.",
     analytics: "Analytics",
     analyticsHelp: "Helps us understand visits, pages used, approximate location, and device/browser information.",
-    advertising: "Advertising",
-    advertisingHelp: "Allows Google to show, limit, protect, and measure non-personalized ads.",
-    accept: "Accept all",
+    accept: "Accept analytics",
     reject: "Reject optional",
     customize: "Customize",
     save: "Save choices",
@@ -29,14 +27,12 @@ const copy = {
   th: {
     title: "ตัวเลือกความเป็นส่วนตัวของคุณ",
     summary:
-      "เราใช้คุกกี้ Google Analytics แบบไม่บังคับเพื่อทำความเข้าใจการใช้งานเว็บไซต์ และคุกกี้ Google AdSense เพื่อแสดงและวัดผลโฆษณา คุณสามารถยอมรับทั้งหมด ปฏิเสธคุกกี้เสริม หรือเลือกเป็นรายหมวดหมู่ได้",
+      "เราใช้คุกกี้ Google Analytics แบบไม่บังคับเพื่อทำความเข้าใจการใช้งานเว็บไซต์ ขณะนี้ปิดการใช้คุกกี้โฆษณาและการแสดงโฆษณาระหว่างปรับปรุงเว็บไซต์เพื่อขออนุมัติจากผู้เผยแพร่โฆษณา",
     necessary: "พื้นที่จัดเก็บที่จำเป็น",
     necessaryHelp: "เปิดเสมอ ใช้จดจำตัวเลือกความเป็นส่วนตัวและสนับสนุนความปลอดภัยของเว็บไซต์",
     analytics: "การวิเคราะห์",
     analyticsHelp: "ช่วยให้เราเข้าใจจำนวนการเข้าชม หน้าที่ใช้ ตำแหน่งโดยประมาณ และข้อมูลอุปกรณ์/เบราว์เซอร์",
-    advertising: "การโฆษณา",
-    advertisingHelp: "อนุญาตให้ Google แสดง จำกัดความถี่ ป้องกันการทุจริต และวัดผลโฆษณาแบบไม่ปรับตามบุคคล",
-    accept: "ยอมรับทั้งหมด",
+    accept: "ยอมรับการวิเคราะห์",
     reject: "ปฏิเสธคุกกี้เสริม",
     customize: "ปรับแต่ง",
     save: "บันทึกตัวเลือก",
@@ -47,14 +43,12 @@ const copy = {
   vi: {
     title: "Lựa chọn quyền riêng tư của bạn",
     summary:
-      "Chúng tôi dùng cookie Google Analytics không bắt buộc để hiểu cách website được sử dụng và cookie Google AdSense để hiển thị, đo lường quảng cáo. Bạn có thể đồng ý tất cả, từ chối cookie không bắt buộc hoặc chọn theo từng nhóm.",
+      "Chúng tôi dùng cookie Google Analytics không bắt buộc để hiểu cách website được sử dụng. Cookie quảng cáo và việc phân phối quảng cáo đang bị tắt trong thời gian khắc phục để xin phê duyệt nhà xuất bản.",
     necessary: "Lưu trữ cần thiết",
     necessaryHelp: "Luôn bật để ghi nhớ lựa chọn quyền riêng tư và hỗ trợ bảo mật website.",
     analytics: "Phân tích",
     analyticsHelp: "Giúp chúng tôi hiểu lượt truy cập, trang được sử dụng, vị trí gần đúng và thông tin về thiết bị, trình duyệt.",
-    advertising: "Quảng cáo",
-    advertisingHelp: "Cho phép Google hiển thị, giới hạn tần suất, bảo vệ và đo lường quảng cáo không cá nhân hóa.",
-    accept: "Đồng ý tất cả",
+    accept: "Đồng ý phân tích",
     reject: "Từ chối cookie không bắt buộc",
     customize: "Tùy chỉnh",
     save: "Lưu lựa chọn",
@@ -64,10 +58,10 @@ const copy = {
   }
 };
 
-function consentPayload(analytics, advertising) {
+function consentPayload(analytics) {
   return {
     analytics,
-    advertising,
+    advertising: false,
     savedAt: Date.now(),
     version: STORAGE_VERSION
   };
@@ -92,18 +86,18 @@ function readStoredConsent() {
   }
 }
 
-function updateGoogleConsent({ analytics, advertising }) {
+function updateGoogleConsent({ analytics }) {
   window.dataLayer = window.dataLayer || [];
   window.gtag = window.gtag || function gtag() {
     window.dataLayer.push(arguments);
   };
   window.gtag("consent", "update", {
     analytics_storage: analytics ? "granted" : "denied",
-    ad_storage: advertising ? "granted" : "denied",
-    ad_user_data: advertising ? "granted" : "denied",
+    ad_storage: "denied",
+    ad_user_data: "denied",
     ad_personalization: "denied"
   });
-  window.gtag("set", "ads_data_redaction", !advertising);
+  window.gtag("set", "ads_data_redaction", true);
 }
 
 function loadAnalytics(gaId) {
@@ -118,10 +112,6 @@ function loadAnalytics(gaId) {
   window.gtag("js", new Date());
   window.gtag("config", gaId);
 }
-
-// The AdSense loader is served directly in <head> by layout.jsx so Google can
-// detect it in the HTML. Advertising consent is expressed through Consent Mode
-// (ad_storage / ad_user_data), not by withholding the script.
 
 function removeAnalyticsCookies() {
   const cookieNames = document.cookie
@@ -144,7 +134,6 @@ export default function ConsentManager({ gaId, locale = "en" }) {
   const [visible, setVisible] = useState(null);
   const [customizing, setCustomizing] = useState(false);
   const [analytics, setAnalytics] = useState(false);
-  const [advertising, setAdvertising] = useState(false);
 
   const activate = useCallback(
     (choice) => {
@@ -161,7 +150,6 @@ export default function ConsentManager({ gaId, locale = "en" }) {
   useEffect(() => {
     function openSettings() {
       setAnalytics(Boolean(activeConsent?.analytics));
-      setAdvertising(Boolean(activeConsent?.advertising));
       setCustomizing(true);
       setVisible(true);
     }
@@ -170,12 +158,11 @@ export default function ConsentManager({ gaId, locale = "en" }) {
     return () => window.removeEventListener("djai:open-consent", openSettings);
   }, [activeConsent]);
 
-  function save(analyticsAllowed, advertisingAllowed) {
-    const choice = consentPayload(analyticsAllowed, advertisingAllowed);
+  function save(analyticsAllowed) {
+    const choice = consentPayload(analyticsAllowed);
     const requiresReload = Boolean(
       activeConsent &&
-        ((!analyticsAllowed && activeConsent.analytics) ||
-          (!advertisingAllowed && activeConsent.advertising))
+        !analyticsAllowed && activeConsent.analytics
     );
 
     window.localStorage.setItem(STORAGE_KEY, JSON.stringify(choice));
@@ -227,17 +214,6 @@ export default function ConsentManager({ gaId, locale = "en" }) {
                 onChange={(event) => setAnalytics(event.target.checked)}
               />
             </label>
-            <label className="consent-option">
-              <div>
-                <strong>{text.advertising}</strong>
-                <span>{text.advertisingHelp}</span>
-              </div>
-              <input
-                type="checkbox"
-                checked={advertising}
-                onChange={(event) => setAdvertising(event.target.checked)}
-              />
-            </label>
           </div>
         )}
 
@@ -251,19 +227,19 @@ export default function ConsentManager({ gaId, locale = "en" }) {
               <button className="consent-button secondary-choice" type="button" onClick={() => setCustomizing(false)}>
                 {text.back}
               </button>
-              <button className="consent-button primary-choice" type="button" onClick={() => save(analytics, advertising)}>
+              <button className="consent-button primary-choice" type="button" onClick={() => save(analytics)}>
                 {text.save}
               </button>
             </>
           ) : (
             <>
-              <button className="consent-button secondary-choice" type="button" onClick={() => save(false, false)}>
+              <button className="consent-button secondary-choice" type="button" onClick={() => save(false)}>
                 {text.reject}
               </button>
               <button className="consent-button secondary-choice" type="button" onClick={() => setCustomizing(true)}>
                 {text.customize}
               </button>
-              <button className="consent-button primary-choice" type="button" onClick={() => save(true, true)}>
+              <button className="consent-button primary-choice" type="button" onClick={() => save(true)}>
                 {text.accept}
               </button>
             </>

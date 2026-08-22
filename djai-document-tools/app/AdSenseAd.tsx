@@ -1,54 +1,11 @@
-"use client";
-
-import { useEffect } from "react";
-
-const ADSENSE_CLIENT = "ca-pub-3624708289866566";
-const AD_UNITS = {
-  display: {
-    slot: "7772358393",
-    props: {
-      "data-ad-format": "auto",
-      "data-full-width-responsive": "true"
-    }
-  },
-  display2: {
-    slot: "2939100040",
-    props: {
-      "data-ad-format": "auto",
-      "data-full-width-responsive": "true"
-    }
-  },
-  multiplex: {
-    slot: "7214075331",
-    props: {
-      "data-ad-format": "fluid",
-      "data-ad-layout-key": "-ef+6k-30-ac+ty"
-    }
-  }
+// Ad serving is intentionally paused while djai.academy completes publisher
+// approval recovery. The compatibility component keeps template changes small.
+type AdSenseAdProps = {
+  label?: string;
+  variant?: "display" | "display2" | "multiplex";
 };
 
-export default function AdSenseAd({ label = "Advertisement", variant = "display" }: { label?: string; variant?: "display" | "display2" | "multiplex" }) {
-  const unit = AD_UNITS[variant] || AD_UNITS.display;
-
-  useEffect(() => {
-    try {
-      const adsWindow = window as Window & { adsbygoogle?: unknown[] };
-      adsWindow.adsbygoogle = adsWindow.adsbygoogle || [];
-      adsWindow.adsbygoogle.push({});
-    } catch {
-      // Continue normally if ads are blocked or delayed.
-    }
-  }, []);
-
-  return (
-    <section className="ad-section" aria-label={label}>
-      <ins
-        className="adsbygoogle"
-        style={{ display: "block" }}
-        data-ad-client={ADSENSE_CLIENT}
-        data-ad-slot={unit.slot}
-        {...unit.props}
-      />
-    </section>
-  );
+export default function AdSenseAd(props: AdSenseAdProps) {
+  void props;
+  return null;
 }
