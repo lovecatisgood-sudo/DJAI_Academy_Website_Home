@@ -7,8 +7,8 @@ const PRIVACY_PATH = `${APP_PATH}privacy/`;
 const THAI_PATH = `${PRIVACY_PATH}th/`;
 
 const en = {
-  title: "Privacy Policy",
-  date: "Effective date: August 20, 2026 · Last updated: August 20, 2026",
+  title: "Privacy Policy for Cam PDF Scan Signer QR Gen",
+  date: "Effective date: August 21, 2026 · Last updated: August 21, 2026",
   intro: [
     "DEEJAI LAB Co ., Ltd, company registration number 0105569117953, operating under the brand DJAI Academy (\"DJAI\", \"we\", \"us\", or \"our\"), provides the Cam PDF Scan Signer QR Gen mobile application (the \"App\"). This Privacy Policy explains what information the App processes, why it is processed, when it is shared with service providers, how long it is retained, and the choices and rights available to you.",
     "DEEJAI LAB Co ., Ltd is the legal operator and data controller for the App. DJAI Academy is its operating brand. You can contact us at contact@djai.academy or through https://www.djai.academy/."
@@ -87,7 +87,9 @@ const en = {
       title: "Google Play purchases",
       paragraphs: [
         "Google Play processes payment details, billing-account information, transaction records, tax, and payment risk under Google's terms. DJAI does not receive your payment-card or bank-account details.",
-        "The App receives the product identifier, purchase state, purchase token, acknowledgement status, and related entitlement information supplied by Google Play so it can complete, restore, or revoke the Remove Ads lifetime entitlement. In the currently published implementation, the App checks this purchase state on the device and stores the resulting entitlement in protected App storage. DJAI's production release process requires migration to server-side Google Play verification before public rollout. This policy must be reviewed again when that backend is enabled because DJAI will then process the purchase token and server entitlement record for verification, acknowledgement, restoration, refund, revocation, fraud prevention, and support."
+        "The App sends the Google Play purchase token to DJAI's protected Firebase backend. The backend uses Google's Android Publisher API with the fixed App package and Remove Ads product identifier to check the purchase state, product, quantity, consumption state, refundable quantity, acknowledgement state, and any obfuscated App-account identifier supplied with the purchase. Access is granted only after Google reports a completed, unconsumed, eligible purchase. New purchases include a one-way obfuscated value derived from your Firebase user identifier so Google and DJAI can detect an account mismatch without sending the Firebase identifier as the billing identifier.",
+        "DJAI stores the raw purchase token only in a server-restricted purchase record because Google requires it for verification, acknowledgement, restoration, and refund reconciliation. That record may also contain a one-way token hash, Google Play order identifier, product identifier, purchase, consumption and acknowledgement states, quantity, refundable quantity, completion time, billing region, test-purchase indicator, linked Firebase user identifier, verification times, and refund or revocation details. If Google sends a pending chargeback-review notice, DJAI may also store its restricted review token, order identifier, reason, and receipt time so the request can be handled within Google's review period. A separate account entitlement record allows the backend to authorise paid exports. The device stores only a cached verified entitlement for offline UI and ad suppression; the backend remains authoritative for export access.",
+        "DJAI receives Google Play Real-time Developer Notifications and performs scheduled acknowledgement retry and Voided Purchases reconciliation. A cancelled, refunded, charged-back, consumed, invalid, or account-conflicting purchase does not grant access, and a later voided purchase revokes the server entitlement. Purchase tokens, order identifiers, and obfuscated account identifiers are not sent to Analytics, AdMob, or Sentry and are not written to application logs."
       ]
     },
     {
@@ -139,6 +141,7 @@ const en = {
         "Account, profile, consent, usage, survey, notification-token, quest, and reward records remain while your account is active or as needed to provide the service.",
         "When account deletion begins, DJAI creates a temporary deletion guard to prevent stale requests from recreating your data. Account-linked records and the Firebase Authentication account are removed through the deletion process. The guard may remain temporarily for security and consistency and is configured for automatic expiry.",
         "Limited security, legal, transaction, provider-backup, and diagnostic records may remain for the period reasonably necessary for fraud prevention, dispute handling, legal compliance, backup rotation, and enforcement of DJAI's rights.",
+        "Google Play purchase and refund records may be retained after account deletion where reasonably needed for accounting, dispute handling, refund and chargeback reconciliation, fraud prevention, and legal compliance. DJAI removes the live account entitlement and unlinks the Firebase user identifier from the retained purchase record during account deletion.",
         "Google, Firebase, AdMob, and Sentry apply their own retention periods to information they process under their terms and configured controls."
       ]]
     },
@@ -146,7 +149,8 @@ const en = {
       title: "Account and data deletion",
       paragraphs: [
         "You can delete your account in the App through Me → Account and consent → Delete account. You can also follow the public instructions at https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/delete-account/.",
-        "Account deletion removes the Firebase Authentication account and DJAI's UID-linked profile, survey, usage, notification-token, quest, reward-balance, and reward-verification records. Files stored only on your device are not available to DJAI and therefore must be deleted in the App, through Android App-storage settings, or by uninstalling the App."
+        "Account deletion removes the Firebase Authentication account and DJAI's UID-linked profile, survey, usage, notification-token, quest, reward-balance, and reward-verification records. Files stored only on your device are not available to DJAI and therefore must be deleted in the App, through Android App-storage settings, or by uninstalling the App.",
+        "Account deletion also removes the active billing-entitlement record and unlinks your Firebase user identifier from the retained Google Play transaction record. Limited transaction and refund data may remain as described in Section 12; it is not used to recreate the deleted App account."
       ]
     },
     {

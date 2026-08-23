@@ -11,7 +11,8 @@ const COURSE_LAST_MODIFIED = new Date("2026-08-05T00:00:00.000Z");
 const SIAMESE_COURSES_LAST_MODIFIED = new Date("2026-08-17T00:00:00.000Z");
 const VIETNAMESE_LAST_MODIFIED = new Date("2026-08-12T00:00:00.000Z");
 const VIDEO_TOOLS_LAST_MODIFIED = new Date("2026-08-09T00:00:00.000Z");
-const CAM_PDF_PRIVACY_LAST_MODIFIED = new Date("2026-08-20T00:00:00.000Z");
+const CAM_PDF_PRIVACY_LAST_MODIFIED = new Date("2026-08-21T00:00:00.000Z");
+const CAM_PDF_PRIVACY_THAI_LAST_MODIFIED = new Date("2026-08-20T00:00:00.000Z");
 // The background-removal tool was rebuilt on its own first-party engine and
 // its pages rewritten. Dated separately so the other static pages keep an
 // honest lastModified rather than all claiming to have changed.
@@ -118,8 +119,10 @@ export default async function sitemap() {
 
   const staticEntries = [...new Set(staticPaths)].map((path) => entry(
     path,
-    path === "/Cam_PDF_Scan_Signer_QR-Gen/privacy/" || path === "/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/"
+    path === "/Cam_PDF_Scan_Signer_QR-Gen/privacy/"
       ? CAM_PDF_PRIVACY_LAST_MODIFIED
+      : path === "/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/"
+      ? CAM_PDF_PRIVACY_THAI_LAST_MODIFIED
       : BACKGROUND_REMOVAL_PATHS.has(path)
       ? BACKGROUND_REMOVAL_LAST_MODIFIED
       : VIDEO_TOOL_PATHS.has(path) ? VIDEO_TOOLS_LAST_MODIFIED
