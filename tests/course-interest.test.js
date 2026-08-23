@@ -106,6 +106,62 @@ test("delivers a valid request only to the fixed course mailbox", async () => {
   assert.match(providerBody.subject, /Nina Builder/);
 });
 
+test("uses the configured Hostinger SMTP transport when Resend is unavailable", async () => {
+  let transportConfiguration;
+  let message;
+  const res = await invoke(handler({
+    env: {
+      SMTP_HOST: "smtp.hostinger.com",
+      SMTP_PORT: "465",
+      SMTP_SECURE: "true",
+      SMTP_USER: "leads@djai.academy",
+      SMTP_PASSWORD: "smtp-test-password",
+      SMTP_FROM_NAME: "DJAI Academy Leads"
+    },
+    smtpTransportFactory(configuration) {
+      transportConfiguration = configuration;
+      return {
+        async sendMail(value) {
+          message = value;
+          return { accepted: [COURSE_INTEREST_RECIPIENT], rejected: [] };
+        }
+      };
+    }
+  }), request());
+
+  assert.equal(res.statusCode, 200);
+  assert.equal(transportConfiguration.host, "smtp.hostinger.com");
+  assert.equal(transportConfiguration.port, 465);
+  assert.equal(transportConfiguration.secure, true);
+  assert.equal(message.to, COURSE_INTEREST_RECIPIENT);
+  assert.equal(message.replyTo, "nina@example.com");
+  assert.deepEqual(message.from, { name: "DJAI Academy Leads", address: "leads@djai.academy" });
+});
+
+test("falls back to SMTP when Resend rejects the request", async () => {
+  let smtpCalls = 0;
+  const res = await invoke(handler({
+    env: {
+      COURSE_INTEREST_RESEND_API_KEY: "re_test",
+      COURSE_INTEREST_EMAIL_FROM: "no-reply@djai.academy",
+      SMTP_USER: "leads@djai.academy",
+      SMTP_PASSWORD: "smtp-test-password"
+    },
+    fetchImpl: async () => ({ ok: false, status: 503 }),
+    smtpTransportFactory() {
+      return {
+        async sendMail() {
+          smtpCalls += 1;
+          return { accepted: [COURSE_INTEREST_RECIPIENT], rejected: [] };
+        }
+      };
+    }
+  }), request());
+
+  assert.equal(res.statusCode, 200);
+  assert.equal(smtpCalls, 1);
+});
+
 test("escapes learner-controlled content in the notification", () => {
   const html = notificationHtml({
     ...validateCourseInterest(validBody),

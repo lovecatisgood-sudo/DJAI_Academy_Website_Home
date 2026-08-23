@@ -11,5 +11,9 @@
    - Require self-inclusion, valid targets, deliberate `x-default` for multilingual clusters, and reciprocity for every declared target.
 4. **Integration verification — completed**
    - Run focused tests, lint, production build, composite route audit, and changed-file inspection.
-5. **Fresh final reconciliation — completed**
+5. **Course-interest delivery fallback — completed**
+   - Keep Resend as primary when configured.
+   - Reuse the existing Hostinger SMTP environment as a server-only fallback.
+   - Preserve the fixed recipient, Reply-To, validation, same-origin, honeypot, and rate-limit controls.
+6. **Fresh final reconciliation — completed**
    - Compare the user request directly to the final repository and live output.

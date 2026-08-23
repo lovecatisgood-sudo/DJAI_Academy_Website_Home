@@ -9,3 +9,6 @@
 - [x] G7: full production build and composite route audit pass: 323 pages, 14 redirects, 345 sitemap URLs, all 345 reachable, 268 slash redirects, and 504 internal links/assets.
 - [x] G8: course and privacy routes retain 200, H1, canonical, language, schema/content markers, and layout source.
 - [x] G9: fresh reconciliation passes for the exact final state.
+- [x] G10: Resend remains primary; SMTP fallback sends only to `app@school.djai.academy` with learner email as Reply-To.
+- [x] G11: missing/failed providers return a retryable 502; origin, validation, honeypot, and rate-limit tests remain passing.
+- [x] G12: the second full production build and composite 345-URL integration audit pass after the email-transport change.

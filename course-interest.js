@@ -115,43 +115,98 @@ function notificationHtml(input) {
   return `<!doctype html><html><body style="font-family:Arial,sans-serif;color:#111827"><h1 style="font-size:22px">New Siamese Cat Dev course interest</h1><table style="border-collapse:collapse;width:100%;max-width:680px">${row("Name", input.name)}${row("Email", input.email)}${row("Phone / WhatsApp", input.phone)}${row("Course format", formatLabel(input.courseFormat))}${row("Preferred schedule", input.schedule)}${row("Goals or project", input.goals)}${row("Page language", input.locale.toUpperCase())}</table><p style="color:#64748b;font-size:12px">Submitted from the course interest form on www.djai.academy. Reply directly to this email to contact the learner.</p></body></html>`;
 }
 
-async function sendNotification(input, { fetchImpl, env }) {
+async function sendNotification(input, { fetchImpl, env, smtpTransportFactory }) {
   const apiKey = cleanText(env.COURSE_INTEREST_RESEND_API_KEY || env.RESEND_API_KEY, 500);
   const sender = cleanText(env.COURSE_INTEREST_EMAIL_FROM || env.EMAIL_FROM, 254);
-  if (!apiKey || !sender) {
-    console.error("Course interest email is not configured.");
+  if (apiKey && sender) {
+    try {
+      const idempotencyKey = crypto.createHash("sha256")
+        .update(`${input.email}\n${input.courseFormat}\n${input.goals}`)
+        .digest("hex");
+      const response = await fetchImpl("https://api.resend.com/emails", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${apiKey}`,
+          "Content-Type": "application/json",
+          "Idempotency-Key": `course-interest-${idempotencyKey}`,
+          "User-Agent": "djai-academy-website/1.0"
+        },
+        body: JSON.stringify({
+          from: `Siamese Cat Dev Course <${sender}>`,
+          to: [COURSE_INTEREST_RECIPIENT],
+          reply_to: input.email,
+          subject: `Course booking interest — ${input.name}`,
+          html: notificationHtml(input)
+        }),
+        signal: AbortSignal.timeout(10_000)
+      });
+      if (response.ok) return true;
+      console.error(`Course interest Resend provider returned ${response.status}; trying SMTP fallback.`);
+    } catch (error) {
+      console.error(
+        "Course interest Resend request failed; trying SMTP fallback.",
+        error instanceof Error ? error.message : error
+      );
+    }
+  }
+
+  return sendNotificationViaSmtp(input, { env, smtpTransportFactory });
+}
+
+async function sendNotificationViaSmtp(input, { env = process.env, smtpTransportFactory } = {}) {
+  const host = cleanText(env.COURSE_INTEREST_SMTP_HOST || env.SMTP_HOST || "smtp.hostinger.com", 255);
+  const portValue = Number(env.COURSE_INTEREST_SMTP_PORT || env.SMTP_PORT || "465");
+  const port = Number.isInteger(portValue) && portValue > 0 && portValue <= 65535 ? portValue : 465;
+  const secureValue = cleanText(env.COURSE_INTEREST_SMTP_SECURE || env.SMTP_SECURE, 10).toLowerCase();
+  const secure = secureValue ? secureValue === "true" : port === 465;
+  const user = cleanText(env.COURSE_INTEREST_SMTP_USER || env.SMTP_USER, 254);
+  const password = cleanText(env.COURSE_INTEREST_SMTP_PASSWORD || env.SMTP_PASSWORD, 500);
+  const fromName = cleanText(
+    env.COURSE_INTEREST_SMTP_FROM_NAME || env.SMTP_FROM_NAME || "Siamese Cat Dev Course",
+    100
+  );
+
+  if (!user || !password) {
+    console.error("Course interest email is not configured for Resend or SMTP.");
     return false;
   }
 
-  const idempotencyKey = crypto.createHash("sha256")
-    .update(`${input.email}\n${input.courseFormat}\n${input.goals}`)
-    .digest("hex");
-  const response = await fetchImpl("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${apiKey}`,
-      "Content-Type": "application/json",
-      "Idempotency-Key": `course-interest-${idempotencyKey}`,
-      "User-Agent": "djai-academy-website/1.0"
-    },
-    body: JSON.stringify({
-      from: `Siamese Cat Dev Course <${sender}>`,
-      to: [COURSE_INTEREST_RECIPIENT],
-      reply_to: input.email,
-      subject: `Course booking interest — ${input.name}`,
-      html: notificationHtml(input)
-    }),
-    signal: AbortSignal.timeout(10_000)
+  const createTransport = smtpTransportFactory || ((configuration) =>
+    require("nodemailer").createTransport(configuration));
+  const transport = createTransport({
+    host,
+    port,
+    secure,
+    requireTLS: !secure,
+    auth: { user, pass: password },
+    connectionTimeout: 10_000,
+    greetingTimeout: 10_000,
+    socketTimeout: 15_000
   });
-  if (!response.ok) {
-    console.error(`Course interest email provider returned ${response.status}.`);
+  const result = await transport.sendMail({
+    from: { name: fromName, address: user },
+    to: COURSE_INTEREST_RECIPIENT,
+    replyTo: input.email,
+    subject: `Course booking interest — ${input.name}`,
+    html: notificationHtml(input)
+  });
+  if (Array.isArray(result?.rejected) && result.rejected.some((address) =>
+    String(address).toLowerCase() === COURSE_INTEREST_RECIPIENT.toLowerCase()
+  )) {
+    console.error("Course interest SMTP provider rejected the fixed recipient.");
     return false;
+  }
+  if (Array.isArray(result?.accepted)) {
+    return result.accepted.some((address) =>
+      String(address).toLowerCase() === COURSE_INTEREST_RECIPIENT.toLowerCase()
+    );
   }
   return true;
 }
 
 function createCourseInterestHandler(options = {}) {
   const fetchImpl = options.fetchImpl || globalThis.fetch;
+  const smtpTransportFactory = options.smtpTransportFactory;
   const env = options.env || process.env;
   const now = options.now || Date.now;
   const rateLimitStore = options.rateLimitStore || new Map();
@@ -198,7 +253,7 @@ function createCourseInterestHandler(options = {}) {
     }
 
     try {
-      const delivered = await sendNotification(input, { fetchImpl, env });
+      const delivered = await sendNotification(input, { fetchImpl, env, smtpTransportFactory });
       if (!delivered) {
         json(res, 502, { ok: false, error: "Notification delivery failed" });
         return;
@@ -217,5 +272,6 @@ module.exports = {
   createCourseInterestHandler,
   escapeHtml,
   notificationHtml,
+  sendNotificationViaSmtp,
   validateCourseInterest
 };

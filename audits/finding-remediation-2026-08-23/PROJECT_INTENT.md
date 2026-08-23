@@ -24,8 +24,10 @@ Finish the verified post-deployment technical remediation without changing publi
 - The Siamese Cat Dev course pair reports the actual 23 August 2026 release date in the sitemap.
 - The English Cam PDF policy remains at 21 August; the unchanged Thai policy remains honestly dated 20 August.
 - The generic audit scanner accepts valid TH/VI and standalone-VI locale models while still rejecting genuinely non-reciprocal pairs.
+- The course-interest endpoint can deliver through the existing Hostinger SMTP environment when Resend is not configured, while retaining its fixed recipient and abuse controls.
 - Build, lint, route, sitemap, canonical, locale, content-preservation, and crawl-graph gates pass.
 
 ## Exclusions
 
-- No provider credentials, dashboard access, browser automation, redesign, copy rewrite, route migration, dependency upgrade, or tool-engine change.
+- No provider credentials, dashboard access, browser automation, redesign, copy rewrite, route migration, or tool-engine change.
+- Adding the already-used `nodemailer` package to the root runtime is allowed only for the verified SMTP fallback; no unrelated dependency is upgraded.

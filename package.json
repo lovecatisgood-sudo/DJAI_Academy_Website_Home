@@ -17,5 +17,8 @@
     "verify:hostinger": "node scripts/audit-hostinger.mjs",
     "hostinger:build": "node scripts/build-hostinger.mjs",
     "hostinger:start": "node server.js"
+  },
+  "dependencies": {
+    "nodemailer": "^9.0.3"
   }
 }
