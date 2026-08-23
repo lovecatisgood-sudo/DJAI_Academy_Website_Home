@@ -6,6 +6,7 @@ import { join } from "node:path";
 
 const port = Number(process.env.DJAI_AUDIT_PORT || 3147);
 const origin = `http://127.0.0.1:${port}`;
+const productionOrigin = "https://www.djai.academy";
 const repositoryRoot = new URL("..", import.meta.url).pathname;
 const useQrCompatibilityEntry = process.env.DJAI_AUDIT_ENTRY === "qr";
 const serverEntry = useQrCompatibilityEntry
@@ -213,6 +214,14 @@ await copyFile(join(repositoryRoot, "djai-academy-homepage", "data", "blog-posts
 
 function getHtmlAttribute(tag, name) {
   return tag.match(new RegExp(`\\b${name}=["']([^"']*)["']`, "i"))?.[1] || "";
+}
+
+function getSitemapLastModified(sitemapBody, path) {
+  const productionUrl = `${productionOrigin}${path}`;
+  const entry = sitemapBody
+    .split("<url>")
+    .find((candidate) => candidate.includes(`<loc>${productionUrl}</loc>`));
+  return entry?.match(/<lastmod>([^<]+)<\/lastmod>/)?.[1] || "";
 }
 
 const server = spawn(process.execPath, [serverEntry], {
@@ -463,6 +472,22 @@ async function verify() {
   if (!promoBody.includes("บริการพัฒนาเว็บไซต์ พร้อมเปิดตัว ติดอันดับ และสร้างลูกค้า")) {
     failures.push("/web_promo/: missing crawlable server-rendered service content");
   }
+  const promoVietnameseResponse = await fetch(`${origin}/web_promo/vi/`);
+  const promoVietnameseBody = await promoVietnameseResponse.text();
+  for (const [route, response, html] of [
+    ["/web_promo/", promoResponse, promoBody],
+    ["/web_promo/vi/", promoVietnameseResponse, promoVietnameseBody]
+  ]) {
+    if (response.status !== 200) failures.push(`${route}: expected 200, received ${response.status}`);
+    for (const language of ["th", "vi", "x-default"]) {
+      if (!new RegExp(`hreflang=["']${language}["']`, "i").test(html)) {
+        failures.push(`${route}: missing intentional Thai/Vietnamese promo hreflang ${language}`);
+      }
+    }
+    if (/hreflang=["']en["']/i.test(html) || html.includes("/web_promo/en/")) {
+      failures.push(`${route}: invented non-equivalent English promotion alternate`);
+    }
+  }
 
   const promoScriptResponse = await fetch(`${origin}/web_promo/assets/js/promo.js`);
   const promoScriptBody = await promoScriptResponse.text();
@@ -504,6 +529,16 @@ async function verify() {
     if (!html.includes("<h1") || !html.includes(heading)) failures.push(`${route}: missing expected Vietnamese H1 copy`);
     if (html.includes('<meta name="robots" content="noindex')) failures.push(`${route}: unexpectedly noindexed`);
   }
+  const standaloneVietnameseArticle = await fetch(
+    `${origin}/blog/vi/vibe-coding-cho-nguoi-moi/`
+  ).then((response) => response.text());
+  for (const language of ["th", "en", "x-default"]) {
+    if (new RegExp(`hreflang=["']${language}["']`, "i").test(standaloneVietnameseArticle)) {
+      failures.push(
+        `/blog/vi/vibe-coding-cho-nguoi-moi/: invented ${language} alternate for a standalone Vietnamese article`
+      );
+    }
+  }
 
   const llmsResponse = await fetch(`${origin}/llms.txt`);
   const llmsBody = await llmsResponse.text();
@@ -542,6 +577,19 @@ async function verify() {
   }
 
   const sitemapBody = await fetch(`${origin}/sitemap.xml`).then((response) => response.text());
+  for (const [path, expectedLastModified] of [
+    ["/siamese_cat/dev/course/", "2026-08-23T00:00:00.000Z"],
+    ["/siamese_cat/dev/course/th/", "2026-08-23T00:00:00.000Z"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/privacy/", "2026-08-21T00:00:00.000Z"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/", "2026-08-20T00:00:00.000Z"]
+  ]) {
+    const actualLastModified = getSitemapLastModified(sitemapBody, path);
+    if (actualLastModified !== expectedLastModified) {
+      failures.push(
+        `/sitemap.xml: ${path} expected lastmod ${expectedLastModified}, received ${actualLastModified || "missing"}`
+      );
+    }
+  }
   for (const path of ["/tools/seo-screaming-toad/", "/tools/seo-screaming-toad/en/"]) {
     if (!sitemapBody.includes(`https://www.djai.academy${path}`)) failures.push(`/sitemap.xml: missing ${path}`);
   }

@@ -7,7 +7,7 @@ export const revalidate = 3600;
 
 const ORIGIN = "https://www.djai.academy";
 const STATIC_LAST_MODIFIED = new Date("2026-07-30T00:00:00.000Z");
-const COURSE_LAST_MODIFIED = new Date("2026-08-05T00:00:00.000Z");
+const COURSE_LAST_MODIFIED = new Date("2026-08-23T00:00:00.000Z");
 const SIAMESE_COURSES_LAST_MODIFIED = new Date("2026-08-17T00:00:00.000Z");
 const VIETNAMESE_LAST_MODIFIED = new Date("2026-08-12T00:00:00.000Z");
 const VIDEO_TOOLS_LAST_MODIFIED = new Date("2026-08-09T00:00:00.000Z");
