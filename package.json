@@ -2,6 +2,7 @@
   "name": "djai-academy-website",
   "version": "1.0.0",
   "private": true,
+  "type": "commonjs",
   "description": "Root Hostinger deployment entry point for DJAI Academy and public tools.",
   "main": "server.js",
   "engines": {
