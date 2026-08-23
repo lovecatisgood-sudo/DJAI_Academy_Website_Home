@@ -186,7 +186,10 @@ const redirects = [
   ["/tools/docx-to-pdf/en/", "/tools/document/docx-to-pdf/en/"],
   ["/tools/word-to-pdf/en/", "/tools/document/docx-to-pdf/en/"],
   ["/tools/document/word-to-pdf/", "/tools/document/docx-to-pdf/"],
-  ["/tools/document/word-to-pdf/en/", "/tools/document/docx-to-pdf/en/"]
+  ["/tools/document/word-to-pdf/en/", "/tools/document/docx-to-pdf/en/"],
+  ["/siamese_cat/dev/en/course/", "/siamese_cat/dev/course/"],
+  ["/siamese_cat/dev/en/courses/", "/siamese_cat/dev/courses/"],
+  ["/siamese_cat/dev/en/courses/build-first-app/", "/siamese_cat/dev/courses/build-first-app/"]
 ];
 const slashCanonicalPrefixes = [
   "/course/",
