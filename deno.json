@@ -4,7 +4,7 @@
     "build": "npm run build",
     "runtime": {
       "type": "dynamic",
-      "entrypoint": "./server.js",
+      "entrypoint": "./server.cjs",
       "memory_limit": 768
     }
   }
