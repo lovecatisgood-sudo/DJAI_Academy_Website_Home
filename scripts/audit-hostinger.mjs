@@ -204,8 +204,7 @@ const slashCanonicalRoutes = publicRoutes.filter((route) =>
   && !route.startsWith("/siamese_cat/dev/blog/")
 );
 const accountOnboardingRedirects = ["/academy/", "/academy/en/", "/academy/vi/"];
-const moneyMakingProductRegistrationUrl =
-  "https://school.djai.academy/signup?intent=free-course&course_id=money-making-product-2026-08-22";
+const moneyMakingProductRegistrationUrl = "/siamese_cat/dev/course/#course-interest";
 const auditPassword = "djai-local-deployment-audit";
 const auditApiKey = "djai-local-api-key-audit";
 const auditDataDirectory = await mkdtemp(join(tmpdir(), "djai-blog-audit-"));
@@ -290,7 +289,20 @@ async function verify() {
 
   const campaignResponse = await fetch(`${origin}/MONEY_MAKING_PRODUCT/`, { redirect: "manual" });
   if (campaignResponse.status !== 307 || campaignResponse.headers.get("location") !== moneyMakingProductRegistrationUrl) {
-    failures.push("/MONEY_MAKING_PRODUCT/: expected account-first free-course signup redirect");
+    failures.push("/MONEY_MAKING_PRODUCT/: expected redirect to the evergreen course-interest form");
+  }
+
+  const courseInterestMethodResponse = await fetch(`${origin}/api/course-interest`, { redirect: "manual" });
+  if (courseInterestMethodResponse.status !== 405) {
+    failures.push(`/api/course-interest: expected GET to return 405, received ${courseInterestMethodResponse.status}`);
+  }
+  const courseInterestCrossSiteResponse = await fetch(`${origin}/api/course-interest`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Origin: "https://attacker.example" },
+    body: JSON.stringify({})
+  });
+  if (courseInterestCrossSiteResponse.status !== 403) {
+    failures.push(`/api/course-interest: expected cross-site POST to return 403, received ${courseInterestCrossSiteResponse.status}`);
   }
 
   const courseLandingVariants = [
@@ -303,21 +315,23 @@ async function verify() {
       `<html lang="${variant.language}"`,
       `<link rel="canonical" href="${variant.canonical}"`,
       `<h1>${variant.h1}</h1>`,
-      'href="/MONEY_MAKING_PRODUCT/"',
+      variant.language === "th" ? "แจ้งความสนใจคอร์ส" : "Express interest in a course",
       'src="/siamese_cat/dev/djai-academy-logo.webp"',
       'src="/founder-djai-display.webp"',
       'hreflang="en"',
       'hreflang="th"',
       'hreflang="x-default"',
-      '"@type":"EducationEvent"',
-      '"startDate":"2026-08-22T13:00:00+07:00"',
-      '"isAccessibleForFree":true'
+      '"@type":"Course"',
+      '"inLanguage":["en","th"]'
     ];
     for (const expected of checks) {
       if (!html.includes(expected)) failures.push(`${variant.route}: missing ${expected}`);
     }
     if (html.includes("chat.whatsapp.com") || html.includes("meet.google.com")) {
       failures.push(`${variant.route}: private participant links leaked into public HTML`);
+    }
+    if (html.includes('"@type":"EducationEvent"') || html.includes('"startDate"')) {
+      failures.push(`${variant.route}: expired event structured data remains on evergreen course page`);
     }
   }
 
@@ -371,6 +385,20 @@ async function verify() {
   });
   if (retiredOnboardingResponse.status !== 410) {
     failures.push(`/api/academy-onboarding/: expected retired endpoint status 410, received ${retiredOnboardingResponse.status}`);
+  }
+
+  const vietnameseToolHub = await fetch(`${origin}/tools/vi/`).then((response) => response.text());
+  for (const route of [
+    "/tools/qrgen/vi/",
+    "/tools/resizeimg/vi/",
+    "/tools/PDFTools/vi/",
+    "/tools/document/vi/",
+    "/tools/ai/vi/",
+    "/tools/spreadsheet/vi/"
+  ]) {
+    if (!vietnameseToolHub.includes(`href="${route}"`)) {
+      failures.push(`/tools/vi/: missing crawlable Vietnamese tool hub link ${route}`);
+    }
   }
 
   const toolDiscoveryRoutes = publicRoutes.filter(
@@ -659,6 +687,38 @@ async function verify() {
     }
   }
 
+  const crawlGraph = new Map();
+  for (const [productionUrl, html] of sitemapHtml) {
+    const destinations = new Set();
+    for (const anchor of html.matchAll(/<a\b[^>]*href=["']([^"']+)["'][^>]*>/gi)) {
+      try {
+        const target = new URL(anchor[1], productionUrl);
+        target.hash = "";
+        if (target.origin === "https://www.djai.academy" && sitemapUrlSet.has(target.href)) {
+          destinations.add(target.href);
+        }
+      } catch {
+        // Ignore invalid and non-HTTP href values.
+      }
+    }
+    crawlGraph.set(productionUrl, destinations);
+  }
+  const reachableSitemapUrls = new Set();
+  const crawlQueue = ["https://www.djai.academy/"];
+  while (crawlQueue.length) {
+    const current = crawlQueue.shift();
+    if (reachableSitemapUrls.has(current)) continue;
+    reachableSitemapUrls.add(current);
+    for (const destination of crawlGraph.get(current) || []) {
+      if (!reachableSitemapUrls.has(destination)) crawlQueue.push(destination);
+    }
+  }
+  for (const productionUrl of sitemapUrls) {
+    if (!reachableSitemapUrls.has(productionUrl)) {
+      failures.push(`${new URL(productionUrl).pathname}: sitemap URL is not reachable from the homepage link graph`);
+    }
+  }
+
   const voiceAdminLoginResponse = await fetch(`${origin}/voice_admin/login`);
   const voiceAdminLoginBody = await voiceAdminLoginResponse.text();
   if (!String(voiceAdminLoginResponse.headers.get("x-robots-tag") || "").includes("noindex")) {
@@ -887,7 +947,7 @@ async function verify() {
 
   console.log(
     `Hostinger route audit passed: ${publicRoutes.length} pages, ${redirects.length + accountOnboardingRedirects.length} redirects, ` +
-      `${sitemapUrls.length} sitemap URLs, ${slashCanonicalRoutes.length} slash redirects, `
+      `${sitemapUrls.length} sitemap URLs (${reachableSitemapUrls.size} reachable from home), ${slashCanonicalRoutes.length} slash redirects, `
       + `${discoveredRoutes.size} internal links/assets, admin API auth, and canonical host.`
   );
 }

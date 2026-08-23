@@ -4,6 +4,7 @@ const path = require("node:path");
 const zlib = require("node:zlib");
 const { createServiceSupervisor } = require("./service-supervisor");
 const { resolveInternalPorts } = require("./runtime-ports");
+const { COURSE_INTEREST_PATH, createCourseInterestHandler } = require("./course-interest");
 
 const rootDir = __dirname;
 const homepageDir = path.join(rootDir, "djai-academy-homepage");
@@ -423,6 +424,7 @@ function waitForServer(internalPort, attempts = 100) {
 
 const services = {};
 let rootServer;
+const handleCourseInterest = createCourseInterestHandler();
 
 async function start() {
   services.homepage = createStandaloneService("DJAI homepage", homepageDir, homepagePort);
@@ -446,6 +448,11 @@ async function start() {
 
       if (pathname === "/healthz") {
         serveHealth(req, res);
+        return;
+      }
+
+      if (pathname === COURSE_INTEREST_PATH) {
+        handleCourseInterest(req, res);
         return;
       }
 

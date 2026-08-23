@@ -13,19 +13,19 @@ export const metadata = {
 const tools = [
   ["Chuyển video thành văn bản", "Tạo bản chép lời bằng AI", "Chuyển video hoặc audio thành TXT, SRT, VTT hay JSON. Không cần đăng ký; dữ liệu media không được tải lên máy chủ DJAI.", "/tools/video-to-text/en/", ["Phụ đề", "AI cục bộ"]],
   ["Kiểm tra SEO", "SEO Screaming Toad", "Thu thập website để kiểm tra canonical, hreflang, sitemap, structured data và lỗi kỹ thuật bằng bằng chứng có thể đối chiếu.", "/tools/seo-screaming-toad/en/", ["SEO kỹ thuật", "Mã nguồn mở"]],
-  ["Tạo mã QR", "QR Code miễn phí", "Tạo QR cho đường dẫn, Wi-Fi, danh thiếp, nội dung hoặc chiến dịch rồi tải PNG hay SVG mà không cần tài khoản.", "/tools/qrgen/en/", ["PNG", "SVG"]],
-  ["Xử lý hình ảnh", "Đổi định dạng, nén và đổi kích thước ảnh", "Đổi JPG, PNG, WebP, HEIC; nén hàng loạt hoặc xóa nền. Phần lớn tác vụ chạy ngay trên thiết bị.", "/tools/resizeimg/en/", ["HEIC", "Xử lý hàng loạt"]],
-  ["Xử lý PDF", "Bộ công cụ PDF dùng ngay", "Ghép, tách, nén, xoay, đóng dấu, đặt mật khẩu hoặc chuyển PDF sang ảnh mà không gửi tài liệu lên máy chủ.", "/tools/PDFTools/en/", ["PDF", "Riêng tư"]],
-  ["Tài liệu", "Chuyển đổi DOCX, OCR và trích xuất chữ", "Chuyển DOCX sang PDF, HTML, Markdown hoặc văn bản; đọc chữ từ PDF và ảnh ngay trong trình duyệt.", "/tools/document/en/", ["DOCX", "OCR"]],
-  ["Ngữ cảnh cho AI", "Đếm token và chuẩn bị dữ liệu RAG", "Đếm token, làm sạch ngữ cảnh, xem trước các đoạn RAG và đóng gói nhiều tệp trước khi đưa vào mô hình AI.", "/tools/ai/en/", ["Token", "RAG"]],
-  ["Bảng tính", "Chuyển đổi CSV, JSON và Excel", "Làm sạch, ghép, tách và chuyển đổi CSV, JSON, XLSX cho các luồng dữ liệu và tự động hóa.", "/tools/spreadsheet/en/", ["CSV", "XLSX"]]
+  ["Tạo mã QR", "QR Code miễn phí", "Tạo QR cho đường dẫn, Wi-Fi, danh thiếp, nội dung hoặc chiến dịch rồi tải PNG hay SVG mà không cần tài khoản.", "/tools/qrgen/vi/", ["PNG", "SVG"]],
+  ["Xử lý hình ảnh", "Đổi định dạng, nén và đổi kích thước ảnh", "Đổi JPG, PNG, WebP, HEIC; nén hàng loạt hoặc xóa nền. Phần lớn tác vụ chạy ngay trên thiết bị.", "/tools/resizeimg/vi/", ["HEIC", "Xử lý hàng loạt"]],
+  ["Xử lý PDF", "Bộ công cụ PDF dùng ngay", "Ghép, tách, nén, xoay, đóng dấu, đặt mật khẩu hoặc chuyển PDF sang ảnh mà không gửi tài liệu lên máy chủ.", "/tools/PDFTools/vi/", ["PDF", "Riêng tư"]],
+  ["Tài liệu", "Chuyển đổi DOCX, OCR và trích xuất chữ", "Chuyển DOCX sang PDF, HTML, Markdown hoặc văn bản; đọc chữ từ PDF và ảnh ngay trong trình duyệt.", "/tools/document/vi/", ["DOCX", "OCR"]],
+  ["Ngữ cảnh cho AI", "Đếm token và chuẩn bị dữ liệu RAG", "Đếm token, làm sạch ngữ cảnh, xem trước các đoạn RAG và đóng gói nhiều tệp trước khi đưa vào mô hình AI.", "/tools/ai/vi/", ["Token", "RAG"]],
+  ["Bảng tính", "Chuyển đổi CSV, JSON và Excel", "Làm sạch, ghép, tách và chuyển đổi CSV, JSON, XLSX cho các luồng dữ liệu và tự động hóa.", "/tools/spreadsheet/vi/", ["CSV", "XLSX"]]
 ];
 
 const workflows = [
-  ["Xóa nền ảnh", "/tools/resizeimg/remove-background-image/en/"], ["Đổi HEIC sang JPG", "/tools/resizeimg/heic-to-jpg/en/"],
-  ["Nén ảnh còn khoảng 100 KB", "/tools/resizeimg/image-to-100kb/en/"], ["Ghép JPG thành PDF", "/tools/PDFTools/jpg-to-pdf/en/"],
-  ["Tách trang PDF thành JPG", "/tools/PDFTools/pdf-to-jpg/en/"], ["Chuyển DOCX sang PDF", "/tools/document/docx-to-pdf/en/"],
-  ["Đếm token trong tài liệu", "/tools/ai/token-counter/en/"], ["Chuyển CSV sang JSON", "/tools/spreadsheet/csv-to-json/en/"]
+  ["Xóa nền ảnh", "/tools/resizeimg/remove-background-image/vi/"], ["Đổi HEIC sang JPG", "/tools/resizeimg/heic-to-jpg/vi/"],
+  ["Nén ảnh còn khoảng 100 KB", "/tools/resizeimg/image-to-100kb/vi/"], ["Ghép PDF", "/tools/PDFTools/merge-pdf/vi/"],
+  ["Tách trang PDF thành ảnh", "/tools/PDFTools/pdf-to-images/vi/"], ["Chuyển DOCX sang PDF", "/tools/document/docx-to-pdf/vi/"],
+  ["Đếm token trong tài liệu", "/tools/ai/token-counter/vi/"], ["Chuyển CSV sang JSON", "/tools/spreadsheet/csv-to-json/vi/"]
 ];
 
 const structuredData = { "@context": "https://schema.org", "@type": "CollectionPage", name: "Bộ công cụ miễn phí của DJAI", url: "https://www.djai.academy/tools/vi/", inLanguage: "vi", hasPart: tools.map(([, title, text, href]) => ({ "@type": "SoftwareApplication", name: title, description: text, url: `https://www.djai.academy${href}`, applicationCategory: "UtilitiesApplication", operatingSystem: "Web browser", offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } })) };

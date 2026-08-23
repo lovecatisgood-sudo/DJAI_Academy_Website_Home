@@ -1,8 +1,7 @@
 import { redirect } from "next/navigation";
 
-const REGISTRATION_URL =
-  "https://school.djai.academy/signup?intent=free-course&course_id=money-making-product-2026-08-22";
+const COURSE_INTEREST_URL = "/siamese_cat/dev/course/#course-interest";
 
 export default function MoneyMakingProductRegistrationPage() {
-  redirect(REGISTRATION_URL);
+  redirect(COURSE_INTEREST_URL);
 }
