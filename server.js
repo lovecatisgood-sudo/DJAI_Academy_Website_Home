@@ -1,8 +1,10 @@
 const fs = require("node:fs");
 const http = require("node:http");
+const https = require("node:https");
 const path = require("node:path");
 const zlib = require("node:zlib");
 const { createServiceSupervisor } = require("./service-supervisor");
+const { createInProcessNext } = require("./in-process-next");
 const { resolveInternalPorts } = require("./runtime-ports");
 const { COURSE_INTEREST_PATH, createCourseInterestHandler } = require("./course-interest");
 
@@ -13,6 +15,9 @@ const packageMetadata = require(path.join(rootDir, "package.json"));
 
 const port = Number(process.env.PORT || 3000);
 const hostname = process.env.HOST || "0.0.0.0";
+const deploymentRole = process.env.DENO_DEPLOY === "true"
+  ? (process.env.DJAI_DEPLOY_ROLE || "homepage")
+  : "combined";
 // Hosting providers do not always set NODE_ENV. Default to the production
 // server and opt into development mode only when it is requested explicitly.
 // Hostinger may overlap old and new application instances during a rolling
@@ -249,10 +254,6 @@ function serveStaticFile(req, res, filePath) {
 
 function serveHealth(req, res) {
   const requiredOutputs = [
-    path.join(homepageDir, ".next", "BUILD_ID"),
-    path.join(homepageDir, ".next", "standalone", "server.js"),
-    path.join(voicePromoDir, ".next", "BUILD_ID"),
-    path.join(voicePromoDir, ".next", "standalone", "server.js"),
     path.join(rootDir, "djai-academy-course", "out", "index.html"),
     path.join(rootDir, "DJayTools-Free-QR-Generator-Source", "out", "index.html"),
     path.join(rootDir, "djai-image-resizer", "public", "index.html"),
@@ -265,6 +266,18 @@ function serveHealth(req, res) {
     path.join(rootDir, "Siamese-Cat-Dev-Bio-Site", "dist", "course", "index.html"),
     path.join(rootDir, "Siamese-Cat-Dev-Bio-Site", "dist", "course", "th", "index.html")
   ];
+  if (deploymentRole !== "voice") {
+    requiredOutputs.push(
+      path.join(homepageDir, ".next", "BUILD_ID"),
+      path.join(homepageDir, ".next", "standalone", "server.js")
+    );
+  }
+  if (deploymentRole !== "homepage") {
+    requiredOutputs.push(
+      path.join(voicePromoDir, ".next", "BUILD_ID"),
+      path.join(voicePromoDir, ".next", "standalone", "server.js")
+    );
+  }
   const buildsReady = requiredOutputs.every((output) => fs.existsSync(output));
   const serviceHealth = Object.fromEntries(
     Object.entries(services).map(([key, service]) => [key, service.snapshot()])
@@ -381,6 +394,39 @@ function proxyRequest(req, res, targetPort) {
   req.pipe(upstream);
 }
 
+function proxyOriginRequest(req, res, origin) {
+  let target;
+  try {
+    target = new URL(req.url || "/", origin);
+  } catch (error) {
+    console.error("DJAI external service origin is invalid.", error);
+    res.writeHead(503, { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store" });
+    res.end("Application service unavailable");
+    return;
+  }
+  const transport = target.protocol === "https:" ? https : http;
+  const upstream = transport.request(target, {
+    method: req.method,
+    headers: {
+      ...req.headers,
+      host: target.host,
+      "x-forwarded-host": req.headers.host || "",
+      "x-forwarded-proto": "https"
+    }
+  }, (upstreamResponse) => {
+    res.writeHead(upstreamResponse.statusCode || 502, upstreamResponse.headers);
+    upstreamResponse.pipe(res);
+  });
+  upstream.on("error", (error) => {
+    console.error(`Unable to proxy ${req.url} to ${target.origin}.`, error);
+    if (!res.headersSent) {
+      res.writeHead(502, { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store" });
+    }
+    res.end("Application service unavailable");
+  });
+  req.pipe(upstream);
+}
+
 function createStandaloneService(name, directory, internalPort) {
   const serverPath = path.join(directory, ".next", "standalone", "server.js");
   if (!fs.existsSync(serverPath)) {
@@ -423,18 +469,27 @@ function waitForServer(internalPort, attempts = 100) {
 }
 
 const services = {};
+const inProcessNext = deploymentRole !== "combined";
 let rootServer;
 const handleCourseInterest = createCourseInterestHandler();
 
 async function start() {
-  services.homepage = createStandaloneService("DJAI homepage", homepageDir, homepagePort);
-  services.voicePromo = createStandaloneService("DJAI voice promo", voicePromoDir, voicePromoPort);
-  services.homepage.start();
-  services.voicePromo.start();
-  await Promise.all([
-    services.homepage.waitUntilReady(),
-    services.voicePromo.waitUntilReady()
-  ]);
+  if (deploymentRole === "homepage") {
+    services.homepage = createInProcessNext("DJAI homepage", homepageDir);
+    await services.homepage.prepare();
+  } else if (deploymentRole === "voice") {
+    services.voicePromo = createInProcessNext("DJAI voice promo", voicePromoDir);
+    await services.voicePromo.prepare();
+  } else {
+    services.homepage = createStandaloneService("DJAI homepage", homepageDir, homepagePort);
+    services.voicePromo = createStandaloneService("DJAI voice promo", voicePromoDir, voicePromoPort);
+    services.homepage.start();
+    services.voicePromo.start();
+    await Promise.all([
+      services.homepage.waitUntilReady(),
+      services.voicePromo.waitUntilReady()
+    ]);
+  }
 
   return http
     .createServer((req, res) => {
@@ -470,6 +525,14 @@ async function start() {
         if (tryServeMountedStatic(req, res, pathname)) {
           return;
         }
+        if (deploymentRole === "homepage") {
+          if (process.env.DJAI_VOICE_ORIGIN) proxyOriginRequest(req, res, process.env.DJAI_VOICE_ORIGIN);
+          else {
+            res.writeHead(503, { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store" });
+            res.end("DJAI voice service is not configured");
+          }
+          return;
+        }
         rewriteRequestPath(req, "/web_promo", "");
         // Keep the public locale URL aligned with the site's trailing-slash
         // convention while sending Next.js its internal non-slash route.
@@ -478,7 +541,15 @@ async function start() {
           internalUrl.pathname = "/vi";
           req.url = `${internalUrl.pathname}${internalUrl.search}`;
         }
-        proxyRequest(req, res, voicePromoPort);
+        if (inProcessNext) {
+          void services.voicePromo.handle(req, res).catch((error) => {
+            console.error("DJAI voice promo request failed.", error);
+            if (!res.headersSent) res.writeHead(500, { "Content-Type": "text/plain; charset=utf-8" });
+            res.end("Application service unavailable");
+          });
+        } else {
+          proxyRequest(req, res, voicePromoPort);
+        }
         return;
       }
 
@@ -489,9 +560,25 @@ async function start() {
 
       if (matchesMount(pathname, "/voice_admin")) {
         res.setHeader("X-Robots-Tag", "noindex, nofollow, noarchive");
+        if (deploymentRole === "homepage") {
+          if (process.env.DJAI_VOICE_ORIGIN) proxyOriginRequest(req, res, process.env.DJAI_VOICE_ORIGIN);
+          else {
+            res.writeHead(503, { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store" });
+            res.end("DJAI voice service is not configured");
+          }
+          return;
+        }
         const destinationPrefix = pathname.startsWith("/voice_admin/api/") ? "" : "/admin";
         rewriteRequestPath(req, "/voice_admin", destinationPrefix);
-        proxyRequest(req, res, voicePromoPort);
+        if (inProcessNext) {
+          void services.voicePromo.handle(req, res).catch((error) => {
+            console.error("DJAI voice admin request failed.", error);
+            if (!res.headersSent) res.writeHead(500, { "Content-Type": "text/plain; charset=utf-8" });
+            res.end("Application service unavailable");
+          });
+        } else {
+          proxyRequest(req, res, voicePromoPort);
+        }
         return;
       }
 
@@ -513,7 +600,21 @@ async function start() {
         return;
       }
 
-      proxyRequest(req, res, homepagePort);
+      if (deploymentRole === "voice") {
+        res.writeHead(404, { "Content-Type": "text/plain; charset=utf-8", "Cache-Control": "no-store" });
+        res.end("Not found");
+        return;
+      }
+
+      if (inProcessNext) {
+        void services.homepage.handle(req, res).catch((error) => {
+          console.error("DJAI homepage request failed.", error);
+          if (!res.headersSent) res.writeHead(500, { "Content-Type": "text/plain; charset=utf-8" });
+          res.end("Application service unavailable");
+        });
+      } else {
+        proxyRequest(req, res, homepagePort);
+      }
     })
     .listen(port, hostname, () => {
       console.log(`DJAI Academy website and voice promo running at http://${hostname}:${port}`);
@@ -521,7 +622,7 @@ async function start() {
 }
 
 function stopServices() {
-  for (const service of Object.values(services)) service.stop();
+  for (const service of Object.values(services)) void service.stop();
 }
 
 function shutdown() {
