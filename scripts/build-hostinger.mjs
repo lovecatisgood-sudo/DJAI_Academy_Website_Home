@@ -334,7 +334,9 @@ function prepareRuntimeArtifact(project) {
 }
 
 ensureDependencies(projects[0]);
-run("node", ["scripts/optimize-site-images.mjs"], rootDir);
+if (process.env.DENO_DEPLOY !== "true") {
+  run("node", ["scripts/optimize-site-images.mjs"], rootDir);
+}
 
 for (const project of projects) {
   const cwd = join(rootDir, project.dir);

@@ -1,7 +1,7 @@
 {
   "deploy": {
     "install": "npm ci",
-    "build": "npm run build",
+    "build": "node scripts/prepare-deno-dependencies.mjs && npm run build",
     "runtime": {
       "type": "dynamic",
       "entrypoint": "./server.cjs",
