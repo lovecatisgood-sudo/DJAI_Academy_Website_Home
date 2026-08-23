@@ -1,0 +1,11 @@
+{
+  "deploy": {
+    "install": "npm ci",
+    "build": "npm run build",
+    "runtime": {
+      "type": "dynamic",
+      "entrypoint": "./server.js",
+      "memory_limit": 768
+    }
+  }
+}
