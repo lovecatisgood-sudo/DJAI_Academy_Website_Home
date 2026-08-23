@@ -290,6 +290,25 @@ function serveHealth(req, res) {
 }
 
 function tryServeMountedStatic(req, res, pathname) {
+  if (req.method === "GET" || req.method === "HEAD") {
+    const requestUrl = new URL(req.url || "/", "http://localhost");
+
+    if (pathname === "/siamese_cat/dev/en/course" || pathname === "/siamese_cat/dev/en/course/") {
+      redirect(res, `/siamese_cat/dev/course/${requestUrl.search}`);
+      return true;
+    }
+
+    if (
+      pathname === "/siamese_cat/dev/en/courses"
+      || pathname.startsWith("/siamese_cat/dev/en/courses/")
+    ) {
+      const suffix = pathname.slice("/siamese_cat/dev/en/courses".length).replace(/^\/+/, "");
+      const destination = `/siamese_cat/dev/courses/${suffix}`;
+      redirect(res, `${destination}${requestUrl.search}`);
+      return true;
+    }
+  }
+
   if (matchesMount(pathname, "/tools/Resizeimg")) {
     redirect(res, pathname.replace("/tools/Resizeimg", "/tools/resizeimg"));
     return true;
