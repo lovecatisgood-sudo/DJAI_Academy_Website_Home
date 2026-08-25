@@ -293,6 +293,27 @@ function tryServeMountedStatic(req, res, pathname) {
   if (req.method === "GET" || req.method === "HEAD") {
     const requestUrl = new URL(req.url || "/", "http://localhost");
 
+    const caseInsensitiveRouteAliases = [
+      ["/cam_pdf_scan_signer_qr-gen", "/Cam_PDF_Scan_Signer_QR-Gen"],
+      ["/cam-pdf-scan-signer-qr-gen", "/Cam_PDF_Scan_Signer_QR-Gen"],
+      ["/tools/pdftools", "/tools/PDFTools"],
+      ["/tools/pdf-tools", "/tools/PDFTools"]
+    ];
+
+    for (const [aliasPrefix, canonicalPrefix] of caseInsensitiveRouteAliases) {
+      const lowerPathname = pathname.toLowerCase();
+      if (lowerPathname !== aliasPrefix && !lowerPathname.startsWith(`${aliasPrefix}/`)) continue;
+
+      const suffix = lowerPathname.slice(aliasPrefix.length);
+      let destination = `${canonicalPrefix}${suffix}`;
+      if (!destination.endsWith("/") && !path.extname(destination)) destination += "/";
+
+      if (pathname !== destination) {
+        redirect(res, `${destination}${requestUrl.search}`);
+        return true;
+      }
+    }
+
     if (pathname === "/siamese_cat/dev/en/course" || pathname === "/siamese_cat/dev/en/course/") {
       redirect(res, `/siamese_cat/dev/course/${requestUrl.search}`);
       return true;
