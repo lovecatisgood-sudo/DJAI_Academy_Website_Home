@@ -8,12 +8,12 @@ const [component, routeBuilder, styles] = await Promise.all([
   readFile(new URL('../src/course.css', import.meta.url), 'utf8'),
 ]);
 
-test('course page communicates the exact free live-session offer', () => {
-  for (const expected of ['22 August 2026', '1:00–2:00 PM ICT', 'Live online session', 'English']) {
+test('course page communicates the evergreen live-course interest offer', () => {
+  for (const expected of ['Arranged with you', 'One practical session', 'Online or in person', 'English or Thai']) {
     assert.match(component, new RegExp(expected.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')));
   }
-  assert.match(component, /href=\{registrationPath\}/);
-  assert.match(component, /Free DJAI School account required/);
+  assert.doesNotMatch(component, /22 August 2026|registrationPath/);
+  assert.match(component, /href="#course-interest"/);
   assert.match(component, /djai-academy-logo\.webp/);
   assert.match(component, /founder-djai-display\.webp/);
   assert.match(component, /Founder of DJAI Academy/);
@@ -26,10 +26,21 @@ test('English and Thai initial HTML form a truthful reciprocal language cluster'
   assert.match(routeBuilder, /buildCourseHtml\('en'\)/);
   assert.match(routeBuilder, /buildCourseHtml\('th'\)/);
   assert.match(routeBuilder, /hreflang=\"x-default\"/);
-  assert.match(routeBuilder, /'@type': 'EducationEvent'/);
-  assert.match(routeBuilder, /startDate: '2026-08-22T13:00:00\+07:00'/);
-  assert.match(routeBuilder, /isAccessibleForFree: true/);
-  assert.match(routeBuilder, /price: '0'/);
+  assert.match(routeBuilder, /'@type': 'Course'/);
+  assert.match(routeBuilder, /inLanguage: \['en', 'th'\]/);
+  assert.doesNotMatch(routeBuilder, /EducationEvent|startDate|isAccessibleForFree/);
+});
+
+test('course interest form is localized, accessible, and posts to the protected endpoint', () => {
+  for (const expected of ['name="name"', 'name="email"', 'name="courseFormat"', 'name="goals"', 'name="consent"']) {
+    assert.match(component, new RegExp(expected));
+  }
+  assert.match(component, /fetch\('\/api\/course-interest'/);
+  assert.match(component, /aria-live="polite"/);
+  assert.match(component, /\/privacy\/en\//);
+  assert.match(component, /\/privacy\//);
+  assert.match(component, /This form expresses interest; it does not confirm a booking or payment/);
+  assert.match(component, /ยังไม่ถือว่าเป็นการยืนยันการจองหรือชำระเงิน/);
 });
 
 test('course layout protects mobile and reduced-motion users', () => {

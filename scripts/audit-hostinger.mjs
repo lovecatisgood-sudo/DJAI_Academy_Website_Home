@@ -6,6 +6,7 @@ import { join } from "node:path";
 
 const port = Number(process.env.DJAI_AUDIT_PORT || 3147);
 const origin = `http://127.0.0.1:${port}`;
+const productionOrigin = "https://www.djai.academy";
 const repositoryRoot = new URL("..", import.meta.url).pathname;
 const useQrCompatibilityEntry = process.env.DJAI_AUDIT_ENTRY === "qr";
 const serverEntry = useQrCompatibilityEntry
@@ -164,6 +165,7 @@ const publicRoutes = [
   "/voice_admin/login",
   "/Cam_PDF_Scan_Signer_QR-Gen/",
   "/Cam_PDF_Scan_Signer_QR-Gen/privacy/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/",
   "/Cam_PDF_Scan_Signer_QR-Gen/terms/",
   "/Cam_PDF_Scan_Signer_QR-Gen/delete-account/",
   "/app-ads.txt",
@@ -178,13 +180,21 @@ const redirects = [
   ["/voice_admin/", "/voice_admin"],
   ["/th/", "/"],
   ["/EN/", "/en/"],
+  ["/cam_pdf_scan_signer_qr-gen/", "/Cam_PDF_Scan_Signer_QR-Gen/"],
+  ["/cam-pdf-scan-signer-qr-gen/privacy", "/Cam_PDF_Scan_Signer_QR-Gen/privacy/"],
+  ["/CAM_PDF_SCAN_SIGNER_QR-GEN/TERMS/", "/Cam_PDF_Scan_Signer_QR-Gen/terms/"],
+  ["/tools/pdftools/", "/tools/PDFTools/"],
+  ["/tools/pdf-tools/merge-pdf", "/tools/PDFTools/merge-pdf/"],
   ["/tools/Resizeimg/", "/tools/resizeimg/"],
   ["/tools/docx-to-pdf/", "/tools/document/docx-to-pdf/"],
   ["/tools/word-to-pdf/", "/tools/document/docx-to-pdf/"],
   ["/tools/docx-to-pdf/en/", "/tools/document/docx-to-pdf/en/"],
   ["/tools/word-to-pdf/en/", "/tools/document/docx-to-pdf/en/"],
   ["/tools/document/word-to-pdf/", "/tools/document/docx-to-pdf/"],
-  ["/tools/document/word-to-pdf/en/", "/tools/document/docx-to-pdf/en/"]
+  ["/tools/document/word-to-pdf/en/", "/tools/document/docx-to-pdf/en/"],
+  ["/siamese_cat/dev/en/course/", "/siamese_cat/dev/course/"],
+  ["/siamese_cat/dev/en/courses/", "/siamese_cat/dev/courses/"],
+  ["/siamese_cat/dev/en/courses/build-first-app/", "/siamese_cat/dev/courses/build-first-app/"]
 ];
 const slashCanonicalPrefixes = [
   "/course/",
@@ -203,8 +213,7 @@ const slashCanonicalRoutes = publicRoutes.filter((route) =>
   && !route.startsWith("/siamese_cat/dev/blog/")
 );
 const accountOnboardingRedirects = ["/academy/", "/academy/en/", "/academy/vi/"];
-const moneyMakingProductRegistrationUrl =
-  "https://school.djai.academy/signup?intent=free-course&course_id=money-making-product-2026-08-22";
+const moneyMakingProductRegistrationUrl = "/siamese_cat/dev/course/#course-interest";
 const auditPassword = "djai-local-deployment-audit";
 const auditApiKey = "djai-local-api-key-audit";
 const auditDataDirectory = await mkdtemp(join(tmpdir(), "djai-blog-audit-"));
@@ -213,6 +222,14 @@ await copyFile(join(repositoryRoot, "djai-academy-homepage", "data", "blog-posts
 
 function getHtmlAttribute(tag, name) {
   return tag.match(new RegExp(`\\b${name}=["']([^"']*)["']`, "i"))?.[1] || "";
+}
+
+function getSitemapLastModified(sitemapBody, path) {
+  const productionUrl = `${productionOrigin}${path}`;
+  const entry = sitemapBody
+    .split("<url>")
+    .find((candidate) => candidate.includes(`<loc>${productionUrl}</loc>`));
+  return entry?.match(/<lastmod>([^<]+)<\/lastmod>/)?.[1] || "";
 }
 
 const server = spawn(process.execPath, [serverEntry], {
@@ -289,7 +306,20 @@ async function verify() {
 
   const campaignResponse = await fetch(`${origin}/MONEY_MAKING_PRODUCT/`, { redirect: "manual" });
   if (campaignResponse.status !== 307 || campaignResponse.headers.get("location") !== moneyMakingProductRegistrationUrl) {
-    failures.push("/MONEY_MAKING_PRODUCT/: expected account-first free-course signup redirect");
+    failures.push("/MONEY_MAKING_PRODUCT/: expected redirect to the evergreen course-interest form");
+  }
+
+  const courseInterestMethodResponse = await fetch(`${origin}/api/course-interest`, { redirect: "manual" });
+  if (courseInterestMethodResponse.status !== 405) {
+    failures.push(`/api/course-interest: expected GET to return 405, received ${courseInterestMethodResponse.status}`);
+  }
+  const courseInterestCrossSiteResponse = await fetch(`${origin}/api/course-interest`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json", Origin: "https://attacker.example" },
+    body: JSON.stringify({})
+  });
+  if (courseInterestCrossSiteResponse.status !== 403) {
+    failures.push(`/api/course-interest: expected cross-site POST to return 403, received ${courseInterestCrossSiteResponse.status}`);
   }
 
   const courseLandingVariants = [
@@ -302,21 +332,23 @@ async function verify() {
       `<html lang="${variant.language}"`,
       `<link rel="canonical" href="${variant.canonical}"`,
       `<h1>${variant.h1}</h1>`,
-      'href="/MONEY_MAKING_PRODUCT/"',
+      variant.language === "th" ? "แจ้งความสนใจคอร์ส" : "Express interest in a course",
       'src="/siamese_cat/dev/djai-academy-logo.webp"',
       'src="/founder-djai-display.webp"',
       'hreflang="en"',
       'hreflang="th"',
       'hreflang="x-default"',
-      '"@type":"EducationEvent"',
-      '"startDate":"2026-08-22T13:00:00+07:00"',
-      '"isAccessibleForFree":true'
+      '"@type":"Course"',
+      '"inLanguage":["en","th"]'
     ];
     for (const expected of checks) {
       if (!html.includes(expected)) failures.push(`${variant.route}: missing ${expected}`);
     }
     if (html.includes("chat.whatsapp.com") || html.includes("meet.google.com")) {
       failures.push(`${variant.route}: private participant links leaked into public HTML`);
+    }
+    if (html.includes('"@type":"EducationEvent"') || html.includes('"startDate"')) {
+      failures.push(`${variant.route}: expired event structured data remains on evergreen course page`);
     }
   }
 
@@ -370,6 +402,20 @@ async function verify() {
   });
   if (retiredOnboardingResponse.status !== 410) {
     failures.push(`/api/academy-onboarding/: expected retired endpoint status 410, received ${retiredOnboardingResponse.status}`);
+  }
+
+  const vietnameseToolHub = await fetch(`${origin}/tools/vi/`).then((response) => response.text());
+  for (const route of [
+    "/tools/qrgen/vi/",
+    "/tools/resizeimg/vi/",
+    "/tools/PDFTools/vi/",
+    "/tools/document/vi/",
+    "/tools/ai/vi/",
+    "/tools/spreadsheet/vi/"
+  ]) {
+    if (!vietnameseToolHub.includes(`href="${route}"`)) {
+      failures.push(`/tools/vi/: missing crawlable Vietnamese tool hub link ${route}`);
+    }
   }
 
   const toolDiscoveryRoutes = publicRoutes.filter(
@@ -434,6 +480,22 @@ async function verify() {
   if (!promoBody.includes("บริการพัฒนาเว็บไซต์ พร้อมเปิดตัว ติดอันดับ และสร้างลูกค้า")) {
     failures.push("/web_promo/: missing crawlable server-rendered service content");
   }
+  const promoVietnameseResponse = await fetch(`${origin}/web_promo/vi/`);
+  const promoVietnameseBody = await promoVietnameseResponse.text();
+  for (const [route, response, html] of [
+    ["/web_promo/", promoResponse, promoBody],
+    ["/web_promo/vi/", promoVietnameseResponse, promoVietnameseBody]
+  ]) {
+    if (response.status !== 200) failures.push(`${route}: expected 200, received ${response.status}`);
+    for (const language of ["th", "vi", "x-default"]) {
+      if (!new RegExp(`hreflang=["']${language}["']`, "i").test(html)) {
+        failures.push(`${route}: missing intentional Thai/Vietnamese promo hreflang ${language}`);
+      }
+    }
+    if (/hreflang=["']en["']/i.test(html) || html.includes("/web_promo/en/")) {
+      failures.push(`${route}: invented non-equivalent English promotion alternate`);
+    }
+  }
 
   const promoScriptResponse = await fetch(`${origin}/web_promo/assets/js/promo.js`);
   const promoScriptBody = await promoScriptResponse.text();
@@ -475,6 +537,16 @@ async function verify() {
     if (!html.includes("<h1") || !html.includes(heading)) failures.push(`${route}: missing expected Vietnamese H1 copy`);
     if (html.includes('<meta name="robots" content="noindex')) failures.push(`${route}: unexpectedly noindexed`);
   }
+  const standaloneVietnameseArticle = await fetch(
+    `${origin}/blog/vi/vibe-coding-cho-nguoi-moi/`
+  ).then((response) => response.text());
+  for (const language of ["th", "en", "x-default"]) {
+    if (new RegExp(`hreflang=["']${language}["']`, "i").test(standaloneVietnameseArticle)) {
+      failures.push(
+        `/blog/vi/vibe-coding-cho-nguoi-moi/: invented ${language} alternate for a standalone Vietnamese article`
+      );
+    }
+  }
 
   const llmsResponse = await fetch(`${origin}/llms.txt`);
   const llmsBody = await llmsResponse.text();
@@ -513,6 +585,19 @@ async function verify() {
   }
 
   const sitemapBody = await fetch(`${origin}/sitemap.xml`).then((response) => response.text());
+  for (const [path, expectedLastModified] of [
+    ["/siamese_cat/dev/course/", "2026-08-23T00:00:00.000Z"],
+    ["/siamese_cat/dev/course/th/", "2026-08-23T00:00:00.000Z"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/privacy/", "2026-08-21T00:00:00.000Z"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/", "2026-08-20T00:00:00.000Z"]
+  ]) {
+    const actualLastModified = getSitemapLastModified(sitemapBody, path);
+    if (actualLastModified !== expectedLastModified) {
+      failures.push(
+        `/sitemap.xml: ${path} expected lastmod ${expectedLastModified}, received ${actualLastModified || "missing"}`
+      );
+    }
+  }
   for (const path of ["/tools/seo-screaming-toad/", "/tools/seo-screaming-toad/en/"]) {
     if (!sitemapBody.includes(`https://www.djai.academy${path}`)) failures.push(`/sitemap.xml: missing ${path}`);
   }
@@ -658,6 +743,38 @@ async function verify() {
     }
   }
 
+  const crawlGraph = new Map();
+  for (const [productionUrl, html] of sitemapHtml) {
+    const destinations = new Set();
+    for (const anchor of html.matchAll(/<a\b[^>]*href=["']([^"']+)["'][^>]*>/gi)) {
+      try {
+        const target = new URL(anchor[1], productionUrl);
+        target.hash = "";
+        if (target.origin === "https://www.djai.academy" && sitemapUrlSet.has(target.href)) {
+          destinations.add(target.href);
+        }
+      } catch {
+        // Ignore invalid and non-HTTP href values.
+      }
+    }
+    crawlGraph.set(productionUrl, destinations);
+  }
+  const reachableSitemapUrls = new Set();
+  const crawlQueue = ["https://www.djai.academy/"];
+  while (crawlQueue.length) {
+    const current = crawlQueue.shift();
+    if (reachableSitemapUrls.has(current)) continue;
+    reachableSitemapUrls.add(current);
+    for (const destination of crawlGraph.get(current) || []) {
+      if (!reachableSitemapUrls.has(destination)) crawlQueue.push(destination);
+    }
+  }
+  for (const productionUrl of sitemapUrls) {
+    if (!reachableSitemapUrls.has(productionUrl)) {
+      failures.push(`${new URL(productionUrl).pathname}: sitemap URL is not reachable from the homepage link graph`);
+    }
+  }
+
   const voiceAdminLoginResponse = await fetch(`${origin}/voice_admin/login`);
   const voiceAdminLoginBody = await voiceAdminLoginResponse.text();
   if (!String(voiceAdminLoginResponse.headers.get("x-robots-tag") || "").includes("noindex")) {
@@ -675,14 +792,15 @@ async function verify() {
   }
 
   const camPdfChecks = [
-    ["/Cam_PDF_Scan_Signer_QR-Gen/", "Cam PDF Scan Signer QR Gen"],
-    ["/Cam_PDF_Scan_Signer_QR-Gen/privacy/", "Privacy Policy"],
-    ["/Cam_PDF_Scan_Signer_QR-Gen/terms/", "Terms of Service"],
-    ["/Cam_PDF_Scan_Signer_QR-Gen/delete-account/", "Delete your account"]
+    ["/Cam_PDF_Scan_Signer_QR-Gen/", "Cam PDF Scan Signer QR Gen", "en"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/privacy/", "Privacy Policy", "en"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/", "นโยบายความเป็นส่วนตัว", "th"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/terms/", "Terms of Service", "en"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/delete-account/", "Delete your account", "en"]
   ];
-  for (const [route, heading] of camPdfChecks) {
+  for (const [route, heading, language] of camPdfChecks) {
     const html = await fetch(`${origin}${route}`).then((response) => response.text());
-    if (!html.includes('<html lang="en"')) failures.push(`${route}: expected html lang=en`);
+    if (!html.includes(`<html lang="${language}"`)) failures.push(`${route}: expected html lang=${language}`);
     if (!html.includes(`<link rel="canonical" href="https://www.djai.academy${route}"`)) {
       failures.push(`${route}: missing self-canonical`);
     }
@@ -885,7 +1003,7 @@ async function verify() {
 
   console.log(
     `Hostinger route audit passed: ${publicRoutes.length} pages, ${redirects.length + accountOnboardingRedirects.length} redirects, ` +
-      `${sitemapUrls.length} sitemap URLs, ${slashCanonicalRoutes.length} slash redirects, `
+      `${sitemapUrls.length} sitemap URLs (${reachableSitemapUrls.size} reachable from home), ${slashCanonicalRoutes.length} slash redirects, `
       + `${discoveredRoutes.size} internal links/assets, admin API auth, and canonical host.`
   );
 }

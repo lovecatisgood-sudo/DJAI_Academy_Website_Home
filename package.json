@@ -11,12 +11,17 @@
     "build": "node scripts/build-hostinger.mjs",
     "prestart": "node scripts/ensure-hostinger-build.mjs",
     "start": "node server.js",
-    "test": "npm run test:supervisor && npm run test:localization",
+    "test": "npm run test:supervisor && npm run test:localization && npm run test:course-interest && npm run test:cam-pdf-links",
     "test:localization": "node --test tests/chinese-localization-contract.test.mjs tests/localization-content-gates.test.mjs tests/public-route-inventory.test.mjs && node scripts/validate-localization.mjs --root .",
     "test:cam-pdf-links": "node --test tests/cam-pdf-play-store-links.test.mjs",
+    "test:course-interest": "node --test tests/course-interest.test.js",
     "test:supervisor": "node --test tests/service-supervisor.test.js",
+    "verify:adsense-recovery": "node scripts/verify-adsense-recovery.mjs",
     "verify:hostinger": "node scripts/audit-hostinger.mjs",
     "hostinger:build": "node scripts/build-hostinger.mjs",
     "hostinger:start": "node server.js"
+  },
+  "dependencies": {
+    "nodemailer": "^9.0.3"
   }
 }

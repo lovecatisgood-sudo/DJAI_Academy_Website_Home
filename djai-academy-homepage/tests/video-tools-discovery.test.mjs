@@ -59,3 +59,19 @@ test("tools hubs describe video and audio discovery in localized SEO metadata", 
     assert.match(source, /social\/djai-academy\.webp/);
   }
 });
+
+test("Vietnamese tools hub links crawlers to the Vietnamese tool clusters", () => {
+  const source = readFileSync(join(homepageRoot, "app", "tools", "vi", "page.jsx"), "utf8");
+  for (const category of ["qrgen", "resizeimg", "PDFTools", "document", "ai", "spreadsheet"]) {
+    assert.match(source, new RegExp(`/tools/${category}/vi/`));
+  }
+  for (const route of [
+    "/tools/resizeimg/remove-background-image/vi/",
+    "/tools/PDFTools/merge-pdf/vi/",
+    "/tools/document/docx-to-pdf/vi/",
+    "/tools/ai/token-counter/vi/",
+    "/tools/spreadsheet/csv-to-json/vi/"
+  ]) {
+    assert.match(source, new RegExp(route));
+  }
+});

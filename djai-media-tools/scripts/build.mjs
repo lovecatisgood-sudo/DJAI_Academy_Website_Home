@@ -31,9 +31,13 @@ function socialHead({ title, description, canonical, lang }) {
 }
 
 function enhanceHead(html, details) {
-  return html.replace(
+  const enhanced = html.replace(
     /<meta property="og:title"[\s\S]*?(?=<meta name="google-adsense-account")/,
     socialHead(details)
+  );
+  return enhanced.replace(
+    /<script async crossorigin="anonymous" src="https:\/\/pagead2\.googlesyndication\.com\/pagead\/js\/adsbygoogle\.js\?client=ca-pub-3624708289866566"><\/script>/g,
+    ""
   );
 }
 

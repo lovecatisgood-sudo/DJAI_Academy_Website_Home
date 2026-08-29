@@ -53,17 +53,15 @@ export const metadata = {
 export default async function RootLayout({ children }) {
   const requestHeaders = await headers();
   const requestedLanguage = requestHeaders.get("x-djai-language");
-  const language = ["en", "vi", "zh-CN", "zh-TW"].includes(requestedLanguage)
+  const language = ["en", "th", "vi", "zh-CN", "zh-TW"].includes(requestedLanguage)
     ? requestedLanguage
     : "th";
 
   return (
     <html lang={language}>
       <head>
-        {/* Consent Mode defaults. React hoists the async AdSense loader below to
-            the top of <head>, so these two are not in source order in the served
-            HTML. That is fine: this inline script executes during HTML parsing,
-            while the loader is a network fetch that cannot execute until later. */}
+        {/* Keep advertising consent denied while AdSense serving is paused for
+            site approval recovery. The ownership meta tag remains in metadata. */}
         <script
           id="google-consent-defaults"
           dangerouslySetInnerHTML={{
@@ -80,19 +78,8 @@ export default async function RootLayout({ children }) {
                 security_storage: 'granted'
               });
               gtag('set', 'ads_data_redaction', true);
-              window.adsbygoogle = window.adsbygoogle || [];
-              window.adsbygoogle.requestNonPersonalizedAds = 1;
             `
           }}
-        />
-        {/* Raw tag, not next/script: AdSense verification reads the served HTML, and
-            next/script emits only a preload link here, which Google cannot detect.
-            The Consent Mode defaults above run first, so ads stay non-personalized
-            and ad_storage stays denied until the visitor opts in. */}
-        <script
-          async
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADSENSE_CLIENT}`}
-          crossOrigin="anonymous"
         />
       </head>
       <body>

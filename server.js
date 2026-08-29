@@ -3,6 +3,8 @@ const http = require("node:http");
 const path = require("node:path");
 const zlib = require("node:zlib");
 const { createServiceSupervisor } = require("./service-supervisor");
+const { resolveInternalPorts } = require("./runtime-ports");
+const { COURSE_INTEREST_PATH, createCourseInterestHandler } = require("./course-interest");
 
 const rootDir = __dirname;
 const homepageDir = path.join(rootDir, "djai-academy-homepage");
@@ -13,8 +15,15 @@ const port = Number(process.env.PORT || 3000);
 const hostname = process.env.HOST || "0.0.0.0";
 // Hosting providers do not always set NODE_ENV. Default to the production
 // server and opt into development mode only when it is requested explicitly.
-const homepagePort = Number(process.env.DJAI_HOMEPAGE_PORT || port + 1);
-const voicePromoPort = Number(process.env.DJAI_VOICE_PROMO_PORT || port + 2);
+// Hostinger may overlap old and new application instances during a rolling
+// deploy. Deriving child ports from the process ID prevents those instances
+// from competing for the same fixed PORT+1/PORT+2 pair.
+const { homepagePort, voicePromoPort } = resolveInternalPorts({
+  processId: process.pid,
+  rootPort: port,
+  homepageOverride: process.env.DJAI_HOMEPAGE_PORT,
+  voicePromoOverride: process.env.DJAI_VOICE_PROMO_PORT
+});
 
 const mimeTypes = {
   ".html": "text/html; charset=utf-8",
@@ -281,6 +290,46 @@ function serveHealth(req, res) {
 }
 
 function tryServeMountedStatic(req, res, pathname) {
+  if (req.method === "GET" || req.method === "HEAD") {
+    const requestUrl = new URL(req.url || "/", "http://localhost");
+
+    const caseInsensitiveRouteAliases = [
+      ["/cam_pdf_scan_signer_qr-gen", "/Cam_PDF_Scan_Signer_QR-Gen"],
+      ["/cam-pdf-scan-signer-qr-gen", "/Cam_PDF_Scan_Signer_QR-Gen"],
+      ["/tools/pdftools", "/tools/PDFTools"],
+      ["/tools/pdf-tools", "/tools/PDFTools"]
+    ];
+
+    for (const [aliasPrefix, canonicalPrefix] of caseInsensitiveRouteAliases) {
+      const lowerPathname = pathname.toLowerCase();
+      if (lowerPathname !== aliasPrefix && !lowerPathname.startsWith(`${aliasPrefix}/`)) continue;
+
+      const suffix = lowerPathname.slice(aliasPrefix.length);
+      let destination = `${canonicalPrefix}${suffix}`;
+      if (!destination.endsWith("/") && !path.extname(destination)) destination += "/";
+
+      if (pathname !== destination) {
+        redirect(res, `${destination}${requestUrl.search}`);
+        return true;
+      }
+    }
+
+    if (pathname === "/siamese_cat/dev/en/course" || pathname === "/siamese_cat/dev/en/course/") {
+      redirect(res, `/siamese_cat/dev/course/${requestUrl.search}`);
+      return true;
+    }
+
+    if (
+      pathname === "/siamese_cat/dev/en/courses"
+      || pathname.startsWith("/siamese_cat/dev/en/courses/")
+    ) {
+      const suffix = pathname.slice("/siamese_cat/dev/en/courses".length).replace(/^\/+/, "");
+      const destination = `/siamese_cat/dev/courses/${suffix}`;
+      redirect(res, `${destination}${requestUrl.search}`);
+      return true;
+    }
+  }
+
   if (matchesMount(pathname, "/tools/Resizeimg")) {
     redirect(res, pathname.replace("/tools/Resizeimg", "/tools/resizeimg"));
     return true;
@@ -415,6 +464,7 @@ function waitForServer(internalPort, attempts = 100) {
 
 const services = {};
 let rootServer;
+const handleCourseInterest = createCourseInterestHandler();
 
 async function start() {
   services.homepage = createStandaloneService("DJAI homepage", homepageDir, homepagePort);
@@ -438,6 +488,11 @@ async function start() {
 
       if (pathname === "/healthz") {
         serveHealth(req, res);
+        return;
+      }
+
+      if (pathname === COURSE_INTEREST_PATH) {
+        handleCourseInterest(req, res);
         return;
       }
 

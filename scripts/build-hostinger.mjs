@@ -361,4 +361,6 @@ for (const project of projects) {
   prepareRuntimeArtifact(project);
 }
 
+run("node", ["scripts/verify-adsense-recovery.mjs"], rootDir);
+
 console.log("\nHostinger build completed. Start with: npm start");

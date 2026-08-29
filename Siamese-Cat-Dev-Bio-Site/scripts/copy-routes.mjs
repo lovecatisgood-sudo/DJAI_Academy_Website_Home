@@ -63,31 +63,31 @@ writeFileSync(englishIndexPath, englishHtml);
 
 const courseLocales = {
   en: {
-    title: 'Vibe Code a Money-Making Product | Free Live Course',
-    description: 'Join a free one-hour live English course on 22 August 2026 and learn how to turn a vibe-coded MVP into a product that can be shipped and sold.',
+    title: 'Vibe Code a Money-Making Product | Siamese Cat Dev Course',
+    description: 'Express interest in a live Siamese Cat Dev course and learn how to turn a vibe-coded MVP into a reliable product that can be shipped and sold.',
     canonical: 'https://www.djai.academy/siamese_cat/dev/course/',
     name: 'Your Journey to Vibe Code a Money-Making Product',
     fallback: `<div id="root"><header><a href="/en/"><img src="/siamese_cat/dev/djai-academy-logo.webp" alt="DJAI Academy"></a></header><main>
-      <p>Free live English course · 22 August 2026 · 1:00–2:00 PM ICT</p>
+      <p>Live practical course · Schedule arranged with you · English or Thai</p>
       <h1>Vibe Code a Product That Can Make Money</h1>
       <p>Learn how experienced product builders move from an AI-generated MVP to reliable software that can be shipped, used, and sold.</p>
       <section><h2>From prompting to production</h2><p>Choose a valuable product, apply professional software-development standards, harden the MVP, and plan a practical rollout.</p></section>
       <section><h2>Meet both instructors</h2><img src="/founder-djai-display.webp" alt="Mr. A, founder of DJAI Academy, CTO, and course instructor"><p>Learn from Siamese Cat Dev and Mr. A, founder of DJAI Academy, experienced CTO, and instructor of DJAI's offline course.</p></section>
-      <a href="/MONEY_MAKING_PRODUCT/">Learn more and register free</a><a href="/siamese_cat/dev/course/th/" hreflang="th">อ่านภาษาไทย</a>
+      <section><h2>Express interest in a course</h2><p>Share your goals, preferred format, and availability. Siamese Cat Dev will reply by email about the best course option and next steps.</p></section><a href="/siamese_cat/dev/course/th/" hreflang="th">อ่านภาษาไทย</a>
     </main></div>`,
   },
   th: {
-    title: 'Vibe Code สินค้าให้สร้างรายได้ | คลาสสดออนไลน์ฟรี',
-    description: 'หน้าลงทะเบียนภาษาไทยสำหรับคลาสสดภาษาอังกฤษฟรี 1 ชั่วโมง วันที่ 22 สิงหาคม 2569 เรียนรู้วิธีพัฒนา MVP จาก Vibe Coding ให้เป็นสินค้าที่พร้อมเปิดตัวและสร้างรายได้',
+    title: 'Vibe Code สินค้าให้สร้างรายได้ | คอร์ส Siamese Cat Dev',
+    description: 'แจ้งความสนใจคอร์สสดกับ Siamese Cat Dev เพื่อเรียนรู้วิธีพัฒนา MVP จาก Vibe Coding ให้เป็นสินค้าที่น่าเชื่อถือ พร้อมเปิดตัวและสร้างรายได้',
     canonical: 'https://www.djai.academy/siamese_cat/dev/course/th/',
     name: 'เส้นทางสู่การ Vibe Code สินค้าที่สร้างรายได้',
     fallback: `<div id="root"><header><a href="/"><img src="/siamese_cat/dev/djai-academy-logo.webp" alt="DJAI Academy"></a></header><main>
-      <p>คลาสสดออนไลน์ฟรี · 22 สิงหาคม 2569 · 13:00–14:00 น.</p>
+      <p>คอร์สสดเน้นลงมือจริง · นัดหมายวันเวลาร่วมกัน · ภาษาไทยหรืออังกฤษ</p>
       <h1>Vibe Code สินค้าให้สร้างรายได้จริง</h1>
       <p>เรียนรู้วิธีพัฒนาต้นแบบจาก AI ให้เป็นซอฟต์แวร์ที่น่าเชื่อถือ พร้อมเปิดตัว ใช้งาน และขายได้จริง</p>
       <section><h2>จากการ Prompt สู่ Production</h2><p>เลือกสินค้าที่มีคุณค่า ใช้มาตรฐานพัฒนาซอฟต์แวร์ ปรับ MVP ให้แข็งแรง และวางแผนเปิดตัวอย่างเป็นระบบ</p></section>
       <section><h2>พบกับผู้สอนทั้งสองคน</h2><img src="/founder-djai-display.webp" alt="Mr. A ผู้ก่อตั้ง DJAI Academy, CTO และผู้สอน"><p>เรียนกับ Siamese Cat Dev และ Mr. A ผู้ก่อตั้ง DJAI Academy, CTO ที่มีประสบการณ์ และผู้สอนคอร์สออฟไลน์ของ DJAI</p></section>
-      <a href="/MONEY_MAKING_PRODUCT/">ดูรายละเอียดและลงทะเบียนฟรี</a><a href="/siamese_cat/dev/course/" hreflang="en">Read in English</a>
+      <section><h2>แจ้งความสนใจคอร์ส</h2><p>แชร์เป้าหมาย รูปแบบคอร์ส และเวลาที่สะดวก Siamese Cat Dev จะตอบกลับทางอีเมลเพื่อแนะนำคอร์สและขั้นตอนถัดไป</p></section><a href="/siamese_cat/dev/course/" hreflang="en">Read in English</a>
     </main></div>`,
   },
 };
@@ -96,26 +96,16 @@ function buildCourseHtml(language) {
   const locale = courseLocales[language];
   const schema = {
     '@context': 'https://schema.org',
-    '@type': 'EducationEvent',
+    '@type': 'Course',
     name: locale.name,
     description: locale.description,
     url: locale.canonical,
-    eventStatus: 'https://schema.org/EventScheduled',
-    eventAttendanceMode: 'https://schema.org/OnlineEventAttendanceMode',
-    startDate: '2026-08-22T13:00:00+07:00',
-    endDate: '2026-08-22T14:00:00+07:00',
-    inLanguage: 'en',
-    isAccessibleForFree: true,
-    location: { '@type': 'VirtualLocation', url: 'https://school.djai.academy/' },
-    organizer: [
-      { '@type': 'Organization', name: 'DJAI Academy', url: 'https://www.djai.academy/' },
+    inLanguage: ['en', 'th'],
+    educationalLevel: 'Beginner to intermediate',
+    provider: [
       { '@type': 'Organization', name: 'Siamese Cat Dev', url: 'https://www.djai.academy/siamese_cat/dev/' },
+      { '@type': 'Organization', name: 'DJAI Academy', url: 'https://www.djai.academy/' },
     ],
-    performer: [
-      { '@type': 'Person', name: 'Siamese Cat Dev' },
-      { '@type': 'Person', name: 'Mr. A', jobTitle: language === 'th' ? 'ผู้ก่อตั้ง DJAI Academy และ CTO' : 'Founder of DJAI Academy and Chief Technology Officer' },
-    ],
-    offers: { '@type': 'Offer', price: '0', priceCurrency: 'THB', availability: 'https://schema.org/InStock', url: 'https://www.djai.academy/MONEY_MAKING_PRODUCT/' },
   };
   const alternates = `<link rel="alternate" hreflang="en" href="https://www.djai.academy/siamese_cat/dev/course/" />
     <link rel="alternate" hreflang="th" href="https://www.djai.academy/siamese_cat/dev/course/th/" />
