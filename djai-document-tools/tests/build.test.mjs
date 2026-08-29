@@ -74,3 +74,28 @@ test("privacy copy does not make server-processing claims", () => {
   assert.match(source, /Complex layouts/);
   assert.match(source, /text-focused converter/);
 });
+
+test("Chinese category, tool, brand, and favicon pages are fully exported", () => {
+  for (const [segment, locale, action] of [["zh-cn", "zh-CN", /选择|粘贴/], ["zh-tw", "zh-TW", /選擇|貼上/]]) {
+    for (const [category, slugs] of Object.entries(groups)) {
+      for (const relative of [`${category}/${segment}/index.html`, ...slugs.map((slug) => `${category}/${slug}/${segment}/index.html`)]) {
+        const file = join(root, "out", relative);
+        assert.equal(existsSync(file), true, `missing ${file}`);
+        const html = readFileSync(file, "utf8");
+        const visible = html.replace(/<script[\s\S]*?<\/script>/g, "");
+        assert.match(html, new RegExp(`<html lang="${locale}"`));
+        assert.match(html, /name="robots" content="noindex, follow"/);
+        assert.match(html, /hreflang="zh-CN"/i);
+        assert.match(html, /hreflang="zh-TW"/i);
+        assert.match(visible, action);
+        assert.doesNotMatch(visible, /เลือกไฟล์|Choose files to process|Chọn file cần xử lý/);
+      }
+    }
+    for (const relative of [`brand/${segment}/index.html`, `brand/favicon-generator/${segment}/index.html`]) {
+      const html = readFileSync(join(root, "out", relative), "utf8");
+      assert.match(html, new RegExp(`<html lang="${locale}"`));
+      assert.match(html, /name="robots" content="noindex, follow"/);
+      assert.match(html, /application\/ld\+json/);
+    }
+  }
+});

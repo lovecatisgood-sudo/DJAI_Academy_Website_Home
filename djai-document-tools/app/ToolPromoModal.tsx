@@ -28,7 +28,9 @@ export default function ToolPromoModal({ language, type, onClose }: { language: 
 
   const en = language === "en";
   const vi = language === "vi";
-  const content = type === "course"
+  const cn = language === "zh-CN";
+  const tw = language === "zh-TW";
+  let content = type === "course"
     ? {
       eyebrow: vi ? "Tự xây công cụ" : en ? "Build tools like this" : "สร้างเครื่องมือแบบนี้",
       title: vi ? "Bạn muốn học Vibe Coding cùng DJAI?" : en ? "Want to learn Vibe Coding with DJAI?" : "อยากเรียน Vibe Coding กับ DJAI ไหม?",
@@ -49,6 +51,19 @@ export default function ToolPromoModal({ language, type, onClose }: { language: 
       href: vi ? "https://www.djai.academy/development/vi/" : en ? "https://www.djai.academy/development/en/" : "https://www.djai.academy/development/",
       cta: vi ? "Trao đổi về dự án" : en ? "Discuss development" : "คุยเรื่องพัฒนา"
     };
+  if (cn || tw) content = type === "course" ? {
+    eyebrow: tw ? "親手打造工具" : "亲手构建工具",
+    title: tw ? "想和 DJAI 一起學習 Vibe Coding？" : "想和 DJAI 一起学习 Vibe Coding？",
+    text: tw ? "透過 DJAI Academy 的實作流程，把想法做成真正可用的網站、應用程式與自動化。" : "通过 DJAI Academy 的实战流程，把想法做成真正可用的网站、应用和自动化。",
+    href: `https://www.djai.academy/course/${tw ? "zh-tw" : "zh-cn"}/`,
+    cta: tw ? "查看課程" : "查看课程"
+  } : {
+    eyebrow: tw ? "專業開發服務" : "专业开发服务",
+    title: tw ? "需要專業團隊開發應用程式或網站？" : "需要专业团队开发应用或网站？",
+    text: tw ? "DJAI 與 Siamese Cat Dev 為企業打造網站、應用程式、內部工具、自動化與 AI 工作流程。" : "DJAI 与 Siamese Cat Dev 为企业构建网站、应用、内部工具、自动化和 AI 工作流。",
+    href: `https://www.djai.academy/development/${tw ? "zh-tw" : "zh-cn"}/`,
+    cta: tw ? "洽談開發需求" : "咨询开发需求"
+  };
 
   function close() {
     setClosing(true);
@@ -58,13 +73,13 @@ export default function ToolPromoModal({ language, type, onClose }: { language: 
   return (
     <div className={`promo-modal ${closing ? "closing" : ""}`} role="dialog" aria-modal="true" aria-labelledby="tool-promo-title">
       <div className="promo-card">
-        <button className="promo-close" type="button" onClick={close} aria-label={vi ? "Đóng" : en ? "Close promotion" : "ปิดโปรโมชัน"}>×</button>
+        <button className="promo-close" type="button" onClick={close} aria-label={tw ? "關閉" : cn ? "关闭" : vi ? "Đóng" : en ? "Close promotion" : "ปิดโปรโมชัน"}>×</button>
         <p className="eyebrow">{content.eyebrow}</p>
         <h2 id="tool-promo-title">{content.title}</h2>
         <p>{content.text}</p>
         <div className="promo-actions">
           <a href={content.href}>{content.cta}</a>
-          <button type="button" onClick={close}>{vi ? "Để sau" : en ? "Maybe later" : "ไว้ทีหลัง"}</button>
+          <button type="button" onClick={close}>{tw ? "稍後再說" : cn ? "稍后再说" : vi ? "Để sau" : en ? "Maybe later" : "ไว้ทีหลัง"}</button>
         </div>
       </div>
     </div>

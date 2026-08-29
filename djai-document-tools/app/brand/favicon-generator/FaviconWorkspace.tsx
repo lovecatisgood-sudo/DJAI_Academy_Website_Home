@@ -7,7 +7,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Check, Clipboard, Download, ImagePlus, LockKeyhole, Package } from "lucide-react";
 import { buildIco, FAVICON_SIZES, installSnippet, manifestJson, MAX_SOURCE_BYTES, MAX_SOURCE_DIMENSION, sanitizeSvg } from "./favicon-utils";
 
-type Language = "th" | "en" | "vi";
+type Language = "th" | "en" | "vi" | "zh-CN" | "zh-TW";
 type LoadedSource = { image: HTMLImageElement; sanitizedSvg?: string; name: string };
 type GeneratedFile = { name: string; blob: Blob; size: number };
 
@@ -89,6 +89,12 @@ const copy = {
     errorImage: "Không thể đọc hình ảnh này. Hãy lưu thành PNG rồi thử lại.",
     errorDimension: "Chiều rộng và chiều cao của ảnh không được vượt quá 8.192 px",
     contents: "Tệp trong gói"
+  },
+  "zh-CN": {
+    upload: "将品牌标志拖到这里，或选择图片", accepted: "PNG、JPG、WebP 或 SVG，最大 12 MB", choose: "选择图片", replace: "更换图片", options: "图标设置", padding: "品牌标志周围留白", background: "背景", transparent: "透明", solid: "纯色", preview: "真实尺寸预览", generate: "生成 Favicon 文件包", generating: "正在生成文件", ready: "图标文件包已准备好", readyText: "下载包含全部图标尺寸、manifest 和安装代码的 ZIP。", download: "下载 ZIP", copy: "复制 HTML 代码", copied: "已复制", reset: "重新开始", local: "在浏览器中处理", errorType: "请选择 PNG、JPG、WebP 或 SVG 文件", errorSize: "文件大小不能超过 12 MB", errorImage: "无法读取此图片。请另存为 PNG 后重试。", errorDimension: "图片宽度和高度均不能超过 8,192 px", contents: "文件包内容"
+  },
+  "zh-TW": {
+    upload: "將品牌標誌拖曳至此，或選擇圖片", accepted: "PNG、JPG、WebP 或 SVG，上限 12 MB", choose: "選擇圖片", replace: "更換圖片", options: "圖示設定", padding: "品牌標誌周圍留白", background: "背景", transparent: "透明", solid: "純色", preview: "實際尺寸預覽", generate: "產生 Favicon 檔案包", generating: "正在產生檔案", ready: "圖示檔案包已準備完成", readyText: "下載包含全部圖示尺寸、manifest 與安裝程式碼的 ZIP。", download: "下載 ZIP", copy: "複製 HTML 程式碼", copied: "已複製", reset: "重新開始", local: "在瀏覽器中處理", errorType: "請選擇 PNG、JPG、WebP 或 SVG 檔案", errorSize: "檔案大小不能超過 12 MB", errorImage: "無法讀取此圖片。請另存為 PNG 後再試一次。", errorDimension: "圖片寬度與高度均不能超過 8,192 px", contents: "檔案包內容"
   }
 } as const;
 
@@ -196,7 +202,9 @@ export default function FaviconWorkspace({ language }: { language: Language }) {
       if (source.sanitizedSvg) add("favicon.svg", new Blob([source.sanitizedSvg], { type: "image/svg+xml" }), 0);
       add("site.webmanifest", new Blob([manifestJson(background)], { type: "application/manifest+json" }), 0);
       add("favicon-snippet.html", new Blob([installSnippet], { type: "text/html" }), 0);
-      const readme = language === "en"
+      const readme = language === "zh-CN" ? "将图标文件复制到网站根目录，再把 favicon-snippet.html 的内容粘贴到 <head> 中。发布前请修改 site.webmanifest 内的网站名称。"
+        : language === "zh-TW" ? "將圖示檔案複製到網站根目錄，再把 favicon-snippet.html 的內容貼到 <head> 中。發布前請修改 site.webmanifest 內的網站名稱。"
+        : language === "en"
         ? "Copy the icon files to your website root, then paste favicon-snippet.html inside <head>. Rename the site in site.webmanifest before publishing."
         : language === "vi"
           ? "Sao chép các tệp biểu tượng vào thư mục gốc của website, sau đó dán nội dung favicon-snippet.html vào <head>. Đổi tên website trong site.webmanifest trước khi xuất bản."

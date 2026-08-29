@@ -1,4 +1,4 @@
-export type Language = "th" | "en" | "vi";
+export type Language = "th" | "en" | "vi" | "zh-CN" | "zh-TW";
 export type Category = "document" | "ai" | "spreadsheet";
 
 export type ToolDefinition = {
@@ -237,6 +237,71 @@ for (const tool of tools) {
   if (tool.warning) tool.warning.vi = "Kết quả phụ thuộc vào cấu trúc và chất lượng file nguồn. Hãy kiểm tra file đầu ra trước khi dùng cho công việc quan trọng.";
 }
 
+const chineseCategories: Record<"zh-CN" | "zh-TW", Record<Category, [string, string]>> = {
+  "zh-CN": {
+    document: ["免费文档转换工具", "在浏览器中转换 DOCX、PDF、HTML、Markdown 和纯文本，文档无需上传到服务器。"],
+    ai: ["AI 文档处理工具", "计算 token、清理上下文、拆分 RAG 文本块，并为 ChatGPT、Claude、Cursor 和 Codex 整理文件。"],
+    spreadsheet: ["免费 CSV 与电子表格工具", "在浏览器中转换、清理、合并和拆分 CSV、JSON 与 XLSX，数据始终保留在当前设备上。"]
+  },
+  "zh-TW": {
+    document: ["免費文件轉檔工具", "在瀏覽器中轉換 DOCX、PDF、HTML、Markdown 與純文字，文件不必上傳至伺服器。"],
+    ai: ["AI 文件處理工具", "計算 token、整理上下文、切分 RAG 文字區塊，並為 ChatGPT、Claude、Cursor 與 Codex 整理檔案。"],
+    spreadsheet: ["免費 CSV 與試算表工具", "在瀏覽器中轉換、清理、合併與分割 CSV、JSON 和 XLSX，資料始終留在目前裝置上。"]
+  }
+};
+
+const chineseToolNames: Record<string, [string, string]> = {
+  "docx-to-pdf": ["DOCX 转 PDF", "免费将 DOCX 转成 PDF"],
+  "docx-to-html": ["DOCX 转 HTML", "将 DOCX 转成干净的 HTML"],
+  "docx-to-markdown": ["DOCX 转 Markdown", "免费将 DOCX 转成 Markdown"],
+  "docx-to-text": ["提取 DOCX 文字", "免费提取 DOCX 中的文字"],
+  "pdf-to-text": ["PDF 转文字", "免费提取 PDF 文字"],
+  "pdf-to-word": ["PDF 转 Word", "将可编辑的 PDF 文字转成 Word"],
+  ocr: ["文档 OCR", "将扫描 PDF 和图片识别成文字"],
+  "token-counter": ["AI Token 计算器", "免费在线 Token 计算器"],
+  "pdf-to-ai-markdown": ["PDF 转 AI Markdown", "将 PDF 转成适合 AI 使用的 Markdown"],
+  "context-optimizer": ["AI 上下文清理", "清理文档并减少无用上下文"],
+  "rag-chunk-calculator": ["RAG 文本块计算器", "计算并预览 RAG 文本块"],
+  "prompt-packager": ["Prompt 文件打包", "将多个文件整理成 AI Prompt"],
+  "csv-to-json": ["CSV 转 JSON", "免费将 CSV 转成 JSON"],
+  "json-to-csv": ["JSON 转 CSV", "免费将 JSON 转成 CSV"],
+  "csv-cleaner": ["CSV 数据清理", "免费清理 CSV 数据"],
+  "merge-csv": ["合并 CSV", "合并多个 CSV 文件"],
+  "split-csv": ["拆分 CSV", "按行数拆分 CSV 文件"],
+  "csv-to-xlsx": ["CSV 转 XLSX", "将 CSV 转成 Excel XLSX"],
+  "xlsx-to-csv": ["XLSX 转 CSV", "将 Excel XLSX 转成 CSV"]
+};
+
+const toTraditional = (value: string) => value
+  .replaceAll("转", "轉").replaceAll("档", "檔").replaceAll("文档", "文件").replaceAll("文字块", "文字區塊")
+  .replaceAll("计算", "計算").replaceAll("预览", "預覽").replaceAll("清理", "清理").replaceAll("多个", "多個")
+  .replaceAll("整理", "整理").replaceAll("适合", "適合").replaceAll("使用", "使用").replaceAll("免费", "免費")
+  .replaceAll("在线", "線上").replaceAll("将", "將").replaceAll("图片", "圖片")
+  .replaceAll("提取", "擷取").replaceAll("扫描", "掃描").replaceAll("识别", "辨識").replaceAll("电子表格", "試算表")
+  .replaceAll("行数", "列數").replaceAll("文件", "檔案").replaceAll("数据", "資料").replaceAll("无用", "不必要");
+
+for (const locale of ["zh-CN", "zh-TW"] as const) {
+  for (const category of categoryOrder) {
+    categories[category].title[locale] = chineseCategories[locale][category][0];
+    categories[category].description[locale] = chineseCategories[locale][category][1];
+  }
+  for (const tool of tools) {
+    const source = chineseToolNames[tool.slug];
+    const label = locale === "zh-TW" ? toTraditional(source[0]) : source[0];
+    const title = locale === "zh-TW" ? toTraditional(source[1]) : source[1];
+    tool.label[locale] = label;
+    tool.title[locale] = title;
+    tool.description[locale] = locale === "zh-TW"
+      ? `${title}，直接在瀏覽器中處理檔案，不必註冊、不加浮水印，也不會上傳至 DJAI。`
+      : `${title}，直接在浏览器中处理文件，无需注册、不加水印，也不会上传到 DJAI。`;
+    tool.intent[locale] = locale === "zh-TW"
+      ? `適合需要快速、私密完成「${label}」並下載結果繼續使用的情境。`
+      : `适合需要快速、私密完成“${label}”并下载结果继续使用的场景。`;
+    tool.keywords[locale] = locale === "zh-TW" ? [label, `${label}免費`, `${label}線上工具`] : [label, `${label}免费`, `${label}在线工具`];
+    if (tool.warning) tool.warning[locale] = locale === "zh-TW" ? "結果取決於來源檔案的結構與品質；重要用途請先檢查輸出檔案。" : "结果取决于源文件的结构和质量；用于重要工作前请先检查输出文件。";
+  }
+}
+
 export function toolsFor(category: Category) {
   return tools.filter((tool) => tool.category === category);
 }
@@ -246,9 +311,11 @@ export function findTool(category: string, slug: string) {
 }
 
 export function categoryHref(category: Category, language: Language) {
-  return `/tools/${category}/${language === "th" ? "" : `${language}/`}`;
+  const segment = language === "zh-CN" ? "zh-cn" : language === "zh-TW" ? "zh-tw" : language;
+  return `/tools/${category}/${language === "th" ? "" : `${segment}/`}`;
 }
 
 export function toolHref(tool: ToolDefinition, language: Language) {
-  return `/tools/${tool.category}/${tool.slug}/${language === "th" ? "" : `${language}/`}`;
+  const segment = language === "zh-CN" ? "zh-cn" : language === "zh-TW" ? "zh-tw" : language;
+  return `/tools/${tool.category}/${tool.slug}/${language === "th" ? "" : `${segment}/`}`;
 }

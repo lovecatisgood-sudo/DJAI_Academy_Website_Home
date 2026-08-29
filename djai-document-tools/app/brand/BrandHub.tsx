@@ -59,19 +59,27 @@ const copy = {
     privacyTitle: "Riêng tư ngay từ thiết kế",
     privacyText: "Ảnh nguồn được đọc và chuyển đổi trong trình duyệt. DJAI không nhận tên tệp hay nội dung hình ảnh.",
     back: "Tất cả công cụ miễn phí"
+  },
+  "zh-CN": {
+    languageHref: "/tools/brand/zh-tw/", languageLabel: "繁體中文", eyebrow: "免费品牌工具", title: "一次生成网站所需的整套图标", intro: "从一张图片生成 favicon、应用图标、Apple touch icon、maskable icon 和可直接使用的安装代码。所有文件都在浏览器中处理。", button: "生成 Favicon", trust: ["无需注册", "图片无需上传", "下载 ZIP", "支持 PNG、JPG、WebP 和 SVG"], sectionEyebrow: "立即使用", sectionTitle: "网站与品牌上线工具", cardTitle: "Favicon 生成器", cardText: "从品牌标志或图片生成多尺寸 .ico、PNG 图标、Apple touch icon、maskable icon、web manifest 和 HTML 代码。", cardLink: "打开工具", nextTitle: "后续品牌工具", nextText: "App Icon Generator 和 Favicon Checker 将沿用同一套工作流，方便创建文件后检查安装状态。", privacyTitle: "以隐私为先", privacyText: "原始图片只在浏览器中读取和转换，DJAI 不会接收文件名或图片内容。", back: "全部免费工具"
+  },
+  "zh-TW": {
+    languageHref: "/tools/brand/zh-cn/", languageLabel: "简体中文", eyebrow: "免費品牌工具", title: "一次產生網站所需的整套圖示", intro: "從一張圖片產生 favicon、應用程式圖示、Apple touch icon、maskable icon 與可直接使用的安裝程式碼。所有檔案都在瀏覽器中處理。", button: "產生 Favicon", trust: ["免註冊", "圖片不需上傳", "下載 ZIP", "支援 PNG、JPG、WebP 與 SVG"], sectionEyebrow: "立即使用", sectionTitle: "網站與品牌上線工具", cardTitle: "Favicon 產生器", cardText: "從品牌標誌或圖片產生多尺寸 .ico、PNG 圖示、Apple touch icon、maskable icon、web manifest 與 HTML 程式碼。", cardLink: "開啟工具", nextTitle: "後續品牌工具", nextText: "App Icon Generator 與 Favicon Checker 將沿用同一套工作流程，方便建立檔案後檢查安裝狀態。", privacyTitle: "以隱私為先", privacyText: "原始圖片只在瀏覽器中讀取與轉換，DJAI 不會收到檔名或圖片內容。", back: "全部免費工具"
   }
 } as const;
 
 const localeRoutes = {
   th: { home: "/", tools: "/tools/", hub: "/tools/brand/", tool: "/tools/brand/favicon-generator/", nav: "เมนูเครื่องมือแบรนด์" },
   en: { home: "/en/", tools: "/tools/en/", hub: "/tools/brand/en/", tool: "/tools/brand/favicon-generator/en/", nav: "Brand tools navigation" },
-  vi: { home: "/vi/", tools: "/tools/vi/", hub: "/tools/brand/vi/", tool: "/tools/brand/favicon-generator/vi/", nav: "Điều hướng công cụ thương hiệu" }
+  vi: { home: "/vi/", tools: "/tools/vi/", hub: "/tools/brand/vi/", tool: "/tools/brand/favicon-generator/vi/", nav: "Điều hướng công cụ thương hiệu" },
+  "zh-CN": { home: "/zh-cn/", tools: "/tools/zh-cn/", hub: "/tools/brand/zh-cn/", tool: "/tools/brand/favicon-generator/zh-cn/", nav: "品牌工具导航" },
+  "zh-TW": { home: "/zh-tw/", tools: "/tools/zh-tw/", hub: "/tools/brand/zh-tw/", tool: "/tools/brand/favicon-generator/zh-tw/", nav: "品牌工具導覽" }
 } as const;
 
 export default function BrandHub({ language }: { language: keyof typeof copy }) {
   const c = copy[language];
   const routes = localeRoutes[language];
-  const languageLabels = { th: "ไทย", en: "English", vi: "Tiếng Việt" } as const;
+  const languageLabels = { th: "ไทย", en: "English", vi: "Tiếng Việt", "zh-CN": "简体中文", "zh-TW": "繁體中文" } as const;
   return (
     <main className="brand-page">
       <header className="brand-header">
