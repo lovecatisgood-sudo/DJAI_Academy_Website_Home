@@ -5,6 +5,7 @@ import {
   CHINESE_LOCALES,
   getRouteById,
   localizedUrl,
+  publicRouteInventory,
   validatePublication
 } from "../config/public-route-registry.mjs";
 
@@ -55,4 +56,15 @@ test("legal content also requires specialist review", () => {
     indexable: false,
     reasons: ["specialist-review-required"]
   });
+});
+
+test("the registry exposes the timestamped public sitemap inventory", () => {
+  const inventory = publicRouteInventory();
+
+  assert.equal(inventory.sites.www.length, 345);
+  assert.equal(inventory.sites.school.length, 10);
+  assert.equal(
+    inventory.sites.www.filter((route) => route.family === "tools").length,
+    267
+  );
 });

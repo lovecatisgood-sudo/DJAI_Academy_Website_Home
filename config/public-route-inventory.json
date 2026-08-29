@@ -1,0 +1,3559 @@
+{
+  "capturedAt": "2026-08-29T15:24:12.898Z",
+  "sites": {
+    "www": [
+      {
+        "semanticId": "home",
+        "sourceUrl": "https://www.djai.academy/",
+        "sourcePath": "/",
+        "locale": "th",
+        "family": "home",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "home"
+      },
+      {
+        "semanticId": "home",
+        "sourceUrl": "https://www.djai.academy/en/",
+        "sourcePath": "/en/",
+        "locale": "en",
+        "family": "home",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "home"
+      },
+      {
+        "semanticId": "home",
+        "sourceUrl": "https://www.djai.academy/vi/",
+        "sourcePath": "/vi/",
+        "locale": "vi",
+        "family": "home",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "home"
+      },
+      {
+        "semanticId": "portfolio",
+        "sourceUrl": "https://www.djai.academy/portfolio/",
+        "sourcePath": "/portfolio/",
+        "locale": "th",
+        "family": "portfolio",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "portfolio"
+      },
+      {
+        "semanticId": "portfolio",
+        "sourceUrl": "https://www.djai.academy/portfolio/en/",
+        "sourcePath": "/portfolio/en/",
+        "locale": "en",
+        "family": "portfolio",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "portfolio"
+      },
+      {
+        "semanticId": "portfolio",
+        "sourceUrl": "https://www.djai.academy/portfolio/vi/",
+        "sourcePath": "/portfolio/vi/",
+        "locale": "vi",
+        "family": "portfolio",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "portfolio"
+      },
+      {
+        "semanticId": "development",
+        "sourceUrl": "https://www.djai.academy/development/",
+        "sourcePath": "/development/",
+        "locale": "th",
+        "family": "development",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "development"
+      },
+      {
+        "semanticId": "development",
+        "sourceUrl": "https://www.djai.academy/development/en/",
+        "sourcePath": "/development/en/",
+        "locale": "en",
+        "family": "development",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "development"
+      },
+      {
+        "semanticId": "development",
+        "sourceUrl": "https://www.djai.academy/development/vi/",
+        "sourcePath": "/development/vi/",
+        "locale": "vi",
+        "family": "development",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "development"
+      },
+      {
+        "semanticId": "web_promo",
+        "sourceUrl": "https://www.djai.academy/web_promo/",
+        "sourcePath": "/web_promo/",
+        "locale": "th",
+        "family": "web_promo",
+        "application": "djai-web-promo-voice",
+        "isAlias": false,
+        "canonicalId": "web_promo"
+      },
+      {
+        "semanticId": "web_promo",
+        "sourceUrl": "https://www.djai.academy/web_promo/vi/",
+        "sourcePath": "/web_promo/vi/",
+        "locale": "vi",
+        "family": "web_promo",
+        "application": "djai-web-promo-voice",
+        "isAlias": false,
+        "canonicalId": "web_promo"
+      },
+      {
+        "semanticId": "service",
+        "sourceUrl": "https://www.djai.academy/service/",
+        "sourcePath": "/service/",
+        "locale": "th",
+        "family": "service",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "service"
+      },
+      {
+        "semanticId": "service",
+        "sourceUrl": "https://www.djai.academy/service/en/",
+        "sourcePath": "/service/en/",
+        "locale": "en",
+        "family": "service",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "service"
+      },
+      {
+        "semanticId": "service",
+        "sourceUrl": "https://www.djai.academy/service/vi/",
+        "sourcePath": "/service/vi/",
+        "locale": "vi",
+        "family": "service",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "service"
+      },
+      {
+        "semanticId": "privacy",
+        "sourceUrl": "https://www.djai.academy/privacy/",
+        "sourcePath": "/privacy/",
+        "locale": "th",
+        "family": "privacy",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "privacy"
+      },
+      {
+        "semanticId": "privacy",
+        "sourceUrl": "https://www.djai.academy/privacy/en/",
+        "sourcePath": "/privacy/en/",
+        "locale": "en",
+        "family": "privacy",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "privacy"
+      },
+      {
+        "semanticId": "privacy",
+        "sourceUrl": "https://www.djai.academy/privacy/vi/",
+        "sourcePath": "/privacy/vi/",
+        "locale": "vi",
+        "family": "privacy",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "privacy"
+      },
+      {
+        "semanticId": "tools",
+        "sourceUrl": "https://www.djai.academy/tools/",
+        "sourcePath": "/tools/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "tools"
+      },
+      {
+        "semanticId": "tools",
+        "sourceUrl": "https://www.djai.academy/tools/en/",
+        "sourcePath": "/tools/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "tools"
+      },
+      {
+        "semanticId": "tools",
+        "sourceUrl": "https://www.djai.academy/tools/vi/",
+        "sourcePath": "/tools/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "tools"
+      },
+      {
+        "semanticId": "tools.qrgen.index",
+        "sourceUrl": "https://www.djai.academy/tools/qrgen/",
+        "sourcePath": "/tools/qrgen/",
+        "locale": "th",
+        "family": "tools",
+        "application": "DJayTools-Free-QR-Generator-Source",
+        "isAlias": false,
+        "canonicalId": "tools.qrgen.index"
+      },
+      {
+        "semanticId": "tools.qrgen.index",
+        "sourceUrl": "https://www.djai.academy/tools/qrgen/en/",
+        "sourcePath": "/tools/qrgen/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "DJayTools-Free-QR-Generator-Source",
+        "isAlias": false,
+        "canonicalId": "tools.qrgen.index"
+      },
+      {
+        "semanticId": "tools.seo-screaming-toad.index",
+        "sourceUrl": "https://www.djai.academy/tools/seo-screaming-toad/",
+        "sourcePath": "/tools/seo-screaming-toad/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "tools.seo-screaming-toad.index"
+      },
+      {
+        "semanticId": "tools.seo-screaming-toad.index",
+        "sourceUrl": "https://www.djai.academy/tools/seo-screaming-toad/en/",
+        "sourcePath": "/tools/seo-screaming-toad/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "tools.seo-screaming-toad.index"
+      },
+      {
+        "semanticId": "course",
+        "sourceUrl": "https://www.djai.academy/course/",
+        "sourcePath": "/course/",
+        "locale": "th",
+        "family": "course",
+        "application": "djai-academy-course",
+        "isAlias": false,
+        "canonicalId": "course"
+      },
+      {
+        "semanticId": "course",
+        "sourceUrl": "https://www.djai.academy/course/en/",
+        "sourcePath": "/course/en/",
+        "locale": "en",
+        "family": "course",
+        "application": "djai-academy-course",
+        "isAlias": false,
+        "canonicalId": "course"
+      },
+      {
+        "semanticId": "course",
+        "sourceUrl": "https://www.djai.academy/course/vi/",
+        "sourcePath": "/course/vi/",
+        "locale": "vi",
+        "family": "course",
+        "application": "djai-academy-course",
+        "isAlias": false,
+        "canonicalId": "course"
+      },
+      {
+        "semanticId": "course.detail",
+        "sourceUrl": "https://www.djai.academy/course/detail/",
+        "sourcePath": "/course/detail/",
+        "locale": "th",
+        "family": "course",
+        "application": "djai-academy-course",
+        "isAlias": false,
+        "canonicalId": "course.detail"
+      },
+      {
+        "semanticId": "course.detail",
+        "sourceUrl": "https://www.djai.academy/course/detail/en/",
+        "sourcePath": "/course/detail/en/",
+        "locale": "en",
+        "family": "course",
+        "application": "djai-academy-course",
+        "isAlias": false,
+        "canonicalId": "course.detail"
+      },
+      {
+        "semanticId": "course.detail",
+        "sourceUrl": "https://www.djai.academy/course/detail/vi/",
+        "sourcePath": "/course/detail/vi/",
+        "locale": "vi",
+        "family": "course",
+        "application": "djai-academy-course",
+        "isAlias": false,
+        "canonicalId": "course.detail"
+      },
+      {
+        "semanticId": "siamese_cat",
+        "sourceUrl": "https://www.djai.academy/siamese_cat/",
+        "sourcePath": "/siamese_cat/",
+        "locale": "th",
+        "family": "siamese_cat",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "siamese_cat"
+      },
+      {
+        "semanticId": "tools.video-to-text.index",
+        "sourceUrl": "https://www.djai.academy/tools/video-to-text/",
+        "sourcePath": "/tools/video-to-text/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "tools.video-to-text.index"
+      },
+      {
+        "semanticId": "tools.video-to-text.index",
+        "sourceUrl": "https://www.djai.academy/tools/video-to-text/en/",
+        "sourcePath": "/tools/video-to-text/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "tools.video-to-text.index"
+      },
+      {
+        "semanticId": "siamese_cat",
+        "sourceUrl": "https://www.djai.academy/siamese_cat/en/",
+        "sourcePath": "/siamese_cat/en/",
+        "locale": "en",
+        "family": "siamese_cat",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "siamese_cat"
+      },
+      {
+        "semanticId": "siamese_cat.dev",
+        "sourceUrl": "https://www.djai.academy/siamese_cat/dev/",
+        "sourcePath": "/siamese_cat/dev/",
+        "locale": "th",
+        "family": "siamese_cat",
+        "application": "Siamese-Cat-Dev-Bio-Site",
+        "isAlias": false,
+        "canonicalId": "siamese_cat.dev"
+      },
+      {
+        "semanticId": "siamese_cat.dev",
+        "sourceUrl": "https://www.djai.academy/siamese_cat/dev/en/",
+        "sourcePath": "/siamese_cat/dev/en/",
+        "locale": "en",
+        "family": "siamese_cat",
+        "application": "Siamese-Cat-Dev-Bio-Site",
+        "isAlias": false,
+        "canonicalId": "siamese_cat.dev"
+      },
+      {
+        "semanticId": "siamese_cat.dev.course",
+        "sourceUrl": "https://www.djai.academy/siamese_cat/dev/course/",
+        "sourcePath": "/siamese_cat/dev/course/",
+        "locale": "th",
+        "family": "siamese_cat",
+        "application": "Siamese-Cat-Dev-Bio-Site",
+        "isAlias": false,
+        "canonicalId": "siamese_cat.dev.course"
+      },
+      {
+        "semanticId": "siamese_cat.dev.course",
+        "sourceUrl": "https://www.djai.academy/siamese_cat/dev/course/th/",
+        "sourcePath": "/siamese_cat/dev/course/th/",
+        "locale": "th",
+        "family": "siamese_cat",
+        "application": "Siamese-Cat-Dev-Bio-Site",
+        "isAlias": false,
+        "canonicalId": "siamese_cat.dev.course"
+      },
+      {
+        "semanticId": "siamese_cat.dev.courses",
+        "sourceUrl": "https://www.djai.academy/siamese_cat/dev/courses/",
+        "sourcePath": "/siamese_cat/dev/courses/",
+        "locale": "th",
+        "family": "siamese_cat",
+        "application": "Siamese-Cat-Dev-Bio-Site",
+        "isAlias": false,
+        "canonicalId": "siamese_cat.dev.courses"
+      },
+      {
+        "semanticId": "siamese_cat.dev.courses.build-first-app",
+        "sourceUrl": "https://www.djai.academy/siamese_cat/dev/courses/build-first-app/",
+        "sourcePath": "/siamese_cat/dev/courses/build-first-app/",
+        "locale": "th",
+        "family": "siamese_cat",
+        "application": "Siamese-Cat-Dev-Bio-Site",
+        "isAlias": false,
+        "canonicalId": "siamese_cat.dev.courses.build-first-app"
+      },
+      {
+        "semanticId": "siamese_cat.dev.courses.make-a-game",
+        "sourceUrl": "https://www.djai.academy/siamese_cat/dev/courses/make-a-game/",
+        "sourcePath": "/siamese_cat/dev/courses/make-a-game/",
+        "locale": "th",
+        "family": "siamese_cat",
+        "application": "Siamese-Cat-Dev-Bio-Site",
+        "isAlias": false,
+        "canonicalId": "siamese_cat.dev.courses.make-a-game"
+      },
+      {
+        "semanticId": "siamese_cat.dev.courses.coding-with-ai",
+        "sourceUrl": "https://www.djai.academy/siamese_cat/dev/courses/coding-with-ai/",
+        "sourcePath": "/siamese_cat/dev/courses/coding-with-ai/",
+        "locale": "th",
+        "family": "siamese_cat",
+        "application": "Siamese-Cat-Dev-Bio-Site",
+        "isAlias": false,
+        "canonicalId": "siamese_cat.dev.courses.coding-with-ai"
+      },
+      {
+        "semanticId": "siamese_cat.dev.blog",
+        "sourceUrl": "https://www.djai.academy/siamese_cat/dev/blog/",
+        "sourcePath": "/siamese_cat/dev/blog/",
+        "locale": "th",
+        "family": "siamese_cat",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "siamese_cat.dev.blog"
+      },
+      {
+        "semanticId": "siamese_cat.dev.blog",
+        "sourceUrl": "https://www.djai.academy/siamese_cat/dev/blog/en/",
+        "sourcePath": "/siamese_cat/dev/blog/en/",
+        "locale": "en",
+        "family": "siamese_cat",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "siamese_cat.dev.blog"
+      },
+      {
+        "semanticId": "blog",
+        "sourceUrl": "https://www.djai.academy/blog/",
+        "sourcePath": "/blog/",
+        "locale": "th",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog"
+      },
+      {
+        "semanticId": "blog",
+        "sourceUrl": "https://www.djai.academy/blog/en/",
+        "sourcePath": "/blog/en/",
+        "locale": "en",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog"
+      },
+      {
+        "semanticId": "blog",
+        "sourceUrl": "https://www.djai.academy/blog/vi/",
+        "sourcePath": "/blog/vi/",
+        "locale": "vi",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog"
+      },
+      {
+        "semanticId": "cam_pdf_scan_signer_qr-gen",
+        "sourceUrl": "https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/",
+        "sourcePath": "/Cam_PDF_Scan_Signer_QR-Gen/",
+        "locale": "th",
+        "family": "cam_pdf_scan_signer_qr-gen",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "cam_pdf_scan_signer_qr-gen"
+      },
+      {
+        "semanticId": "cam_pdf_scan_signer_qr-gen.privacy",
+        "sourceUrl": "https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/privacy/",
+        "sourcePath": "/Cam_PDF_Scan_Signer_QR-Gen/privacy/",
+        "locale": "th",
+        "family": "cam_pdf_scan_signer_qr-gen",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "cam_pdf_scan_signer_qr-gen.privacy"
+      },
+      {
+        "semanticId": "cam_pdf_scan_signer_qr-gen.terms",
+        "sourceUrl": "https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/terms/",
+        "sourcePath": "/Cam_PDF_Scan_Signer_QR-Gen/terms/",
+        "locale": "th",
+        "family": "cam_pdf_scan_signer_qr-gen",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "cam_pdf_scan_signer_qr-gen.terms"
+      },
+      {
+        "semanticId": "cam_pdf_scan_signer_qr-gen.privacy",
+        "sourceUrl": "https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/",
+        "sourcePath": "/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/",
+        "locale": "th",
+        "family": "cam_pdf_scan_signer_qr-gen",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "cam_pdf_scan_signer_qr-gen.privacy"
+      },
+      {
+        "semanticId": "cam_pdf_scan_signer_qr-gen.delete-account",
+        "sourceUrl": "https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/delete-account/",
+        "sourcePath": "/Cam_PDF_Scan_Signer_QR-Gen/delete-account/",
+        "locale": "th",
+        "family": "cam_pdf_scan_signer_qr-gen",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "cam_pdf_scan_signer_qr-gen.delete-account"
+      },
+      {
+        "semanticId": "tools.qrgen.index",
+        "sourceUrl": "https://www.djai.academy/tools/qrgen/vi/",
+        "sourcePath": "/tools/qrgen/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "DJayTools-Free-QR-Generator-Source",
+        "isAlias": false,
+        "canonicalId": "tools.qrgen.index"
+      },
+      {
+        "semanticId": "tools.qrgen.url-qr-code-generator",
+        "sourceUrl": "https://www.djai.academy/tools/qrgen/url-qr-code-generator/",
+        "sourcePath": "/tools/qrgen/url-qr-code-generator/",
+        "locale": "th",
+        "family": "tools",
+        "application": "DJayTools-Free-QR-Generator-Source",
+        "isAlias": false,
+        "canonicalId": "tools.qrgen.url-qr-code-generator"
+      },
+      {
+        "semanticId": "tools.qrgen.url-qr-code-generator",
+        "sourceUrl": "https://www.djai.academy/tools/qrgen/url-qr-code-generator/en/",
+        "sourcePath": "/tools/qrgen/url-qr-code-generator/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "DJayTools-Free-QR-Generator-Source",
+        "isAlias": false,
+        "canonicalId": "tools.qrgen.url-qr-code-generator"
+      },
+      {
+        "semanticId": "tools.qrgen.url-qr-code-generator",
+        "sourceUrl": "https://www.djai.academy/tools/qrgen/url-qr-code-generator/vi/",
+        "sourcePath": "/tools/qrgen/url-qr-code-generator/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "DJayTools-Free-QR-Generator-Source",
+        "isAlias": false,
+        "canonicalId": "tools.qrgen.url-qr-code-generator"
+      },
+      {
+        "semanticId": "tools.qrgen.wifi-qr-code-generator",
+        "sourceUrl": "https://www.djai.academy/tools/qrgen/wifi-qr-code-generator/",
+        "sourcePath": "/tools/qrgen/wifi-qr-code-generator/",
+        "locale": "th",
+        "family": "tools",
+        "application": "DJayTools-Free-QR-Generator-Source",
+        "isAlias": false,
+        "canonicalId": "tools.qrgen.wifi-qr-code-generator"
+      },
+      {
+        "semanticId": "tools.qrgen.wifi-qr-code-generator",
+        "sourceUrl": "https://www.djai.academy/tools/qrgen/wifi-qr-code-generator/en/",
+        "sourcePath": "/tools/qrgen/wifi-qr-code-generator/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "DJayTools-Free-QR-Generator-Source",
+        "isAlias": false,
+        "canonicalId": "tools.qrgen.wifi-qr-code-generator"
+      },
+      {
+        "semanticId": "tools.qrgen.wifi-qr-code-generator",
+        "sourceUrl": "https://www.djai.academy/tools/qrgen/wifi-qr-code-generator/vi/",
+        "sourcePath": "/tools/qrgen/wifi-qr-code-generator/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "DJayTools-Free-QR-Generator-Source",
+        "isAlias": false,
+        "canonicalId": "tools.qrgen.wifi-qr-code-generator"
+      },
+      {
+        "semanticId": "tools.qrgen.vcard-qr-code-generator",
+        "sourceUrl": "https://www.djai.academy/tools/qrgen/vcard-qr-code-generator/",
+        "sourcePath": "/tools/qrgen/vcard-qr-code-generator/",
+        "locale": "th",
+        "family": "tools",
+        "application": "DJayTools-Free-QR-Generator-Source",
+        "isAlias": false,
+        "canonicalId": "tools.qrgen.vcard-qr-code-generator"
+      },
+      {
+        "semanticId": "tools.qrgen.vcard-qr-code-generator",
+        "sourceUrl": "https://www.djai.academy/tools/qrgen/vcard-qr-code-generator/en/",
+        "sourcePath": "/tools/qrgen/vcard-qr-code-generator/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "DJayTools-Free-QR-Generator-Source",
+        "isAlias": false,
+        "canonicalId": "tools.qrgen.vcard-qr-code-generator"
+      },
+      {
+        "semanticId": "tools.qrgen.vcard-qr-code-generator",
+        "sourceUrl": "https://www.djai.academy/tools/qrgen/vcard-qr-code-generator/vi/",
+        "sourcePath": "/tools/qrgen/vcard-qr-code-generator/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "DJayTools-Free-QR-Generator-Source",
+        "isAlias": false,
+        "canonicalId": "tools.qrgen.vcard-qr-code-generator"
+      },
+      {
+        "semanticId": "tools.qrgen.text-qr-code-generator",
+        "sourceUrl": "https://www.djai.academy/tools/qrgen/text-qr-code-generator/",
+        "sourcePath": "/tools/qrgen/text-qr-code-generator/",
+        "locale": "th",
+        "family": "tools",
+        "application": "DJayTools-Free-QR-Generator-Source",
+        "isAlias": false,
+        "canonicalId": "tools.qrgen.text-qr-code-generator"
+      },
+      {
+        "semanticId": "tools.qrgen.text-qr-code-generator",
+        "sourceUrl": "https://www.djai.academy/tools/qrgen/text-qr-code-generator/en/",
+        "sourcePath": "/tools/qrgen/text-qr-code-generator/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "DJayTools-Free-QR-Generator-Source",
+        "isAlias": false,
+        "canonicalId": "tools.qrgen.text-qr-code-generator"
+      },
+      {
+        "semanticId": "tools.qrgen.text-qr-code-generator",
+        "sourceUrl": "https://www.djai.academy/tools/qrgen/text-qr-code-generator/vi/",
+        "sourcePath": "/tools/qrgen/text-qr-code-generator/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "DJayTools-Free-QR-Generator-Source",
+        "isAlias": false,
+        "canonicalId": "tools.qrgen.text-qr-code-generator"
+      },
+      {
+        "semanticId": "tools.qrgen.email-qr-code-generator",
+        "sourceUrl": "https://www.djai.academy/tools/qrgen/email-qr-code-generator/",
+        "sourcePath": "/tools/qrgen/email-qr-code-generator/",
+        "locale": "th",
+        "family": "tools",
+        "application": "DJayTools-Free-QR-Generator-Source",
+        "isAlias": false,
+        "canonicalId": "tools.qrgen.email-qr-code-generator"
+      },
+      {
+        "semanticId": "tools.qrgen.email-qr-code-generator",
+        "sourceUrl": "https://www.djai.academy/tools/qrgen/email-qr-code-generator/en/",
+        "sourcePath": "/tools/qrgen/email-qr-code-generator/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "DJayTools-Free-QR-Generator-Source",
+        "isAlias": false,
+        "canonicalId": "tools.qrgen.email-qr-code-generator"
+      },
+      {
+        "semanticId": "tools.qrgen.email-qr-code-generator",
+        "sourceUrl": "https://www.djai.academy/tools/qrgen/email-qr-code-generator/vi/",
+        "sourcePath": "/tools/qrgen/email-qr-code-generator/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "DJayTools-Free-QR-Generator-Source",
+        "isAlias": false,
+        "canonicalId": "tools.qrgen.email-qr-code-generator"
+      },
+      {
+        "semanticId": "tools.qrgen.whatsapp-qr-code-generator",
+        "sourceUrl": "https://www.djai.academy/tools/qrgen/whatsapp-qr-code-generator/",
+        "sourcePath": "/tools/qrgen/whatsapp-qr-code-generator/",
+        "locale": "th",
+        "family": "tools",
+        "application": "DJayTools-Free-QR-Generator-Source",
+        "isAlias": false,
+        "canonicalId": "tools.qrgen.whatsapp-qr-code-generator"
+      },
+      {
+        "semanticId": "tools.qrgen.whatsapp-qr-code-generator",
+        "sourceUrl": "https://www.djai.academy/tools/qrgen/whatsapp-qr-code-generator/en/",
+        "sourcePath": "/tools/qrgen/whatsapp-qr-code-generator/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "DJayTools-Free-QR-Generator-Source",
+        "isAlias": false,
+        "canonicalId": "tools.qrgen.whatsapp-qr-code-generator"
+      },
+      {
+        "semanticId": "tools.qrgen.whatsapp-qr-code-generator",
+        "sourceUrl": "https://www.djai.academy/tools/qrgen/whatsapp-qr-code-generator/vi/",
+        "sourcePath": "/tools/qrgen/whatsapp-qr-code-generator/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "DJayTools-Free-QR-Generator-Source",
+        "isAlias": false,
+        "canonicalId": "tools.qrgen.whatsapp-qr-code-generator"
+      },
+      {
+        "semanticId": "tools.qrgen.qr-code-generator-with-logo",
+        "sourceUrl": "https://www.djai.academy/tools/qrgen/qr-code-generator-with-logo/",
+        "sourcePath": "/tools/qrgen/qr-code-generator-with-logo/",
+        "locale": "th",
+        "family": "tools",
+        "application": "DJayTools-Free-QR-Generator-Source",
+        "isAlias": false,
+        "canonicalId": "tools.qrgen.qr-code-generator-with-logo"
+      },
+      {
+        "semanticId": "tools.qrgen.qr-code-generator-with-logo",
+        "sourceUrl": "https://www.djai.academy/tools/qrgen/qr-code-generator-with-logo/en/",
+        "sourcePath": "/tools/qrgen/qr-code-generator-with-logo/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "DJayTools-Free-QR-Generator-Source",
+        "isAlias": false,
+        "canonicalId": "tools.qrgen.qr-code-generator-with-logo"
+      },
+      {
+        "semanticId": "tools.qrgen.qr-code-generator-with-logo",
+        "sourceUrl": "https://www.djai.academy/tools/qrgen/qr-code-generator-with-logo/vi/",
+        "sourcePath": "/tools/qrgen/qr-code-generator-with-logo/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "DJayTools-Free-QR-Generator-Source",
+        "isAlias": false,
+        "canonicalId": "tools.qrgen.qr-code-generator-with-logo"
+      },
+      {
+        "semanticId": "tools.resizeimg.index",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/",
+        "sourcePath": "/tools/resizeimg/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.index"
+      },
+      {
+        "semanticId": "tools.resizeimg.index",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/en/",
+        "sourcePath": "/tools/resizeimg/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.index"
+      },
+      {
+        "semanticId": "tools.resizeimg.index",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/vi/",
+        "sourcePath": "/tools/resizeimg/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.index"
+      },
+      {
+        "semanticId": "tools.resizeimg.jpg-to-png",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/jpg-to-png/",
+        "sourcePath": "/tools/resizeimg/jpg-to-png/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.jpg-to-png"
+      },
+      {
+        "semanticId": "tools.resizeimg.jpg-to-png",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/jpg-to-png/en/",
+        "sourcePath": "/tools/resizeimg/jpg-to-png/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.jpg-to-png"
+      },
+      {
+        "semanticId": "tools.resizeimg.jpg-to-png",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/jpg-to-png/vi/",
+        "sourcePath": "/tools/resizeimg/jpg-to-png/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.jpg-to-png"
+      },
+      {
+        "semanticId": "tools.resizeimg.png-to-jpg",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/png-to-jpg/",
+        "sourcePath": "/tools/resizeimg/png-to-jpg/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.png-to-jpg"
+      },
+      {
+        "semanticId": "tools.resizeimg.png-to-jpg",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/png-to-jpg/en/",
+        "sourcePath": "/tools/resizeimg/png-to-jpg/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.png-to-jpg"
+      },
+      {
+        "semanticId": "tools.resizeimg.png-to-jpg",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/png-to-jpg/vi/",
+        "sourcePath": "/tools/resizeimg/png-to-jpg/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.png-to-jpg"
+      },
+      {
+        "semanticId": "tools.resizeimg.jpg-to-webp",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/jpg-to-webp/",
+        "sourcePath": "/tools/resizeimg/jpg-to-webp/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.jpg-to-webp"
+      },
+      {
+        "semanticId": "tools.resizeimg.jpg-to-webp",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/jpg-to-webp/en/",
+        "sourcePath": "/tools/resizeimg/jpg-to-webp/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.jpg-to-webp"
+      },
+      {
+        "semanticId": "tools.resizeimg.jpg-to-webp",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/jpg-to-webp/vi/",
+        "sourcePath": "/tools/resizeimg/jpg-to-webp/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.jpg-to-webp"
+      },
+      {
+        "semanticId": "tools.resizeimg.png-to-webp",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/png-to-webp/",
+        "sourcePath": "/tools/resizeimg/png-to-webp/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.png-to-webp"
+      },
+      {
+        "semanticId": "tools.resizeimg.png-to-webp",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/png-to-webp/en/",
+        "sourcePath": "/tools/resizeimg/png-to-webp/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.png-to-webp"
+      },
+      {
+        "semanticId": "tools.resizeimg.png-to-webp",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/png-to-webp/vi/",
+        "sourcePath": "/tools/resizeimg/png-to-webp/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.png-to-webp"
+      },
+      {
+        "semanticId": "tools.resizeimg.webp-to-jpg",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/webp-to-jpg/",
+        "sourcePath": "/tools/resizeimg/webp-to-jpg/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.webp-to-jpg"
+      },
+      {
+        "semanticId": "tools.resizeimg.webp-to-jpg",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/webp-to-jpg/en/",
+        "sourcePath": "/tools/resizeimg/webp-to-jpg/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.webp-to-jpg"
+      },
+      {
+        "semanticId": "tools.resizeimg.webp-to-jpg",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/webp-to-jpg/vi/",
+        "sourcePath": "/tools/resizeimg/webp-to-jpg/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.webp-to-jpg"
+      },
+      {
+        "semanticId": "tools.resizeimg.webp-to-png",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/webp-to-png/",
+        "sourcePath": "/tools/resizeimg/webp-to-png/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.webp-to-png"
+      },
+      {
+        "semanticId": "tools.resizeimg.webp-to-png",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/webp-to-png/en/",
+        "sourcePath": "/tools/resizeimg/webp-to-png/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.webp-to-png"
+      },
+      {
+        "semanticId": "tools.resizeimg.webp-to-png",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/webp-to-png/vi/",
+        "sourcePath": "/tools/resizeimg/webp-to-png/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.webp-to-png"
+      },
+      {
+        "semanticId": "tools.resizeimg.compress-image",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/compress-image/",
+        "sourcePath": "/tools/resizeimg/compress-image/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.compress-image"
+      },
+      {
+        "semanticId": "tools.resizeimg.compress-image",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/compress-image/en/",
+        "sourcePath": "/tools/resizeimg/compress-image/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.compress-image"
+      },
+      {
+        "semanticId": "tools.resizeimg.compress-image",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/compress-image/vi/",
+        "sourcePath": "/tools/resizeimg/compress-image/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.compress-image"
+      },
+      {
+        "semanticId": "tools.resizeimg.resize-image",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/resize-image/",
+        "sourcePath": "/tools/resizeimg/resize-image/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.resize-image"
+      },
+      {
+        "semanticId": "tools.resizeimg.resize-image",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/resize-image/en/",
+        "sourcePath": "/tools/resizeimg/resize-image/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.resize-image"
+      },
+      {
+        "semanticId": "tools.resizeimg.resize-image",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/resize-image/vi/",
+        "sourcePath": "/tools/resizeimg/resize-image/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.resize-image"
+      },
+      {
+        "semanticId": "tools.resizeimg.image-to-100kb",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/image-to-100kb/",
+        "sourcePath": "/tools/resizeimg/image-to-100kb/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.image-to-100kb"
+      },
+      {
+        "semanticId": "tools.resizeimg.image-to-100kb",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/image-to-100kb/en/",
+        "sourcePath": "/tools/resizeimg/image-to-100kb/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.image-to-100kb"
+      },
+      {
+        "semanticId": "tools.resizeimg.image-to-100kb",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/image-to-100kb/vi/",
+        "sourcePath": "/tools/resizeimg/image-to-100kb/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.image-to-100kb"
+      },
+      {
+        "semanticId": "tools.resizeimg.image-to-500kb",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/image-to-500kb/",
+        "sourcePath": "/tools/resizeimg/image-to-500kb/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.image-to-500kb"
+      },
+      {
+        "semanticId": "tools.resizeimg.image-to-500kb",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/image-to-500kb/en/",
+        "sourcePath": "/tools/resizeimg/image-to-500kb/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.image-to-500kb"
+      },
+      {
+        "semanticId": "tools.resizeimg.image-to-500kb",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/image-to-500kb/vi/",
+        "sourcePath": "/tools/resizeimg/image-to-500kb/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.image-to-500kb"
+      },
+      {
+        "semanticId": "tools.resizeimg.heic-to-jpg",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/heic-to-jpg/",
+        "sourcePath": "/tools/resizeimg/heic-to-jpg/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.heic-to-jpg"
+      },
+      {
+        "semanticId": "tools.resizeimg.heic-to-jpg",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/heic-to-jpg/en/",
+        "sourcePath": "/tools/resizeimg/heic-to-jpg/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.heic-to-jpg"
+      },
+      {
+        "semanticId": "tools.resizeimg.heic-to-jpg",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/heic-to-jpg/vi/",
+        "sourcePath": "/tools/resizeimg/heic-to-jpg/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.heic-to-jpg"
+      },
+      {
+        "semanticId": "tools.resizeimg.remove-image-metadata",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/remove-image-metadata/",
+        "sourcePath": "/tools/resizeimg/remove-image-metadata/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.remove-image-metadata"
+      },
+      {
+        "semanticId": "tools.resizeimg.remove-image-metadata",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/remove-image-metadata/en/",
+        "sourcePath": "/tools/resizeimg/remove-image-metadata/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.remove-image-metadata"
+      },
+      {
+        "semanticId": "tools.resizeimg.remove-image-metadata",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/remove-image-metadata/vi/",
+        "sourcePath": "/tools/resizeimg/remove-image-metadata/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.remove-image-metadata"
+      },
+      {
+        "semanticId": "tools.resizeimg.remove-background-image",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/remove-background-image/",
+        "sourcePath": "/tools/resizeimg/remove-background-image/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.remove-background-image"
+      },
+      {
+        "semanticId": "tools.resizeimg.remove-background-image",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/remove-background-image/en/",
+        "sourcePath": "/tools/resizeimg/remove-background-image/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.remove-background-image"
+      },
+      {
+        "semanticId": "tools.resizeimg.remove-background-image",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/remove-background-image/vi/",
+        "sourcePath": "/tools/resizeimg/remove-background-image/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.remove-background-image"
+      },
+      {
+        "semanticId": "tools.resizeimg.resize-image-to-200kb",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/resize-image-to-200kb/",
+        "sourcePath": "/tools/resizeimg/resize-image-to-200kb/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.resize-image-to-200kb"
+      },
+      {
+        "semanticId": "tools.resizeimg.resize-image-to-200kb",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/resize-image-to-200kb/en/",
+        "sourcePath": "/tools/resizeimg/resize-image-to-200kb/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.resize-image-to-200kb"
+      },
+      {
+        "semanticId": "tools.resizeimg.resize-image-to-200kb",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/resize-image-to-200kb/vi/",
+        "sourcePath": "/tools/resizeimg/resize-image-to-200kb/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.resize-image-to-200kb"
+      },
+      {
+        "semanticId": "tools.resizeimg.avif-to-jpg",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/avif-to-jpg/",
+        "sourcePath": "/tools/resizeimg/avif-to-jpg/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.avif-to-jpg"
+      },
+      {
+        "semanticId": "tools.resizeimg.avif-to-jpg",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/avif-to-jpg/en/",
+        "sourcePath": "/tools/resizeimg/avif-to-jpg/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.avif-to-jpg"
+      },
+      {
+        "semanticId": "tools.resizeimg.avif-to-jpg",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/avif-to-jpg/vi/",
+        "sourcePath": "/tools/resizeimg/avif-to-jpg/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.avif-to-jpg"
+      },
+      {
+        "semanticId": "tools.resizeimg.avif-to-png",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/avif-to-png/",
+        "sourcePath": "/tools/resizeimg/avif-to-png/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.avif-to-png"
+      },
+      {
+        "semanticId": "tools.resizeimg.avif-to-png",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/avif-to-png/en/",
+        "sourcePath": "/tools/resizeimg/avif-to-png/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.avif-to-png"
+      },
+      {
+        "semanticId": "tools.resizeimg.avif-to-png",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/avif-to-png/vi/",
+        "sourcePath": "/tools/resizeimg/avif-to-png/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.avif-to-png"
+      },
+      {
+        "semanticId": "tools.resizeimg.passport-photo-resizer",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/passport-photo-resizer/",
+        "sourcePath": "/tools/resizeimg/passport-photo-resizer/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.passport-photo-resizer"
+      },
+      {
+        "semanticId": "tools.resizeimg.passport-photo-resizer",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/passport-photo-resizer/en/",
+        "sourcePath": "/tools/resizeimg/passport-photo-resizer/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.passport-photo-resizer"
+      },
+      {
+        "semanticId": "tools.resizeimg.passport-photo-resizer",
+        "sourceUrl": "https://www.djai.academy/tools/resizeimg/passport-photo-resizer/vi/",
+        "sourcePath": "/tools/resizeimg/passport-photo-resizer/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-image-resizer",
+        "isAlias": false,
+        "canonicalId": "tools.resizeimg.passport-photo-resizer"
+      },
+      {
+        "semanticId": "tools.pdftools.index",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/",
+        "sourcePath": "/tools/PDFTools/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.index"
+      },
+      {
+        "semanticId": "tools.pdftools.index",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/en/",
+        "sourcePath": "/tools/PDFTools/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.index"
+      },
+      {
+        "semanticId": "tools.pdftools.merge-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/merge-pdf/",
+        "sourcePath": "/tools/PDFTools/merge-pdf/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.merge-pdf"
+      },
+      {
+        "semanticId": "tools.pdftools.merge-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/merge-pdf/en/",
+        "sourcePath": "/tools/PDFTools/merge-pdf/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.merge-pdf"
+      },
+      {
+        "semanticId": "tools.pdftools.split-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/split-pdf/",
+        "sourcePath": "/tools/PDFTools/split-pdf/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.split-pdf"
+      },
+      {
+        "semanticId": "tools.pdftools.split-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/split-pdf/en/",
+        "sourcePath": "/tools/PDFTools/split-pdf/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.split-pdf"
+      },
+      {
+        "semanticId": "tools.pdftools.compress-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/compress-pdf/",
+        "sourcePath": "/tools/PDFTools/compress-pdf/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.compress-pdf"
+      },
+      {
+        "semanticId": "tools.pdftools.compress-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/compress-pdf/en/",
+        "sourcePath": "/tools/PDFTools/compress-pdf/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.compress-pdf"
+      },
+      {
+        "semanticId": "tools.pdftools.images-to-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/images-to-pdf/",
+        "sourcePath": "/tools/PDFTools/images-to-pdf/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.images-to-pdf"
+      },
+      {
+        "semanticId": "tools.pdftools.images-to-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/images-to-pdf/en/",
+        "sourcePath": "/tools/PDFTools/images-to-pdf/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.images-to-pdf"
+      },
+      {
+        "semanticId": "tools.pdftools.pdf-to-images",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/pdf-to-images/",
+        "sourcePath": "/tools/PDFTools/pdf-to-images/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.pdf-to-images"
+      },
+      {
+        "semanticId": "tools.pdftools.pdf-to-images",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/pdf-to-images/en/",
+        "sourcePath": "/tools/PDFTools/pdf-to-images/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.pdf-to-images"
+      },
+      {
+        "semanticId": "tools.pdftools.rotate-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/rotate-pdf/",
+        "sourcePath": "/tools/PDFTools/rotate-pdf/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.rotate-pdf"
+      },
+      {
+        "semanticId": "tools.pdftools.rotate-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/rotate-pdf/en/",
+        "sourcePath": "/tools/PDFTools/rotate-pdf/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.rotate-pdf"
+      },
+      {
+        "semanticId": "tools.pdftools.watermark-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/watermark-pdf/",
+        "sourcePath": "/tools/PDFTools/watermark-pdf/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.watermark-pdf"
+      },
+      {
+        "semanticId": "tools.pdftools.watermark-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/watermark-pdf/en/",
+        "sourcePath": "/tools/PDFTools/watermark-pdf/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.watermark-pdf"
+      },
+      {
+        "semanticId": "tools.pdftools.protect-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/protect-pdf/",
+        "sourcePath": "/tools/PDFTools/protect-pdf/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.protect-pdf"
+      },
+      {
+        "semanticId": "tools.pdftools.protect-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/protect-pdf/en/",
+        "sourcePath": "/tools/PDFTools/protect-pdf/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.protect-pdf"
+      },
+      {
+        "semanticId": "tools.pdftools.organize-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/organize-pdf/",
+        "sourcePath": "/tools/PDFTools/organize-pdf/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.organize-pdf"
+      },
+      {
+        "semanticId": "tools.pdftools.organize-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/organize-pdf/en/",
+        "sourcePath": "/tools/PDFTools/organize-pdf/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.organize-pdf"
+      },
+      {
+        "semanticId": "tools.pdftools.add-page-numbers",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/add-page-numbers/",
+        "sourcePath": "/tools/PDFTools/add-page-numbers/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.add-page-numbers"
+      },
+      {
+        "semanticId": "tools.pdftools.add-page-numbers",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/add-page-numbers/en/",
+        "sourcePath": "/tools/PDFTools/add-page-numbers/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.add-page-numbers"
+      },
+      {
+        "semanticId": "tools.pdftools.remove-pdf-metadata",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/remove-pdf-metadata/",
+        "sourcePath": "/tools/PDFTools/remove-pdf-metadata/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.remove-pdf-metadata"
+      },
+      {
+        "semanticId": "tools.pdftools.remove-pdf-metadata",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/remove-pdf-metadata/en/",
+        "sourcePath": "/tools/PDFTools/remove-pdf-metadata/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.remove-pdf-metadata"
+      },
+      {
+        "semanticId": "tools.pdftools.jpg-to-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/jpg-to-pdf/",
+        "sourcePath": "/tools/PDFTools/jpg-to-pdf/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.jpg-to-pdf"
+      },
+      {
+        "semanticId": "tools.pdftools.jpg-to-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/jpg-to-pdf/en/",
+        "sourcePath": "/tools/PDFTools/jpg-to-pdf/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.jpg-to-pdf"
+      },
+      {
+        "semanticId": "tools.pdftools.pdf-to-jpg",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/pdf-to-jpg/",
+        "sourcePath": "/tools/PDFTools/pdf-to-jpg/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.pdf-to-jpg"
+      },
+      {
+        "semanticId": "tools.pdftools.pdf-to-jpg",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/pdf-to-jpg/en/",
+        "sourcePath": "/tools/PDFTools/pdf-to-jpg/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.pdf-to-jpg"
+      },
+      {
+        "semanticId": "tools.pdftools.png-to-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/png-to-pdf/",
+        "sourcePath": "/tools/PDFTools/png-to-pdf/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.png-to-pdf"
+      },
+      {
+        "semanticId": "tools.pdftools.png-to-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/png-to-pdf/en/",
+        "sourcePath": "/tools/PDFTools/png-to-pdf/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.png-to-pdf"
+      },
+      {
+        "semanticId": "tools.pdftools.webp-to-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/webp-to-pdf/",
+        "sourcePath": "/tools/PDFTools/webp-to-pdf/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.webp-to-pdf"
+      },
+      {
+        "semanticId": "tools.pdftools.webp-to-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/webp-to-pdf/en/",
+        "sourcePath": "/tools/PDFTools/webp-to-pdf/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.webp-to-pdf"
+      },
+      {
+        "semanticId": "tools.pdftools.pdf-to-png",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/pdf-to-png/",
+        "sourcePath": "/tools/PDFTools/pdf-to-png/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.pdf-to-png"
+      },
+      {
+        "semanticId": "tools.pdftools.pdf-to-png",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/pdf-to-png/en/",
+        "sourcePath": "/tools/PDFTools/pdf-to-png/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.pdf-to-png"
+      },
+      {
+        "semanticId": "tools.pdftools.extract-pdf-pages",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/extract-pdf-pages/",
+        "sourcePath": "/tools/PDFTools/extract-pdf-pages/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.extract-pdf-pages"
+      },
+      {
+        "semanticId": "tools.pdftools.extract-pdf-pages",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/extract-pdf-pages/en/",
+        "sourcePath": "/tools/PDFTools/extract-pdf-pages/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.extract-pdf-pages"
+      },
+      {
+        "semanticId": "tools.pdftools.delete-pages-from-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/delete-pages-from-pdf/",
+        "sourcePath": "/tools/PDFTools/delete-pages-from-pdf/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.delete-pages-from-pdf"
+      },
+      {
+        "semanticId": "tools.pdftools.delete-pages-from-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/delete-pages-from-pdf/en/",
+        "sourcePath": "/tools/PDFTools/delete-pages-from-pdf/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.delete-pages-from-pdf"
+      },
+      {
+        "semanticId": "tools.pdftools.reorder-pdf-pages",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/reorder-pdf-pages/",
+        "sourcePath": "/tools/PDFTools/reorder-pdf-pages/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.reorder-pdf-pages"
+      },
+      {
+        "semanticId": "tools.pdftools.reorder-pdf-pages",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/reorder-pdf-pages/en/",
+        "sourcePath": "/tools/PDFTools/reorder-pdf-pages/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.reorder-pdf-pages"
+      },
+      {
+        "semanticId": "tools.pdftools.index",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/vi/",
+        "sourcePath": "/tools/PDFTools/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.index"
+      },
+      {
+        "semanticId": "tools.pdftools.merge-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/merge-pdf/vi/",
+        "sourcePath": "/tools/PDFTools/merge-pdf/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.merge-pdf"
+      },
+      {
+        "semanticId": "tools.pdftools.split-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/split-pdf/vi/",
+        "sourcePath": "/tools/PDFTools/split-pdf/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.split-pdf"
+      },
+      {
+        "semanticId": "tools.pdftools.compress-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/compress-pdf/vi/",
+        "sourcePath": "/tools/PDFTools/compress-pdf/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.compress-pdf"
+      },
+      {
+        "semanticId": "tools.pdftools.images-to-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/images-to-pdf/vi/",
+        "sourcePath": "/tools/PDFTools/images-to-pdf/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.images-to-pdf"
+      },
+      {
+        "semanticId": "tools.pdftools.pdf-to-images",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/pdf-to-images/vi/",
+        "sourcePath": "/tools/PDFTools/pdf-to-images/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.pdf-to-images"
+      },
+      {
+        "semanticId": "tools.pdftools.rotate-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/rotate-pdf/vi/",
+        "sourcePath": "/tools/PDFTools/rotate-pdf/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.rotate-pdf"
+      },
+      {
+        "semanticId": "tools.pdftools.watermark-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/watermark-pdf/vi/",
+        "sourcePath": "/tools/PDFTools/watermark-pdf/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.watermark-pdf"
+      },
+      {
+        "semanticId": "tools.pdftools.protect-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/protect-pdf/vi/",
+        "sourcePath": "/tools/PDFTools/protect-pdf/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.protect-pdf"
+      },
+      {
+        "semanticId": "tools.pdftools.organize-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/organize-pdf/vi/",
+        "sourcePath": "/tools/PDFTools/organize-pdf/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.organize-pdf"
+      },
+      {
+        "semanticId": "tools.pdftools.add-page-numbers",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/add-page-numbers/vi/",
+        "sourcePath": "/tools/PDFTools/add-page-numbers/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.add-page-numbers"
+      },
+      {
+        "semanticId": "tools.pdftools.remove-pdf-metadata",
+        "sourceUrl": "https://www.djai.academy/tools/PDFTools/remove-pdf-metadata/vi/",
+        "sourcePath": "/tools/PDFTools/remove-pdf-metadata/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-pdf-tools",
+        "isAlias": false,
+        "canonicalId": "tools.pdftools.remove-pdf-metadata"
+      },
+      {
+        "semanticId": "tools.media.index",
+        "sourceUrl": "https://www.djai.academy/tools/media/",
+        "sourcePath": "/tools/media/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.index"
+      },
+      {
+        "semanticId": "tools.media.index",
+        "sourceUrl": "https://www.djai.academy/tools/media/en/",
+        "sourcePath": "/tools/media/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.index"
+      },
+      {
+        "semanticId": "tools.media.mp3-to-wav",
+        "sourceUrl": "https://www.djai.academy/tools/media/mp3-to-wav/",
+        "sourcePath": "/tools/media/mp3-to-wav/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.mp3-to-wav"
+      },
+      {
+        "semanticId": "tools.media.mp3-to-wav",
+        "sourceUrl": "https://www.djai.academy/tools/media/mp3-to-wav/en/",
+        "sourcePath": "/tools/media/mp3-to-wav/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.mp3-to-wav"
+      },
+      {
+        "semanticId": "tools.media.wav-to-mp3",
+        "sourceUrl": "https://www.djai.academy/tools/media/wav-to-mp3/",
+        "sourcePath": "/tools/media/wav-to-mp3/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.wav-to-mp3"
+      },
+      {
+        "semanticId": "tools.media.wav-to-mp3",
+        "sourceUrl": "https://www.djai.academy/tools/media/wav-to-mp3/en/",
+        "sourcePath": "/tools/media/wav-to-mp3/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.wav-to-mp3"
+      },
+      {
+        "semanticId": "tools.media.m4a-to-mp3",
+        "sourceUrl": "https://www.djai.academy/tools/media/m4a-to-mp3/",
+        "sourcePath": "/tools/media/m4a-to-mp3/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.m4a-to-mp3"
+      },
+      {
+        "semanticId": "tools.media.m4a-to-mp3",
+        "sourceUrl": "https://www.djai.academy/tools/media/m4a-to-mp3/en/",
+        "sourcePath": "/tools/media/m4a-to-mp3/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.m4a-to-mp3"
+      },
+      {
+        "semanticId": "tools.media.mp4-to-mp3",
+        "sourceUrl": "https://www.djai.academy/tools/media/mp4-to-mp3/",
+        "sourcePath": "/tools/media/mp4-to-mp3/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.mp4-to-mp3"
+      },
+      {
+        "semanticId": "tools.media.mp4-to-mp3",
+        "sourceUrl": "https://www.djai.academy/tools/media/mp4-to-mp3/en/",
+        "sourcePath": "/tools/media/mp4-to-mp3/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.mp4-to-mp3"
+      },
+      {
+        "semanticId": "tools.media.extract-audio-from-video",
+        "sourceUrl": "https://www.djai.academy/tools/media/extract-audio-from-video/",
+        "sourcePath": "/tools/media/extract-audio-from-video/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.extract-audio-from-video"
+      },
+      {
+        "semanticId": "tools.media.extract-audio-from-video",
+        "sourceUrl": "https://www.djai.academy/tools/media/extract-audio-from-video/en/",
+        "sourcePath": "/tools/media/extract-audio-from-video/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.extract-audio-from-video"
+      },
+      {
+        "semanticId": "tools.media.video-converter",
+        "sourceUrl": "https://www.djai.academy/tools/media/video-converter/",
+        "sourcePath": "/tools/media/video-converter/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.video-converter"
+      },
+      {
+        "semanticId": "tools.media.video-converter",
+        "sourceUrl": "https://www.djai.academy/tools/media/video-converter/en/",
+        "sourcePath": "/tools/media/video-converter/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.video-converter"
+      },
+      {
+        "semanticId": "tools.media.mkv-to-mp4",
+        "sourceUrl": "https://www.djai.academy/tools/media/mkv-to-mp4/",
+        "sourcePath": "/tools/media/mkv-to-mp4/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.mkv-to-mp4"
+      },
+      {
+        "semanticId": "tools.media.mkv-to-mp4",
+        "sourceUrl": "https://www.djai.academy/tools/media/mkv-to-mp4/en/",
+        "sourcePath": "/tools/media/mkv-to-mp4/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.mkv-to-mp4"
+      },
+      {
+        "semanticId": "tools.media.avi-to-mp4",
+        "sourceUrl": "https://www.djai.academy/tools/media/avi-to-mp4/",
+        "sourcePath": "/tools/media/avi-to-mp4/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.avi-to-mp4"
+      },
+      {
+        "semanticId": "tools.media.avi-to-mp4",
+        "sourceUrl": "https://www.djai.academy/tools/media/avi-to-mp4/en/",
+        "sourcePath": "/tools/media/avi-to-mp4/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.avi-to-mp4"
+      },
+      {
+        "semanticId": "tools.media.mp4-to-mov",
+        "sourceUrl": "https://www.djai.academy/tools/media/mp4-to-mov/",
+        "sourcePath": "/tools/media/mp4-to-mov/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.mp4-to-mov"
+      },
+      {
+        "semanticId": "tools.media.mp4-to-mov",
+        "sourceUrl": "https://www.djai.academy/tools/media/mp4-to-mov/en/",
+        "sourcePath": "/tools/media/mp4-to-mov/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.mp4-to-mov"
+      },
+      {
+        "semanticId": "tools.media.mp4-to-webm",
+        "sourceUrl": "https://www.djai.academy/tools/media/mp4-to-webm/",
+        "sourcePath": "/tools/media/mp4-to-webm/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.mp4-to-webm"
+      },
+      {
+        "semanticId": "tools.media.mp4-to-webm",
+        "sourceUrl": "https://www.djai.academy/tools/media/mp4-to-webm/en/",
+        "sourcePath": "/tools/media/mp4-to-webm/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.mp4-to-webm"
+      },
+      {
+        "semanticId": "tools.media.webm-to-mp4",
+        "sourceUrl": "https://www.djai.academy/tools/media/webm-to-mp4/",
+        "sourcePath": "/tools/media/webm-to-mp4/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.webm-to-mp4"
+      },
+      {
+        "semanticId": "tools.media.webm-to-mp4",
+        "sourceUrl": "https://www.djai.academy/tools/media/webm-to-mp4/en/",
+        "sourcePath": "/tools/media/webm-to-mp4/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.webm-to-mp4"
+      },
+      {
+        "semanticId": "tools.media.mov-to-mp4",
+        "sourceUrl": "https://www.djai.academy/tools/media/mov-to-mp4/",
+        "sourcePath": "/tools/media/mov-to-mp4/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.mov-to-mp4"
+      },
+      {
+        "semanticId": "tools.media.mov-to-mp4",
+        "sourceUrl": "https://www.djai.academy/tools/media/mov-to-mp4/en/",
+        "sourcePath": "/tools/media/mov-to-mp4/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.mov-to-mp4"
+      },
+      {
+        "semanticId": "tools.media.video-cutter",
+        "sourceUrl": "https://www.djai.academy/tools/media/video-cutter/",
+        "sourcePath": "/tools/media/video-cutter/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.video-cutter"
+      },
+      {
+        "semanticId": "tools.media.video-cutter",
+        "sourceUrl": "https://www.djai.academy/tools/media/video-cutter/en/",
+        "sourcePath": "/tools/media/video-cutter/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.video-cutter"
+      },
+      {
+        "semanticId": "tools.media.compress-video",
+        "sourceUrl": "https://www.djai.academy/tools/media/compress-video/",
+        "sourcePath": "/tools/media/compress-video/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.compress-video"
+      },
+      {
+        "semanticId": "tools.media.compress-video",
+        "sourceUrl": "https://www.djai.academy/tools/media/compress-video/en/",
+        "sourcePath": "/tools/media/compress-video/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.compress-video"
+      },
+      {
+        "semanticId": "tools.media.compress-video-to-10mb",
+        "sourceUrl": "https://www.djai.academy/tools/media/compress-video-to-10mb/",
+        "sourcePath": "/tools/media/compress-video-to-10mb/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.compress-video-to-10mb"
+      },
+      {
+        "semanticId": "tools.media.compress-video-to-10mb",
+        "sourceUrl": "https://www.djai.academy/tools/media/compress-video-to-10mb/en/",
+        "sourcePath": "/tools/media/compress-video-to-10mb/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.compress-video-to-10mb"
+      },
+      {
+        "semanticId": "tools.media.compress-video-to-25mb",
+        "sourceUrl": "https://www.djai.academy/tools/media/compress-video-to-25mb/",
+        "sourcePath": "/tools/media/compress-video-to-25mb/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.compress-video-to-25mb"
+      },
+      {
+        "semanticId": "tools.media.compress-video-to-25mb",
+        "sourceUrl": "https://www.djai.academy/tools/media/compress-video-to-25mb/en/",
+        "sourcePath": "/tools/media/compress-video-to-25mb/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.compress-video-to-25mb"
+      },
+      {
+        "semanticId": "tools.media.compress-video-to-50mb",
+        "sourceUrl": "https://www.djai.academy/tools/media/compress-video-to-50mb/",
+        "sourcePath": "/tools/media/compress-video-to-50mb/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.compress-video-to-50mb"
+      },
+      {
+        "semanticId": "tools.media.compress-video-to-50mb",
+        "sourceUrl": "https://www.djai.academy/tools/media/compress-video-to-50mb/en/",
+        "sourcePath": "/tools/media/compress-video-to-50mb/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.compress-video-to-50mb"
+      },
+      {
+        "semanticId": "tools.media.compress-video-to-100mb",
+        "sourceUrl": "https://www.djai.academy/tools/media/compress-video-to-100mb/",
+        "sourcePath": "/tools/media/compress-video-to-100mb/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.compress-video-to-100mb"
+      },
+      {
+        "semanticId": "tools.media.compress-video-to-100mb",
+        "sourceUrl": "https://www.djai.academy/tools/media/compress-video-to-100mb/en/",
+        "sourcePath": "/tools/media/compress-video-to-100mb/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.compress-video-to-100mb"
+      },
+      {
+        "semanticId": "tools.media.video-cropper",
+        "sourceUrl": "https://www.djai.academy/tools/media/video-cropper/",
+        "sourcePath": "/tools/media/video-cropper/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.video-cropper"
+      },
+      {
+        "semanticId": "tools.media.video-cropper",
+        "sourceUrl": "https://www.djai.academy/tools/media/video-cropper/en/",
+        "sourcePath": "/tools/media/video-cropper/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.video-cropper"
+      },
+      {
+        "semanticId": "tools.media.video-resizer",
+        "sourceUrl": "https://www.djai.academy/tools/media/video-resizer/",
+        "sourcePath": "/tools/media/video-resizer/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.video-resizer"
+      },
+      {
+        "semanticId": "tools.media.video-resizer",
+        "sourceUrl": "https://www.djai.academy/tools/media/video-resizer/en/",
+        "sourcePath": "/tools/media/video-resizer/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.video-resizer"
+      },
+      {
+        "semanticId": "tools.media.video-merger",
+        "sourceUrl": "https://www.djai.academy/tools/media/video-merger/",
+        "sourcePath": "/tools/media/video-merger/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.video-merger"
+      },
+      {
+        "semanticId": "tools.media.video-merger",
+        "sourceUrl": "https://www.djai.academy/tools/media/video-merger/en/",
+        "sourcePath": "/tools/media/video-merger/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.video-merger"
+      },
+      {
+        "semanticId": "tools.media.video-to-gif",
+        "sourceUrl": "https://www.djai.academy/tools/media/video-to-gif/",
+        "sourcePath": "/tools/media/video-to-gif/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.video-to-gif"
+      },
+      {
+        "semanticId": "tools.media.video-to-gif",
+        "sourceUrl": "https://www.djai.academy/tools/media/video-to-gif/en/",
+        "sourcePath": "/tools/media/video-to-gif/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.video-to-gif"
+      },
+      {
+        "semanticId": "tools.media.gif-to-mp4",
+        "sourceUrl": "https://www.djai.academy/tools/media/gif-to-mp4/",
+        "sourcePath": "/tools/media/gif-to-mp4/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.gif-to-mp4"
+      },
+      {
+        "semanticId": "tools.media.gif-to-mp4",
+        "sourceUrl": "https://www.djai.academy/tools/media/gif-to-mp4/en/",
+        "sourcePath": "/tools/media/gif-to-mp4/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.gif-to-mp4"
+      },
+      {
+        "semanticId": "tools.media.remove-audio-from-video",
+        "sourceUrl": "https://www.djai.academy/tools/media/remove-audio-from-video/",
+        "sourcePath": "/tools/media/remove-audio-from-video/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.remove-audio-from-video"
+      },
+      {
+        "semanticId": "tools.media.remove-audio-from-video",
+        "sourceUrl": "https://www.djai.academy/tools/media/remove-audio-from-video/en/",
+        "sourcePath": "/tools/media/remove-audio-from-video/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.remove-audio-from-video"
+      },
+      {
+        "semanticId": "tools.media.add-audio-to-video",
+        "sourceUrl": "https://www.djai.academy/tools/media/add-audio-to-video/",
+        "sourcePath": "/tools/media/add-audio-to-video/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.add-audio-to-video"
+      },
+      {
+        "semanticId": "tools.media.add-audio-to-video",
+        "sourceUrl": "https://www.djai.academy/tools/media/add-audio-to-video/en/",
+        "sourcePath": "/tools/media/add-audio-to-video/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.add-audio-to-video"
+      },
+      {
+        "semanticId": "tools.media.video-speed-changer",
+        "sourceUrl": "https://www.djai.academy/tools/media/video-speed-changer/",
+        "sourcePath": "/tools/media/video-speed-changer/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.video-speed-changer"
+      },
+      {
+        "semanticId": "tools.media.video-speed-changer",
+        "sourceUrl": "https://www.djai.academy/tools/media/video-speed-changer/en/",
+        "sourcePath": "/tools/media/video-speed-changer/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.video-speed-changer"
+      },
+      {
+        "semanticId": "tools.media.extract-frames-from-video",
+        "sourceUrl": "https://www.djai.academy/tools/media/extract-frames-from-video/",
+        "sourcePath": "/tools/media/extract-frames-from-video/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.extract-frames-from-video"
+      },
+      {
+        "semanticId": "tools.media.extract-frames-from-video",
+        "sourceUrl": "https://www.djai.academy/tools/media/extract-frames-from-video/en/",
+        "sourcePath": "/tools/media/extract-frames-from-video/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.extract-frames-from-video"
+      },
+      {
+        "semanticId": "tools.media.rotate-video",
+        "sourceUrl": "https://www.djai.academy/tools/media/rotate-video/",
+        "sourcePath": "/tools/media/rotate-video/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.rotate-video"
+      },
+      {
+        "semanticId": "tools.media.rotate-video",
+        "sourceUrl": "https://www.djai.academy/tools/media/rotate-video/en/",
+        "sourcePath": "/tools/media/rotate-video/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-media-tools",
+        "isAlias": false,
+        "canonicalId": "tools.media.rotate-video"
+      },
+      {
+        "semanticId": "tools.document.index",
+        "sourceUrl": "https://www.djai.academy/tools/document/",
+        "sourcePath": "/tools/document/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.document.index"
+      },
+      {
+        "semanticId": "tools.document.index",
+        "sourceUrl": "https://www.djai.academy/tools/document/en/",
+        "sourcePath": "/tools/document/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.document.index"
+      },
+      {
+        "semanticId": "tools.document.index",
+        "sourceUrl": "https://www.djai.academy/tools/document/vi/",
+        "sourcePath": "/tools/document/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.document.index"
+      },
+      {
+        "semanticId": "tools.document.docx-to-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/document/docx-to-pdf/",
+        "sourcePath": "/tools/document/docx-to-pdf/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.document.docx-to-pdf"
+      },
+      {
+        "semanticId": "tools.document.docx-to-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/document/docx-to-pdf/en/",
+        "sourcePath": "/tools/document/docx-to-pdf/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.document.docx-to-pdf"
+      },
+      {
+        "semanticId": "tools.document.docx-to-pdf",
+        "sourceUrl": "https://www.djai.academy/tools/document/docx-to-pdf/vi/",
+        "sourcePath": "/tools/document/docx-to-pdf/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.document.docx-to-pdf"
+      },
+      {
+        "semanticId": "tools.document.docx-to-html",
+        "sourceUrl": "https://www.djai.academy/tools/document/docx-to-html/",
+        "sourcePath": "/tools/document/docx-to-html/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.document.docx-to-html"
+      },
+      {
+        "semanticId": "tools.document.docx-to-html",
+        "sourceUrl": "https://www.djai.academy/tools/document/docx-to-html/en/",
+        "sourcePath": "/tools/document/docx-to-html/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.document.docx-to-html"
+      },
+      {
+        "semanticId": "tools.document.docx-to-html",
+        "sourceUrl": "https://www.djai.academy/tools/document/docx-to-html/vi/",
+        "sourcePath": "/tools/document/docx-to-html/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.document.docx-to-html"
+      },
+      {
+        "semanticId": "tools.document.docx-to-markdown",
+        "sourceUrl": "https://www.djai.academy/tools/document/docx-to-markdown/",
+        "sourcePath": "/tools/document/docx-to-markdown/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.document.docx-to-markdown"
+      },
+      {
+        "semanticId": "tools.document.docx-to-markdown",
+        "sourceUrl": "https://www.djai.academy/tools/document/docx-to-markdown/en/",
+        "sourcePath": "/tools/document/docx-to-markdown/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.document.docx-to-markdown"
+      },
+      {
+        "semanticId": "tools.document.docx-to-markdown",
+        "sourceUrl": "https://www.djai.academy/tools/document/docx-to-markdown/vi/",
+        "sourcePath": "/tools/document/docx-to-markdown/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.document.docx-to-markdown"
+      },
+      {
+        "semanticId": "tools.document.docx-to-text",
+        "sourceUrl": "https://www.djai.academy/tools/document/docx-to-text/",
+        "sourcePath": "/tools/document/docx-to-text/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.document.docx-to-text"
+      },
+      {
+        "semanticId": "tools.document.docx-to-text",
+        "sourceUrl": "https://www.djai.academy/tools/document/docx-to-text/en/",
+        "sourcePath": "/tools/document/docx-to-text/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.document.docx-to-text"
+      },
+      {
+        "semanticId": "tools.document.docx-to-text",
+        "sourceUrl": "https://www.djai.academy/tools/document/docx-to-text/vi/",
+        "sourcePath": "/tools/document/docx-to-text/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.document.docx-to-text"
+      },
+      {
+        "semanticId": "tools.document.pdf-to-text",
+        "sourceUrl": "https://www.djai.academy/tools/document/pdf-to-text/",
+        "sourcePath": "/tools/document/pdf-to-text/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.document.pdf-to-text"
+      },
+      {
+        "semanticId": "tools.document.pdf-to-text",
+        "sourceUrl": "https://www.djai.academy/tools/document/pdf-to-text/en/",
+        "sourcePath": "/tools/document/pdf-to-text/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.document.pdf-to-text"
+      },
+      {
+        "semanticId": "tools.document.pdf-to-text",
+        "sourceUrl": "https://www.djai.academy/tools/document/pdf-to-text/vi/",
+        "sourcePath": "/tools/document/pdf-to-text/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.document.pdf-to-text"
+      },
+      {
+        "semanticId": "tools.document.pdf-to-word",
+        "sourceUrl": "https://www.djai.academy/tools/document/pdf-to-word/",
+        "sourcePath": "/tools/document/pdf-to-word/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.document.pdf-to-word"
+      },
+      {
+        "semanticId": "tools.document.pdf-to-word",
+        "sourceUrl": "https://www.djai.academy/tools/document/pdf-to-word/en/",
+        "sourcePath": "/tools/document/pdf-to-word/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.document.pdf-to-word"
+      },
+      {
+        "semanticId": "tools.document.pdf-to-word",
+        "sourceUrl": "https://www.djai.academy/tools/document/pdf-to-word/vi/",
+        "sourcePath": "/tools/document/pdf-to-word/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.document.pdf-to-word"
+      },
+      {
+        "semanticId": "tools.document.ocr",
+        "sourceUrl": "https://www.djai.academy/tools/document/ocr/",
+        "sourcePath": "/tools/document/ocr/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.document.ocr"
+      },
+      {
+        "semanticId": "tools.document.ocr",
+        "sourceUrl": "https://www.djai.academy/tools/document/ocr/en/",
+        "sourcePath": "/tools/document/ocr/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.document.ocr"
+      },
+      {
+        "semanticId": "tools.document.ocr",
+        "sourceUrl": "https://www.djai.academy/tools/document/ocr/vi/",
+        "sourcePath": "/tools/document/ocr/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.document.ocr"
+      },
+      {
+        "semanticId": "tools.ai.index",
+        "sourceUrl": "https://www.djai.academy/tools/ai/",
+        "sourcePath": "/tools/ai/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.ai.index"
+      },
+      {
+        "semanticId": "tools.ai.index",
+        "sourceUrl": "https://www.djai.academy/tools/ai/en/",
+        "sourcePath": "/tools/ai/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.ai.index"
+      },
+      {
+        "semanticId": "tools.ai.index",
+        "sourceUrl": "https://www.djai.academy/tools/ai/vi/",
+        "sourcePath": "/tools/ai/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.ai.index"
+      },
+      {
+        "semanticId": "tools.ai.token-counter",
+        "sourceUrl": "https://www.djai.academy/tools/ai/token-counter/",
+        "sourcePath": "/tools/ai/token-counter/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.ai.token-counter"
+      },
+      {
+        "semanticId": "tools.ai.token-counter",
+        "sourceUrl": "https://www.djai.academy/tools/ai/token-counter/en/",
+        "sourcePath": "/tools/ai/token-counter/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.ai.token-counter"
+      },
+      {
+        "semanticId": "tools.ai.token-counter",
+        "sourceUrl": "https://www.djai.academy/tools/ai/token-counter/vi/",
+        "sourcePath": "/tools/ai/token-counter/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.ai.token-counter"
+      },
+      {
+        "semanticId": "tools.ai.pdf-to-ai-markdown",
+        "sourceUrl": "https://www.djai.academy/tools/ai/pdf-to-ai-markdown/",
+        "sourcePath": "/tools/ai/pdf-to-ai-markdown/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.ai.pdf-to-ai-markdown"
+      },
+      {
+        "semanticId": "tools.ai.pdf-to-ai-markdown",
+        "sourceUrl": "https://www.djai.academy/tools/ai/pdf-to-ai-markdown/en/",
+        "sourcePath": "/tools/ai/pdf-to-ai-markdown/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.ai.pdf-to-ai-markdown"
+      },
+      {
+        "semanticId": "tools.ai.pdf-to-ai-markdown",
+        "sourceUrl": "https://www.djai.academy/tools/ai/pdf-to-ai-markdown/vi/",
+        "sourcePath": "/tools/ai/pdf-to-ai-markdown/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.ai.pdf-to-ai-markdown"
+      },
+      {
+        "semanticId": "tools.ai.context-optimizer",
+        "sourceUrl": "https://www.djai.academy/tools/ai/context-optimizer/",
+        "sourcePath": "/tools/ai/context-optimizer/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.ai.context-optimizer"
+      },
+      {
+        "semanticId": "tools.ai.context-optimizer",
+        "sourceUrl": "https://www.djai.academy/tools/ai/context-optimizer/en/",
+        "sourcePath": "/tools/ai/context-optimizer/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.ai.context-optimizer"
+      },
+      {
+        "semanticId": "tools.ai.context-optimizer",
+        "sourceUrl": "https://www.djai.academy/tools/ai/context-optimizer/vi/",
+        "sourcePath": "/tools/ai/context-optimizer/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.ai.context-optimizer"
+      },
+      {
+        "semanticId": "tools.ai.rag-chunk-calculator",
+        "sourceUrl": "https://www.djai.academy/tools/ai/rag-chunk-calculator/",
+        "sourcePath": "/tools/ai/rag-chunk-calculator/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.ai.rag-chunk-calculator"
+      },
+      {
+        "semanticId": "tools.ai.rag-chunk-calculator",
+        "sourceUrl": "https://www.djai.academy/tools/ai/rag-chunk-calculator/en/",
+        "sourcePath": "/tools/ai/rag-chunk-calculator/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.ai.rag-chunk-calculator"
+      },
+      {
+        "semanticId": "tools.ai.rag-chunk-calculator",
+        "sourceUrl": "https://www.djai.academy/tools/ai/rag-chunk-calculator/vi/",
+        "sourcePath": "/tools/ai/rag-chunk-calculator/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.ai.rag-chunk-calculator"
+      },
+      {
+        "semanticId": "tools.ai.prompt-packager",
+        "sourceUrl": "https://www.djai.academy/tools/ai/prompt-packager/",
+        "sourcePath": "/tools/ai/prompt-packager/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.ai.prompt-packager"
+      },
+      {
+        "semanticId": "tools.ai.prompt-packager",
+        "sourceUrl": "https://www.djai.academy/tools/ai/prompt-packager/en/",
+        "sourcePath": "/tools/ai/prompt-packager/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.ai.prompt-packager"
+      },
+      {
+        "semanticId": "tools.ai.prompt-packager",
+        "sourceUrl": "https://www.djai.academy/tools/ai/prompt-packager/vi/",
+        "sourcePath": "/tools/ai/prompt-packager/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.ai.prompt-packager"
+      },
+      {
+        "semanticId": "tools.spreadsheet.index",
+        "sourceUrl": "https://www.djai.academy/tools/spreadsheet/",
+        "sourcePath": "/tools/spreadsheet/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.spreadsheet.index"
+      },
+      {
+        "semanticId": "tools.spreadsheet.index",
+        "sourceUrl": "https://www.djai.academy/tools/spreadsheet/en/",
+        "sourcePath": "/tools/spreadsheet/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.spreadsheet.index"
+      },
+      {
+        "semanticId": "tools.spreadsheet.index",
+        "sourceUrl": "https://www.djai.academy/tools/spreadsheet/vi/",
+        "sourcePath": "/tools/spreadsheet/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.spreadsheet.index"
+      },
+      {
+        "semanticId": "tools.spreadsheet.csv-to-json",
+        "sourceUrl": "https://www.djai.academy/tools/spreadsheet/csv-to-json/",
+        "sourcePath": "/tools/spreadsheet/csv-to-json/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.spreadsheet.csv-to-json"
+      },
+      {
+        "semanticId": "tools.spreadsheet.csv-to-json",
+        "sourceUrl": "https://www.djai.academy/tools/spreadsheet/csv-to-json/en/",
+        "sourcePath": "/tools/spreadsheet/csv-to-json/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.spreadsheet.csv-to-json"
+      },
+      {
+        "semanticId": "tools.spreadsheet.csv-to-json",
+        "sourceUrl": "https://www.djai.academy/tools/spreadsheet/csv-to-json/vi/",
+        "sourcePath": "/tools/spreadsheet/csv-to-json/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.spreadsheet.csv-to-json"
+      },
+      {
+        "semanticId": "tools.spreadsheet.json-to-csv",
+        "sourceUrl": "https://www.djai.academy/tools/spreadsheet/json-to-csv/",
+        "sourcePath": "/tools/spreadsheet/json-to-csv/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.spreadsheet.json-to-csv"
+      },
+      {
+        "semanticId": "tools.spreadsheet.json-to-csv",
+        "sourceUrl": "https://www.djai.academy/tools/spreadsheet/json-to-csv/en/",
+        "sourcePath": "/tools/spreadsheet/json-to-csv/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.spreadsheet.json-to-csv"
+      },
+      {
+        "semanticId": "tools.spreadsheet.json-to-csv",
+        "sourceUrl": "https://www.djai.academy/tools/spreadsheet/json-to-csv/vi/",
+        "sourcePath": "/tools/spreadsheet/json-to-csv/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.spreadsheet.json-to-csv"
+      },
+      {
+        "semanticId": "tools.spreadsheet.csv-cleaner",
+        "sourceUrl": "https://www.djai.academy/tools/spreadsheet/csv-cleaner/",
+        "sourcePath": "/tools/spreadsheet/csv-cleaner/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.spreadsheet.csv-cleaner"
+      },
+      {
+        "semanticId": "tools.spreadsheet.csv-cleaner",
+        "sourceUrl": "https://www.djai.academy/tools/spreadsheet/csv-cleaner/en/",
+        "sourcePath": "/tools/spreadsheet/csv-cleaner/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.spreadsheet.csv-cleaner"
+      },
+      {
+        "semanticId": "tools.spreadsheet.csv-cleaner",
+        "sourceUrl": "https://www.djai.academy/tools/spreadsheet/csv-cleaner/vi/",
+        "sourcePath": "/tools/spreadsheet/csv-cleaner/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.spreadsheet.csv-cleaner"
+      },
+      {
+        "semanticId": "tools.spreadsheet.merge-csv",
+        "sourceUrl": "https://www.djai.academy/tools/spreadsheet/merge-csv/",
+        "sourcePath": "/tools/spreadsheet/merge-csv/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.spreadsheet.merge-csv"
+      },
+      {
+        "semanticId": "tools.spreadsheet.merge-csv",
+        "sourceUrl": "https://www.djai.academy/tools/spreadsheet/merge-csv/en/",
+        "sourcePath": "/tools/spreadsheet/merge-csv/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.spreadsheet.merge-csv"
+      },
+      {
+        "semanticId": "tools.spreadsheet.merge-csv",
+        "sourceUrl": "https://www.djai.academy/tools/spreadsheet/merge-csv/vi/",
+        "sourcePath": "/tools/spreadsheet/merge-csv/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.spreadsheet.merge-csv"
+      },
+      {
+        "semanticId": "tools.spreadsheet.split-csv",
+        "sourceUrl": "https://www.djai.academy/tools/spreadsheet/split-csv/",
+        "sourcePath": "/tools/spreadsheet/split-csv/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.spreadsheet.split-csv"
+      },
+      {
+        "semanticId": "tools.spreadsheet.split-csv",
+        "sourceUrl": "https://www.djai.academy/tools/spreadsheet/split-csv/en/",
+        "sourcePath": "/tools/spreadsheet/split-csv/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.spreadsheet.split-csv"
+      },
+      {
+        "semanticId": "tools.spreadsheet.split-csv",
+        "sourceUrl": "https://www.djai.academy/tools/spreadsheet/split-csv/vi/",
+        "sourcePath": "/tools/spreadsheet/split-csv/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.spreadsheet.split-csv"
+      },
+      {
+        "semanticId": "tools.spreadsheet.csv-to-xlsx",
+        "sourceUrl": "https://www.djai.academy/tools/spreadsheet/csv-to-xlsx/",
+        "sourcePath": "/tools/spreadsheet/csv-to-xlsx/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.spreadsheet.csv-to-xlsx"
+      },
+      {
+        "semanticId": "tools.spreadsheet.csv-to-xlsx",
+        "sourceUrl": "https://www.djai.academy/tools/spreadsheet/csv-to-xlsx/en/",
+        "sourcePath": "/tools/spreadsheet/csv-to-xlsx/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.spreadsheet.csv-to-xlsx"
+      },
+      {
+        "semanticId": "tools.spreadsheet.csv-to-xlsx",
+        "sourceUrl": "https://www.djai.academy/tools/spreadsheet/csv-to-xlsx/vi/",
+        "sourcePath": "/tools/spreadsheet/csv-to-xlsx/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.spreadsheet.csv-to-xlsx"
+      },
+      {
+        "semanticId": "tools.spreadsheet.xlsx-to-csv",
+        "sourceUrl": "https://www.djai.academy/tools/spreadsheet/xlsx-to-csv/",
+        "sourcePath": "/tools/spreadsheet/xlsx-to-csv/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.spreadsheet.xlsx-to-csv"
+      },
+      {
+        "semanticId": "tools.spreadsheet.xlsx-to-csv",
+        "sourceUrl": "https://www.djai.academy/tools/spreadsheet/xlsx-to-csv/en/",
+        "sourcePath": "/tools/spreadsheet/xlsx-to-csv/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.spreadsheet.xlsx-to-csv"
+      },
+      {
+        "semanticId": "tools.spreadsheet.xlsx-to-csv",
+        "sourceUrl": "https://www.djai.academy/tools/spreadsheet/xlsx-to-csv/vi/",
+        "sourcePath": "/tools/spreadsheet/xlsx-to-csv/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.spreadsheet.xlsx-to-csv"
+      },
+      {
+        "semanticId": "tools.brand.index",
+        "sourceUrl": "https://www.djai.academy/tools/brand/",
+        "sourcePath": "/tools/brand/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.brand.index"
+      },
+      {
+        "semanticId": "tools.brand.index",
+        "sourceUrl": "https://www.djai.academy/tools/brand/en/",
+        "sourcePath": "/tools/brand/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.brand.index"
+      },
+      {
+        "semanticId": "tools.brand.index",
+        "sourceUrl": "https://www.djai.academy/tools/brand/vi/",
+        "sourcePath": "/tools/brand/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.brand.index"
+      },
+      {
+        "semanticId": "tools.brand.favicon-generator",
+        "sourceUrl": "https://www.djai.academy/tools/brand/favicon-generator/",
+        "sourcePath": "/tools/brand/favicon-generator/",
+        "locale": "th",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.brand.favicon-generator"
+      },
+      {
+        "semanticId": "tools.brand.favicon-generator",
+        "sourceUrl": "https://www.djai.academy/tools/brand/favicon-generator/en/",
+        "sourcePath": "/tools/brand/favicon-generator/en/",
+        "locale": "en",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.brand.favicon-generator"
+      },
+      {
+        "semanticId": "tools.brand.favicon-generator",
+        "sourceUrl": "https://www.djai.academy/tools/brand/favicon-generator/vi/",
+        "sourcePath": "/tools/brand/favicon-generator/vi/",
+        "locale": "vi",
+        "family": "tools",
+        "application": "djai-document-tools",
+        "isAlias": false,
+        "canonicalId": "tools.brand.favicon-generator"
+      },
+      {
+        "semanticId": "blog.seo-screaming-toad-open-source-crawler-launch",
+        "sourceUrl": "https://www.djai.academy/blog/en/seo-screaming-toad-open-source-crawler-launch/",
+        "sourcePath": "/blog/en/seo-screaming-toad-open-source-crawler-launch/",
+        "locale": "en",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.seo-screaming-toad-open-source-crawler-launch"
+      },
+      {
+        "semanticId": "blog.technical-seo-audit-screaming-frog-ai-search",
+        "sourceUrl": "https://www.djai.academy/blog/en/technical-seo-audit-screaming-frog-ai-search/",
+        "sourcePath": "/blog/en/technical-seo-audit-screaming-frog-ai-search/",
+        "locale": "en",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.technical-seo-audit-screaming-frog-ai-search"
+      },
+      {
+        "semanticId": "blog.skills-ai-agent-professional-seo-web-developer",
+        "sourceUrl": "https://www.djai.academy/blog/en/skills-ai-agent-professional-seo-web-developer/",
+        "sourcePath": "/blog/en/skills-ai-agent-professional-seo-web-developer/",
+        "locale": "en",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.skills-ai-agent-professional-seo-web-developer"
+      },
+      {
+        "semanticId": "blog.three-seo-tools-screaming-frog-mcp",
+        "sourceUrl": "https://www.djai.academy/blog/en/three-seo-tools-screaming-frog-mcp/",
+        "sourcePath": "/blog/en/three-seo-tools-screaming-frog-mcp/",
+        "locale": "en",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.three-seo-tools-screaming-frog-mcp"
+      },
+      {
+        "semanticId": "blog.how-to-use-ai-agent-skills-djai-tools-mcp",
+        "sourceUrl": "https://www.djai.academy/blog/en/how-to-use-ai-agent-skills-djai-tools-mcp/",
+        "sourcePath": "/blog/en/how-to-use-ai-agent-skills-djai-tools-mcp/",
+        "locale": "en",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.how-to-use-ai-agent-skills-djai-tools-mcp"
+      },
+      {
+        "semanticId": "blog.complete-guide-djai-tools-mcp",
+        "sourceUrl": "https://www.djai.academy/blog/en/complete-guide-djai-tools-mcp/",
+        "sourcePath": "/blog/en/complete-guide-djai-tools-mcp/",
+        "locale": "en",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.complete-guide-djai-tools-mcp"
+      },
+      {
+        "semanticId": "blog.djai-community-launches-open-source-tools-mcp",
+        "sourceUrl": "https://www.djai.academy/blog/en/djai-community-launches-open-source-tools-mcp/",
+        "sourcePath": "/blog/en/djai-community-launches-open-source-tools-mcp/",
+        "locale": "en",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.djai-community-launches-open-source-tools-mcp"
+      },
+      {
+        "semanticId": "blog.when-you-need-superpower-skill-for-all-agents",
+        "sourceUrl": "https://www.djai.academy/blog/en/when-you-need-superpower-skill-for-all-agents/",
+        "sourcePath": "/blog/en/when-you-need-superpower-skill-for-all-agents/",
+        "locale": "en",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.when-you-need-superpower-skill-for-all-agents"
+      },
+      {
+        "semanticId": "blog.giving-claude-superpower-power-up-development",
+        "sourceUrl": "https://www.djai.academy/blog/en/giving-claude-superpower-power-up-development/",
+        "sourcePath": "/blog/en/giving-claude-superpower-power-up-development/",
+        "locale": "en",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.giving-claude-superpower-power-up-development"
+      },
+      {
+        "semanticId": "blog.superpower-skills-what-is-skill-for-agents",
+        "sourceUrl": "https://www.djai.academy/blog/en/superpower-skills-what-is-skill-for-agents/",
+        "sourcePath": "/blog/en/superpower-skills-what-is-skill-for-agents/",
+        "locale": "en",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.superpower-skills-what-is-skill-for-agents"
+      },
+      {
+        "semanticId": "blog.claude-opus-5-cost-efficiency-news",
+        "sourceUrl": "https://www.djai.academy/blog/en/claude-opus-5-cost-efficiency-news/",
+        "sourcePath": "/blog/en/claude-opus-5-cost-efficiency-news/",
+        "locale": "en",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.claude-opus-5-cost-efficiency-news"
+      },
+      {
+        "semanticId": "blog.how-i-built-open-source-browser-tools-with-codex-and-claude-code",
+        "sourceUrl": "https://www.djai.academy/blog/en/how-i-built-open-source-browser-tools-with-codex-and-claude-code/",
+        "sourcePath": "/blog/en/how-i-built-open-source-browser-tools-with-codex-and-claude-code/",
+        "locale": "en",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.how-i-built-open-source-browser-tools-with-codex-and-claude-code"
+      },
+      {
+        "semanticId": "blog.compress-image-to-100kb-500kb",
+        "sourceUrl": "https://www.djai.academy/blog/en/compress-image-to-100kb-500kb/",
+        "sourcePath": "/blog/en/compress-image-to-100kb-500kb/",
+        "locale": "en",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.compress-image-to-100kb-500kb"
+      },
+      {
+        "semanticId": "blog.how-to-convert-jpg-png-webp-free",
+        "sourceUrl": "https://www.djai.academy/blog/en/how-to-convert-jpg-png-webp-free/",
+        "sourcePath": "/blog/en/how-to-convert-jpg-png-webp-free/",
+        "locale": "en",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.how-to-convert-jpg-png-webp-free"
+      },
+      {
+        "semanticId": "blog.how-to-create-free-qr-code",
+        "sourceUrl": "https://www.djai.academy/blog/en/how-to-create-free-qr-code/",
+        "sourcePath": "/blog/en/how-to-create-free-qr-code/",
+        "locale": "en",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.how-to-create-free-qr-code"
+      },
+      {
+        "semanticId": "blog.seo-screaming-toad-open-source-crawler-djai",
+        "sourceUrl": "https://www.djai.academy/blog/seo-screaming-toad-open-source-crawler-djai/",
+        "sourcePath": "/blog/seo-screaming-toad-open-source-crawler-djai/",
+        "locale": "th",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.seo-screaming-toad-open-source-crawler-djai"
+      },
+      {
+        "semanticId": "blog.technical-seo-audit-screaming-frog-ai-search",
+        "sourceUrl": "https://www.djai.academy/blog/technical-seo-audit-screaming-frog-ai-search/",
+        "sourcePath": "/blog/technical-seo-audit-screaming-frog-ai-search/",
+        "locale": "th",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.technical-seo-audit-screaming-frog-ai-search"
+      },
+      {
+        "semanticId": "blog.skills-ai-agent-professional-seo-web-developer",
+        "sourceUrl": "https://www.djai.academy/blog/skills-ai-agent-professional-seo-web-developer/",
+        "sourcePath": "/blog/skills-ai-agent-professional-seo-web-developer/",
+        "locale": "th",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.skills-ai-agent-professional-seo-web-developer"
+      },
+      {
+        "semanticId": "blog.three-seo-tools-screaming-frog-mcp",
+        "sourceUrl": "https://www.djai.academy/blog/three-seo-tools-screaming-frog-mcp/",
+        "sourcePath": "/blog/three-seo-tools-screaming-frog-mcp/",
+        "locale": "th",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.three-seo-tools-screaming-frog-mcp"
+      },
+      {
+        "semanticId": "blog.how-to-use-ai-agent-skills-djai-tools-mcp",
+        "sourceUrl": "https://www.djai.academy/blog/how-to-use-ai-agent-skills-djai-tools-mcp/",
+        "sourcePath": "/blog/how-to-use-ai-agent-skills-djai-tools-mcp/",
+        "locale": "th",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.how-to-use-ai-agent-skills-djai-tools-mcp"
+      },
+      {
+        "semanticId": "blog.complete-guide-djai-tools-mcp",
+        "sourceUrl": "https://www.djai.academy/blog/complete-guide-djai-tools-mcp/",
+        "sourcePath": "/blog/complete-guide-djai-tools-mcp/",
+        "locale": "th",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.complete-guide-djai-tools-mcp"
+      },
+      {
+        "semanticId": "blog.djai-community-launches-open-source-tools-mcp",
+        "sourceUrl": "https://www.djai.academy/blog/djai-community-launches-open-source-tools-mcp/",
+        "sourcePath": "/blog/djai-community-launches-open-source-tools-mcp/",
+        "locale": "th",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.djai-community-launches-open-source-tools-mcp"
+      },
+      {
+        "semanticId": "blog.when-you-need-superpower-skill-for-all-agents-thai",
+        "sourceUrl": "https://www.djai.academy/blog/when-you-need-superpower-skill-for-all-agents-thai/",
+        "sourcePath": "/blog/when-you-need-superpower-skill-for-all-agents-thai/",
+        "locale": "th",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.when-you-need-superpower-skill-for-all-agents-thai"
+      },
+      {
+        "semanticId": "blog.giving-claude-superpower-power-up-development-thai",
+        "sourceUrl": "https://www.djai.academy/blog/giving-claude-superpower-power-up-development-thai/",
+        "sourcePath": "/blog/giving-claude-superpower-power-up-development-thai/",
+        "locale": "th",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.giving-claude-superpower-power-up-development-thai"
+      },
+      {
+        "semanticId": "blog.superpower-skills-skill-agent-thai",
+        "sourceUrl": "https://www.djai.academy/blog/superpower-skills-skill-agent-thai/",
+        "sourcePath": "/blog/superpower-skills-skill-agent-thai/",
+        "locale": "th",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.superpower-skills-skill-agent-thai"
+      },
+      {
+        "semanticId": "blog.claude-opus-5-cost-efficiency-ai-news",
+        "sourceUrl": "https://www.djai.academy/blog/claude-opus-5-cost-efficiency-ai-news/",
+        "sourcePath": "/blog/claude-opus-5-cost-efficiency-ai-news/",
+        "locale": "th",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.claude-opus-5-cost-efficiency-ai-news"
+      },
+      {
+        "semanticId": "blog.ai-vibe-coding-codex-claude-code-open-source-tools",
+        "sourceUrl": "https://www.djai.academy/blog/ai-vibe-coding-codex-claude-code-open-source-tools/",
+        "sourcePath": "/blog/ai-vibe-coding-codex-claude-code-open-source-tools/",
+        "locale": "th",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.ai-vibe-coding-codex-claude-code-open-source-tools"
+      },
+      {
+        "semanticId": "blog.compress-image-to-100kb-500kb",
+        "sourceUrl": "https://www.djai.academy/blog/compress-image-to-100kb-500kb/",
+        "sourcePath": "/blog/compress-image-to-100kb-500kb/",
+        "locale": "th",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.compress-image-to-100kb-500kb"
+      },
+      {
+        "semanticId": "blog.how-to-convert-jpg-png-webp-free",
+        "sourceUrl": "https://www.djai.academy/blog/how-to-convert-jpg-png-webp-free/",
+        "sourcePath": "/blog/how-to-convert-jpg-png-webp-free/",
+        "locale": "th",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.how-to-convert-jpg-png-webp-free"
+      },
+      {
+        "semanticId": "blog.how-to-create-free-qr-code",
+        "sourceUrl": "https://www.djai.academy/blog/how-to-create-free-qr-code/",
+        "sourcePath": "/blog/how-to-create-free-qr-code/",
+        "locale": "th",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.how-to-create-free-qr-code"
+      },
+      {
+        "semanticId": "blog.vibe-coding-cho-nguoi-moi",
+        "sourceUrl": "https://www.djai.academy/blog/vi/vibe-coding-cho-nguoi-moi/",
+        "sourcePath": "/blog/vi/vibe-coding-cho-nguoi-moi/",
+        "locale": "vi",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.vibe-coding-cho-nguoi-moi"
+      },
+      {
+        "semanticId": "blog.nen-chon-jpg-png-hay-webp",
+        "sourceUrl": "https://www.djai.academy/blog/vi/nen-chon-jpg-png-hay-webp/",
+        "sourcePath": "/blog/vi/nen-chon-jpg-png-hay-webp/",
+        "locale": "vi",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.nen-chon-jpg-png-hay-webp"
+      },
+      {
+        "semanticId": "blog.tao-ma-qr-cho-menu-su-kien-website",
+        "sourceUrl": "https://www.djai.academy/blog/vi/tao-ma-qr-cho-menu-su-kien-website/",
+        "sourcePath": "/blog/vi/tao-ma-qr-cho-menu-su-kien-website/",
+        "locale": "vi",
+        "family": "blog",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "blog.tao-ma-qr-cho-menu-su-kien-website"
+      },
+      {
+        "semanticId": "siamese_cat.dev.blog.vibe-coded-free-scanner-app-real-product",
+        "sourceUrl": "https://www.djai.academy/siamese_cat/dev/blog/en/vibe-coded-free-scanner-app-real-product/",
+        "sourcePath": "/siamese_cat/dev/blog/en/vibe-coded-free-scanner-app-real-product/",
+        "locale": "en",
+        "family": "siamese_cat",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "siamese_cat.dev.blog.vibe-coded-free-scanner-app-real-product"
+      },
+      {
+        "semanticId": "siamese_cat.dev.blog.vibe-coded-free-scanner-app-real-product",
+        "sourceUrl": "https://www.djai.academy/siamese_cat/dev/blog/vibe-coded-free-scanner-app-real-product/",
+        "sourcePath": "/siamese_cat/dev/blog/vibe-coded-free-scanner-app-real-product/",
+        "locale": "th",
+        "family": "siamese_cat",
+        "application": "djai-academy-homepage",
+        "isAlias": false,
+        "canonicalId": "siamese_cat.dev.blog.vibe-coded-free-scanner-app-real-product"
+      }
+    ],
+    "school": [
+      {
+        "semanticId": "school.home",
+        "sourceUrl": "https://school.djai.academy/th",
+        "sourcePath": "/th/",
+        "locale": "th",
+        "family": "school",
+        "application": "djai-school",
+        "isAlias": false,
+        "canonicalId": "school.home"
+      },
+      {
+        "semanticId": "school.home",
+        "sourceUrl": "https://school.djai.academy/en",
+        "sourcePath": "/en/",
+        "locale": "en",
+        "family": "school",
+        "application": "djai-school",
+        "isAlias": false,
+        "canonicalId": "school.home"
+      },
+      {
+        "semanticId": "school.pricing",
+        "sourceUrl": "https://school.djai.academy/th/pricing",
+        "sourcePath": "/th/pricing/",
+        "locale": "th",
+        "family": "school",
+        "application": "djai-school",
+        "isAlias": false,
+        "canonicalId": "school.pricing"
+      },
+      {
+        "semanticId": "school.pricing",
+        "sourceUrl": "https://school.djai.academy/en/pricing",
+        "sourcePath": "/en/pricing/",
+        "locale": "en",
+        "family": "school",
+        "application": "djai-school",
+        "isAlias": false,
+        "canonicalId": "school.pricing"
+      },
+      {
+        "semanticId": "school.products",
+        "sourceUrl": "https://school.djai.academy/th/products",
+        "sourcePath": "/th/products/",
+        "locale": "th",
+        "family": "school",
+        "application": "djai-school",
+        "isAlias": false,
+        "canonicalId": "school.products"
+      },
+      {
+        "semanticId": "school.products",
+        "sourceUrl": "https://school.djai.academy/en/products",
+        "sourcePath": "/en/products/",
+        "locale": "en",
+        "family": "school",
+        "application": "djai-school",
+        "isAlias": false,
+        "canonicalId": "school.products"
+      },
+      {
+        "semanticId": "school.extension",
+        "sourceUrl": "https://school.djai.academy/th/extension",
+        "sourcePath": "/th/extension/",
+        "locale": "th",
+        "family": "school",
+        "application": "djai-school",
+        "isAlias": false,
+        "canonicalId": "school.extension"
+      },
+      {
+        "semanticId": "school.extension",
+        "sourceUrl": "https://school.djai.academy/en/extension",
+        "sourcePath": "/en/extension/",
+        "locale": "en",
+        "family": "school",
+        "application": "djai-school",
+        "isAlias": false,
+        "canonicalId": "school.extension"
+      },
+      {
+        "semanticId": "school.help.safety",
+        "sourceUrl": "https://school.djai.academy/th/help/safety",
+        "sourcePath": "/th/help/safety/",
+        "locale": "th",
+        "family": "school",
+        "application": "djai-school",
+        "isAlias": false,
+        "canonicalId": "school.help.safety"
+      },
+      {
+        "semanticId": "school.help.safety",
+        "sourceUrl": "https://school.djai.academy/en/help/safety",
+        "sourcePath": "/en/help/safety/",
+        "locale": "en",
+        "family": "school",
+        "application": "djai-school",
+        "isAlias": false,
+        "canonicalId": "school.help.safety"
+      }
+    ]
+  }
+}

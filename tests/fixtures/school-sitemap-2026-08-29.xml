@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<url>
+<loc>https://school.djai.academy/th</loc>
+<xhtml:link rel="alternate" hreflang="th-TH" href="https://school.djai.academy/th" />
+<xhtml:link rel="alternate" hreflang="en-US" href="https://school.djai.academy/en" />
+<xhtml:link rel="alternate" hreflang="x-default" href="https://school.djai.academy/th" />
+<changefreq>weekly</changefreq>
+<priority>1</priority>
+</url>
+<url>
+<loc>https://school.djai.academy/en</loc>
+<xhtml:link rel="alternate" hreflang="th-TH" href="https://school.djai.academy/th" />
+<xhtml:link rel="alternate" hreflang="en-US" href="https://school.djai.academy/en" />
+<xhtml:link rel="alternate" hreflang="x-default" href="https://school.djai.academy/th" />
+<changefreq>weekly</changefreq>
+<priority>1</priority>
+</url>
+<url>
+<loc>https://school.djai.academy/th/pricing</loc>
+<xhtml:link rel="alternate" hreflang="th-TH" href="https://school.djai.academy/th/pricing" />
+<xhtml:link rel="alternate" hreflang="en-US" href="https://school.djai.academy/en/pricing" />
+<xhtml:link rel="alternate" hreflang="x-default" href="https://school.djai.academy/th/pricing" />
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://school.djai.academy/en/pricing</loc>
+<xhtml:link rel="alternate" hreflang="th-TH" href="https://school.djai.academy/th/pricing" />
+<xhtml:link rel="alternate" hreflang="en-US" href="https://school.djai.academy/en/pricing" />
+<xhtml:link rel="alternate" hreflang="x-default" href="https://school.djai.academy/th/pricing" />
+<changefreq>weekly</changefreq>
+<priority>0.9</priority>
+</url>
+<url>
+<loc>https://school.djai.academy/th/products</loc>
+<xhtml:link rel="alternate" hreflang="th-TH" href="https://school.djai.academy/th/products" />
+<xhtml:link rel="alternate" hreflang="en-US" href="https://school.djai.academy/en/products" />
+<xhtml:link rel="alternate" hreflang="x-default" href="https://school.djai.academy/th/products" />
+<changefreq>weekly</changefreq>
+<priority>0.85</priority>
+</url>
+<url>
+<loc>https://school.djai.academy/en/products</loc>
+<xhtml:link rel="alternate" hreflang="th-TH" href="https://school.djai.academy/th/products" />
+<xhtml:link rel="alternate" hreflang="en-US" href="https://school.djai.academy/en/products" />
+<xhtml:link rel="alternate" hreflang="x-default" href="https://school.djai.academy/th/products" />
+<changefreq>weekly</changefreq>
+<priority>0.85</priority>
+</url>
+<url>
+<loc>https://school.djai.academy/th/extension</loc>
+<xhtml:link rel="alternate" hreflang="th-TH" href="https://school.djai.academy/th/extension" />
+<xhtml:link rel="alternate" hreflang="en-US" href="https://school.djai.academy/en/extension" />
+<xhtml:link rel="alternate" hreflang="x-default" href="https://school.djai.academy/th/extension" />
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://school.djai.academy/en/extension</loc>
+<xhtml:link rel="alternate" hreflang="th-TH" href="https://school.djai.academy/th/extension" />
+<xhtml:link rel="alternate" hreflang="en-US" href="https://school.djai.academy/en/extension" />
+<xhtml:link rel="alternate" hreflang="x-default" href="https://school.djai.academy/th/extension" />
+<changefreq>monthly</changefreq>
+<priority>0.8</priority>
+</url>
+<url>
+<loc>https://school.djai.academy/th/help/safety</loc>
+<xhtml:link rel="alternate" hreflang="th-TH" href="https://school.djai.academy/th/help/safety" />
+<xhtml:link rel="alternate" hreflang="en-US" href="https://school.djai.academy/en/help/safety" />
+<xhtml:link rel="alternate" hreflang="x-default" href="https://school.djai.academy/th/help/safety" />
+<changefreq>monthly</changefreq>
+<priority>0.4</priority>
+</url>
+<url>
+<loc>https://school.djai.academy/en/help/safety</loc>
+<xhtml:link rel="alternate" hreflang="th-TH" href="https://school.djai.academy/th/help/safety" />
+<xhtml:link rel="alternate" hreflang="en-US" href="https://school.djai.academy/en/help/safety" />
+<xhtml:link rel="alternate" hreflang="x-default" href="https://school.djai.academy/th/help/safety" />
+<changefreq>monthly</changefreq>
+<priority>0.4</priority>
+</url>
+</urlset>

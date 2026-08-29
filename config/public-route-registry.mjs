@@ -2,6 +2,7 @@ import {
   CHINESE_LOCALES,
   CHINESE_LOCALE_BY_ID
 } from "./chinese-locales.mjs";
+import { readFileSync } from "node:fs";
 
 export { CHINESE_LOCALES };
 
@@ -39,6 +40,9 @@ const routes = Object.freeze([
 ]);
 
 const routeById = new Map(routes.map((route) => [route.semanticId, route]));
+const inventory = JSON.parse(
+  readFileSync(new URL("./public-route-inventory.json", import.meta.url), "utf8")
+);
 
 export function getRouteById(semanticId) {
   const route = routeById.get(semanticId);
@@ -76,4 +80,8 @@ export function validatePublication(route, locale, review = {}) {
 
 export function publicRouteRegistry() {
   return routes;
+}
+
+export function publicRouteInventory() {
+  return inventory;
 }
