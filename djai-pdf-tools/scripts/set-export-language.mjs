@@ -12,7 +12,7 @@ function visit(directory) {
     }
 
     if (entry !== "index.html") continue;
-    const locale = path.includes("/vi/") ? "vi" : path.includes("/en/") ? "en" : null;
+    const locale = path.includes("/zh-cn/") ? "zh-CN" : path.includes("/zh-tw/") ? "zh-TW" : path.includes("/vi/") ? "vi" : path.includes("/en/") ? "en" : null;
     if (!locale) continue;
     const html = readFileSync(path, "utf8");
     writeFileSync(path, html.replace('<html lang="th">', `<html lang="${locale}">`));

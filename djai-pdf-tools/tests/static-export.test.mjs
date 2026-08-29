@@ -33,3 +33,18 @@ test("browser PDF worker and brand assets are exported", () => {
     assert.ok(existsSync(join(outDir, asset)), `${asset} should exist`);
   }
 });
+
+test("Chinese PDF hubs and canonical tools are fully exported", () => {
+  const canonicalTools = tools.slice(0, 11);
+  for (const [segment, locale, required] of [["zh-cn", "zh-CN", "选择(?: PDF|图片)"], ["zh-tw", "zh-TW", "選擇(?: PDF|圖片)"]]) {
+    for (const relativePath of [`${segment}/index.html`, ...canonicalTools.map((tool) => `${tool}/${segment}/index.html`)]) {
+      const path = join(outDir, relativePath);
+      assert.ok(existsSync(path), `${relativePath} should exist`);
+      const html = readFileSync(path, "utf8");
+      assert.match(html, new RegExp(`<html lang="${locale}"`));
+      assert.match(html, /name="robots" content="noindex, follow"/);
+      assert.match(html, new RegExp(required));
+      assert.doesNotMatch(html, /เลือกไฟล์|Tải file|Process files/);
+    }
+  }
+});
