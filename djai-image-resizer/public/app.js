@@ -3,9 +3,12 @@
 
   const $ = (selector, parent = document) => parent.querySelector(selector);
   const $$ = (selector, parent = document) => [...parent.querySelectorAll(selector)];
-  const isThai = document.documentElement.lang.toLowerCase().startsWith('th');
+  const documentLanguage = document.documentElement.lang;
+  const isThai = documentLanguage.toLowerCase().startsWith('th');
+  const isZhCn = documentLanguage === 'zh-CN';
+  const isZhTw = documentLanguage === 'zh-TW';
 
-  const copy = isThai ? {
+  let copy = isThai ? {
     imageFallback: 'รูปภาพ',
     chooseSupported: 'กรุณาเลือกไฟล์ JPG, PNG, WebP, HEIC หรือ HEIF',
     tooLarge: 'แต่ละไฟล์ต้องมีขนาดไม่เกิน 50 MB',
@@ -124,6 +127,31 @@
       }
     }
   };
+
+  if (isZhCn || isZhTw) {
+    const tw = isZhTw;
+    Object.assign(copy, tw ? {
+      imageFallback: '圖片', chooseSupported: '請選擇 JPG、PNG、WebP、HEIC 或 HEIF 圖片。', tooLarge: '每個檔案不得超過 50 MB。', tooMany: '一次最多選擇 20 個檔案。', totalTooLarge: '全部檔案合計不得超過 200 MB。',
+      readError: '無法讀取這張圖片。檔案可能損毀或使用瀏覽器不支援的編碼。', heicError: '無法解碼這個 HEIC 檔案，請改用其他照片或先在原裝置轉檔。', backgroundError: '無法移除這張圖片的背景，請改用主體更清楚的照片。', exportError: '瀏覽器無法匯出圖片。',
+      dimensionTooLarge: '要求的尺寸過大，無法在瀏覽器中安全處理。', invalidDimensions: '請輸入有效的寬度與高度。', targetRange: '目標大小必須介於 5 KB 與 50,000 KB。', genericError: '處理圖片時發生錯誤。',
+      smaller: (value) => `縮小 ${value}%`, larger: (value) => `放大 ${value}%`, transparentPng: '透明 PNG', fileCount: (value) => `${value} 個檔案`, rotation: (value) => `旋轉 ${value}°`,
+      processing: (current, total) => `正在處理 ${current}/${total}`, downloadingModel: (value) => `正在下載 AI 模型 ${value}%`, removingBackground: (current, total) => `正在移除背景 ${current}/${total}`,
+      processOne: '處理圖片', processMany: (value) => `處理 ${value} 張圖片`, removeBackgroundOne: '移除背景', removeBackgroundMany: (value) => `為 ${value} 張圖片去背`, downloadOne: '下載圖片', downloadMany: '全部下載為 ZIP',
+      resultOne: '圖片已可下載。', resultMany: (value) => `${value} 張圖片已可下載。`, backgroundResultOne: '透明背景 PNG 已可下載。', backgroundResultMany: (value) => `${value} 張透明 PNG 已可下載。`,
+      pngQuality: 'PNG 是無損格式，不使用畫質設定；仍可透過尺寸縮小檔案。', backgroundPngNote: '去背模式固定匯出透明 PNG，因此不使用其他格式或畫質設定。', qualityNote: '作為匯出畫質，或目標 KB 模式的最高畫質。',
+      select: '選擇', remove: '移除', rotate: '旋轉', download: '下載', copyLink: '複製連結', copiedLink: '已複製', promoLater: '稍後再說'
+    } : {
+      imageFallback: '图片', chooseSupported: '请选择 JPG、PNG、WebP、HEIC 或 HEIF 图片。', tooLarge: '每个文件不得超过 50 MB。', tooMany: '一次最多选择 20 个文件。', totalTooLarge: '全部文件合计不得超过 200 MB。',
+      readError: '无法读取这张图片。文件可能损坏或使用浏览器不支持的编码。', heicError: '无法解码这个 HEIC 文件，请改用其他照片或先在原设备转换。', backgroundError: '无法去除这张图片的背景，请改用主体更清楚的照片。', exportError: '浏览器无法导出图片。',
+      dimensionTooLarge: '要求的尺寸过大，无法在浏览器中安全处理。', invalidDimensions: '请输入有效的宽度和高度。', targetRange: '目标大小必须介于 5 KB 和 50,000 KB。', genericError: '处理图片时发生错误。',
+      smaller: (value) => `缩小 ${value}%`, larger: (value) => `放大 ${value}%`, transparentPng: '透明 PNG', fileCount: (value) => `${value} 个文件`, rotation: (value) => `旋转 ${value}°`,
+      processing: (current, total) => `正在处理 ${current}/${total}`, downloadingModel: (value) => `正在下载 AI 模型 ${value}%`, removingBackground: (current, total) => `正在去除背景 ${current}/${total}`,
+      processOne: '处理图片', processMany: (value) => `处理 ${value} 张图片`, removeBackgroundOne: '去除背景', removeBackgroundMany: (value) => `为 ${value} 张图片去除背景`, downloadOne: '下载图片', downloadMany: '全部下载为 ZIP',
+      resultOne: '图片已可下载。', resultMany: (value) => `${value} 张图片已可下载。`, backgroundResultOne: '透明背景 PNG 已可下载。', backgroundResultMany: (value) => `${value} 张透明 PNG 已可下载。`,
+      pngQuality: 'PNG 是无损格式，不使用画质设置；仍可通过尺寸缩小文件。', backgroundPngNote: '去除背景模式固定导出透明 PNG，因此不使用其他格式或画质设置。', qualityNote: '作为导出画质，或目标 KB 模式的最高画质。',
+      select: '选择', remove: '移除', rotate: '旋转', download: '下载', copyLink: '复制链接', copiedLink: '已复制', promoLater: '稍后再说'
+    });
+  }
 
   const els = {
     menuToggle: $('.menu-toggle'),

@@ -30,6 +30,33 @@ test("all SEO presets have Thai and English static pages", () => {
   }
 });
 
+test("all image tools export separate Mainland and Taiwan pages", () => {
+  for (const preset of presets) {
+    for (const [segment, locale] of [["zh-cn", "zh-CN"], ["zh-tw", "zh-TW"]]) {
+      const path = join(publicDir, preset.slug, segment, "index.html");
+      assert.equal(existsSync(path), true, path);
+      const html = readFileSync(path, "utf8");
+      assert.match(html, new RegExp(`<html lang="${locale}">`));
+      assert.match(html, new RegExp(`<link rel="canonical" href="https://www.djai.academy/tools/resizeimg/${preset.slug}/${segment}/">`));
+      assert.match(html, /<meta name="robots" content="noindex, follow">/);
+      assert.match(html, /hreflang="zh-CN"/);
+      assert.match(html, /hreflang="zh-TW"/);
+      assert.doesNotMatch(html, /สร้าง|Tạo |Choose image|Process image|Download image/);
+    }
+  }
+});
+
+test("Chinese hubs expose localized upload and result controls", () => {
+  for (const [segment, locale, terms] of [
+    ["zh-cn", "zh-CN", ["选择图片", "处理图片", "下载图片"]],
+    ["zh-tw", "zh-TW", ["選擇圖片", "處理圖片", "下載圖片"]]
+  ]) {
+    const html = readFileSync(join(publicDir, segment, "index.html"), "utf8");
+    assert.match(html, new RegExp(`<html lang="${locale}">`));
+    for (const term of terms) assert.match(html, new RegExp(term));
+  }
+});
+
 test("popular and discovery links stay on canonical image-tool routes", () => {
   const approvedRoutes = new Set(
     presets.flatMap(({ slug }) => [

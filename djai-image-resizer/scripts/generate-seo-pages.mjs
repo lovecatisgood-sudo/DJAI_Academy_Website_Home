@@ -168,6 +168,66 @@ function vietnameseTemplate(template) {
   return output;
 }
 
+const chineseNames = {
+  "jpg-to-png": ["JPG 转 PNG", "JPG 轉 PNG"], "png-to-jpg": ["PNG 转 JPG", "PNG 轉 JPG"], "jpg-to-webp": ["JPG 转 WebP", "JPG 轉 WebP"],
+  "png-to-webp": ["PNG 转 WebP", "PNG 轉 WebP"], "webp-to-jpg": ["WebP 转 JPG", "WebP 轉 JPG"], "webp-to-png": ["WebP 转 PNG", "WebP 轉 PNG"],
+  "compress-image": ["图片压缩", "圖片壓縮"], "resize-image": ["调整图片尺寸", "調整圖片尺寸"], "image-to-100kb": ["把图片压缩到约 100 KB", "將圖片壓縮到約 100 KB"],
+  "image-to-500kb": ["把图片压缩到约 500 KB", "將圖片壓縮到約 500 KB"], "resize-image-to-200kb": ["把图片压缩到约 200 KB", "將圖片壓縮到約 200 KB"],
+  "avif-to-jpg": ["AVIF 转 JPG", "AVIF 轉 JPG"], "avif-to-png": ["AVIF 转 PNG", "AVIF 轉 PNG"], "passport-photo-resizer": ["35×45 毫米证件照尺寸调整", "35×45 公釐證件照尺寸調整"],
+  "remove-background-image": ["图片背景去除", "圖片去背"], "remove-image-metadata": ["删除图片元数据", "移除圖片中繼資料"], "heic-to-jpg": ["HEIC 转 JPG", "HEIC 轉 JPG"]
+};
+
+function chinesePresetCopy(preset, locale) {
+  const tw = locale === "zh-TW";
+  const name = chineseNames[preset.slug][tw ? 1 : 0];
+  return {
+    title: `${name}${tw ? "免費線上工具" : "免费在线工具"}｜DJAI Image Tools`,
+    h1: `${name}${tw ? "，免費在瀏覽器中處理" : "，免费在浏览器中处理"}`,
+    description: tw
+      ? `${name}，不必註冊、沒有浮水印，圖片會留在你的裝置上，不會上傳到 DJAI 伺服器。`
+      : `${name}，无需注册、不加水印，图片保留在你的设备上，不会上传到 DJAI 服务器。`,
+    guideTitle: tw ? `如何使用${name}工具` : `如何使用${name}工具`,
+    intro: tw ? "選擇裝置中的圖片，確認格式、尺寸或畫質設定，在瀏覽器完成處理後檢查實際輸出再下載。" : "选择设备中的图片，确认格式、尺寸或画质设置，在浏览器完成处理后检查实际输出再下载。",
+    steps: tw ? ["從裝置選擇圖片", "調整格式、尺寸或畫質", "處理、檢查並下載結果"] : ["从设备选择图片", "调整格式、尺寸或画质", "处理、检查并下载结果"]
+  };
+}
+
+function chineseTemplate(template, locale) {
+  const tw = locale === "zh-TW";
+  const replacements = tw ? [
+    [">Image<", ">圖片<"], [">Document<", ">文件<"], [">Spreadsheet<", ">試算表<"], [">All tools<", ">所有工具<"], [">Use free tool<", ">使用免費工具<"],
+    ["FREE JPG, PNG, WEBP &amp; HEIC IMAGE TOOL", "免費 JPG、PNG、WEBP 與 HEIC 圖片工具"], ["Make every image ", "讓每張圖片"], ["fit perfectly.", "符合使用需求。"],
+    ["No sign-up", "不必註冊"], ["Browser processing", "瀏覽器內處理"], ["Free to use", "免費使用"], [">Share<", ">分享<"], [">Copy link<", ">複製連結<"], ["Same ratio", "維持比例"],
+    ["IMAGE RESIZER", "圖片工具"], ["Smaller file. Same great image.", "縮小檔案，同時保留實用畫質。"], ["Private &amp; local", "私密且在裝置端處理"],
+    ["Drop your image here", "將圖片拖曳到這裡"], ["or click to browse from your device", "或點一下從裝置選擇檔案"], ["Choose image", "選擇圖片"], ["Choose your image", "選擇圖片"], ["Up to 20 files", "最多 20 個檔案"],
+    ["What do you want to do?", "你想進行哪一種處理？"], ["Target file size", "目標檔案大小"], ["Keep original dimensions", "保留原始尺寸"], ["Resize percentage", "縮放百分比"], ["Image size preset", "圖片尺寸預設"], ["Custom dimensions", "自訂尺寸"],
+    ["Resize an image", "處理圖片"], ["Target KB", "目標 KB"], ["Percentage", "百分比"], ["Dimensions", "尺寸"], ["Background", "去背"], ["Only reduce quality when possible", "盡量只降低畫質"], ["Width", "寬度"], ["Height", "高度"],
+    ["Output format", "輸出格式"], ["Keep original", "保留原格式"], ["Output quality", "輸出畫質"], ["Smaller", "較小"], ["Balanced", "平衡"], ["Higher quality", "較高畫質"],
+    ["Process image", "處理圖片"], ["Download image", "下載圖片"], ["Start over", "重新開始"], ["Original", "原始圖片"], ["Result", "處理結果"], ["Compare", "比較"], ["Before", "處理前"], ["After", "處理後"], ["Image ready!", "圖片已完成！"], ["Your image has been resized.", "圖片處理完成。"], ["File size", "檔案大小"], ["Format", "格式"],
+    ["Your image never leaves your browser. We do not upload, store, or view your file.", "圖片不會離開瀏覽器。DJAI 不會上傳、儲存或查看你的檔案。"], ["HOW IT WORKS", "使用方式"], ["PRIVACY FIRST", "隱私優先"], ["Your image stays on your device", "圖片保留在你的裝置上"],
+    ["From oversized to optimized in three steps.", "三個步驟完成圖片處理。"], ["POPULAR TASKS", "常用圖片工具"], ["Open the tool with the right settings.", "直接以適合的設定開啟工具。"], ["Questions about image resizing.", "圖片處理常見問題"],
+    ["Ready when you are.", "需要時隨時使用。"], ["Resize your first image for free.", "免費處理第一張圖片。"], ["Open image resizer", "開啟圖片工具"], ["Join the Academy", "加入 DJAI Academy"],
+    ["Download the app", "前往 Google Play 下載"], ["Need scanning, PDF signing, and QR tools on your phone?", "需要在手機上掃描文件、簽署 PDF 或製作 QR Code？"]
+  ] : [
+    [">Image<", ">图片<"], [">Document<", ">文档<"], [">Spreadsheet<", ">电子表格<"], [">All tools<", ">所有工具<"], [">Use free tool<", ">使用免费工具<"],
+    ["FREE JPG, PNG, WEBP &amp; HEIC IMAGE TOOL", "免费 JPG、PNG、WEBP 与 HEIC 图片工具"], ["Make every image ", "让每张图片"], ["fit perfectly.", "符合使用需求。"],
+    ["No sign-up", "无需注册"], ["Browser processing", "浏览器内处理"], ["Free to use", "免费使用"], [">Share<", ">分享<"], [">Copy link<", ">复制链接<"], ["Same ratio", "保持比例"],
+    ["IMAGE RESIZER", "图片工具"], ["Smaller file. Same great image.", "缩小文件，同时保留实用画质。"], ["Private &amp; local", "私密且在设备端处理"],
+    ["Drop your image here", "将图片拖到这里"], ["or click to browse from your device", "或点击从设备选择文件"], ["Choose image", "选择图片"], ["Choose your image", "选择图片"], ["Up to 20 files", "最多 20 个文件"],
+    ["What do you want to do?", "你想进行哪一种处理？"], ["Target file size", "目标文件大小"], ["Keep original dimensions", "保留原始尺寸"], ["Resize percentage", "缩放百分比"], ["Image size preset", "图片尺寸预设"], ["Custom dimensions", "自定义尺寸"],
+    ["Resize an image", "处理图片"], ["Target KB", "目标 KB"], ["Percentage", "百分比"], ["Dimensions", "尺寸"], ["Background", "去除背景"], ["Only reduce quality when possible", "尽量只降低画质"], ["Width", "宽度"], ["Height", "高度"],
+    ["Output format", "输出格式"], ["Keep original", "保留原格式"], ["Output quality", "输出画质"], ["Smaller", "较小"], ["Balanced", "平衡"], ["Higher quality", "较高画质"],
+    ["Process image", "处理图片"], ["Download image", "下载图片"], ["Start over", "重新开始"], ["Original", "原图"], ["Result", "处理结果"], ["Compare", "对比"], ["Before", "处理前"], ["After", "处理后"], ["Image ready!", "图片已完成！"], ["Your image has been resized.", "图片处理完成。"], ["File size", "文件大小"], ["Format", "格式"],
+    ["Your image never leaves your browser. We do not upload, store, or view your file.", "图片不会离开浏览器。DJAI 不会上传、存储或查看你的文件。"], ["HOW IT WORKS", "使用方法"], ["PRIVACY FIRST", "隐私优先"], ["Your image stays on your device", "图片保留在你的设备上"],
+    ["From oversized to optimized in three steps.", "三个步骤完成图片处理。"], ["POPULAR TASKS", "常用图片工具"], ["Open the tool with the right settings.", "直接以合适设置打开工具。"], ["Questions about image resizing.", "图片处理常见问题"],
+    ["Ready when you are.", "需要时随时使用。"], ["Resize your first image for free.", "免费处理第一张图片。"], ["Open image resizer", "打开图片工具"], ["Join the Academy", "加入 DJAI Academy"],
+    ["Download the app", "前往 Google Play 下载"], ["Need scanning, PDF signing, and QR tools on your phone?", "需要在手机上扫描文档、签署 PDF 或生成二维码？"]
+  ];
+  let output = template;
+  for (const [from, to] of replacements) output = output.replaceAll(from, to);
+  return output;
+}
+
 function discoveryMarkup(language, currentSlug) {
   const en = language === "en";
   const vi = language === "vi";
@@ -367,4 +427,69 @@ for (const preset of presets) {
     writeFileSync(join(directory, "index.html"), render(templates[language], preset, language));
   }
 }
-console.log(`Generated ${presets.length * 3} multilingual image-tool SEO pages.`);
+
+function chineseDiscoveryMarkup(locale, currentSlug) {
+  const tw = locale === "zh-TW";
+  const segment = tw ? "zh-tw" : "zh-cn";
+  const tools = presets.filter(({ slug }) => slug !== currentSlug).map((preset) => {
+    const copy = chinesePresetCopy(preset, locale);
+    return `<a href="/tools/resizeimg/${preset.slug}/${segment}/"><strong>${escapeHtml(copy.h1)}</strong><span>${escapeHtml(copy.description)}</span></a>`;
+  }).join("");
+  const categories = tw ? [
+    ["所有免費工具", `/tools/${segment}/`], ["QR Code 工具", `/tools/qrgen/${segment}/`], ["PDF 工具", `/tools/PDFTools/${segment}/`], ["影音工具", `/tools/media/${segment}/`], ["文件工具", `/tools/document/${segment}/`]
+  ] : [
+    ["所有免费工具", `/tools/${segment}/`], ["二维码工具", `/tools/qrgen/${segment}/`], ["PDF 工具", `/tools/PDFTools/${segment}/`], ["音视频工具", `/tools/media/${segment}/`], ["文档工具", `/tools/document/${segment}/`]
+  ];
+  return `<!-- TOOL_DISCOVERY_START --><nav class="tool-discovery-footer section-shell" aria-labelledby="tool-discovery-${segment}" data-tool-discovery><div class="tool-discovery-heading"><span class="section-kicker">${tw ? "圖片工作流程" : "图片工作流程"}</span><h2 id="tool-discovery-${segment}">${tw ? "繼續處理下一個圖片任務" : "继续处理下一个图片任务"}</h2><p>${tw ? "選擇轉檔、壓縮、調整尺寸、去背或隱私處理工具。" : "选择转换、压缩、调整尺寸、去除背景或隐私处理工具。"}</p></div><div class="tool-discovery-links">${tools}</div><div class="tool-category-links">${categories.map(([label, href]) => `<a href="${href}"><strong>${label}</strong></a>`).join("")}</div></nav><!-- TOOL_DISCOVERY_END -->`;
+}
+
+function localizeChinesePage(source, preset, locale) {
+  const tw = locale === "zh-TW";
+  const segment = tw ? "zh-tw" : "zh-cn";
+  const copy = preset ? chinesePresetCopy(preset, locale) : {
+    title: tw ? "免費圖片壓縮、轉檔與尺寸調整工具｜DJAI" : "免费图片压缩、格式转换与尺寸调整工具｜DJAI",
+    h1: tw ? "讓每張圖片符合實際使用需求" : "让每张图片符合实际使用需求",
+    description: tw ? "在瀏覽器中免費轉換、壓縮、調整圖片尺寸、去背與移除中繼資料，不必註冊且沒有浮水印。" : "在浏览器中免费转换、压缩、调整图片尺寸、去除背景和删除元数据，无需注册且不加水印。",
+    guideTitle: tw ? "如何使用圖片工具" : "如何使用图片工具",
+    intro: tw ? "選擇圖片與處理方式，檢查設定後在裝置上完成處理。" : "选择图片和处理方式，检查设置后在设备上完成处理。",
+    steps: tw ? ["選擇圖片", "調整設定", "處理並下載"] : ["选择图片", "调整设置", "处理并下载"]
+  };
+  const suffix = preset ? `${preset.slug}/${segment}/` : `${segment}/`;
+  const canonical = `${siteRoot}/${suffix}`;
+  const guide = `<section class="seo-guide section-shell" aria-labelledby="seo-guide-heading"><div><span class="section-kicker">${tw ? "工具說明" : "工具说明"}</span><h2 id="seo-guide-heading">${escapeHtml(copy.guideTitle)}</h2><p>${escapeHtml(copy.intro)}</p></div><ol>${copy.steps.map((step) => `<li><span>${escapeHtml(step)}</span></li>`).join("")}</ol></section>`;
+  let html = chineseTemplate(source, locale)
+    .replace('<html lang="en">', `<html lang="${locale}">`)
+    .replace(/<title>.*?<\/title>/, `<title>${escapeHtml(copy.title)}</title>`)
+    .replace(/<meta name="description" content="[^"]*">/, `<meta name="description" content="${escapeHtml(copy.description)}">\n  <meta name="robots" content="noindex, follow">`)
+    .replace(/<link rel="canonical" href="[^"]*">/, `<link rel="canonical" href="${canonical}">`)
+    .replace(/<meta property="og:title" content="[^"]*">/, `<meta property="og:title" content="${escapeHtml(copy.title)}">`)
+    .replace(/<meta property="og:description" content="[^"]*">/, `<meta property="og:description" content="${escapeHtml(copy.description)}">`)
+    .replace(/<meta property="og:url" content="[^"]*">/, `<meta property="og:url" content="${canonical}">`)
+    .replace(/<meta name="twitter:title" content="[^"]*">/, `<meta name="twitter:title" content="${escapeHtml(copy.title)}">`)
+    .replace(/<meta name="twitter:description" content="[^"]*">/, `<meta name="twitter:description" content="${escapeHtml(copy.description)}">`)
+    .replace(/<h1>.*?<\/h1>/s, `<h1>${escapeHtml(copy.h1)}</h1>`)
+    .replace(/<p class="hero-description">.*?<\/p>/s, `<p class="hero-description">${escapeHtml(copy.description)}</p>`)
+    .replace(/<section class="seo-guide section-shell" aria-labelledby="seo-guide-heading">[\s\S]*?<\/section>/, guide)
+    .replace(/<!-- TOOL_DISCOVERY_START -->[\s\S]*?<!-- TOOL_DISCOVERY_END -->/, chineseDiscoveryMarkup(locale, preset?.slug));
+
+  html = html.replace(/^[ \t]*<link rel="alternate" hreflang="zh-(?:CN|TW)" href="[^"]*">\r?\n/gm, "");
+  const cnHref = preset ? `${siteRoot}/${preset.slug}/zh-cn/` : `${siteRoot}/zh-cn/`;
+  const twHref = preset ? `${siteRoot}/${preset.slug}/zh-tw/` : `${siteRoot}/zh-tw/`;
+  html = html.replace('<link rel="alternate" hreflang="x-default"', `<link rel="alternate" hreflang="zh-CN" href="${cnHref}">\n  <link rel="alternate" hreflang="zh-TW" href="${twHref}">\n  <link rel="alternate" hreflang="x-default"`);
+  html = html.replace(/<a href="https:\/\/www\.djai\.academy\/tools\/resizeimg\/" hreflang="th">ไทย<\/a>/, `<a href="${tw ? cnHref : twHref}" hreflang="${tw ? "zh-CN" : "zh-TW"}">${tw ? "简体中文" : "繁體中文"}</a>`);
+  return html;
+}
+
+for (const [locale, segment] of [["zh-CN", "zh-cn"], ["zh-TW", "zh-tw"]]) {
+  const hubDirectory = join(publicDir, segment);
+  mkdirSync(hubDirectory, { recursive: true });
+  writeFileSync(join(hubDirectory, "index.html"), localizeChinesePage(templates.en, null, locale));
+  for (const preset of presets) {
+    const directory = join(publicDir, preset.slug, segment);
+    mkdirSync(directory, { recursive: true });
+    const englishPage = readFileSync(join(publicDir, preset.slug, "en", "index.html"), "utf8");
+    writeFileSync(join(directory, "index.html"), localizeChinesePage(englishPage, preset, locale));
+  }
+}
+
+console.log(`Generated ${presets.length * 5} multilingual image-tool SEO pages.`);
