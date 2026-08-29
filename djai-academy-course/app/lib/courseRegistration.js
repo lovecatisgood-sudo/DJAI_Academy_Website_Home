@@ -9,3 +9,11 @@ export const courseRegistrationUrls = {
   reserve: `${SCHOOL_ORIGIN}/reserve-seat?course_id=${COURSE_ID}`,
   session: `${SCHOOL_ORIGIN}/api/auth/session`
 };
+
+export function registrationUrlFor(kind, locale = "th") {
+  const source = courseRegistrationUrls[kind] || courseRegistrationUrls.signup;
+  if (!locale.startsWith("zh-")) return source;
+  const url = new URL(source);
+  url.searchParams.set("locale", locale);
+  return url.toString();
+}

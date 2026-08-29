@@ -29,6 +29,12 @@ const siteLinks = {
   },
   vi: {
     academy: "https://www.djai.academy/vi/", tools: "https://www.djai.academy/tools/vi/", service: "https://www.djai.academy/service/vi/", course: "https://www.djai.academy/course/vi/", community: "https://www.djai.academy/academy/vi/", portfolio: "https://www.djai.academy/portfolio/vi/", promo: "https://www.djai.academy/course/vi/#pricing", development: "https://www.djai.academy/development/vi/", blog: "https://www.djai.academy/blog/vi/", switchLanguage: "https://www.djai.academy/course/"
+  },
+  "zh-CN": {
+    academy: "https://www.djai.academy/zh-cn/", tools: "https://www.djai.academy/tools/zh-cn/", service: "https://www.djai.academy/service/zh-cn/", course: "https://www.djai.academy/course/zh-cn/", community: "https://www.djai.academy/academy/zh-cn/", portfolio: "https://www.djai.academy/portfolio/zh-cn/", promo: "https://www.djai.academy/course/zh-cn/#pricing", development: "https://www.djai.academy/development/zh-cn/", blog: "https://www.djai.academy/blog/zh-cn/", switchLanguage: "https://www.djai.academy/course/zh-tw/"
+  },
+  "zh-TW": {
+    academy: "https://www.djai.academy/zh-tw/", tools: "https://www.djai.academy/tools/zh-tw/", service: "https://www.djai.academy/service/zh-tw/", course: "https://www.djai.academy/course/zh-tw/", community: "https://www.djai.academy/academy/zh-tw/", portfolio: "https://www.djai.academy/portfolio/zh-tw/", promo: "https://www.djai.academy/course/zh-tw/#pricing", development: "https://www.djai.academy/development/zh-tw/", blog: "https://www.djai.academy/blog/zh-tw/", switchLanguage: "https://www.djai.academy/course/zh-cn/"
   }
 };
 
@@ -67,7 +73,9 @@ const labels = {
   },
   vi: {
     development: "Phát triển sản phẩm", developmentAria: "Liên kết phát triển sản phẩm", services: "Dịch vụ", promo: "Ưu đãi", portfolio: "Dự án", courses: "Khóa học", community: "Cộng đồng", tools: "Công cụ", blog: "Bài viết", join: "Tham gia cộng đồng", open: "Mở menu", close: "Đóng menu", nav: "Điều hướng chính", switchLanguage: "ไทย"
-  }
+  },
+  "zh-CN": { development: "产品开发", developmentAria: "产品开发链接", services: "服务", promo: "课程信息", portfolio: "案例", courses: "课程", community: "学习社区", tools: "在线工具", blog: "文章", join: "加入学习社区", open: "打开菜单", close: "关闭菜单", nav: "主导航", switchLanguage: "繁體中文" },
+  "zh-TW": { development: "產品開發", developmentAria: "產品開發連結", services: "服務", promo: "課程資訊", portfolio: "案例", courses: "課程", community: "學習社群", tools: "線上工具", blog: "文章", join: "加入學習社群", open: "開啟選單", close: "關閉選單", nav: "主選單", switchLanguage: "简体中文" }
 };
 
 function DevelopmentDropdown({ links, copy }) {
@@ -93,7 +101,7 @@ function DevelopmentDropdown({ links, copy }) {
 
 export default function SiteHeader({ locale = "th", switchLanguageHref }) {
   const [open, setOpen] = useState(false);
-  const lang = ["th", "en", "vi"].includes(locale) ? locale : "th";
+  const lang = ["th", "en", "vi", "zh-CN", "zh-TW"].includes(locale) ? locale : "th";
   const links = siteLinks[lang];
   const copy = labels[lang];
   const headerLinks = [
@@ -134,7 +142,7 @@ export default function SiteHeader({ locale = "th", switchLanguageHref }) {
             {label}
           </a>
         ))}
-        {lang === "vi" ? <><a href="https://www.djai.academy/course/" hrefLang="th">TH</a><a href="https://www.djai.academy/course/en/" hrefLang="en">EN</a></> : <a href={switchLanguageHref || links.switchLanguage} hrefLang={lang === "en" ? "th" : "en"}>{copy.switchLanguage}</a>}
+        {lang === "vi" ? <><a href="https://www.djai.academy/course/" hrefLang="th">TH</a><a href="https://www.djai.academy/course/en/" hrefLang="en">EN</a></> : <a href={switchLanguageHref || links.switchLanguage} hrefLang={lang === "zh-CN" ? "zh-TW" : lang === "zh-TW" ? "zh-CN" : lang === "en" ? "th" : "en"}>{copy.switchLanguage}</a>}
         <a className="nav-subscribe" href={links.community}>
           {copy.join}
         </a>

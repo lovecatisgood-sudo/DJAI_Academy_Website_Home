@@ -45,7 +45,9 @@ const copyByLocale = {
   },
   vi: {
     label: "Bản tin", title: "Nhận tin mới hằng tuần từ DJAI", intro: "Cập nhật khóa học, công cụ miễn phí, hoạt động cộng đồng và ghi chép xây sản phẩm.", emailLabel: "Địa chỉ email", emailPlaceholder: "Địa chỉ email", subscribe: "Đăng ký", closeAria: "Đóng cửa sổ đăng ký bản tin", subscribed: "Đã đăng ký", thanks: "Cảm ơn bạn đã tham gia.", success: "Yêu cầu nhận bản tin DJAI Academy của bạn đã sẵn sàng.", close: "Đóng", weekly: "DJAI Weekly", complete: "Hoàn tất đăng ký", confirmCopy: "Xác nhận email mà DJAI Academy sẽ dùng để gửi tin khóa học, cộng đồng và công cụ.", name: "Tên", namePlaceholder: "Tên của bạn", email: "Email", confirm: "Xác nhận đăng ký"
-  }
+  },
+  "zh-CN": { label: "邮件订阅", title: "获取 DJAI 每周更新", intro: "接收课程、免费工具、学习社区与产品实践内容。", emailLabel: "电子邮箱", emailPlaceholder: "电子邮箱", subscribe: "订阅", closeAria: "关闭订阅窗口", subscribed: "已订阅", thanks: "感谢加入", success: "你的 DJAI Academy 邮件订阅请求已提交。", close: "关闭", weekly: "DJAI Weekly", complete: "完成订阅", confirmCopy: "确认用于接收 DJAI 课程、社区和工具更新的邮箱。", name: "姓名", namePlaceholder: "你的姓名", email: "电子邮箱", confirm: "确认订阅" },
+  "zh-TW": { label: "電子報", title: "接收 DJAI 每週更新", intro: "取得課程、免費工具、學習社群與產品實作內容。", emailLabel: "電子郵件", emailPlaceholder: "電子郵件", subscribe: "訂閱", closeAria: "關閉訂閱視窗", subscribed: "已訂閱", thanks: "感謝加入", success: "你的 DJAI Academy 電子報訂閱請求已送出。", close: "關閉", weekly: "DJAI Weekly", complete: "完成訂閱", confirmCopy: "確認用來接收 DJAI 課程、社群與工具更新的電子郵件。", name: "姓名", namePlaceholder: "你的姓名", email: "電子郵件", confirm: "確認訂閱" }
 };
 
 export default function NewsletterSignup({ locale = "th" }) {
@@ -53,7 +55,7 @@ export default function NewsletterSignup({ locale = "th" }) {
   const [name, setName] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const copy = copyByLocale[["th", "en", "vi"].includes(locale) ? locale : "th"];
+  const copy = copyByLocale[["th", "en", "vi", "zh-CN", "zh-TW"].includes(locale) ? locale : "th"];
 
   function openPopup(event) {
     event.preventDefault();

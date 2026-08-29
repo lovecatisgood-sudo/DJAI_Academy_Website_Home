@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { courseRegistrationUrls } from "./lib/courseRegistration";
+import { courseRegistrationUrls, registrationUrlFor } from "./lib/courseRegistration";
 
 const SESSION_TIMEOUT_MS = 2000;
 
-export default function CourseRegistrationLink({ children, className = "button" }) {
+export default function CourseRegistrationLink({ children, className = "button", locale = "th" }) {
   const [checkingSession, setCheckingSession] = useState(false);
 
   async function continueRegistration(event) {
@@ -24,7 +24,7 @@ export default function CourseRegistrationLink({ children, className = "button" 
     if (checkingSession) return;
 
     setCheckingSession(true);
-    let destination = courseRegistrationUrls.signup;
+    let destination = registrationUrlFor("signup", locale);
     const controller = new AbortController();
     const timeout = window.setTimeout(() => controller.abort(), SESSION_TIMEOUT_MS);
 
@@ -39,7 +39,7 @@ export default function CourseRegistrationLink({ children, className = "button" 
       if (response.ok) {
         const session = await response.json();
         if (session?.authenticated === true) {
-          destination = courseRegistrationUrls.reserve;
+          destination = registrationUrlFor("reserve", locale);
         }
       }
     } catch {
@@ -53,7 +53,7 @@ export default function CourseRegistrationLink({ children, className = "button" 
   return (
     <a
       className={className}
-      href={courseRegistrationUrls.signup}
+      href={registrationUrlFor("signup", locale)}
       onClick={continueRegistration}
       aria-busy={checkingSession || undefined}
     >

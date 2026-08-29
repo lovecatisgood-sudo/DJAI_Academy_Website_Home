@@ -302,6 +302,18 @@ function setCourseExportLanguages(project) {
     }
     writeFileSync(outputPath, updatedHtml);
   }
+
+  for (const [locale, segment] of [["zh-CN", "zh-cn"], ["zh-TW", "zh-tw"]]) {
+    for (const relativePath of [`out/${segment}/index.html`, `out/detail/${segment}/index.html`]) {
+      const outputPath = join(rootDir, project.dir, relativePath);
+      const html = readFileSync(outputPath, "utf8");
+      const updatedHtml = html.replace('<html lang="th">', `<html lang="${locale}">`);
+      if (updatedHtml === html) {
+        throw new Error(`DJAI course could not set ${locale} document language: ${relativePath}`);
+      }
+      writeFileSync(outputPath, updatedHtml);
+    }
+  }
 }
 
 function prepareRuntimeArtifact(project) {
