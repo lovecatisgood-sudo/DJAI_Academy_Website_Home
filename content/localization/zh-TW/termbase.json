@@ -1,0 +1,348 @@
+{
+  "locale": "zh-TW",
+  "market": "台灣",
+  "editorialStyle": {
+    "voice": "清楚、實用、可信，先說明使用者可以完成的任務與結果。",
+    "punctuation": "使用全形中文標點；產品名稱、檔案格式、單位與程式碼維持原樣。",
+    "searchRule": "標題優先使用台灣使用者熟悉的任務詞，不堆疊同義關鍵字。",
+    "conversionRule": "不得只將簡體字轉為繁體字，必須依台灣語境重寫。"
+  },
+  "terms": {
+    "file": {
+      "preferred": "檔案",
+      "allowed": [
+        "文件"
+      ],
+      "avoid": [
+        "文件檔"
+      ],
+      "context": "一般上傳、下載與檔案處理",
+      "reviewedBy": null
+    },
+    "document": {
+      "preferred": "文件",
+      "allowed": [
+        "文檔"
+      ],
+      "avoid": [
+        "文献"
+      ],
+      "context": "PDF、Word 與正式資料",
+      "reviewedBy": null
+    },
+    "software": {
+      "preferred": "軟體",
+      "allowed": [
+        "應用程式"
+      ],
+      "avoid": [
+        "软件"
+      ],
+      "context": "桌面或一般軟體",
+      "reviewedBy": null
+    },
+    "app": {
+      "preferred": "應用程式",
+      "allowed": [
+        "App"
+      ],
+      "avoid": [
+        "应用"
+      ],
+      "context": "行動應用程式與產品介面",
+      "reviewedBy": null
+    },
+    "artificialIntelligence": {
+      "preferred": "人工智慧",
+      "allowed": [
+        "AI"
+      ],
+      "avoid": [
+        "人工智能"
+      ],
+      "context": "課程、工具與服務",
+      "reviewedBy": null
+    },
+    "qrCode": {
+      "preferred": "QR Code",
+      "allowed": [
+        "QR Code 產生器",
+        "行動條碼"
+      ],
+      "avoid": [
+        "二维码"
+      ],
+      "context": "依搜尋意圖使用 QR Code 產生器",
+      "reviewedBy": null
+    },
+    "pdfScanner": {
+      "preferred": "PDF 掃描器",
+      "allowed": [
+        "文件掃描 App",
+        "掃描應用程式"
+      ],
+      "avoid": [
+        "PDF扫描仪"
+      ],
+      "context": "Cam PDF Scan 產品與搜尋標題",
+      "reviewedBy": null
+    },
+    "watermarkFree": {
+      "preferred": "無浮水印",
+      "allowed": [
+        "不加浮水印"
+      ],
+      "avoid": [
+        "无水印"
+      ],
+      "context": "免費版輸出與產品優勢",
+      "reviewedBy": null
+    },
+    "free": {
+      "preferred": "免費",
+      "allowed": [
+        "免費使用"
+      ],
+      "avoid": [
+        "免费"
+      ],
+      "context": "確實不需付費的功能",
+      "reviewedBy": null
+    },
+    "course": {
+      "preferred": "課程",
+      "allowed": [
+        "培訓課程",
+        "教學"
+      ],
+      "avoid": [
+        "课程"
+      ],
+      "context": "DJAI 課程與學習內容",
+      "reviewedBy": null
+    },
+    "developmentService": {
+      "preferred": "軟體開發服務",
+      "allowed": [
+        "客製化軟體開發",
+        "網站開發服務"
+      ],
+      "avoid": [
+        "软件开发服务"
+      ],
+      "context": "商業服務頁面",
+      "reviewedBy": null
+    },
+    "privacyPolicy": {
+      "preferred": "隱私權政策",
+      "allowed": [
+        "隱私權說明"
+      ],
+      "avoid": [
+        "隐私政策"
+      ],
+      "context": "法律與隱私頁面",
+      "reviewedBy": null
+    },
+    "deleteAccount": {
+      "preferred": "刪除帳號",
+      "allowed": [
+        "帳號刪除"
+      ],
+      "avoid": [
+        "删除账号"
+      ],
+      "context": "帳號刪除頁面與操作",
+      "reviewedBy": null
+    },
+    "upload": {
+      "preferred": "上傳",
+      "allowed": [
+        "選擇檔案"
+      ],
+      "avoid": [
+        "上传"
+      ],
+      "context": "檔案輸入操作",
+      "reviewedBy": null
+    },
+    "download": {
+      "preferred": "下載",
+      "allowed": [
+        "儲存檔案"
+      ],
+      "avoid": [
+        "下载"
+      ],
+      "context": "匯出與儲存操作",
+      "reviewedBy": null
+    },
+    "convert": {
+      "preferred": "轉檔",
+      "allowed": [
+        "格式轉換"
+      ],
+      "avoid": [
+        "转换"
+      ],
+      "context": "檔案、圖片與媒體工具",
+      "reviewedBy": null
+    },
+    "compress": {
+      "preferred": "壓縮",
+      "allowed": [
+        "縮小檔案"
+      ],
+      "avoid": [
+        "压缩"
+      ],
+      "context": "圖片、PDF 與影片工具",
+      "reviewedBy": null
+    },
+    "resize": {
+      "preferred": "調整尺寸",
+      "allowed": [
+        "調整圖片大小",
+        "縮放圖片"
+      ],
+      "avoid": [
+        "调整尺寸"
+      ],
+      "context": "圖片尺寸工具",
+      "reviewedBy": null
+    },
+    "merge": {
+      "preferred": "合併",
+      "allowed": [
+        "合併檔案"
+      ],
+      "avoid": [
+        "合并"
+      ],
+      "context": "PDF、影片與 CSV 工具",
+      "reviewedBy": null
+    },
+    "split": {
+      "preferred": "分割",
+      "allowed": [
+        "拆分"
+      ],
+      "avoid": [
+        "拆分文件"
+      ],
+      "context": "PDF 與 CSV 工具",
+      "reviewedBy": null
+    },
+    "protect": {
+      "preferred": "保護",
+      "allowed": [
+        "密碼保護"
+      ],
+      "avoid": [
+        "保护"
+      ],
+      "context": "PDF 安全功能",
+      "reviewedBy": null
+    },
+    "image": {
+      "preferred": "圖片",
+      "allowed": [
+        "影像"
+      ],
+      "avoid": [
+        "图片"
+      ],
+      "context": "一般使用者的圖片工具",
+      "reviewedBy": null
+    },
+    "video": {
+      "preferred": "影片",
+      "allowed": [
+        "視訊"
+      ],
+      "avoid": [
+        "视频"
+      ],
+      "context": "媒體工具；技術語境可用視訊",
+      "reviewedBy": null
+    },
+    "audio": {
+      "preferred": "音訊",
+      "allowed": [
+        "音訊檔案"
+      ],
+      "avoid": [
+        "音频"
+      ],
+      "context": "媒體工具",
+      "reviewedBy": null
+    },
+    "localProcessing": {
+      "preferred": "在瀏覽器本機處理",
+      "allowed": [
+        "檔案不會上傳到伺服器"
+      ],
+      "avoid": [
+        "絕對安全"
+      ],
+      "context": "僅在原始碼行為證實時使用",
+      "reviewedBy": null
+    },
+    "ocr": {
+      "preferred": "OCR 文字辨識",
+      "allowed": [
+        "文字辨識",
+        "光學字元辨識"
+      ],
+      "avoid": [
+        "OCR文字识别"
+      ],
+      "context": "OCR 工具與搜尋標題",
+      "reviewedBy": null
+    },
+    "spreadsheet": {
+      "preferred": "試算表",
+      "allowed": [
+        "表格檔案"
+      ],
+      "avoid": [
+        "电子表格"
+      ],
+      "context": "CSV 與 XLSX 工具",
+      "reviewedBy": null
+    },
+    "settings": {
+      "preferred": "設定",
+      "allowed": [
+        "選項"
+      ],
+      "avoid": [
+        "设置"
+      ],
+      "context": "工具控制項",
+      "reviewedBy": null
+    },
+    "error": {
+      "preferred": "處理失敗",
+      "allowed": [
+        "無法處理檔案"
+      ],
+      "avoid": [
+        "处理失败"
+      ],
+      "context": "可採取動作的錯誤訊息",
+      "reviewedBy": null
+    },
+    "comingSoon": {
+      "preferred": "即將推出",
+      "allowed": [
+        "敬請期待"
+      ],
+      "avoid": [
+        "馬上上線"
+      ],
+      "context": "僅用於仍正確的 iOS 狀態",
+      "reviewedBy": null
+    }
+  }
+}

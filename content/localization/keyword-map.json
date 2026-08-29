@@ -1,0 +1,227 @@
+{
+  "schemaVersion": 1,
+  "method": "Public autocomplete evidence is qualitative. No search volume is asserted without an authorized data source.",
+  "capturedAt": "2026-08-29",
+  "mappings": [
+    {
+      "locale": "zh-CN",
+      "semanticId": "family.pdf",
+      "query": "pdf工具",
+      "intent": "寻找可在线完成多种 PDF 任务的工具集合",
+      "evidenceKind": "qualitative",
+      "evidence": "https://suggestion.baidu.com/su?wd=pdf%E5%B7%A5%E5%85%B7&action=opensearch",
+      "evidenceLabel": "Baidu autocomplete suggestions for “pdf工具”",
+      "evidenceDate": "2026-08-29"
+    },
+    {
+      "locale": "zh-CN",
+      "semanticId": "tools.pdftools.merge-pdf",
+      "query": "合并pdf免费网站",
+      "intent": "免费在线合并多个 PDF 文件",
+      "evidenceKind": "qualitative",
+      "evidence": "https://suggestion.baidu.com/su?wd=%E5%90%88%E5%B9%B6pdf&action=opensearch",
+      "evidenceLabel": "Baidu autocomplete suggestions for “合并pdf”",
+      "evidenceDate": "2026-08-29"
+    },
+    {
+      "locale": "zh-CN",
+      "semanticId": "family.qr",
+      "query": "二维码生成器在线",
+      "intent": "在线创建二维码",
+      "evidenceKind": "qualitative",
+      "evidence": "https://suggestion.baidu.com/su?wd=%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8&action=opensearch",
+      "evidenceLabel": "Baidu autocomplete suggestions for “二维码生成器”",
+      "evidenceDate": "2026-08-29"
+    },
+    {
+      "locale": "zh-CN",
+      "semanticId": "tools.qrgen.index",
+      "query": "二维码生成器免费",
+      "intent": "寻找免费二维码生成工具",
+      "evidenceKind": "qualitative",
+      "evidence": "https://suggestion.baidu.com/su?wd=%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%94%9F%E6%88%90%E5%99%A8&action=opensearch",
+      "evidenceLabel": "Baidu autocomplete suggestions for “二维码生成器”",
+      "evidenceDate": "2026-08-29"
+    },
+    {
+      "locale": "zh-CN",
+      "semanticId": "family.image",
+      "query": "图片压缩在线",
+      "intent": "在线减小图片文件大小",
+      "evidenceKind": "qualitative",
+      "evidence": "https://suggestion.baidu.com/su?wd=%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9&action=opensearch",
+      "evidenceLabel": "Baidu autocomplete suggestions for “图片压缩”",
+      "evidenceDate": "2026-08-29"
+    },
+    {
+      "locale": "zh-CN",
+      "semanticId": "tools.resizeimg.compress-image",
+      "query": "图片压缩指定大小",
+      "intent": "将图片压缩到指定文件大小",
+      "evidenceKind": "qualitative",
+      "evidence": "https://suggestion.baidu.com/su?wd=%E5%9B%BE%E7%89%87%E5%8E%8B%E7%BC%A9&action=opensearch",
+      "evidenceLabel": "Baidu autocomplete suggestions for “图片压缩”",
+      "evidenceDate": "2026-08-29"
+    },
+    {
+      "locale": "zh-CN",
+      "semanticId": "family.media",
+      "query": "视频压缩在线工具",
+      "intent": "在线减小视频文件大小",
+      "evidenceKind": "qualitative",
+      "evidence": "https://suggestion.baidu.com/su?wd=%E8%A7%86%E9%A2%91%E5%8E%8B%E7%BC%A9&action=opensearch",
+      "evidenceLabel": "Baidu autocomplete suggestions for “视频压缩”",
+      "evidenceDate": "2026-08-29"
+    },
+    {
+      "locale": "zh-CN",
+      "semanticId": "tools.document.ocr",
+      "query": "ocr文字识别免费版",
+      "intent": "免费识别图片或扫描件文字",
+      "evidenceKind": "qualitative",
+      "evidence": "https://suggestion.baidu.com/su?wd=ocr%E6%96%87%E5%AD%97%E8%AF%86%E5%88%AB&action=opensearch",
+      "evidenceLabel": "Baidu autocomplete suggestions for “ocr文字识别”",
+      "evidenceDate": "2026-08-29"
+    },
+    {
+      "locale": "zh-CN",
+      "semanticId": "course.index",
+      "query": "ai课程培训",
+      "intent": "寻找人工智能学习或培训课程",
+      "evidenceKind": "qualitative",
+      "evidence": "https://suggestion.baidu.com/su?wd=ai%E8%AF%BE%E7%A8%8B&action=opensearch",
+      "evidenceLabel": "Baidu autocomplete suggestions for “ai课程”",
+      "evidenceDate": "2026-08-29"
+    },
+    {
+      "locale": "zh-CN",
+      "semanticId": "service.index",
+      "query": "软件开发服务",
+      "intent": "寻找软件开发服务商",
+      "evidenceKind": "qualitative",
+      "evidence": "https://suggestion.baidu.com/su?wd=%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E6%9C%8D%E5%8A%A1&action=opensearch",
+      "evidenceLabel": "Baidu autocomplete suggestions for “软件开发服务”",
+      "evidenceDate": "2026-08-29"
+    },
+    {
+      "locale": "zh-CN",
+      "semanticId": "cam-pdf.product",
+      "query": "下载免费扫描仪app",
+      "intent": "寻找免费的手机文档扫描应用",
+      "evidenceKind": "qualitative",
+      "evidence": "https://suggestion.baidu.com/su?wd=%E6%89%AB%E6%8F%8F%E4%BB%AAapp&action=opensearch",
+      "evidenceLabel": "Baidu autocomplete suggestions for “扫描仪app”",
+      "evidenceDate": "2026-08-29"
+    },
+    {
+      "locale": "zh-TW",
+      "semanticId": "family.pdf",
+      "query": "PDF工具 免費",
+      "intent": "尋找免費 PDF 工具集合",
+      "evidenceKind": "qualitative",
+      "evidence": "https://suggestqueries.google.com/complete/search?client=firefox&hl=zh-TW&gl=tw&q=PDF%E5%B7%A5%E5%85%B7",
+      "evidenceLabel": "Google Taiwan autocomplete suggestions for “PDF工具”",
+      "evidenceDate": "2026-08-29"
+    },
+    {
+      "locale": "zh-TW",
+      "semanticId": "tools.pdftools.merge-pdf",
+      "query": "合併pdf免費",
+      "intent": "免費合併多個 PDF 檔案",
+      "evidenceKind": "qualitative",
+      "evidence": "https://suggestqueries.google.com/complete/search?client=firefox&hl=zh-TW&gl=tw&q=%E5%90%88%E4%BD%B5PDF",
+      "evidenceLabel": "Google Taiwan autocomplete suggestions for “合併PDF”",
+      "evidenceDate": "2026-08-29"
+    },
+    {
+      "locale": "zh-TW",
+      "semanticId": "family.qr",
+      "query": "QR Code 產生器",
+      "intent": "建立 QR Code",
+      "evidenceKind": "qualitative",
+      "evidence": "https://suggestqueries.google.com/complete/search?client=firefox&hl=zh-TW&gl=tw&q=QR%20Code%20%E7%94%A2%E7%94%9F%E5%99%A8",
+      "evidenceLabel": "Google Taiwan autocomplete suggestions for “QR Code 產生器”",
+      "evidenceDate": "2026-08-29"
+    },
+    {
+      "locale": "zh-TW",
+      "semanticId": "tools.qrgen.index",
+      "query": "QR Code 產生器 免費",
+      "intent": "尋找免費 QR Code 產生工具",
+      "evidenceKind": "qualitative",
+      "evidence": "https://suggestqueries.google.com/complete/search?client=firefox&hl=zh-TW&gl=tw&q=QR%20Code%20%E7%94%A2%E7%94%9F%E5%99%A8",
+      "evidenceLabel": "Google Taiwan autocomplete suggestions for “QR Code 產生器”",
+      "evidenceDate": "2026-08-29"
+    },
+    {
+      "locale": "zh-TW",
+      "semanticId": "family.image",
+      "query": "圖片壓縮免費",
+      "intent": "免費縮小圖片檔案",
+      "evidenceKind": "qualitative",
+      "evidence": "https://suggestqueries.google.com/complete/search?client=firefox&hl=zh-TW&gl=tw&q=%E5%9C%96%E7%89%87%E5%A3%93%E7%B8%AE",
+      "evidenceLabel": "Google Taiwan autocomplete suggestions for “圖片壓縮”",
+      "evidenceDate": "2026-08-29"
+    },
+    {
+      "locale": "zh-TW",
+      "semanticId": "tools.resizeimg.compress-image",
+      "query": "圖片壓縮指定大小",
+      "intent": "將圖片壓縮到指定檔案大小",
+      "evidenceKind": "qualitative",
+      "evidence": "https://suggestqueries.google.com/complete/search?client=firefox&hl=zh-TW&gl=tw&q=%E5%9C%96%E7%89%87%E5%A3%93%E7%B8%AE",
+      "evidenceLabel": "Google Taiwan autocomplete suggestions for “圖片壓縮”",
+      "evidenceDate": "2026-08-29"
+    },
+    {
+      "locale": "zh-TW",
+      "semanticId": "family.media",
+      "query": "影片壓縮 線上",
+      "intent": "在線壓縮影片檔案",
+      "evidenceKind": "qualitative",
+      "evidence": "https://suggestqueries.google.com/complete/search?client=firefox&hl=zh-TW&gl=tw&q=%E5%BD%B1%E7%89%87%E5%A3%93%E7%B8%AE",
+      "evidenceLabel": "Google Taiwan autocomplete suggestions for “影片壓縮”",
+      "evidenceDate": "2026-08-29"
+    },
+    {
+      "locale": "zh-TW",
+      "semanticId": "tools.document.ocr",
+      "query": "OCR文字辨識",
+      "intent": "辨識圖片或 PDF 中的文字",
+      "evidenceKind": "qualitative",
+      "evidence": "https://suggestqueries.google.com/complete/search?client=firefox&hl=zh-TW&gl=tw&q=OCR%E6%96%87%E5%AD%97%E8%BE%A8%E8%AD%98",
+      "evidenceLabel": "Google Taiwan autocomplete suggestions for “OCR文字辨識”",
+      "evidenceDate": "2026-08-29"
+    },
+    {
+      "locale": "zh-TW",
+      "semanticId": "course.index",
+      "query": "AI課程",
+      "intent": "尋找人工智慧學習課程",
+      "evidenceKind": "qualitative",
+      "evidence": "https://suggestqueries.google.com/complete/search?client=firefox&hl=zh-TW&gl=tw&q=AI%E8%AA%B2%E7%A8%8B",
+      "evidenceLabel": "Google Taiwan autocomplete suggestions for “AI課程”",
+      "evidenceDate": "2026-08-29"
+    },
+    {
+      "locale": "zh-TW",
+      "semanticId": "service.index",
+      "query": "軟體開發服務",
+      "intent": "尋找客製化軟體開發服務",
+      "evidenceKind": "qualitative",
+      "evidence": "https://suggestqueries.google.com/complete/search?client=firefox&hl=zh-TW&gl=tw&q=%E8%BB%9F%E9%AB%94%E9%96%8B%E7%99%BC%E6%9C%8D%E5%8B%99",
+      "evidenceLabel": "Google Taiwan autocomplete suggestions for “軟體開發服務”",
+      "evidenceDate": "2026-08-29"
+    },
+    {
+      "locale": "zh-TW",
+      "semanticId": "cam-pdf.product",
+      "query": "PDF 掃描器",
+      "intent": "尋找手機 PDF 文件掃描工具",
+      "evidenceKind": "qualitative",
+      "evidence": "https://suggestqueries.google.com/complete/search?client=firefox&hl=zh-TW&gl=tw&q=PDF%E5%B7%A5%E5%85%B7",
+      "evidenceLabel": "Google Taiwan autocomplete suggestions for “PDF工具”",
+      "evidenceDate": "2026-08-29"
+    }
+  ]
+}

@@ -1,0 +1,348 @@
+{
+  "locale": "zh-CN",
+  "market": "中国大陆",
+  "editorialStyle": {
+    "voice": "清晰、实用、可信，优先说明用户可以完成什么任务。",
+    "punctuation": "使用全角中文标点；产品名、文件格式、单位和代码保持原样。",
+    "searchRule": "标题优先使用真实任务词，不堆砌同义关键词。",
+    "conversionRule": "不得以繁简转换代替本地化写作。"
+  },
+  "terms": {
+    "file": {
+      "preferred": "文件",
+      "allowed": [
+        "文档"
+      ],
+      "avoid": [
+        "檔案"
+      ],
+      "context": "通用文件与上传、下载场景",
+      "reviewedBy": null
+    },
+    "document": {
+      "preferred": "文档",
+      "allowed": [
+        "文件"
+      ],
+      "avoid": [
+        "文獻"
+      ],
+      "context": "PDF、Word 与正式资料",
+      "reviewedBy": null
+    },
+    "software": {
+      "preferred": "软件",
+      "allowed": [
+        "应用"
+      ],
+      "avoid": [
+        "軟體"
+      ],
+      "context": "桌面或通用软件",
+      "reviewedBy": null
+    },
+    "app": {
+      "preferred": "应用",
+      "allowed": [
+        "App",
+        "应用程序"
+      ],
+      "avoid": [
+        "應用程式"
+      ],
+      "context": "移动应用与产品界面",
+      "reviewedBy": null
+    },
+    "artificialIntelligence": {
+      "preferred": "人工智能",
+      "allowed": [
+        "AI"
+      ],
+      "avoid": [
+        "人工智慧"
+      ],
+      "context": "课程、工具与服务",
+      "reviewedBy": null
+    },
+    "qrCode": {
+      "preferred": "二维码",
+      "allowed": [
+        "QR Code"
+      ],
+      "avoid": [
+        "行動條碼"
+      ],
+      "context": "二维码工具及相关任务",
+      "reviewedBy": null
+    },
+    "pdfScanner": {
+      "preferred": "PDF扫描仪",
+      "allowed": [
+        "PDF扫描应用",
+        "文档扫描仪"
+      ],
+      "avoid": [
+        "PDF掃描器"
+      ],
+      "context": "Cam PDF Scan 产品与搜索标题",
+      "reviewedBy": null
+    },
+    "watermarkFree": {
+      "preferred": "无水印",
+      "allowed": [
+        "不添加水印"
+      ],
+      "avoid": [
+        "無浮水印"
+      ],
+      "context": "免费版输出与产品优势",
+      "reviewedBy": null
+    },
+    "free": {
+      "preferred": "免费",
+      "allowed": [
+        "免费使用"
+      ],
+      "avoid": [
+        "免費"
+      ],
+      "context": "确实无需付费的功能",
+      "reviewedBy": null
+    },
+    "course": {
+      "preferred": "课程",
+      "allowed": [
+        "培训课程",
+        "教程"
+      ],
+      "avoid": [
+        "課程"
+      ],
+      "context": "DJAI 课程与学习内容",
+      "reviewedBy": null
+    },
+    "developmentService": {
+      "preferred": "软件开发服务",
+      "allowed": [
+        "定制软件开发",
+        "网站开发服务"
+      ],
+      "avoid": [
+        "軟體開發服務"
+      ],
+      "context": "商业服务页面",
+      "reviewedBy": null
+    },
+    "privacyPolicy": {
+      "preferred": "隐私政策",
+      "allowed": [
+        "隐私说明"
+      ],
+      "avoid": [
+        "隱私權政策"
+      ],
+      "context": "法律与隐私页面",
+      "reviewedBy": null
+    },
+    "deleteAccount": {
+      "preferred": "删除账号",
+      "allowed": [
+        "账号删除"
+      ],
+      "avoid": [
+        "刪除帳號"
+      ],
+      "context": "账号删除页面与操作",
+      "reviewedBy": null
+    },
+    "upload": {
+      "preferred": "上传",
+      "allowed": [
+        "选择文件"
+      ],
+      "avoid": [
+        "上傳"
+      ],
+      "context": "文件输入操作",
+      "reviewedBy": null
+    },
+    "download": {
+      "preferred": "下载",
+      "allowed": [
+        "保存文件"
+      ],
+      "avoid": [
+        "下載"
+      ],
+      "context": "导出与保存操作",
+      "reviewedBy": null
+    },
+    "convert": {
+      "preferred": "转换",
+      "allowed": [
+        "格式转换"
+      ],
+      "avoid": [
+        "轉檔"
+      ],
+      "context": "文件、图片与媒体工具",
+      "reviewedBy": null
+    },
+    "compress": {
+      "preferred": "压缩",
+      "allowed": [
+        "减小文件大小"
+      ],
+      "avoid": [
+        "壓縮"
+      ],
+      "context": "图片、PDF 与视频工具",
+      "reviewedBy": null
+    },
+    "resize": {
+      "preferred": "调整尺寸",
+      "allowed": [
+        "修改图片大小",
+        "缩放图片"
+      ],
+      "avoid": [
+        "調整大小"
+      ],
+      "context": "图片尺寸工具",
+      "reviewedBy": null
+    },
+    "merge": {
+      "preferred": "合并",
+      "allowed": [
+        "合并文件"
+      ],
+      "avoid": [
+        "合併"
+      ],
+      "context": "PDF、视频与 CSV 工具",
+      "reviewedBy": null
+    },
+    "split": {
+      "preferred": "拆分",
+      "allowed": [
+        "分割"
+      ],
+      "avoid": [
+        "分割檔案"
+      ],
+      "context": "PDF 与 CSV 工具",
+      "reviewedBy": null
+    },
+    "protect": {
+      "preferred": "保护",
+      "allowed": [
+        "密码保护"
+      ],
+      "avoid": [
+        "保護"
+      ],
+      "context": "PDF 安全功能",
+      "reviewedBy": null
+    },
+    "image": {
+      "preferred": "图片",
+      "allowed": [
+        "图像"
+      ],
+      "avoid": [
+        "圖片"
+      ],
+      "context": "面向普通用户的图像工具",
+      "reviewedBy": null
+    },
+    "video": {
+      "preferred": "视频",
+      "allowed": [
+        "视频文件"
+      ],
+      "avoid": [
+        "影片"
+      ],
+      "context": "媒体工具",
+      "reviewedBy": null
+    },
+    "audio": {
+      "preferred": "音频",
+      "allowed": [
+        "音频文件"
+      ],
+      "avoid": [
+        "音訊"
+      ],
+      "context": "媒体工具",
+      "reviewedBy": null
+    },
+    "localProcessing": {
+      "preferred": "在浏览器本地处理",
+      "allowed": [
+        "文件不会上传到服务器"
+      ],
+      "avoid": [
+        "绝对安全"
+      ],
+      "context": "仅在源码行为证明时使用",
+      "reviewedBy": null
+    },
+    "ocr": {
+      "preferred": "OCR文字识别",
+      "allowed": [
+        "文字识别",
+        "光学字符识别"
+      ],
+      "avoid": [
+        "OCR文字辨識"
+      ],
+      "context": "OCR 工具和搜索标题",
+      "reviewedBy": null
+    },
+    "spreadsheet": {
+      "preferred": "电子表格",
+      "allowed": [
+        "表格文件"
+      ],
+      "avoid": [
+        "試算表"
+      ],
+      "context": "CSV 与 XLSX 工具",
+      "reviewedBy": null
+    },
+    "settings": {
+      "preferred": "设置",
+      "allowed": [
+        "选项"
+      ],
+      "avoid": [
+        "設定"
+      ],
+      "context": "工具控制项",
+      "reviewedBy": null
+    },
+    "error": {
+      "preferred": "处理失败",
+      "allowed": [
+        "无法处理文件"
+      ],
+      "avoid": [
+        "發生錯誤"
+      ],
+      "context": "可操作的错误提示",
+      "reviewedBy": null
+    },
+    "comingSoon": {
+      "preferred": "即将推出",
+      "allowed": [
+        "敬请期待"
+      ],
+      "avoid": [
+        "马上上线"
+      ],
+      "context": "仅用于仍然准确的 iOS 状态",
+      "reviewedBy": null
+    }
+  }
+}

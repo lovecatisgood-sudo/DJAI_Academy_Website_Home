@@ -11,6 +11,8 @@
     "build": "node scripts/build-hostinger.mjs",
     "prestart": "node scripts/ensure-hostinger-build.mjs",
     "start": "node server.js",
+    "test": "npm run test:supervisor && npm run test:localization",
+    "test:localization": "node --test tests/chinese-localization-contract.test.mjs tests/localization-content-gates.test.mjs tests/public-route-inventory.test.mjs && node scripts/validate-localization.mjs --root .",
     "test:supervisor": "node --test tests/service-supervisor.test.js",
     "verify:hostinger": "node scripts/audit-hostinger.mjs",
     "hostinger:build": "node scripts/build-hostinger.mjs",
