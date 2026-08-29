@@ -30,7 +30,7 @@ const categoryLinks = {
   ]
 } as const;
 
-export default function ToolDiscoveryFooter({ language, currentTool }: { language: QrLanguage; currentTool?: QrToolSlug }) {
+export default function ToolDiscoveryFooter({ language, currentTool }: { language: Extract<QrLanguage, "th" | "en" | "vi">; currentTool?: QrToolSlug }) {
   const en = language === "en";
   const vi = language === "vi";
   const related = qrToolSlugs.filter((slug) => slug !== currentTool);

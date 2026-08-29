@@ -43,3 +43,23 @@ test("exports bilingual task pages with unique metadata", async () => {
     assert.match(english, /hrefLang="th"/);
   }
 });
+
+test("exports independently localized Chinese hubs and all seven task pages", async () => {
+  const simplifiedHub = await readFile(new URL("../out/zh-cn/index.html", import.meta.url), "utf8");
+  const traditionalHub = await readFile(new URL("../out/zh-tw/index.html", import.meta.url), "utf8");
+  assert.match(simplifiedHub, /<html lang="zh-CN">/);
+  assert.match(traditionalHub, /<html lang="zh-TW">/);
+  assert.match(simplifiedHub, /免费二维码生成器/);
+  assert.match(traditionalHub, /免費 QR Code 產生器/);
+  assert.doesNotMatch(simplifiedHub, /สร้าง QR|Tạo mã/);
+  assert.doesNotMatch(traditionalHub, /สร้าง QR|Tạo mã/);
+
+  for (const slug of ["url-qr-code-generator", "wifi-qr-code-generator", "vcard-qr-code-generator", "text-qr-code-generator", "email-qr-code-generator", "whatsapp-qr-code-generator", "qr-code-generator-with-logo"]) {
+    for (const [segment, locale] of [["zh-cn", "zh-CN"], ["zh-tw", "zh-TW"]]) {
+      const html = await readFile(new URL(`../out/${slug}/${segment}/index.html`, import.meta.url), "utf8");
+      assert.match(html, new RegExp(`<html lang="${locale}">`));
+      assert.match(html, new RegExp(`<link rel="canonical" href="https://www.djai.academy${basePath}/${slug}/${segment}/"`));
+      assert.match(html, /name="robots" content="noindex, follow"/);
+    }
+  }
+});

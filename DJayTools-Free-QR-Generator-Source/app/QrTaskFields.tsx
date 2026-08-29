@@ -13,13 +13,26 @@ export default function QrTaskFields({ mode, language, onPayload, onError, onLog
   const [values, setValues] = useState(initialValues);
   const en = language === "en";
   const vi = language === "vi";
-  const label = (th: string, enText: string, viText: string) => vi ? viText : en ? enText : th;
+  const zhCn = language === "zh-CN";
+  const zhTw = language === "zh-TW";
+  const chineseLabels: Record<string, [string, string]> = {
+    "Website URL": ["网址", "網址"], "Text": ["文本", "文字"], "Network name (SSID)": ["网络名称（SSID）", "網路名稱（SSID）"],
+    "Security": ["安全类型", "安全性"], "No password": ["无密码", "無密碼"], "Password": ["密码", "密碼"], "Hidden network": ["隐藏网络", "隱藏網路"],
+    "Full name": ["联系人姓名", "聯絡人姓名"], "Phone": ["电话", "電話"], "Email": ["电子邮箱", "電子郵件"], "Company": ["公司", "公司"], "Website": ["网站", "網站"],
+    "Recipient email": ["收件人邮箱", "收件人電子郵件"], "Subject": ["主题", "主旨"], "Message": ["正文", "內容"], "Phone with country code": ["含国家区号的电话号码", "含國碼的電話號碼"],
+    "Starting message": ["预设消息", "預設訊息"], "Logo image (PNG, JPG, or WebP)": ["Logo 图片（PNG、JPG 或 WebP）", "Logo 圖片（PNG、JPG 或 WebP）"]
+  };
+  const label = (th: string, enText: string, viText: string) => zhCn ? chineseLabels[enText]?.[0] || enText : zhTw ? chineseLabels[enText]?.[1] || enText : vi ? viText : en ? enText : th;
   const update = <K extends keyof QrTaskValues>(key: K, value: QrTaskValues[K]) => setValues((current) => ({ ...current, [key]: value }));
 
   useEffect(() => {
     onPayload(buildQrPayload(mode, values));
     const issue = validateQrTask(mode, values);
-    const messages: Record<string, string> = vi ? {
+    const messages: Record<string, string> = zhCn ? {
+      url: "请输入有效网址。", text: "请输入要编码的文本。", ssid: "请输入 Wi-Fi 网络名称。", password: "请输入 Wi-Fi 密码。", name: "请输入联系人姓名。", email: "请输入有效的电子邮箱。", phone: "请输入包含国家区号的电话号码。"
+    } : zhTw ? {
+      url: "請輸入有效網址。", text: "請輸入要編碼的文字。", ssid: "請輸入 Wi-Fi 網路名稱。", password: "請輸入 Wi-Fi 密碼。", name: "請輸入聯絡人姓名。", email: "請輸入有效的電子郵件。", phone: "請輸入包含國碼的電話號碼。"
+    } : vi ? {
       url: "Nhập địa chỉ website.", text: "Nhập văn bản cần mã hóa.", ssid: "Nhập tên mạng Wi-Fi.", password: "Nhập mật khẩu Wi-Fi.", name: "Nhập tên liên hệ.", email: "Nhập địa chỉ email hợp lệ.", phone: "Nhập số điện thoại kèm mã quốc gia."
     } : en ? {
       url: "Enter a website address.", text: "Enter text to encode.", ssid: "Enter the Wi-Fi network name.", password: "Enter the Wi-Fi password.", name: "Enter a contact name.", email: "Enter a valid email address.", phone: "Enter a phone number with country code."
@@ -27,7 +40,7 @@ export default function QrTaskFields({ mode, language, onPayload, onError, onLog
       url: "กรุณาใส่ลิงก์เว็บไซต์", text: "กรุณาใส่ข้อความ", ssid: "กรุณาใส่ชื่อเครือข่าย Wi-Fi", password: "กรุณาใส่รหัสผ่าน Wi-Fi", name: "กรุณาใส่ชื่อผู้ติดต่อ", email: "กรุณาใส่อีเมลที่ถูกต้อง", phone: "กรุณาใส่เบอร์โทรพร้อมรหัสประเทศ"
     };
     onError(issue ? messages[issue] : "");
-  }, [en, vi, mode, onError, onPayload, values]);
+  }, [en, vi, zhCn, zhTw, mode, onError, onPayload, values]);
 
   const field = (label: string, key: keyof QrTaskValues, type = "text", placeholder = "") => (
     <label className="task-field"><span>{label}</span><input type={type} value={String(values[key])} placeholder={placeholder} onChange={(event) => update(key, event.target.value as never)} /></label>
