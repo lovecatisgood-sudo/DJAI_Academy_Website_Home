@@ -9,11 +9,7 @@ export function camPdfArticleMetadata(article) {
     title: article.articleTitle,
     description: article.articleDescription,
     alternates: {
-      canonical: path,
-      languages: {
-        "zh-CN": "/blog/zh-cn/cam-pdf-scanner-app-google-play-release/",
-        "zh-TW": "/blog/zh-tw/cam-pdf-scanner-app-google-play-release/"
-      }
+      canonical: path
     },
     robots: { index: article.indexable, follow: true },
     openGraph: { title: article.articleTitle, description: article.articleDescription, type: "article", images: [{ url: "/apps/cam-pdf/home.png", width: 390, height: 844 }] }

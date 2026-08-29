@@ -80,9 +80,7 @@ const paths = {
   },
   siameseCat: {
     en: "/siamese_cat/en/",
-    th: "/siamese_cat/",
-    "zh-CN": "/siamese_cat/zh-cn/",
-    "zh-TW": "/siamese_cat/zh-tw/"
+    th: "/siamese_cat/"
   },
   contact: {
     en: "/contact-us/en/",
@@ -130,6 +128,9 @@ export function languageForPath(pathname = "/") {
   if (/(?:^|\/)zh-tw(?:\/|$)/i.test(pathname)) return "zh-TW";
   if (/(?:^|\/)vi(?:\/|$)/i.test(pathname)) return "vi";
   if (/(?:^|\/)en(?:\/|$)/i.test(pathname)) return "en";
+  if (/^\/Cam_PDF_Scan_Signer_QR-Gen\/privacy\/th(?:\/|$)/i.test(pathname)) {
+    return "th";
+  }
   if (
     pathname === "/Cam_PDF_Scan_Signer_QR-Gen" ||
     pathname.startsWith("/Cam_PDF_Scan_Signer_QR-Gen/")
@@ -140,6 +141,10 @@ export function languageForPath(pathname = "/") {
 }
 
 export function alternateFor(route, locale = "en") {
+  if (locale === "zh-CN" || locale === "zh-TW") {
+    return { canonical: pathFor(route, locale) };
+  }
+
   return {
     canonical: pathFor(route, locale),
     languages: {

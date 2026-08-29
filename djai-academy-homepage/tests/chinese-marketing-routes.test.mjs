@@ -42,14 +42,9 @@ test("main i18n exposes both Chinese markets", () => {
   assert.equal(LOCALE_LABELS["zh-TW"], "繁體中文");
 });
 
-test("Chinese alternates are reciprocal and Thai remains x-default", () => {
-  assert.deepEqual(alternateFor("portfolio", "zh-CN").languages, {
-    en: "/portfolio/en/",
-    th: "/portfolio/",
-    vi: "/portfolio/vi/",
-    "zh-CN": "/portfolio/zh-cn/",
-    "zh-TW": "/portfolio/zh-tw/",
-    "x-default": "/portfolio/"
+test("review-gated Chinese routes publish a self-canonical without hreflang", () => {
+  assert.deepEqual(alternateFor("portfolio", "zh-CN"), {
+    canonical: "/portfolio/zh-cn/"
   });
 });
 

@@ -8,8 +8,6 @@ export const metadata = {
       en: "/en/",
       th: "/",
       vi: "/vi/",
-      "zh-CN": "/zh-cn/",
-      "zh-TW": "/zh-tw/",
       "x-default": "/"
     }
   },

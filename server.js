@@ -513,9 +513,10 @@ async function start() {
         rewriteRequestPath(req, "/web_promo", "");
         // Keep the public locale URL aligned with the site's trailing-slash
         // convention while sending Next.js its internal non-slash route.
-        if (pathname === "/web_promo/vi/") {
-          const internalUrl = new URL(req.url || "/vi", "http://localhost");
-          internalUrl.pathname = "/vi";
+        const promoLocale = pathname.match(/^\/web_promo\/(vi|zh-cn|zh-tw)\/$/)?.[1];
+        if (["vi", "zh-cn", "zh-tw"].includes(promoLocale)) {
+          const internalUrl = new URL(req.url || `/${promoLocale}`, "http://localhost");
+          internalUrl.pathname = `/${promoLocale}`;
           req.url = `${internalUrl.pathname}${internalUrl.search}`;
         }
         proxyRequest(req, res, voicePromoPort);
