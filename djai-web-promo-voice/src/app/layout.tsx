@@ -63,7 +63,8 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const locale = (await headers()).get("x-djai-locale") === "vi" ? "vi" : "th";
+  const requestedLocale = (await headers()).get("x-djai-locale");
+  const locale = requestedLocale === "vi" || requestedLocale === "zh-CN" || requestedLocale === "zh-TW" ? requestedLocale : "th";
   return (
     <html lang={locale}>
       <head>

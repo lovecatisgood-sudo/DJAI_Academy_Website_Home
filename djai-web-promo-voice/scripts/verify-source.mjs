@@ -24,10 +24,16 @@ const leadRoute = read("src/app/api/lead/route.ts");
 const conversationRoute = read("src/app/api/conversation/route.ts");
 const settingsCache = read("src/lib/settings-cache.ts");
 const rootLayout = read("src/app/layout.tsx");
+const publicLocales = read("src/lib/public-locales.ts");
+const middlewareSource = read("src/middleware.ts");
 const dependencies = {
   ...packageJson.dependencies,
   ...packageJson.devDependencies,
 };
+
+assert(publicLocales.includes('"zh-CN"') && publicLocales.includes('"zh-TW"'), "Chinese public locales must be declared.");
+assert(middlewareSource.includes('publicLocaleFromPath'), "Middleware must derive public locale from the request path.");
+assert(!middlewareSource.includes('voice_admin'), "Chinese public locale routing must not change the voice admin surface.");
 
 assert(
   rootLayout.includes('const GA_ID = "G-CGJ5BTR44T"') &&
