@@ -4,6 +4,7 @@ import SiteHeader from "../components/SiteHeader";
 import styles from "./page.module.css";
 
 const APP_PATH = "/Cam_PDF_Scan_Signer_QR-Gen/";
+const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.djai.campdfscan";
 
 export const metadata = {
   title: "Cam PDF Scan Signer QR Gen for Android | DJAI",
@@ -84,6 +85,7 @@ const structuredData = {
   description:
     "Android document scanner, PDF editor, signer, file manager, export utility, and QR code studio by DJAI.",
   url: `https://www.djai.academy${APP_PATH}`,
+  installUrl: PLAY_STORE_URL,
   author: {
     "@type": "Organization",
     name: "DJAI Academy",
@@ -146,7 +148,7 @@ export default function CamPdfAppPage() {
               sign, compress, name, and share from one Android workspace.
             </p>
             <div className={styles.heroActions}>
-              <span className={styles.releaseButton}>Google Play release in progress</span>
+              <a className={styles.releaseButton} href={PLAY_STORE_URL}>Download on Google Play</a>
               <a className={styles.secondaryButton} href="#product">
                 Explore the app
               </a>
@@ -269,13 +271,14 @@ export default function CamPdfAppPage() {
 
         <section className={styles.finalCta}>
           <Image src="/apps/cam-pdf/icon.webp" alt="Cam PDF app icon" width={92} height={92} />
-          <p className={styles.kicker}>Launch preparation underway</p>
+          <p className={styles.kicker}>Available on Google Play</p>
           <h2>Cam PDF Scan Signer QR Gen</h2>
           <p>
-            The Android release is being prepared for Google Play. Product and privacy information
-            on this page will stay available as the official app reference.
+            Download the Android app from Google Play. Product, privacy, support, and account
+            information on this page remains the official DJAI reference. The iOS release is planned;
+            stay tuned for its release announcement.
           </p>
-          <a href="mailto:contact@djai.academy?subject=Cam%20PDF%20app">contact@djai.academy</a>
+          <a href={PLAY_STORE_URL}>Download on Google Play</a>
         </section>
       </main>
       <SiteFooter locale="en" />

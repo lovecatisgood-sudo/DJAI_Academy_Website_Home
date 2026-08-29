@@ -231,7 +231,7 @@ export default function Home({ toolSlug, pageCopy }: { toolSlug?: QrToolSlug; pa
           <h2 id="cam-pdf-app-title">ต้องการสแกนเอกสาร เซ็น PDF และสร้าง QR บนมือถือ?</h2>
           <p>Cam PDF Scan, Signer & QR Generator รวมเครื่องมือเอกสารขั้นสูงสำหรับมือถือ ทั้ง scanner, PDF signer, QR generator และ workflow productivity ในแอปเดียว</p>
         </div>
-        <a className="primary" href="https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/">ดาวน์โหลดแอป <span>↗</span></a>
+        <a className="primary" href="https://play.google.com/store/apps/details?id=com.djai.campdfscan">ดาวน์โหลดจาก Google Play <span>↗</span></a>
       </section>
 
       <section className="how-section" id="how">

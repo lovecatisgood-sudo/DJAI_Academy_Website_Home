@@ -231,7 +231,7 @@ export default function Home({ toolSlug, pageCopy }: { toolSlug?: QrToolSlug; pa
           <h2 id="cam-pdf-app-title">Need scanning, PDF signing, and QR tools on your phone?</h2>
           <p>Cam PDF Scan, Signer & QR Generator brings advanced mobile document tools into one app, including a scanner, PDF signer, QR generator, and productivity workflows.</p>
         </div>
-        <a className="primary" href="https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/">Download the app <span>↗</span></a>
+        <a className="primary" href="https://play.google.com/store/apps/details?id=com.djai.campdfscan">Download on Google Play <span>↗</span></a>
       </section>
 
       <section className="how-section" id="how">

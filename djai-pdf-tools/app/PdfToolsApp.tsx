@@ -307,7 +307,7 @@ function CamPdfAppCallout({ language }: { language: Language }) {
             : "Cam PDF Scan, Signer & QR Generator รวมการสแกนเอกสาร เซ็น PDF เครื่องมือ QR และฟีเจอร์ productivity ขั้นสูงไว้ในแอปมือถือเดียว"}
         </p>
       </div>
-      <a className="primary-button" href="https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/">
+      <a className="primary-button" href="https://play.google.com/store/apps/details?id=com.djai.campdfscan">
         {vi ? "Tải ứng dụng" : en ? "Download the app" : "ดาวน์โหลดแอป"}<ArrowRight />
       </a>
     </section>

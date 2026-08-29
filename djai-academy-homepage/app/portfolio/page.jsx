@@ -41,7 +41,7 @@ const categories = [
           "/apps/cam-pdf/home.png",
           "/apps/cam-pdf/qr.png"
         ],
-        href: "/Cam_PDF_Scan_Signer_QR-Gen/",
+        href: "https://play.google.com/store/apps/details?id=com.djai.campdfscan",
         description:
           "แอป Android สำหรับสแกนและจัดระเบียบเอกสาร นำเข้า PDF, DOCX และรูปภาพ แก้ไข เซ็น ตั้งชื่อไฟล์ก่อนส่งออก และสร้างหรือสแกน QR code โดยเน้นการประมวลผลเอกสารในอุปกรณ์",
         services: ["Android app", "Document scanning", "PDF and QR tools"]

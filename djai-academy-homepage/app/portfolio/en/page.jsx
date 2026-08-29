@@ -41,7 +41,7 @@ const categories = [
           "/apps/cam-pdf/home.png",
           "/apps/cam-pdf/qr.png"
         ],
-        href: "/Cam_PDF_Scan_Signer_QR-Gen/",
+        href: "https://play.google.com/store/apps/details?id=com.djai.campdfscan",
         description:
           "An Android document workspace for scanning and organizing files, importing PDFs, DOCX documents and images, editing and signing pages, naming exports, and creating or scanning QR codes with local document processing.",
         services: ["Android app", "Document scanning", "PDF and QR tools"]

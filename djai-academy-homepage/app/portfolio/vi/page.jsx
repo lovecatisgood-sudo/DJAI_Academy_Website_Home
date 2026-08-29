@@ -11,7 +11,7 @@ export const metadata = {
 
 const categories = [
   { id: "mobile", label: "Ứng dụng di động", title: "Công cụ tài liệu dùng hằng ngày", summary: "Sản phẩm Android gom thao tác quét, quản lý tệp, chỉnh sửa PDF, ký tên và tạo QR vào một luồng gọn.", projects: [
-    ["Cam PDF Scan Signer QR Gen", "/apps/cam-pdf/home.png", "Không gian làm việc tài liệu trên Android: quét và sắp xếp tệp, nhập PDF, DOCX và ảnh, chỉnh sửa, ký, xuất tệp và xử lý QR.", ["Android", "Quét tài liệu", "PDF và QR"], "/Cam_PDF_Scan_Signer_QR-Gen/"]
+    ["Cam PDF Scan Signer QR Gen", "/apps/cam-pdf/home.png", "Không gian làm việc tài liệu trên Android: quét và sắp xếp tệp, nhập PDF, DOCX và ảnh, chỉnh sửa, ký, xuất tệp và xử lý QR.", ["Android", "Quét tài liệu", "PDF và QR"], "https://play.google.com/store/apps/details?id=com.djai.campdfscan"]
   ]},
   { id: "website", label: "Website", title: "Website cho doanh nghiệp, sản phẩm và thương hiệu địa phương", summary: "Từ website B2B đến trang dịch vụ và landing page, mỗi dự án tập trung vào thông tin người dùng cần để đưa ra bước tiếp theo.", projects: [
     ["Siam Silk Road Global Logistic", "/portfolio/optimized/websites/Siam_Silk_Road_Global_Logistic.webp", "Website doanh nghiệp logistics và thương mại quốc tế đặt tại Thái Lan, phục vụ kết nối với thị trường Trung Á và khu vực lân cận.", ["Website doanh nghiệp", "B2B"], "https://ssrgc.com/"],
