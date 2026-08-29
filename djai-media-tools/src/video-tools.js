@@ -6,8 +6,10 @@ const configEl = document.getElementById('tool-config');
 if (!configEl) return;
 const CFG = JSON.parse(configEl.textContent);
 const TH = document.documentElement.lang === 'th';
+const ZH_CN = document.documentElement.lang === 'zh-CN';
+const ZH_TW = document.documentElement.lang === 'zh-TW';
 
-const L = TH ? {
+let L = TH ? {
   choose:'เลือกไฟล์', drop:'ลากไฟล์วิดีโอมาวางตรงนี้', dropMulti:'ลากวิดีโอหลายไฟล์มาวางตรงนี้',
   browse:'หรือเลือกจากคอมพิวเตอร์ โทรศัพท์ หรือแท็บเล็ต', limit:'สูงสุด 350 MB ต่อไฟล์',
   formats:'MP4 · MOV · WebM · MKV · AVI · MPEG · M4V · 3GP · TS · WMV และ format ทั่วไป',
@@ -58,6 +60,12 @@ const L = TH ? {
   unsupportedResult:'Your browser may not preview this output format, but you can still download it.',
   alreadyUnder:mb=>`Your file was already under ${mb} MB, so it was compressed smaller instead of being made bigger.`,
   localNote:'The file itself is processed in WebAssembly on your device.'
+};
+
+if (ZH_CN || ZH_TW) L = ZH_TW ? {
+  choose:'選擇檔案', drop:'將影片拖曳至此', dropMulti:'將多部影片拖曳至此', browse:'或從電腦、手機或平板選取', limit:'每個檔案上限 350 MB', formats:'MP4 · MOV · WebM · MKV · AVI · MPEG · M4V · 3GP · TS · WMV 與常見格式', change:'更換檔案', addMore:'加入影片', ready:'準備完成，設定選項後即可開始處理。', browserPreview:'瀏覽器預覽', noPreview:'瀏覽器無法直接播放此格式', buildPreview:'正在透過 FFmpeg 建立暫時預覽…', engineLoad:'首次載入影片處理引擎（約 31 MB）…', engineReady:'影片處理引擎已就緒', preparing:'正在準備檔案…', processing:'正在處理影片…', done:'處理完成，檔案可供下載。', failed:'處理失敗，請嘗試較小的檔案或不同的輸出設定。', tooLarge:'檔案超過 350 MB 上限。', invalid:'請選擇支援的檔案格式。', download:'下載', result:'處理結果', output:'輸出格式', quality:'影片品質', resolution:'解析度', original:'維持原始尺寸', smaller:'較小檔案', balanced:'平衡', high:'高品質', target:'目標大小（MB）', targetHelp:'此為估算值；瀏覽器轉檔結果可能略高或略低。', start:'開始', end:'結束', current:'目前時間', setStart:'設為開始時間', setEnd:'設為結束時間', previewSelection:'預覽選取片段', aspect:'長寬比', width:'寬度', interval:'影格擷取間隔', frameFormat:'圖片格式', speed:'播放速度', angle:'旋轉角度', audioFile:'音訊檔案', audioMode:'音訊模式', replace:'取代原始音訊', mix:'與原始音訊混合', mergeOrder:'影片順序', up:'上移', down:'下移', remove:'移除', process:'開始處理', addAudio:'選擇音訊檔案', fps:'每秒影格數', gifWidth:'GIF 寬度', noUpload:'影片不會上傳至 DJAI', nativeFail:'仍可處理此檔案，但瀏覽器可能無法預覽原始格式。', needAudio:'請一併選擇音訊檔案。', needMulti:'請至少選擇兩部影片。', needRange:'結束時間必須晚於開始時間。', framesReady:'影格擷取完成', zip:'全部下載為 ZIP', maxFrames:'每次最多擷取 100 張，以免占用過多瀏覽器記憶體。', unsupportedResult:'瀏覽器可能無法預覽輸出格式，但仍可下載檔案。', alreadyUnder:mb=>`原始檔案已小於 ${mb} MB，因此工具會繼續壓縮，而不會放大檔案。`, localNote:'檔案透過 WebAssembly 在目前裝置上處理。', engineFailed:'無法載入影片處理引擎，請檢查網路後再試一次。', example:'例如 25', noAudio:'匯出的影片不含音軌。', second:n=>`${n} 秒`, clockwise:'90° 順時針', counterClockwise:'90° 逆時針', fileUnit:'個檔案', imageUnit:'張圖片'
+} : {
+  choose:'選擇文件', drop:'将视频拖放到这里', dropMulti:'将多个视频拖放到这里', browse:'或从电脑、手机或平板中选择', limit:'每个文件上限 350 MB', formats:'MP4 · MOV · WebM · MKV · AVI · MPEG · M4V · 3GP · TS · WMV 及常见格式', change:'更换文件', addMore:'添加视频', ready:'准备完成，设置选项后即可开始处理。', browserPreview:'浏览器预览', noPreview:'浏览器无法直接播放此格式', buildPreview:'正在通过 FFmpeg 创建临时预览…', engineLoad:'首次加载视频处理引擎（约 31 MB）…', engineReady:'视频处理引擎已就绪', preparing:'正在准备文件…', processing:'正在处理视频…', done:'处理完成，文件可以下载。', failed:'处理失败，请尝试较小的文件或不同的输出设置。', tooLarge:'文件超过 350 MB 上限。', invalid:'请选择支持的文件格式。', download:'下载', result:'处理结果', output:'输出格式', quality:'视频质量', resolution:'分辨率', original:'保持原始尺寸', smaller:'较小文件', balanced:'均衡', high:'高质量', target:'目标大小（MB）', targetHelp:'此数值为估算值；浏览器转换结果可能略高或略低。', start:'开始', end:'结束', current:'当前时间', setStart:'设为开始时间', setEnd:'设为结束时间', previewSelection:'预览所选片段', aspect:'宽高比', width:'宽度', interval:'视频帧提取间隔', frameFormat:'图片格式', speed:'播放速度', angle:'旋转角度', audioFile:'音频文件', audioMode:'音频模式', replace:'替换原音频', mix:'与原音频混合', mergeOrder:'视频顺序', up:'上移', down:'下移', remove:'移除', process:'开始处理', addAudio:'选择音频文件', fps:'每秒帧数', gifWidth:'GIF 宽度', noUpload:'视频不会上传到 DJAI', nativeFail:'仍可处理此文件，但浏览器可能无法预览原始格式。', needAudio:'请同时选择音频文件。', needMulti:'请至少选择两个视频文件。', needRange:'结束时间必须晚于开始时间。', framesReady:'视频帧提取完成', zip:'全部下载为 ZIP', maxFrames:'每次最多提取 100 张，避免占用过多浏览器内存。', unsupportedResult:'浏览器可能无法预览输出格式，但仍可下载文件。', alreadyUnder:mb=>`原文件已小于 ${mb} MB，因此工具会继续压缩，而不会放大文件。`, localNote:'文件通过 WebAssembly 在当前设备上处理。', engineFailed:'无法加载视频处理引擎，请检查网络后重试。', example:'例如 25', noAudio:'导出的视频不包含音轨。', second:n=>`${n} 秒`, clockwise:'顺时针旋转 90°', counterClockwise:'逆时针旋转 90°', fileUnit:'个文件', imageUnit:'张图片'
 };
 
 const CORE_BASE='/tools/media/vendor/core';
@@ -192,7 +200,7 @@ async function ensureEngine(){
     engine.progressCb=({progress:p})=>{if(Number.isFinite(p))progress(18+clamp(p,0,1)*77,true)};
     engine.logCb=()=>{};
     await engine.load(coreJSBlob,coreWasmBlob); engineReady=true; status(L.engineReady,'ok');progress(100,true);await delay(250);progress(0,false);return engine
-  }catch(e){console.error(e);progress(0,false);status(TH?'โหลด video engine ไม่สำเร็จ กรุณาตรวจอินเทอร์เน็ตแล้วลองใหม่':'Could not load the video engine. Check your connection and try again.','error');throw e}
+  }catch(e){console.error(e);progress(0,false);status(L.engineFailed||(TH?'โหลด video engine ไม่สำเร็จ กรุณาตรวจอินเทอร์เน็ตแล้วลองใหม่':'Could not load the video engine. Check your connection and try again.'),'error');throw e}
 }
 async function del(path){if(engineReady&&path)try{await engine.deleteFile(path)}catch(_){}}
 async function clearResults(){
@@ -306,7 +314,7 @@ function renderOptions(){
   if(m==='convert')s+=baseVideoOptions(true);
   else if(m==='cutter'){s+=baseVideoOptions(true);document.getElementById('timelineHolder').innerHTML=timelineHTML()}
   else if(m==='compressor'){
-    s+=`<div class="field"><label for="targetMB">${L.target}</label><input id="targetMB" type="number" min="1" max="2000" step="1" value="${CFG.targetMB||''}" placeholder="${TH?'เช่น 25':'e.g. 25'}"><small>${L.targetHelp}</small></div>${baseVideoOptions(false)}`
+    s+=`<div class="field"><label for="targetMB">${L.target}</label><input id="targetMB" type="number" min="1" max="2000" step="1" value="${CFG.targetMB||''}" placeholder="${L.example||(TH?'เช่น 25':'e.g. 25')}"><small>${L.targetHelp}</small></div>${baseVideoOptions(false)}`
   }else if(m==='cropper'){
     s+=`<div class="field"><label for="aspect">${L.aspect}</label><select id="aspect">${opt('16:9','16:9 · Landscape',true)}${opt('9:16','9:16 · Vertical')}${opt('1:1','1:1 · Square')}${opt('4:5','4:5 · Portrait')}${opt('3:2','3:2')}</select></div>${baseVideoOptions(false)}`
   }else if(m==='resizer'){
@@ -318,15 +326,15 @@ function renderOptions(){
   }else if(m==='gif-to-mp4'){
     s+=`<div class="field"><label for="quality">${L.quality}</label><select id="quality">${opt('smaller',L.smaller)}${opt('balanced',L.balanced,true)}${opt('high',L.high)}</select></div>`
   }else if(m==='remove-audio'){
-    s+=`<p class="note">${TH?'วิดีโอจะถูกสร้างใหม่โดยไม่มี audio stream':'The exported video is created without an audio stream.'}</p><div class="field"><label for="quality">${L.quality}</label><select id="quality">${opt('smaller',L.smaller)}${opt('balanced',L.balanced,true)}${opt('high',L.high)}</select></div>`
+    s+=`<p class="note">${L.noAudio||(TH?'วิดีโอจะถูกสร้างใหม่โดยไม่มี audio stream':'The exported video is created without an audio stream.')}</p><div class="field"><label for="quality">${L.quality}</label><select id="quality">${opt('smaller',L.smaller)}${opt('balanced',L.balanced,true)}${opt('high',L.high)}</select></div>`
   }else if(m==='add-audio'){
     s+=`<div class="field"><label>${L.audioFile}</label><button id="audioBtn" class="btn soft" type="button">${L.addAudio}</button><input id="audioInput" class="hidden-input" type="file" accept="audio/*,.mp3,.wav,.m4a,.aac,.ogg,.flac"><small id="audioName">—</small></div><div class="field"><label for="audioMode">${L.audioMode}</label><select id="audioMode">${opt('replace',L.replace,true)}${opt('mix',L.mix)}</select></div><div class="field"><label for="quality">${L.quality}</label><select id="quality">${opt('smaller',L.smaller)}${opt('balanced',L.balanced,true)}${opt('high',L.high)}</select></div>`
   }else if(m==='speed'){
     s+=`<div class="field"><label for="speed">${L.speed}</label><select id="speed">${opt('0.5','0.5×')}${opt('0.75','0.75×')}${opt('1.25','1.25×',true)}${opt('1.5','1.5×')}${opt('2','2×')}</select></div><div class="field"><label for="quality">${L.quality}</label><select id="quality">${opt('smaller',L.smaller)}${opt('balanced',L.balanced,true)}${opt('high',L.high)}</select></div>`
   }else if(m==='frames'){
-    s+=`<div class="field"><label for="frameInterval">${L.interval}</label><select id="frameInterval">${opt('1',TH?'1 วินาที':'1 second')}${opt('2',TH?'2 วินาที':'2 seconds')}${opt('5',TH?'5 วินาที':'5 seconds',true)}${opt('10',TH?'10 วินาที':'10 seconds')}</select></div><div class="field"><label for="frameFormat">${L.frameFormat}</label><select id="frameFormat">${opt('jpg','JPG',true)}${opt('png','PNG')}</select><small>${L.maxFrames}</small></div>`
+    s+=`<div class="field"><label for="frameInterval">${L.interval}</label><select id="frameInterval">${opt('1',L.second?L.second(1):(TH?'1 วินาที':'1 second'))}${opt('2',L.second?L.second(2):(TH?'2 วินาที':'2 seconds'))}${opt('5',L.second?L.second(5):(TH?'5 วินาที':'5 seconds'),true)}${opt('10',L.second?L.second(10):(TH?'10 วินาที':'10 seconds'))}</select></div><div class="field"><label for="frameFormat">${L.frameFormat}</label><select id="frameFormat">${opt('jpg','JPG',true)}${opt('png','PNG')}</select><small>${L.maxFrames}</small></div>`
   }else if(m==='rotate'){
-    s+=`<div class="field"><label for="angle">${L.angle}</label><select id="angle">${opt('cw',TH?'90° ตามเข็มนาฬิกา':'90° clockwise',true)}${opt('ccw',TH?'90° ทวนเข็มนาฬิกา':'90° counter-clockwise')}${opt('180','180°')}</select></div><div class="field"><label for="quality">${L.quality}</label><select id="quality">${opt('smaller',L.smaller)}${opt('balanced',L.balanced,true)}${opt('high',L.high)}</select></div>`
+    s+=`<div class="field"><label for="angle">${L.angle}</label><select id="angle">${opt('cw',L.clockwise||(TH?'90° ตามเข็มนาฬิกา':'90° clockwise'),true)}${opt('ccw',L.counterClockwise||(TH?'90° ทวนเข็มนาฬิกา':'90° counter-clockwise'))}${opt('180','180°')}</select></div><div class="field"><label for="quality">${L.quality}</label><select id="quality">${opt('smaller',L.smaller)}${opt('balanced',L.balanced,true)}${opt('high',L.high)}</select></div>`
   }
   o.innerHTML=s;
   if(m==='add-audio'){document.getElementById('audioBtn').addEventListener('click',()=>document.getElementById('audioInput').click());document.getElementById('audioInput').addEventListener('change',e=>{audioFile=e.target.files[0]||null;document.getElementById('audioName').textContent=audioFile?audioFile.name:'—'})}
@@ -394,7 +402,7 @@ function handleFiles(incoming){
   if(rejectedType){status(L.invalid,'error');return}
   if(!valid.length){status(incoming.some(f=>f.size>350*1024*1024)?L.tooLarge:L.invalid,'error');return}
   clearResults();
-  if(CFG.mode==='merger'){files=[...files,...valid];currentFile=files[0];renderMergeList();document.getElementById('fileName').textContent=`${files.length} ${TH?'ไฟล์':'files'}`;document.getElementById('fileInfo').textContent=files.map(f=>f.name).join(' · ');createPreview(files[0])}
+  if(CFG.mode==='merger'){files=[...files,...valid];currentFile=files[0];renderMergeList();document.getElementById('fileName').textContent=`${files.length} ${L.fileUnit||(TH?'ไฟล์':'files')}`;document.getElementById('fileInfo').textContent=files.map(f=>f.name).join(' · ');createPreview(files[0])}
   else{currentFile=valid[0];files=[currentFile];document.getElementById('fileName').textContent=currentFile.name;document.getElementById('fileInfo').textContent=`${humanSize(currentFile.size)} · ${extOf(currentFile.name).toUpperCase()}`;createPreview(currentFile)}
   document.getElementById('dropzone').hidden=true;document.getElementById('work').classList.add('active');status(L.ready,'ok')
 }
@@ -403,7 +411,7 @@ function renderMergeList(){
   list.innerHTML=files.map((f,i)=>`<div class="merge-item"><span class="merge-num">${i+1}</span><span class="merge-name">${esc(f.name)}</span><span class="merge-actions"><button class="btn mini up" data-i="${i}" type="button">↑</button><button class="btn mini down" data-i="${i}" type="button">↓</button><button class="btn mini rm" data-i="${i}" type="button">×</button></span></div>`).join('');
   list.querySelectorAll('.up').forEach(b=>b.onclick=()=>{const i=+b.dataset.i;if(i>0){[files[i-1],files[i]]=[files[i],files[i-1]];renderMergeList()}});
   list.querySelectorAll('.down').forEach(b=>b.onclick=()=>{const i=+b.dataset.i;if(i<files.length-1){[files[i+1],files[i]]=[files[i],files[i+1]];renderMergeList()}});
-  list.querySelectorAll('.rm').forEach(b=>b.onclick=()=>{files.splice(+b.dataset.i,1);currentFile=files[0]||null;renderMergeList();document.getElementById('fileName').textContent=files.length?`${files.length} ${TH?'ไฟล์':'files'}`:'—'})
+  list.querySelectorAll('.rm').forEach(b=>b.onclick=()=>{files.splice(+b.dataset.i,1);currentFile=files[0]||null;renderMergeList();document.getElementById('fileName').textContent=files.length?`${files.length} ${L.fileUnit||(TH?'ไฟล์':'files')}`:'—'})
 }
 
 async function process(){
@@ -542,7 +550,7 @@ async function doFrames(){
   // shorter than the interval (for example, a 2-second clip at 1/5 fps).
   const vf=`select=eq(n\\,0)+gte(t-prev_selected_t\\,${ival})`;
   await execChecked(['-hide_banner','-loglevel','error','-i',input,'-vf',vf,'-vsync','vfr','-frames:v','100',pattern]);const nodes=await engine.listDir('/');const names=nodes.map(n=>n.name).filter(n=>/^frame-\d+\.png$/.test(n)).sort();
-  const res=document.getElementById('result');res.classList.add('on');document.getElementById('resultMeta').textContent=`${L.framesReady} · ${names.length} ${TH?'ภาพ':'images'}`;const dl=document.getElementById('downloads');dl.innerHTML='';
+  const res=document.getElementById('result');res.classList.add('on');document.getElementById('resultMeta').textContent=`${L.framesReady} · ${names.length} ${L.imageUnit||(TH?'ภาพ':'images')}`;const dl=document.getElementById('downloads');dl.innerHTML='';
   const blobs=[];
   for(const n of names){
     const data=await engine.readFile(n);let blob=new Blob([data.buffer],{type:'image/png'}),name=n;

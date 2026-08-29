@@ -90,6 +90,81 @@ function render(slug, config, lang, pagePath, pageCopy) {
 
 export const videoTools = JSON.parse(readFileSync(join(projectDir, "src", "video-tools-config.json"), "utf8"));
 const audioToolSlugs = new Set(["mp3-to-wav", "wav-to-mp3", "m4a-to-mp3", "mp4-to-mp3", "extract-audio-from-video"]);
+const chineseLocales = ["zh-CN", "zh-TW"].map((locale) => JSON.parse(readFileSync(join(projectDir, "src", "locales", `${locale}.json`), "utf8")));
+
+function chineseHref(slug, locale) {
+  return `${basePath}/${slug ? `${slug}/` : ""}${locale.segment}/`;
+}
+
+function chineseHead(locale, slug, title, description, schemas) {
+  const canonical = `${origin}${chineseHref(slug, locale)}`;
+  const base = slug ? `${basePath}/${slug}/` : `${basePath}/`;
+  return `<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${escapeHtml(title)} | DJAI Media Tools</title><meta name="description" content="${escapeHtml(description)}"><meta name="robots" content="noindex, follow"><link rel="canonical" href="${canonical}"><link rel="alternate" hreflang="th-TH" href="${origin}${base}"><link rel="alternate" hreflang="en-US" href="${origin}${base}en/"><link rel="alternate" hreflang="zh-CN" href="${origin}${base}zh-cn/"><link rel="alternate" hreflang="zh-TW" href="${origin}${base}zh-tw/"><link rel="alternate" hreflang="x-default" href="${origin}${base}"><meta property="og:title" content="${escapeHtml(title)}"><meta property="og:description" content="${escapeHtml(description)}"><meta property="og:url" content="${canonical}"><meta property="og:type" content="website"><meta property="og:site_name" content="DJAI Academy"><meta property="og:locale" content="${locale.ogLocale}"><meta property="og:image" content="${socialImage}"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="${escapeHtml(title)}"><meta name="twitter:description" content="${escapeHtml(description)}"><meta name="twitter:image" content="${socialImage}"><meta name="google-adsense-account" content="ca-pub-3624708289866566"><link rel="stylesheet" href="${basePath}/styles.css?v=20260808a">${schemas.map((schema) => `<script type="application/ld+json">${JSON.stringify(schema)}</script>`).join("")}`;
+}
+
+function chineseLinks(locale, active) {
+  return [...new Set([...Object.keys(tools), ...videoTools.map((item) => item.slug)])].map((slug) => `<a href="${chineseHref(slug, locale)}"${slug === active ? ' aria-current="page"' : ""}>${escapeHtml(locale.tools[slug])}</a>`).join("");
+}
+
+function chineseChrome(locale, slug) {
+  const tw = locale.locale === "zh-TW";
+  const other = chineseLocales.find((item) => item.locale !== locale.locale);
+  return {
+    header: `<header><a class="brand" href="/${locale.segment}/">DJAI <span>Media Tools</span></a><nav><a href="/tools/${locale.segment}/">${tw ? "全部工具" : "全部工具"}</a><a href="${chineseHref(slug, other)}" hreflang="${other.locale}">${locale.switchLabel}</a><a class="community" href="/academy/${locale.segment}/">${tw ? "學習社群" : "学习社区"}</a></nav></header>`,
+    footer: `<footer><span>DJAI Academy</span><a href="/academy/${locale.segment}/">${tw ? "前往 DJAI Academy" : "前往 DJAI Academy"}</a></footer>`
+  };
+}
+
+function chineseToolCopy(locale, slug) {
+  const tw = locale.locale === "zh-TW";
+  const name = locale.tools[slug];
+  return {
+    name,
+    title: `${name}${tw ? "免費線上工具" : "免费在线工具"}`,
+    description: tw
+      ? `${name}，檔案直接在目前裝置的瀏覽器中處理，不必註冊，也不會上傳至 DJAI。`
+      : `${name}，文件直接在当前设备的浏览器中处理，无需注册，也不会上传到 DJAI。`
+  };
+}
+
+function renderChineseAudio(slug, config, locale) {
+  const tw = locale.locale === "zh-TW";
+  const copy = chineseToolCopy(locale, slug);
+  const chrome = chineseChrome(locale, slug);
+  const schemas = [{ "@context": "https://schema.org", "@type": "SoftwareApplication", name: copy.name, url: `${origin}${chineseHref(slug, locale)}`, applicationCategory: "MultimediaApplication", operatingSystem: "Web browser", description: copy.description, inLanguage: locale.locale, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }];
+  return `<!doctype html><html lang="${locale.locale}"><head>${chineseHead(locale, slug, copy.title, copy.description, schemas)}</head><body data-tool="${slug}" data-output="${config.output}" data-compress="${config.compress ? "true" : "false"}">${chrome.header}<main><section class="hero"><p class="eyebrow">${tw ? "在瀏覽器本機處理" : "浏览器本地处理"}</p><h1>${escapeHtml(copy.title)}</h1><p>${escapeHtml(copy.description)}</p></section><nav class="task-links" aria-label="${tw ? "影音轉檔工具" : "音视频转换工具"}">${chineseLinks(locale, slug)}</nav><section class="tool" aria-labelledby="tool-title"><div class="tool-copy"><p class="eyebrow">${tw ? "免費轉檔工具" : "免费转换工具"}</p><h2 id="tool-title">${escapeHtml(copy.name)}</h2><p>${tw ? "轉檔引擎只會在開始時載入；原始檔案留在這台裝置上。" : "转换引擎仅在开始处理时加载；原文件始终保留在这台设备上。"}</p><ul><li>${tw ? "建議單一檔案不超過 500 MB" : "建议单个文件不超过 500 MB"}</li><li>${tw ? "大型影片需要足夠的記憶體，處理時間也會較長" : "大型视频需要足够内存，处理时间也会更长"}</li><li>${tw ? "若來源編碼不受支援，工具會顯示錯誤" : "如果源文件编码不受支持，工具会显示错误"}</li></ul></div><div class="converter"><label class="drop" for="media-input"><strong>${tw ? "選擇影音檔案" : "选择音视频文件"}</strong><span>${tw ? "支援格式" : "支持格式"}：${config.input.split(",")[0]}</span></label><input id="media-input" type="file" accept="${config.input}" hidden><div id="file-info" class="file-info" hidden></div><label>${tw ? "輸出品質" : "输出质量"}<select id="quality"><option value="high">${tw ? "高品質" : "高质量"}</option><option value="balanced" selected>${tw ? "平衡" : "均衡"}</option><option value="small">${tw ? "較小檔案" : "较小文件"}</option></select></label><button id="convert" type="button" disabled>${tw ? "開始處理" : "开始处理"}</button><progress id="progress" max="1" value="0" hidden></progress><p id="status" role="status">${tw ? "請先選擇檔案。" : "请先选择文件。"}</p><a id="download" class="download" hidden>${tw ? "下載轉檔結果" : "下载转换结果"}</a></div></section><section class="details"><div><h2>${tw ? "使用方式" : "使用方法"}</h2><ol><li>${tw ? "從裝置選擇支援的檔案。" : "从设备中选择支持的文件。"}</li><li>${tw ? "設定輸出品質並開始處理。" : "设置输出质量并开始处理。"}</li><li>${tw ? "完成後檢查檔案大小並下載。" : "完成后检查文件大小并下载。"}</li></ol></div><div><h2>${tw ? "隱私與限制" : "隐私与限制"}</h2><p>${tw ? "工具透過 FFmpeg WebAssembly 在裝置上處理檔案，不會將內容上傳至 DJAI。重新整理或關閉頁面會清除目前工作檔案。" : "工具通过 FFmpeg WebAssembly 在设备上处理文件，不会将内容上传到 DJAI。刷新或关闭页面会清除当前工作文件。"}</p></div></section></main>${chrome.footer}<script type="module" src="${basePath}/app.js"></script></body></html>`;
+}
+
+function renderChineseVideo(config, locale) {
+  const tw = locale.locale === "zh-TW";
+  const copy = chineseToolCopy(locale, config.slug);
+  const chrome = chineseChrome(locale, config.slug);
+  const canonical = `${origin}${chineseHref(config.slug, locale)}`;
+  const faq = tw ? [
+    ["影片會上傳至 DJAI 嗎？", "不會。檔案由目前裝置上的瀏覽器讀取與處理。"],
+    ["第一次處理為什麼比較久？", "第一次使用時，瀏覽器需要載入約 31 MB 的 FFmpeg WebAssembly 引擎。"],
+    ["所有影片格式都能處理嗎？", "支援程度取決於來源容器與編碼；無法讀取時，工具會明確顯示錯誤。"]
+  ] : [
+    ["视频会上传到 DJAI 吗？", "不会。文件由当前设备上的浏览器读取和处理。"],
+    ["为什么第一次处理比较慢？", "首次使用时，浏览器需要加载约 31 MB 的 FFmpeg WebAssembly 引擎。"],
+    ["所有视频格式都能处理吗？", "支持情况取决于源文件的封装格式和编码；无法读取时，工具会明确显示错误。"]
+  ];
+  const schemas = [
+    { "@context": "https://schema.org", "@type": "SoftwareApplication", name: copy.name, url: canonical, applicationCategory: "MultimediaApplication", operatingSystem: "Web browser", description: copy.description, inLanguage: locale.locale, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } },
+    { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: tw ? "免費工具" : "免费工具", item: `${origin}/tools/${locale.segment}/` }, { "@type": "ListItem", position: 2, name: locale.hubTitle, item: `${origin}${chineseHref("", locale)}` }, { "@type": "ListItem", position: 3, name: copy.name, item: canonical }] },
+    { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faq.map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) }
+  ];
+  const toolConfig = { slug: config.slug, mode: config.mode, fixedOutput: config.fixedOutput, fixedInput: config.fixedInput, targetMB: config.targetMB, uiTitle: copy.name };
+  const zipScript = config.mode === "frames" ? `<script src="${basePath}/vendor/jszip/jszip.min.js?v=20260809a" defer></script>` : "";
+  return `<!doctype html><html lang="${locale.locale}"><head>${chineseHead(locale, config.slug, copy.title, copy.description, schemas)}<link rel="stylesheet" href="${basePath}/video-tools.css?v=20260809a"></head><body data-tool="${config.slug}" data-mode="${config.mode}">${chrome.header}<main><section class="hero"><p class="eyebrow">${tw ? "在瀏覽器本機處理" : "浏览器本地处理"}</p><h1>${escapeHtml(copy.title)}</h1><p>${escapeHtml(copy.description)}</p></section><section class="video-tool" aria-labelledby="video-tool-title"><h2 id="video-tool-title">${escapeHtml(copy.name)}</h2><div id="video-tool-app"></div><script id="tool-config" type="application/json">${JSON.stringify(toolConfig)}</script></section><nav class="task-links" aria-label="${tw ? "影片工具" : "视频工具"}">${chineseLinks(locale, config.slug)}</nav><section class="details"><div><h2>${tw ? "為實際工作流程設計" : "为实际工作流程设计"}</h2><p>${tw ? "保留這項工作真正需要的設定，讓轉檔、剪輯或壓縮步驟更清楚。" : "只保留这项任务真正需要的设置，让转换、剪切或压缩步骤更清楚。"}</p></div><div><h2>${tw ? "隱私與限制" : "隐私与限制"}</h2><p>${tw ? "影片由 FFmpeg WebAssembly 在目前裝置上處理，不會上傳至 DJAI。速度取決於瀏覽器、記憶體、影片長度、解析度與來源編碼。" : "视频由 FFmpeg WebAssembly 在当前设备上处理，不会上传到 DJAI。速度取决于浏览器、内存、视频时长、分辨率和源文件编码。"}</p></div></section><section class="faq" aria-labelledby="faq-title"><h2 id="faq-title">${tw ? "常見問題" : "常见问题"}</h2><div class="faq-grid">${faq.map(([q, a]) => `<div class="faq-item"><h3>${q}</h3><p>${a}</p></div>`).join("")}</div></section></main>${chrome.footer}${zipScript}<script src="${basePath}/video-tools.js?v=20260829a" defer></script></body></html>`;
+}
+
+function renderChineseHub(locale) {
+  const tw = locale.locale === "zh-TW";
+  const chrome = chineseChrome(locale, "");
+  const schema = { "@context": "https://schema.org", "@type": "CollectionPage", name: locale.hubTitle, url: `${origin}${chineseHref("", locale)}`, description: locale.hubDescription, inLanguage: locale.locale, hasPart: [...new Set([...Object.keys(tools), ...videoTools.map((item) => item.slug)])].map((slug) => ({ "@type": "SoftwareApplication", name: locale.tools[slug], url: `${origin}${chineseHref(slug, locale)}`, applicationCategory: "MultimediaApplication", operatingSystem: "Web browser" })) };
+  return `<!doctype html><html lang="${locale.locale}"><head>${chineseHead(locale, "", locale.hubTitle, locale.hubDescription, [schema])}</head><body>${chrome.header}<main><section class="hero"><p class="eyebrow">${tw ? "免費・免註冊・不需上傳" : "免费・免注册・无需上传"}</p><h1>${locale.hubTitle}</h1><p>${locale.hubDescription}</p></section><nav class="task-links" aria-label="${tw ? "所有影音工具" : "全部音视频工具"}">${chineseLinks(locale, "")}</nav><section class="details"><div><h2>${tw ? "挑選符合任務的工具" : "选择适合任务的工具"}</h2><p>${tw ? "從格式轉換、剪輯、壓縮到擷取影格，每一頁都只保留該工作所需的控制項。" : "从格式转换、剪切、压缩到提取视频帧，每个页面只保留该任务所需的控制项。"}</p></div><div><h2>${tw ? "檔案留在你的裝置" : "文件留在你的设备"}</h2><p>${tw ? "所有處理都在瀏覽器中完成。大型檔案仍需要足夠記憶體與處理時間。" : "所有处理都在浏览器中完成。大型文件仍需要足够内存和处理时间。"}</p></div></section></main>${chrome.footer}</body></html>`;
+}
 
 function renderVideo(config, lang) {
   const copy = config[lang];
@@ -151,6 +226,21 @@ for (const config of videoTools) for (const lang of ["th", "en"]) {
     lang
   }));
 }
+for (const locale of chineseLocales) {
+  for (const [slug, config] of Object.entries(tools)) {
+    const directory = join(publicDir, slug, locale.segment);
+    mkdirSync(directory, { recursive: true });
+    writeFileSync(join(directory, "index.html"), renderChineseAudio(slug, config, locale));
+  }
+  for (const config of videoTools) {
+    const directory = join(publicDir, config.slug, locale.segment);
+    mkdirSync(directory, { recursive: true });
+    writeFileSync(join(directory, "index.html"), renderChineseVideo(config, locale));
+  }
+  const hubDirectory = join(publicDir, locale.segment);
+  mkdirSync(hubDirectory, { recursive: true });
+  writeFileSync(join(hubDirectory, "index.html"), renderChineseHub(locale));
+}
 const first = Object.entries(tools)[0];
 const thaiHub = ["เครื่องมือวิดีโอและเสียงฟรี ออนไลน์", "เครื่องมือวิดีโอและเสียงฟรีใน browser", "แปลง ตัด บีบอัด ครอป resize รวม หมุน หรือดึง frame จากวิดีโอ และจัดการไฟล์เสียงฟรีใน browser โดยไม่ upload ไฟล์"];
 writeFileSync(join(publicDir, "index.html"), enhanceHead(
@@ -164,4 +254,4 @@ writeFileSync(join(publicDir, "en", "index.html"), enhanceHead(
   { title: `${englishHub[0]} | DJAI Media Tools`, description: englishHub[2], canonical: `${origin}${basePath}/en/`, lang: "en" }
 ));
 const uniqueToolCount = new Set([...Object.keys(tools), ...videoTools.map((item) => item.slug)]).size;
-console.log(`Built ${uniqueToolCount * 2 + 2} media-tool pages.`);
+console.log(`Built ${uniqueToolCount * 4 + 4} media-tool pages.`);

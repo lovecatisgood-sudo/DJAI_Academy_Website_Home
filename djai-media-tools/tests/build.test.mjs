@@ -110,6 +110,29 @@ test("shared video runtime parses", () => {
   assert.equal(result.status, 0, result.stderr);
 });
 
+test("exports every media tool for Mainland China and Taiwan", () => {
+  const slugs = [...new Set([...Object.keys(tools), ...videoTools.map((tool) => tool.slug)])];
+  assert.equal(slugs.length, 28);
+  for (const [segment, locale, expected] of [["zh-cn", "zh-CN", /选择|提取|压缩/], ["zh-tw", "zh-TW", /選擇|擷取|壓縮/]]) {
+    const hub = readFileSync(join(root, "public", segment, "index.html"), "utf8");
+    assert.match(hub, new RegExp(`<html lang="${locale}"`));
+    assert.match(hub, /name="robots" content="noindex, follow"/);
+    assert.equal((hub.match(/applicationCategory":"MultimediaApplication"/g) || []).length, 28);
+    for (const slug of slugs) {
+      const path = join(root, "public", slug, segment, "index.html");
+      assert.equal(existsSync(path), true, path);
+      const html = readFileSync(path, "utf8");
+      assert.match(html, new RegExp(`<html lang="${locale}"`));
+      assert.match(html, new RegExp(`<link rel="canonical" href="https://www.djai.academy/tools/media/${slug}/${segment}/"`));
+      assert.match(html, /hreflang="zh-CN"/);
+      assert.match(html, /hreflang="zh-TW"/);
+      assert.match(html, /name="robots" content="noindex, follow"/);
+      assert.match(html, expected);
+      assert.doesNotMatch(html, /เลือกไฟล์|Choose file|Processing failed/);
+    }
+  }
+});
+
 test("fixed-input video routes constrain picker and drop uploads", () => {
   const runtime = readFileSync(join(root, "src", "video-tools.js"), "utf8");
   assert.match(runtime, /function fixedInputExtension\(\)/);
