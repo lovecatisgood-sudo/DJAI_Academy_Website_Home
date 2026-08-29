@@ -1,13 +1,14 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useState, useSyncExternalStore } from "react";
+import { consentCopy, privacyPathForLocale } from "../lib/consentCopy";
 
 const STORAGE_KEY = "djai_consent_v1";
 const STORAGE_VERSION = 1;
 const MAX_AGE_MS = 180 * 24 * 60 * 60 * 1000;
 const subscribeToHydration = () => () => {};
 
-const copy = {
+const legacyCopy = {
   en: {
     title: "Your privacy choices",
     summary:
@@ -63,6 +64,8 @@ const copy = {
     dialogLabel: "Cài đặt chấp thuận cookie"
   }
 };
+
+const copy = { ...legacyCopy, ...consentCopy };
 
 function consentPayload(analytics, advertising) {
   return {
@@ -199,7 +202,7 @@ export default function ConsentManager({ gaId, locale = "en" }) {
             <h2>{text.title}</h2>
           </div>
           {activeConsent && (
-            <button className="consent-close" type="button" aria-label="Close" onClick={() => setVisible(false)}>
+            <button className="consent-close" type="button" aria-label={text.close || "Close"} onClick={() => setVisible(false)}>
               ×
             </button>
           )}
@@ -214,7 +217,7 @@ export default function ConsentManager({ gaId, locale = "en" }) {
                 <strong>{text.necessary}</strong>
                 <span>{text.necessaryHelp}</span>
               </div>
-              <span className="consent-required" aria-label="Always enabled">✓</span>
+              <span className="consent-required" aria-label={text.alwaysEnabled || "Always enabled"}>✓</span>
             </div>
             <label className="consent-option">
               <div>
@@ -241,7 +244,7 @@ export default function ConsentManager({ gaId, locale = "en" }) {
           </div>
         )}
 
-        <a className="consent-policy-link" href={locale === "th" ? "/privacy/" : `/privacy/${locale}/`}>
+        <a className="consent-policy-link" href={privacyPathForLocale(locale)}>
           {text.policy}
         </a>
 

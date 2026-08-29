@@ -109,6 +109,30 @@ const footerCopy = {
     copyright: "© 2026 DJAI Academy. Bảo lưu mọi quyền.",
     privacy: "Quyền riêng tư và cookie",
     cookieSettings: "Cài đặt cookie"
+  },
+  "zh-CN": {
+    columns: [
+      { title: "学习", links: [["AI 课程", "course"], ["学习社区", "community"], ["文章", "blog"]] },
+      { title: "构建", links: [["产品开发", "development"], ["开发服务", "service"], ["项目案例", "portfolio"], ["Cam PDF Android 应用", "/Cam_PDF_Scan_Signer_QR-Gen/"]] },
+      { title: "工具与社区", links: [["免费工具", "tools"], ["Siamese Cat", "siameseCat"], ["联系 DJAI", "contact"]] }
+    ],
+    contact: "联系",
+    email: "电子邮件：contact@djai.academy",
+    copyright: "© 2026 DJAI Academy。保留所有权利。",
+    privacy: "隐私政策与 Cookie",
+    cookieSettings: "Cookie 设置"
+  },
+  "zh-TW": {
+    columns: [
+      { title: "學習", links: [["AI 課程", "course"], ["學習社群", "community"], ["文章", "blog"]] },
+      { title: "打造", links: [["產品開發", "development"], ["開發服務", "service"], ["專案案例", "portfolio"], ["Cam PDF Android 應用程式", "/Cam_PDF_Scan_Signer_QR-Gen/"]] },
+      { title: "工具與社群", links: [["免費工具", "tools"], ["Siamese Cat", "siameseCat"], ["聯絡 DJAI", "contact"]] }
+    ],
+    contact: "聯絡",
+    email: "電子郵件：contact@djai.academy",
+    copyright: "© 2026 DJAI Academy。保留所有權利。",
+    privacy: "隱私權政策與 Cookie",
+    cookieSettings: "Cookie 設定"
   }
 };
 
@@ -150,8 +174,8 @@ export default function SiteFooter({ locale = "en" }) {
 
       <div className="copyright">
         <span>{copy.copyright}</span>
-        <nav className="footer-legal" aria-label={locale === "th" ? "ลิงก์ทางกฎหมาย" : locale === "vi" ? "Liên kết pháp lý" : "Legal links"}>
-          <a href={locale === "th" ? "/privacy/" : `/privacy/${locale}/`}>{copy.privacy}</a>
+        <nav className="footer-legal" aria-label={locale === "th" ? "ลิงก์ทางกฎหมาย" : locale === "vi" ? "Liên kết pháp lý" : locale === "zh-CN" ? "法律链接" : locale === "zh-TW" ? "法律連結" : "Legal links"}>
+          <a href={locale === "th" ? "/privacy/" : locale === "zh-CN" ? "/privacy/zh-cn/" : locale === "zh-TW" ? "/privacy/zh-tw/" : `/privacy/${locale}/`}>{copy.privacy}</a>
           <CookieSettingsButton>{copy.cookieSettings}</CookieSettingsButton>
         </nav>
       </div>

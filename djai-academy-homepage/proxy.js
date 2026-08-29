@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { languageForPath } from "./app/lib/i18n";
 
 const legacyUppercaseRules = [
   [/^\/EN(?=\/|$)/, "/en"],
@@ -22,11 +23,7 @@ export function proxy(request) {
   }
 
   const requestHeaders = new Headers(request.headers);
-  const isVietnamesePage = /(?:^|\/)vi(?:\/|$)/.test(pathname);
-  const isEnglishPage = /(?:^|\/)en(?:\/|$)/.test(pathname)
-    || pathname === "/Cam_PDF_Scan_Signer_QR-Gen"
-    || pathname.startsWith("/Cam_PDF_Scan_Signer_QR-Gen/");
-  requestHeaders.set("x-djai-language", isVietnamesePage ? "vi" : isEnglishPage ? "en" : "th");
+  requestHeaders.set("x-djai-language", languageForPath(pathname));
 
   return NextResponse.next({
     request: {

@@ -9,6 +9,7 @@ const navCopy = {
     courses: "Upcoming Courses",
     community: "Community",
     development: "Development",
+    mainNavigation: "Main navigation",
     services: "Services",
     promo: "Web Development Promo",
     portfolio: "Portfolio",
@@ -23,6 +24,7 @@ const navCopy = {
     courses: "คอร์สเรียน",
     community: "ชุมชน",
     development: "พัฒนาโปรเจกต์",
+    mainNavigation: "เมนูหลัก",
     services: "บริการ",
     promo: "โปรโมชันพัฒนาเว็บไซต์",
     portfolio: "ผลงาน",
@@ -37,6 +39,7 @@ const navCopy = {
     courses: "Khóa học",
     community: "Cộng đồng",
     development: "Phát triển sản phẩm",
+    mainNavigation: "Điều hướng chính",
     services: "Dịch vụ",
     promo: "Ưu đãi làm website",
     portfolio: "Dự án",
@@ -45,6 +48,36 @@ const navCopy = {
     camPdf: "Ứng dụng Cam PDF",
     join: "Tham gia cộng đồng",
     switchLabel: "Ngôn ngữ",
+    brandLabel: "DJAI Academy"
+  },
+  "zh-CN": {
+    courses: "AI 课程",
+    community: "学习社区",
+    development: "产品开发",
+    mainNavigation: "主导航",
+    services: "开发服务",
+    promo: "网站开发优惠",
+    portfolio: "项目案例",
+    tools: "免费工具",
+    blog: "文章",
+    camPdf: "Cam PDF 应用",
+    join: "加入社区",
+    switchLabel: "选择语言",
+    brandLabel: "DJAI Academy"
+  },
+  "zh-TW": {
+    courses: "AI 課程",
+    community: "學習社群",
+    development: "產品開發",
+    mainNavigation: "主選單",
+    services: "開發服務",
+    promo: "網站開發優惠",
+    portfolio: "專案案例",
+    tools: "免費工具",
+    blog: "文章",
+    camPdf: "Cam PDF 應用程式",
+    join: "加入社群",
+    switchLabel: "選擇語言",
     brandLabel: "DJAI Academy"
   }
 };
@@ -62,7 +95,7 @@ function DevelopmentDropdown({ copy, locale }) {
       <a className="nav-dropdown-trigger" href={urlFor("development", locale)}>
         {copy.development}
       </a>
-      <div className="dropdown-panel" aria-label="Development links">
+      <div className="dropdown-panel" aria-label={copy.development}>
         {developmentLinks.map(([label, href]) => (
           <a href={href} key={label}>
             {label}
@@ -103,7 +136,13 @@ export default function SiteHeader({ locale = "en", currentRoute = "home", langu
         type="button"
         aria-expanded={open}
         aria-controls="site-navigation"
-        aria-label={open ? "Close navigation" : "Open navigation"}
+        aria-label={
+          locale === "zh-CN"
+            ? open ? "关闭导航" : "打开导航"
+            : locale === "zh-TW"
+              ? open ? "關閉導覽" : "開啟導覽"
+              : open ? "Close navigation" : "Open navigation"
+        }
         onClick={() => setOpen((value) => !value)}
       >
         <span />
@@ -111,7 +150,7 @@ export default function SiteHeader({ locale = "en", currentRoute = "home", langu
         <span />
       </button>
 
-      <nav id="site-navigation" className={open ? "nav is-open" : "nav"} aria-label="Main navigation">
+      <nav id="site-navigation" className={open ? "nav is-open" : "nav"} aria-label={copy.mainNavigation}>
         {headerLinks.slice(0, 2).map(([label, href]) => (
           <a href={href} key={label}>
             {label}
@@ -123,10 +162,10 @@ export default function SiteHeader({ locale = "en", currentRoute = "home", langu
             {label}
           </a>
         ))}
-        <div className="language-options" aria-label={locale === "vi" ? "Chọn ngôn ngữ" : "Choose language"}>
+        <div className="language-options" aria-label={copy.switchLabel}>
           {localeLinks.map((item) => (
             <a className="language-switch" href={item.href} hrefLang={item.locale} key={item.locale}>
-              {item.locale.toUpperCase()}
+              {item.label}
             </a>
           ))}
         </div>
