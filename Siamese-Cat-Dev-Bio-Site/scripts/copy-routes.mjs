@@ -264,3 +264,44 @@ writeFileSync(coursesIndexPath, buildCatalogHtml());
 for (const course of catalog.courses) {
   writeFileSync(join(coursesDir, course.slug, 'index.html'), buildCatalogHtml(course));
 }
+
+const chinese = {
+  'zh-cn': { lang: 'zh-CN', other: 'zh-tw', bioTitle: 'Siamese Cat Dev｜产品设计、软件开发与 Vibe Coding', bio: 'Siamese Cat Dev 是 DJAI Academy 的产品与开发合作伙伴，专注于产品设计、软件开发、AI 辅助开发与实战教学。', heading: '把好想法做成真正可用的数字产品。', courses: 'Siamese Cat Dev 英语课程', course: '免费直播课：用 Vibe Coding 做出能创造收入的产品', trial: '在 WhatsApp 预约体验课', names: { 'build-first-app': '从零构建第一个应用', 'make-a-game': '用 AI 制作游戏', 'coding-with-ai': '与 AI 一起学编程' } },
+  'zh-tw': { lang: 'zh-TW', other: 'zh-cn', bioTitle: 'Siamese Cat Dev｜產品設計、軟體開發與 Vibe Coding', bio: 'Siamese Cat Dev 是 DJAI Academy 的產品與開發夥伴，專注於產品設計、軟體開發、AI 輔助開發與實作教學。', heading: '把好點子做成真正可用的數位產品。', courses: 'Siamese Cat Dev 英語課程', course: '免費直播課：用 Vibe Coding 做出能創造收入的產品', trial: '在 WhatsApp 預約體驗課', names: { 'build-first-app': '從零打造第一個應用程式', 'make-a-game': '用 AI 製作遊戲', 'coding-with-ai': '與 AI 一起學程式設計' } }
+};
+
+function chineseHtml(locale, path, title, description, body) {
+  const canonical = `https://www.djai.academy${path}`;
+  const otherPath = path.replace(`/${locale === chinese['zh-cn'] ? 'zh-cn' : 'zh-tw'}/`, `/${locale.other}/`);
+  return readFileSync(indexPath, 'utf8')
+    .replace('<html lang="th">', `<html lang="${locale.lang}">`)
+    .replace(/<meta\s+name="description"[^>]*>/, `<meta name="description" content="${escapeHtml(description)}" />`)
+    .replace(/<link rel="canonical"[^>]*>/, `<link rel="canonical" href="${canonical}" />`)
+    .replace(/\s*<link rel="alternate"[^>]*>/g, '')
+    .replace('<meta property="og:type"', `<meta name="robots" content="noindex, follow" /><link rel="alternate" hreflang="${locale.lang}" href="${canonical}" /><link rel="alternate" hreflang="${locale.lang === 'zh-CN' ? 'zh-TW' : 'zh-CN'}" href="https://www.djai.academy${otherPath}" /><link rel="alternate" hreflang="x-default" href="https://www.djai.academy/siamese_cat/dev/" /><meta property="og:type"`)
+    .replace(/<meta property="og:title"[^>]*>/, `<meta property="og:title" content="${escapeHtml(title)}" />`)
+    .replace(/<meta\s+property="og:description"[^>]*>/, `<meta property="og:description" content="${escapeHtml(description)}" />`)
+    .replace(/<meta property="og:url"[^>]*>/, `<meta property="og:url" content="${canonical}" />`)
+    .replace(/<title>[\s\S]*?<\/title>/, `<title>${escapeHtml(title)}</title>`)
+    .replace(/<div id="root">[\s\S]*?<\/div>/, `<div id="root">${body}</div>`);
+}
+
+for (const [segment, locale] of Object.entries(chinese)) {
+  const bioPath = `/siamese_cat/dev/${segment}/`;
+  const bioDir = join(distDir.pathname, segment);
+  mkdirSync(bioDir, { recursive: true });
+  writeFileSync(join(bioDir, 'index.html'), chineseHtml(locale, bioPath, locale.bioTitle, locale.bio, `<main><h1>Siamese Cat Dev</h1><p>${locale.heading}</p><p>${locale.bio}</p><a href="/siamese_cat/dev/courses/${segment}/">${locale.courses}</a></main>`));
+
+  const campaignDir = join(courseDir, segment);
+  mkdirSync(campaignDir, { recursive: true });
+  writeFileSync(join(campaignDir, 'index.html'), chineseHtml(locale, `/siamese_cat/dev/course/${segment}/`, locale.course, locale.course, `<main><h1>${locale.course}</h1><p>22 August 2026 · 1:00–2:00 PM ICT · English</p><a href="/MONEY_MAKING_PRODUCT/?lang=${segment}">${locale.course}</a></main>`));
+
+  const hubDir = join(coursesDir, segment);
+  mkdirSync(hubDir, { recursive: true });
+  writeFileSync(join(hubDir, 'index.html'), chineseHtml(locale, `/siamese_cat/dev/courses/${segment}/`, locale.courses, locale.bio, `<main><h1>${locale.courses}</h1><ul>${catalog.courses.map((item) => `<li><a href="/siamese_cat/dev/courses/${item.slug}/${segment}/">${locale.names[item.slug]}</a></li>`).join('')}</ul><p>${locale.trial}</p></main>`));
+  for (const item of catalog.courses) {
+    const detailDir = join(coursesDir, item.slug, segment);
+    mkdirSync(detailDir, { recursive: true });
+    writeFileSync(join(detailDir, 'index.html'), chineseHtml(locale, `/siamese_cat/dev/courses/${item.slug}/${segment}/`, locale.names[item.slug], item.promise, `<main><a href="/siamese_cat/dev/courses/${segment}/">${locale.courses}</a><h1>${locale.names[item.slug]}</h1><p>${escapeHtml(item.heroLead)}</p><p>${locale.trial}</p></main>`));
+  }
+}

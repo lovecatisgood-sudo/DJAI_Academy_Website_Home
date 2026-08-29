@@ -34,6 +34,7 @@ import EnglishApp from './EnglishApp';
 import CourseApp from './CourseApp';
 import CoursesApp from './CoursesApp';
 import SocialLinks, { HeaderSocialLinks } from './SocialLinks';
+import ChineseApp from './ChineseApp';
 
 const ease = [0.25, 0.1, 0.25, 1] as const;
 const assetPath = (path: string) => `${import.meta.env.BASE_URL}${path}`;
@@ -753,6 +754,8 @@ function ThaiApp() {
 
 export default function App() {
   const pathname = window.location.pathname.toLowerCase();
+  if (pathname.includes('/zh-cn')) return <ChineseApp locale="zh-CN" />;
+  if (pathname.includes('/zh-tw')) return <ChineseApp locale="zh-TW" />;
   if (pathname.includes('/courses')) return <CoursesApp />;
   if (pathname.includes('/course/th')) return <CourseApp language="th" />;
   if (pathname.includes('/course')) return <CourseApp language="en" />;
