@@ -1,10 +1,11 @@
 import SiteFooter from "../../components/SiteFooter";
 import SiteHeader from "../../components/SiteHeader";
+import TrackedLink from "../../components/TrackedLink";
 
 export const metadata = {
   title: "DJAI Development | Custom Software, AI and Apps",
   description:
-    "DJAI helps founders, SMEs, and companies build web apps, mobile apps, SaaS platforms, AI automations, games, fintech products, and Web3 applications quickly and cost-effectively.",
+    "DJAI is a custom software development partner for founders, SMEs, and teams that need to turn a requirement into the smallest useful working product they can launch and improve.",
   alternates: {
     canonical: "/development/en/",
     languages: {
@@ -28,23 +29,19 @@ export const metadata = {
 const capabilityGroups = [
   {
     title: "Product Development",
-    text: "Web apps, mobile apps, SaaS platforms, ecommerce, booking flows, dashboards, portals, and internal business systems.",
-    items: ["Web applications", "Mobile apps", "SaaS platforms", "MVPs and prototypes"]
+    text: "Customer-facing and internal products, from web and mobile applications to SaaS platforms, portals, dashboards, and multi-role operational systems."
   },
   {
     title: "AI and Automation",
-    text: "Automated workflows, AI assistants, chatbots, voice bots, RAG systems, document intelligence, and database-connected AI tools.",
-    items: ["AI workflow automation", "Chatbots and voice bots", "RAG knowledge systems", "SME process automation"]
+    text: "Workflows that remove repeated manual steps or make controlled information easier to use through assistants, chatbots, voice systems, document processing, or RAG."
   },
   {
     title: "Fintech and Business Systems",
-    text: "Payment applications, wallet products, POS systems, CRM platforms, corporate management systems, and operational software.",
-    items: ["Payment apps", "Crypto wallets", "POS systems", "CRM and management systems"]
+    text: "Payment flows, POS, CRM, management systems, and operational dashboards shaped around permissions, daily work, and the risks that need explicit review."
   },
   {
     title: "Games and Web3",
-    text: "Browser games, Telegram mini-games, on-chain games, NFT marketplaces, token ecosystems, and crypto product infrastructure.",
-    items: ["Mini-games", "Web3 apps", "NFT marketplaces", "Tokenized ecosystems"]
+    text: "Browser games, mini-games, and Web3 products when those mechanics serve the audience and business model—not simply because the technology is fashionable."
   }
 ];
 
@@ -91,32 +88,25 @@ const structuredData = {
   name: "DJAI Development",
   url: "https://www.djai.academy/development/en/",
   description:
-    "Custom software development, AI automation, SaaS, mobile apps, fintech applications, games, Web3 products, and internal business systems.",
+    "A custom software development partnership that turns an unclear requirement into the smallest useful working product, launch plan, and evidence for the next iteration.",
   email: "contact@djai.academy",
   areaServed: ["Thailand", "Singapore", "Global"],
   provider: {
     "@type": "Organization",
     name: "DJAI Academy",
     url: "https://www.djai.academy/"
-  },
-  hasOfferCatalog: {
-    "@type": "OfferCatalog",
-    name: "DJAI Development Capabilities",
-    itemListElement: capabilityGroups.map((group) => ({
-      "@type": "OfferCatalog",
-      name: group.title,
-      itemListElement: group.items.map((item) => ({
-        "@type": "Offer",
-        itemOffered: {
-          "@type": "Service",
-          name: item
-        }
-      }))
-    }))
   }
 };
 
 export default function DevelopmentPage() {
+  const enquiryEvent = {
+    source_path: "/development/en/",
+    locale: "en",
+    cluster: "commercial",
+    destination_type: "email",
+    destination_url: "mailto:contact@djai.academy"
+  };
+
   return (
     <>
       <SiteHeader locale="en" currentRoute="development" />
@@ -131,14 +121,14 @@ export default function DevelopmentPage() {
             <p className="eyebrow">Custom software development</p>
             <h1>Bring us your requirement. We help turn it into a working product.</h1>
             <p>
-              DJAI builds across web apps, mobile apps, SaaS platforms, business automation,
-              fintech workflows, AI systems, games, and Web3 products. Our strength is turning
-              unclear ideas into practical launch plans at competitive cost and speed.
+              For a founder, SME, or product team, the hard part is often deciding what must work
+              first. DJAI clarifies the users, business outcome, risks, and evidence you need, then
+              scopes the smallest useful version that can be launched and improved.
             </p>
             <div className="development-actions">
-              <a className="button primary" href="mailto:contact@djai.academy">
+              <TrackedLink className="button primary" href="mailto:contact@djai.academy" eventName="enquiry_start" eventParams={enquiryEvent}>
                 Start a Project
-              </a>
+              </TrackedLink>
               <a className="button secondary dark" href="https://www.djai.academy/portfolio/en/">
                 View Portfolio
               </a>
@@ -172,11 +162,6 @@ export default function DevelopmentPage() {
               <article className="development-capability-card" key={group.title}>
                 <h3>{group.title}</h3>
                 <p>{group.text}</p>
-                <div>
-                  {group.items.map((item) => (
-                    <span key={item}>{item}</span>
-                  ))}
-                </div>
               </article>
             ))}
           </div>
@@ -217,9 +202,9 @@ export default function DevelopmentPage() {
             </p>
           </div>
           <div className="development-actions">
-            <a className="button primary" href="mailto:contact@djai.academy">
+            <TrackedLink className="button primary" href="mailto:contact@djai.academy" eventName="enquiry_start" eventParams={enquiryEvent}>
               contact@djai.academy
-            </a>
+            </TrackedLink>
             <a className="button ghost light" href="https://www.djai.academy/service/en/">
               Explore Services
             </a>

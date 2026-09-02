@@ -1,10 +1,11 @@
 import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
+import TrackedLink from "../components/TrackedLink";
 
 export const metadata = {
   title: "DJAI Development | รับทำซอฟต์แวร์ แอป และ AI Automation",
   description:
-    "DJAI รับพัฒนาเว็บไซต์ แอปมือถือ SaaS ระบบ AI Automation CRM POS Fintech เกม Crypto และ Web3 ด้วยแนวทางที่เร็วและคุมต้นทุน",
+    "DJAI รับทำซอฟต์แวร์ตามความต้องการ ช่วย founder, SME และทีมงานเปลี่ยน requirement ให้เป็น scope และโปรดักต์เวอร์ชันเล็กที่สุดที่พร้อมนำไปใช้งานจริง",
   alternates: {
     canonical: "/development/",
     languages: {
@@ -28,23 +29,19 @@ export const metadata = {
 const capabilityGroups = [
   {
     title: "Product Development",
-    text: "เว็บไซต์ เว็บแอป แอปมือถือ SaaS marketplace dashboard portal booking flow และระบบภายในองค์กร",
-    items: ["Web application", "Mobile app", "SaaS platform", "MVP และ prototype"]
+    text: "พัฒนาโปรดักต์สำหรับลูกค้าหรือทีมภายใน ตั้งแต่ web application และ mobile app ไปจนถึง SaaS, portal และระบบที่ต้องมีผู้ใช้หลายบทบาท"
   },
   {
     title: "AI และ Automation",
-    text: "ระบบ workflow automation, AI assistant, chatbot, voice bot, RAG system และเครื่องมือ AI ที่เชื่อมกับฐานข้อมูลบริษัท",
-    items: ["AI workflow", "Chatbot / Voice bot", "RAG system", "SME automation"]
+    text: "ลดงานซ้ำหรือทำให้ข้อมูลค้นหาและใช้งานได้ง่ายขึ้นด้วย workflow automation, AI assistant, chatbot, voice bot หรือ RAG ที่เชื่อมกับแหล่งข้อมูลที่กำหนด"
   },
   {
     title: "Fintech และ Business System",
-    text: "Payment application, crypto wallet, POS, CRM, corporate management system และ dashboard สำหรับการทำงานจริง",
-    items: ["Payment app", "Crypto wallet", "POS system", "CRM / Management system"]
+    text: "สร้าง payment flow, POS, CRM, management system หรือ dashboard โดยเริ่มจากขั้นตอนใช้งาน สิทธิ์ผู้ใช้ และจุดเสี่ยงที่ต้องตรวจสอบ"
   },
   {
     title: "Games และ Web3",
-    text: "เกมบนเว็บ Telegram mini-game, on-chain game, NFT marketplace, token ecosystem และ crypto infrastructure",
-    items: ["Mini-game", "Web3 app", "NFT marketplace", "Token ecosystem"]
+    text: "พัฒนาเกมบนเว็บ mini-game และผลิตภัณฑ์ Web3 เมื่อกลไกเหล่านี้เหมาะกับผู้ใช้และโมเดลของโปรเจกต์ ไม่ใช่เพียงเพราะเทคโนโลยีกำลังเป็นกระแส"
   }
 ];
 
@@ -91,7 +88,7 @@ const structuredData = {
   name: "DJAI Development",
   url: "https://www.djai.academy/development/",
   description:
-    "บริการพัฒนาซอฟต์แวร์ AI automation, SaaS, mobile app, fintech, games, Web3 และระบบธุรกิจ",
+    "DJAI ช่วยเปลี่ยน requirement ของ founder, SME และทีมงานให้เป็น scope และ working product เวอร์ชันเล็กที่สุดที่พร้อมเปิดใช้งานและพัฒนาต่อ",
   email: "contact@djai.academy",
   areaServed: ["Thailand", "Singapore", "Global"],
   provider: {
@@ -102,6 +99,14 @@ const structuredData = {
 };
 
 export default function ThaiDevelopmentPage() {
+  const enquiryEvent = {
+    source_path: "/development/",
+    locale: "th",
+    cluster: "commercial",
+    destination_type: "email",
+    destination_url: "mailto:contact@djai.academy"
+  };
+
   return (
     <>
       <SiteHeader locale="th" currentRoute="development" />
@@ -114,16 +119,16 @@ export default function ThaiDevelopmentPage() {
         <section className="development-hero">
           <div>
             <p className="eyebrow">Custom software development</p>
-            <h1>ส่ง requirement มาให้เรา แล้ว DJAI ช่วยเปลี่ยนเป็นโปรดักต์ที่ใช้งานได้จริง</h1>
+            <h1>ส่ง requirement มา แล้ว DJAI ช่วยพัฒนาโปรดักต์เวอร์ชันเล็กที่สุดที่ใช้งานได้จริง</h1>
             <p>
-              DJAI พัฒนาได้ตั้งแต่เว็บไซต์ เว็บแอป แอปมือถือ SaaS ระบบอัตโนมัติ Fintech
-              AI system เกม ไปจนถึง Web3 product จุดแข็งของเราคือช่วยหาวิธีที่เร็ว คุ้มค่า
-              และเหมาะกับเป้าหมายของลูกค้า
+              สำหรับ founder, SME หรือทีมที่มีปัญหาใน workflow หรือไอเดียโปรดักต์
+              เราช่วยแยกผู้ใช้ เป้าหมาย ความเสี่ยง และสิ่งที่ต้องพิสูจน์ก่อน
+              แล้วจึงวาง scope ที่พร้อมสร้าง เปิดใช้ และเรียนรู้จากของจริง
             </p>
             <div className="development-actions">
-              <a className="button primary" href="mailto:contact@djai.academy">
+              <TrackedLink className="button primary" href="mailto:contact@djai.academy" eventName="enquiry_start" eventParams={enquiryEvent}>
                 เริ่มคุยโปรเจกต์
-              </a>
+              </TrackedLink>
               <a className="button secondary dark" href="https://www.djai.academy/portfolio/">
                 ดูผลงาน
               </a>
@@ -155,11 +160,6 @@ export default function ThaiDevelopmentPage() {
               <article className="development-capability-card" key={group.title}>
                 <h3>{group.title}</h3>
                 <p>{group.text}</p>
-                <div>
-                  {group.items.map((item) => (
-                    <span key={item}>{item}</span>
-                  ))}
-                </div>
               </article>
             ))}
           </div>
@@ -200,9 +200,9 @@ export default function ThaiDevelopmentPage() {
             </p>
           </div>
           <div className="development-actions">
-            <a className="button primary" href="mailto:contact@djai.academy">
+            <TrackedLink className="button primary" href="mailto:contact@djai.academy" eventName="enquiry_start" eventParams={enquiryEvent}>
               contact@djai.academy
-            </a>
+            </TrackedLink>
             <a className="button ghost light" href="https://www.djai.academy/service/">
               ดูบริการทั้งหมด
             </a>

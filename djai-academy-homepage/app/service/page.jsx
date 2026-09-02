@@ -1,10 +1,11 @@
 import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
+import TrackedLink from "../components/TrackedLink";
 
 export const metadata = {
-  title: "บริการ DJAI | เว็บไซต์ แอป SaaS AI Automation และ Web3",
+  title: "เลือกบริการพัฒนาซอฟต์แวร์ที่เหมาะกับโจทย์ | DJAI",
   description:
-    "บริการพัฒนาซอฟต์แวร์ของ DJAI ครอบคลุมเว็บไซต์ เว็บแอป แอปมือถือ SaaS AI automation CRM POS fintech เกม และ Web3",
+    "เลือกหมวดบริการ DJAI จากปัญหาที่ต้องแก้ สิ่งที่มักส่งมอบ และขั้นตอนถัดไป ก่อนนำ requirement ไปวาง scope กับทีม Development",
   alternates: {
     canonical: "/service/",
     languages: {
@@ -28,48 +29,57 @@ export const metadata = {
 const services = [
   {
     title: "เว็บไซต์และ Landing Page",
-    text: "เว็บไซต์บริษัท เว็บไซต์ธุรกิจท้องถิ่น product landing page ecommerce booking page และโครงสร้าง SEO",
-    keywords: ["Corporate website", "Ecommerce", "Landing page", "Local SEO"]
+    problem: "ลูกค้ายังไม่เข้าใจธุรกิจ สินค้า หรือขั้นตอนติดต่อจากหน้าเว็บปัจจุบัน",
+    deliverable: "เว็บไซต์บริษัท landing page หน้าร้าน หรือ booking flow ที่จัดโครงสร้างเนื้อหาและเส้นทางติดต่อให้ชัด",
+    nextAction: "คุยโจทย์เว็บไซต์"
   },
   {
     title: "Web App และ SaaS",
-    text: "Customer portal, dashboard, subscription platform, marketplace, admin panel และ SaaS หลายผู้ใช้",
-    keywords: ["SaaS", "Dashboard", "Portal", "Marketplace"]
+    problem: "งานต้องมีบัญชีผู้ใช้ ข้อมูลหลายบทบาท หรือขั้นตอนที่เว็บไซต์ทั่วไปจัดการไม่พอ",
+    deliverable: "Web app, customer portal, dashboard, admin panel หรือ SaaS ที่กำหนดสิทธิ์และ workflow ได้",
+    nextAction: "คุยโจทย์ Web App"
   },
   {
     title: "Mobile App",
-    text: "แอปผู้บริโภค แอปธุรกิจ แอป community ระบบ booking และ mobile experience สำหรับใช้งานจริง",
-    keywords: ["iOS / Android", "React Native", "User account", "Push workflow"]
+    problem: "ผู้ใช้ต้องทำงานซ้ำบนมือถือ ต้องเข้าถึงกล้อง การแจ้งเตือน หรือประสบการณ์เฉพาะอุปกรณ์",
+    deliverable: "แอปสำหรับลูกค้าหรือทีมงาน พร้อม account, data flow และ integration ที่จำเป็นต่อ use case",
+    nextAction: "คุยโจทย์ Mobile App"
   },
   {
     title: "AI Automation และ Agent",
-    text: "Workflow automation, AI assistant, document processing, chatbot และ voice bot สำหรับลดงานซ้ำ",
-    keywords: ["AI agent", "Chatbot", "Voice bot", "Automation"]
+    problem: "ทีมใช้เวลามากกับงานซ้ำ การส่งต่อข้อมูล หรือคำถามเดิมที่ต้องค้นจากหลายระบบ",
+    deliverable: "Workflow automation, assistant, chatbot, voice bot หรือ document flow ที่มีจุดตรวจสอบโดยคน",
+    nextAction: "คุยโจทย์ AI Automation"
   },
   {
     title: "RAG และ Database AI",
-    text: "AI ที่เชื่อมกับเอกสาร ฐานข้อมูล manual policy customer record และ knowledge base ของบริษัท",
-    keywords: ["RAG", "Knowledge base", "Database AI", "Internal search"]
+    problem: "ข้อมูลที่ทีมต้องใช้กระจายอยู่ในเอกสาร ฐานข้อมูล policy หรือ knowledge base และค้นหาได้ช้า",
+    deliverable: "ระบบค้นหาและตอบจากแหล่งข้อมูลที่กำหนด พร้อมสิทธิ์ แหล่งอ้างอิง และขอบเขตคำตอบ",
+    nextAction: "คุยโจทย์ RAG"
   },
   {
     title: "CRM และ Corporate System",
-    text: "CRM, corporate management system, approval flow, inventory tool, operation dashboard และ reporting",
-    keywords: ["CRM", "ERP-style tool", "Operation", "Management system"]
+    problem: "การขาย การอนุมัติ inventory หรือ reporting ยังพึ่ง spreadsheet และการส่งข้อความหลายรอบ",
+    deliverable: "CRM, approval flow, operations dashboard หรือ management system ที่สะท้อนขั้นตอนทำงานจริง",
+    nextAction: "คุยโจทย์ระบบภายใน"
   },
   {
     title: "POS, Payment และ Fintech",
-    text: "POS system, payment application, wallet, card workflow, transaction dashboard และ finance product flow",
-    keywords: ["POS", "Payment", "Wallet", "Fintech"]
+    problem: "ธุรกิจต้องจัดการการขาย การชำระเงิน หรือข้อมูลธุรกรรมด้วย flow และสิทธิ์ที่ตรวจสอบได้",
+    deliverable: "POS, payment workflow, wallet experience หรือ transaction dashboard ที่กำหนด security scope ก่อนเริ่มสร้าง",
+    nextAction: "คุยโจทย์ Fintech"
   },
   {
     title: "Games และ Interactive Product",
-    text: "Mini-game, viral marketing game, Telegram game, prediction game, leaderboard และ gamified loyalty",
-    keywords: ["Mini-game", "Telegram game", "Gamification", "Leaderboard"]
+    problem: "แคมเปญหรือชุมชนต้องการ interaction ที่ทำให้คนลงมือเล่น แข่งขัน หรือกลับมาใช้งาน",
+    deliverable: "Mini-game, interactive campaign, leaderboard หรือ gamified loyalty flow ที่วัดผลได้ตามเป้าหมาย",
+    nextAction: "คุยโจทย์ Interactive Product"
   },
   {
     title: "Crypto และ Web3",
-    text: "Crypto wallet, NFT marketplace, token ecosystem, staking flow, on-chain game, Web3 dashboard และ RWA planning",
-    keywords: ["Web3", "NFT marketplace", "Crypto wallet", "Token system"]
+    problem: "โปรดักต์มีเหตุผลชัดเจนที่ต้องใช้ wallet, ownership หรือธุรกรรม on-chain",
+    deliverable: "Wallet flow, marketplace, dashboard หรือ on-chain experience ที่แยก product scope และ risk review ไว้ชัด",
+    nextAction: "คุยโจทย์ Web3"
   }
 ];
 
@@ -93,7 +103,7 @@ const engagementModels = [
 ];
 
 const relatedPages = [
-  ["แนวทางการพัฒนา", "https://www.djai.academy/development/"],
+  ["แนวทางการพัฒนา", "/development/"],
   ["ผลงาน", "https://www.djai.academy/portfolio/"],
   ["เครื่องมือฟรี", "https://www.djai.academy/tools/"],
   ["บทความ", "https://www.djai.academy/blog/"]
@@ -112,10 +122,19 @@ const structuredData = {
   areaServed: ["Thailand", "Singapore", "Global"],
   serviceType: services.map((service) => service.title),
   description:
-    "บริการพัฒนาซอฟต์แวร์สำหรับเว็บไซต์ แอป SaaS AI automation fintech games Web3 CRM POS และระบบธุรกิจ"
+    "ตัวช่วยเลือกหมวดบริการพัฒนาซอฟต์แวร์จากปัญหา สิ่งที่มักส่งมอบ และขั้นตอนถัดไปก่อนวาง scope กับ DJAI Development"
 };
 
 export default function ThaiServicePage() {
+  const enquiryEvent = {
+    source_path: "/service/",
+    locale: "th",
+    cluster: "commercial",
+    service_category: "not_selected",
+    destination_type: "email",
+    destination_url: "mailto:contact@djai.academy"
+  };
+
   return (
     <>
       <SiteHeader locale="th" currentRoute="service" />
@@ -127,17 +146,17 @@ export default function ThaiServicePage() {
 
         <section className="service-hero">
           <p className="eyebrow">บริการของ DJAI</p>
-          <h1>พัฒนาโปรดักต์ ระบบอัตโนมัติ และซอฟต์แวร์ธุรกิจแบบครบวงจร</h1>
+          <h1>เลือกหมวดบริการให้ตรงกับปัญหาที่ต้องแก้</h1>
           <p>
-            DJAI รับพัฒนาเว็บไซต์ เว็บแอป แอปมือถือ SaaS AI automation CRM POS fintech
-            games crypto apps และ Web3 systems คุณส่ง requirement มา แล้วเราช่วยดูทางที่ practical
-            ที่สุดสำหรับเวลาและงบประมาณ
+            เริ่มจากงานที่ติดขัด ผู้ใช้ที่เกี่ยวข้อง และผลลัพธ์ที่ต้องการ
+            แต่ละหมวดด้านล่างอธิบายโจทย์ที่เหมาะ สิ่งที่มักส่งมอบ และทางไปคุย scope กับ Development
+            โปรเจกต์หนึ่งอาจใช้มากกว่าหนึ่งหมวดได้
           </p>
           <div className="service-hero-actions">
-            <a className="button primary" href="mailto:contact@djai.academy">
-              ขอใบเสนอราคา
+            <a className="button primary" href="#service-categories">
+              เลือกหมวดบริการ
             </a>
-            <a className="button secondary dark" href="https://www.djai.academy/development/">
+            <a className="button secondary dark" href="/development/">
               วิธีพัฒนา
             </a>
             <a className="button secondary dark" href="https://www.djai.academy/portfolio/">
@@ -161,7 +180,7 @@ export default function ThaiServicePage() {
           </div>
         </section>
 
-        <section className="service-catalog">
+        <section className="service-catalog" id="service-categories">
           <div className="service-section-heading">
             <p className="eyebrow">หมวดบริการ</p>
             <h2>เลือกหมวดที่ใกล้กับสิ่งที่คุณต้องการ</h2>
@@ -174,12 +193,9 @@ export default function ThaiServicePage() {
             {services.map((service) => (
               <article className="service-card" key={service.title}>
                 <h3>{service.title}</h3>
-                <p>{service.text}</p>
-                <div>
-                  {service.keywords.map((keyword) => (
-                    <span key={keyword}>{keyword}</span>
-                  ))}
-                </div>
+                <p><strong>โจทย์:</strong> {service.problem}</p>
+                <p><strong>สิ่งที่มักส่งมอบ:</strong> {service.deliverable}</p>
+                <a href="/development/">{service.nextAction}</a>
               </article>
             ))}
           </div>
@@ -223,9 +239,9 @@ export default function ThaiServicePage() {
               DJAI จะช่วยดูทางที่เร็วและคุ้มค่าที่สุด
             </p>
           </div>
-          <a className="button primary" href="mailto:contact@djai.academy">
+          <TrackedLink className="button primary" href="mailto:contact@djai.academy" eventName="enquiry_start" eventParams={enquiryEvent}>
             contact@djai.academy
-          </a>
+          </TrackedLink>
         </section>
       </main>
       <SiteFooter locale="th" />

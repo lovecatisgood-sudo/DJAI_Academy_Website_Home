@@ -1,10 +1,11 @@
 import SiteFooter from "../../components/SiteFooter";
 import SiteHeader from "../../components/SiteHeader";
+import TrackedLink from "../../components/TrackedLink";
 
 export const metadata = {
-  title: "DJAI Services | Apps, SaaS, AI Automation and Web3",
+  title: "Choose a Software Development Service | DJAI",
   description:
-    "DJAI provides custom software development services for websites, web apps, mobile apps, SaaS, AI automation, CRM, POS, fintech, games, and Web3 products.",
+    "Choose a DJAI service category by the business problem, typical deliverable, and next step before shaping the requirement with Development.",
   alternates: {
     canonical: "/service/en/",
     languages: {
@@ -28,48 +29,57 @@ export const metadata = {
 const services = [
   {
     title: "Websites and Landing Pages",
-    text: "Corporate websites, local business sites, product landing pages, ecommerce storefronts, booking pages, and SEO-ready content structures.",
-    keywords: ["Corporate websites", "Ecommerce", "Landing pages", "Local business SEO"]
+    problem: "Customers cannot quickly understand the offer, trust the business, or find the next action on the current site.",
+    deliverable: "A corporate site, landing page, storefront, or booking flow with a clear content and enquiry path.",
+    nextAction: "Discuss a website build"
   },
   {
     title: "Web Apps and SaaS Platforms",
-    text: "Customer portals, dashboards, subscription platforms, marketplace systems, admin panels, reporting tools, and multi-user SaaS products.",
-    keywords: ["SaaS", "Dashboards", "Portals", "Marketplaces"]
+    problem: "The work needs accounts, multiple user roles, managed data, or a workflow a standard website cannot support.",
+    deliverable: "A web app, portal, dashboard, admin system, marketplace, or SaaS product with defined roles and flows.",
+    nextAction: "Discuss a web application"
   },
   {
     title: "Mobile App Development",
-    text: "Consumer apps, business apps, community apps, booking apps, companion apps, and cross-platform mobile experiences.",
-    keywords: ["iOS and Android", "React Native", "User accounts", "Push workflows"]
+    problem: "People need a repeated mobile workflow, device capability, notification, or experience that the web cannot provide well.",
+    deliverable: "A customer or workforce app with the accounts, data flow, and integrations required by the use case.",
+    nextAction: "Discuss a mobile app"
   },
   {
     title: "AI Automation and Agents",
-    text: "Automated workflows, AI assistants, document processing, business process automation, chatbot systems, and voice bot experiences.",
-    keywords: ["AI agents", "Chatbots", "Voice bots", "Workflow automation"]
+    problem: "A team loses time to repeated handoffs, manual processing, or the same questions across disconnected systems.",
+    deliverable: "An automated workflow, assistant, chatbot, voice system, or document process with explicit human checkpoints.",
+    nextAction: "Discuss AI automation"
   },
   {
     title: "RAG and Database AI Systems",
-    text: "AI systems connected to company knowledge, documents, databases, policies, manuals, customer records, and internal operating data.",
-    keywords: ["RAG", "Knowledge base", "Database AI", "Internal search"]
+    problem: "Useful information is scattered across documents, databases, policies, manuals, or a controlled knowledge base.",
+    deliverable: "Search and answer workflows with defined sources, permissions, citations, and answer boundaries.",
+    nextAction: "Discuss a RAG system"
   },
   {
     title: "CRM and Corporate Systems",
-    text: "CRM platforms, corporate management systems, staff workflows, approval flows, inventory tools, operations dashboards, and business reporting.",
-    keywords: ["CRM", "ERP-style tools", "Operations", "Management systems"]
+    problem: "Sales, approvals, inventory, or reporting still depend on spreadsheets and repeated messages between teams.",
+    deliverable: "A CRM, approval flow, operations dashboard, or management system shaped around the actual daily process.",
+    nextAction: "Discuss an internal system"
   },
   {
     title: "POS, Payment and Fintech Apps",
-    text: "POS systems, payment applications, wallet experiences, card product workflows, transaction dashboards, and finance-adjacent product flows.",
-    keywords: ["POS", "Payments", "Wallets", "Fintech"]
+    problem: "The business needs a controlled sales, payment, wallet, or transaction workflow with clear roles and review points.",
+    deliverable: "A POS, payment flow, wallet experience, or transaction dashboard with the security scope defined before build.",
+    nextAction: "Discuss a fintech workflow"
   },
   {
     title: "Games and Interactive Products",
-    text: "Mini-games, viral marketing games, Telegram games, prediction games, gamified loyalty systems, and interactive campaign products.",
-    keywords: ["Mini-games", "Telegram games", "Gamification", "Leaderboards"]
+    problem: "A campaign or community needs an interaction that gives people a reason to play, compete, or return.",
+    deliverable: "A mini-game, interactive campaign, leaderboard, or loyalty mechanic tied to a defined audience goal.",
+    nextAction: "Discuss an interactive product"
   },
   {
     title: "Crypto and Web3 Products",
-    text: "Crypto wallets, NFT marketplaces, tokenized ecosystems, staking flows, on-chain games, Web3 dashboards, and RWA product planning.",
-    keywords: ["Web3", "NFT marketplace", "Crypto wallet", "Token systems"]
+    problem: "The product has a defensible reason to use wallets, ownership, or an on-chain transaction.",
+    deliverable: "A wallet flow, marketplace, dashboard, or on-chain experience with product scope and risk review kept explicit.",
+    nextAction: "Discuss a Web3 product"
   }
 ];
 
@@ -93,7 +103,7 @@ const engagementModels = [
 ];
 
 const relatedPages = [
-  ["Development Approach", "https://www.djai.academy/development/en/"],
+  ["Development Approach", "/development/en/"],
   ["Portfolio", "https://www.djai.academy/portfolio/en/"],
   ["Free Tools", "https://www.djai.academy/tools/en/"],
   ["Build Articles", "https://www.djai.academy/blog/en/"]
@@ -112,7 +122,7 @@ const structuredData = {
   areaServed: ["Thailand", "Singapore", "Global"],
   serviceType: services.map((service) => service.title),
   description:
-    "Custom software development services for websites, apps, SaaS, AI automation, fintech, games, Web3, CRM, POS, and business systems.",
+    "Choose a software development service category by the business problem, typical deliverable, and next action before shaping a build with DJAI Development.",
   offers: {
     "@type": "Offer",
     availability: "https://schema.org/InStock",
@@ -121,6 +131,15 @@ const structuredData = {
 };
 
 export default function ServicePage() {
+  const enquiryEvent = {
+    source_path: "/service/en/",
+    locale: "en",
+    cluster: "commercial",
+    service_category: "not_selected",
+    destination_type: "email",
+    destination_url: "mailto:contact@djai.academy"
+  };
+
   return (
     <>
       <SiteHeader locale="en" currentRoute="service" />
@@ -132,17 +151,17 @@ export default function ServicePage() {
 
         <section className="service-hero">
           <p className="eyebrow">DJAI services</p>
-          <h1>Custom development for products, automation, and business systems.</h1>
+          <h1>Choose the service category closest to the problem you need to solve.</h1>
           <p>
-            DJAI covers a full range of development work: websites, web apps, mobile apps, SaaS,
-            AI automation, CRM, POS, fintech applications, games, crypto apps, and Web3 systems.
-            Bring us your requirement and we will help find the most practical build path.
+            Start with the blocked workflow, the people involved, and the result you need.
+            Each category below explains the problem it fits, a typical deliverable, and the path
+            to shape the requirement with Development. One project can span several categories.
           </p>
           <div className="service-hero-actions">
-            <a className="button primary" href="mailto:contact@djai.academy">
-              Request a Quote
+            <a className="button primary" href="#service-categories">
+              Choose a Service
             </a>
-            <a className="button secondary dark" href="https://www.djai.academy/development/en/">
+            <a className="button secondary dark" href="/development/en/">
               How We Develop
             </a>
             <a className="button secondary dark" href="https://www.djai.academy/portfolio/en/">
@@ -166,7 +185,7 @@ export default function ServicePage() {
           </div>
         </section>
 
-        <section className="service-catalog">
+        <section className="service-catalog" id="service-categories">
           <div className="service-section-heading">
             <p className="eyebrow">Service catalog</p>
             <h2>Choose the category closest to what you need.</h2>
@@ -180,12 +199,9 @@ export default function ServicePage() {
             {services.map((service) => (
               <article className="service-card" key={service.title}>
                 <h3>{service.title}</h3>
-                <p>{service.text}</p>
-                <div>
-                  {service.keywords.map((keyword) => (
-                    <span key={keyword}>{keyword}</span>
-                  ))}
-                </div>
+                <p><strong>Problem:</strong> {service.problem}</p>
+                <p><strong>Typical deliverable:</strong> {service.deliverable}</p>
+                <a href="/development/en/">{service.nextAction}</a>
               </article>
             ))}
           </div>
@@ -229,9 +245,9 @@ export default function ServicePage() {
               DJAI will help identify the fastest and most cost-effective route.
             </p>
           </div>
-          <a className="button primary" href="mailto:contact@djai.academy">
+          <TrackedLink className="button primary" href="mailto:contact@djai.academy" eventName="enquiry_start" eventParams={enquiryEvent}>
             contact@djai.academy
-          </a>
+          </TrackedLink>
         </section>
       </main>
       <SiteFooter locale="en" />
