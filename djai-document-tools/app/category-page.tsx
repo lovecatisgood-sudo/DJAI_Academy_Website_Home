@@ -1,6 +1,7 @@
-import { ArrowRight, FileText, ScanLine, ScanText, Smartphone, Sparkles, TableProperties } from "lucide-react";
+import { ArrowRight, FileText, Sparkles, TableProperties } from "lucide-react";
 import Image from "next/image";
 import AdSenseAd from "./AdSenseAd";
+import AcquisitionBridge from "./AcquisitionBridge";
 import ShareButtons from "./ShareButtons";
 import { categories, categoryHref, categoryOrder, toolHref, toolsFor, type Category, type Language, type ToolDefinition } from "./tool-data";
 
@@ -69,9 +70,8 @@ export default function CategoryPage({ category, language }: { category: Categor
         </div>
       </section>
       <AdSenseAd label="Tools advertisement" variant="display2" />
-      <CamPdfAppCallout language={language} />
-      <ServiceBands language={language} category={category} />
       <ToolEcosystemDirectory language={language} />
+      <AcquisitionBridge language={language} category={category} />
       <SuiteFooter language={language} />
     </main>
   );
@@ -91,44 +91,6 @@ export function SuiteHeader({ category, language, tool }: { category: Category; 
       {vi ? <><a className="language-switch" href={tool ? toolHref(tool, "th") : categoryHref(category, "th")}>ไทย</a><a className="language-switch" href={tool ? toolHref(tool, "en") : categoryHref(category, "en")}>EN</a></> : <a className="language-switch" href={languageTarget}>{en ? "ไทย" : "EN"}</a>}
     </nav>
   </header>;
-}
-
-export function ServiceBands({ language, category }: { language: Language; category: Category }) {
-  const en = language === "en";
-  const vi = language === "vi";
-  const service = category === "spreadsheet"
-    ? { title: vi ? "Cần dashboard thay cho bảng tính?" : en ? "Need a dashboard instead of spreadsheets?" : "ต้องการ dashboard แทน spreadsheet?", text: vi ? "DJAI xây nền tảng vận hành, CRM, dashboard báo cáo và quy trình dữ liệu tự động." : en ? "DJAI builds operations platforms, CRM systems, reporting dashboards, and automated data workflows." : "DJAI พัฒนาระบบ operation, CRM, dashboard และ workflow ข้อมูลอัตโนมัติ" }
-    : category === "ai"
-      ? { title: vi ? "Đang xây kho kiến thức AI riêng tư?" : en ? "Building a private AI knowledge base?" : "กำลังสร้าง AI knowledge base สำหรับองค์กร?", text: vi ? "DJAI thiết kế RAG riêng tư, chatbot doanh nghiệp, tìm kiếm tài liệu và tự động hóa AI dựa trên dữ liệu thực." : en ? "We design private RAG systems, company chatbots, document search, and AI automation around real business data." : "เราพัฒนา private RAG, chatbot องค์กร, document search และ AI automation จากข้อมูลธุรกิจจริง" }
-      : { title: vi ? "Đang xử lý cùng một loại tài liệu mỗi ngày?" : en ? "Processing documents repeatedly?" : "ต้องจัดการเอกสารซ้ำทุกวัน?", text: vi ? "DJAI xây hệ thống báo giá, hóa đơn, hợp đồng, chứng chỉ, báo cáo và portal tài liệu tự động." : en ? "DJAI builds automated quotations, invoices, contracts, certificates, reports, and document portals." : "DJAI พัฒนาระบบใบเสนอราคา invoice สัญญา certificate report และ document portal อัตโนมัติ" };
-  return <>
-    <section className="service-band"><div><p className="eyebrow">{vi ? "XÂY CÙNG DJAI" : en ? "BUILD WITH DJAI" : "พัฒนากับ DJAI"}</p><h2>{service.title}</h2><p>{service.text}</p></div><a className="primary-button" href={vi ? "/development/vi/" : en ? "/development/en/" : "/development/"}>{vi ? "Trao đổi về hệ thống" : en ? "Discuss your system" : "คุยเรื่องระบบของคุณ"}<ArrowRight /></a></section>
-    <section className="course-band"><ScanText /><div><p className="eyebrow">VIBE CODING</p><h2>{vi ? "Học cách biến workflow thành sản phẩm hoạt động" : en ? "Learn to turn a workflow into a working product" : "เรียนเปลี่ยน workflow ให้เป็น product ที่ใช้งานได้"}</h2><p>{vi ? "Xây website, ứng dụng và tự động hóa bằng AI thông qua workshop thực hành." : en ? "Build websites, applications, and automation with AI through a practical one-day workshop." : "สร้างเว็บไซต์ application และ automation ด้วย AI ใน workshop ที่ลงมือทำจริง"}</p></div><a href={vi ? "/course/detail/vi/" : en ? "/course/detail/en/" : "/course/detail/"}>{vi ? "Khám phá khóa học" : en ? "Explore the course" : "ดูรายละเอียดคอร์ส"}<ArrowRight /></a></section>
-  </>;
-}
-
-export function CamPdfAppCallout({ language }: { language: Language }) {
-  const en = language === "en";
-  const vi = language === "vi";
-  return (
-    <section className="mobile-app-callout" aria-labelledby="cam-pdf-app-title">
-      <div className="app-device-mark"><Smartphone /><ScanLine /></div>
-      <div>
-        <p className="eyebrow">{vi ? "ỨNG DỤNG DI ĐỘNG" : en ? "MOBILE APP" : "แอปมือถือ"}</p>
-        <h2 id="cam-pdf-app-title">{vi ? "Mang bộ công cụ tài liệu theo bên bạn." : en ? "Take document tools with you." : "พกเครื่องมือเอกสารไปกับคุณ"}</h2>
-        <p>
-          {vi
-            ? "Cam PDF Scan, Signer & QR Generator hỗ trợ quét tài liệu, ký PDF, tạo QR và xử lý tài liệu nâng cao ngay trên điện thoại."
-            : en
-            ? "Cam PDF Scan, Signer & QR Generator adds mobile scanning, PDF signing, QR tools, and advanced document workflows for phone-first work."
-            : "Cam PDF Scan, Signer & QR Generator เพิ่มการสแกนเอกสาร เซ็น PDF เครื่องมือ QR และ workflow เอกสารขั้นสูงสำหรับการใช้งานบนมือถือ"}
-        </p>
-      </div>
-      <a className="primary-button" href="https://play.google.com/store/apps/details?id=com.djai.campdfscan">
-        {vi ? "Tải ứng dụng" : en ? "Download the app" : "ดาวน์โหลดแอป"}<ArrowRight />
-      </a>
-    </section>
-  );
 }
 
 export function ToolEcosystemDirectory({ language }: { language: Language }) {

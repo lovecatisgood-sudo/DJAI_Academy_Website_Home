@@ -7,6 +7,7 @@ const quality = document.querySelector("#quality");
 const status = document.querySelector("#status");
 const progress = document.querySelector("#progress");
 const download = document.querySelector("#download");
+const mediaSuccess = document.querySelector("[data-media-success]");
 const fileInfo = document.querySelector("#file-info");
 const vietnamese = document.documentElement.lang === "vi";
 const simplifiedChinese = document.documentElement.lang === "zh-CN";
@@ -60,12 +61,14 @@ input.addEventListener("change", () => {
   button.disabled = false;
   status.textContent = simplifiedChinese ? "已准备好在当前设备上转换。" : traditionalChinese ? "已準備好在目前裝置上轉檔。" : vietnamese ? "Sẵn sàng chuyển đổi trên thiết bị này." : english ? "Ready to convert on this device." : "พร้อมแปลงไฟล์ในอุปกรณ์นี้";
   download.hidden = true;
+  if (mediaSuccess) mediaSuccess.hidden = true;
 });
 
 button.addEventListener("click", async () => {
   if (!selectedFile) return;
   button.disabled = true;
   download.hidden = true;
+  if (mediaSuccess) mediaSuccess.hidden = true;
   progress.value = 0;
   try {
     await loadEngine();
@@ -84,6 +87,7 @@ button.addEventListener("click", async () => {
     download.download = `${safeName(selectedFile.name.replace(/\.[^.]+$/, ""))}.${extension}`;
     download.textContent = simplifiedChinese ? `下载结果（${formatBytes(blob.size)}）` : traditionalChinese ? `下載結果（${formatBytes(blob.size)}）` : vietnamese ? `Tải kết quả ${formatBytes(blob.size)}` : english ? `Download ${formatBytes(blob.size)} result` : `ดาวน์โหลดผลลัพธ์ ${formatBytes(blob.size)}`;
     download.hidden = false;
+    if (mediaSuccess) mediaSuccess.hidden = false;
     status.textContent = simplifiedChinese ? "转换完成。工作文件仅保留在当前标签页中。" : traditionalChinese ? "轉檔完成。工作檔案只保留在目前分頁中。" : vietnamese ? "Chuyển đổi hoàn tất. File làm việc chỉ còn trong tab này." : english ? "Conversion complete. The working file remains only in this tab." : "แปลงเสร็จแล้ว ไฟล์ทำงานยังอยู่เฉพาะใน tab นี้";
     progress.value = 1;
     await ffmpeg.deleteFile(source);

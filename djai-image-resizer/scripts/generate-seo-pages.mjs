@@ -263,6 +263,13 @@ function render(template, preset, language) {
   const englishUrl = `${siteRoot}/${preset.slug}/en/`;
   const vietnameseUrl = `${siteRoot}/${preset.slug}/vi/`;
   const canonical = language === "th" ? thaiUrl : language === "vi" ? vietnameseUrl : englishUrl;
+  const relatedSlug = preset.slug === "compress-image" ? "resize-image" : "compress-image";
+  const relatedHref = `/tools/resizeimg/${relatedSlug}/${language === "th" ? "" : `${language}/`}`;
+  const relatedCopy = language === "th"
+    ? [relatedSlug === "resize-image" ? "Resize รูปภาพต่อ" : "บีบอัดรูปภาพต่อ", "เปิดเครื่องมือรูปภาพที่เกี่ยวข้องกับงานขั้นถัดไป"]
+    : language === "vi"
+      ? [relatedSlug === "resize-image" ? "Tiếp tục resize hình ảnh" : "Tiếp tục nén hình ảnh", "Mở công cụ hình ảnh phù hợp với bước tiếp theo"]
+      : [relatedSlug === "resize-image" ? "Resize another image" : "Compress another image", "Open the image tool that fits the next step"];
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
@@ -401,6 +408,7 @@ function render(template, preset, language) {
     .replace(/<h1>.*?<\/h1>/s, `<h1>${escapeHtml(h1)}</h1>`)
     .replace(/<p class="hero-description">.*?<\/p>/s, `<p class="hero-description">${escapeHtml(description)}</p>`)
     .replace(/<a href="https:\/\/www\.djai\.academy\/tools\/resizeimg\/(?:en\/)?" hreflang="(?:en|th)">(?:EN|ไทย)<\/a>/, language === "vi" ? `<a href="${thaiUrl}" hreflang="th">ไทย</a><a href="${englishUrl}" hreflang="en">EN</a>` : `<a href="${switchUrl}" hreflang="${language === "th" ? "en" : "th"}">${language === "th" ? "EN" : "ไทย"}</a>`)
+    .replace(/<a data-related-image-tool href="[^"]*">[\s\S]*?<\/a>/, `<a data-related-image-tool href="${relatedHref}"><strong>${escapeHtml(relatedCopy[0])}</strong><span>${escapeHtml(relatedCopy[1])}</span></a>`)
     .replace("    <section class=\"how-section\">", `    ${guide}\n\n    <section class="how-section">`);
 }
 

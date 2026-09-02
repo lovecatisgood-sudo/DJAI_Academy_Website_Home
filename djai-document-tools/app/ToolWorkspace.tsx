@@ -3,10 +3,10 @@
 import { ArrowRight, Check, Clipboard, Download, FileArchive, FileText, LoaderCircle, LockKeyhole, RotateCcw, ShieldCheck, Upload, X } from "lucide-react";
 import dynamic from "next/dynamic";
 import { useEffect, useRef, useState } from "react";
+import AcquisitionBridge from "./AcquisitionBridge";
 import type { ToolOptions, ToolResult } from "./processors";
 import ShareButtons from "./ShareButtons";
-import ToolPromoModal, { shouldShowToolPromo } from "./ToolPromoModal";
-import { toolHref, type Language, type ToolDefinition } from "./tool-data";
+import { toolHref, toolsFor, type Language, type ToolDefinition } from "./tool-data";
 
 const TokenCounterWorkspace = dynamic(() => import("./TokenCounterWorkspace"), {
   ssr: false,
@@ -57,13 +57,13 @@ function GenericToolWorkspace({ tool, language }: { tool: ToolDefinition; langua
   const [running, setRunning] = useState(false);
   const [dragging, setDragging] = useState(false);
   const [copied, setCopied] = useState(false);
-  const [promoType, setPromoType] = useState<"course" | "development" | null>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const textMode = ["token-counter", "context-optimizer", "rag-chunk-calculator", "prompt-packager"].includes(tool.slug);
   const needsFile = !["token-counter", "context-optimizer", "rag-chunk-calculator", "prompt-packager"].includes(tool.slug);
   const shareUrl = `https://www.djai.academy${toolHref(tool, language)}`;
   const allowsMultiple = Boolean(tool.multiple);
   const outputText = result?.text || "";
+  const relatedTool = toolsFor(tool.category).find((candidate) => candidate.slug !== tool.slug);
 
   useEffect(() => () => { if (result?.url) URL.revokeObjectURL(result.url); }, [result]);
 
@@ -91,7 +91,6 @@ function GenericToolWorkspace({ tool, language }: { tool: ToolDefinition; langua
       const processed = await processTool(tool, files, input, options);
       const url = processed.blob ? URL.createObjectURL(processed.blob) : undefined;
       setResult({ ...processed, url });
-      if (processed.blob) setPromoType(shouldShowToolPromo());
       window.dispatchEvent(new CustomEvent("djai-tool-complete", { detail: { tool: tool.slug } }));
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : t("The tool could not process this file.", "ไม่สามารถประมวลผลไฟล์นี้ได้", "Công cụ chưa thể xử lý file này.", "无法处理此文件。", "無法處理此檔案。"));
@@ -139,8 +138,9 @@ function GenericToolWorkspace({ tool, language }: { tool: ToolDefinition; langua
       {outputText && <pre className="text-preview">{outputText}</pre>}
       <div className="result-actions">{result.url && result.fileName && <a className="download-button" href={result.url} download={result.fileName}><Download />{t("Download result", "ดาวน์โหลดผลลัพธ์", "Tải kết quả", "下载结果", "下載結果")}</a>}{outputText && <button type="button" onClick={copyResult}>{copied ? <Check /> : <Clipboard />}{copied ? t("Copied", "คัดลอกแล้ว", "Đã sao chép", "已复制", "已複製") : t("Copy result", "คัดลอกผลลัพธ์", "Sao chép kết quả", "复制结果", "複製結果")}</button>}</div>
       <ShareButtons url={shareUrl} title={tool.title[language]} language={language} compact />
+      {relatedTool ? <a className="result-next-tool" data-related-tool href={toolHref(relatedTool, language)}><span><strong>{t("Continue with a related tool", "ทำงานต่อด้วยเครื่องมือที่เกี่ยวข้อง", "Tiếp tục với công cụ liên quan", "继续使用相关工具", "繼續使用相關工具")}</strong><small>{relatedTool.label[language]}</small></span><ArrowRight /></a> : null}
+      <AcquisitionBridge language={language} category={tool.category} compact />
     </section>}
-    <ToolPromoModal language={language} type={promoType} onClose={() => setPromoType(null)} />
   </>;
 }
 

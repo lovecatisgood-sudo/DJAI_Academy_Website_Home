@@ -96,6 +96,22 @@ test("popular and discovery links stay on canonical image-tool routes", () => {
   }
 });
 
+test("every image result offers a different related tool before Development", () => {
+  for (const language of ["th", "en"]) {
+    for (const { slug } of presets) {
+      const path = join(publicDir, slug, ...(language === "en" ? ["en"] : []), "index.html");
+      const html = readFileSync(path, "utf8");
+      const journey = html.match(/<aside id="image-success-journey"[\s\S]*?<\/aside>/)?.[0];
+      assert.ok(journey, `${path} is missing the post-result journey`);
+      const relatedHref = journey.match(/data-related-image-tool href="([^"]+)"/)?.[1];
+      assert.ok(relatedHref, `${path} is missing a related image route`);
+      assert.doesNotMatch(relatedHref, new RegExp(`/resizeimg/${slug}/(?:en/)?$`), `${path} links to itself`);
+      assert.ok(journey.indexOf("data-related-image-tool") < journey.indexOf("data-image-development"));
+      assert.doesNotMatch(journey, /Cam PDF|play\.google\.com|course/i);
+    }
+  }
+});
+
 test("processing libraries are bundled locally", () => {
   const heic = join(publicDir, "vendor", "heic2any.min.js");
   const zip = join(publicDir, "vendor", "jszip.min.js");

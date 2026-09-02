@@ -1,6 +1,7 @@
 [
  {
   "slug": "video-converter",
+  "relatedSlug": "compress-video",
   "mode": "convert",
   "fixedInput": null,
   "fixedOutput": null,
@@ -72,6 +73,7 @@
  },
  {
   "slug": "mkv-to-mp4",
+  "relatedSlug": "video-converter",
   "mode": "convert",
   "fixedInput": "mkv",
   "fixedOutput": "mp4",
@@ -141,6 +143,7 @@
  },
  {
   "slug": "avi-to-mp4",
+  "relatedSlug": "video-converter",
   "mode": "convert",
   "fixedInput": "avi",
   "fixedOutput": "mp4",
@@ -210,6 +213,7 @@
  },
  {
   "slug": "mp4-to-mov",
+  "relatedSlug": "video-converter",
   "mode": "convert",
   "fixedInput": "mp4",
   "fixedOutput": "mov",
@@ -279,6 +283,7 @@
  },
  {
   "slug": "video-cutter",
+  "relatedSlug": "video-converter",
   "mode": "cutter",
   "fixedInput": null,
   "fixedOutput": null,
@@ -350,6 +355,7 @@
  },
  {
   "slug": "video-cropper",
+  "relatedSlug": "video-resizer",
   "mode": "cropper",
   "fixedInput": null,
   "fixedOutput": null,
@@ -421,6 +427,7 @@
  },
  {
   "slug": "video-resizer",
+  "relatedSlug": "video-cropper",
   "mode": "resizer",
   "fixedInput": null,
   "fixedOutput": null,
@@ -492,6 +499,7 @@
  },
  {
   "slug": "video-merger",
+  "relatedSlug": "video-cutter",
   "mode": "merger",
   "fixedInput": null,
   "fixedOutput": null,
@@ -563,6 +571,7 @@
  },
  {
   "slug": "compress-video-to-10mb",
+  "relatedSlug": "compress-video",
   "mode": "compressor",
   "fixedInput": null,
   "fixedOutput": null,
@@ -632,6 +641,7 @@
  },
  {
   "slug": "compress-video-to-25mb",
+  "relatedSlug": "compress-video-to-10mb",
   "mode": "compressor",
   "fixedInput": null,
   "fixedOutput": null,
@@ -701,6 +711,7 @@
  },
  {
   "slug": "compress-video-to-50mb",
+  "relatedSlug": "compress-video-to-25mb",
   "mode": "compressor",
   "fixedInput": null,
   "fixedOutput": null,
@@ -770,6 +781,7 @@
  },
  {
   "slug": "compress-video-to-100mb",
+  "relatedSlug": "compress-video-to-50mb",
   "mode": "compressor",
   "fixedInput": null,
   "fixedOutput": null,
@@ -839,6 +851,7 @@
  },
  {
   "slug": "video-to-gif",
+  "relatedSlug": "gif-to-mp4",
   "mode": "video-to-gif",
   "fixedInput": null,
   "fixedOutput": null,
@@ -910,6 +923,7 @@
  },
  {
   "slug": "gif-to-mp4",
+  "relatedSlug": "video-to-gif",
   "mode": "gif-to-mp4",
   "fixedInput": null,
   "fixedOutput": null,
@@ -979,6 +993,7 @@
  },
  {
   "slug": "remove-audio-from-video",
+  "relatedSlug": "add-audio-to-video",
   "mode": "remove-audio",
   "fixedInput": null,
   "fixedOutput": null,
@@ -1048,6 +1063,7 @@
  },
  {
   "slug": "add-audio-to-video",
+  "relatedSlug": "remove-audio-from-video",
   "mode": "add-audio",
   "fixedInput": null,
   "fixedOutput": null,
@@ -1117,6 +1133,7 @@
  },
  {
   "slug": "video-speed-changer",
+  "relatedSlug": "video-cutter",
   "mode": "speed",
   "fixedInput": null,
   "fixedOutput": null,
@@ -1188,6 +1205,7 @@
  },
  {
   "slug": "extract-frames-from-video",
+  "relatedSlug": "video-to-gif",
   "mode": "frames",
   "fixedInput": null,
   "fixedOutput": null,
@@ -1259,6 +1277,7 @@
  },
  {
   "slug": "rotate-video",
+  "relatedSlug": "video-cropper",
   "mode": "rotate",
   "fixedInput": null,
   "fixedOutput": null,
@@ -1328,6 +1347,7 @@
  },
 {
   "slug": "webm-to-mp4",
+  "relatedSlug": "mp4-to-webm",
   "mode": "convert",
   "fixedInput": "webm",
   "fixedOutput": "mp4",
@@ -1397,6 +1417,7 @@
  },
  {
   "slug": "mov-to-mp4",
+  "relatedSlug": "compress-video",
   "mode": "convert",
   "fixedInput": "mov",
   "fixedOutput": "mp4",
@@ -1466,6 +1487,7 @@
  },
  {
   "slug": "mp4-to-webm",
+  "relatedSlug": "webm-to-mp4",
   "mode": "convert",
   "fixedInput": "mp4",
   "fixedOutput": "webm",
@@ -1535,6 +1557,7 @@
  },
  {
   "slug": "compress-video",
+  "relatedSlug": "video-cutter",
   "mode": "compressor",
   "en": {
    "primary": "video compressor",

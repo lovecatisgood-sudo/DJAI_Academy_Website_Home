@@ -58,18 +58,6 @@ img { max-width: 100%; height: auto; }
 .share-buttons a, .share-buttons button { min-height: 34px; padding: 0 12px; border: 0; border-radius: 999px; color: var(--ink); background: #eef3f8; font: inherit; font-size: .8rem; font-weight: 900; cursor: pointer; }
 .share-buttons a:hover, .share-buttons button:hover { color: white; background: var(--coral); }
 
-.promo-modal { position: fixed; inset: 0; z-index: 80; display: grid; place-items: center; padding: 20px; background: rgba(7,19,39,.56); animation: fade-in .16s ease-out; }
-.promo-modal.closing { animation: fade-out .14s ease-in forwards; }
-.promo-card { position: relative; width: min(520px, 100%); padding: 30px; color: var(--ink); background: white; border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 28px 80px rgba(7,19,39,.28); }
-.promo-card h2 { margin: 0 0 12px; font-size: clamp(1.7rem, 4vw, 2.45rem); line-height: 1.05; }
-.promo-card > p:not(.eyebrow) { color: #50627a; line-height: 1.7; }
-.promo-close { position: absolute; top: 12px; right: 14px; width: 34px; height: 34px; color: var(--ink); background: #eef3f8; border: 0; border-radius: 50%; font-size: 24px; line-height: 1; }
-.promo-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 22px; }
-.promo-actions a, .promo-actions button { display: inline-flex; min-height: 44px; align-items: center; justify-content: center; padding: 0 16px; border-radius: 8px; font-weight: 900; }
-.promo-actions a { color: white; background: var(--coral); }
-.promo-actions button { color: var(--ink); background: #eef3f8; border: 0; }
-@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
-@keyframes fade-out { from { opacity: 1; } to { opacity: 0; } }
 
 .tool-directory, .related-tools, .faq-section { padding: 90px max(24px, calc((100vw - 1180px) / 2)); }
 .section-heading { max-width: 700px; margin-bottom: 36px; }
@@ -197,6 +185,12 @@ img { max-width: 100%; height: auto; }
 .result-actions a { color: white; background: var(--coral); }
 .result-actions button { color: var(--navy); background: var(--cyan); border: 0; }
 .result-actions svg { width: 18px; }
+.result-next-tool { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 22px; padding: 18px; color: var(--navy); background: #e9f7f2; border: 1px solid #abd7c8; border-radius: 8px; }
+.result-next-tool span { display: grid; gap: 4px; }
+.result-next-tool small { color: var(--muted); }
+.result-next-tool svg { width: 20px; }
+.result-area .compact-acquisition { width: 100%; margin: 16px 0 0; }
+.result-area .service-band.compact-acquisition { padding: 28px; }
 
 .how-to { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; padding: 90px max(24px, calc((100vw - 1120px) / 2)); background: white; }
 .how-to > div > p:last-child { color: var(--muted); line-height: 1.7; }
@@ -231,6 +225,9 @@ img { max-width: 100%; height: auto; }
 .mobile-app-callout h2 { margin: 4px 0 8px; font-size: clamp(1.45rem, 3vw, 2.25rem); line-height: 1.1; }
 .mobile-app-callout p:not(.eyebrow) { margin: 0; max-width: 720px; color: var(--muted); line-height: 1.65; }
 .mobile-app-callout .primary-button { justify-self: end; white-space: nowrap; }
+.acquisition-actions { display: grid; justify-items: end; gap: 10px; }
+.acquisition-actions > a:last-child, .secondary-acquisition-link { color: var(--blue); font-weight: 800; text-decoration: underline; text-underline-offset: 4px; }
+.service-band .secondary-acquisition-link { display: inline-block; margin-top: 12px; color: white; }
 .tool-ecosystem-directory { width: min(1180px, calc(100% - 40px)); margin: 0 auto; padding: 72px 0; }
 .tool-ecosystem-directory > div:first-child { max-width: 760px; margin-bottom: 28px; }
 .tool-ecosystem-directory h2 { margin: 8px 0 0; color: var(--navy); font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.05; }
@@ -388,6 +385,7 @@ img { max-width: 100%; height: auto; }
   .service-band, .course-band { grid-template-columns: 1fr; }
   .mobile-app-callout { grid-template-columns: 1fr; }
   .mobile-app-callout .primary-button { justify-self: start; }
+  .acquisition-actions { justify-items: start; }
   .course-band > svg { display: none; }
 }
 

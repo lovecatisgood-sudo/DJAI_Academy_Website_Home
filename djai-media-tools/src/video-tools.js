@@ -258,6 +258,10 @@ function buildUI(){
   const root=document.getElementById('video-tool-app');
   const multi=CFG.mode==='merger';
   const formats=CFG.fixedInput?CFG.fixedInput.toUpperCase():(CFG.mode==='gif-to-mp4'?'GIF':L.formats);
+  const relatedSlug=String(CFG.relatedSlug||'').replace(/[^a-z0-9-]/g,'');
+  const relatedHref=relatedSlug?`/tools/media/${relatedSlug}/${TH?'':'en/'}`:'';
+  const developmentHref=TH?'/development/':'/development/en/';
+  const successJourney=relatedSlug?`<aside class="success-journey"><p class="eyebrow">${TH?'ทำงานต่อ':'CONTINUE THE WORKFLOW'}</p><div><a data-related-media-tool href="${relatedHref}"><strong>${TH?'เปิดเครื่องมือวิดีโอที่เกี่ยวข้อง':'Open a related video tool'}</strong><span>${TH?'ทำงานขั้นถัดไปด้วยเครื่องมือที่ตรงงาน':'Continue with the closest conversion or editing task'}</span></a><a data-media-development href="${developmentHref}"><strong>${TH?'พัฒนา media workflow สำหรับใช้งานจริง':'Build a production media workflow'}</strong><span>${TH?'คุยกับ DJAI เมื่อขั้นตอนนี้ต้องเชื่อมกับ product หรือ automation':'Talk to DJAI when this step needs product or automation integration'}</span></a></div></aside>`:'';
   root.innerHTML=`
     <div id="dropzone" class="drop">
       <strong>${multi?L.dropMulti:L.drop}</strong>
@@ -285,6 +289,7 @@ function buildUI(){
       <div id="result" class="result">
         <div class="result-top"><div><strong>${L.result}</strong><br><small id="resultMeta"></small></div><div id="downloads" class="downloads"></div></div>
         <video id="resultMedia" controls playsinline style="display:none"></video>
+        ${successJourney}
       </div>
     </div>`;
   bindUpload();

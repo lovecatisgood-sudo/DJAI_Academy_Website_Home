@@ -15,9 +15,7 @@ const downloadCtaFiles = [
   "djai-academy-homepage/app/portfolio/page.jsx",
   "djai-academy-homepage/app/portfolio/en/page.jsx",
   "djai-academy-homepage/app/portfolio/vi/page.jsx",
-  "djai-document-tools/app/category-page.tsx",
-  "djai-image-resizer/public/index.html",
-  "djai-image-resizer/public/en/index.html",
+  "djai-document-tools/app/AcquisitionBridge.tsx",
   "djai-pdf-tools/app/PdfToolsApp.tsx"
 ];
 
