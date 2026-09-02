@@ -1,20 +1,28 @@
 import Image from "next/image";
 import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
+import TrackedLink from "../components/TrackedLink";
 import styles from "./page.module.css";
 
 const APP_PATH = "/Cam_PDF_Scan_Signer_QR-Gen/";
 const PLAY_STORE_URL = "https://play.google.com/store/apps/details?id=com.djai.campdfscan";
+const playStoreEventParams = {
+  source_path: APP_PATH,
+  locale: "en",
+  cluster: "cam_pdf",
+  destination_type: "google_play",
+  destination_url: PLAY_STORE_URL
+};
 
 export const metadata = {
-  title: "Cam PDF Scan Signer QR Gen for Android | DJAI",
+  title: "PDF Scanner App for Android: Scan, Sign & Create QR Codes | Cam PDF",
   description:
-    "Scan documents, organize files, edit and sign PDFs, create QR codes, and export clean files from one Android app by DJAI.",
+    "Scan documents, sign and organize PDFs, create QR codes, and export without an added watermark with Cam PDF for Android.",
   alternates: { canonical: APP_PATH },
   openGraph: {
-    title: "Cam PDF Scan Signer QR Gen",
+    title: "Cam PDF Scanner, PDF Signer & QR Generator for Android",
     description:
-      "An Android document scanner, PDF editor, signer, file manager, and QR studio by DJAI.",
+      "Scan documents, sign and organize PDFs, create QR codes, and control exports in one Android app by DJAI.",
     url: APP_PATH,
     siteName: "DJAI Academy",
     images: [
@@ -29,8 +37,8 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cam PDF Scan Signer QR Gen",
-    description: "Scan, edit, sign, organize, and export documents on Android.",
+    title: "Cam PDF Scanner, PDF Signer & QR Generator for Android",
+    description: "Scan documents, sign PDFs, create QR codes, and control exports on Android.",
     images: ["/apps/cam-pdf/home.png"]
   }
 };
@@ -82,6 +90,7 @@ const structuredData = {
   name: "Cam PDF Scan Signer QR Gen",
   operatingSystem: "Android",
   applicationCategory: "UtilitiesApplication",
+  softwareVersion: "2.0.1",
   description:
     "Android document scanner, PDF editor, signer, file manager, export utility, and QR code studio by DJAI.",
   url: `https://www.djai.academy${APP_PATH}`,
@@ -142,34 +151,62 @@ export default function CamPdfAppPage() {
               />
               <span>Android app by DJAI</span>
             </div>
-            <h1 className={styles.heroTitle}>Cam PDF Scan Signer QR Gen</h1>
+            <h1 className={styles.heroTitle}>Scan documents, sign PDFs, and create QR codes on Android</h1>
             <p className={styles.heroCopy}>
-              Turn paper, photos, PDFs, and office documents into organized files you can edit,
-              sign, compress, name, and share from one Android workspace.
+              Cam PDF turns paper, photos, PDFs, and office documents into organized files you can
+              edit, sign, compress, name, and share from one Android workspace.
             </p>
             <div className={styles.heroActions}>
-              <a className={styles.releaseButton} href={PLAY_STORE_URL}>Download on Google Play</a>
+              <TrackedLink
+                className={styles.releaseButton}
+                href={PLAY_STORE_URL}
+                target="_blank"
+                rel="noreferrer"
+                eventName="play_store_click"
+                eventParams={playStoreEventParams}
+              >
+                Download on Google Play
+              </TrackedLink>
               <a className={styles.secondaryButton} href="#product">
-                Explore the app
+                See scanner, signer, PDF, and QR features
               </a>
             </div>
-            <p className={styles.heroPromise}>Free document features. No watermark on exported files.</p>
+            <p className={styles.heroPromise}>
+              No added watermark on exported files. Account and usage conditions apply.
+            </p>
           </div>
         </section>
 
         <section className={styles.releaseStrip} aria-label="Product status">
           <div>
-            <strong>Android first</strong>
-            <span>Designed for practical mobile document work</span>
+            <strong>Live on Google Play</strong>
+            <span>Version 2.0.1 · Updated August 23, 2026</span>
           </div>
           <div>
             <strong>Local document workflow</strong>
             <span>Your document content is processed on your device</span>
           </div>
           <div>
-            <strong>One workspace</strong>
-            <span>Scan, manage, edit, sign, export, and create QR codes</span>
+            <strong>No added watermark</strong>
+            <span>Export clean files within the app&apos;s usage model</span>
           </div>
+        </section>
+
+        <section className={styles.accessBand} aria-labelledby="access-model-title">
+          <div>
+            <p className={styles.kicker}>Before you install</p>
+            <h2 id="access-model-title">Know the access model.</h2>
+            <p>
+              Cam PDF is designed for recurring document work, with usage controls that are
+              explained before you leave this page.
+            </p>
+          </div>
+          <ul>
+            <li>An account is required to use the app.</li>
+            <li>Exports use a weekly export allowance.</li>
+            <li>Optional rewarded ads may add usage when available.</li>
+            <li>The app contains ads and in-app purchases.</li>
+          </ul>
         </section>
 
         <section className={styles.features} id="product">
@@ -274,11 +311,22 @@ export default function CamPdfAppPage() {
           <p className={styles.kicker}>Available on Google Play</p>
           <h2>Cam PDF Scan Signer QR Gen</h2>
           <p>
-            Download the Android app from Google Play. Product, privacy, support, and account
-            information on this page remains the official DJAI reference. The iOS release is planned;
-            stay tuned for its release announcement.
+            Download the Android app from Google Play. An account is required, exports use a weekly
+            allowance, and the app contains ads and in-app purchases. No added watermark is placed
+            on exported files.
           </p>
-          <a href={PLAY_STORE_URL}>Download on Google Play</a>
+          <TrackedLink
+            href={PLAY_STORE_URL}
+            target="_blank"
+            rel="noreferrer"
+            eventName="play_store_click"
+            eventParams={playStoreEventParams}
+          >
+            Download on Google Play
+          </TrackedLink>
+          <small>
+            Verified against the Google Play listing and DJAI app policy on September 2, 2026.
+          </small>
         </section>
       </main>
       <SiteFooter locale="en" />

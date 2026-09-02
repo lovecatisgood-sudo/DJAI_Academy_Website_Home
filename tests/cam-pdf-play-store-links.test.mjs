@@ -35,12 +35,12 @@ test("the promotion header does not link to nonexistent Cam PDF locale routes", 
   assert.doesNotMatch(source, /Cam_PDF_Scan_Signer_QR-Gen\/(?:en|vi)\//);
 });
 
-test("English product page advertises the live release and iOS follow-up", () => {
+test("English product page advertises only the verified Android release", () => {
   const source = readFileSync(join(root, productRoot, "page.jsx"), "utf8");
   assert.match(source, /Available on Google Play/);
   assert.match(source, /Download on Google Play/);
   assert.match(source, /installUrl: PLAY_STORE_URL/);
-  assert.match(source, /iOS release is planned/);
+  assert.doesNotMatch(source, /iOS release is planned|iOS.*coming soon/i);
   assert.doesNotMatch(source, /release in progress|release is being prepared|Launch preparation underway/i);
 });
 

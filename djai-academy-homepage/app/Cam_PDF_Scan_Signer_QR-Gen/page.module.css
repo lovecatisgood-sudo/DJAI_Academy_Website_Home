@@ -171,6 +171,60 @@
   line-height: 1.5;
 }
 
+.accessBand {
+  display: grid;
+  width: min(1180px, calc(100% - 40px));
+  margin: 64px auto 0;
+  padding: 42px;
+  border: 1px solid #c5d9d4;
+  border-radius: 14px;
+  background: #eaf6f3;
+  gap: 44px;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+}
+
+.accessBand h2 {
+  margin-bottom: 14px;
+  font-size: 36px;
+  line-height: 1.1;
+}
+
+.accessBand p:last-child {
+  color: #536a66;
+  line-height: 1.65;
+}
+
+.accessBand ul {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  gap: 0;
+}
+
+.accessBand li {
+  position: relative;
+  padding: 14px 0 14px 28px;
+  border-bottom: 1px solid #c5d9d4;
+  color: #324d49;
+  line-height: 1.5;
+}
+
+.accessBand li:last-child {
+  border-bottom: 0;
+}
+
+.accessBand li::before {
+  position: absolute;
+  top: 21px;
+  left: 4px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--app-teal);
+  content: "";
+}
+
 .features,
 .showcase,
 .details {
@@ -397,6 +451,14 @@
   font-weight: 800;
 }
 
+.finalCta small {
+  max-width: 670px;
+  margin-top: 18px;
+  color: #657874;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
 @media (max-width: 1040px) {
   .heroScreenMain {
     right: 2%;
@@ -463,10 +525,16 @@
   }
 
   .releaseStrip,
+  .accessBand,
   .featureGrid,
   .privacyBand,
   .details {
     grid-template-columns: 1fr;
+  }
+
+  .accessBand {
+    padding: 32px 28px;
+    gap: 24px;
   }
 
   .releaseStrip div {
@@ -525,6 +593,7 @@
   }
 
   .sectionHeading h2,
+  .accessBand h2,
   .privacyBand h2,
   .detailCopy h2,
   .finalCta h2 {
