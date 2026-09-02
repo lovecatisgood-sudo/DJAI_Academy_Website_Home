@@ -5,7 +5,6 @@ import {
   ArrowLeft,
   ArrowRight,
   ArrowUp,
-  BookOpen,
   Check,
   Download,
   FileArchive,
@@ -13,7 +12,6 @@ import {
   FileLock2,
   Files,
   FileStack,
-  GraduationCap,
   Hash,
   ImagePlus,
   ListOrdered,
@@ -35,11 +33,11 @@ import {
 import type { LucideIcon } from "lucide-react";
 import Image from "next/image";
 import { Fragment, useEffect, useMemo, useRef, useState } from "react";
+import { trackSeoEvent } from "./analytics";
 import type { ProcessingOptions, ProcessResult } from "./pdf-actions";
 import { pdfSeoAliases, type PdfSeoPage } from "./seo-alias-data";
 import AdSenseAd from "./AdSenseAd";
 import ShareButtons from "./ShareButtons";
-import ToolPromoModal, { shouldShowToolPromo } from "./ToolPromoModal";
 import { BASE_PATH, SITE_URL, homeHref, toolCopy, toolGuides, toolHref, toolSlugs, type Language, type ToolSlug } from "./tool-data";
 
 const icons: Record<ToolSlug, LucideIcon> = {
@@ -291,7 +289,9 @@ function Segmented<T extends string | number>({ values, value, onChange }: {
   );
 }
 
-function CamPdfAppCallout({ language }: { language: Language }) {
+const CAM_PDF_PLAY_URL = "https://play.google.com/store/apps/details?id=com.djai.campdfscan";
+
+function CamPdfAppCallout({ language, sourcePath, toolSlug }: { language: Language; sourcePath: string; toolSlug: string }) {
   const en = language === "en";
   const vi = language === "vi";
   return (
@@ -307,7 +307,18 @@ function CamPdfAppCallout({ language }: { language: Language }) {
             : "Cam PDF Scan, Signer & QR Generator รวมการสแกนเอกสาร เซ็น PDF เครื่องมือ QR และฟีเจอร์ productivity ขั้นสูงไว้ในแอปมือถือเดียว"}
         </p>
       </div>
-      <a className="primary-button" href="https://play.google.com/store/apps/details?id=com.djai.campdfscan">
+      <a
+        className="primary-button"
+        href={CAM_PDF_PLAY_URL}
+        onClick={() => trackSeoEvent("play_store_click", {
+          source_path: sourcePath,
+          locale: language,
+          cluster: "pdf",
+          tool_slug: toolSlug,
+          destination_type: "google_play",
+          destination_url: CAM_PDF_PLAY_URL
+        })}
+      >
         {vi ? "Tải ứng dụng" : en ? "Download the app" : "ดาวน์โหลดแอป"}<ArrowRight />
       </a>
     </section>
@@ -442,7 +453,6 @@ export default function PdfToolsApp({ language, initialTool, seoPage, initialOpt
   const [processing, setProcessing] = useState(false);
   const [error, setError] = useState("");
   const [result, setResult] = useState<(ProcessResult & { url: string; originalSize: number }) | null>(null);
-  const [promoType, setPromoType] = useState<"course" | "development" | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const fileInput = useRef<HTMLInputElement>(null);
 
@@ -450,6 +460,18 @@ export default function PdfToolsApp({ language, initialTool, seoPage, initialOpt
   const allowsMultiple = activeTool === "merge-pdf" || activeTool === "images-to-pdf";
   const accept = acceptOverride || (isImageInput ? "image/jpeg,image/png,image/webp" : "application/pdf,.pdf");
   const related = useMemo(() => relatedToolOrder[activeTool], [activeTool]);
+  const publicSlug = seoPage?.slug || initialTool || "pdf-tools";
+  const localeSuffix = language === "th" ? "" : `${language}/`;
+  const sourcePath = initialTool ? `${BASE_PATH}/${publicSlug}/${localeSuffix}` : `${BASE_PATH}/${localeSuffix}`;
+  const canonical = `${SITE_URL}${initialTool ? `/${publicSlug}/` : "/"}${localeSuffix}`;
+  const thaiHref = seoPage ? `${BASE_PATH}/${seoPage.slug}/` : initialTool ? toolHref(initialTool, "th") : homeHref("th");
+  const englishHref = seoPage ? `${BASE_PATH}/${seoPage.slug}/en/` : initialTool ? toolHref(initialTool, "en") : homeHref("en");
+  const seoEventParams = {
+    source_path: sourcePath,
+    locale: language,
+    cluster: "pdf",
+    tool_slug: publicSlug
+  };
 
   useEffect(() => () => {
     if (result?.url) URL.revokeObjectURL(result.url);
@@ -491,13 +513,14 @@ export default function PdfToolsApp({ language, initialTool, seoPage, initialOpt
       setError(vi ? "Mật khẩu phải có ít nhất 8 ký tự." : en ? "Use a password with at least 8 characters." : "กรุณาใช้รหัสผ่านอย่างน้อย 8 ตัวอักษร");
       return;
     }
+    trackSeoEvent("tool_start", seoEventParams);
     setProcessing(true);
     try {
       const { processFiles } = await import("./pdf-actions");
       const processed = await processFiles(activeTool, files, options);
       if (result?.url) URL.revokeObjectURL(result.url);
       setResult({ ...processed, url: URL.createObjectURL(processed.blob), originalSize: files.reduce((sum, file) => sum + file.size, 0) });
-      setPromoType(shouldShowToolPromo());
+      trackSeoEvent("tool_success", seoEventParams);
       window.setTimeout(() => document.getElementById("pdf-result")?.scrollIntoView({ behavior: "smooth", block: "center" }), 50);
     } catch (caught) {
       const message = caught instanceof Error ? caught.message : "Unable to process this file.";
@@ -507,11 +530,6 @@ export default function PdfToolsApp({ language, initialTool, seoPage, initialOpt
     }
   }
 
-  const publicSlug = seoPage?.slug || initialTool;
-  const localeSuffix = language === "th" ? "" : `${language}/`;
-  const canonical = publicSlug ? `${SITE_URL}/${publicSlug}/${localeSuffix}` : `${SITE_URL}/${localeSuffix}`;
-  const thaiHref = initialTool ? toolHref(initialTool, "th") : homeHref("th");
-  const englishHref = initialTool ? toolHref(initialTool, "en") : homeHref("en");
   const structuredData = [
     {
       "@context": "https://schema.org",
@@ -635,18 +653,17 @@ export default function PdfToolsApp({ language, initialTool, seoPage, initialOpt
         </div>
       </section>
 
-      <CamPdfAppCallout language={language} />
-
       <AdSenseAd label="PDF tools advertisement" variant="display2" />
 
       {result && (
         <section className="result-section" id="pdf-result" aria-live="polite">
           <div className="success-mark"><Check /></div><p className="eyebrow">SUCCESS</p><h2>{copy.resultTitle}</h2><p>{copy.resultText}</p>
           <div className="result-stats"><div><span>{copy.original}</span><strong>{formatBytes(result.originalSize)}</strong></div><div><span>{copy.result}</span><strong>{formatBytes(result.blob.size)}</strong></div><div><span>{copy.items}</span><strong>{result.itemCount}</strong></div>{result.note && <div><span>MODE</span><strong>{result.note}</strong></div>}</div>
-          <a className="download-button" href={result.url} download={result.fileName}><Download />{copy.download}</a>
+          <a className="download-button" href={result.url} download={result.fileName} onClick={() => trackSeoEvent("tool_download", seoEventParams)}><Download />{copy.download}</a>
           <ShareButtons url={canonical} title={initialTool ? activeCopy.title : copy.heroTitle} language={language} compact />
           <button className="clear-button light" type="button" onClick={clearWorkspace}>{copy.clear}</button>
           <div className="continue-tools"><h3>{copy.continue}</h3><div>{related.map((slug) => { const Icon = icons[slug]; return <a href={toolHref(slug, language)} key={slug}><Icon /><span>{toolCopy[language][slug].label}</span><ArrowRight /></a>; })}</div></div>
+          <CamPdfAppCallout language={language} sourcePath={sourcePath} toolSlug={publicSlug} />
         </section>
       )}
 
@@ -658,8 +675,6 @@ export default function PdfToolsApp({ language, initialTool, seoPage, initialOpt
 
       <section className="conversion-band development-band"><div><p className="eyebrow">{copy.devEyebrow}</p><h2>{copy.devTitle}</h2><p>{linkedBuilderName(copy.devText, devHref)}</p><div className="button-row"><a className="primary-button" href={localePath("/development/", "/development/en/", "/development/vi/")}>{copy.devButton}<ArrowRight /></a><a className="secondary-button" href={localePath("/portfolio/", "/portfolio/en/", "/portfolio/vi/")}>{copy.portfolioButton}</a></div></div><div className="system-visual"><span><Files /></span><ArrowRight /><span><WandSparkles /></span><ArrowRight /><span><ShieldCheck /></span></div></section>
 
-      <section className="conversion-band course-band"><div className="course-symbol"><GraduationCap /></div><div><p className="eyebrow">{copy.courseEyebrow}</p><h2>{copy.courseTitle}</h2><p>{copy.courseText}</p><a className="secondary-button" href={localePath("/course/detail/", "/course/detail/en/", "/course/detail/vi/")}>{copy.courseButton}<BookOpen /></a></div></section>
-
       <section className="builder-section" id="builder"><a className="builder-logo" href={devHref}><Image src={`${BASE_PATH}/siamese-cat-dev-logo.webp`} alt="Siamese Cat Dev logo" width={640} height={540} loading="lazy" unoptimized /></a><div><p className="eyebrow">{copy.builderEyebrow}</p><h2>{linkedBuilderName(copy.builderTitle, devHref)}</h2><p>{linkedBuilderName(copy.builderText, devHref)}</p><a className="text-link" href={devHref}>{copy.builderLink}<ArrowRight /></a></div></section>
 
       <section className="seo-section"><div><p className="eyebrow">FREE PDF TOOLS</p><h2>{copy.seoTitle}</h2><p>{copy.seoText}</p></div><div className="faq-list"><h2>{copy.faqTitle}</h2>{copy.faq.map(([question, answer]) => <details key={question}><summary>{question}<span>+</span></summary><p>{answer}</p></details>)}</div></section>
@@ -669,7 +684,6 @@ export default function PdfToolsApp({ language, initialTool, seoPage, initialOpt
         <div>{toolCategories[language].map(([label, href, description]) => <a href={href} key={href}><strong>{label}</strong><span>{description}</span><ArrowRight /></a>)}</div>
       </nav>
       <footer><div className="footer-brand"><a className="brand" href={homeHref(language)}><Image src={`${BASE_PATH}/djai-academy-logo-display.webp`} alt="DJAI Academy" width={114} height={61} loading="lazy" unoptimized /><span><strong>DJTools</strong><small>PDF · by DJAI Academy</small></span></a><p>{copy.footerPrivacy}</p></div><div className="footer-links"><div><strong>DJAI</strong><a href={localePath("/", "/en/", "/vi/")}>DJAI Academy</a><a href={localePath("/course/", "/course/en/", "/course/vi/")}>{copy.nav.course}</a><a href={localePath("/blog/", "/blog/en/", "/blog/vi/")}>{copy.nav.blog}</a></div><div><strong>BUILD</strong><a href={localePath("/development/", "/development/en/", "/development/vi/")}>{copy.nav.development}</a><a href={localePath("/portfolio/", "/portfolio/en/", "/portfolio/vi/")}>{copy.portfolioButton}</a><a href={devHref}>Siamese Cat Dev</a></div><div><strong>TOOLS</strong>{related.slice(0, 4).map((slug) => <a href={toolHref(slug, language)} key={slug}>{toolCopy[language][slug].label}</a>)}</div></div><p className="copyright">© 2026 {copy.copyright}</p></footer>
-      <ToolPromoModal language={language} type={promoType} onClose={() => setPromoType(null)} />
     </main>
   );
 }

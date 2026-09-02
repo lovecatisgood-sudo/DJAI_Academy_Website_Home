@@ -51,10 +51,10 @@ export const toolCopy: Record<Language, Record<ToolSlug, ToolCopy>> = {
     },
     "images-to-pdf": {
       label: "รูปเป็น PDF",
-      title: "แปลง JPG และ PNG เป็น PDF ฟรี",
-      short: "รวมรูป JPG, PNG หรือ WebP เป็นไฟล์ PDF",
-      description: "แปลง JPG, PNG และ WebP เป็น PDF ฟรี จัดลำดับรูป เลือกขนาดกระดาษและแนวหน้าได้โดยไม่ upload รูปขึ้น server",
-      keywords: ["JPG เป็น PDF", "PNG เป็น PDF", "แปลงรูปเป็น PDF"]
+      title: "รวมรูป JPG, PNG และ WebP เป็น PDF ฟรี",
+      short: "จัดลำดับรูปหลายไฟล์แล้วรวมเป็น PDF เดียว",
+      description: "รวมรูป JPG, PNG และ WebP เป็น PDF เดียวฟรี จัดลำดับรูป เลือกขนาดกระดาษและแนวหน้าได้โดยไม่ upload รูปขึ้น server",
+      keywords: ["รวมรูปเป็น PDF", "JPG เป็น PDF", "PNG เป็น PDF", "แปลงรูปเป็น PDF"]
     },
     "pdf-to-images": {
       label: "PDF เป็นรูป",
@@ -130,10 +130,10 @@ export const toolCopy: Record<Language, Record<ToolSlug, ToolCopy>> = {
     },
     "images-to-pdf": {
       label: "Images to PDF",
-      title: "Convert JPG and PNG to PDF Free",
-      short: "Turn JPG, PNG, or WebP images into one PDF.",
-      description: "Convert JPG, PNG, and WebP images to PDF for free. Reorder images and choose page size and orientation without uploading files.",
-      keywords: ["JPG to PDF", "PNG to PDF", "images to PDF free"]
+      title: "Combine JPG, PNG, and WebP Images into One PDF",
+      short: "Arrange mixed image files and combine them into one PDF.",
+      description: "Combine JPG, PNG, and WebP images into one PDF for free. Reorder files and choose page size and orientation without uploading them.",
+      keywords: ["combine images into one PDF", "JPG to PDF", "PNG to PDF", "images to PDF free"]
     },
     "pdf-to-images": {
       label: "PDF to Images",

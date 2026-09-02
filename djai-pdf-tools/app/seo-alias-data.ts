@@ -26,7 +26,7 @@ export const pdfSeoAliases: Record<string, PdfSeoAlias> = {
     slug: "jpg-to-pdf",
     tool: "images-to-pdf",
     keywords: {
-      th: ["JPG เป็น PDF", "แปลง JPG เป็น PDF ฟรี", "รวมรูปเป็น PDF"],
+      th: ["JPG เป็น PDF", "แปลง JPG เป็น PDF ฟรี", "รวมไฟล์ JPG เป็น PDF"],
       en: ["JPG to PDF free", "convert JPG to PDF", "combine JPG images into PDF"]
     },
     copy: {

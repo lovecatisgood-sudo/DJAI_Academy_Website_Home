@@ -34,6 +34,21 @@ test("browser PDF worker and brand assets are exported", () => {
   }
 });
 
+test("image-to-PDF routes export distinct titles, headings, and canonicals", () => {
+  const expected = [
+    ["images-to-pdf", "รวมรูป JPG, PNG และ WebP เป็น PDF ฟรี"],
+    ["jpg-to-pdf", "แปลง JPG เป็น PDF ออนไลน์ฟรี"],
+    ["png-to-pdf", "แปลง PNG เป็น PDF ออนไลน์ฟรี"],
+    ["webp-to-pdf", "แปลง WebP เป็น PDF ออนไลน์ฟรี"]
+  ];
+
+  for (const [slug, promise] of expected) {
+    const html = readFileSync(join(outDir, slug, "index.html"), "utf8");
+    assert.ok(html.includes(`<h1>${promise}</h1>`), `${slug} should expose its distinct H1`);
+    assert.match(html, new RegExp(`rel="canonical" href="https://www\\.djai\\.academy/tools/PDFTools/${slug}/"`));
+  }
+});
+
 test("Chinese PDF hubs and canonical tools are fully exported", () => {
   const canonicalTools = tools.slice(0, 11);
   for (const [segment, locale, required] of [["zh-cn", "zh-CN", "选择(?: PDF|图片)"], ["zh-tw", "zh-TW", "選擇(?: PDF|圖片)"]]) {
