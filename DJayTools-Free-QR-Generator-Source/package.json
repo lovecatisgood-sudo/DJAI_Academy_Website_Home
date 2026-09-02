@@ -12,7 +12,7 @@
     "build:hostinger": "node scripts/build-root-hostinger.mjs",
     "start": "node scripts/start-root-hostinger.mjs",
     "test": "npm run test:hostinger",
-    "test:hostinger": "npm run build:app && node --test tests/static-export.test.mjs",
+    "test:hostinger": "npm run build:app && node --test tests/static-export.test.mjs tests/qr-payload.test.mjs tests/acquisition-routing.test.mjs",
     "lint": "eslint app --ignore-pattern .next"
   },
   "dependencies": {

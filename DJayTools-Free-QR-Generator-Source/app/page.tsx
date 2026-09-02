@@ -3,8 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import type { CornerSquareType, DotType } from "qr-code-styling";
 import AdSenseAd from "./AdSenseAd";
+import { trackSeoEvent } from "./analytics";
+import QrSuccessJourney from "./QrSuccessJourney";
 import ShareButtons from "./ShareButtons";
-import ToolPromoModal, { shouldShowToolPromo } from "./ToolPromoModal";
 import QrTaskFields from "./QrTaskFields";
 import ToolDiscoveryFooter from "./ToolDiscoveryFooter";
 import { qrToolCopy, qrToolHref, qrToolSlugs, type QrPageCopy, type QrToolSlug } from "./qr-tool-data";
@@ -57,11 +58,14 @@ export default function Home({ toolSlug, pageCopy }: { toolSlug?: QrToolSlug; pa
   const [frame, setFrame] = useState<"none" | "simple" | "label">("label");
   const [format, setFormat] = useState<"png" | "svg">("png");
   const [error, setError] = useState("");
-  const [promoType, setPromoType] = useState<"course" | "development" | null>(null);
+  const [downloaded, setDownloaded] = useState(false);
 
   const canonical = toolSlug ? `https://www.djai.academy${qrToolHref(toolSlug, "th")}` : "https://www.djai.academy/tools/qrgen/";
   const languageHref = toolSlug ? qrToolHref(toolSlug, "en") : "/tools/qrgen/en/";
   const title = pageCopy?.title || "สร้าง QR Code ฟรี";
+  const currentTool = toolSlug || "url-qr-code-generator";
+  const sourcePath = toolSlug ? qrToolHref(toolSlug, "th") : "/tools/qrgen/";
+  const seoEventParams = { source_path: sourcePath, locale: "th", cluster: "qr", tool_slug: currentTool };
 
   useEffect(() => {
     let active = true;
@@ -99,10 +103,17 @@ export default function Home({ toolSlug, pageCopy }: { toolSlug?: QrToolSlug; pa
     return true;
   }
 
-  function download() {
+  async function download() {
     if (!validate() || !qrInstance.current) return;
-    qrInstance.current.download({ name: "DJayTools-QR-Code", extension: format });
-    setPromoType(shouldShowToolPromo());
+    trackSeoEvent("tool_start", seoEventParams);
+    try {
+      await qrInstance.current.download({ name: "DJayTools-QR-Code", extension: format });
+      trackSeoEvent("tool_success", seoEventParams);
+      trackSeoEvent("tool_download", seoEventParams);
+      setDownloaded(true);
+    } catch {
+      setError("ไม่สามารถดาวน์โหลด QR Code ได้ กรุณาลองอีกครั้ง");
+    }
   }
 
   function scrollToGenerator() {
@@ -218,20 +229,12 @@ export default function Home({ toolSlug, pageCopy }: { toolSlug?: QrToolSlug; pa
         </div>
       </section>
 
+      {downloaded && <QrSuccessJourney language="th" currentTool={currentTool} sourcePath={sourcePath} />}
+
       <section className="trust-strip" aria-label="ประโยชน์ของเครื่องมือ">
         <div><b>∞</b><span><strong>ไม่จำกัด</strong><small>สร้างได้เท่าที่ต้องการ</small></span></div>
         <div><b>◌</b><span><strong>เป็นส่วนตัว</strong><small>ลิงก์ของคุณอยู่ใน browser</small></span></div>
         <div><b>↯</b><span><strong>ดาวน์โหลดทันที</strong><small>ไฟล์ PNG และ SVG พร้อมใช้งาน</small></span></div>
-      </section>
-
-      <section className="mobile-app-callout" aria-labelledby="cam-pdf-app-title">
-        <div className="app-device-mark" aria-hidden="true"><span>▯</span><b>⌁</b></div>
-        <div>
-          <span className="step-tag">แอปมือถือ</span>
-          <h2 id="cam-pdf-app-title">ต้องการสแกนเอกสาร เซ็น PDF และสร้าง QR บนมือถือ?</h2>
-          <p>Cam PDF Scan, Signer & QR Generator รวมเครื่องมือเอกสารขั้นสูงสำหรับมือถือ ทั้ง scanner, PDF signer, QR generator และ workflow productivity ในแอปเดียว</p>
-        </div>
-        <a className="primary" href="https://play.google.com/store/apps/details?id=com.djai.campdfscan">ดาวน์โหลดจาก Google Play <span>↗</span></a>
       </section>
 
       <section className="how-section" id="how">
@@ -318,7 +321,6 @@ export default function Home({ toolSlug, pageCopy }: { toolSlug?: QrToolSlug; pa
         </nav>
         <p className="copyright">© 2026 DJAI Academy</p>
       </footer>
-      <ToolPromoModal language="th" type={promoType} onClose={() => setPromoType(null)} />
     </main>
   );
 }

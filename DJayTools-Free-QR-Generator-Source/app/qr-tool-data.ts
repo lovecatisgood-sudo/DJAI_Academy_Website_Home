@@ -23,7 +23,7 @@ export type QrPageCopy = {
 
 export const qrToolCopy: Record<QrToolSlug, Record<QrLanguage, QrPageCopy>> = {
   "url-qr-code-generator": {
-    th: { mode: "url", title: "สร้าง QR Code จากลิงก์ฟรี", description: "สร้าง QR Code จาก URL หรือลิงก์เว็บไซต์ฟรี ปรับสี ลาย กรอบ และดาวน์โหลด PNG หรือ SVG โดยไม่ต้องสมัคร", keywords: ["สร้าง QR Code จากลิงก์", "URL QR Code", "QR Code ฟรี"] },
+    th: { mode: "url", title: "สร้าง QR Code จากลิงก์ฟรี", description: "สร้าง QR Code จาก URL หรือลิงก์เว็บไซต์ฟรี ปรับสี ลาย กรอบ และดาวน์โหลด PNG หรือ SVG โดยไม่ต้องสมัคร", keywords: ["ทำลิงก์เป็น QR Code", "สร้าง QR Code จากลิงก์", "สร้าง QR Code จาก link", "แปลง URL เป็น QR Code", "สร้าง QR Code ลิงก์ฟรี"] },
     en: { mode: "url", title: "Free URL QR Code Generator", description: "Create a QR code for any URL or website link. Customize colors, patterns, and frames, then download PNG or SVG free.", keywords: ["URL QR code generator", "link to QR code", "free QR code"] },
     vi: { mode: "url", title: "Tạo mã QR từ URL miễn phí", description: "Chuyển URL hoặc liên kết website thành mã QR miễn phí. Tùy chỉnh màu, họa tiết và khung rồi tải PNG hoặc SVG, không cần đăng ký.", keywords: ["tạo mã QR từ URL", "chuyển link thành mã QR", "tạo QR miễn phí", "URL sang QR code"] },
     "zh-CN": { mode: "url", title: "免费网址二维码生成器", description: "把网址或网页链接生成二维码，自定义颜色、样式和边框，并免费下载 PNG 或 SVG，无需注册。", keywords: ["二维码生成器", "网址转二维码", "免费二维码"] },
@@ -71,6 +71,16 @@ export const qrToolCopy: Record<QrToolSlug, Record<QrLanguage, QrPageCopy>> = {
     "zh-CN": { mode: "logo", title: "免费带 Logo 的二维码生成器", description: "把 Logo 放在二维码中央，自定义颜色和样式，再免费下载 PNG 或 SVG；图片仅在浏览器中处理。", keywords: ["带logo二维码", "品牌二维码生成器", "二维码加logo"] },
     "zh-TW": { mode: "logo", title: "免費加入 Logo 的 QR Code 產生器", description: "將 Logo 放在 QR Code 中央，自訂顏色與樣式，再免費下載 PNG 或 SVG；圖片只在瀏覽器中處理。", keywords: ["QR Code 加 Logo", "品牌 QR Code", "Logo QR Code 產生器"] }
   }
+};
+
+export const qrRelatedToolOrder: Record<QrToolSlug, QrToolSlug[]> = {
+  "url-qr-code-generator": ["qr-code-generator-with-logo", "wifi-qr-code-generator"],
+  "wifi-qr-code-generator": ["url-qr-code-generator", "text-qr-code-generator"],
+  "vcard-qr-code-generator": ["email-qr-code-generator", "url-qr-code-generator"],
+  "text-qr-code-generator": ["url-qr-code-generator", "email-qr-code-generator"],
+  "email-qr-code-generator": ["vcard-qr-code-generator", "url-qr-code-generator"],
+  "whatsapp-qr-code-generator": ["vcard-qr-code-generator", "url-qr-code-generator"],
+  "qr-code-generator-with-logo": ["url-qr-code-generator", "vcard-qr-code-generator"]
 };
 
 export function qrToolHref(slug: QrToolSlug, language: QrLanguage) {

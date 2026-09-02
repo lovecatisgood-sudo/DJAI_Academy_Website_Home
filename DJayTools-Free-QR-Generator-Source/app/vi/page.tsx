@@ -2,11 +2,13 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { CornerSquareType, DotType } from "qr-code-styling";
+import Link from "next/link";
 import AdSenseAd from "../AdSenseAd";
+import { trackSeoEvent } from "../analytics";
 import QrTaskFields from "../QrTaskFields";
+import QrSuccessJourney from "../QrSuccessJourney";
 import ShareButtons from "../ShareButtons";
 import ToolDiscoveryFooter from "../ToolDiscoveryFooter";
-import ToolPromoModal, { shouldShowToolPromo } from "../ToolPromoModal";
 import { qrToolCopy, qrToolHref, qrToolSlugs, type QrPageCopy, type QrToolSlug } from "../qr-tool-data";
 
 const COLORS = ["#D97757", "#0B32A4", "#00BFD8", "#5630C8", "#071E3D", "#F2A65A", "#2E8B57", "#D7467D"];
@@ -24,9 +26,12 @@ export default function VietnameseQrGenerator({ toolSlug, pageCopy }: { toolSlug
   const [color, setColor] = useState(COLORS[0]);
   const [format, setFormat] = useState<"png" | "svg">("png");
   const [error, setError] = useState("");
-  const [promoType, setPromoType] = useState<"course" | "development" | null>(null);
+  const [downloaded, setDownloaded] = useState(false);
   const canonical = toolSlug ? `https://www.djai.academy${qrToolHref(toolSlug, "vi")}` : "https://www.djai.academy/tools/qrgen/vi/";
   const title = pageCopy?.title || "Tạo mã QR miễn phí";
+  const currentTool = toolSlug || "url-qr-code-generator";
+  const sourcePath = toolSlug ? qrToolHref(toolSlug, "vi") : "/tools/qrgen/vi/";
+  const seoEventParams = { source_path: sourcePath, locale: "vi", cluster: "qr", tool_slug: currentTool };
 
   useEffect(() => {
     let active = true;
@@ -44,11 +49,19 @@ export default function VietnameseQrGenerator({ toolSlug, pageCopy }: { toolSlug
     return () => { active = false; };
   }, [payload, logoData, dots, corners, color]);
 
-  function download() {
+  async function download() {
     if (!payload || taskError) { setError(taskError || "Nhập thông tin cần mã hóa trong mã QR."); return; }
     setError("");
-    qrInstance.current?.download({ name: "DJayTools-QR-Code", extension: format });
-    setPromoType(shouldShowToolPromo());
+    if (!qrInstance.current) return;
+    trackSeoEvent("tool_start", seoEventParams);
+    try {
+      await qrInstance.current.download({ name: "DJayTools-QR-Code", extension: format });
+      trackSeoEvent("tool_success", seoEventParams);
+      trackSeoEvent("tool_download", seoEventParams);
+      setDownloaded(true);
+    } catch {
+      setError("Không thể tải mã QR. Vui lòng thử lại.");
+    }
   }
 
   function scrollToGenerator() { document.getElementById("generator")?.scrollIntoView({ behavior: "smooth" }); }
@@ -59,8 +72,8 @@ export default function VietnameseQrGenerator({ toolSlug, pageCopy }: { toolSlug
       <header className="site-header">
         <a className="brand" href="#top"><img src={assetPath("djai-academy-logo-display.webp")} alt="DJAI Academy" width="384" height="206" /><span><strong>DJayTools</strong><small>by DJAI Academy</small></span></a>
         <nav aria-label="Điều hướng chính">
-          <a href="#profile">Nhà phát triển</a><a href="/vi/">DJAI Academy</a><a href="/development/vi/">Phát triển cùng DJAI</a><a href="/tools/resizeimg/vi/">Công cụ hình ảnh</a><a href="/blog/vi/">Bài viết</a>
-          <a href="/tools/qrgen/" hrefLang="th">ไทย</a><a href="/tools/qrgen/en/" hrefLang="en">EN</a><a className="nav-cta" href="/academy/vi/">Tham gia cộng đồng</a>
+          <a href="#profile">Nhà phát triển</a><Link href="/vi/">DJAI Academy</Link><Link href="/development/vi/">Phát triển cùng DJAI</Link><Link href="/tools/resizeimg/vi/">Công cụ hình ảnh</Link><Link href="/blog/vi/">Bài viết</Link>
+          <Link href="/tools/qrgen/" hrefLang="th">ไทย</Link><Link href="/tools/qrgen/en/" hrefLang="en">EN</Link><Link className="nav-cta" href="/academy/vi/">Tham gia cộng đồng</Link>
         </nav>
       </header>
       <section className="hero" id="top">
@@ -86,13 +99,13 @@ export default function VietnameseQrGenerator({ toolSlug, pageCopy }: { toolSlug
           <div className="preview-panel"><div className="preview-top"><span>XEM TRƯỚC</span><i><span /> Sẵn sàng quét</i></div><div className="qr-frame frame-none"><div ref={qrMount} className="qr-mount" role="img" aria-label="Xem trước mã QR" /></div><p>Mã QR tĩnh này không hết hạn.</p><div className="download-controls"><div className="format-switch" aria-label="Định dạng tải xuống"><button className={format === "png" ? "active" : ""} onClick={() => setFormat("png")}>PNG</button><button className={format === "svg" ? "active" : ""} onClick={() => setFormat("svg")}>SVG</button></div><button className="primary download" onClick={download}>Tải mã QR <span>↓</span></button></div></div>
         </div>
       </section>
+      {downloaded && <QrSuccessJourney language="vi" currentTool={currentTool} sourcePath={sourcePath} />}
       <section className="trust-strip" aria-label="Lợi ích"><div><b>∞</b><span><strong>Không giới hạn</strong><small>Tạo bao nhiêu mã tùy nhu cầu</small></span></div><div><b>◌</b><span><strong>Riêng tư</strong><small>Dữ liệu ở trong trình duyệt</small></span></div><div><b>↯</b><span><strong>Tải ngay</strong><small>PNG và SVG sẵn sàng sử dụng</small></span></div></section>
       <section className="how-section"><div className="section-intro"><span className="step-tag">CÁCH SỬ DỤNG</span><h2>Từ dữ liệu thành QR<br />trong ba bước.</h2><p>Nhập đúng thông tin, chọn kiểu hiển thị rồi tải file.</p></div><div className="steps"><article><span>01</span><div className="step-icon">↗</div><h3>Nhập dữ liệu</h3><p>Thêm URL, Wi-Fi, liên hệ, email hoặc văn bản cần chia sẻ.</p></article><article><span>02</span><div className="step-icon">✦</div><h3>Tùy chỉnh</h3><p>Chọn họa tiết, góc và màu phù hợp.</p></article><article><span>03</span><div className="step-icon">↓</div><h3>Tải và kiểm tra</h3><p>Lưu PNG hoặc SVG rồi quét thử trước khi in.</p></article></div></section>
       <section className="final-cta"><div><span className="step-tag">SẴN SÀNG</span><h2>Mã QR tiếp theo<br />chỉ cách vài giây.</h2></div><button className="primary" onClick={scrollToGenerator}>Tạo mã QR miễn phí <span>↗</span></button></section>
       <section className="developer-profile" id="profile"><div className="developer-logo-stage"><img src={assetPath("siamese-cat-dev-logo.webp")} alt="Siamese Cat Dev" width="900" height="900" loading="lazy" /></div><div className="developer-profile-copy"><span className="step-tag">NHÀ PHÁT TRIỂN</span><h2>Được xây dựng bởi<br /><em>Siamese Cat Dev.</em></h2><p>Một công cụ thực tế của hệ sinh thái DJAI Academy, được thiết kế để xử lý công việc ngay trong trình duyệt mà không buộc bạn tạo tài khoản.</p><div className="developer-tags"><span>Thiết kế sản phẩm</span><span>Phát triển phần mềm</span><span>Đào tạo</span></div></div></section>
       <ToolDiscoveryFooter language="vi" currentTool={toolSlug} />
       <footer><div className="footer-identity"><a className="brand footer-brand" href="#top"><img src={assetPath("djai-academy-logo-display.webp")} alt="DJAI Academy" width="384" height="206" /><span><strong>DJayTools</strong><small>by DJAI Academy</small></span></a><p>Công cụ số hữu ích dành cho cộng đồng.</p></div><p className="copyright">© 2026 DJAI Academy</p></footer>
-      <ToolPromoModal language="vi" type={promoType} onClose={() => setPromoType(null)} />
     </main>
   );
 }

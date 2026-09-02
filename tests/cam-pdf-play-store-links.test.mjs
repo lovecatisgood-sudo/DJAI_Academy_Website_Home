@@ -10,8 +10,6 @@ const playUrl = "https://play.google.com/store/apps/details?id=com.djai.campdfsc
 const productRoot = "djai-academy-homepage/app/Cam_PDF_Scan_Signer_QR-Gen";
 
 const downloadCtaFiles = [
-  "DJayTools-Free-QR-Generator-Source/app/page.tsx",
-  "DJayTools-Free-QR-Generator-Source/app/en/page.tsx",
   "djai-academy-homepage/app/tools/page.jsx",
   "djai-academy-homepage/app/tools/en/page.jsx",
   "djai-academy-homepage/app/portfolio/page.jsx",
@@ -21,6 +19,12 @@ const downloadCtaFiles = [
   "djai-image-resizer/public/index.html",
   "djai-image-resizer/public/en/index.html",
   "djai-pdf-tools/app/PdfToolsApp.tsx"
+];
+
+const qrPageFiles = [
+  "DJayTools-Free-QR-Generator-Source/app/page.tsx",
+  "DJayTools-Free-QR-Generator-Source/app/en/page.tsx",
+  "DJayTools-Free-QR-Generator-Source/app/vi/page.tsx",
 ];
 
 test("existing Cam PDF download buttons use the published Google Play listing", () => {
@@ -33,6 +37,18 @@ test("existing Cam PDF download buttons use the published Google Play listing", 
 test("the promotion header does not link to nonexistent Cam PDF locale routes", () => {
   const source = readFileSync(join(root, "djai-web-promo-voice/src/app/PromoHeader.tsx"), "utf8");
   assert.doesNotMatch(source, /Cam_PDF_Scan_Signer_QR-Gen\/(?:en|vi)\//);
+});
+
+test("QR pages use the shared post-download Cam PDF journey", () => {
+  const journeyPath = "DJayTools-Free-QR-Generator-Source/app/QrSuccessJourney.tsx";
+  const journeySource = readFileSync(join(root, journeyPath), "utf8");
+  assert.match(journeySource, new RegExp(playUrl.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), journeyPath);
+
+  for (const relativePath of qrPageFiles) {
+    const source = readFileSync(join(root, relativePath), "utf8");
+    assert.match(source, /import QrSuccessJourney from/i, relativePath);
+    assert.match(source, /<QrSuccessJourney\b/i, relativePath);
+  }
 });
 
 test("English product page advertises only the verified Android release", () => {

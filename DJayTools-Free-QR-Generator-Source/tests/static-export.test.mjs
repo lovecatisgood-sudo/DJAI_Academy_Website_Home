@@ -44,6 +44,17 @@ test("exports bilingual task pages with unique metadata", async () => {
   }
 });
 
+test("the URL task owns link-to-QR intent without a pre-success Cam promotion", async () => {
+  const thai = await readFile(new URL("../out/url-qr-code-generator/index.html", import.meta.url), "utf8");
+  const english = await readFile(new URL("../out/url-qr-code-generator/en/index.html", import.meta.url), "utf8");
+
+  assert.match(thai, /<h1>สร้าง QR Code จากลิงก์ฟรี<\/h1>/);
+  assert.match(thai, /ดาวน์โหลด PNG หรือ SVG โดยไม่ต้องสมัคร/);
+  assert.match(english, /<h1>Free URL QR Code Generator<\/h1>/);
+  assert.doesNotMatch(thai, /ดาวน์โหลดจาก Google Play/);
+  assert.doesNotMatch(english, /Download on Google Play/);
+});
+
 test("exports independently localized Chinese hubs and all seven task pages", async () => {
   const simplifiedHub = await readFile(new URL("../out/zh-cn/index.html", import.meta.url), "utf8");
   const traditionalHub = await readFile(new URL("../out/zh-tw/index.html", import.meta.url), "utf8");

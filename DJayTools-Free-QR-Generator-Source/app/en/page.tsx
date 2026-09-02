@@ -3,8 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import type { CornerSquareType, DotType } from "qr-code-styling";
 import AdSenseAd from "../AdSenseAd";
+import { trackSeoEvent } from "../analytics";
+import QrSuccessJourney from "../QrSuccessJourney";
 import ShareButtons from "../ShareButtons";
-import ToolPromoModal, { shouldShowToolPromo } from "../ToolPromoModal";
 import QrTaskFields from "../QrTaskFields";
 import ToolDiscoveryFooter from "../ToolDiscoveryFooter";
 import { qrToolCopy, qrToolHref, qrToolSlugs, type QrPageCopy, type QrToolSlug } from "../qr-tool-data";
@@ -57,11 +58,14 @@ export default function Home({ toolSlug, pageCopy }: { toolSlug?: QrToolSlug; pa
   const [frame, setFrame] = useState<"none" | "simple" | "label">("label");
   const [format, setFormat] = useState<"png" | "svg">("png");
   const [error, setError] = useState("");
-  const [promoType, setPromoType] = useState<"course" | "development" | null>(null);
+  const [downloaded, setDownloaded] = useState(false);
 
   const canonical = toolSlug ? `https://www.djai.academy${qrToolHref(toolSlug, "en")}` : "https://www.djai.academy/tools/qrgen/en/";
   const languageHref = toolSlug ? qrToolHref(toolSlug, "th") : "/tools/qrgen/";
   const title = pageCopy?.title || "Free QR Code Generator";
+  const currentTool = toolSlug || "url-qr-code-generator";
+  const sourcePath = toolSlug ? qrToolHref(toolSlug, "en") : "/tools/qrgen/en/";
+  const seoEventParams = { source_path: sourcePath, locale: "en", cluster: "qr", tool_slug: currentTool };
 
   useEffect(() => {
     let active = true;
@@ -99,10 +103,17 @@ export default function Home({ toolSlug, pageCopy }: { toolSlug?: QrToolSlug; pa
     return true;
   }
 
-  function download() {
+  async function download() {
     if (!validate() || !qrInstance.current) return;
-    qrInstance.current.download({ name: "DJayTools-QR-Code", extension: format });
-    setPromoType(shouldShowToolPromo());
+    trackSeoEvent("tool_start", seoEventParams);
+    try {
+      await qrInstance.current.download({ name: "DJayTools-QR-Code", extension: format });
+      trackSeoEvent("tool_success", seoEventParams);
+      trackSeoEvent("tool_download", seoEventParams);
+      setDownloaded(true);
+    } catch {
+      setError("The QR code could not be downloaded. Please try again.");
+    }
   }
 
   function scrollToGenerator() {
@@ -218,20 +229,12 @@ export default function Home({ toolSlug, pageCopy }: { toolSlug?: QrToolSlug; pa
         </div>
       </section>
 
+      {downloaded && <QrSuccessJourney language="en" currentTool={currentTool} sourcePath={sourcePath} />}
+
       <section className="trust-strip" aria-label="Product benefits">
         <div><b>∞</b><span><strong>Unlimited</strong><small>Create as many as you need</small></span></div>
         <div><b>◌</b><span><strong>Private by design</strong><small>Your links stay in your browser</small></span></div>
         <div><b>↯</b><span><strong>Instant download</strong><small>Print-ready PNG and SVG</small></span></div>
-      </section>
-
-      <section className="mobile-app-callout" aria-labelledby="cam-pdf-app-title">
-        <div className="app-device-mark" aria-hidden="true"><span>▯</span><b>⌁</b></div>
-        <div>
-          <span className="step-tag">MOBILE APP</span>
-          <h2 id="cam-pdf-app-title">Need scanning, PDF signing, and QR tools on your phone?</h2>
-          <p>Cam PDF Scan, Signer & QR Generator brings advanced mobile document tools into one app, including a scanner, PDF signer, QR generator, and productivity workflows.</p>
-        </div>
-        <a className="primary" href="https://play.google.com/store/apps/details?id=com.djai.campdfscan">Download on Google Play <span>↗</span></a>
       </section>
 
       <section className="how-section" id="how">
@@ -318,7 +321,6 @@ export default function Home({ toolSlug, pageCopy }: { toolSlug?: QrToolSlug; pa
         </nav>
         <p className="copyright">© 2026 DJAI Academy</p>
       </footer>
-      <ToolPromoModal language="en" type={promoType} onClose={() => setPromoType(null)} />
     </main>
   );
 }
