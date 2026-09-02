@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFile } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import test from "node:test";
 
 const appSource = await readFile(new URL("../app/PdfToolsApp.tsx", import.meta.url), "utf8");
@@ -48,7 +48,8 @@ test("post-success routing presents related tools before the tracked Cam PDF bri
   assert.match(appSource, /trackSeoEvent\("play_store_click",\s*\{/);
 });
 
-test("PDF results no longer trigger random course or development promotions", () => {
+test("PDF results no longer trigger random course or development promotions", async () => {
   assert.doesNotMatch(appSource, /shouldShowToolPromo|ToolPromoModal|setPromoType|promoType/);
   assert.doesNotMatch(appSource, /className="conversion-band course-band"/);
+  await assert.rejects(access(new URL("../app/ToolPromoModal.tsx", import.meta.url)), { code: "ENOENT" });
 });
