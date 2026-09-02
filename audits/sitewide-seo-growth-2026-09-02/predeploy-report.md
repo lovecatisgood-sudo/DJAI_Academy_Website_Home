@@ -5,12 +5,12 @@ Date: 2026-09-02
 ## Release candidate
 
 - Branch: `codex/djai-sitewide-seo-growth`
-- Tested content candidate: `dfd87c6`
+- Tested content candidate: `2fdc495`
 - Integration implementation commit: `e898e40`
 - Reconciled source base: `6e17faf` (`origin/main` at program start)
 - Production deploy: **not performed**
 
-The evidence commit that adds this report changes documentation only. The deployable application source is therefore represented by `dfd87c6`; deployment must still use the final reviewed branch head so the audit record travels with the release.
+The deployable application source is represented by `2fdc495`; deployment must still use the final reviewed branch head so the audit record travels with the release. The last source-only cleanup removes an unreferenced legacy PDF promotion component and adds a focused absence contract; the built route graph is unchanged.
 
 ## Automated quality result
 

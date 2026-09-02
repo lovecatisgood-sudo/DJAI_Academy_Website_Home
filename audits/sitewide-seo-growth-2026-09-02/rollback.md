@@ -4,7 +4,7 @@ Date: 2026-09-02
 
 ## Release identity
 
-- Tested application-source candidate: `dfd87c6`
+- Tested application-source candidate: `2fdc495`
 - Program base: `6e17faf`
 - Deployment branch: expected `main` (Hostinger auto-deploy boundary)
 - Production-before SHA: **must be recorded immediately before an authorized deployment**
