@@ -27,6 +27,7 @@ const SITE_ROOT = 'https://www.djai.academy';
 const DEV_ROOT = '/siamese_cat/dev';
 const HUB_PATH = `${DEV_ROOT}/courses/`;
 const WHATSAPP_BASE = 'https://wa.me/66804803802';
+const SCHOOL_URL = 'https://school.djai.academy/';
 const assetPath = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 
 type Course = (typeof catalog.courses)[number];
@@ -79,6 +80,16 @@ function trackWhatsAppClick(course: Course | undefined, placement: string) {
     course_slug: course?.slug || 'course-hub',
     placement,
     destination: 'whatsapp',
+  });
+}
+
+function trackSchoolClick(course: Course | undefined) {
+  const gtag = (window as GtagWindow).gtag;
+  gtag?.('event', 'course_start', {
+    source_path: course ? coursePath(course) : HUB_PATH,
+    locale: 'en',
+    cluster: 'vibe_course',
+    destination: 'djai_school',
   });
 }
 
@@ -204,11 +215,12 @@ function CatalogFooter({ course }: { course?: Course }) {
           <a href={`${DEV_ROOT}/blog/en/`}>Siamese Cat Dev Blog</a>
           <a href={`${DEV_ROOT}/en/`}>About Siamese Cat Dev</a>
           <a href="https://www.djai.academy/en/" target="_blank" rel="noopener noreferrer">DJAI Academy</a>
+          <a href={SCHOOL_URL} onClick={() => trackSchoolClick(course)}>Start or continue learning in DJAI School</a>
         </div>
         <WhatsAppButton course={course} placement="footer" />
       </div>
       <div className="catalog-footer-bottom">
-        <span>Teaching in English. Trial-class times are arranged on WhatsApp.</span>
+        <span>Compare courses publicly here. Trial times are arranged on WhatsApp; authenticated learning starts in DJAI School.</span>
         <a href="#top">Back to top <ArrowRight aria-hidden="true" size={15} /></a>
       </div>
     </footer>

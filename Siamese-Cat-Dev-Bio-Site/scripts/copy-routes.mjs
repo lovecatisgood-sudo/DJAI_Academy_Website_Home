@@ -63,31 +63,31 @@ writeFileSync(englishIndexPath, englishHtml);
 
 const courseLocales = {
   en: {
-    title: 'Vibe Code a Money-Making Product | Siamese Cat Dev Course',
-    description: 'Express interest in a live Siamese Cat Dev course and learn how to turn a vibe-coded MVP into a reliable product that can be shipped and sold.',
+    title: 'Free Live Vibe Coding Course | From MVP to Product',
+    description: 'Express interest in a free live Siamese Cat Dev session about turning a vibe-coded MVP into a reliable product that can be shipped and sold.',
     canonical: 'https://www.djai.academy/siamese_cat/dev/course/',
-    name: 'Your Journey to Vibe Code a Money-Making Product',
+    name: 'Free Live Vibe Coding Course: From MVP to Product',
     fallback: `<div id="root"><header><a href="/en/"><img src="/siamese_cat/dev/djai-academy-logo.webp" alt="DJAI Academy"></a></header><main>
-      <p>Live practical course · Schedule arranged with you · English or Thai</p>
-      <h1>Vibe Code a Product That Can Make Money</h1>
-      <p>Learn how experienced product builders move from an AI-generated MVP to reliable software that can be shipped, used, and sold.</p>
+      <p>Free live practical session · Schedule arranged with you · English or Thai</p>
+      <h1>Free Live Vibe Coding Course: Turn an MVP into a Real Product</h1>
+      <p>This free live session shows how experienced product builders move from an AI-generated MVP to reliable software that can be shipped, used, and sold.</p>
       <section><h2>From prompting to production</h2><p>Choose a valuable product, apply professional software-development standards, harden the MVP, and plan a practical rollout.</p></section>
       <section><h2>Meet both instructors</h2><img src="/founder-djai-display.webp" alt="Mr. A, founder of DJAI Academy, CTO, and course instructor"><p>Learn from Siamese Cat Dev and Mr. A, founder of DJAI Academy, experienced CTO, and instructor of DJAI's offline course.</p></section>
-      <section><h2>Express interest in a course</h2><p>Share your goals, preferred format, and availability. Siamese Cat Dev will reply by email about the best course option and next steps.</p></section><a href="/siamese_cat/dev/course/th/" hreflang="th">อ่านภาษาไทย</a>
+      <section><h2>Express interest in a course</h2><p>Share your goals, preferred format, and availability. Siamese Cat Dev will reply by email about the best course option and next steps.</p></section><p>Public discovery stays here. <a href="https://school.djai.academy/">Start or continue learning in DJAI School</a> after your place is confirmed.</p><a href="/siamese_cat/dev/course/th/" hreflang="th">อ่านภาษาไทย</a>
     </main></div>`,
   },
   th: {
-    title: 'Vibe Code สินค้าให้สร้างรายได้ | คอร์ส Siamese Cat Dev',
-    description: 'แจ้งความสนใจคอร์สสดกับ Siamese Cat Dev เพื่อเรียนรู้วิธีพัฒนา MVP จาก Vibe Coding ให้เป็นสินค้าที่น่าเชื่อถือ พร้อมเปิดตัวและสร้างรายได้',
+    title: 'คอร์ส Vibe Coding สดฟรี | จาก MVP สู่สินค้าจริง',
+    description: 'แจ้งความสนใจคลาสสดฟรีกับ Siamese Cat Dev เพื่อเรียนรู้วิธีพัฒนา MVP จาก Vibe Coding ให้เป็นสินค้าที่น่าเชื่อถือ พร้อมเปิดตัวและสร้างรายได้',
     canonical: 'https://www.djai.academy/siamese_cat/dev/course/th/',
-    name: 'เส้นทางสู่การ Vibe Code สินค้าที่สร้างรายได้',
+    name: 'คอร์ส Vibe Coding สดฟรี: จาก MVP สู่สินค้าจริง',
     fallback: `<div id="root"><header><a href="/"><img src="/siamese_cat/dev/djai-academy-logo.webp" alt="DJAI Academy"></a></header><main>
-      <p>คอร์สสดเน้นลงมือจริง · นัดหมายวันเวลาร่วมกัน · ภาษาไทยหรืออังกฤษ</p>
-      <h1>Vibe Code สินค้าให้สร้างรายได้จริง</h1>
-      <p>เรียนรู้วิธีพัฒนาต้นแบบจาก AI ให้เป็นซอฟต์แวร์ที่น่าเชื่อถือ พร้อมเปิดตัว ใช้งาน และขายได้จริง</p>
+      <p>คลาสสดฟรีเน้นลงมือจริง · นัดหมายวันเวลาร่วมกัน · ภาษาไทยหรืออังกฤษ</p>
+      <h1>คอร์ส Vibe Coding สดฟรี: พัฒนา MVP ให้เป็นสินค้าจริง</h1>
+      <p>คลาสสดฟรีนี้สอนวิธีพัฒนาต้นแบบจาก AI ให้เป็นซอฟต์แวร์ที่น่าเชื่อถือ พร้อมเปิดตัว ใช้งาน และขายได้จริง</p>
       <section><h2>จากการ Prompt สู่ Production</h2><p>เลือกสินค้าที่มีคุณค่า ใช้มาตรฐานพัฒนาซอฟต์แวร์ ปรับ MVP ให้แข็งแรง และวางแผนเปิดตัวอย่างเป็นระบบ</p></section>
       <section><h2>พบกับผู้สอนทั้งสองคน</h2><img src="/founder-djai-display.webp" alt="Mr. A ผู้ก่อตั้ง DJAI Academy, CTO และผู้สอน"><p>เรียนกับ Siamese Cat Dev และ Mr. A ผู้ก่อตั้ง DJAI Academy, CTO ที่มีประสบการณ์ และผู้สอนคอร์สออฟไลน์ของ DJAI</p></section>
-      <section><h2>แจ้งความสนใจคอร์ส</h2><p>แชร์เป้าหมาย รูปแบบคอร์ส และเวลาที่สะดวก Siamese Cat Dev จะตอบกลับทางอีเมลเพื่อแนะนำคอร์สและขั้นตอนถัดไป</p></section><a href="/siamese_cat/dev/course/" hreflang="en">Read in English</a>
+      <section><h2>แจ้งความสนใจคอร์ส</h2><p>แชร์เป้าหมาย รูปแบบคอร์ส และเวลาที่สะดวก Siamese Cat Dev จะตอบกลับทางอีเมลเพื่อแนะนำคอร์สและขั้นตอนถัดไป</p></section><p>การค้นหาคอร์สอยู่บนหน้าสาธารณะนี้ หลังยืนยันที่นั่งแล้ว <a href="https://school.djai.academy/">เริ่มหรือเรียนต่อใน DJAI School</a></p><a href="/siamese_cat/dev/course/" hreflang="en">Read in English</a>
     </main></div>`,
   },
 };
@@ -217,13 +217,13 @@ function catalogFallback(course) {
     const links = catalog.courses
       .map((item) => `<li><a href="${catalogCoursePath(item)}">${escapeHtml(item.title)}</a><p>${escapeHtml(item.cardDescription)}</p></li>`)
       .join('');
-    return `<div id="root"><main><p>${escapeHtml(catalog.hub.eyebrow)}</p><h1>${escapeHtml(catalog.hub.heading)}</h1><p>${escapeHtml(catalog.hub.lead)}</p><h2>${escapeHtml(catalog.hub.sectionHeading)}</h2><ul>${links}</ul><p>${escapeHtml(catalog.hub.trialLead)}</p><a href="${catalogWhatsAppHref()}">Check a trial slot on WhatsApp</a></main></div>`;
+    return `<div id="root"><main><p>${escapeHtml(catalog.hub.eyebrow)}</p><h1>${escapeHtml(catalog.hub.heading)}</h1><p>${escapeHtml(catalog.hub.lead)}</p><h2>${escapeHtml(catalog.hub.sectionHeading)}</h2><ul>${links}</ul><p>${escapeHtml(catalog.hub.trialLead)}</p><a href="${catalogWhatsAppHref()}">Check a trial slot on WhatsApp</a><p>Compare courses publicly here. <a href="https://school.djai.academy/">Start or continue learning in DJAI School</a> after enrollment.</p></main></div>`;
   }
 
   const practice = course.practice
     .map((item) => `<li><strong>${escapeHtml(item.title)}</strong><p>${escapeHtml(item.body)}</p></li>`)
     .join('');
-  return `<div id="root"><main><nav aria-label="Breadcrumb"><a href="${catalog.hub.canonical}">Courses</a> / <span>${escapeHtml(course.title)}</span></nav><p>${escapeHtml(course.heroEyebrow)}</p><h1>${escapeHtml(course.title)}</h1><p>${escapeHtml(course.heroLead)}</p><h2>${escapeHtml(course.practiceHeading)}</h2><p>${escapeHtml(course.practiceLead)}</p><ul>${practice}</ul><a href="${catalogWhatsAppHref(course.title)}">Check a trial slot on WhatsApp</a><a href="${catalog.hub.canonical}">See all courses</a></main></div>`;
+  return `<div id="root"><main><nav aria-label="Breadcrumb"><a href="${catalog.hub.canonical}">Courses</a> / <span>${escapeHtml(course.title)}</span></nav><p>${escapeHtml(course.heroEyebrow)}</p><h1>${escapeHtml(course.title)}</h1><p>${escapeHtml(course.heroLead)}</p><h2>${escapeHtml(course.practiceHeading)}</h2><p>${escapeHtml(course.practiceLead)}</p><ul>${practice}</ul><a href="${catalogWhatsAppHref(course.title)}">Check a trial slot on WhatsApp</a><a href="${catalog.hub.canonical}">See all courses</a><p><a href="https://school.djai.academy/">Start or continue learning in DJAI School</a> after enrollment.</p></main></div>`;
 }
 
 function buildCatalogHtml(course) {

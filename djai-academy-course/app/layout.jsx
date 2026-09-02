@@ -6,9 +6,9 @@ const GA_ID = "G-CGJ5BTR44T";
 
 export const metadata = {
   metadataBase: new URL("https://www.djai.academy"),
-  title: "DJAI Academy | AI Masterclass ภาษาไทย",
+  title: "AI Masterclass ออฟไลน์: สร้างโปรดักต์และจองที่นั่ง | DJAI",
   description:
-    "AI Masterclass แบบลงมือทำในประเทศไทย เรียนการสร้างเว็บไซต์ แอป automation และ digital product จริงด้วย AI โดยไม่จำเป็นต้องมีพื้นฐาน programming",
+    "ประเมิน AI Masterclass ออฟไลน์หนึ่งวันในประเทศไทย ดูผลลัพธ์ ราคา สถานที่ และจองที่นั่งเพื่อสร้างโปรดักต์จริงด้วย AI",
   alternates: {
     canonical: `${BASE_PATH}/`,
     languages: {
@@ -19,9 +19,9 @@ export const metadata = {
     }
   },
   openGraph: {
-    title: "DJAI Academy | AI Masterclass ภาษาไทย",
+    title: "AI Masterclass ออฟไลน์: สร้างโปรดักต์และจองที่นั่ง",
     description:
-      "เรียนการสร้าง product ด้วย AI แบบลงมือทำจริง สร้างบัญชี DJAI School และจองที่นั่งสำหรับ workshop รอบถัดไป",
+      "ดูว่า workshop ออฟไลน์เหมาะกับคุณหรือไม่ ตรวจสอบราคาและสถานที่ แล้วสร้างบัญชี DJAI School เพื่อจองที่นั่ง",
     url: `${BASE_PATH}/`,
     siteName: "DJAI Academy",
     images: [`${BASE_PATH}/assets/DJAI-logo.webp`],

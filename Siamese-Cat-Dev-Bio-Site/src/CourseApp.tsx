@@ -23,17 +23,18 @@ type CourseLanguage = 'en' | 'th';
 
 const assetPath = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 const lessonIcons = [Target, Code2, Rocket, Lightbulb];
+const SCHOOL_URL = 'https://school.djai.academy/';
 
 const courseCopy = {
   en: {
     htmlLang: 'en',
-    title: 'Vibe Code a Money-Making Product | Siamese Cat Dev Course',
-    description: 'Express interest in a live Siamese Cat Dev course and learn how to turn a vibe-coded MVP into a reliable product that can be shipped and sold.',
+    title: 'Free Live Vibe Coding Course | From MVP to Product',
+    description: 'Express interest in a free live Siamese Cat Dev session about turning a vibe-coded MVP into a reliable product that can be shipped and sold.',
     canonical: 'https://www.djai.academy/siamese_cat/dev/course/',
     languageSwitch: ['ไทย', '/siamese_cat/dev/course/th/'],
     nav: ['What you will learn', 'Your trainers', 'Express interest'],
-    kicker: ['LIVE COURSE', 'SIAMESE CAT DEV × DJAI ACADEMY'],
-    hero: ['VIBE CODE A PRODUCT THAT CAN', 'MAKE MONEY.', 'Building an MVP is easier than ever. Building something reliable, useful, and commercially ready is still hard. Learn how experienced product builders move from an AI-generated prototype to a product people can actually use—and pay for.', 'Express interest in a course', 'See the course outline', 'Tell Siamese Cat Dev what you want to build. We will follow up by email about a suitable format and schedule.'],
+    kicker: ['FREE LIVE VIBE CODING COURSE', 'SIAMESE CAT DEV × DJAI ACADEMY'],
+    hero: ['TURN A VIBE-CODED MVP INTO A', 'REAL PRODUCT.', 'This free live session focuses on the gap after the first AI-generated prototype: making the product reliable, useful, and commercially ready enough for people to use and pay for.', 'Express interest in a course', 'See the course outline', 'Tell Siamese Cat Dev what you want to build. We will follow up by email about a suitable format and schedule.'],
     facts: [['Schedule', 'Arranged with you'], ['Focus', 'One practical session'], ['Format', 'Online or in person'], ['Language', 'English or Thai']],
     price: ['FIRST STEP', 'SHARE', 'YOUR GOALS'],
     problem: ['THE REAL GAP', "YOU MADE AN MVP. WHY ISN'T IT A", 'PRODUCT?', 'Many people learn vibe coding. Far fewer ship software that is dependable enough for real customers or commercial use.', 'The usual roadblock appears after the first exciting prototype: unclear audience, weak product decisions, fragile architecture, no quality process, no rollout strategy, and no reliable path to revenue.', 'Knowing what to build, for whom, and why matters more than generating more code. This session gives you the product and software-development thinking that AI tools cannot choose for you.'],
@@ -78,17 +79,18 @@ const courseCopy = {
       success: ['Interest received', 'Thank you. Your request was sent to Siamese Cat Dev. We will reply to the email address you provided.'],
       error: 'Your request could not be sent. Please check the fields and try again.',
     },
+    school: ['YOUR LEARNING ACCOUNT', 'Course discovery and interest stay on this public page. After your place is confirmed, use DJAI School to start or continue authenticated learning.', 'Start or continue learning in DJAI School'],
     footer: ['Built by practitioners. Hosted with DJAI Academy.', 'About Siamese Cat Dev', 'DJAI Academy'],
   },
   th: {
     htmlLang: 'th',
-    title: 'Vibe Code สินค้าให้สร้างรายได้ | คอร์ส Siamese Cat Dev',
-    description: 'แจ้งความสนใจคอร์สสดกับ Siamese Cat Dev เพื่อเรียนรู้วิธีพัฒนา MVP จาก Vibe Coding ให้เป็นสินค้าที่น่าเชื่อถือ พร้อมเปิดตัวและสร้างรายได้',
+    title: 'คอร์ส Vibe Coding สดฟรี | จาก MVP สู่สินค้าจริง',
+    description: 'แจ้งความสนใจคลาสสดฟรีกับ Siamese Cat Dev เพื่อเรียนรู้วิธีพัฒนา MVP จาก Vibe Coding ให้เป็นสินค้าที่น่าเชื่อถือ พร้อมเปิดตัวและสร้างรายได้',
     canonical: 'https://www.djai.academy/siamese_cat/dev/course/th/',
     languageSwitch: ['EN', '/siamese_cat/dev/course/'],
     nav: ['สิ่งที่จะได้เรียน', 'ผู้สอน', 'แจ้งความสนใจ'],
-    kicker: ['คอร์สสด', 'SIAMESE CAT DEV × DJAI ACADEMY'],
-    hero: ['VIBE CODE สินค้าให้พร้อม', 'สร้างรายได้จริง', 'วันนี้ใครก็สร้าง MVP ได้เร็วขึ้น แต่การทำให้เป็นสินค้าที่น่าเชื่อถือ ใช้งานจริง และพร้อมขายยังเป็นเรื่องยาก มาเรียนรู้วิธีที่คนทำ Product ตัวจริงพัฒนาต้นแบบจาก AI ให้เป็นสิ่งที่ผู้ใช้ต้องการและยอมจ่ายเงิน', 'แจ้งความสนใจคอร์ส', 'ดูหัวข้อการเรียน', 'บอก Siamese Cat Dev ว่าคุณอยากสร้างอะไร แล้วเราจะติดต่อกลับทางอีเมลเพื่อคุยรูปแบบและเวลาที่เหมาะสม'],
+    kicker: ['คอร์ส Vibe Coding สดฟรี', 'SIAMESE CAT DEV × DJAI ACADEMY'],
+    hero: ['พัฒนา MVP จาก VIBE CODING ให้เป็น', 'สินค้าจริง', 'คลาสสดฟรีนี้เน้นช่องว่างหลังต้นแบบแรกจาก AI: ทำอย่างไรให้สินค้าน่าเชื่อถือ ใช้งานจริง และพร้อมพอให้ผู้ใช้ยอมจ่ายเงิน', 'แจ้งความสนใจคอร์ส', 'ดูหัวข้อการเรียน', 'บอก Siamese Cat Dev ว่าคุณอยากสร้างอะไร แล้วเราจะติดต่อกลับทางอีเมลเพื่อคุยรูปแบบและเวลาที่เหมาะสม'],
     facts: [['วันและเวลา', 'นัดหมายร่วมกัน'], ['เนื้อหา', '1 คลาสเน้นลงมือจริง'], ['รูปแบบ', 'ออนไลน์หรือพบกัน'], ['ภาษา', 'ไทยหรืออังกฤษ']],
     price: ['ขั้นตอนแรก', 'บอก', 'เป้าหมาย'],
     problem: ['ช่องว่างที่คนส่วนใหญ่ติดอยู่', 'คุณสร้าง MVP ได้แล้ว แต่ทำไมยังไม่เป็น', 'สินค้าจริง?', 'หลายคนเรียน Vibe Coding แต่มีน้อยคนที่ส่งมอบซอฟต์แวร์ซึ่งน่าเชื่อถือพอสำหรับลูกค้าจริงและการใช้งานเชิงพาณิชย์', 'ปัญหามักเริ่มหลังจากต้นแบบแรกสำเร็จ: ไม่ชัดว่าลูกค้าคือใคร ตัดสินใจ Product ไม่ขาด สถาปัตยกรรมเปราะ ไม่มีขั้นตอนควบคุมคุณภาพ ไม่มีกลยุทธ์เปิดตัว และไม่มีเส้นทางสู่รายได้ที่ชัดเจน', 'การรู้ว่าจะสร้างอะไร เพื่อใคร และเพราะอะไร สำคัญกว่าการสร้างโค้ดเพิ่ม คลาสนี้จะให้กรอบคิดด้าน Product และกระบวนการพัฒนาซอฟต์แวร์ที่ AI ตัดสินใจแทนคุณไม่ได้'],
@@ -133,6 +135,7 @@ const courseCopy = {
       success: ['รับคำขอแล้ว', 'ขอบคุณ คำขอถูกส่งถึง Siamese Cat Dev แล้ว เราจะตอบกลับไปยังอีเมลที่คุณให้ไว้'],
       error: 'ไม่สามารถส่งคำขอได้ กรุณาตรวจข้อมูลแล้วลองอีกครั้ง',
     },
+    school: ['บัญชีสำหรับการเรียน', 'การค้นหาและแจ้งความสนใจอยู่บนหน้าสาธารณะนี้ หลังยืนยันที่นั่งแล้ว ให้ใช้ DJAI School เพื่อเริ่มหรือเรียนต่อในระบบที่ต้องเข้าสู่ระบบ', 'เริ่มหรือเรียนต่อใน DJAI School'],
     footer: ['สร้างโดยคนทำงานจริง จัดคลาสร่วมกับ DJAI Academy', 'รู้จัก Siamese Cat Dev', 'DJAI Academy'],
   },
 } as const;
@@ -312,6 +315,10 @@ function CourseApp({ language = 'en' }: { language?: CourseLanguage }) {
             <CourseFacts language={language} />
             <CourseInterestForm language={language} />
             <p className="course-delivery-note"><Users aria-hidden="true" /> {copy.register[4]}</p>
+            <aside className="course-school-handoff" aria-label={copy.school[0]}>
+              <div><strong>{copy.school[0]}</strong><p>{copy.school[1]}</p></div>
+              <a href={SCHOOL_URL}>{copy.school[2]} <ExternalLink aria-hidden="true" /></a>
+            </aside>
           </div>
         </section>
       </main>

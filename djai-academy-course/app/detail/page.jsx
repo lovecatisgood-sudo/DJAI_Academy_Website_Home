@@ -1,7 +1,7 @@
 import CourseDetailPage from "../CourseDetailPage";
 
 export const metadata = {
-  title: "หลักสูตร AI Masterclass: จากไอเดียสู่โปรดักต์ | DJAI",
+  title: "หลักสูตรและตารางเรียน AI Masterclass | DJAI",
   description:
     "ดูกำหนดการและหลักสูตร AI Masterclass วันที่ 22 สิงหาคม 2026 เรียน Vibe Coding วางแผน สร้าง และ launch โปรดักต์จริงด้วย AI ภายในหนึ่งวัน",
   alternates: {
@@ -14,7 +14,7 @@ export const metadata = {
     }
   },
   openGraph: {
-    title: "AI Masterclass: จากไอเดียสู่โปรดักต์จริง",
+    title: "หลักสูตรและตารางเรียน AI Masterclass",
     description: "Workshop AI แบบลงมือทำเต็มวัน วันที่ 22 สิงหาคม 2026 โดย DJAI Academy",
     url: "/course/detail/",
     images: ["/course/assets/community2-display.webp"],

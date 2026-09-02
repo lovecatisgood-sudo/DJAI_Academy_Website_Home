@@ -122,11 +122,11 @@ export default function Home() {
             DJAI Academy | AI Masterclass
           </div>
           <h1>
-            สร้างแอป AI ใช้งานจริง <GradientText>โดยไม่ต้องเขียนโค้ด</GradientText>
+            AI Masterclass ออฟไลน์: <GradientText>สร้างโปรดักต์จริงในหนึ่งวัน</GradientText>
           </h1>
           <p>
-            เปลี่ยนไอเดียให้เป็น digital product ที่ใช้งานได้จริงด้วยเครื่องมือ AI,
-            workflow ที่ฉลาด และระบบ no-code ที่ practical แม้คุณไม่มีพื้นฐาน programming
+            ประเมินว่า workshop แบบลงมือทำนี้เหมาะกับคุณหรือไม่ แล้วดูผลลัพธ์ ราคา
+            สถานที่ และขั้นตอนจองที่นั่งก่อนสร้าง digital product ด้วย AI และ no-code
           </p>
 
           <div className="event-strip">

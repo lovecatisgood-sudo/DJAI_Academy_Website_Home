@@ -19,9 +19,9 @@ import CourseRegistrationLink from "../CourseRegistrationLink";
 import { courseRegistrationUrls } from "../lib/courseRegistration";
 
 export const metadata = {
-  title: "DJAI Academy AI Masterclass in Thailand",
+  title: "Offline AI Masterclass in Thailand: Build and Reserve | DJAI",
   description:
-    "A hands-on AI masterclass in Thailand for building real websites, apps, automations, and digital products without a programming background.",
+    "Evaluate DJAI's one-day offline AI Masterclass in Thailand. Review the outcome, price, location, and seat-reservation path before you enroll.",
   alternates: {
     canonical: "/course/en/",
     languages: {
@@ -138,12 +138,12 @@ export default function Home() {
             DJAI Academy | AI Masterclass
           </div>
           <h1>
-            Build Real AI Apps <GradientText>Without Coding.</GradientText>
+            Offline AI Masterclass: <GradientText>Build a Real Product in One Day.</GradientText>
           </h1>
           <p>
-            Go from idea to a working digital product using AI tools, smart
-            workflows, and practical no-code systems, even if you have no
-            programming background.
+            Decide whether this hands-on workshop fits you, then review the
+            outcome, price, location, and reservation path before building a
+            working digital product with AI and no-code tools.
           </p>
 
           <div className="event-strip">

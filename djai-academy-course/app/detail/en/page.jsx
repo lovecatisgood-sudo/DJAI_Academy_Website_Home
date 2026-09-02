@@ -1,7 +1,7 @@
 import CourseDetailPage from "../../CourseDetailPage";
 
 export const metadata = {
-  title: "AI Masterclass: From Idea to Live Product | DJAI Academy",
+  title: "AI Masterclass Curriculum and Schedule | DJAI Academy",
   description:
     "Explore the 22 August 2026 AI Masterclass itinerary and curriculum. Learn Vibe Coding, plan, build, and launch a real product with AI in one day.",
   alternates: {
@@ -14,7 +14,7 @@ export const metadata = {
     }
   },
   openGraph: {
-    title: "AI Masterclass: From Idea to Live Product",
+    title: "AI Masterclass Curriculum and Schedule",
     description: "A full-day hands-on AI workshop on 22 August 2026 by DJAI Academy.",
     url: "/course/detail/en/",
     images: ["/course/assets/community2-display.webp"],

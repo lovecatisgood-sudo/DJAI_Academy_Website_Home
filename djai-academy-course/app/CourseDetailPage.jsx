@@ -19,8 +19,8 @@ const content = {
     hero: {
       pill: "22 สิงหาคม 2026 | 09:30 - 16:00 น.",
       eyebrow: "AI Masterclass แบบลงมือทำเต็มวัน",
-      title: "จากไอเดียสู่โปรดักต์ที่ใช้งานได้จริง",
-      copy: "เรียนกระบวนการครบถ้วนในการเปลี่ยนไอเดียเป็นเว็บไซต์ แอป ระบบอัตโนมัติ หรือ digital product ด้วย AI พร้อมลงมือสร้างและเผยแพร่ผลงานภายในวันเดียว",
+      title: "หลักสูตร ตารางเรียน และผลลัพธ์ของโปรเจกต์",
+      copy: "ดูหลักสูตร ตารางเรียนเต็มวัน และผลลัพธ์ของโปรเจกต์ก่อนจอง จากนั้นเรียนกระบวนการเปลี่ยนไอเดียเป็นเว็บไซต์ แอป ระบบอัตโนมัติ หรือ digital product ด้วย AI",
       schedule: "ดูตารางกิจกรรม",
       book: "จองตอนนี้"
     },
@@ -140,8 +140,8 @@ const content = {
     hero: {
       pill: "22 August 2026 | 09:30 AM - 04:00 PM",
       eyebrow: "One-Day Hands-On AI Masterclass",
-      title: "From Idea to a Live Product",
-      copy: "Learn the complete process of turning an idea into a real website, application, automation, or digital product using AI, then build and launch it in one focused day.",
+      title: "Curriculum, Schedule, and Project Outcome",
+      copy: "See the curriculum, full-day schedule, and project outcome before reserving, then follow the process from an idea to a website, application, automation, or digital product using AI.",
       schedule: "View Schedule",
       book: "Book Now"
     },
