@@ -23,6 +23,14 @@ export default function CourseRegistrationLink({ children, className = "button",
     event.preventDefault();
     if (checkingSession) return;
 
+    window.gtag?.("event", "course_start", {
+      source_path: window.location.pathname,
+      locale,
+      cluster: "course",
+      destination_type: "djai_school",
+      course_id: "ai-masterclass"
+    });
+
     setCheckingSession(true);
     let destination = registrationUrlFor("signup", locale);
     const controller = new AbortController();

@@ -16,6 +16,7 @@ import {
 import SiteFooter from "../SiteFooter";
 import SiteHeader from "../SiteHeader";
 import CourseRegistrationLink from "../CourseRegistrationLink";
+import CourseLandingSchema from "../CourseLandingSchema";
 import { courseRegistrationUrls } from "../lib/courseRegistration";
 
 export const metadata = {
@@ -30,6 +31,14 @@ export const metadata = {
       vi: "/course/vi/",
       "x-default": "/course/"
     }
+  },
+  openGraph: {
+    title: "Offline AI Masterclass in Thailand: Build and Reserve",
+    description: "Review the outcome, price, location, and reservation path for DJAI's one-day offline AI Masterclass.",
+    url: "/course/en/",
+    images: ["/course/assets/community2-display.webp"],
+    type: "website",
+    locale: "en_US"
   }
 };
 
@@ -130,6 +139,7 @@ export default function Home() {
   return (
     <main id="home" className="site-shell" lang="en">
       <SiteHeader locale="en" />
+      <CourseLandingSchema locale="en" name="Offline AI Masterclass: Build a Real Product in One Day" description="A one-day offline workshop for planning, building, testing, and presenting a real product with AI." path="/course/en/" />
 
       <section className="hero section">
         <div className="hero-copy">

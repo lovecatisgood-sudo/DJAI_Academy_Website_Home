@@ -13,6 +13,7 @@ const VIETNAMESE_LAST_MODIFIED = new Date("2026-08-12T00:00:00.000Z");
 const VIDEO_TOOLS_LAST_MODIFIED = new Date("2026-08-09T00:00:00.000Z");
 const CAM_PDF_PRIVACY_LAST_MODIFIED = new Date("2026-09-06T00:00:00.000Z");
 const CAM_PDF_PRIVACY_THAI_LAST_MODIFIED = new Date("2026-09-06T00:00:00.000Z");
+const SEO_GROWTH_LAST_MODIFIED = new Date("2026-09-02T00:00:00.000Z");
 // The background-removal tool was rebuilt on its own first-party engine and
 // its pages rewritten. Dated separately so the other static pages keep an
 // honest lastModified rather than all claiming to have changed.
@@ -105,6 +106,18 @@ const staticPaths = [
   ...multilingual("/tools/brand/", brandTools)
 ];
 
+const SEO_GROWTH_PREFIXES = [
+  "/development/", "/service/", "/course/", "/siamese_cat/dev/course/",
+  "/siamese_cat/dev/courses/", "/tools/qrgen/", "/tools/resizeimg/",
+  "/tools/PDFTools/", "/tools/media/", "/tools/document/", "/tools/ai/",
+  "/tools/spreadsheet/"
+];
+
+function isSeoGrowthRoute(path) {
+  return path === "/Cam_PDF_Scan_Signer_QR-Gen/"
+    || SEO_GROWTH_PREFIXES.some((prefix) => path.startsWith(prefix));
+}
+
 function entry(path, lastModified, changeFrequency = "monthly", priority = 0.7) {
   return { url: `${ORIGIN}${path}`, lastModified, changeFrequency, priority };
 }
@@ -123,6 +136,8 @@ export default async function sitemap() {
       ? CAM_PDF_PRIVACY_LAST_MODIFIED
       : path === "/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/"
       ? CAM_PDF_PRIVACY_THAI_LAST_MODIFIED
+      : isSeoGrowthRoute(path)
+      ? SEO_GROWTH_LAST_MODIFIED
       : BACKGROUND_REMOVAL_PATHS.has(path)
       ? BACKGROUND_REMOVAL_LAST_MODIFIED
       : VIDEO_TOOL_PATHS.has(path) ? VIDEO_TOOLS_LAST_MODIFIED

@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-02",
+  "origin": "https://www.djai.academy",
+  "policy": {
+    "defaultLocale": "th",
+    "localeSuffixes": { "th": "", "en": "en/", "vi": "vi/" },
+    "missingTranslations": "omit",
+    "reviewGates": { "th": "fluent_human_required", "vi": "fluent_human_required", "zh-CN": "noindex", "zh-TW": "noindex" }
+  },
+  "equivalentGroups": [
+    {
+      "id": "development",
+      "variants": { "th": "/development/", "en": "/development/en/", "vi": "/development/vi/" },
+      "xDefault": "/development/"
+    },
+    {
+      "id": "service",
+      "variants": { "th": "/service/", "en": "/service/en/", "vi": "/service/vi/" },
+      "xDefault": "/service/"
+    },
+    {
+      "id": "paid-course",
+      "variants": { "th": "/course/", "en": "/course/en/", "vi": "/course/vi/" },
+      "xDefault": "/course/"
+    },
+    {
+      "id": "paid-course-detail",
+      "variants": { "th": "/course/detail/", "en": "/course/detail/en/", "vi": "/course/detail/vi/" },
+      "xDefault": "/course/detail/"
+    },
+    {
+      "id": "free-live-vibe-course",
+      "variants": { "en": "/siamese_cat/dev/course/", "th": "/siamese_cat/dev/course/th/" },
+      "xDefault": "/siamese_cat/dev/course/"
+    }
+  ],
+  "toolFamilies": [
+    {
+      "id": "qr",
+      "base": "/tools/qrgen/",
+      "locales": ["th", "en", "vi"],
+      "members": ["", "url-qr-code-generator", "wifi-qr-code-generator", "vcard-qr-code-generator", "text-qr-code-generator", "email-qr-code-generator", "whatsapp-qr-code-generator", "qr-code-generator-with-logo"]
+    },
+    {
+      "id": "image",
+      "base": "/tools/resizeimg/",
+      "locales": ["th", "en", "vi"],
+      "members": ["", "jpg-to-png", "png-to-jpg", "jpg-to-webp", "png-to-webp", "webp-to-jpg", "webp-to-png", "compress-image", "resize-image", "image-to-100kb", "image-to-500kb", "heic-to-jpg", "remove-image-metadata", "remove-background-image", "resize-image-to-200kb", "avif-to-jpg", "avif-to-png", "passport-photo-resizer"]
+    },
+    {
+      "id": "pdf",
+      "base": "/tools/PDFTools/",
+      "locales": ["th", "en"],
+      "members": ["", "merge-pdf", "split-pdf", "compress-pdf", "images-to-pdf", "pdf-to-images", "rotate-pdf", "watermark-pdf", "protect-pdf", "organize-pdf", "add-page-numbers", "remove-pdf-metadata", "jpg-to-pdf", "pdf-to-jpg", "png-to-pdf", "webp-to-pdf", "pdf-to-png", "extract-pdf-pages", "delete-pages-from-pdf", "reorder-pdf-pages"],
+      "additionalLocaleMembers": { "vi": ["", "merge-pdf", "split-pdf", "compress-pdf", "images-to-pdf", "pdf-to-images", "rotate-pdf", "watermark-pdf", "protect-pdf", "organize-pdf", "add-page-numbers", "remove-pdf-metadata"] }
+    },
+    {
+      "id": "media",
+      "base": "/tools/media/",
+      "locales": ["th", "en"],
+      "members": ["", "mp3-to-wav", "wav-to-mp3", "m4a-to-mp3", "mp4-to-mp3", "extract-audio-from-video", "video-converter", "mkv-to-mp4", "avi-to-mp4", "mp4-to-mov", "video-cutter", "video-cropper", "video-resizer", "video-merger", "compress-video-to-10mb", "compress-video-to-25mb", "compress-video-to-50mb", "compress-video-to-100mb", "video-to-gif", "gif-to-mp4", "remove-audio-from-video", "add-audio-to-video", "video-speed-changer", "extract-frames-from-video", "rotate-video", "webm-to-mp4", "mov-to-mp4", "mp4-to-webm", "compress-video"]
+    },
+    {
+      "id": "document",
+      "base": "/tools/document/",
+      "locales": ["th", "en", "vi"],
+      "members": ["", "docx-to-pdf", "docx-to-html", "docx-to-markdown", "docx-to-text", "pdf-to-text", "pdf-to-word", "ocr"]
+    },
+    {
+      "id": "ai",
+      "base": "/tools/ai/",
+      "locales": ["th", "en", "vi"],
+      "members": ["", "token-counter", "pdf-to-ai-markdown", "context-optimizer", "rag-chunk-calculator", "prompt-packager"]
+    },
+    {
+      "id": "spreadsheet",
+      "base": "/tools/spreadsheet/",
+      "locales": ["th", "en", "vi"],
+      "members": ["", "csv-to-json", "json-to-csv", "csv-cleaner", "merge-csv", "split-csv", "csv-to-xlsx", "xlsx-to-csv"]
+    }
+  ],
+  "singleLocaleRoutes": [
+    { "route": "/Cam_PDF_Scan_Signer_QR-Gen/", "locale": "en", "reason": "No reviewed Thai or Vietnamese product translation exists." },
+    { "route": "/siamese_cat/dev/courses/", "locale": "en", "reason": "The current course catalog is English-only." },
+    { "route": "/siamese_cat/dev/courses/build-first-app/", "locale": "en", "reason": "No reviewed translation exists." },
+    { "route": "/siamese_cat/dev/courses/make-a-game/", "locale": "en", "reason": "No reviewed translation exists." },
+    { "route": "/siamese_cat/dev/courses/coding-with-ai/", "locale": "en", "reason": "No reviewed translation exists." }
+  ],
+  "excludedNoindexFamilies": [
+    { "pattern": "/zh-cn/", "locale": "zh-CN", "reason": "Native review has not passed." },
+    { "pattern": "/zh-tw/", "locale": "zh-TW", "reason": "Native review has not passed." }
+  ]
+}

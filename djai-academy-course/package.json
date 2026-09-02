@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && node scripts/fix-export-locales.mjs",
     "start": "next start",
     "test:registration": "node tests/course-registration-flow.test.mjs"
   },

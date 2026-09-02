@@ -323,8 +323,8 @@ async function verify() {
   }
 
   const courseLandingVariants = [
-    { route: "/siamese_cat/dev/course/", language: "en", canonical: "https://www.djai.academy/siamese_cat/dev/course/", h1: "Vibe Code a Product That Can Make Money" },
-    { route: "/siamese_cat/dev/course/th/", language: "th", canonical: "https://www.djai.academy/siamese_cat/dev/course/th/", h1: "Vibe Code สินค้าให้สร้างรายได้จริง" }
+    { route: "/siamese_cat/dev/course/", language: "en", canonical: "https://www.djai.academy/siamese_cat/dev/course/", h1: "Free Live Vibe Coding Course: Turn an MVP into a Real Product" },
+    { route: "/siamese_cat/dev/course/th/", language: "th", canonical: "https://www.djai.academy/siamese_cat/dev/course/th/", h1: "คอร์ส Vibe Coding สดฟรี: พัฒนา MVP ให้เป็นสินค้าจริง" }
   ];
   for (const variant of courseLandingVariants) {
     const html = await fetch(`${origin}${variant.route}`).then((response) => response.text());
@@ -519,12 +519,12 @@ async function verify() {
     ["/vi/", "DJAI Academy"],
     ["/portfolio/vi/", "Sản phẩm DJAI đã tham gia xây dựng"],
     ["/development/vi/", "Mang bài toán đến. Chúng ta sẽ xác định thứ cần xây trước."],
-    ["/service/vi/", "Phát triển phần mềm theo bài toán, không theo danh sách công nghệ."],
+    ["/service/vi/", "Chọn nhóm dịch vụ gần nhất với bài toán cần giải quyết."],
     ["/tools/vi/", "Xử lý việc nhỏ ngay, không cần cài thêm phần mềm"],
     ["/blog/vi/", "Học AI bằng những quyết định bạn phải đưa ra khi xây thật"],
     ["/privacy/vi/", "Chính sách quyền riêng tư và cookie"],
-    ["/course/vi/", "Tự xây một sản phẩm bằng AI"],
-    ["/course/detail/vi/", "Từ ý tưởng đến sản phẩm chạy được"],
+    ["/course/vi/", "AI Masterclass trực tiếp:"],
+    ["/course/detail/vi/", "Lịch học, nội dung và kết quả của workshop"],
     ["/blog/vi/vibe-coding-cho-nguoi-moi/", "Vibe coding cho người mới"],
     ["/blog/vi/nen-chon-jpg-png-hay-webp/", "Nên chọn JPG, PNG hay WebP"],
     ["/blog/vi/tao-ma-qr-cho-menu-su-kien-website/", "Tạo mã QR cho menu, sự kiện hoặc website"]
@@ -586,8 +586,8 @@ async function verify() {
 
   const sitemapBody = await fetch(`${origin}/sitemap.xml`).then((response) => response.text());
   for (const [path, expectedLastModified] of [
-    ["/siamese_cat/dev/course/", "2026-08-23T00:00:00.000Z"],
-    ["/siamese_cat/dev/course/th/", "2026-08-23T00:00:00.000Z"],
+    ["/siamese_cat/dev/course/", "2026-09-02T00:00:00.000Z"],
+    ["/siamese_cat/dev/course/th/", "2026-09-02T00:00:00.000Z"],
     ["/Cam_PDF_Scan_Signer_QR-Gen/privacy/", "2026-09-06T00:00:00.000Z"],
     ["/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/", "2026-09-06T00:00:00.000Z"]
   ]) {

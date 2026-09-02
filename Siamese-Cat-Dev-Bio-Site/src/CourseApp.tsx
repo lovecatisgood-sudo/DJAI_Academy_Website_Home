@@ -25,6 +25,17 @@ const assetPath = (path: string) => `${import.meta.env.BASE_URL}${path}`;
 const lessonIcons = [Target, Code2, Rocket, Lightbulb];
 const SCHOOL_URL = 'https://school.djai.academy/';
 
+function trackSchoolStart(language: CourseLanguage) {
+  const gtag = (window as Window & { gtag?: (...args: unknown[]) => void }).gtag;
+  gtag?.('event', 'course_start', {
+    source_path: window.location.pathname,
+    locale: language,
+    cluster: 'vibe',
+    destination_type: 'djai_school',
+    course_id: 'free-live-vibe-course',
+  });
+}
+
 const courseCopy = {
   en: {
     htmlLang: 'en',
@@ -317,7 +328,7 @@ function CourseApp({ language = 'en' }: { language?: CourseLanguage }) {
             <p className="course-delivery-note"><Users aria-hidden="true" /> {copy.register[4]}</p>
             <aside className="course-school-handoff" aria-label={copy.school[0]}>
               <div><strong>{copy.school[0]}</strong><p>{copy.school[1]}</p></div>
-              <a href={SCHOOL_URL}>{copy.school[2]} <ExternalLink aria-hidden="true" /></a>
+              <a href={SCHOOL_URL} onClick={() => trackSchoolStart(language)}>{copy.school[2]} <ExternalLink aria-hidden="true" /></a>
             </aside>
           </div>
         </section>

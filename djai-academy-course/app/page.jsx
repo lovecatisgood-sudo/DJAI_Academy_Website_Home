@@ -16,6 +16,7 @@ import {
 import SiteFooter from "./SiteFooter";
 import SiteHeader from "./SiteHeader";
 import CourseRegistrationLink from "./CourseRegistrationLink";
+import CourseLandingSchema from "./CourseLandingSchema";
 import { courseRegistrationUrls } from "./lib/courseRegistration";
 const detailHref = "https://www.djai.academy/course/detail/";
 const mapHref =
@@ -114,6 +115,7 @@ export default function Home() {
   return (
     <main id="home" className="site-shell" lang="th">
       <SiteHeader locale="th" />
+      <CourseLandingSchema locale="th" name="AI Masterclass ออฟไลน์: สร้างโปรดักต์จริงในหนึ่งวัน" description="Workshop ออฟไลน์หนึ่งวันสำหรับวางแผน สร้าง ทดสอบ และนำเสนอโปรดักต์ด้วย AI" path="/course/" />
 
       <section className="hero section">
         <div className="hero-copy">

@@ -77,9 +77,11 @@ function whatsappHref(courseTitle?: string) {
 function trackWhatsAppClick(course: Course | undefined, placement: string) {
   const gtag = (window as GtagWindow).gtag;
   gtag?.('event', 'course_trial_whatsapp_click', {
-    course_slug: course?.slug || 'course-hub',
-    placement,
-    destination: 'whatsapp',
+    source_path: window.location.pathname,
+    locale: 'en',
+    cluster: 'vibe',
+    course_id: course?.slug || 'course-hub',
+    destination_type: `whatsapp_${placement}`,
   });
 }
 
@@ -88,8 +90,9 @@ function trackSchoolClick(course: Course | undefined) {
   gtag?.('event', 'course_start', {
     source_path: course ? coursePath(course) : HUB_PATH,
     locale: 'en',
-    cluster: 'vibe_course',
-    destination: 'djai_school',
+    cluster: 'vibe',
+    destination_type: 'djai_school',
+    course_id: course?.slug || 'course-hub',
   });
 }
 

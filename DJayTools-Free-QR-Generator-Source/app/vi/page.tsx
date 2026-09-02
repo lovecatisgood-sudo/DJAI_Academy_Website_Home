@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import type { CornerSquareType, DotType } from "qr-code-styling";
-import Link from "next/link";
 import AdSenseAd from "../AdSenseAd";
 import { trackSeoEvent } from "../analytics";
 import QrTaskFields from "../QrTaskFields";
@@ -72,8 +71,8 @@ export default function VietnameseQrGenerator({ toolSlug, pageCopy }: { toolSlug
       <header className="site-header">
         <a className="brand" href="#top"><img src={assetPath("djai-academy-logo-display.webp")} alt="DJAI Academy" width="384" height="206" /><span><strong>DJayTools</strong><small>by DJAI Academy</small></span></a>
         <nav aria-label="Điều hướng chính">
-          <a href="#profile">Nhà phát triển</a><Link href="/vi/">DJAI Academy</Link><Link href="/development/vi/">Phát triển cùng DJAI</Link><Link href="/tools/resizeimg/vi/">Công cụ hình ảnh</Link><Link href="/blog/vi/">Bài viết</Link>
-          <Link href="/tools/qrgen/" hrefLang="th">ไทย</Link><Link href="/tools/qrgen/en/" hrefLang="en">EN</Link><Link className="nav-cta" href="/academy/vi/">Tham gia cộng đồng</Link>
+          <a href="#profile">Nhà phát triển</a><a href="/vi/">DJAI Academy</a><a href="/development/vi/">Phát triển cùng DJAI</a><a href="/tools/resizeimg/vi/">Công cụ hình ảnh</a><a href="/blog/vi/">Bài viết</a>
+          <a href="/tools/qrgen/" hrefLang="th">ไทย</a><a href="/tools/qrgen/en/" hrefLang="en">EN</a><a className="nav-cta" href="/academy/vi/">Tham gia cộng đồng</a>
         </nav>
       </header>
       <section className="hero" id="top">

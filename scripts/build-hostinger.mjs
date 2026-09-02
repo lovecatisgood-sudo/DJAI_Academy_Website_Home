@@ -283,35 +283,17 @@ function validateOutputs(project) {
 function setCourseExportLanguages(project) {
   if (project.dir !== "djai-academy-course") return;
 
-  for (const relativePath of ["out/en/index.html", "out/detail/en/index.html"]) {
-    const outputPath = join(rootDir, project.dir, relativePath);
-    const html = readFileSync(outputPath, "utf8");
-    const updatedHtml = html.replace('<html lang="th">', '<html lang="en">');
-    if (updatedHtml === html) {
-      throw new Error(`DJAI course could not set English document language: ${relativePath}`);
-    }
-    writeFileSync(outputPath, updatedHtml);
-  }
-
-  for (const relativePath of ["out/vi/index.html", "out/detail/vi/index.html"]) {
-    const outputPath = join(rootDir, project.dir, relativePath);
-    const html = readFileSync(outputPath, "utf8");
-    const updatedHtml = html.replace('<html lang="th">', '<html lang="vi">');
-    if (updatedHtml === html) {
-      throw new Error(`DJAI course could not set Vietnamese document language: ${relativePath}`);
-    }
-    writeFileSync(outputPath, updatedHtml);
-  }
-
-  for (const [locale, segment] of [["zh-CN", "zh-cn"], ["zh-TW", "zh-tw"]]) {
-    for (const relativePath of [`out/${segment}/index.html`, `out/detail/${segment}/index.html`]) {
-      const outputPath = join(rootDir, project.dir, relativePath);
-      const html = readFileSync(outputPath, "utf8");
-      const updatedHtml = html.replace('<html lang="th">', `<html lang="${locale}">`);
-      if (updatedHtml === html) {
-        throw new Error(`DJAI course could not set ${locale} document language: ${relativePath}`);
-      }
-      writeFileSync(outputPath, updatedHtml);
+  const expected = [
+    ["out/index.html", "th"], ["out/detail/index.html", "th"],
+    ["out/en/index.html", "en"], ["out/detail/en/index.html", "en"],
+    ["out/vi/index.html", "vi"], ["out/detail/vi/index.html", "vi"],
+    ["out/zh-cn/index.html", "zh-CN"], ["out/detail/zh-cn/index.html", "zh-CN"],
+    ["out/zh-tw/index.html", "zh-TW"], ["out/detail/zh-tw/index.html", "zh-TW"]
+  ];
+  for (const [relativePath, locale] of expected) {
+    const html = readFileSync(join(rootDir, project.dir, relativePath), "utf8");
+    if (!html.includes(`<html lang="${locale}">`)) {
+      throw new Error(`DJAI course has the wrong document language for ${relativePath}; expected ${locale}`);
     }
   }
 }
