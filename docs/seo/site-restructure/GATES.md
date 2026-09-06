@@ -23,9 +23,10 @@ Each completed gate records the command or inspection result and the exact repos
   - CHECK: ownership validator plus build-derived route coverage test.
   - EXPECT: zero missing owners, duplicate route-locale owners, or duplicate primary query owners within a locale.
   - EVIDENCE: 351 validated records: 345 live sitemap routes plus 6 publication-gated Cam PDF guides; full `npm test` passed on 2026-09-06.
-- [ ] G06 — Main navigation and footer follow the approved five-destination architecture.
+- [x] G06 — Main navigation and footer follow the approved five-destination architecture.
   - CHECK: source contract, browser keyboard inspection, mobile screenshot comparison.
   - EXPECT: project enquiry primary; School link crawlable; no broken locale destination.
+  - EVIDENCE: `navigation-architecture.test.mjs`, the complete root test suite, and the 345-URL Hostinger verification passed on 2026-09-06. Local Chromium review at 1280×900 and 390×844 confirmed the original header shell, mobile menu shell, logo, and CTA remain visually intact; the rendered accessibility tree confirmed all five destinations plus contact/legal/footer links. School links use the currently live `/th` and `/en` homes until public course routes exist.
 - [ ] G07 — Homepage remains visually familiar and routes four distinct journeys.
   - CHECK: before/after desktop and mobile screenshots plus content contract.
   - EXPECT: no visual redesign; one descriptive H1; Development primary; Tools, Cam PDF, and School secondary.

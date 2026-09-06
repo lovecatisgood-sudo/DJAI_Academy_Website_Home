@@ -113,6 +113,18 @@ export function urlFor(route, locale = "en") {
   return path.startsWith("http") ? path : `${SITE_URL}${path}`;
 }
 
+const schoolUrls = {
+  th: "https://school.djai.academy/th",
+  en: "https://school.djai.academy/en",
+  vi: "https://school.djai.academy/en",
+  "zh-CN": "https://school.djai.academy/en",
+  "zh-TW": "https://school.djai.academy/en"
+};
+
+export function schoolUrlFor(locale = "en") {
+  return schoolUrls[locale] || schoolUrls.en;
+}
+
 export function blogPostPath(slug, locale = "en") {
   if (locale === "th") return `/blog/${slug}/`;
   const segment = locale === "zh-CN" ? "zh-cn" : locale === "zh-TW" ? "zh-tw" : locale;

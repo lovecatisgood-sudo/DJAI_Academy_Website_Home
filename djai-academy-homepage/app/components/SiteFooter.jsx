@@ -1,34 +1,31 @@
-import { urlFor } from "../lib/i18n";
+import { schoolUrlFor, urlFor } from "../lib/i18n";
 import CookieSettingsButton from "./CookieSettingsButton";
 
 const footerCopy = {
   en: {
     columns: [
       {
-        title: "Learn",
-        links: [
-          ["Join Offline Course", "course"],
-          ["Upcoming Courses", "course"],
-          ["Blog", "blog"]
-        ]
-      },
-      {
         title: "Build",
         links: [
           ["Development", "development"],
           ["Services", "service"],
           ["Portfolio", "portfolio"],
-          ["Current Promo", "promo"],
+          ["Current Promo", "promo"]
+        ]
+      },
+      {
+        title: "Tools & Product",
+        links: [
+          ["Free Tools", "tools"],
           ["Cam PDF Android App", "/Cam_PDF_Scan_Signer_QR-Gen/"]
         ]
       },
       {
-        title: "Community",
+        title: "Learn & Resources",
         links: [
-          ["Join Online Community", "community"],
-          ["Tools", "tools"],
-          ["Siamese Cat ecosystem", "siameseCat"],
-          ["Open-source Projects", null]
+          ["Learn at DJAI School", "school"],
+          ["Blog and Guides", "blog"],
+          ["Siamese Cat ecosystem", "siameseCat"]
         ]
       }
     ],
@@ -41,30 +38,27 @@ const footerCopy = {
   th: {
     columns: [
       {
-        title: "เรียนรู้",
-        links: [
-          ["สมัครคอร์สออฟไลน์", "course"],
-          ["คอร์สเรียนที่กำลังเปิด", "course"],
-          ["บล็อก", "blog"]
-        ]
-      },
-      {
-        title: "สร้างโปรเจกต์",
+        title: "พัฒนาโปรเจกต์",
         links: [
           ["งานพัฒนา", "development"],
           ["บริการ", "service"],
           ["ผลงาน", "portfolio"],
-          ["โปรโมชัน", "promo"],
+          ["โปรโมชัน", "promo"]
+        ]
+      },
+      {
+        title: "เครื่องมือและผลิตภัณฑ์",
+        links: [
+          ["เครื่องมือฟรี", "tools"],
           ["แอป Cam PDF Android", "/Cam_PDF_Scan_Signer_QR-Gen/"]
         ]
       },
       {
-        title: "ชุมชน",
+        title: "เรียนรู้และอ่านต่อ",
         links: [
-          ["เข้าร่วมชุมชนออนไลน์", "community"],
-          ["เครื่องมือฟรี", "tools"],
-          ["เครือข่าย Siamese Cat", "siameseCat"],
-          ["โปรเจกต์โอเพนซอร์ส", null]
+          ["เรียนกับ DJAI School", "school"],
+          ["บทความและคู่มือ", "blog"],
+          ["เครือข่าย Siamese Cat", "siameseCat"]
         ]
       }
     ],
@@ -77,30 +71,27 @@ const footerCopy = {
   vi: {
     columns: [
       {
-        title: "Học",
-        links: [
-          ["Khóa học thực hành", "course"],
-          ["Lộ trình cho người mới", "course"],
-          ["Bài viết", "blog"]
-        ]
-      },
-      {
         title: "Xây dựng",
         links: [
           ["Phát triển sản phẩm", "development"],
           ["Dịch vụ", "service"],
           ["Dự án đã thực hiện", "portfolio"],
-          ["Ưu đãi hiện tại", "promo"],
+          ["Ưu đãi hiện tại", "promo"]
+        ]
+      },
+      {
+        title: "Công cụ và sản phẩm",
+        links: [
+          ["Công cụ miễn phí", "tools"],
           ["Ứng dụng Cam PDF Android", "/Cam_PDF_Scan_Signer_QR-Gen/"]
         ]
       },
       {
-        title: "Cộng đồng",
+        title: "Học và tài nguyên",
         links: [
-          ["Tham gia cộng đồng", "community"],
-          ["Công cụ miễn phí", "tools"],
-          ["Hệ sinh thái Siamese Cat", "siameseCat"],
-          ["Dự án mã nguồn mở", null]
+          ["Học tại DJAI School", "school"],
+          ["Bài viết và hướng dẫn", "blog"],
+          ["Hệ sinh thái Siamese Cat", "siameseCat"]
         ]
       }
     ],
@@ -112,9 +103,9 @@ const footerCopy = {
   },
   "zh-CN": {
     columns: [
-      { title: "学习", links: [["AI 课程", "course"], ["学习社区", "community"], ["文章", "blog"]] },
-      { title: "构建", links: [["产品开发", "development"], ["开发服务", "service"], ["项目案例", "portfolio"], ["Cam PDF Android 应用", "/Cam_PDF_Scan_Signer_QR-Gen/"]] },
-      { title: "工具与社区", links: [["免费工具", "tools"], ["Siamese Cat", "siameseCat"], ["联系 DJAI", "contact"]] }
+      { title: "构建", links: [["产品开发", "development"], ["开发服务", "service"], ["项目案例", "portfolio"]] },
+      { title: "工具与产品", links: [["免费工具", "tools"], ["Cam PDF Android 应用", "/Cam_PDF_Scan_Signer_QR-Gen/"]] },
+      { title: "学习与资源", links: [["在 DJAI School 学习", "school"], ["文章与指南", "blog"], ["Siamese Cat", "siameseCat"]] }
     ],
     contact: "联系",
     email: "电子邮件：contact@djai.academy",
@@ -124,9 +115,9 @@ const footerCopy = {
   },
   "zh-TW": {
     columns: [
-      { title: "學習", links: [["AI 課程", "course"], ["學習社群", "community"], ["文章", "blog"]] },
-      { title: "打造", links: [["產品開發", "development"], ["開發服務", "service"], ["專案案例", "portfolio"], ["Cam PDF Android 應用程式", "/Cam_PDF_Scan_Signer_QR-Gen/"]] },
-      { title: "工具與社群", links: [["免費工具", "tools"], ["Siamese Cat", "siameseCat"], ["聯絡 DJAI", "contact"]] }
+      { title: "打造", links: [["產品開發", "development"], ["開發服務", "service"], ["專案案例", "portfolio"]] },
+      { title: "工具與產品", links: [["免費工具", "tools"], ["Cam PDF Android 應用程式", "/Cam_PDF_Scan_Signer_QR-Gen/"]] },
+      { title: "學習與資源", links: [["在 DJAI School 學習", "school"], ["文章與指南", "blog"], ["Siamese Cat", "siameseCat"]] }
     ],
     contact: "聯絡",
     email: "電子郵件：contact@djai.academy",
@@ -149,7 +140,7 @@ export default function SiteFooter({ locale = "en" }) {
             <h3>{column.title}</h3>
             {column.links.map(([label, route]) =>
               route ? (
-                <a href={route.startsWith("/") ? route : urlFor(route, locale)} key={label}>
+                <a href={route === "school" ? schoolUrlFor(locale) : route.startsWith("/") ? route : urlFor(route, locale)} key={label}>
                   {label}
                 </a>
               ) : (

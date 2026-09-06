@@ -38,14 +38,15 @@
       "id": "school",
       "property": "school",
       "primaryIntent": "learn_vibe_coding",
-      "href": "https://school.djai.academy/th/courses",
+      "href": "https://school.djai.academy/th",
       "localeRoutes": {
-        "th": "https://school.djai.academy/th/courses",
-        "en": "https://school.djai.academy/en/courses",
-        "vi": "https://school.djai.academy/en/courses",
-        "zh-CN": "https://school.djai.academy/en/courses",
-        "zh-TW": "https://school.djai.academy/en/courses"
-      }
+        "th": "https://school.djai.academy/th",
+        "en": "https://school.djai.academy/en",
+        "vi": "https://school.djai.academy/en",
+        "zh-CN": "https://school.djai.academy/en",
+        "zh-TW": "https://school.djai.academy/en"
+      },
+      "futureCourseHref": "https://school.djai.academy/th/courses"
     },
     {
       "id": "resources",
