@@ -16,6 +16,7 @@ const tools = [
   ["Tạo mã QR", "QR Code miễn phí", "Tạo QR cho đường dẫn, Wi-Fi, danh thiếp, nội dung hoặc chiến dịch rồi tải PNG hay SVG mà không cần tài khoản.", "/tools/qrgen/vi/", ["PNG", "SVG"]],
   ["Xử lý hình ảnh", "Đổi định dạng, nén và đổi kích thước ảnh", "Đổi JPG, PNG, WebP, HEIC; nén hàng loạt hoặc xóa nền. Phần lớn tác vụ chạy ngay trên thiết bị.", "/tools/resizeimg/vi/", ["HEIC", "Xử lý hàng loạt"]],
   ["Xử lý PDF", "Bộ công cụ PDF dùng ngay", "Ghép, tách, nén, xoay, đóng dấu, đặt mật khẩu hoặc chuyển PDF sang ảnh mà không gửi tài liệu lên máy chủ.", "/tools/PDFTools/vi/", ["PDF", "Riêng tư"]],
+  ["Âm thanh và video", "Chuyển đổi và chỉnh sửa media", "Chuyển đổi âm thanh hoặc video, trích xuất âm thanh, cắt và nén tệp ngay trong trình duyệt.", "/tools/media/vi/", ["Âm thanh", "Video"]],
   ["Tài liệu", "Chuyển đổi DOCX, OCR và trích xuất chữ", "Chuyển DOCX sang PDF, HTML, Markdown hoặc văn bản; đọc chữ từ PDF và ảnh ngay trong trình duyệt.", "/tools/document/vi/", ["DOCX", "OCR"]],
   ["Ngữ cảnh cho AI", "Đếm token và chuẩn bị dữ liệu RAG", "Đếm token, làm sạch ngữ cảnh, xem trước các đoạn RAG và đóng gói nhiều tệp trước khi đưa vào mô hình AI.", "/tools/ai/vi/", ["Token", "RAG"]],
   ["Bảng tính", "Chuyển đổi CSV, JSON và Excel", "Làm sạch, ghép, tách và chuyển đổi CSV, JSON, XLSX cho các luồng dữ liệu và tự động hóa.", "/tools/spreadsheet/vi/", ["CSV", "XLSX"]]
@@ -41,7 +42,7 @@ export default function VietnameseToolsPage() {
         {tools.map(([label, title, text, href, tags]) => <a className="tool-listing" href={href} key={title}><span>{label}</span><h2>{title}</h2><p>{text}</p><div>{tags.map((tag) => <small key={tag}>{tag}</small>)}</div><strong>Mở công cụ <span aria-hidden="true">→</span></strong></a>)}
       </section>
       <section className="workflow-section" aria-labelledby="workflow-heading"><div><p className="eyebrow">BẮT ĐẦU TỪ VIỆC CẦN LÀM</p><h2 id="workflow-heading">Lối tắt cho những tác vụ thường gặp</h2><p>Giao diện của một số công cụ chuyên biệt hiện dùng tiếng Anh, nhưng thao tác chính vẫn nằm ngay trên trang và không yêu cầu đăng ký.</p></div><div className="workflow-links">{workflows.map(([title, href]) => <a href={href} key={title}><strong>{title}</strong><span>Mở công cụ</span></a>)}</div></section>
-      <section className="tools-band"><div><p className="eyebrow">VÌ SAO MIỄN PHÍ?</p><h2>Một công cụ hữu ích là cách rõ nhất để chứng minh năng lực sản phẩm.</h2></div><p>DJAI phát hành các công cụ này để giải quyết nhu cầu thật, đồng thời cho thấy cách một tiện ích web được thiết kế, kiểm tra và vận hành. Nếu doanh nghiệp cần luồng riêng, hãy bắt đầu từ <a href="/service/vi/">dịch vụ phát triển sản phẩm</a>.</p></section>
+      <section className="tools-band"><div><p className="eyebrow">VÌ SAO MIỄN PHÍ?</p><h2>Một công cụ hữu ích là cách rõ nhất để chứng minh năng lực sản phẩm.</h2></div><p>DJAI phát hành các công cụ này để giải quyết nhu cầu thật, đồng thời cho thấy cách một tiện ích web được thiết kế, kiểm tra và vận hành. Nếu doanh nghiệp cần luồng riêng, hãy bắt đầu từ <a href="/development/vi/">quy trình phát triển sản phẩm</a>.</p></section>
     </main>
     <SiteFooter locale="vi" />
   </>;

@@ -1,5 +1,6 @@
 import AdSenseAd from "../components/AdSenseAd";
 import ShareButtons from "../components/ShareButtons";
+import { schoolUrlFor } from "../lib/i18n";
 import ToolDirectorySection from "./ToolDirectorySection";
 
 export const metadata = {
@@ -111,7 +112,7 @@ const tools = [
   }
 ];
 
-const comingSoon = ["Favicon generator", "High-fidelity Office conversion"];
+const comingSoon = ["High-fidelity Office conversion"];
 
 const popularWorkflows = [
   ["ลบพื้นหลังรูป", "สร้าง PNG โปร่งใสใน browser", "https://www.djai.academy/tools/resizeimg/remove-background-image/"],
@@ -137,7 +138,7 @@ const ecosystem = [
   {
     title: "พัฒนาโปรเจกต์กับ DJAI",
     text: "Custom web tools, apps, automation systems และ AI-powered platforms",
-    href: "https://www.djai.academy/service/"
+    href: "https://www.djai.academy/development/"
   },
   {
     title: "DJAI × Siamese Cat",
@@ -158,11 +159,6 @@ const ecosystem = [
     title: "Siamese Cat Creative Club",
     text: "Creative learning, visual production และ creator-focused workflows",
     href: "https://creative.siamesecat.cafe/"
-  },
-  {
-    title: "Siamese Cat Hotel",
-    text: "Pet hospitality project และโอกาสด้าน booking/automation",
-    href: "https://hotel.siamesecat.cafe/"
   }
 ];
 
@@ -206,10 +202,10 @@ export default function ThaiToolsPage() {
           <img src="/djai-logo-small.webp" alt="DJAI Academy" width="360" height="193" loading="lazy" decoding="async" />
         </a>
         <nav aria-label="Tools navigation">
-          <a href="https://www.djai.academy/course/">คอร์สเรียน</a>
-          <a href="/academy/">ชุมชน</a>
-          <a href="https://www.djai.academy/service/">บริการ</a>
-          <a href="https://www.djai.academy/blog/">บล็อก</a>
+          <a href="https://www.djai.academy/development/">พัฒนาโปรเจกต์</a>
+          <a href="/Cam_PDF_Scan_Signer_QR-Gen/">Cam PDF</a>
+          <a href={schoolUrlFor("th")}>DJAI School</a>
+          <a href="https://www.djai.academy/blog/">บทความ</a>
           <a href="https://www.djai.academy/tools/en/" hrefLang="en">
             EN
           </a>
@@ -253,7 +249,7 @@ export default function ThaiToolsPage() {
           <h2 id="cam-pdf-app-title">ใช้เครื่องมือเอกสารขั้นสูงบนมือถือ</h2>
           <p>Cam PDF Scan, Signer & QR Generator รวม scanner, PDF signer, QR generator และ workflow productivity สำหรับงานเอกสารในแอปเดียว</p>
         </div>
-        <a className="button" href="https://play.google.com/store/apps/details?id=com.djai.campdfscan">ดาวน์โหลดจาก Google Play</a>
+        <a className="button" href="/Cam_PDF_Scan_Signer_QR-Gen/">ดูแอป Cam PDF</a>
       </section>
 
       <section className="workflow-section" aria-labelledby="workflow-heading">

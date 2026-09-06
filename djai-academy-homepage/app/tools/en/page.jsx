@@ -1,5 +1,6 @@
 import AdSenseAd from "../../components/AdSenseAd";
 import ShareButtons from "../../components/ShareButtons";
+import { schoolUrlFor } from "../../lib/i18n";
 import ToolDirectorySection from "../ToolDirectorySection";
 
 export const metadata = {
@@ -111,10 +112,7 @@ const tools = [
   }
 ];
 
-const comingSoon = [
-  "Favicon generator",
-  "High-fidelity Office conversion"
-];
+const comingSoon = ["High-fidelity Office conversion"];
 
 const popularWorkflows = [
   ["Remove image background", "Create a transparent PNG in your browser", "https://www.djai.academy/tools/resizeimg/remove-background-image/en/"],
@@ -140,7 +138,7 @@ const ecosystem = [
   {
     title: "Develop With DJAI",
     text: "Custom web tools, apps, automation systems, and AI-powered platforms.",
-    href: "https://www.djai.academy/service/en/"
+    href: "https://www.djai.academy/development/en/"
   },
   {
     title: "DJAI × Siamese Cat",
@@ -161,11 +159,6 @@ const ecosystem = [
     title: "Siamese Cat Creative Club",
     text: "Creative workflows, visual production, and creator-focused experiments.",
     href: "https://creative.siamesecat.cafe/"
-  },
-  {
-    title: "Siamese Cat Hotel",
-    text: "Hospitality projects, digital guest experiences, and business automation opportunities.",
-    href: "https://hotel.siamesecat.cafe/"
   }
 ];
 
@@ -209,10 +202,10 @@ export default function ToolsPage() {
           <img src="/djai-logo-small.webp" alt="DJAI Academy" width="360" height="193" loading="lazy" decoding="async" />
         </a>
         <nav aria-label="Tools navigation">
-          <a href="https://www.djai.academy/course/en/">Courses</a>
-          <a href="/academy/en/">Community</a>
-          <a href="https://www.djai.academy/service/en/">Services</a>
-          <a href="https://www.djai.academy/blog/en/">Blog</a>
+          <a href="https://www.djai.academy/development/en/">Development</a>
+          <a href="/Cam_PDF_Scan_Signer_QR-Gen/">Cam PDF</a>
+          <a href={schoolUrlFor("en")}>DJAI School</a>
+          <a href="https://www.djai.academy/blog/en/">Resources</a>
           <a href="https://www.djai.academy/tools/" hrefLang="th">
             ไทย
           </a>
@@ -256,7 +249,7 @@ export default function ToolsPage() {
           <h2 id="cam-pdf-app-title">Use advanced document tools on your phone.</h2>
           <p>Cam PDF Scan, Signer & QR Generator brings a scanner, PDF signer, QR generator, and productivity workflows into one mobile app.</p>
         </div>
-        <a className="button" href="https://play.google.com/store/apps/details?id=com.djai.campdfscan">Download on Google Play</a>
+        <a className="button" href="/Cam_PDF_Scan_Signer_QR-Gen/">See the Cam PDF app</a>
       </section>
 
       <section className="workflow-section" aria-labelledby="workflow-heading">

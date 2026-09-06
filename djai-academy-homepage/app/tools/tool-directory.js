@@ -14,9 +14,7 @@ const categoryData = [
       th: "ตรวจ Technical SEO, JavaScript SEO และหลักฐานการ Crawl พร้อม MCP สำหรับ AI Agent",
       en: "Audit technical and JavaScript SEO with crawl evidence and bounded MCP tools for AI agents."
     },
-    tools: [
-      [null, "SEO Screaming Toad", "SEO crawler โอเพนซอร์สพร้อมหลักฐาน Technical SEO และ MCP สำหรับ AI Agent", "SEO Screaming Toad", "Open-source SEO crawler with technical evidence and bounded MCP tools for AI agents."]
-    ]
+    tools: []
   },
   {
     id: "qr", base: "/tools/qrgen", title: { th: "เครื่องมือ QR Code", en: "QR code tools" },
