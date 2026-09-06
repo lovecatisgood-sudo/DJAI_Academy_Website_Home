@@ -30,6 +30,11 @@ test("existing Cam PDF download buttons use the published Google Play listing", 
   }
 });
 
+test("the promotion header does not link to nonexistent Cam PDF locale routes", () => {
+  const source = readFileSync(join(root, "djai-web-promo-voice/src/app/PromoHeader.tsx"), "utf8");
+  assert.doesNotMatch(source, /Cam_PDF_Scan_Signer_QR-Gen\/(?:en|vi)\//);
+});
+
 test("English product page advertises the live release and iOS follow-up", () => {
   const source = readFileSync(join(root, productRoot, "page.jsx"), "utf8");
   assert.match(source, /Available on Google Play/);

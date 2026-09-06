@@ -81,7 +81,7 @@ export default function PromoHeader({ initialLocale = "th" }: { initialLocale?: 
     [labels.services, localePath(locale, "/service/", "/service/en/", "/service/vi/", "/service/zh-cn/", "/service/zh-tw/")],
     [labels.promo, locale === "zh-CN" ? "/web_promo/zh-cn/" : locale === "zh-TW" ? "/web_promo/zh-tw/" : locale === "vi" ? "/web_promo/vi/" : "/web_promo/"],
     [labels.portfolio, localePath(locale, "/portfolio/", "/portfolio/en/", "/portfolio/vi/", "/portfolio/zh-cn/", "/portfolio/zh-tw/")],
-    [labels.camPdf, localePath(locale, "/Cam_PDF_Scan_Signer_QR-Gen/", "/Cam_PDF_Scan_Signer_QR-Gen/en/", "/Cam_PDF_Scan_Signer_QR-Gen/vi/", "/Cam_PDF_Scan_Signer_QR-Gen/zh-cn/", "/Cam_PDF_Scan_Signer_QR-Gen/zh-tw/")],
+    [labels.camPdf, localePath(locale, "/Cam_PDF_Scan_Signer_QR-Gen/", "/Cam_PDF_Scan_Signer_QR-Gen/", "/Cam_PDF_Scan_Signer_QR-Gen/", "/Cam_PDF_Scan_Signer_QR-Gen/zh-cn/", "/Cam_PDF_Scan_Signer_QR-Gen/zh-tw/")],
   ];
 
   return (
