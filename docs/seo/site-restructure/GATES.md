@@ -39,9 +39,10 @@ Each completed gate records the command or inspection result and the exact repos
   - CHECK: one representative workflow per distinct tool engine, output/download checks, routing tests.
   - EXPECT: task completion unchanged; related tool precedes contextual bridge; no random promotion.
   - EVIDENCE: package suites passed on 2026-09-06 after clean lockfile installs: PDF 12/12, QR 11/11 including a 42-route static build, image 46/46 with 85 localized pages rebuilt, media 8/8 with 116 pages rebuilt, and document 11/11. Root routing and shell-link contracts also passed. Existing header/footer classes and task controls were retained; only link destinations and labels changed. PDF/document routes lead to Cam PDF, AI/SEO learning intent leads to School, and service intent leads to Development.
-- [ ] G10 — Cam PDF acquisition claims are verified.
+- [x] G10 — Cam PDF acquisition claims are verified.
   - CHECK: released app behavior, first-party screenshots, policy/product diff, Play link tests.
   - EXPECT: every visible capability and privacy statement supported.
+  - EVIDENCE: the official Google Play listing for package `com.djai.campdfscan` was retrieved on 2026-09-06. It confirms Android version 2.0.1, an August 31, 2026 update, account requirement, weekly free allowance, rewarded ads, no app-added watermark, the one-time Remove Ads/unlimited-export benefit, and the published feature set. Product/terms copy and sitemap freshness now match that evidence; the September 6 privacy suites remain green. The displayed 1.5 MB PNG icon was replaced with the existing 5.7 KB WebP. The 76-route homepage build passed, all Cam PDF images loaded in local Chromium, visual review passed at 1280×900 and 390×844, and axe reported zero violations at both sizes after targeted contrast and keyboard-scroll fixes.
 
 ## School and migration
 

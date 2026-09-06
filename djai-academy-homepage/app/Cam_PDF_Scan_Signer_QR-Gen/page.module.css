@@ -1,9 +1,9 @@
 .page {
   --app-ink: #122225;
   --app-deep: #0e302f;
-  --app-teal: #0c8c82;
+  --app-teal: #087169;
   --app-mint: #dff4ef;
-  --app-orange: #f06a28;
+  --app-orange: #a6410f;
   --app-paper: #f7faf9;
   color: var(--app-ink);
   background: var(--app-paper);
@@ -314,6 +314,11 @@
   grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
+.screenGrid:focus-visible {
+  outline: 3px solid var(--app-teal);
+  outline-offset: 6px;
+}
+
 .screenGrid figure {
   min-width: 0;
   margin: 0;
@@ -363,6 +368,10 @@
 
 .privacyBand > div:first-child {
   max-width: 780px;
+}
+
+.privacyBand .kicker {
+  color: #f5a66f;
 }
 
 .privacyBand p:not(.kicker) {
@@ -454,7 +463,7 @@
 .finalCta small {
   max-width: 670px;
   margin-top: 18px;
-  color: #657874;
+  color: #52645f;
   font-size: 0.82rem;
   line-height: 1.5;
 }

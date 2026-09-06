@@ -51,7 +51,7 @@ export default function CamPdfChinesePage({ content }) {
           <div className={styles.heroShade} />
           <div className={styles.heroInner}>
             <div className={styles.productLockup}>
-              <Image src="/apps/cam-pdf/icon.png" alt="Cam PDF App 圖示" width={72} height={72} />
+              <Image src="/apps/cam-pdf/icon.webp" alt="Cam PDF App 圖示" width={72} height={72} />
               <span>{content.eyebrow}</span>
             </div>
             <h1 className={styles.heroTitle}>{content.hero}</h1>

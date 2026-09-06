@@ -1,6 +1,6 @@
 # Cam PDF claim verification
 
-Verified on: 2026-09-02
+Verified on: 2026-09-06
 
 Primary source: [Cam PDF Scan Signer QR Gen on Google Play](https://play.google.com/store/apps/details?id=com.djai.campdfscan&hl=en&gl=US)
 
@@ -20,7 +20,7 @@ Supporting first-party sources:
 | Available for Android on Google Play | Pass | Live listing for package `com.djai.campdfscan` |
 | Developer is DJAI Academy | Pass | Google Play listing |
 | Version 2.0.1 | Pass | Google Play listing |
-| Updated August 23, 2026 | Pass | Google Play listing |
+| Updated August 31, 2026 | Pass | Google Play listing retrieved on September 6, 2026 |
 | Productivity category | Pass | Google Play listing |
 | Contains ads and in-app purchases | Pass | Google Play listing |
 | iOS release planned | Not verified | Not stated in the Google Play listing or current product evidence; do not publish this claim |
@@ -49,6 +49,7 @@ Supporting first-party sources:
 | Account required | Pass | Google Play description and DJAI privacy policy; this must be visible near the install CTA |
 | Weekly export allowance applies | Pass | Google Play description and DJAI privacy policy; do not imply unlimited free exports |
 | Optional rewarded ads may add usage when available | Pass | Google Play description |
+| One-time Remove Ads purchase includes unlimited exports and suppresses paid-ad placements | Pass | Google Play description retrieved on September 6, 2026 |
 | Ads and in-app purchases are present | Pass | Google Play listing |
 | App collects no data | Fail | The Google Play Data safety panel discloses collection and possible sharing of account, device, location, and other service data. Only document-content privacy may be claimed precisely. |
 

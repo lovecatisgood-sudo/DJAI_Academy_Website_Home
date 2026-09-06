@@ -589,7 +589,9 @@ async function verify() {
     ["/siamese_cat/dev/course/", "2026-09-02T00:00:00.000Z"],
     ["/siamese_cat/dev/course/th/", "2026-09-02T00:00:00.000Z"],
     ["/Cam_PDF_Scan_Signer_QR-Gen/privacy/", "2026-09-06T00:00:00.000Z"],
-    ["/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/", "2026-09-06T00:00:00.000Z"]
+    ["/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/", "2026-09-06T00:00:00.000Z"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/", "2026-09-06T00:00:00.000Z"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/terms/", "2026-09-06T00:00:00.000Z"]
   ]) {
     const actualLastModified = getSitemapLastModified(sitemapBody, path);
     if (actualLastModified !== expectedLastModified) {

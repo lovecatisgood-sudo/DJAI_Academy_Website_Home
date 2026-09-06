@@ -13,6 +13,8 @@ const VIETNAMESE_LAST_MODIFIED = new Date("2026-08-12T00:00:00.000Z");
 const VIDEO_TOOLS_LAST_MODIFIED = new Date("2026-08-09T00:00:00.000Z");
 const CAM_PDF_PRIVACY_LAST_MODIFIED = new Date("2026-09-06T00:00:00.000Z");
 const CAM_PDF_PRIVACY_THAI_LAST_MODIFIED = new Date("2026-09-06T00:00:00.000Z");
+const CAM_PDF_PRODUCT_LAST_MODIFIED = new Date("2026-09-06T00:00:00.000Z");
+const CAM_PDF_TERMS_LAST_MODIFIED = new Date("2026-09-06T00:00:00.000Z");
 const SEO_GROWTH_LAST_MODIFIED = new Date("2026-09-02T00:00:00.000Z");
 // The background-removal tool was rebuilt on its own first-party engine and
 // its pages rewritten. Dated separately so the other static pages keep an
@@ -136,6 +138,10 @@ export default async function sitemap() {
       ? CAM_PDF_PRIVACY_LAST_MODIFIED
       : path === "/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/"
       ? CAM_PDF_PRIVACY_THAI_LAST_MODIFIED
+      : path === "/Cam_PDF_Scan_Signer_QR-Gen/"
+      ? CAM_PDF_PRODUCT_LAST_MODIFIED
+      : path === "/Cam_PDF_Scan_Signer_QR-Gen/terms/"
+      ? CAM_PDF_TERMS_LAST_MODIFIED
       : isSeoGrowthRoute(path)
       ? SEO_GROWTH_LAST_MODIFIED
       : BACKGROUND_REMOVAL_PATHS.has(path)

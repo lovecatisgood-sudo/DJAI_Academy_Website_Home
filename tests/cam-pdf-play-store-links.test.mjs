@@ -9,12 +9,15 @@ const root = join(import.meta.dirname, "..");
 const playUrl = "https://play.google.com/store/apps/details?id=com.djai.campdfscan";
 const productRoot = "djai-academy-homepage/app/Cam_PDF_Scan_Signer_QR-Gen";
 
-const downloadCtaFiles = [
+const productDiscoveryFiles = [
   "djai-academy-homepage/app/tools/page.jsx",
   "djai-academy-homepage/app/tools/en/page.jsx",
   "djai-academy-homepage/app/portfolio/page.jsx",
   "djai-academy-homepage/app/portfolio/en/page.jsx",
-  "djai-academy-homepage/app/portfolio/vi/page.jsx",
+  "djai-academy-homepage/app/portfolio/vi/page.jsx"
+];
+
+const postTaskDownloadFiles = [
   "djai-document-tools/app/AcquisitionBridge.tsx",
   "djai-pdf-tools/app/PdfToolsApp.tsx"
 ];
@@ -25,8 +28,16 @@ const qrPageFiles = [
   "DJayTools-Free-QR-Generator-Source/app/vi/page.tsx",
 ];
 
-test("existing Cam PDF download buttons use the published Google Play listing", () => {
-  for (const relativePath of downloadCtaFiles) {
+test("discovery pages lead to the owned Cam PDF product page before Google Play", () => {
+  for (const relativePath of productDiscoveryFiles) {
+    const source = readFileSync(join(root, relativePath), "utf8");
+    assert.match(source, /\/Cam_PDF_Scan_Signer_QR-Gen\//, relativePath);
+    assert.doesNotMatch(source, /play\.google\.com\/store\/apps\/details\?id=com\.djai\.campdfscan/, relativePath);
+  }
+});
+
+test("post-task Cam PDF download buttons use the published Google Play listing", () => {
+  for (const relativePath of postTaskDownloadFiles) {
     const source = readFileSync(join(root, relativePath), "utf8");
     assert.match(source, new RegExp(playUrl.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), relativePath);
   }

@@ -144,7 +144,7 @@ export default function CamPdfAppPage() {
           <div className={styles.heroInner}>
             <div className={styles.productLockup}>
               <Image
-                src="/apps/cam-pdf/icon.png"
+                src="/apps/cam-pdf/icon.webp"
                 alt="Cam PDF Scan Signer QR Gen app icon"
                 width={72}
                 height={72}
@@ -180,7 +180,7 @@ export default function CamPdfAppPage() {
         <section className={styles.releaseStrip} aria-label="Product status">
           <div>
             <strong>Live on Google Play</strong>
-            <span>Version 2.0.1 · Updated August 23, 2026</span>
+            <span>Version 2.0.1 · Updated August 31, 2026</span>
           </div>
           <div>
             <strong>Local document workflow</strong>
@@ -204,6 +204,7 @@ export default function CamPdfAppPage() {
           <ul>
             <li>An account is required to use the app.</li>
             <li>Exports use a weekly export allowance.</li>
+            <li>A one-time Remove Ads purchase includes unlimited exports.</li>
             <li>Optional rewarded ads may add usage when available.</li>
             <li>The app contains ads and in-app purchases.</li>
           </ul>
@@ -238,7 +239,7 @@ export default function CamPdfAppPage() {
               settings keep everyday scanning work easy to review.
             </p>
           </header>
-          <div className={styles.screenGrid}>
+          <div className={styles.screenGrid} tabIndex={0} aria-label="Cam PDF product screenshots">
             {screens.map(([image, title, text]) => (
               <figure key={image}>
                 <div className={styles.screenFrame}>
@@ -311,9 +312,10 @@ export default function CamPdfAppPage() {
           <p className={styles.kicker}>Available on Google Play</p>
           <h2>Cam PDF Scan Signer QR Gen</h2>
           <p>
-            Download the Android app from Google Play. An account is required, exports use a weekly
-            allowance, and the app contains ads and in-app purchases. No added watermark is placed
-            on exported files.
+            Download the Android app from Google Play. An account is required, free access uses a
+            weekly export allowance, and the one-time Remove Ads purchase includes unlimited
+            exports. The app contains ads and in-app purchases. No added watermark is placed on
+            exported files.
           </p>
           <TrackedLink
             href={PLAY_STORE_URL}
@@ -325,7 +327,7 @@ export default function CamPdfAppPage() {
             Download on Google Play
           </TrackedLink>
           <small>
-            Verified against the Google Play listing and DJAI app policy on September 2, 2026.
+            Verified against the Google Play listing and DJAI app policy on September 6, 2026.
           </small>
         </section>
       </main>
