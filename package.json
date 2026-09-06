@@ -20,7 +20,7 @@
     "test:seo-integration": "node --test tests/sitewide-seo-integration.test.js",
     "test:cam-pdf-links": "node --test tests/cam-pdf-play-store-links.test.mjs",
     "test:cam-pdf-product": "node --test djai-academy-homepage/tests/cam-pdf-product-seo.test.mjs djai-academy-homepage/tests/cam-pdf-privacy-policy.test.mjs",
-    "test:commercial-intent": "node --test djai-academy-homepage/tests/commercial-intent-separation.test.mjs",
+    "test:commercial-intent": "node --test djai-academy-homepage/tests/commercial-intent-separation.test.mjs djai-academy-homepage/tests/portfolio-proof-routing.test.mjs",
     "test:course-interest": "node --test tests/course-interest.test.js",
     "test:seo-events": "node --test tests/seo-conversion-events.test.mjs",
     "test:seo-program": "node --test tests/seo-program-contract.test.js",

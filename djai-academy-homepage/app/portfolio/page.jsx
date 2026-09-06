@@ -41,7 +41,7 @@ const categories = [
           "/apps/cam-pdf/home.png",
           "/apps/cam-pdf/qr.png"
         ],
-        href: "https://play.google.com/store/apps/details?id=com.djai.campdfscan",
+        href: "/Cam_PDF_Scan_Signer_QR-Gen/",
         description:
           "แอป Android สำหรับสแกนและจัดระเบียบเอกสาร นำเข้า PDF, DOCX และรูปภาพ แก้ไข เซ็น ตั้งชื่อไฟล์ก่อนส่งออก และสร้างหรือสแกน QR code โดยเน้นการประมวลผลเอกสารในอุปกรณ์",
         services: ["Android app", "Document scanning", "PDF and QR tools"]
@@ -90,7 +90,6 @@ const categories = [
       {
         name: "Siamese Cat Hotel",
         image: "/portfolio/optimized/websites/Siamese_Cat_Hotel.webp",
-        href: "https://hotel.siamesecat.cafe/",
         description:
           "เว็บไซต์ cat hotel ภายใต้ Siamese Cat Group ช่วยขยายแบรนด์จากคาเฟ่สู่บริการ pet hospitality พร้อมแนวทางการจองที่ชัดเจน",
         services: ["Hospitality website", "Service expansion", "Booking intent"]
@@ -292,7 +291,7 @@ export default function ThaiPortfolioPage() {
             ให้แสดงต่อสาธารณะ นี่เป็นเพียงบางส่วนของงานที่เราเคยทำ ไม่ใช่ทั้งหมด
           </p>
           <div className="portfolio-hero-actions">
-            <a className="button primary" href="https://www.djai.academy/service/">
+            <a className="button primary" href="https://www.djai.academy/development/">
               พัฒนาโปรเจกต์กับ DJAI
             </a>
             <a className="button secondary dark" href="https://www.djai.academy/blog/">
@@ -349,8 +348,8 @@ export default function ThaiPortfolioPage() {
             </p>
           </div>
           <div className="portfolio-cta-actions">
-            <a className="button primary" href="https://www.djai.academy/service/">
-              ดูบริการ
+            <a className="button primary" href="https://www.djai.academy/development/">
+              ดูวิธีพัฒนาโปรเจกต์
             </a>
             <a className="button ghost light" href="mailto:contact@djai.academy">
               contact@djai.academy

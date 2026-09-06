@@ -31,9 +31,10 @@ Each completed gate records the command or inspection result and the exact repos
   - CHECK: before/after desktop and mobile screenshots plus content contract.
   - EXPECT: no visual redesign; one descriptive H1; Development primary; Tools, Cam PDF, and School secondary.
   - EVIDENCE: homepage conversion contract passed for Thai, English, and Vietnamese; full root build/test and 345-URL Hostinger audit passed on 2026-09-06. Local Chromium review at 1280×900 and 390×844 verified the original hero, founder visual, header shell, responsive typography, and cookie controls. A first capture exposed an oversized descriptive H1; the final title uses the existing brand scale plus a smaller descriptive line and was re-captured on all three locales.
-- [ ] G08 — Development, Service, and Portfolio have non-overlapping page roles.
+- [x] G08 — Development, Service, and Portfolio have non-overlapping page roles.
   - CHECK: commercial intent test, rendered metadata comparison, internal-link audit.
   - EXPECT: proposition, chooser, and proof roles remain distinct.
+  - EVIDENCE: commercial-intent and portfolio-proof routing suites passed on 2026-09-06. Thai/English/Vietnamese Portfolio primary CTAs now route to Development, while Cam PDF proof routes through the owned product page. Current external proof destinations were checked; all returned HTTP 200 except `hotel.siamesecat.cafe`, whose broken TLS link was removed from Portfolio while retaining the screenshot-based case card. Local Chromium desktop review covered Development and Service; desktop/mobile review covered Portfolio.
 - [ ] G09 — Tools remain functional and utility-first.
   - CHECK: one representative workflow per distinct tool engine, output/download checks, routing tests.
   - EXPECT: task completion unchanged; related tool precedes contextual bridge; no random promotion.

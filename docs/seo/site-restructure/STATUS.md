@@ -2,7 +2,7 @@
 
 **Active branch:** `codex/djai-site-restructure`  
 **Active worktree:** `website_DJAI_HOME/.worktrees/djai-site-restructure`  
-**Current phase:** R2 Development, Service, and Portfolio validation
+**Current phase:** R2 tool hub taxonomy
 
 | Work item | Status | Evidence / next action |
 | --- | --- | --- |
@@ -13,8 +13,8 @@
 | 5. Site architecture and routing contract | COMPLETE | Five navigation destinations, ten page families, nine tool families, deterministic routing and migration safeguards validate |
 | 6. Main header and footer links | COMPLETE | Original visual shells retained; five destinations, live locale-safe School links, legal/contact controls, desktop/mobile rendering, and full build/link audit verified |
 | 7. Main homepage linking hierarchy | COMPLETE | Thai, English, and Vietnamese retain the original composition while using a descriptive H1, commercial primary action, and distinct Tools/Cam PDF/School journeys; English now uses the shared shell |
-| 8. Development/Service/Portfolio | IN_PROGRESS | Validate prepared proposition/chooser/proof separation and all proof links |
-| 9. Tool hub taxonomy | NOT_STARTED | Group existing routes without URL migration |
+| 8. Development/Service/Portfolio | COMPLETE | Development owns the proposition, Service chooses categories, and Portfolio proves work then routes to Development; Cam proof now strengthens its product page; broken hotel proof link removed |
+| 9. Tool hub taxonomy | IN_PROGRESS | Group existing routes without URL migration and remove misleading legacy utility-nav destinations |
 | 10. Tool post-success routing | NOT_STARTED | Validate each family and sensitive-data event contract |
 | 11. Cam PDF product page | NOT_STARTED | Verify app evidence and legal consistency |
 | 12. Cam PDF guides/locales | NOT_STARTED | Requires first-party screenshots and fluent review |

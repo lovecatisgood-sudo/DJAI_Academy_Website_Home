@@ -41,7 +41,7 @@ const categories = [
           "/apps/cam-pdf/home.png",
           "/apps/cam-pdf/qr.png"
         ],
-        href: "https://play.google.com/store/apps/details?id=com.djai.campdfscan",
+        href: "/Cam_PDF_Scan_Signer_QR-Gen/",
         description:
           "An Android document workspace for scanning and organizing files, importing PDFs, DOCX documents and images, editing and signing pages, naming exports, and creating or scanning QR codes with local document processing.",
         services: ["Android app", "Document scanning", "PDF and QR tools"]
@@ -90,7 +90,6 @@ const categories = [
       {
         name: "Siamese Cat Hotel",
         image: "/portfolio/optimized/websites/Siamese_Cat_Hotel.webp",
-        href: "https://hotel.siamesecat.cafe/",
         description:
           "A cat hotel website for the Siamese Cat Group, extending the cafe brand into pet hospitality with a clearer service and booking experience.",
         services: ["Hospitality website", "Service expansion", "Booking intent"]
@@ -293,8 +292,8 @@ export default function PortfolioPage() {
             the team has delivered.
           </p>
           <div className="portfolio-hero-actions">
-            <a className="button primary" href="https://www.djai.academy/service/en/">
-              Build With DJAI
+            <a className="button primary" href="https://www.djai.academy/development/en/">
+              Plan a Project With DJAI
             </a>
             <a className="button secondary dark" href="https://www.djai.academy/blog/en/">
               Read Build Guides
@@ -350,8 +349,8 @@ export default function PortfolioPage() {
             </p>
           </div>
           <div className="portfolio-cta-actions">
-            <a className="button primary" href="https://www.djai.academy/service/en/">
-              View Services
+            <a className="button primary" href="https://www.djai.academy/development/en/">
+              See the Development Process
             </a>
             <a className="button ghost light" href="mailto:contact@djai.academy">
               contact@djai.academy
