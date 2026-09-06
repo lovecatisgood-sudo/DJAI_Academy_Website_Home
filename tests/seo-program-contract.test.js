@@ -146,3 +146,20 @@ test("the validator rejects duplicate owners and unknown conversion targets", ()
     /unknown conversion target random_promotion/
   );
 });
+
+test("the validator enforces School ownership of future public learning discovery", () => {
+  const invalidBoundary = structuredClone(ownership);
+  invalidBoundary.propertyBoundaries.www.publicLearningDiscovery = true;
+  assert.throws(
+    () => validateKeywordOwnership(invalidBoundary, routing),
+    /www must not own new public learning discovery/
+  );
+
+  const invalidMigration = structuredClone(ownership);
+  const englishCourse = invalidMigration.entries.find((row) => row.route === "/course/en/");
+  englishCourse.futureUrl = "https://www.djai.academy/course/en/";
+  assert.throws(
+    () => validateKeywordOwnership(invalidMigration, routing),
+    /future learning URL must use school\.djai\.academy/
+  );
+});

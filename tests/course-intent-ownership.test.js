@@ -18,6 +18,7 @@ const freeCourse = read("Siamese-Cat-Dev-Bio-Site/src/CourseApp.tsx");
 const catalogComponent = read("Siamese-Cat-Dev-Bio-Site/src/CoursesApp.tsx");
 const catalogData = JSON.parse(read("Siamese-Cat-Dev-Bio-Site/src/courses-data.json"));
 const routeBuilder = read("Siamese-Cat-Dev-Bio-Site/scripts/copy-routes.mjs");
+const ownership = JSON.parse(read("data/seo/keyword-ownership.json"));
 
 test("paid Masterclass landing owns evaluation and registration intent", () => {
   assert.match(paidLayout, /Offline AI Masterclass in Thailand|AI Masterclass ออฟไลน์/);
@@ -62,13 +63,39 @@ test("catalog and individual courses own discovery and exact build outcomes", ()
   }
 });
 
-test("public discovery hands authenticated learning to School without moving discovery there", () => {
+test("School owns future public learning discovery while legacy pages remain functional", () => {
+  assert.equal(ownership.propertyBoundaries.www.publicLearningDiscovery, false);
+  assert.equal(ownership.propertyBoundaries.school.publicLearningDiscovery, true);
+  assert.equal(ownership.propertyBoundaries.school.authenticatedLearning, true);
+
+  const plannedSchoolRoutes = new Set(ownership.plannedSchoolLearningRoutes);
+  for (const route of [
+    "https://school.djai.academy/th/courses",
+    "https://school.djai.academy/en/courses",
+    "https://school.djai.academy/th/courses/vibe-coding",
+    "https://school.djai.academy/en/courses/vibe-coding",
+  ]) {
+    assert.equal(plannedSchoolRoutes.has(route), true, `missing School owner: ${route}`);
+  }
+
+  const learningRows = ownership.entries.filter(({ cluster }) => ["course", "vibe"].includes(cluster));
+  assert.ok(learningRows.length > 0);
+  for (const row of learningRows) {
+    assert.equal(row.property, "www", `${row.route}: current property`);
+    assert.equal(row.futureProperty, "school", `${row.route}: future property`);
+    if (row.locale === "vi") {
+      assert.equal(row.migrationStatus, "retained_until_equivalent", `${row.route}: migration status`);
+      assert.equal(row.futureUrl, null, `${row.route}: no cross-locale redirect`);
+    } else {
+      assert.equal(row.migrationStatus, "pending_school_replacement", `${row.route}: migration status`);
+      assert.match(row.futureUrl, new RegExp(`^https://school\\.djai\\.academy/${row.locale}/courses(?:/|$)`));
+    }
+  }
+
   for (const source of [freeCourse, catalogComponent]) {
     assert.match(source, /https:\/\/school\.djai\.academy/);
     assert.match(source, /Start or continue learning|เริ่มหรือเรียนต่อ/);
   }
-  assert.doesNotMatch(catalogData.hub.heading, /School/i);
-  assert.doesNotMatch(catalogData.hub.title, /School/i);
 });
 
 test("approved paid-course facts remain unchanged", () => {

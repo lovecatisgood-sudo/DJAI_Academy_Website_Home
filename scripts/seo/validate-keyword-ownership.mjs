@@ -45,6 +45,26 @@ export function validateKeywordOwnership(ownership, routing) {
     errors.push("acquisition routing must use version 1 and contain a clusters object");
   }
 
+  const boundaries = ownership.propertyBoundaries;
+  if (boundaries?.www?.publicLearningDiscovery !== false) {
+    errors.push("www must not own new public learning discovery");
+  }
+  if (
+    boundaries?.school?.publicLearningDiscovery !== true
+    || boundaries?.school?.authenticatedLearning !== true
+  ) {
+    errors.push("School must own public learning discovery and authenticated learning");
+  }
+  if (!Array.isArray(ownership.plannedSchoolLearningRoutes)) {
+    errors.push("plannedSchoolLearningRoutes must be an array");
+  } else {
+    for (const route of ownership.plannedSchoolLearningRoutes) {
+      if (!/^https:\/\/school\.djai\.academy\/(?:th|en)\/courses(?:\/|$)/.test(route)) {
+        errors.push(`invalid planned School learning route ${route}`);
+      }
+    }
+  }
+
   for (const [index, row] of (ownership.entries || []).entries()) {
     const label = row.route || `entry ${index}`;
     for (const field of requiredStringFields) {
@@ -72,6 +92,30 @@ export function validateKeywordOwnership(ownership, routing) {
     }
     if (typeof row.indexable !== "boolean") {
       errors.push(`${label}: indexable must be boolean`);
+    }
+
+    if (["course", "vibe"].includes(row.cluster)) {
+      if (row.property !== "www") {
+        errors.push(`${label}: legacy learning route must remain on www before migration`);
+      }
+      if (row.futureProperty !== "school") {
+        errors.push(`${label}: future learning owner must be School`);
+      }
+      if (row.locale === "vi") {
+        if (row.migrationStatus !== "retained_until_equivalent" || row.futureUrl !== null) {
+          errors.push(`${label}: Vietnamese learning route must remain until an equivalent locale exists`);
+        }
+      } else {
+        if (row.migrationStatus !== "pending_school_replacement") {
+          errors.push(`${label}: learning migration must remain pending until its School replacement is live`);
+        }
+        if (
+          typeof row.futureUrl !== "string"
+          || !row.futureUrl.startsWith(`https://school.djai.academy/${row.locale}/courses`)
+        ) {
+          errors.push(`${label}: future learning URL must use school.djai.academy and preserve locale`);
+        }
+      }
     }
 
     const routeKey = `${row.route}|${row.locale}`;

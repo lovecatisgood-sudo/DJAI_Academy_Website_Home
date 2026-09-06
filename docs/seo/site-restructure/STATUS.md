@@ -2,14 +2,14 @@
 
 **Active branch:** `codex/djai-site-restructure`  
 **Active worktree:** `website_DJAI_HOME/.worktrees/djai-site-restructure`  
-**Current phase:** R1 architecture and ownership contracts
+**Current phase:** R1 complete public-route ownership
 
 | Work item | Status | Evidence / next action |
 | --- | --- | --- |
 | 1. Intent, baseline, and gates | COMPLETE | Baseline build/test/audit recorded in `BASELINE-2026-09-06.md` |
 | 2. Rebase prepared implementation | COMPLETE | Rebased onto `origin/main` at `763de3f`; duplicate policy commit dropped |
-| 3. Correct public-learning ownership | IN_PROGRESS | Write failing ownership tests, then replace old www-course boundary |
-| 4. Complete public route ownership | NOT_STARTED | Generate build-derived inventory and coverage test |
+| 3. Correct public-learning ownership | COMPLETE | School is the future public owner; www routes remain live until verified replacements; Vietnamese routes cannot cross-locale redirect |
+| 4. Complete public route ownership | IN_PROGRESS | Generate build-derived inventory and coverage test |
 | 5. Site architecture and routing contract | NOT_STARTED | Add navigation/page-role/tool-family manifest |
 | 6. Main header and footer links | NOT_STARTED | Preserve styling; change hierarchy/destinations only |
 | 7. Main homepage linking hierarchy | NOT_STARTED | Minimal UI changes; development-first semantics |
