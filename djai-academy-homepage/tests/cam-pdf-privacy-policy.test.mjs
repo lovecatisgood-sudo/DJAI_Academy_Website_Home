@@ -7,15 +7,20 @@ const policySource = await readFile(
   "utf8"
 );
 
-test("English Cam PDF policy contains the authoritative August 21 revision", () => {
+test("English Cam PDF policy contains the authoritative September 6 revision", () => {
   const requiredText = [
     "Privacy Policy for Cam PDF Scan Signer QR Gen",
-    "Effective date: August 21, 2026 · Last updated: August 21, 2026",
-    "The App sends the Google Play purchase token to DJAI's protected Firebase backend.",
-    "DJAI stores the raw purchase token only in a server-restricted purchase record",
-    "DJAI receives Google Play Real-time Developer Notifications",
-    "Google Play purchase and refund records may be retained after account deletion",
-    "Account deletion also removes the active billing-entitlement record"
+    "Effective date: September 6, 2026 · Last updated: September 6, 2026",
+    "This revision describes the Android release",
+    "your age bracket;",
+    "your gender selection;",
+    "your country or region;",
+    "your broad profession;",
+    "whether you drive;",
+    "your vehicle preference;",
+    "may incidentally contain a local file path, file URI, or filename",
+    "The current Android release does not send a separate purchase record to DJAI's backend.",
+    "Deleting your App account does not cancel, refund, or erase Google Play's transaction record."
   ];
 
   for (const text of requiredText) {
@@ -23,7 +28,30 @@ test("English Cam PDF policy contains the authoritative August 21 revision", () 
   }
 });
 
-test("English Cam PDF policy does not contain the superseded purchase paragraph", () => {
-  assert.doesNotMatch(policySource, /In the currently published implementation/);
-  assert.doesNotMatch(policySource, /requires migration to server-side Google Play verification/);
+test("Cam PDF policy omits unverified platform and backend claims", () => {
+  assert.doesNotMatch(policySource, /Sign in with Apple/);
+  assert.doesNotMatch(policySource, /App Attest/);
+  assert.doesNotMatch(policySource, /Railway/);
+  assert.doesNotMatch(policySource, /deletion guard/i);
+  assert.doesNotMatch(policySource, /server-restricted purchase record/i);
+  assert.doesNotMatch(policySource, /Real-time Developer Notifications/i);
+  assert.doesNotMatch(policySource, /saniti[sz]es telemetry to remove local file/i);
+});
+
+test("Thai Cam PDF policy mirrors the corrected material disclosures", () => {
+  const requiredText = [
+    "วันที่มีผลบังคับใช้: 6 กันยายน 2026 · ปรับปรุงล่าสุด: 6 กันยายน 2026",
+    "ช่วงอายุที่คุณเลือก",
+    "เพศที่คุณเลือก",
+    "ประเทศหรือภูมิภาค",
+    "กลุ่มอาชีพ",
+    "คุณขับรถหรือไม่",
+    "ประเภทยานพาหนะที่ชอบ",
+    "อาจมีเส้นทางไฟล์ URI ของไฟล์ หรือชื่อไฟล์ติดไปโดยไม่ตั้งใจ",
+    "รุ่น Android ปัจจุบันไม่ส่งบันทึกการซื้อแยกต่างหากไปยัง backend ของ DJAI"
+  ];
+
+  for (const text of requiredText) {
+    assert.match(policySource, new RegExp(text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+  }
 });

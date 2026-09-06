@@ -588,8 +588,8 @@ async function verify() {
   for (const [path, expectedLastModified] of [
     ["/siamese_cat/dev/course/", "2026-08-23T00:00:00.000Z"],
     ["/siamese_cat/dev/course/th/", "2026-08-23T00:00:00.000Z"],
-    ["/Cam_PDF_Scan_Signer_QR-Gen/privacy/", "2026-08-21T00:00:00.000Z"],
-    ["/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/", "2026-08-20T00:00:00.000Z"]
+    ["/Cam_PDF_Scan_Signer_QR-Gen/privacy/", "2026-09-06T00:00:00.000Z"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/", "2026-09-06T00:00:00.000Z"]
   ]) {
     const actualLastModified = getSitemapLastModified(sitemapBody, path);
     if (actualLastModified !== expectedLastModified) {

@@ -3,174 +3,208 @@ import SiteHeader from "../../components/SiteHeader";
 import styles from "./page.module.css";
 
 const APP_PATH = "/Cam_PDF_Scan_Signer_QR-Gen/";
-const PRIVACY_PATH = `${APP_PATH}privacy/`;
-const THAI_PATH = `${PRIVACY_PATH}th/`;
+const PRIVACY_PATH = APP_PATH + "privacy/";
+const THAI_PATH = PRIVACY_PATH + "th/";
 
 const en = {
   title: "Privacy Policy for Cam PDF Scan Signer QR Gen",
-  date: "Effective date: August 21, 2026 · Last updated: August 21, 2026",
+  date: "Effective date: September 6, 2026 · Last updated: September 6, 2026",
   intro: [
-    "DEEJAI LAB Co ., Ltd, company registration number 0105569117953, operating under the brand DJAI Academy (\"DJAI\", \"we\", \"us\", or \"our\"), provides the Cam PDF Scan Signer QR Gen mobile application (the \"App\"). This Privacy Policy explains what information the App processes, why it is processed, when it is shared with service providers, how long it is retained, and the choices and rights available to you.",
-    "DEEJAI LAB Co ., Ltd is the legal operator and data controller for the App. DJAI Academy is its operating brand. You can contact us at contact@djai.academy or through https://www.djai.academy/."
+    "DEEJAI LAB Co ., Ltd, company registration number 0105569117953, operating under the brand DJAI Academy (\"DJAI\", \"we\", \"us\", or \"our\"), provides Cam PDF Scan Signer QR Gen (the \"App\"). This policy explains what information is processed when you use the App, why it is processed, who may receive it, how long it is kept, and the controls available to you.",
+    "This revision describes the Android release distributed through Google Play under package name com.djai.campdfscan. It does not claim coverage for an iOS release or platform features that have not been verified in the current production source."
   ],
   sections: [
     {
-      title: "Documents and media remain on your device",
+      title: "Important summary",
+      lists: [[
+        "Scans, imported files, signatures, annotations, OCR text, QR-code content, and generated files are primarily processed and stored on your device.",
+        "DJAI stores limited account, usage, survey, notification, consent, and reward data in Firebase when you use connected App features.",
+        "The Android App uses Firebase Analytics, Google Mobile Ads, Google's consent tools, Firebase App Check with Play Integrity, and Sentry diagnostics.",
+        "You can delete your account in the App or request deletion through https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/delete-account/."
+      ]]
+    },
+    {
+      title: "Documents and media on your device",
       paragraphs: [
-        "Scanned pages, imported documents and images, OCR text, signatures, annotations, QR-code content, audio, video, and generated PDF, image, text, audio, and video files are processed in app-controlled storage on your device. DJAI does not upload this content to its account database, Firebase Analytics, Google Mobile Ads, or Sentry.",
-        "Content leaves the App only when you choose an operating-system action such as sharing, printing, saving to Files, saving to Photos, or opening the content in another app. The receiving app or service then handles that content under its own privacy terms.",
-        "The App may create temporary copies while importing, editing, OCR processing, or exporting. It removes temporary output after completion or cancellation where technically possible. Your saved projects remain on your device until you delete them, clear the App's storage, or uninstall the App. If you enable the App's cleanup-after-export option, project source files are removed from the App after a successful export according to that setting."
+        "The App performs scanning, image editing, signatures, annotations, OCR, QR-code creation and reading, media processing, and export work in App-controlled storage on your device. DJAI does not intentionally upload your document pages, imported files, signatures, annotations, OCR text, QR payloads, or generated files to its account database.",
+        "Content leaves the App when you choose a system action such as sharing, printing, saving to another folder or photo library, or opening the content in another app. The destination you select then processes that content under its own privacy practices.",
+        "The App may create temporary working files during import, editing, recognition, conversion, or export. Saved projects and exported copies remain until you delete them, clear the App's storage, use an applicable cleanup option, or uninstall the App. Android App backup is disabled by the App.",
+        "Diagnostic reporting is separate from document storage. As explained in Section 8, an error event may contain technical context generated during an operation. DJAI does not use diagnostic reporting to access or reconstruct your documents."
       ]
     },
     {
-      title: "Account information",
-      paragraphs: ["An account is required to use the App. Firebase Authentication processes the information needed to create and secure your account, including:"],
+      title: "Account and authentication information",
+      paragraphs: [
+        "An account is required for connected usage allowances, rewards, preferences, and account controls. Firebase Authentication and DJAI's Firebase backend may process:"
+      ],
       lists: [[
         "your Firebase user identifier;",
         "your email address and email-verification status;",
-        "your sign-in provider;",
-        "your display name and basic profile information supplied by Google or Apple when you choose those sign-in methods; and",
-        "authentication, password-reset, security, and anti-abuse events."
-      ], [
-        "Firebase user identifier, email address, display name, and sign-in provider;",
-        "the Terms, Privacy Policy, and PDPA consent versions and acceptance time;",
-        "optional promotional-email and marketing-notification choices;",
-        "account creation and update times;",
-        "weekly export allowance, use balance, rewarded credits, reservations, and completed-job identifiers needed to apply usage limits exactly once;",
-        "quest completion and reward status; and",
-        "account-deletion status needed to prevent deleted records from being recreated by an older or already-running request."
+        "your display name;",
+        "your sign-in method, currently email/password or Google sign-in;",
+        "authentication tokens, login and password-reset events, timestamps, IP address, device information, and security signals processed by Firebase;",
+        "the versions and acceptance time of the Terms, Privacy Policy, and required consent; and",
+        "account creation, update, and profile-preference timestamps."
       ]],
-      listLead: "DJAI stores the following account records in Cloud Firestore:",
-      closing: ["We use this information to provide authentication, account recovery, cross-device usage synchronisation, App functionality, fraud prevention, security, support, and account controls."]
+      closing: ["Firebase Authentication handles passwords. DJAI does not store or receive your plain-text password."]
     },
     {
-      title: "Optional preference survey",
-      paragraphs: ["The optional reward survey asks only:"],
-      lists: [[
-        "your primary use of the App;",
-        "whether you use it for personal, work, education, or combined purposes; and",
-        "how you discovered the App."
-      ]],
-      closing: [
-        "The answers and completion time are stored in Firestore under your user identifier. Survey answers are used for product planning and aggregated product analysis. They are not sent to Google Mobile Ads and are not configured as Firebase Analytics user properties. You may delete the survey answers from the App without deleting your entire account.",
-        "The App does not ask this survey for your age, gender, exact location, income, marital status, children, profession, driving status, or vehicle preference."
+      title: "App usage, allowances, quests, and rewards",
+      paragraphs: [
+        "To apply free usage limits and rewards consistently, DJAI may store your weekly allowance period, used and remaining exports, pending export reservations, completed export identifiers, rewarded credits, quest completion state, and synchronization timestamps.",
+        "For rewarded advertisements, Google Mobile Ads may receive a pseudonymous account value and reward-purpose marker. DJAI's Firebase function receives Google's signed reward callback, including transaction, ad-unit, reward, timestamp, and verification information, so it can reject duplicate or invalid rewards and credit the correct account.",
+        "Firebase Analytics separately records limited events such as feature opened, export completed, sign-in method, registration completed, preference changes, and quest completion as described in Section 7."
       ]
     },
     {
-      title: "Analytics",
+      title: "Optional preference survey",
+      paragraphs: ["If you voluntarily complete the in-App reward survey, DJAI stores the answers under your Firebase user identifier. The survey currently asks for:"],
+      lists: [[
+        "your display name;",
+        "your age bracket;",
+        "your gender selection;",
+        "your country or region;",
+        "your broad profession;",
+        "your primary use of the App;",
+        "whether the use is personal, work, education, or a combination;",
+        "how you discovered the App;",
+        "whether you drive;",
+        "your vehicle preference; and",
+        "the survey completion time."
+      ]],
+      closing: [
+        "The survey is optional for using the App but may be required to earn the related survey reward. DJAI uses the answers for product planning, feature prioritization, and aggregated product analysis. The answers are not configured as Firebase Analytics user properties and are not sent to Google Mobile Ads by the survey submission function.",
+        "You can request correction or deletion of survey information by emailing contact@djai.academy. Deleting your App account also deletes the active survey record."
+      ]
+    },
+    {
+      title: "Advertising and consent choices",
+      paragraphs: ["The Android App uses Google Mobile Ads and Google's User Messaging Platform. Depending on your region, consent choice, device settings, and Remove Ads status, Google may process:"],
+      lists: [[
+        "advertising, app-instance, and device identifiers;",
+        "IP address and approximate location derived from it;",
+        "device model, operating system, language, App version, network, and diagnostic information;",
+        "consent choices;",
+        "ad requests, impressions, interactions, frequency, and fraud signals; and",
+        "information used to deliver, limit, measure, secure, or personalize advertising where legally permitted."
+      ]],
+      closing: [
+        "The App does not request precise-location permission for advertising. Where Google's privacy-options interface is available, you can open it from the App to review or change available advertising choices. Contextual or non-personalized ads may still use limited device, approximate-location, measurement, frequency, and fraud-prevention information.",
+        "DJAI does not intentionally send scanned pages, signatures, OCR text, annotations, or QR payloads to Google Mobile Ads."
+      ]
+    },
+    {
+      title: "Firebase Analytics",
       paragraphs: [
-        "Firebase Analytics may process a pseudonymous Firebase user identifier, app-instance and device identifiers, App version, device model, operating-system version, language or region, broad country derived from network information, feature interactions, sign-in method, export completion, quest completion, and technical events. DJAI uses this information to understand feature use, diagnose product problems, prevent abuse, and improve the App.",
-        "Analytics events are designed not to contain document content, OCR text, QR content, signatures, user-selected filenames, passwords, authentication tokens, purchase tokens, or message content. DJAI does not request precise-location permission for analytics."
+        "Firebase Analytics is enabled in the current Android release. It may process a Firebase user identifier, app-instance and device identifiers, App version, device model, operating-system version, language or region, approximate country, session information, feature interactions, sign-in method, export completion, quest completion, and other technical events.",
+        "DJAI uses this information to understand feature use, diagnose product problems, prevent abuse, and improve the App. Analytics events are designed not to contain document pages, OCR text, QR payloads, signatures, user-selected file contents, passwords, authentication tokens, or payment-card information.",
+        "The current App does not provide a separate Firebase Analytics switch. Advertising privacy choices do not necessarily disable Firebase Analytics. You may request deletion of account-linked information as described below; Firebase may retain aggregated or provider-controlled analytics according to its own retention rules."
       ]
     },
     {
       title: "Crash reports and diagnostics",
       paragraphs: [
-        "Production releases may use Sentry for crash reporting and technical diagnostics. When Sentry is configured, it may receive timestamps, a pseudonymous Firebase user identifier, App and release version, device and operating-system details, stack traces, error category, performance information, and scrubbed technical context needed to reproduce a failure.",
-        "The App sanitises telemetry to remove local file and content URIs, sandbox paths, filenames, request bodies, headers, cookies, query strings, and direct identifiers. DJAI does not intentionally send document content, OCR text, QR payloads, signatures, passwords, authentication credentials, payment card details, purchase tokens, or Google Play order identifiers to Sentry. If a release is not configured with a Sentry DSN, that release sends no information to Sentry."
+        "When a production release is configured with Sentry, Sentry may receive App and release version, timestamps, device and operating-system details, session information, stack traces, error types, performance measurements, network-request status, and technical error context. DJAI may associate Sentry diagnostics with a pseudonymous Firebase user identifier.",
+        "Before a Sentry event is sent, the current App removes the device-name field. It does not currently remove every possible path or filename from all exception text. An error generated during a file operation may incidentally contain a local file path, file URI, or filename. DJAI does not intentionally attach document contents, OCR text, QR payloads, signatures, passwords, authentication tokens, or payment-card information to Sentry events.",
+        "If a release is not configured with a Sentry DSN, that release sends no Sentry events."
       ]
     },
     {
-      title: "Advertising and consent",
-      paragraphs: ["The Android App uses Google Mobile Ads and Google's User Messaging Platform. Depending on your region, consent choice, device settings, and whether you have purchased Remove Ads, Google may process:"],
-      lists: [[
-        "advertising and app-instance identifiers;",
-        "IP-derived approximate location;",
-        "device, App, network, and diagnostic information;",
-        "consent choices;",
-        "ad requests, impressions, interactions, frequency, and fraud signals; and",
-        "information used to provide, limit, measure, secure, or personalise advertising where legally permitted."
-      ]],
-      closing: ["The App does not request precise location for advertising. You can review available advertising privacy choices from the App's settings. A verified Remove Ads entitlement suppresses App ad requests and removes paid-ad placements. Rewarded-ad verification may store your pseudonymous user identifier, the AdMob transaction identifier, ad-unit identifier, reward amount, and verification time so the same reward cannot be granted twice."]
-    },
-    {
-      title: "Google Play purchases",
+      title: "Email preferences and notifications",
       paragraphs: [
-        "Google Play processes payment details, billing-account information, transaction records, tax, and payment risk under Google's terms. DJAI does not receive your payment-card or bank-account details.",
-        "The App sends the Google Play purchase token to DJAI's protected Firebase backend. The backend uses Google's Android Publisher API with the fixed App package and Remove Ads product identifier to check the purchase state, product, quantity, consumption state, refundable quantity, acknowledgement state, and any obfuscated App-account identifier supplied with the purchase. Access is granted only after Google reports a completed, unconsumed, eligible purchase. New purchases include a one-way obfuscated value derived from your Firebase user identifier so Google and DJAI can detect an account mismatch without sending the Firebase identifier as the billing identifier.",
-        "DJAI stores the raw purchase token only in a server-restricted purchase record because Google requires it for verification, acknowledgement, restoration, and refund reconciliation. That record may also contain a one-way token hash, Google Play order identifier, product identifier, purchase, consumption and acknowledgement states, quantity, refundable quantity, completion time, billing region, test-purchase indicator, linked Firebase user identifier, verification times, and refund or revocation details. If Google sends a pending chargeback-review notice, DJAI may also store its restricted review token, order identifier, reason, and receipt time so the request can be handled within Google's review period. A separate account entitlement record allows the backend to authorise paid exports. The device stores only a cached verified entitlement for offline UI and ad suppression; the backend remains authoritative for export access.",
-        "DJAI receives Google Play Real-time Developer Notifications and performs scheduled acknowledgement retry and Voided Purchases reconciliation. A cancelled, refunded, charged-back, consumed, invalid, or account-conflicting purchase does not grant access, and a later voided purchase revokes the server entitlement. Purchase tokens, order identifiers, and obfuscated account identifiers are not sent to Analytics, AdMob, or Sentry and are not written to application logs."
+        "DJAI stores your optional promotional-email and marketing-notification preferences with your account. Choosing not to receive promotional communications does not prevent essential account or security messages.",
+        "If you enable push notifications, Firebase Cloud Messaging and DJAI may process your Firebase user identifier, Android notification token, permission and preference status, and update time. When you disable push notifications in the App, the backend marks the preference disabled and replaces the stored token with a null value. You can also revoke notification permission in Android settings."
       ]
     },
     {
-      title: "Email and notifications",
-      paragraphs: ["Promotional email and marketing notifications are optional and disabled unless you choose them. Your preference is stored with your account. When marketing notifications are enabled, Firebase Cloud Messaging processes a device notification token, and DJAI stores that token under your user identifier so messages can be delivered. You may disable promotional email or marketing notifications in the App. Android system settings can also revoke notification permission. When push notifications are disabled, the App requests deletion of the device token and removes the server token record."]
+      title: "Google Play purchase",
+      paragraphs: [
+        "The Android App offers an optional one-time Remove Ads product through Google Play. Google Play processes payment details, billing-account information, purchase and order records, tax, refunds, and payment-risk information under Google's terms. DJAI does not receive your full payment-card or bank-account details.",
+        "The App uses the Google Play billing interface to request the product, receive purchase status, acknowledge a completed purchase, restore eligible purchases, and store a local ads-removed entitlement on the device. The current Android release does not send a separate purchase record to DJAI's backend.",
+        "Deleting your App account does not cancel, refund, or erase Google Play's transaction record. You must use Google Play's purchase-management and refund controls for those actions. Clearing App storage or changing devices may require the App to query Google Play again to restore an eligible purchase."
+      ]
     },
     {
       title: "Permissions and device features",
-      paragraphs: ["The App may use:"],
+      paragraphs: ["Depending on the feature you choose, the App may use:"],
       lists: [[
-        "Camera: document and QR-code capture.",
-        "System photo and document pickers: access only to files or photos you select, without broad modern media-library permission.",
-        "Biometric or device authentication: optional App Lock. Authentication is performed by the operating system; the App receives only the result.",
-        "Notifications: optional marketing notifications and user-initiated functional notices.",
-        "Network access: accounts, App Check, analytics, diagnostics, advertising, purchases, reward verification, and messaging.",
-        "Advertising identifier: advertising, measurement, frequency limiting, fraud prevention, and compliance through Google advertising services."
+        "Camera: to scan documents and QR codes.",
+        "System photo and document pickers: to access only the files or photos you select.",
+        "Biometric or device authentication: for optional App Lock; the operating system performs the match and the App receives only the result.",
+        "Notifications: for optional marketing notifications and user-initiated functional notices.",
+        "Network access: for accounts, Firebase functions, App Check, Analytics, diagnostics, advertising, purchases, reward verification, and messaging.",
+        "Advertising identifier and related device signals: for advertising, measurement, frequency limiting, consent, and fraud prevention through Google services."
       ]],
-      closing: ["The App does not request microphone, precise location, contacts, all-files access, overlay, or app installation permission. QR contact, email, Wi-Fi, phone, SMS, location-text, and similar payloads are created from text you enter and remain local unless you choose to share or open them."]
+      closing: ["The App does not request microphone, precise-location, contacts, all-files, overlay, or app-installation permission. QR contact, email, Wi-Fi, phone, SMS, location-text, and similar payloads are created from information you enter and remain on the device unless you choose to share or open them."]
     },
     {
-      title: "Legal bases and purposes",
-      paragraphs: ["Depending on the law that applies to you, DJAI processes information on one or more of these bases:"],
+      title: "How and why information is used",
       lists: [[
-        "performing the App service and account agreement;",
-        "DJAI's legitimate interests in security, fraud prevention, reliable operation, support, and product improvement;",
-        "your consent for optional promotional communications and personalised advertising where consent is required; and",
-        "compliance with legal, accounting, consumer-protection, and law-enforcement obligations."
+        "to create, authenticate, recover, maintain, and delete accounts;",
+        "to provide connected allowances, exports, quests, rewards, preferences, notifications, and support;",
+        "to show, measure, limit, and secure advertising;",
+        "to recognize an eligible Remove Ads purchase on the device;",
+        "to understand feature usage and improve reliability;",
+        "to diagnose failures and prevent fraud, abuse, duplicate rewards, and unauthorized requests;",
+        "to respond to support and privacy requests;",
+        "to send optional promotional communications when selected; and",
+        "to comply with legal obligations and protect DJAI's and users' rights."
       ]],
-      closing: ["You may withdraw optional consent at any time. Withdrawal does not affect processing already carried out lawfully and does not prevent processing required to provide the account or meet legal duties."]
+      closing: ["Where applicable law requires a legal basis, DJAI relies on performance of the service agreement, legitimate interests in operating and securing the App, consent where required for optional processing, and compliance with legal obligations. You may withdraw optional consent, but withdrawal does not affect earlier lawful processing or processing required on another legal basis."]
     },
     {
-      title: "Service providers, sharing, and international processing",
-      paragraphs: ["DJAI uses service providers that process information on its behalf or independently under their terms, including:"],
+      title: "Service providers, sharing, and transfers",
+      paragraphs: ["DJAI does not sell your document content, survey answers, or account profile for money. DJAI shares information only for the purposes described here, including with:"],
       lists: [[
-        "Google Firebase for authentication, database, App Check, analytics, functions, and messaging;",
-        "Google Play for distribution and billing;",
-        "Google Mobile Ads and User Messaging Platform for advertising and consent; and",
-        "Sentry for crash reporting when configured."
+        "Google Firebase for authentication, Firestore database, Cloud Functions, Analytics, Cloud Messaging, and App Check;",
+        "Google Play for Android distribution and the Remove Ads purchase;",
+        "Google Mobile Ads and User Messaging Platform for advertising, consent management, measurement, fraud prevention, and rewarded-ad verification;",
+        "Sentry for crash reporting and diagnostics when configured;",
+        "professional advisers and operational providers subject to appropriate duties; and",
+        "authorities, successors, or other parties when required by law or reasonably necessary to protect rights, safety, security, or the service."
       ]],
       closing: [
-        "DJAI does not sell your document content, survey answers, or account profile. Information may also be disclosed when required by law, to protect users or the service, to investigate fraud or abuse, or as part of a business reorganisation subject to applicable safeguards.",
-        "Providers may process information in countries other than your own. DJAI relies on the contractual, technical, organisational, and legal transfer safeguards made available by those providers and applicable law. Google's privacy policy is available at https://policies.google.com/privacy and Sentry's at https://sentry.io/privacy/."
+        "Some laws may describe advertising disclosures as sharing or targeted advertising even when no money is exchanged. Where required and available, advertising choices are provided through the App or Google's consent interface.",
+        "Providers may process information outside your country, including in the United States. Where they act on DJAI's behalf, DJAI uses their contractual and legal data-protection terms and expects them to protect the information consistently with applicable law. Google privacy information is available at https://policies.google.com/privacy and https://policies.google.com/technologies/ads. Firebase privacy information is available at https://firebase.google.com/support/privacy. Sentry's privacy policy is available at https://sentry.io/privacy/."
       ]
     },
     {
       title: "Retention",
       lists: [[
-        "Device documents and generated files remain until you delete them, clear App storage, enable an applicable cleanup option, or uninstall the App.",
-        "Account, profile, consent, usage, survey, notification-token, quest, and reward records remain while your account is active or as needed to provide the service.",
-        "When account deletion begins, DJAI creates a temporary deletion guard to prevent stale requests from recreating your data. Account-linked records and the Firebase Authentication account are removed through the deletion process. The guard may remain temporarily for security and consistency and is configured for automatic expiry.",
-        "Limited security, legal, transaction, provider-backup, and diagnostic records may remain for the period reasonably necessary for fraud prevention, dispute handling, legal compliance, backup rotation, and enforcement of DJAI's rights.",
-        "Google Play purchase and refund records may be retained after account deletion where reasonably needed for accounting, dispute handling, refund and chargeback reconciliation, fraud prevention, and legal compliance. DJAI removes the live account entitlement and unlinks the Firebase user identifier from the retained purchase record during account deletion.",
-        "Google, Firebase, AdMob, and Sentry apply their own retention periods to information they process under their terms and configured controls."
+        "Documents, projects, recent QR history, and exported files on your device remain until you delete them, clear App storage, use an applicable cleanup option, or uninstall the App.",
+        "Active Firebase account, profile, consent, usage, survey, notification-preference, quest, and reward records are generally kept while your account is active and as needed to operate the connected service.",
+        "When App account deletion succeeds, DJAI deletes the active Firebase Authentication user and the active account-linked records described in Section 14. The current backend does not create a separate post-deletion account guard.",
+        "Google Play retains purchase and payment records under Google's rules. DJAI's current backend does not maintain a separate purchase ledger for the App.",
+        "Firebase, Google Mobile Ads, and Sentry may retain provider-controlled logs, backups, analytics, advertising, security, and diagnostic records under their configured retention periods, terms, and legal obligations.",
+        "DJAI may retain information when specifically required by law or necessary to address security, fraud, disputes, or enforceable claims, and will limit that retention to the relevant purpose."
       ]]
     },
     {
-      title: "Account and data deletion",
+      title: "Account deletion, choices, and privacy rights",
       paragraphs: [
-        "You can delete your account in the App through Me → Account and consent → Delete account. You can also follow the public instructions at https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/delete-account/.",
-        "Account deletion removes the Firebase Authentication account and DJAI's UID-linked profile, survey, usage, notification-token, quest, reward-balance, and reward-verification records. Files stored only on your device are not available to DJAI and therefore must be deleted in the App, through Android App-storage settings, or by uninstalling the App.",
-        "Account deletion also removes the active billing-entitlement record and unlinks your Firebase user identifier from the retained Google Play transaction record. Limited transaction and refund data may remain as described in Section 12; it is not used to recreate the deleted App account."
-      ]
-    },
-    {
-      title: "Your privacy rights",
-      paragraphs: [
-        "Subject to applicable law, you may request access, correction, deletion, restriction, objection, withdrawal of consent, or a portable copy of eligible personal information. You may also complain to the data-protection authority that applies to you.",
-        "Use the App's account controls where available or email contact@djai.academy. We may need to verify your identity before fulfilling a request. We will respond within the period required by applicable law."
+        "You can delete your account in the Android App through Me → Account and consent → Delete account. For security, Firebase may require a recent sign-in. You can also request deletion through https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/delete-account/.",
+        "When deletion succeeds, DJAI deletes the Firebase Authentication user and the active Firestore profile, consent and marketing preferences, usage and quest state, survey, notification-token record, rewarded-ad verification records, and reward balance associated with the Firebase user identifier.",
+        "Account deletion does not delete files stored on your device, copies already exported or shared, Google Play transaction records, or provider-controlled analytics, security logs, and backups. Delete local files through the App or Android storage and manage Play transactions through Google Play.",
+        "Depending on applicable law, you may request access, correction, deletion, restriction, portability, or objection; withdraw consent; or complain to a data-protection authority. Email contact@djai.academy to exercise a right not available in the App. DJAI may verify your identity before responding."
       ]
     },
     {
       title: "Security",
-      paragraphs: ["DJAI uses encrypted network transport, Firebase Authentication, owner-scoped Firestore access, App-Check-protected backend functions, Play Integrity for Android release attestation, transactional write guards, account-deletion barriers, telemetry sanitisation, App-owned storage, and optional App Lock. No storage or transmission method is completely secure, and users should independently review important exported documents before relying on them."]
+      paragraphs: [
+        "DJAI uses reasonable technical and organizational measures including encrypted network transport, Firebase Authentication, owner-scoped database rules, App-Check-protected Firebase functions, Play Integrity for Android release attestation, transactional updates for usage and rewards, Android backup restrictions, and optional device authentication for App Lock.",
+        "No method of storage or transmission is completely secure. Keep your device protected, review sensitive exports before sharing them, and send no document files, passwords, or identity documents when requesting support unless DJAI specifically provides a secure and necessary process."
+      ]
     },
     {
       title: "Children",
-      paragraphs: ["The App is a general productivity utility and is not directed to children under 13. A user must be at least 13 and legally able to accept the App's terms, or have permission from a parent or guardian where required. Contact contact@djai.academy if you believe a child provided personal information unlawfully so DJAI can investigate and delete it where required."]
+      paragraphs: [
+        "The App is a general productivity utility and is not directed to children under 13. A person under 13 should not create an account or submit the survey. If local law sets a higher minimum age for independent consent, that higher age applies unless valid permission is provided as required by law.",
+        "Contact contact@djai.academy if you believe a child provided personal information improperly so DJAI can investigate and delete it where required."
+      ]
     },
     {
       title: "Changes to this policy",
-      paragraphs: ["DJAI may update this policy when the App, providers, laws, or business practices change. The updated policy will show a new effective date and will be published at https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/privacy/. Material changes will be presented through an appropriate App or website notice and, when required, a renewed consent request."]
+      paragraphs: ["DJAI may update this policy when the App, its providers, or legal requirements change. The current version will be published at https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/privacy/ with a new last-updated date. DJAI will provide additional notice or request renewed consent when required."]
     },
     {
       title: "Contact",
@@ -189,166 +223,202 @@ const en = {
 };
 
 const th = {
-  title: "นโยบายความเป็นส่วนตัว",
-  date: "วันที่มีผลบังคับใช้: 20 สิงหาคม 2026 · ปรับปรุงล่าสุด: 20 สิงหาคม 2026",
+  title: "นโยบายความเป็นส่วนตัวสำหรับ Cam PDF Scan Signer QR Gen",
+  date: "วันที่มีผลบังคับใช้: 6 กันยายน 2026 · ปรับปรุงล่าสุด: 6 กันยายน 2026",
   intro: [
-    "DEEJAI LAB Co ., Ltd เลขทะเบียนนิติบุคคล 0105569117953 ซึ่งดำเนินงานภายใต้แบรนด์ DJAI Academy (\"DJAI\", \"เรา\", \"พวกเรา\" หรือ \"ของเรา\") เป็นผู้ให้บริการแอปพลิเคชันมือถือ Cam PDF Scan Signer QR Gen (\"แอป\") นโยบายความเป็นส่วนตัวฉบับนี้อธิบายว่าแอปประมวลผลข้อมูลใด เหตุใดจึงประมวลผล มีการแบ่งปันข้อมูลกับผู้ให้บริการเมื่อใด เก็บรักษาข้อมูลไว้นานเพียงใด ตลอดจนตัวเลือกและสิทธิที่คุณมี",
-    "DEEJAI LAB Co ., Ltd เป็นผู้ดำเนินการตามกฎหมายและผู้ควบคุมข้อมูลส่วนบุคคลสำหรับแอป ส่วน DJAI Academy เป็นแบรนด์ที่ใช้ดำเนินงาน คุณติดต่อเราได้ที่ contact@djai.academy หรือผ่าน https://www.djai.academy/."
+    "DEEJAI LAB Co ., Ltd เลขทะเบียนนิติบุคคล 0105569117953 ซึ่งดำเนินงานภายใต้แบรนด์ DJAI Academy (\"DJAI\", \"เรา\" หรือ \"ของเรา\") เป็นผู้ให้บริการ Cam PDF Scan Signer QR Gen (\"แอป\") นโยบายนี้อธิบายว่าแอปประมวลผลข้อมูลใด เหตุใดจึงประมวลผล ใครอาจได้รับข้อมูล เก็บข้อมูลไว้นานเพียงใด และคุณมีวิธีควบคุมข้อมูลอย่างไร",
+    "นโยบายฉบับนี้อธิบายรุ่น Android ที่เผยแพร่ผ่าน Google Play ภายใต้ชื่อแพ็กเกจ com.djai.campdfscan และไม่ได้อ้างว่าครอบคลุมรุ่น iOS หรือความสามารถของแพลตฟอร์มที่ยังไม่ได้รับการยืนยันใน source code ของรุ่นเผยแพร่ปัจจุบัน"
   ],
   sections: [
     {
-      title: "เอกสารและสื่อยังคงอยู่บนอุปกรณ์ของคุณ",
+      title: "สรุปสำคัญ",
+      lists: [[
+        "ไฟล์สแกน ไฟล์ที่นำเข้า ลายเซ็น คำอธิบายประกอบ ข้อความ OCR เนื้อหา QR Code และไฟล์ที่สร้างขึ้น จะประมวลผลและจัดเก็บบนอุปกรณ์ของคุณเป็นหลัก",
+        "DJAI เก็บข้อมูลบัญชี การใช้งาน แบบสำรวจ การแจ้งเตือน ความยินยอม และรางวัลใน Firebase เท่าที่จำเป็นสำหรับฟังก์ชันที่เชื่อมต่อกับระบบ",
+        "แอป Android ใช้ Firebase Analytics, Google Mobile Ads, เครื่องมือความยินยอมของ Google, Firebase App Check ร่วมกับ Play Integrity และ Sentry",
+        "คุณสามารถลบบัญชีในแอป หรือส่งคำขอผ่าน https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/delete-account/."
+      ]]
+    },
+    {
+      title: "เอกสารและสื่อบนอุปกรณ์ของคุณ",
       paragraphs: [
-        "หน้าที่สแกน เอกสารและรูปภาพที่นำเข้า ข้อความจาก OCR ลายเซ็น คำอธิบายประกอบ เนื้อหา QR Code เสียง วิดีโอ และไฟล์ PDF รูปภาพ ข้อความ เสียง และวิดีโอที่สร้างขึ้น จะได้รับการประมวลผลในพื้นที่จัดเก็บที่แอปควบคุมบนอุปกรณ์ของคุณ DJAI ไม่อัปโหลดเนื้อหาเหล่านี้ไปยังฐานข้อมูลบัญชี Firebase Analytics, Google Mobile Ads หรือ Sentry",
-        "เนื้อหาจะออกจากแอปต่อเมื่อคุณเลือกดำเนินการผ่านระบบปฏิบัติการ เช่น แชร์ พิมพ์ บันทึกลง Files บันทึกลง Photos หรือเปิดเนื้อหาในแอปอื่น จากนั้นแอปหรือบริการปลายทางจะจัดการเนื้อหานั้นตามข้อกำหนดความเป็นส่วนตัวของตน",
-        "แอปอาจสร้างสำเนาชั่วคราวระหว่างการนำเข้า แก้ไข ประมวลผล OCR หรือส่งออก แอปจะลบผลลัพธ์ชั่วคราวหลังดำเนินการเสร็จหรือยกเลิกในกรณีที่ทางเทคนิคทำได้ โปรเจกต์ที่คุณบันทึกจะอยู่บนอุปกรณ์จนกว่าคุณจะลบ ล้างพื้นที่จัดเก็บของแอป หรือถอนการติดตั้งแอป หากคุณเปิดตัวเลือกล้างข้อมูลหลังส่งออกของแอป ไฟล์ต้นฉบับของโปรเจกต์จะถูกลบออกจากแอปหลังส่งออกสำเร็จตามการตั้งค่านั้น"
+        "แอปดำเนินการสแกน แก้ไขภาพ ลงลายเซ็น เพิ่มคำอธิบายประกอบ ทำ OCR สร้างและอ่าน QR Code ประมวลผลสื่อ และส่งออกไฟล์ในพื้นที่จัดเก็บที่แอปควบคุมบนอุปกรณ์ของคุณ DJAI ไม่มีเจตนาอัปโหลดหน้าเอกสาร ไฟล์ที่นำเข้า ลายเซ็น คำอธิบายประกอบ ข้อความ OCR ข้อมูล QR หรือไฟล์ที่สร้างขึ้นไปยังฐานข้อมูลบัญชีของเรา",
+        "เนื้อหาจะออกจากแอปเมื่อคุณเลือกคำสั่งของระบบ เช่น แชร์ พิมพ์ บันทึกไปยังโฟลเดอร์หรือคลังรูปภาพอื่น หรือเปิดด้วยแอปอื่น ปลายทางที่คุณเลือกจะประมวลผลเนื้อหาตามแนวปฏิบัติด้านความเป็นส่วนตัวของปลายทางนั้น",
+        "แอปอาจสร้างไฟล์ชั่วคราวระหว่างนำเข้า แก้ไข รับรู้ข้อมูล แปลง หรือส่งออก โปรเจกต์ที่บันทึกและสำเนาที่ส่งออกจะอยู่จนกว่าคุณจะลบ ล้างพื้นที่จัดเก็บของแอป ใช้ตัวเลือกล้างข้อมูลที่เกี่ยวข้อง หรือถอนการติดตั้ง แอปปิดการสำรองข้อมูลของแอปบน Android",
+        "การรายงานข้อผิดพลาดแยกจากการจัดเก็บเอกสาร ตามที่อธิบายในข้อ 8 เหตุการณ์ข้อผิดพลาดอาจมีบริบททางเทคนิคที่เกิดขึ้นระหว่างการทำงาน DJAI ไม่ใช้ข้อมูลวินิจฉัยเพื่อเข้าถึงหรือสร้างเอกสารของคุณขึ้นใหม่"
       ]
     },
     {
-      title: "ข้อมูลบัญชี",
-      paragraphs: ["คุณต้องมีบัญชีเพื่อใช้แอป Firebase Authentication ประมวลผลข้อมูลที่จำเป็นต่อการสร้างและรักษาความปลอดภัยของบัญชี ได้แก่:"],
+      title: "ข้อมูลบัญชีและการยืนยันตัวตน",
+      paragraphs: ["จำเป็นต้องมีบัญชีสำหรับโควตาการใช้งาน รางวัล การตั้งค่า และการควบคุมบัญชีที่เชื่อมต่อกับระบบ Firebase Authentication และ backend ของ DJAI บน Firebase อาจประมวลผล:"],
       lists: [[
-        "รหัสผู้ใช้ Firebase ของคุณ",
-        "ที่อยู่อีเมลและสถานะการยืนยันอีเมล",
-        "ผู้ให้บริการที่ใช้ลงชื่อเข้าใช้",
-        "ชื่อที่แสดงและข้อมูลโปรไฟล์พื้นฐานที่ Google หรือ Apple ส่งให้เมื่อคุณเลือกวิธีลงชื่อเข้าใช้ดังกล่าว และ",
-        "เหตุการณ์เกี่ยวกับการยืนยันตัวตน การรีเซ็ตรหัสผ่าน ความปลอดภัย และการป้องกันการใช้งานในทางที่ผิด"
-      ], [
-        "รหัสผู้ใช้ Firebase ที่อยู่อีเมล ชื่อที่แสดง และผู้ให้บริการที่ใช้ลงชื่อเข้าใช้",
-        "เวอร์ชันของข้อกำหนด นโยบายความเป็นส่วนตัว และความยินยอมตาม PDPA พร้อมเวลาที่ยอมรับ",
-        "ตัวเลือกอีเมลส่งเสริมการขายและการแจ้งเตือนการตลาดซึ่งเป็นทางเลือก",
-        "เวลาที่สร้างและอัปเดตบัญชี",
-        "สิทธิส่งออกรายสัปดาห์ ยอดการใช้งาน เครดิตรางวัล การจอง และรหัสงานที่เสร็จแล้วซึ่งจำเป็นต่อการใช้ข้อจำกัดการใช้งานเพียงครั้งเดียวอย่างถูกต้อง",
-        "สถานะการทำภารกิจสำเร็จและรางวัล และ",
-        "สถานะการลบบัญชีซึ่งจำเป็นเพื่อป้องกันไม่ให้คำขอเก่าหรือคำขอที่กำลังทำงานสร้างข้อมูลที่ลบแล้วขึ้นใหม่"
+        "รหัสผู้ใช้ Firebase",
+        "อีเมลและสถานะการยืนยันอีเมล",
+        "ชื่อที่แสดง",
+        "วิธีลงชื่อเข้าใช้ ซึ่งปัจจุบันคืออีเมลและรหัสผ่าน หรือ Google",
+        "โทเค็นยืนยันตัวตน เหตุการณ์เข้าสู่ระบบและรีเซ็ตรหัสผ่าน เวลา IP address ข้อมูลอุปกรณ์ และสัญญาณความปลอดภัยที่ Firebase ประมวลผล",
+        "เวอร์ชันและเวลาที่ยอมรับข้อกำหนด นโยบายความเป็นส่วนตัว และความยินยอมที่จำเป็น และ",
+        "เวลาสร้างบัญชี ปรับปรุงบัญชี และแก้ไขการตั้งค่าโปรไฟล์"
       ]],
-      listLead: "DJAI จัดเก็บข้อมูลบัญชีต่อไปนี้ใน Cloud Firestore:",
-      closing: ["เราใช้ข้อมูลนี้เพื่อให้บริการยืนยันตัวตน การกู้คืนบัญชี การซิงค์การใช้งานข้ามอุปกรณ์ ฟังก์ชันของแอป การป้องกันการฉ้อโกง ความปลอดภัย การช่วยเหลือ และการควบคุมบัญชี"]
+      closing: ["Firebase Authentication เป็นผู้จัดการรหัสผ่าน DJAI ไม่จัดเก็บหรือได้รับรหัสผ่านแบบข้อความธรรมดาของคุณ"]
     },
     {
-      title: "แบบสำรวจความชอบที่ไม่บังคับ",
-      paragraphs: ["แบบสำรวจเพื่อรับรางวัลซึ่งเป็นทางเลือกจะถามเฉพาะ:"],
+      title: "การใช้งาน โควตา ภารกิจ และรางวัล",
+      paragraphs: [
+        "เพื่อใช้ข้อจำกัดการใช้งานฟรีและรางวัลอย่างสม่ำเสมอ DJAI อาจเก็บรอบโควตารายสัปดาห์ จำนวนการส่งออกที่ใช้และเหลือ การจองการส่งออกที่รอดำเนินการ รหัสงานที่เสร็จแล้ว เครดิตจากโฆษณา สถานะภารกิจ และเวลาซิงค์",
+        "สำหรับโฆษณาแบบมีรางวัล Google Mobile Ads อาจได้รับค่าบัญชีแบบนามแฝงและตัวบ่งชี้วัตถุประสงค์ของรางวัล ฟังก์ชัน Firebase ของ DJAI รับ callback รางวัลที่ Google ลงนาม ซึ่งรวมถึงรหัสธุรกรรม หน่วยโฆษณา รางวัล เวลา และข้อมูลยืนยัน เพื่อปฏิเสธรางวัลซ้ำหรือไม่ถูกต้องและเพิ่มเครดิตให้บัญชีที่ถูกต้อง",
+        "Firebase Analytics บันทึกเหตุการณ์ในขอบเขตจำกัด เช่น การเปิดฟีเจอร์ การส่งออกสำเร็จ วิธีลงชื่อเข้าใช้ การลงทะเบียนสำเร็จ การเปลี่ยนการตั้งค่า และการทำภารกิจสำเร็จ ตามข้อ 7"
+      ]
+    },
+    {
+      title: "แบบสำรวจความต้องการที่เป็นทางเลือก",
+      paragraphs: ["หากคุณเลือกทำแบบสำรวจรางวัลในแอป DJAI จะเก็บคำตอบภายใต้รหัสผู้ใช้ Firebase แบบสำรวจปัจจุบันถาม:"],
       lists: [[
-        "วัตถุประสงค์หลักที่คุณใช้แอป",
-        "คุณใช้แอปเพื่อเรื่องส่วนตัว งาน การศึกษา หรือหลายวัตถุประสงค์ร่วมกัน และ",
-        "คุณรู้จักแอปได้อย่างไร"
+        "ชื่อที่แสดง",
+        "ช่วงอายุที่คุณเลือก",
+        "เพศที่คุณเลือก",
+        "ประเทศหรือภูมิภาค",
+        "กลุ่มอาชีพ",
+        "วัตถุประสงค์หลักในการใช้แอป",
+        "ใช้เพื่อเรื่องส่วนตัว งาน การศึกษา หรือหลายวัตถุประสงค์",
+        "คุณรู้จักแอปได้อย่างไร",
+        "คุณขับรถหรือไม่",
+        "ประเภทยานพาหนะที่ชอบ และ",
+        "เวลาที่ทำแบบสำรวจเสร็จ"
       ]],
       closing: [
-        "คำตอบและเวลาที่ทำแบบสำรวจเสร็จจะถูกจัดเก็บใน Firestore ภายใต้รหัสผู้ใช้ของคุณ คำตอบใช้เพื่อวางแผนผลิตภัณฑ์และวิเคราะห์ผลิตภัณฑ์ในภาพรวม โดยจะไม่ส่งไปยัง Google Mobile Ads และไม่ได้กำหนดเป็นพร็อพเพอร์ตี้ผู้ใช้ของ Firebase Analytics คุณสามารถลบคำตอบแบบสำรวจออกจากแอปได้โดยไม่ต้องลบบัญชีทั้งหมด",
-        "แบบสำรวจนี้จะไม่ถามอายุ เพศ ตำแหน่งที่แน่นอน รายได้ สถานภาพสมรส บุตร อาชีพ สถานะการขับรถ หรือความชอบเกี่ยวกับยานพาหนะของคุณ"
+        "แบบสำรวจเป็นทางเลือกสำหรับการใช้แอป แต่อาจจำเป็นหากต้องการรับรางวัลของแบบสำรวจ DJAI ใช้คำตอบเพื่อวางแผนผลิตภัณฑ์ จัดลำดับฟีเจอร์ และวิเคราะห์ภาพรวม คำตอบไม่ได้ถูกตั้งเป็น Firebase Analytics user property และฟังก์ชันส่งแบบสำรวจไม่ได้ส่งคำตอบไปยัง Google Mobile Ads",
+        "คุณขอแก้ไขหรือลบข้อมูลแบบสำรวจได้ทาง contact@djai.academy การลบบัญชีแอปจะลบบันทึกแบบสำรวจที่ใช้งานอยู่ด้วย"
       ]
     },
     {
-      title: "การวิเคราะห์",
+      title: "โฆษณาและตัวเลือกความยินยอม",
+      paragraphs: ["แอป Android ใช้ Google Mobile Ads และ User Messaging Platform ของ Google โดยขึ้นอยู่กับภูมิภาค ตัวเลือกความยินยอม การตั้งค่าอุปกรณ์ และสถานะ Remove Ads, Google อาจประมวลผล:"],
+      lists: [[
+        "รหัสโฆษณา รหัส app instance และรหัสอุปกรณ์",
+        "IP address และตำแหน่งโดยประมาณที่อนุมานจาก IP",
+        "รุ่นอุปกรณ์ ระบบปฏิบัติการ ภาษา เวอร์ชันแอป เครือข่าย และข้อมูลวินิจฉัย",
+        "ตัวเลือกความยินยอม",
+        "คำขอโฆษณา การแสดงผล การโต้ตอบ ความถี่ และสัญญาณการฉ้อโกง และ",
+        "ข้อมูลเพื่อส่ง จำกัด วัดผล รักษาความปลอดภัย หรือปรับโฆษณาให้เหมาะกับบุคคลเมื่อกฎหมายอนุญาต"
+      ]],
+      closing: [
+        "แอปไม่ขอสิทธิ์ตำแหน่งที่แม่นยำสำหรับโฆษณา เมื่อหน้าตัวเลือกความเป็นส่วนตัวของ Google เปิดให้ใช้ คุณสามารถเปิดจากแอปเพื่อตรวจสอบหรือเปลี่ยนตัวเลือก โฆษณาตามบริบทหรือแบบไม่เฉพาะบุคคลยังอาจใช้ข้อมูลอุปกรณ์ ตำแหน่งโดยประมาณ การวัดผล ความถี่ และการป้องกันการฉ้อโกงในขอบเขตจำกัด",
+        "DJAI ไม่มีเจตนาส่งหน้าเอกสาร ลายเซ็น ข้อความ OCR คำอธิบายประกอบ หรือข้อมูล QR ไปยัง Google Mobile Ads"
+      ]
+    },
+    {
+      title: "Firebase Analytics",
       paragraphs: [
-        "Firebase Analytics อาจประมวลผลรหัสผู้ใช้ Firebase แบบนามแฝง รหัสอินสแตนซ์แอปและอุปกรณ์ เวอร์ชันแอป รุ่นอุปกรณ์ เวอร์ชันระบบปฏิบัติการ ภาษา หรือภูมิภาค ประเทศในระดับกว้างซึ่งได้จากข้อมูลเครือข่าย การโต้ตอบกับฟีเจอร์ วิธีลงชื่อเข้าใช้ การส่งออกสำเร็จ การทำภารกิจสำเร็จ และเหตุการณ์ทางเทคนิค DJAI ใช้ข้อมูลนี้เพื่อทำความเข้าใจการใช้ฟีเจอร์ วินิจฉัยปัญหาผลิตภัณฑ์ ป้องกันการใช้งานในทางที่ผิด และปรับปรุงแอป",
-        "เหตุการณ์การวิเคราะห์ได้รับการออกแบบไม่ให้มีเนื้อหาเอกสาร ข้อความ OCR เนื้อหา QR ลายเซ็น ชื่อไฟล์ที่ผู้ใช้เลือก รหัสผ่าน โทเค็นยืนยันตัวตน โทเค็นการซื้อ หรือเนื้อหาข้อความ DJAI ไม่ขอสิทธิ์เข้าถึงตำแหน่งที่แม่นยำเพื่อการวิเคราะห์"
+        "Firebase Analytics เปิดใช้งานในรุ่น Android ปัจจุบัน และอาจประมวลผลรหัสผู้ใช้ Firebase, app instance และรหัสอุปกรณ์ เวอร์ชันแอป รุ่นอุปกรณ์ เวอร์ชันระบบปฏิบัติการ ภาษา หรือภูมิภาค ประเทศโดยประมาณ ข้อมูลเซสชัน การใช้งานฟีเจอร์ วิธีลงชื่อเข้าใช้ การส่งออกสำเร็จ การทำภารกิจสำเร็จ และเหตุการณ์ทางเทคนิคอื่น",
+        "DJAI ใช้ข้อมูลนี้เพื่อทำความเข้าใจการใช้งาน วินิจฉัยปัญหา ป้องกันการใช้งานในทางที่ผิด และปรับปรุงแอป เหตุการณ์ Analytics ถูกออกแบบไม่ให้มีหน้าเอกสาร ข้อความ OCR ข้อมูล QR ลายเซ็น เนื้อหาไฟล์ที่ผู้ใช้เลือก รหัสผ่าน โทเค็นยืนยันตัวตน หรือข้อมูลบัตรชำระเงิน",
+        "แอปปัจจุบันไม่มีสวิตช์ปิด Firebase Analytics แยกต่างหาก ตัวเลือกความเป็นส่วนตัวของโฆษณาอาจไม่ปิด Firebase Analytics คุณขอลบข้อมูลที่เชื่อมกับบัญชีได้ตามที่อธิบายด้านล่าง แต่ Firebase อาจเก็บข้อมูลรวม หรือข้อมูลที่อยู่ภายใต้การควบคุมของผู้ให้บริการตามกฎการเก็บรักษาของตน"
       ]
     },
     {
       title: "รายงานข้อขัดข้องและข้อมูลวินิจฉัย",
       paragraphs: [
-        "รุ่นที่เผยแพร่จริงอาจใช้ Sentry เพื่อรายงานข้อขัดข้องและวินิจฉัยปัญหาทางเทคนิค เมื่อกำหนดค่า Sentry แล้ว Sentry อาจได้รับเวลา รหัสผู้ใช้ Firebase แบบนามแฝง เวอร์ชันแอปและรุ่นเผยแพร่ รายละเอียดอุปกรณ์และระบบปฏิบัติการ stack trace ประเภทข้อผิดพลาด ข้อมูลประสิทธิภาพ และบริบททางเทคนิคที่ผ่านการล้างข้อมูลซึ่งจำเป็นต่อการจำลองข้อผิดพลาด",
-        "แอปทำความสะอาดข้อมูล telemetry เพื่อลบ URI ของไฟล์และเนื้อหาในเครื่อง เส้นทาง sandbox ชื่อไฟล์ เนื้อหาคำขอ ส่วนหัว คุกกี้ query string และตัวระบุโดยตรง DJAI ไม่มีเจตนาส่งเนื้อหาเอกสาร ข้อความ OCR ข้อมูล QR ลายเซ็น รหัสผ่าน ข้อมูลรับรองการยืนยันตัวตน รายละเอียดบัตรชำระเงิน โทเค็นการซื้อ หรือรหัสคำสั่งซื้อ Google Play ไปยัง Sentry หากรุ่นใดไม่ได้กำหนดค่า Sentry DSN รุ่นนั้นจะไม่ส่งข้อมูลไปยัง Sentry"
+        "เมื่อรุ่นเผยแพร่กำหนดค่า Sentry, Sentry อาจได้รับเวอร์ชันแอปและรุ่นเผยแพร่ เวลา รายละเอียดอุปกรณ์และระบบปฏิบัติการ ข้อมูลเซสชัน stack trace ประเภทข้อผิดพลาด การวัดประสิทธิภาพ สถานะคำขอเครือข่าย และบริบทข้อผิดพลาดทางเทคนิค DJAI อาจเชื่อมข้อมูล Sentry กับรหัสผู้ใช้ Firebase แบบนามแฝง",
+        "ก่อนส่งเหตุการณ์ Sentry แอปปัจจุบันจะลบช่องชื่ออุปกรณ์ แต่ยังไม่ได้ลบทุกเส้นทางหรือชื่อไฟล์ที่อาจอยู่ในข้อความ exception ทั้งหมด ข้อผิดพลาดระหว่างทำงานกับไฟล์อาจมีเส้นทางไฟล์ URI ของไฟล์ หรือชื่อไฟล์ติดไปโดยไม่ตั้งใจ DJAI ไม่มีเจตนาแนบเนื้อหาเอกสาร ข้อความ OCR ข้อมูล QR ลายเซ็น รหัสผ่าน โทเค็นยืนยันตัวตน หรือข้อมูลบัตรชำระเงินไปกับเหตุการณ์ Sentry",
+        "หากรุ่นใดไม่ได้กำหนดค่า Sentry DSN รุ่นนั้นจะไม่ส่งเหตุการณ์ไปยัง Sentry"
       ]
     },
     {
-      title: "การโฆษณาและความยินยอม",
-      paragraphs: ["แอป Android ใช้ Google Mobile Ads และ User Messaging Platform ของ Google โดยขึ้นอยู่กับภูมิภาค ตัวเลือกความยินยอม การตั้งค่าอุปกรณ์ และคุณได้ซื้อ Remove Ads หรือไม่ Google อาจประมวลผล:"],
-      lists: [[
-        "รหัสโฆษณาและรหัสอินสแตนซ์แอป",
-        "ตำแหน่งโดยประมาณที่ได้จาก IP",
-        "ข้อมูลอุปกรณ์ แอป เครือข่าย และข้อมูลวินิจฉัย",
-        "ตัวเลือกความยินยอม",
-        "คำขอโฆษณา การแสดงผล การโต้ตอบ ความถี่ และสัญญาณการฉ้อโกง และ",
-        "ข้อมูลที่ใช้เพื่อแสดง จำกัด วัดผล รักษาความปลอดภัย หรือปรับโฆษณาให้เหมาะกับบุคคลในกรณีที่กฎหมายอนุญาต"
-      ]],
-      closing: ["แอปไม่ขอตำแหน่งที่แม่นยำเพื่อการโฆษณา คุณตรวจสอบตัวเลือกความเป็นส่วนตัวด้านโฆษณาที่มีได้ในการตั้งค่าของแอป สิทธิ Remove Ads ที่ยืนยันแล้วจะระงับคำขอโฆษณาของแอปและนำตำแหน่งโฆษณาแบบชำระเงินออก การยืนยันโฆษณาที่ให้รางวัลอาจจัดเก็บรหัสผู้ใช้แบบนามแฝง รหัสธุรกรรม AdMob รหัสหน่วยโฆษณา จำนวนรางวัล และเวลายืนยัน เพื่อไม่ให้มอบรางวัลเดียวกันซ้ำสองครั้ง"]
+      title: "การตั้งค่าอีเมลและการแจ้งเตือน",
+      paragraphs: [
+        "DJAI เก็บตัวเลือกอีเมลส่งเสริมการขายและการแจ้งเตือนการตลาดไว้กับบัญชี การไม่รับข้อความส่งเสริมการขายไม่ขัดขวางข้อความสำคัญเกี่ยวกับบัญชีหรือความปลอดภัย",
+        "หากเปิด push notification, Firebase Cloud Messaging และ DJAI อาจประมวลผลรหัสผู้ใช้ Firebase, Android notification token, สถานะสิทธิ์และการตั้งค่า และเวลาปรับปรุง เมื่อปิด push notification ในแอป backend จะตั้งค่าสถานะเป็นปิดและแทนที่ token ที่เก็บไว้ด้วยค่า null คุณยังเพิกถอนสิทธิ์แจ้งเตือนในการตั้งค่า Android ได้"
+      ]
     },
     {
       title: "การซื้อผ่าน Google Play",
       paragraphs: [
-        "Google Play ประมวลผลรายละเอียดการชำระเงิน ข้อมูลบัญชีเรียกเก็บเงิน บันทึกธุรกรรม ภาษี และความเสี่ยงด้านการชำระเงินตามข้อกำหนดของ Google โดย DJAI ไม่ได้รับรายละเอียดบัตรชำระเงินหรือบัญชีธนาคารของคุณ",
-        "แอปได้รับรหัสผลิตภัณฑ์ สถานะการซื้อ โทเค็นการซื้อ สถานะการรับทราบ และข้อมูลสิทธิที่เกี่ยวข้องซึ่ง Google Play ส่งให้ เพื่อให้แอปดำเนินการ กู้คืน หรือเพิกถอนสิทธิ Remove Ads แบบตลอดอายุการใช้งานได้ ในการทำงานของรุ่นที่เผยแพร่อยู่ในปัจจุบัน แอปตรวจสอบสถานะการซื้อบนอุปกรณ์และจัดเก็บสิทธิที่ได้ไว้ในพื้นที่จัดเก็บของแอปที่ได้รับการปกป้อง กระบวนการเผยแพร่รุ่น production ของ DJAI กำหนดให้ย้ายไปใช้การยืนยัน Google Play ฝั่งเซิร์ฟเวอร์ก่อนเผยแพร่ต่อสาธารณะ นโยบายนี้ต้องได้รับการทบทวนอีกครั้งเมื่อเปิดใช้ backend ดังกล่าว เพราะในเวลานั้น DJAI จะประมวลผลโทเค็นการซื้อและบันทึกสิทธิบนเซิร์ฟเวอร์เพื่อการยืนยัน การรับทราบ การกู้คืน การคืนเงิน การเพิกถอน การป้องกันการฉ้อโกง และการช่วยเหลือ"
+        "แอป Android มีผลิตภัณฑ์ Remove Ads แบบซื้อครั้งเดียวผ่าน Google Play, Google Play ประมวลผลข้อมูลชำระเงิน บัญชีเรียกเก็บเงิน ประวัติการซื้อและคำสั่งซื้อ ภาษี การคืนเงิน และความเสี่ยงด้านการชำระเงินตามข้อกำหนดของ Google, DJAI ไม่ได้รับรายละเอียดบัตรหรือบัญชีธนาคารแบบเต็มของคุณ",
+        "แอปใช้ระบบเรียกเก็บเงินของ Google Play เพื่อขอซื้อสินค้า รับสถานะการซื้อ ยืนยันการซื้อที่เสร็จแล้ว กู้คืนการซื้อที่เข้าเกณฑ์ และเก็บสิทธิ์ลบโฆษณาไว้ในอุปกรณ์ รุ่น Android ปัจจุบันไม่ส่งบันทึกการซื้อแยกต่างหากไปยัง backend ของ DJAI",
+        "การลบบัญชีแอปไม่ได้ยกเลิก คืนเงิน หรือลบประวัติธุรกรรมของ Google Play คุณต้องใช้ระบบจัดการการซื้อและคืนเงินของ Google Play การล้างพื้นที่จัดเก็บหรือเปลี่ยนอุปกรณ์อาจทำให้แอปต้องตรวจสอบ Google Play อีกครั้งเพื่อกู้คืนการซื้อที่เข้าเกณฑ์"
       ]
     },
     {
-      title: "อีเมลและการแจ้งเตือน",
-      paragraphs: ["อีเมลส่งเสริมการขายและการแจ้งเตือนการตลาดเป็นทางเลือกและปิดใช้งานอยู่จนกว่าคุณจะเลือกเปิด การตั้งค่าของคุณจะถูกจัดเก็บไว้กับบัญชี เมื่อเปิดใช้การแจ้งเตือนการตลาด Firebase Cloud Messaging จะประมวลผลโทเค็นการแจ้งเตือนของอุปกรณ์ และ DJAI จะจัดเก็บโทเค็นนั้นภายใต้รหัสผู้ใช้ของคุณเพื่อส่งข้อความ คุณสามารถปิดอีเมลส่งเสริมการขายหรือการแจ้งเตือนการตลาดในแอปได้ การตั้งค่าระบบ Android สามารถเพิกถอนสิทธิ์การแจ้งเตือนได้เช่นกัน เมื่อปิดการแจ้งเตือนแบบ push แอปจะขอให้ลบโทเค็นของอุปกรณ์และนำบันทึกโทเค็นบนเซิร์ฟเวอร์ออก"]
-    },
-    {
       title: "สิทธิ์และฟีเจอร์ของอุปกรณ์",
-      paragraphs: ["แอปอาจใช้:"],
+      paragraphs: ["แอปอาจใช้สิ่งต่อไปนี้ตามฟีเจอร์ที่คุณเลือก:"],
       lists: [[
-        "กล้อง: สำหรับถ่ายเอกสารและ QR Code",
-        "ตัวเลือกรูปภาพและเอกสารของระบบ: เข้าถึงเฉพาะไฟล์หรือรูปภาพที่คุณเลือก โดยไม่ขอสิทธิ์เข้าถึงคลังสื่อสมัยใหม่แบบกว้าง",
-        "ไบโอเมตริกหรือการยืนยันตัวตนของอุปกรณ์: สำหรับ App Lock ซึ่งเป็นทางเลือก ระบบปฏิบัติการเป็นผู้ดำเนินการยืนยันตัวตน และแอปได้รับเพียงผลลัพธ์",
-        "การแจ้งเตือน: สำหรับการแจ้งเตือนการตลาดที่เป็นทางเลือกและการแจ้งเตือนการทำงานที่ผู้ใช้เป็นผู้เริ่ม",
-        "การเข้าถึงเครือข่าย: สำหรับบัญชี App Check การวิเคราะห์ การวินิจฉัย โฆษณา การซื้อ การยืนยันรางวัล และการส่งข้อความ",
-        "รหัสโฆษณา: สำหรับโฆษณา การวัดผล การจำกัดความถี่ การป้องกันการฉ้อโกง และการปฏิบัติตามข้อกำหนดผ่านบริการโฆษณาของ Google"
+        "กล้อง: เพื่อสแกนเอกสารและ QR Code",
+        "ตัวเลือกรูปภาพและเอกสารของระบบ: เพื่อเข้าถึงเฉพาะไฟล์หรือรูปที่คุณเลือก",
+        "การยืนยันตัวตนด้วยไบโอเมตริกหรืออุปกรณ์: สำหรับ App Lock ที่เป็นทางเลือก ระบบปฏิบัติการเป็นผู้ตรวจสอบและแอปได้รับเฉพาะผลลัพธ์",
+        "การแจ้งเตือน: สำหรับข้อความการตลาดที่เป็นทางเลือกและการแจ้งเตือนการทำงานที่ผู้ใช้เริ่ม",
+        "เครือข่าย: สำหรับบัญชี ฟังก์ชัน Firebase, App Check, Analytics, การวินิจฉัย โฆษณา การซื้อ การยืนยันรางวัล และการส่งข้อความ",
+        "รหัสโฆษณาและสัญญาณอุปกรณ์ที่เกี่ยวข้อง: สำหรับโฆษณา การวัดผล การจำกัดความถี่ ความยินยอม และการป้องกันการฉ้อโกงผ่านบริการ Google"
       ]],
-      closing: ["แอปไม่ขอสิทธิ์ไมโครโฟน ตำแหน่งที่แม่นยำ รายชื่อติดต่อ การเข้าถึงไฟล์ทั้งหมด การวางซ้อนหน้าจอ หรือการติดตั้งแอป ข้อมูล QR สำหรับรายชื่อติดต่อ อีเมล Wi-Fi โทรศัพท์ SMS ข้อความตำแหน่ง และข้อมูลลักษณะเดียวกันจะสร้างจากข้อความที่คุณป้อนและยังคงอยู่ในเครื่อง เว้นแต่คุณเลือกแชร์หรือเปิดข้อมูลนั้น"]
+      closing: ["แอปไม่ขอสิทธิ์ไมโครโฟน ตำแหน่งที่แม่นยำ รายชื่อติดต่อ การเข้าถึงไฟล์ทั้งหมด overlay หรือการติดตั้งแอป ข้อมูล QR สำหรับรายชื่อติดต่อ อีเมล Wi-Fi โทรศัพท์ SMS ข้อความตำแหน่ง และข้อมูลคล้ายกันจะสร้างจากข้อมูลที่คุณป้อนและอยู่บนอุปกรณ์ เว้นแต่คุณเลือกแชร์หรือเปิด"]
     },
     {
-      title: "ฐานทางกฎหมายและวัตถุประสงค์",
-      paragraphs: ["DJAI ประมวลผลข้อมูลโดยอาศัยฐานอย่างน้อยหนึ่งข้อต่อไปนี้ ทั้งนี้ขึ้นอยู่กับกฎหมายที่ใช้บังคับกับคุณ:"],
+      title: "วิธีและเหตุผลที่เราใช้ข้อมูล",
       lists: [[
-        "การปฏิบัติตามสัญญาบริการแอปและบัญชี",
-        "ประโยชน์โดยชอบด้วยกฎหมายของ DJAI ในด้านความปลอดภัย การป้องกันการฉ้อโกง การดำเนินงานที่เชื่อถือได้ การช่วยเหลือ และการปรับปรุงผลิตภัณฑ์",
-        "ความยินยอมของคุณสำหรับการสื่อสารส่งเสริมการขายที่เป็นทางเลือกและโฆษณาเฉพาะบุคคลในกรณีที่ต้องได้รับความยินยอม และ",
-        "การปฏิบัติตามหน้าที่ตามกฎหมาย การบัญชี การคุ้มครองผู้บริโภค และการบังคับใช้กฎหมาย"
+        "สร้าง ยืนยัน กู้คืน ดูแล และลบบัญชี",
+        "ให้บริการโควตา การส่งออก ภารกิจ รางวัล การตั้งค่า การแจ้งเตือน และการช่วยเหลือที่เชื่อมกับระบบ",
+        "แสดง วัดผล จำกัด และรักษาความปลอดภัยของโฆษณา",
+        "รับรู้การซื้อ Remove Ads ที่เข้าเกณฑ์บนอุปกรณ์",
+        "ทำความเข้าใจการใช้ฟีเจอร์และปรับปรุงความเสถียร",
+        "วินิจฉัยความล้มเหลวและป้องกันการฉ้อโกง การใช้งานในทางที่ผิด รางวัลซ้ำ และคำขอที่ไม่ได้รับอนุญาต",
+        "ตอบคำขอช่วยเหลือและคำขอด้านความเป็นส่วนตัว",
+        "ส่งข้อความส่งเสริมการขายที่เป็นทางเลือกเมื่อคุณเลือก และ",
+        "ปฏิบัติตามกฎหมายและคุ้มครองสิทธิของ DJAI และผู้ใช้"
       ]],
-      closing: ["คุณสามารถถอนความยินยอมที่เป็นทางเลือกได้ทุกเมื่อ การถอนความยินยอมไม่กระทบต่อการประมวลผลที่ได้ดำเนินการไปแล้วโดยชอบด้วยกฎหมาย และไม่ขัดขวางการประมวลผลที่จำเป็นต่อการให้บริการบัญชีหรือปฏิบัติตามหน้าที่ทางกฎหมาย"]
+      closing: ["เมื่อกฎหมายกำหนดฐานการประมวลผล DJAI อาศัยการปฏิบัติตามสัญญาบริการ ประโยชน์โดยชอบด้วยกฎหมายในการดำเนินงานและรักษาความปลอดภัยของแอป ความยินยอมเมื่อจำเป็นสำหรับการประมวลผลที่เป็นทางเลือก และหน้าที่ตามกฎหมาย คุณถอนความยินยอมที่เป็นทางเลือกได้ แต่ไม่กระทบการประมวลผลที่ชอบด้วยกฎหมายก่อนหน้า หรือการประมวลผลตามฐานอื่น"]
     },
     {
-      title: "ผู้ให้บริการ การแบ่งปัน และการประมวลผลระหว่างประเทศ",
-      paragraphs: ["DJAI ใช้ผู้ให้บริการที่ประมวลผลข้อมูลในนามของเรา หรือประมวลผลอย่างเป็นอิสระภายใต้ข้อกำหนดของตน ได้แก่:"],
+      title: "ผู้ให้บริการ การแบ่งปัน และการโอนข้อมูล",
+      paragraphs: ["DJAI ไม่ขายเนื้อหาเอกสาร คำตอบแบบสำรวจ หรือโปรไฟล์บัญชีของคุณเพื่อเงิน DJAI แบ่งปันข้อมูลเฉพาะเพื่อวัตถุประสงค์ที่อธิบายไว้ รวมถึงกับ:"],
       lists: [[
-        "Google Firebase สำหรับการยืนยันตัวตน ฐานข้อมูล App Check การวิเคราะห์ ฟังก์ชัน และการส่งข้อความ",
-        "Google Play สำหรับการจัดจำหน่ายและการเรียกเก็บเงิน",
-        "Google Mobile Ads และ User Messaging Platform สำหรับการโฆษณาและความยินยอม และ",
-        "Sentry สำหรับการรายงานข้อขัดข้องเมื่อมีการกำหนดค่า"
+        "Google Firebase สำหรับ Authentication, Firestore, Cloud Functions, Analytics, Cloud Messaging และ App Check",
+        "Google Play สำหรับเผยแพร่แอป Android และการซื้อ Remove Ads",
+        "Google Mobile Ads และ User Messaging Platform สำหรับโฆษณา การจัดการความยินยอม การวัดผล การป้องกันการฉ้อโกง และการยืนยันโฆษณาแบบมีรางวัล",
+        "Sentry สำหรับรายงานข้อขัดข้องและวินิจฉัยเมื่อกำหนดค่า",
+        "ที่ปรึกษาวิชาชีพและผู้ให้บริการดำเนินงานซึ่งมีหน้าที่ที่เหมาะสม และ",
+        "หน่วยงาน ผู้สืบทอด หรือบุคคลอื่นเมื่อกฎหมายกำหนด หรือจำเป็นอย่างสมเหตุสมผลเพื่อคุ้มครองสิทธิ ความปลอดภัย หรือบริการ"
       ]],
       closing: [
-        "DJAI ไม่ขายเนื้อหาเอกสาร คำตอบแบบสำรวจ หรือโปรไฟล์บัญชีของคุณ ข้อมูลอาจถูกเปิดเผยเมื่อกฎหมายกำหนด เพื่อปกป้องผู้ใช้หรือบริการ เพื่อตรวจสอบการฉ้อโกงหรือการใช้งานในทางที่ผิด หรือเป็นส่วนหนึ่งของการปรับโครงสร้างธุรกิจภายใต้มาตรการคุ้มครองที่ใช้บังคับ",
-        "ผู้ให้บริการอาจประมวลผลข้อมูลในประเทศอื่นนอกเหนือจากประเทศของคุณ DJAI อาศัยมาตรการคุ้มครองการโอนข้อมูลด้านสัญญา เทคนิค องค์กร และกฎหมายที่ผู้ให้บริการเหล่านั้นจัดให้ รวมถึงกฎหมายที่ใช้บังคับ นโยบายความเป็นส่วนตัวของ Google ดูได้ที่ https://policies.google.com/privacy และของ Sentry ที่ https://sentry.io/privacy/."
+        "กฎหมายบางแห่งอาจเรียกการเปิดเผยข้อมูลโฆษณาว่าเป็นการแบ่งปันหรือโฆษณาแบบกำหนดเป้าหมาย แม้ไม่มีการจ่ายเงิน เมื่อกฎหมายกำหนดและมีเครื่องมือให้ใช้ คุณสามารถจัดการตัวเลือกผ่านแอปหรือหน้าความยินยอมของ Google",
+        "ผู้ให้บริการอาจประมวลผลข้อมูลนอกประเทศของคุณ รวมถึงสหรัฐอเมริกา เมื่อประมวลผลในนามของ DJAI เราใช้ข้อกำหนดตามสัญญาและกฎหมายของผู้ให้บริการ และคาดหวังให้ปกป้องข้อมูลตามกฎหมายที่ใช้บังคับ ดูข้อมูลของ Google ที่ https://policies.google.com/privacy และ https://policies.google.com/technologies/ads ข้อมูล Firebase ที่ https://firebase.google.com/support/privacy และนโยบาย Sentry ที่ https://sentry.io/privacy/."
       ]
     },
     {
       title: "ระยะเวลาการเก็บรักษา",
       lists: [[
-        "เอกสารและไฟล์ที่สร้างบนอุปกรณ์จะอยู่จนกว่าคุณจะลบ ล้างพื้นที่จัดเก็บของแอป เปิดตัวเลือกการล้างข้อมูลที่ใช้ได้ หรือถอนการติดตั้งแอป",
-        "บันทึกบัญชี โปรไฟล์ ความยินยอม การใช้งาน แบบสำรวจ โทเค็นการแจ้งเตือน ภารกิจ และรางวัล จะอยู่ในระหว่างที่บัญชียังใช้งานอยู่หรือตราบเท่าที่จำเป็นต่อการให้บริการ",
-        "เมื่อเริ่มลบบัญชี DJAI จะสร้างตัวป้องกันการลบชั่วคราวเพื่อไม่ให้คำขอเก่าสร้างข้อมูลของคุณขึ้นใหม่ บันทึกที่เชื่อมโยงกับบัญชีและบัญชี Firebase Authentication จะถูกลบผ่านกระบวนการลบ ตัวป้องกันอาจคงอยู่ชั่วคราวเพื่อความปลอดภัยและความสอดคล้อง และได้รับการกำหนดให้หมดอายุโดยอัตโนมัติ",
-        "บันทึกด้านความปลอดภัย กฎหมาย ธุรกรรม สำรองข้อมูลของผู้ให้บริการ และการวินิจฉัยในขอบเขตจำกัด อาจคงอยู่ตามระยะเวลาที่จำเป็นอย่างสมเหตุสมผลสำหรับการป้องกันการฉ้อโกง การจัดการข้อพิพาท การปฏิบัติตามกฎหมาย การหมุนเวียนข้อมูลสำรอง และการบังคับใช้สิทธิของ DJAI",
-        "Google, Firebase, AdMob และ Sentry ใช้ระยะเวลาเก็บรักษาของตนเองกับข้อมูลที่ประมวลผลตามข้อกำหนดและการควบคุมที่กำหนดค่าไว้"
+        "เอกสาร โปรเจกต์ ประวัติ QR ล่าสุด และไฟล์ส่งออกบนอุปกรณ์จะอยู่จนกว่าคุณจะลบ ล้างพื้นที่จัดเก็บ ใช้ตัวเลือกล้างข้อมูลที่เกี่ยวข้อง หรือถอนการติดตั้ง",
+        "บัญชี Firebase โปรไฟล์ ความยินยอม การใช้งาน แบบสำรวจ การตั้งค่าแจ้งเตือน ภารกิจ และรางวัลที่ใช้งานอยู่ โดยทั่วไปจะเก็บระหว่างที่บัญชียังใช้งานและตราบเท่าที่จำเป็นต่อบริการที่เชื่อมต่อ",
+        "เมื่อลบบัญชีสำเร็จ DJAI จะลบผู้ใช้ Firebase Authentication และบันทึกที่เชื่อมบัญชีซึ่งอธิบายในข้อ 14 โดย backend ปัจจุบันไม่ได้สร้างตัวป้องกันบัญชีหลังการลบแยกต่างหาก",
+        "Google Play เก็บบันทึกการซื้อและชำระเงินตามกฎของ Google โดย backend ปัจจุบันของ DJAI ไม่มีบัญชีแยกสำหรับประวัติการซื้อของแอป",
+        "Firebase, Google Mobile Ads และ Sentry อาจเก็บ log, backup, analytics, โฆษณา ความปลอดภัย และข้อมูลวินิจฉัยที่ผู้ให้บริการควบคุม ตามระยะเวลาที่ตั้งค่า ข้อกำหนด และหน้าที่ตามกฎหมาย",
+        "DJAI อาจเก็บข้อมูลเมื่อกฎหมายกำหนดโดยเฉพาะ หรือจำเป็นต่อความปลอดภัย การฉ้อโกง ข้อพิพาท หรือข้อเรียกร้องที่บังคับใช้ได้ โดยจำกัดไว้ตามวัตถุประสงค์นั้น"
       ]]
     },
     {
-      title: "การลบบัญชีและข้อมูล",
+      title: "การลบบัญชี ตัวเลือก และสิทธิด้านความเป็นส่วนตัว",
       paragraphs: [
-        "คุณสามารถลบบัญชีในแอปได้ที่ Me → Account and consent → Delete account หรือทำตามคำแนะนำสาธารณะที่ https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/delete-account/.",
-        "การลบบัญชีจะลบบัญชี Firebase Authentication และโปรไฟล์ แบบสำรวจ การใช้งาน โทเค็นการแจ้งเตือน ภารกิจ ยอดรางวัล และบันทึกการยืนยันรางวัลของ DJAI ที่เชื่อมโยงกับ UID ไฟล์ที่จัดเก็บเฉพาะบนอุปกรณ์ของคุณจะไม่อยู่ในความครอบครองของ DJAI ดังนั้นคุณต้องลบไฟล์ดังกล่าวในแอป ผ่านการตั้งค่าพื้นที่จัดเก็บแอปของ Android หรือโดยถอนการติดตั้งแอป"
-      ]
-    },
-    {
-      title: "สิทธิด้านความเป็นส่วนตัวของคุณ",
-      paragraphs: [
-        "ภายใต้กฎหมายที่ใช้บังคับ คุณอาจขอเข้าถึง แก้ไข ลบ จำกัด หรือคัดค้านการประมวลผล ถอนความยินยอม หรือขอสำเนาข้อมูลส่วนบุคคลที่เข้าเกณฑ์ในรูปแบบที่โอนได้ นอกจากนี้คุณอาจร้องเรียนต่อหน่วยงานคุ้มครองข้อมูลที่มีอำนาจกับคุณ",
-        "ใช้การควบคุมบัญชีในแอปเมื่อมี หรือส่งอีเมลไปที่ contact@djai.academy เราอาจต้องยืนยันตัวตนของคุณก่อนดำเนินการตามคำขอ และจะตอบกลับภายในระยะเวลาที่กฎหมายที่ใช้บังคับกำหนด"
+        "คุณลบบัญชีในแอป Android ได้ที่ Me → Account and consent → Delete account เพื่อความปลอดภัย Firebase อาจขอให้ลงชื่อเข้าใช้ใหม่ คุณยังส่งคำขอได้ที่ https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/delete-account/.",
+        "เมื่อลบสำเร็จ DJAI จะลบผู้ใช้ Firebase Authentication และโปรไฟล์ Firestore ที่ใช้งานอยู่ ความยินยอมและการตลาด สถานะการใช้งานและภารกิจ แบบสำรวจ บันทึก notification token บันทึกการยืนยันโฆษณาแบบมีรางวัล และยอดรางวัลที่เชื่อมกับรหัสผู้ใช้ Firebase",
+        "การลบบัญชีไม่ลบไฟล์บนอุปกรณ์ สำเนาที่ส่งออกหรือแชร์แล้ว ประวัติธุรกรรม Google Play หรือ Analytics, log ความปลอดภัย และ backup ที่ผู้ให้บริการควบคุม โปรดลบไฟล์ในแอปหรือพื้นที่จัดเก็บ Android และจัดการธุรกรรมผ่าน Google Play",
+        "ภายใต้กฎหมายที่ใช้บังคับ คุณอาจมีสิทธิขอเข้าถึง แก้ไข ลบ จำกัด โอน หรือคัดค้าน ถอนความยินยอม หรือร้องเรียนต่อหน่วยงานคุ้มครองข้อมูล ส่งอีเมลไปที่ contact@djai.academy เพื่อใช้สิทธิที่ไม่มีในแอป DJAI อาจยืนยันตัวตนก่อนตอบคำขอ"
       ]
     },
     {
       title: "ความปลอดภัย",
-      paragraphs: ["DJAI ใช้การรับส่งข้อมูลผ่านเครือข่ายแบบเข้ารหัส Firebase Authentication การเข้าถึง Firestore ที่จำกัดตามเจ้าของ ฟังก์ชัน backend ที่ปกป้องด้วย App Check, Play Integrity สำหรับการรับรองรุ่น Android ที่เผยแพร่ ตัวป้องกันการเขียนแบบธุรกรรม แนวกั้นการลบบัญชี การทำความสะอาด telemetry พื้นที่จัดเก็บที่แอปเป็นเจ้าของ และ App Lock ที่เป็นทางเลือก ไม่มีวิธีจัดเก็บหรือส่งข้อมูลใดที่ปลอดภัยอย่างสมบูรณ์ และผู้ใช้ควรตรวจสอบเอกสารสำคัญที่ส่งออกด้วยตนเองก่อนนำไปใช้อ้างอิง"]
+      paragraphs: [
+        "DJAI ใช้มาตรการทางเทคนิคและองค์กรตามสมควร ได้แก่ การรับส่งข้อมูลแบบเข้ารหัส Firebase Authentication, กฎฐานข้อมูลที่จำกัดตามเจ้าของ ฟังก์ชัน Firebase ที่ปกป้องด้วย App Check, Play Integrity สำหรับรุ่น Android, การอัปเดตแบบ transaction สำหรับการใช้งานและรางวัล การปิด backup ของ Android และการยืนยันตัวตนบนอุปกรณ์สำหรับ App Lock ที่เป็นทางเลือก",
+        "ไม่มีวิธีจัดเก็บหรือส่งข้อมูลใดปลอดภัยอย่างสมบูรณ์ โปรดปกป้องอุปกรณ์ ตรวจสอบไฟล์สำคัญก่อนแชร์ และอย่าส่งไฟล์เอกสาร รหัสผ่าน หรือเอกสารยืนยันตัวตนเมื่อขอความช่วยเหลือ เว้นแต่ DJAI จะจัดช่องทางที่ปลอดภัยและจำเป็นไว้โดยเฉพาะ"
+      ]
     },
     {
       title: "เด็ก",
-      paragraphs: ["แอปเป็นเครื่องมือเพิ่มประสิทธิภาพการทำงานสำหรับบุคคลทั่วไป และไม่ได้มุ่งให้บริการแก่เด็กอายุต่ำกว่า 13 ปี ผู้ใช้ต้องมีอายุอย่างน้อย 13 ปีและมีความสามารถตามกฎหมายในการยอมรับข้อกำหนดของแอป หรือได้รับอนุญาตจากบิดามารดาหรือผู้ปกครองในกรณีที่กำหนด โปรดติดต่อ contact@djai.academy หากคุณเชื่อว่าเด็กให้ข้อมูลส่วนบุคคลโดยไม่ชอบด้วยกฎหมาย เพื่อให้ DJAI ตรวจสอบและลบข้อมูลเมื่อจำเป็น"]
+      paragraphs: [
+        "แอปเป็นเครื่องมือเพิ่มประสิทธิภาพทั่วไปและไม่ได้มุ่งให้บริการแก่เด็กอายุต่ำกว่า 13 ปี ผู้ที่อายุต่ำกว่า 13 ปีไม่ควรสร้างบัญชีหรือส่งแบบสำรวจ หากกฎหมายท้องถิ่นกำหนดอายุขั้นต่ำสำหรับการให้ความยินยอมเองสูงกว่า ให้ใช้อายุที่สูงกว่านั้น เว้นแต่ได้รับอนุญาตอย่างถูกต้องตามกฎหมาย",
+        "ติดต่อ contact@djai.academy หากเชื่อว่าเด็กให้ข้อมูลส่วนบุคคลโดยไม่เหมาะสม เพื่อให้ DJAI ตรวจสอบและลบเมื่อกฎหมายกำหนด"
+      ]
     },
     {
-      title: "การเปลี่ยนแปลงนโยบายนี้",
-      paragraphs: ["DJAI อาจปรับปรุงนโยบายนี้เมื่อแอป ผู้ให้บริการ กฎหมาย หรือแนวปฏิบัติทางธุรกิจเปลี่ยนแปลง นโยบายที่ปรับปรุงจะแสดงวันที่มีผลบังคับใช้ใหม่และเผยแพร่ที่ https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/privacy/. การเปลี่ยนแปลงที่มีสาระสำคัญจะแจ้งผ่านประกาศที่เหมาะสมในแอปหรือเว็บไซต์ และจะขอความยินยอมใหม่เมื่อกฎหมายกำหนด"]
+      title: "การเปลี่ยนแปลงนโยบาย",
+      paragraphs: ["DJAI อาจปรับปรุงนโยบายเมื่อแอป ผู้ให้บริการ หรือกฎหมายเปลี่ยนแปลง เวอร์ชันปัจจุบันจะเผยแพร่ที่ https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/privacy/ พร้อมวันที่ปรับปรุงใหม่ และ DJAI จะแจ้งเพิ่มเติมหรือขอความยินยอมใหม่เมื่อกฎหมายกำหนด"]
     },
     {
       title: "ติดต่อเรา",
@@ -372,24 +442,26 @@ const knownLinks = new Set([
   "https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/terms/",
   "https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/delete-account/",
   "https://policies.google.com/privacy",
+  "https://policies.google.com/technologies/ads",
+  "https://firebase.google.com/support/privacy",
   "https://sentry.io/privacy/",
   "contact@djai.academy"
 ]);
 
-const linkPattern = /(https:\/\/www\.djai\.academy\/Cam_PDF_Scan_Signer_QR-Gen\/(?:privacy|terms|delete-account)\/|https:\/\/www\.djai\.academy\/|https:\/\/policies\.google\.com\/privacy|https:\/\/sentry\.io\/privacy\/|contact@djai\.academy)/g;
+const linkPattern = /(https:\/\/www\.djai\.academy\/Cam_PDF_Scan_Signer_QR-Gen\/(?:privacy|terms|delete-account)\/|https:\/\/www\.djai\.academy\/|https:\/\/policies\.google\.com\/(?:privacy|technologies\/ads)|https:\/\/firebase\.google\.com\/support\/privacy|https:\/\/sentry\.io\/privacy\/|contact@djai\.academy)/g;
 
 function LinkedText({ children }) {
   return String(children).split(linkPattern).map((part, index) => {
     if (!knownLinks.has(part)) return part;
-    const href = part.includes("@") ? `mailto:${part}` : part;
-    return <a href={href} key={`${part}-${index}`}>{part}</a>;
+    const href = part.includes("@") ? "mailto:" + part : part;
+    return <a href={href} key={part + "-" + index}>{part}</a>;
   });
 }
 
 function PolicySection({ number, section }) {
   const lists = section.lists || [];
   return (
-    <section id={`section-${number}`}>
+    <section id={"section-" + number}>
       <h2>{number}. {section.title}</h2>
       <div className={styles.sectionBody}>
         {(section.paragraphs || []).map((paragraph) => (
@@ -398,8 +470,7 @@ function PolicySection({ number, section }) {
           </p>
         ))}
         {lists.map((items, listIndex) => (
-          <div className={styles.listGroup} key={`${number}-${listIndex}`}>
-            {listIndex === 1 && section.listLead ? <p>{section.listLead}</p> : null}
+          <div className={styles.listGroup} key={number + "-" + listIndex}>
             <ul>
               {items.map((item) => <li key={item}><LinkedText>{item}</LinkedText></li>)}
             </ul>
@@ -414,7 +485,7 @@ function PolicySection({ number, section }) {
 export default function PrivacyPolicyDocument({ locale }) {
   const copy = locale === "th" ? th : en;
   const thai = locale === "th";
-  const relatedHrefs = [APP_PATH, `${APP_PATH}terms/`, `${APP_PATH}delete-account/`, "/app-ads.txt"];
+  const relatedHrefs = [APP_PATH, APP_PATH + "terms/", APP_PATH + "delete-account/", "/app-ads.txt"];
 
   return (
     <>

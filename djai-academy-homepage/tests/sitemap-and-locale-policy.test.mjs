@@ -15,8 +15,8 @@ const [sitemap, viPosts, viArticle, promoThai, promoVietnamese, releaseAudit] = 
 test("sitemap assigns honest route-specific dates without changing global defaults", () => {
   assert.match(sitemap, /STATIC_LAST_MODIFIED = new Date\("2026-07-30T00:00:00\.000Z"\)/);
   assert.match(sitemap, /COURSE_LAST_MODIFIED = new Date\("2026-08-23T00:00:00\.000Z"\)/);
-  assert.match(sitemap, /CAM_PDF_PRIVACY_LAST_MODIFIED = new Date\("2026-08-21T00:00:00\.000Z"\)/);
-  assert.match(sitemap, /CAM_PDF_PRIVACY_THAI_LAST_MODIFIED = new Date\("2026-08-20T00:00:00\.000Z"\)/);
+  assert.match(sitemap, /CAM_PDF_PRIVACY_LAST_MODIFIED = new Date\("2026-09-06T00:00:00\.000Z"\)/);
+  assert.match(sitemap, /CAM_PDF_PRIVACY_THAI_LAST_MODIFIED = new Date\("2026-09-06T00:00:00\.000Z"\)/);
   assert.match(sitemap, /path === "\/Cam_PDF_Scan_Signer_QR-Gen\/privacy\/"[\s\S]*CAM_PDF_PRIVACY_LAST_MODIFIED/);
   assert.match(sitemap, /path === "\/Cam_PDF_Scan_Signer_QR-Gen\/privacy\/th\/"[\s\S]*CAM_PDF_PRIVACY_THAI_LAST_MODIFIED/);
   assert.match(sitemap, /path\.startsWith\("\/siamese_cat\/dev\/courses\/"\)[\s\S]*SIAMESE_COURSES_LAST_MODIFIED[\s\S]*path\.startsWith\("\/siamese_cat\/dev\/course\/"\)[\s\S]*COURSE_LAST_MODIFIED/);
@@ -42,5 +42,5 @@ test("release audit locks sitemap freshness and intentional locale shapes", () =
   assert.match(releaseAudit, /invented non-equivalent English promotion alternate/);
   assert.match(releaseAudit, /invented .* alternate for a standalone Vietnamese article/);
   assert.match(releaseAudit, /2026-08-23T00:00:00\.000Z/);
-  assert.match(releaseAudit, /privacy\/th\/[\s\S]*2026-08-20T00:00:00\.000Z/);
+  assert.match(releaseAudit, /privacy\/th\/[\s\S]*2026-09-06T00:00:00\.000Z/);
 });
