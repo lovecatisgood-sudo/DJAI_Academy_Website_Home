@@ -9,7 +9,7 @@ const aliasSource = await readFile(new URL("../app/seo-alias-data.ts", import.me
 test("the multi-format image-to-PDF page owns a distinct ordered-document promise", () => {
   assert.match(toolDataSource, /title:\s*"รวมรูป JPG, PNG และ WebP เป็น PDF ฟรี"/);
   assert.match(toolDataSource, /description:\s*"[^"]*จัดลำดับ[^"]*"/);
-  assert.match(toolDataSource, /title:\s*"Combine JPG, PNG, and WebP Images into One PDF"/);
+  assert.match(toolDataSource, /title:\s*"JPG, PNG & WebP to PDF"/);
 });
 
 test("JPG, PNG, WebP, and multi-format pages retain distinct routes and visible promises", () => {

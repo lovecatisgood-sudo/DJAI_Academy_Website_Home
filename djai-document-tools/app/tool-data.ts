@@ -144,14 +144,14 @@ export const tools: ToolDefinition[] = [
   {
     slug: "csv-to-json", category: "spreadsheet", input: "csv",
     label: { th: "CSV เป็น JSON", en: "CSV to JSON" }, title: { th: "แปลง CSV เป็น JSON ฟรี", en: "Convert CSV to JSON Free" },
-    description: { th: "แปลง CSV เป็น JSON ใน browser พร้อม preview, copy และ download", en: "Convert CSV data to JSON locally with preview, copy, and download." },
+    description: { th: "แปลง CSV เป็น JSON ใน browser พร้อม preview, copy และ download", en: "Convert CSV data to JSON locally with preview, copy, and download. Your file stays in your browser and no account is required." },
     intent: { th: "เตรียมข้อมูลสำหรับ API, application และ automation", en: "Prepare tabular data for APIs, applications, and automation." },
     keywords: { th: ["CSV เป็น JSON"], en: ["CSV to JSON", "convert CSV online"] }
   },
   {
     slug: "json-to-csv", category: "spreadsheet", input: "json",
     label: { th: "JSON เป็น CSV", en: "JSON to CSV" }, title: { th: "แปลง JSON เป็น CSV ฟรี", en: "Convert JSON to CSV Free" },
-    description: { th: "แปลง JSON array เป็น CSV พร้อมจัด column และดาวน์โหลด", en: "Convert a JSON array into CSV columns and download the result." },
+    description: { th: "แปลง JSON array เป็น CSV พร้อมจัด column และดาวน์โหลด", en: "Convert a JSON array into clean CSV columns in your browser, preview the output, and download it without uploading data or creating an account." },
     intent: { th: "นำข้อมูลจาก API ไปเปิดใน spreadsheet", en: "Move API data into a spreadsheet-friendly format." },
     keywords: { th: ["JSON เป็น CSV"], en: ["JSON to CSV", "JSON array converter"] }
   },
@@ -172,21 +172,21 @@ export const tools: ToolDefinition[] = [
   {
     slug: "split-csv", category: "spreadsheet", input: "csv",
     label: { th: "แบ่ง CSV", en: "Split CSV" }, title: { th: "แบ่ง CSV ตามจำนวนแถว", en: "Split CSV by Row Count" },
-    description: { th: "แบ่ง CSV ขนาดใหญ่เป็นหลายไฟล์แล้วดาวน์โหลด ZIP", en: "Split a large CSV into smaller files and download them as a ZIP." },
+    description: { th: "แบ่ง CSV ขนาดใหญ่เป็นหลายไฟล์แล้วดาวน์โหลด ZIP", en: "Split a large CSV by row count in your browser and download the smaller files as one ZIP. No upload or account required." },
     intent: { th: "เตรียมไฟล์ให้พอดีกับข้อจำกัดของระบบ import", en: "Fit large exports within another system's import limits." },
     keywords: { th: ["แบ่ง CSV", "split CSV"], en: ["split CSV", "CSV chunker"] }
   },
   {
     slug: "csv-to-xlsx", category: "spreadsheet", input: "csv",
     label: { th: "CSV เป็น XLSX", en: "CSV to XLSX" }, title: { th: "แปลง CSV เป็น Excel XLSX", en: "Convert CSV to Excel XLSX" },
-    description: { th: "แปลง CSV เป็น workbook Excel พร้อม header และ column ที่อ่านง่าย", en: "Convert CSV into an Excel workbook with readable headers and columns." },
+    description: { th: "แปลง CSV เป็น workbook Excel พร้อม header และ column ที่อ่านง่าย", en: "Convert CSV into an Excel XLSX workbook with readable headers and columns. Process the file in your browser with no upload or account." },
     intent: { th: "เปิดและแชร์ข้อมูลใน Excel ได้สะดวกขึ้น", en: "Make tabular data easier to open and share in Excel." },
     keywords: { th: ["CSV เป็น Excel", "CSV เป็น XLSX"], en: ["CSV to XLSX", "CSV to Excel"] }
   },
   {
     slug: "xlsx-to-csv", category: "spreadsheet", input: "spreadsheet",
     label: { th: "XLSX เป็น CSV", en: "XLSX to CSV" }, title: { th: "แปลง Excel XLSX เป็น CSV", en: "Convert Excel XLSX to CSV" },
-    description: { th: "เลือก worksheet และส่งออกเป็น CSV ใน browser", en: "Select a worksheet and export it as CSV in your browser." },
+    description: { th: "เลือก worksheet และส่งออกเป็น CSV ใน browser", en: "Choose an Excel worksheet and export it as CSV in your browser. Preview the data and download it without uploading the workbook." },
     intent: { th: "เตรียม Excel สำหรับ import เข้า database และระบบ automation", en: "Prepare Excel data for databases and automation systems." },
     keywords: { th: ["Excel เป็น CSV", "XLSX เป็น CSV"], en: ["XLSX to CSV", "Excel to CSV"] }
   }

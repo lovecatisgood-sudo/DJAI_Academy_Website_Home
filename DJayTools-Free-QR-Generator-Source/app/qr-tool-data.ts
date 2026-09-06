@@ -52,7 +52,7 @@ export const qrToolCopy: Record<QrToolSlug, Record<QrLanguage, QrPageCopy>> = {
   },
   "email-qr-code-generator": {
     th: { mode: "email", title: "สร้าง Email QR Code ฟรี", description: "สร้าง QR Code สำหรับเปิดอีเมลพร้อมผู้รับ หัวข้อ และข้อความที่กรอกไว้ล่วงหน้า เหมาะกับนามบัตรและโปสเตอร์", keywords: ["Email QR Code", "QR ส่งอีเมล", "mailto QR"] },
-    en: { mode: "email", title: "Free Email QR Code Generator", description: "Create a QR code that opens an email with a recipient, subject, and optional message already filled in.", keywords: ["email QR code generator", "mailto QR code", "QR code for email"] },
+    en: { mode: "email", title: "Free Email QR Code Generator", description: "Create a static email QR code with recipient, subject, and optional message prefilled. Customize it and download PNG or SVG free with no sign-up.", keywords: ["email QR code generator", "mailto QR code with subject and body", "static email QR code", "email QR code PNG SVG"] },
     vi: { mode: "email", title: "Tạo mã QR email miễn phí", description: "Tạo mã QR mở email với người nhận, tiêu đề và nội dung được điền sẵn, phù hợp cho danh thiếp và poster.", keywords: ["tạo QR email", "mã QR mailto", "QR gửi email"] },
     "zh-CN": { mode: "email", title: "免费电子邮件二维码生成器", description: "生成可打开邮件并预填收件人、主题和正文的二维码，适合名片、海报和客服入口。", keywords: ["邮箱二维码", "邮件二维码生成器", "mailto二维码"] },
     "zh-TW": { mode: "email", title: "免費電子郵件 QR Code 產生器", description: "製作可開啟郵件並預填收件人、主旨與內容的 QR Code，適合名片、海報與客服入口。", keywords: ["Email QR Code", "電子郵件 QR Code", "mailto QR Code"] }

@@ -727,9 +727,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "video to text online free",
+        "video to text without sign up",
+        "video to text browser tool for private media file processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/video-to-text/en/",
@@ -739,11 +743,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Convert video to text without creating an account.",
+      "primaryQueryFamily": "transcribe video to text in browser without upload",
       "promise": "Convert video to text with AI in your browser. Free, no sign-up, no email, and no media upload to DJAI. Export editable TXT, SRT, VTT, or JSON transcripts.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -1201,23 +1205,27 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "url qr code generator online free",
+        "url qr code generator without sign up",
+        "url qr code generator browser tool for private content processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/qrgen/url-qr-code-generator/en/",
       "locale": "en",
       "cluster": "qr",
       "pageRole": "working_tool",
       "audience": "User who needs to create and download this exact QR code type",
-      "primaryQueryFamily": "turn a link into a QR code",
+      "primaryQueryFamily": "create a free URL QR code without sign up",
       "promise": "Create a downloadable QR code for a website link.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/qrgen/url-qr-code-generator/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -1264,23 +1272,27 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "wifi qr code generator online free",
+        "wifi qr code generator without sign up",
+        "wifi qr code generator browser tool for private content processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/qrgen/wifi-qr-code-generator/en/",
       "locale": "en",
       "cluster": "qr",
       "pageRole": "working_tool",
       "audience": "User who needs to create and download this exact QR code type",
-      "primaryQueryFamily": "create a Wi-Fi QR code",
+      "primaryQueryFamily": "create a Wi-Fi password QR code for guests",
       "promise": "Create a scannable Wi-Fi connection code.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/qrgen/wifi-qr-code-generator/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -1327,23 +1339,27 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "vcard qr code generator online free",
+        "vcard qr code generator without sign up",
+        "vcard qr code generator browser tool for private content processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/qrgen/vcard-qr-code-generator/en/",
       "locale": "en",
       "cluster": "qr",
       "pageRole": "working_tool",
       "audience": "User who needs to create and download this exact QR code type",
-      "primaryQueryFamily": "create a vCard QR code",
+      "primaryQueryFamily": "create a vCard contact QR code for business cards",
       "promise": "Create a QR code that saves contact details.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/qrgen/vcard-qr-code-generator/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -1390,23 +1406,27 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "text qr code generator online free",
+        "text qr code generator without sign up",
+        "text qr code generator browser tool for private content processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/qrgen/text-qr-code-generator/en/",
       "locale": "en",
       "cluster": "qr",
       "pageRole": "working_tool",
       "audience": "User who needs to create and download this exact QR code type",
-      "primaryQueryFamily": "turn text into a QR code",
+      "primaryQueryFamily": "turn text into a free QR code online",
       "promise": "Create a downloadable QR code from short text.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/qrgen/text-qr-code-generator/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -1453,23 +1473,27 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "mailto QR code with recipient subject and body",
+        "static email QR code PNG or SVG",
+        "email QR code generator without sign up"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "verified_gsc",
       "indexable": true,
       "route": "/tools/qrgen/email-qr-code-generator/en/",
       "locale": "en",
       "cluster": "qr",
       "pageRole": "working_tool",
       "audience": "User who needs to create and download this exact QR code type",
-      "primaryQueryFamily": "create an email QR code",
+      "primaryQueryFamily": "create a free email QR code with subject and message",
       "promise": "Create a QR code that opens a prepared email.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/qrgen/email-qr-code-generator/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "gsc_page_performance_and_feature_validation_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -1516,23 +1540,27 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "whatsapp qr code generator online free",
+        "whatsapp qr code generator without sign up",
+        "whatsapp qr code generator browser tool for private content processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/qrgen/whatsapp-qr-code-generator/en/",
       "locale": "en",
       "cluster": "qr",
       "pageRole": "working_tool",
       "audience": "User who needs to create and download this exact QR code type",
-      "primaryQueryFamily": "create a WhatsApp QR code",
+      "primaryQueryFamily": "create a WhatsApp chat QR code with preset message",
       "promise": "Create a QR code that opens a WhatsApp conversation.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/qrgen/whatsapp-qr-code-generator/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -1579,23 +1607,27 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "qr code generator with logo online free",
+        "qr code generator with logo without sign up",
+        "qr code generator with logo browser tool for private content processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/qrgen/qr-code-generator-with-logo/en/",
       "locale": "en",
       "cluster": "qr",
       "pageRole": "working_tool",
       "audience": "User who needs to create and download this exact QR code type",
-      "primaryQueryFamily": "create a QR code with a logo",
+      "primaryQueryFamily": "create a branded QR code with logo without upload",
       "promise": "Create and download a branded QR code with a centered logo.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/qrgen/qr-code-generator-with-logo/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -1705,9 +1737,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "jpg to png online free",
+        "jpg to png without sign up",
+        "jpg to png browser tool for private image processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/jpg-to-png/en/",
@@ -1717,11 +1753,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Convert JPG to PNG for free",
+      "primaryQueryFamily": "convert JPG to PNG in browser without upload",
       "promise": "Convert JPG images to PNG free in your browser with no upload, account, watermark, or server storage.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -1768,9 +1804,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "png to jpg online free",
+        "png to jpg without sign up",
+        "png to jpg browser tool for private image processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/png-to-jpg/en/",
@@ -1780,11 +1820,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Convert PNG to JPG for free",
+      "primaryQueryFamily": "convert PNG to JPG and reduce file size online",
       "promise": "Convert PNG to JPG free with quality controls and private browser processing. No upload, account, or watermark.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -1831,9 +1871,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "jpg to webp online free",
+        "jpg to webp without sign up",
+        "jpg to webp browser tool for private image processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/jpg-to-webp/en/",
@@ -1843,11 +1887,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Convert JPG to WebP for free",
+      "primaryQueryFamily": "convert JPG to WebP for a faster website",
       "promise": "Convert JPG to WebP free for faster websites with private browser processing and quality control.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -1894,9 +1938,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "png to webp online free",
+        "png to webp without sign up",
+        "png to webp browser tool for private image processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/png-to-webp/en/",
@@ -1906,11 +1954,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Convert PNG to WebP for free",
+      "primaryQueryFamily": "convert transparent PNG to WebP in browser",
       "promise": "Convert PNG to WebP free while preserving transparency, processed privately in your browser.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -1957,9 +2005,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "webp to jpg online free",
+        "webp to jpg without sign up",
+        "webp to jpg browser tool for private image processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/webp-to-jpg/en/",
@@ -1969,11 +2021,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Convert WebP to JPG for free",
+      "primaryQueryFamily": "convert WebP to JPG for upload forms",
       "promise": "Convert WebP to JPG free for forms, software, and devices that require JPG. Your image stays on your device.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -2020,9 +2072,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "webp to png online free",
+        "webp to png without sign up",
+        "webp to png browser tool for private image processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/webp-to-png/en/",
@@ -2032,11 +2088,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Convert WebP to PNG for free",
+      "primaryQueryFamily": "convert WebP to PNG with transparency online",
       "promise": "Convert WebP to PNG free for design workflows. Files remain on your device and are never uploaded.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -2083,9 +2139,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "compress image online free",
+        "compress image without sign up",
+        "compress image browser tool for private image processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/compress-image/en/",
@@ -2095,11 +2155,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Compress images and reduce file size",
+      "primaryQueryFamily": "compress JPG PNG or WebP to a target KB size",
       "promise": "Compress JPG, PNG, and WebP images toward a target KB size free with private browser processing.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -2146,9 +2206,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "resize image online free",
+        "resize image without sign up",
+        "resize image browser tool for private image processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/resize-image/en/",
@@ -2158,11 +2222,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Resize images online for free",
+      "primaryQueryFamily": "resize image by pixels or percentage without upload",
       "promise": "Resize images by pixels, percentage, or social media presets free while keeping the aspect ratio.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -2209,9 +2273,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "image compressor for a 100 KB upload limit",
+        "reduce image toward 100 KB in browser",
+        "compress an image to approximately 100 KB online free online"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/image-to-100kb/en/",
@@ -2221,11 +2289,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Compress an image to approximately 100 KB",
+      "primaryQueryFamily": "compress an image to approximately 100 KB online",
       "promise": "Reduce a JPG, PNG, or WebP image toward 100 KB free for forms, applications, and upload limits.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -2272,9 +2340,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "image compressor for a 500 KB upload limit",
+        "reduce image toward 500 KB in browser",
+        "compress an image to approximately 500 KB online free online"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/image-to-500kb/en/",
@@ -2284,11 +2356,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Compress an image to approximately 500 KB",
+      "primaryQueryFamily": "compress an image to approximately 500 KB online",
       "promise": "Reduce a JPG, PNG, or WebP image toward 500 KB free in your browser for email, websites, and forms.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -2335,9 +2407,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "heic to jpg online free",
+        "heic to jpg without sign up",
+        "heic to jpg browser tool for private image processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/heic-to-jpg/en/",
@@ -2347,11 +2423,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Convert HEIC to JPG for free",
+      "primaryQueryFamily": "convert HEIC to JPG in browser without upload",
       "promise": "Convert iPhone HEIC and HEIF photos to JPG free in your browser without uploading images to a server.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -2398,9 +2474,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "remove image metadata online free",
+        "remove image metadata without sign up",
+        "remove image metadata browser tool for private image processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/remove-image-metadata/en/",
@@ -2410,11 +2490,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Remove metadata from an image for free",
+      "primaryQueryFamily": "remove EXIF metadata from an image in browser",
       "promise": "Remove EXIF and metadata from JPG, PNG, WebP, or HEIC by creating a new browser-processed copy without uploading it.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -2461,9 +2541,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "remove background image online free",
+        "remove background image without sign up",
+        "remove background image browser tool for private image processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/remove-background-image/en/",
@@ -2473,11 +2557,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Remove an image background for free",
+      "primaryQueryFamily": "remove an image background free without uploading",
       "promise": "Remove the background from JPG, PNG, WebP, HEIC, or HEIF images free in your browser and download a transparent PNG.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -2524,9 +2608,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "image compressor for a 200 KB upload limit",
+        "reduce image toward 200 KB in browser",
+        "resize an image to approximately 200 KB online free online"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "verified_gsc",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/resize-image-to-200kb/en/",
@@ -2536,11 +2624,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Resize an image to approximately 200 KB",
+      "primaryQueryFamily": "resize an image to approximately 200 KB online",
       "promise": "Reduce JPG, PNG, WebP, or AVIF images toward 200 KB free for forms, email, and websites with private browser processing.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "gsc_page_performance_and_feature_validation_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -2587,9 +2675,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "avif to jpg online free",
+        "avif to jpg without sign up",
+        "avif to jpg browser tool for private image processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/avif-to-jpg/en/",
@@ -2599,11 +2691,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Convert AVIF to JPG for free",
+      "primaryQueryFamily": "convert AVIF to JPG in browser without upload",
       "promise": "Turn AVIF photos into smaller, widely accepted JPG files for forms, legacy software, email, and websites without uploading the image.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -2650,9 +2742,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "avif to png online free",
+        "avif to png without sign up",
+        "avif to png browser tool for private image processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/avif-to-png/en/",
@@ -2662,11 +2758,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Convert AVIF to PNG for free",
+      "primaryQueryFamily": "convert AVIF to PNG with transparency online",
       "promise": "Convert AVIF artwork to PNG for logos, screenshots, graphics, and publishing workflows that need transparency, entirely in your browser.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -2713,9 +2809,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "passport photo resizer online free",
+        "passport photo resizer without sign up",
+        "passport photo resizer browser tool for private image processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/passport-photo-resizer/en/",
@@ -2725,11 +2825,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Resize and crop a passport photo for free",
+      "primaryQueryFamily": "resize a passport photo to 35 x 45 mm online",
       "promise": "Crop a passport photo to 35 × 45 mm at 413 × 531 px or choose the US 2 × 2 inch 600 × 600 px preset, privately in your browser.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -2818,23 +2918,27 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "merge pdf online free",
+        "merge pdf without sign up",
+        "merge pdf browser tool for private PDF processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/merge-pdf/en/",
       "locale": "en",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "User who needs to complete this exact PDF task in a browser",
-      "primaryQueryFamily": "merge PDF files",
+      "primaryQueryFamily": "merge PDF files in browser without upload",
       "promise": "Combine several PDFs in a chosen order.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/merge-pdf/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -2862,25 +2966,29 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "split pdf online free",
+        "split pdf without sign up",
+        "split pdf browser tool for private PDF processing"
+      ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/extract-pdf-pages/"
       ],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/split-pdf/en/",
       "locale": "en",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "User who needs to complete this exact PDF task in a browser",
-      "primaryQueryFamily": "split PDF pages",
+      "primaryQueryFamily": "split selected PDF pages in browser without upload",
       "promise": "Split a PDF by ranges or selected pages.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/split-pdf/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -2906,23 +3014,27 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "compress pdf online free",
+        "compress pdf without sign up",
+        "compress pdf browser tool for private PDF processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/compress-pdf/en/",
       "locale": "en",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "User who needs to complete this exact PDF task in a browser",
-      "primaryQueryFamily": "reduce PDF file size",
+      "primaryQueryFamily": "reduce PDF file size privately in browser",
       "promise": "Reduce PDF file size with selectable compression levels.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/compress-pdf/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -2952,27 +3064,31 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "images to pdf online free",
+        "images to pdf without sign up",
+        "images to pdf browser tool for private PDF processing"
+      ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/jpg-to-pdf/",
         "/tools/PDFTools/png-to-pdf/",
         "/tools/PDFTools/webp-to-pdf/"
       ],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/images-to-pdf/en/",
       "locale": "en",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "User who needs to complete this exact PDF task in a browser",
-      "primaryQueryFamily": "combine images into one PDF",
+      "primaryQueryFamily": "combine JPG PNG and WebP into one PDF",
       "promise": "Arrange several images and create one PDF without sending the files to DJAI.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/images-to-pdf/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -3001,26 +3117,30 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "pdf to images online free",
+        "pdf to images without sign up",
+        "pdf to images browser tool for private PDF processing"
+      ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/pdf-to-jpg/",
         "/tools/PDFTools/pdf-to-png/"
       ],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/pdf-to-images/en/",
       "locale": "en",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "User who needs to complete this exact PDF task in a browser",
-      "primaryQueryFamily": "convert PDF to images",
+      "primaryQueryFamily": "convert PDF pages to JPG images in browser",
       "promise": "Export PDF pages as JPG or PNG images.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/pdf-to-images/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -3046,23 +3166,27 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "rotate pdf online free",
+        "rotate pdf without sign up",
+        "rotate pdf browser tool for private PDF processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/rotate-pdf/en/",
       "locale": "en",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "User who needs to complete this exact PDF task in a browser",
-      "primaryQueryFamily": "rotate PDF pages",
+      "primaryQueryFamily": "rotate selected PDF pages in browser free",
       "promise": "Rotate all or selected PDF pages.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/rotate-pdf/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -3088,23 +3212,27 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "watermark pdf online free",
+        "watermark pdf without sign up",
+        "watermark pdf browser tool for private PDF processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/watermark-pdf/en/",
       "locale": "en",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "User who needs to complete this exact PDF task in a browser",
-      "primaryQueryFamily": "add watermark to PDF",
+      "primaryQueryFamily": "add a text watermark to PDF in browser",
       "promise": "Place a text or image watermark on a PDF.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/watermark-pdf/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -3130,23 +3258,27 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "protect pdf online free",
+        "protect pdf without sign up",
+        "protect pdf browser tool for private PDF processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/protect-pdf/en/",
       "locale": "en",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "User who needs to complete this exact PDF task in a browser",
-      "primaryQueryFamily": "password protect PDF",
+      "primaryQueryFamily": "password protect PDF with AES 256 encryption",
       "promise": "Protect a PDF with a password and document permissions.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/protect-pdf/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -3175,26 +3307,30 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "organize pdf online free",
+        "organize pdf without sign up",
+        "organize pdf browser tool for private PDF processing"
+      ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/delete-pages-from-pdf/",
         "/tools/PDFTools/reorder-pdf-pages/"
       ],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/organize-pdf/en/",
       "locale": "en",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "User who needs to complete this exact PDF task in a browser",
-      "primaryQueryFamily": "organize PDF pages",
+      "primaryQueryFamily": "organize PDF pages visually in browser",
       "promise": "Reorder PDF pages and omit unwanted pages.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/organize-pdf/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -3220,23 +3356,27 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "add page numbers online free",
+        "add page numbers without sign up",
+        "add page numbers browser tool for private PDF processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/add-page-numbers/en/",
       "locale": "en",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "User who needs to complete this exact PDF task in a browser",
-      "primaryQueryFamily": "add page numbers to PDF",
+      "primaryQueryFamily": "add page numbers to PDF in browser free",
       "promise": "Add page numbers with position and starting-number controls.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/add-page-numbers/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -3262,23 +3402,27 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "remove pdf metadata online free",
+        "remove pdf metadata without sign up",
+        "remove pdf metadata browser tool for private PDF processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/remove-pdf-metadata/en/",
       "locale": "en",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "User who needs to complete this exact PDF task in a browser",
-      "primaryQueryFamily": "remove PDF metadata",
+      "primaryQueryFamily": "remove PDF document metadata in browser",
       "promise": "Create a copy with identifying PDF metadata removed.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/remove-pdf-metadata/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -3306,25 +3450,29 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "jpg to pdf online free",
+        "jpg to pdf without sign up",
+        "jpg to pdf browser tool for private PDF processing"
+      ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/images-to-pdf/"
       ],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/jpg-to-pdf/en/",
       "locale": "en",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "User searching by a specific PDF input format or page outcome",
-      "primaryQueryFamily": "convert JPG to PDF",
+      "primaryQueryFamily": "convert multiple JPG images to one PDF",
       "promise": "Convert and arrange JPG images as a PDF.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/jpg-to-pdf/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -3352,25 +3500,29 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "pdf to jpg online free",
+        "pdf to jpg without sign up",
+        "pdf to jpg browser tool for private PDF processing"
+      ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/pdf-to-images/"
       ],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/pdf-to-jpg/en/",
       "locale": "en",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "User searching by a specific PDF input format or page outcome",
-      "primaryQueryFamily": "convert PDF to JPG",
+      "primaryQueryFamily": "convert every PDF page to JPG and ZIP",
       "promise": "Export PDF pages specifically as JPG images.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/pdf-to-jpg/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -3398,25 +3550,29 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "png to pdf online free",
+        "png to pdf without sign up",
+        "png to pdf browser tool for private PDF processing"
+      ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/images-to-pdf/"
       ],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/png-to-pdf/en/",
       "locale": "en",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "User searching by a specific PDF input format or page outcome",
-      "primaryQueryFamily": "convert PNG to PDF",
+      "primaryQueryFamily": "combine multiple PNG images into one PDF",
       "promise": "Convert and arrange PNG images as a PDF.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/png-to-pdf/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -3444,25 +3600,29 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "webp to pdf online free",
+        "webp to pdf without sign up",
+        "webp to pdf browser tool for private PDF processing"
+      ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/images-to-pdf/"
       ],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/webp-to-pdf/en/",
       "locale": "en",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "User searching by a specific PDF input format or page outcome",
-      "primaryQueryFamily": "convert WebP to PDF",
+      "primaryQueryFamily": "convert multiple WebP images into one PDF",
       "promise": "Convert and arrange WebP images as a PDF.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/webp-to-pdf/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -3490,25 +3650,29 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "pdf to png online free",
+        "pdf to png without sign up",
+        "pdf to png browser tool for private PDF processing"
+      ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/pdf-to-images/"
       ],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/pdf-to-png/en/",
       "locale": "en",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "User searching by a specific PDF input format or page outcome",
-      "primaryQueryFamily": "convert PDF to PNG",
+      "primaryQueryFamily": "convert PDF pages to PNG and download ZIP",
       "promise": "Export PDF pages specifically as PNG images.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/pdf-to-png/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -3536,25 +3700,29 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "extract pdf pages online free",
+        "extract pdf pages without sign up",
+        "extract pdf pages browser tool for private PDF processing"
+      ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/split-pdf/"
       ],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/extract-pdf-pages/en/",
       "locale": "en",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "User searching by a specific PDF input format or page outcome",
-      "primaryQueryFamily": "extract selected PDF pages",
+      "primaryQueryFamily": "extract selected pages into a new PDF",
       "promise": "Create a new PDF from selected pages or ranges.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/extract-pdf-pages/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -3582,25 +3750,29 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "delete pages from pdf online free",
+        "delete pages from pdf without sign up",
+        "delete pages from pdf browser tool for private PDF processing"
+      ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/organize-pdf/"
       ],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/delete-pages-from-pdf/en/",
       "locale": "en",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "User searching by a specific PDF input format or page outcome",
-      "primaryQueryFamily": "delete pages from PDF",
+      "primaryQueryFamily": "delete selected pages from PDF in browser",
       "promise": "Create a new PDF without selected pages.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/delete-pages-from-pdf/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -3628,25 +3800,29 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "reorder pdf pages online free",
+        "reorder pdf pages without sign up",
+        "reorder pdf pages browser tool for private PDF processing"
+      ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/organize-pdf/"
       ],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/reorder-pdf-pages/en/",
       "locale": "en",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "User searching by a specific PDF input format or page outcome",
-      "primaryQueryFamily": "reorder PDF pages",
+      "primaryQueryFamily": "reorder PDF pages by dragging in browser",
       "promise": "Create a new PDF in a specified page order.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/reorder-pdf-pages/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -3978,9 +4154,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "mp3 to wav online free",
+        "mp3 to wav without sign up",
+        "mp3 to wav browser tool for private media file processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/mp3-to-wav/en/",
@@ -3990,11 +4170,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Convert MP3 to WAV for free",
+      "primaryQueryFamily": "convert MP3 to WAV in browser without upload",
       "promise": "Convert MP3 audio to WAV free in your browser for editing, lossless workflows, and software that requires WAV.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -4020,9 +4200,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "wav to mp3 online free",
+        "wav to mp3 without sign up",
+        "wav to mp3 browser tool for private media file processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/wav-to-mp3/en/",
@@ -4032,11 +4216,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Convert WAV to MP3 for free",
+      "primaryQueryFamily": "convert WAV to MP3 in browser without upload",
       "promise": "Convert WAV audio to MP3 free with a selectable bitrate for smaller files, sharing, and uploads.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -4062,9 +4246,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "m4a to mp3 online free",
+        "m4a to mp3 without sign up",
+        "m4a to mp3 browser tool for private media file processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/m4a-to-mp3/en/",
@@ -4074,11 +4262,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Convert M4A to MP3 for free",
+      "primaryQueryFamily": "convert M4A to MP3 in browser without upload",
       "promise": "Convert M4A audio to MP3 free in your browser for players, editors, and software that supports MP3.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -4104,9 +4292,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "mp4 to mp3 online free",
+        "mp4 to mp3 without sign up",
+        "mp4 to mp3 browser tool for private media file processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/mp4-to-mp3/en/",
@@ -4116,11 +4308,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Convert MP4 to MP3 for free",
+      "primaryQueryFamily": "extract MP3 audio from MP4 in browser",
       "promise": "Extract audio from an MP4 video and convert it to MP3 free in your browser with a selectable bitrate.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -4146,9 +4338,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "extract audio from video online free",
+        "extract audio from video without sign up",
+        "extract audio from video browser tool for private media file processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/extract-audio-from-video/en/",
@@ -4158,11 +4354,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Extract audio from a video for free",
+      "primaryQueryFamily": "extract audio from video in browser without upload",
       "promise": "Extract audio from MP4, MOV, WebM, or MKV video and download MP3 without uploading the video.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -4188,9 +4384,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "video converter online free",
+        "video converter without sign up",
+        "video converter browser tool for private media file processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/video-converter/en/",
@@ -4200,11 +4400,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Convert video online without sending it to a server",
+      "primaryQueryFamily": "convert video formats locally without uploading",
       "promise": "Convert video online between MP4, MOV, WebM, MKV and AVI. Choose quality and resolution, then process the file privately in your browser with no account.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -4230,9 +4430,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "mkv to mp4 online free",
+        "mkv to mp4 without sign up",
+        "mkv to mp4 browser tool for private media file processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/mkv-to-mp4/en/",
@@ -4242,11 +4446,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Convert MKV to MP4 for easier playback and sharing",
+      "primaryQueryFamily": "convert MKV to MP4 in browser without upload",
       "promise": "Convert MKV to MP4 online in your browser. Make MKV video easier to play, share and upload without sending the source file to DJAI.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -4272,9 +4476,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "avi to mp4 online free",
+        "avi to mp4 without sign up",
+        "avi to mp4 browser tool for private media file processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/avi-to-mp4/en/",
@@ -4284,11 +4492,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Convert AVI to MP4 and stop carrying an old container forward",
+      "primaryQueryFamily": "convert AVI to MP4 in browser without upload",
       "promise": "Convert AVI to MP4 online in your browser. Turn older AVI video into a modern MP4 that is easier to play, share and upload.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -4314,9 +4522,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "mp4 to mov online free",
+        "mp4 to mov without sign up",
+        "mp4 to mov browser tool for private media file processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/mp4-to-mov/en/",
@@ -4326,11 +4538,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Convert MP4 to MOV when the next workflow expects MOV",
+      "primaryQueryFamily": "convert MP4 to MOV in browser without upload",
       "promise": "Convert MP4 to MOV online in your browser for Apple or editing workflows. Choose quality and resolution with no account and no video upload.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -4356,9 +4568,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "mp4 to webm online free",
+        "mp4 to webm without sign up",
+        "mp4 to webm browser tool for private media file processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/mp4-to-webm/en/",
@@ -4368,11 +4584,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Convert MP4 to WebM for a web-first video file",
+      "primaryQueryFamily": "convert MP4 to WebM for website video",
       "promise": "Convert MP4 to WebM online for web delivery. Choose quality and resolution, then encode locally in your browser without uploading the source video.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -4398,9 +4614,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "webm to mp4 online free",
+        "webm to mp4 without sign up",
+        "webm to mp4 browser tool for private media file processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/webm-to-mp4/en/",
@@ -4410,11 +4630,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Convert WebM to MP4 when compatibility matters more",
+      "primaryQueryFamily": "convert WebM to MP4 for wider compatibility",
       "promise": "Convert WebM to MP4 online with private browser processing. Create a widely compatible MP4 for sharing, editing or uploading without a file upload.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -4440,9 +4660,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "mov to mp4 online free",
+        "mov to mp4 without sign up",
+        "mov to mp4 browser tool for private media file processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/mov-to-mp4/en/",
@@ -4452,11 +4676,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Convert MOV to MP4 before the file becomes someone else's problem",
+      "primaryQueryFamily": "convert MOV to MP4 in browser without upload",
       "promise": "Convert MOV to MP4 online for easier sharing and playback. Choose video quality and process the source locally in your browser with no account.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -4482,9 +4706,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "video cutter online free",
+        "video cutter without sign up",
+        "video cutter browser tool for private media file processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/video-cutter/en/",
@@ -4494,11 +4722,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Cut a video by watching it, not by guessing timestamps",
+      "primaryQueryFamily": "cut video by start and end time in browser",
       "promise": "Cut video online with playback, exact start and end timestamps, and preview. Trim MP4 and common video formats privately in your browser.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -4524,9 +4752,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "compress video online free",
+        "compress video without sign up",
+        "compress video browser tool for private media file processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/compress-video/en/",
@@ -4536,11 +4768,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Compress a video around the constraint you actually have",
+      "primaryQueryFamily": "compress MP4 MOV or WebM to a target size",
       "promise": "Compress video online by quality, resolution or target size. Reduce MP4 file size privately in your browser with no account or source upload.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -4566,9 +4798,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "video compressor for a 10 MB upload limit",
+        "reduce video toward 10 MB in browser",
+        "compress video toward 10 MB without upload free online"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "verified_gsc",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/compress-video-to-10mb/en/",
@@ -4578,11 +4814,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Compress a video toward 10 MB without uploading it",
+      "primaryQueryFamily": "compress video toward 10 MB without upload",
       "promise": "Compress a video toward 10 MB online. The tool estimates bitrate from duration and processes the file privately in your browser with no upload.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "gsc_page_performance_and_feature_validation_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -4608,9 +4844,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "video compressor for a 25 MB upload limit",
+        "reduce video toward 25 MB in browser",
+        "compress video toward 25 MB without upload free online"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "verified_gsc",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/compress-video-to-25mb/en/",
@@ -4620,11 +4860,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Compress a video toward 25 MB without uploading it",
+      "primaryQueryFamily": "compress video toward 25 MB without upload",
       "promise": "Compress a video toward 25 MB online. The tool estimates bitrate from duration and processes the file privately in your browser with no upload.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "gsc_page_performance_and_feature_validation_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -4650,9 +4890,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "video compressor for a 50 MB upload limit",
+        "reduce video toward 50 MB in browser",
+        "compress video toward 50 MB without upload free online"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "verified_gsc",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/compress-video-to-50mb/en/",
@@ -4662,11 +4906,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Compress a video toward 50 MB without uploading it",
+      "primaryQueryFamily": "compress video toward 50 MB without upload",
       "promise": "Compress a video toward 50 MB online. The tool estimates bitrate from duration and processes the file privately in your browser with no upload.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "gsc_page_performance_and_feature_validation_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -4692,9 +4936,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "video compressor for a 100 MB upload limit",
+        "reduce video toward 100 MB in browser",
+        "compress video toward 100 MB without upload free online"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "verified_gsc",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/compress-video-to-100mb/en/",
@@ -4704,11 +4952,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Compress a video toward 100 MB without uploading it",
+      "primaryQueryFamily": "compress video toward 100 MB without upload",
       "promise": "Compress a video toward 100 MB online. The tool estimates bitrate from duration and processes the file privately in your browser with no upload.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "gsc_page_performance_and_feature_validation_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -4734,9 +4982,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "video cropper online free",
+        "video cropper without sign up",
+        "video cropper browser tool for private media file processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "verified_gsc",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/video-cropper/en/",
@@ -4746,11 +4998,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Crop a video to the frame your next platform expects",
+      "primaryQueryFamily": "crop video to 16 9 or 9 16 in browser",
       "promise": "Crop video online to 16:9, 9:16, 1:1, 4:5 or 3:2. Create a centered crop privately in your browser for social, web or editing workflows.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "gsc_page_performance_and_feature_validation_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -4776,9 +5028,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "video resizer online free",
+        "video resizer without sign up",
+        "video resizer browser tool for private media file processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "verified_gsc",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/video-resizer/en/",
@@ -4788,11 +5044,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Resize video without stretching the picture",
+      "primaryQueryFamily": "resize video to 1080p 720p or 480p online",
       "promise": "Resize video online to 1080p, 720p, 480p or smaller while keeping the aspect ratio. Process MP4 and common formats privately in your browser.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "gsc_page_performance_and_feature_validation_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -4818,9 +5074,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "video merger online free",
+        "video merger without sign up",
+        "video merger browser tool for private media file processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/video-merger/en/",
@@ -4830,11 +5090,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Merge several video clips into one file, in the order you choose",
+      "primaryQueryFamily": "merge multiple video clips in browser without upload",
       "promise": "Merge videos online by choosing several clips, reordering them and exporting one MP4. Processing happens locally in your browser with no account.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -4860,9 +5120,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "video to gif online free",
+        "video to gif without sign up",
+        "video to gif browser tool for private media file processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/video-to-gif/en/",
@@ -4872,11 +5136,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Turn the useful few seconds of a video into a GIF",
+      "primaryQueryFamily": "convert a short video clip to GIF in browser",
       "promise": "Turn part of a video into a GIF online. Choose start and end time, width and frame rate, preview the clip and create the GIF in your browser.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -4902,9 +5166,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "free GIF to MP4 converter no watermark",
+        "make an animated GIF smaller as MP4",
+        "browser GIF to MP4 converter no sign up"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "verified_gsc",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/gif-to-mp4/en/",
@@ -4914,11 +5182,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Convert a GIF to MP4 when the animation has grown too heavy",
+      "primaryQueryFamily": "convert animated GIF to smaller MP4 without upload",
       "promise": "Convert an animated GIF to MP4 online for a smaller, easier-to-use video file. Processing happens locally in your browser with no account.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "gsc_page_performance_and_feature_validation_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -4944,9 +5212,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "remove audio from video online free",
+        "remove audio from video without sign up",
+        "remove audio from video browser tool for private media file processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/remove-audio-from-video/en/",
@@ -4956,11 +5228,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Remove the audio track instead of turning the volume down",
+      "primaryQueryFamily": "remove the audio track from video in browser",
       "promise": "Remove sound from a video online and export a silent MP4. The source video is processed privately in your browser without an upload or account.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -4986,9 +5258,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "add audio to video online free",
+        "add audio to video without sign up",
+        "add audio to video browser tool for private media file processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/add-audio-to-video/en/",
@@ -4998,11 +5274,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Add a new audio track to video without opening a full editor",
+      "primaryQueryFamily": "add a new audio track to video in browser",
       "promise": "Add an MP3, WAV or other audio file to video online. Replace the original sound or mix both tracks, then export an MP4 privately in your browser.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -5028,9 +5304,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "video speed changer online free",
+        "video speed changer without sign up",
+        "video speed changer browser tool for private media file processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/video-speed-changer/en/",
@@ -5040,11 +5320,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Speed a video up or slow it down without losing sync",
+      "primaryQueryFamily": "speed up or slow down video in browser",
       "promise": "Change video speed online from 0.5× to 2× and keep audio in sync when available. Process the video privately in your browser and download MP4.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -5070,9 +5350,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "extract JPG frames from video at intervals",
+        "save PNG frames from video as ZIP",
+        "video frame extractor every 1 2 5 or 10 seconds"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "verified_gsc",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/extract-frames-from-video/en/",
@@ -5082,11 +5366,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Pull useful still frames out of a video without scrubbing by hand",
+      "primaryQueryFamily": "extract video frames at timed intervals to JPG or PNG",
       "promise": "Extract JPG or PNG frames from a video every 1, 2, 5 or 10 seconds. Process locally in your browser and download individual images or a ZIP.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "gsc_page_performance_and_feature_validation_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -5112,9 +5396,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "rotate video online free",
+        "rotate video without sign up",
+        "rotate video browser tool for private media file processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/rotate-video/en/",
@@ -5124,11 +5412,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Rotate a video when the camera orientation was wrong, not the moment",
+      "primaryQueryFamily": "rotate video 90 degrees in browser without upload",
       "promise": "Rotate video online 90° clockwise, 90° counter-clockwise or 180°. Export a corrected MP4 privately in your browser with no source upload.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -5217,9 +5505,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "docx to pdf online free",
+        "docx to pdf without sign up",
+        "docx to pdf browser tool for private document processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/document/docx-to-pdf/en/",
@@ -5229,11 +5521,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Convert DOCX to PDF Free",
+      "primaryQueryFamily": "convert DOCX to PDF in browser without upload",
       "promise": "Convert Word DOCX files to PDF privately with preview, paper size, margins, and optional page numbers.",
       "conversionTarget": "cam_pdf",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -5280,9 +5572,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "docx to html online free",
+        "docx to html without sign up",
+        "docx to html browser tool for private document processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/document/docx-to-html/en/",
@@ -5292,11 +5588,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Convert DOCX to Clean HTML",
+      "primaryQueryFamily": "convert DOCX to clean semantic HTML in browser",
       "promise": "Turn Word documents into sanitized semantic HTML with preview, copy, and download.",
       "conversionTarget": "cam_pdf",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -5343,9 +5639,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "docx to markdown online free",
+        "docx to markdown without sign up",
+        "docx to markdown browser tool for private document processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/document/docx-to-markdown/en/",
@@ -5355,11 +5655,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Convert DOCX to Markdown Free",
+      "primaryQueryFamily": "convert DOCX to Markdown for AI and GitHub",
       "promise": "Preserve headings, lists, links, and tables in Markdown for GitHub, Cursor, Codex, and AI documentation.",
       "conversionTarget": "cam_pdf",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -5406,9 +5706,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "docx to text online free",
+        "docx to text without sign up",
+        "docx to text browser tool for private document processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/document/docx-to-text/en/",
@@ -5418,11 +5722,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Extract Text from DOCX Free",
+      "primaryQueryFamily": "extract plain text from DOCX in browser",
       "promise": "Extract plain text from Word documents locally with copy, download, and word count.",
       "conversionTarget": "cam_pdf",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -5469,9 +5773,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "pdf to text online free",
+        "pdf to text without sign up",
+        "pdf to text browser tool for private document processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/document/pdf-to-text/en/",
@@ -5481,11 +5789,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Extract Text from PDF Free",
+      "primaryQueryFamily": "extract selected PDF pages to text without upload",
       "promise": "Extract text from selected PDF pages, clean line breaks, and download TXT without uploading the file.",
       "conversionTarget": "cam_pdf",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -5532,9 +5840,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "pdf to word online free",
+        "pdf to word without sign up",
+        "pdf to word browser tool for private document processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/document/pdf-to-word/en/",
@@ -5544,11 +5856,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Convert Editable PDF Text to Word",
+      "primaryQueryFamily": "convert selectable PDF text to editable Word DOCX",
       "promise": "Extract editable PDF text and rebuild it as a page-by-page DOCX in your browser.",
       "conversionTarget": "cam_pdf",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -5595,9 +5907,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "ocr online free",
+        "ocr without sign up",
+        "ocr browser tool for private document processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/document/ocr/en/",
@@ -5607,11 +5923,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "OCR PDF and Images to Text",
+      "primaryQueryFamily": "OCR scanned PDF and images to text in browser",
       "promise": "Recognize text in scanned PDFs, JPG, and PNG files with Thai or English browser OCR.",
       "conversionTarget": "cam_pdf",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -5721,9 +6037,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "token counter online free",
+        "token counter without sign up",
+        "token counter browser tool for private content processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/ai/token-counter/en/",
@@ -5733,11 +6053,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Free Token Counter for Vibe Coders",
+      "primaryQueryFamily": "count document tokens for AI without upload",
       "promise": "Count AI tokens, multilingual words, characters, UTF-8 bytes, and context usage from text, DOCX, PDF, Markdown, or code privately in your browser.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -5784,9 +6104,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "pdf to ai markdown online free",
+        "pdf to ai markdown without sign up",
+        "pdf to ai markdown browser tool for private content processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/ai/pdf-to-ai-markdown/en/",
@@ -5796,11 +6120,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Convert PDF to AI-Ready Markdown",
+      "primaryQueryFamily": "convert PDF to clean Markdown for RAG",
       "promise": "Extract PDF into Markdown with page references and cleanup for repeated headers, footers, and broken lines.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -5847,9 +6171,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "context optimizer online free",
+        "context optimizer without sign up",
+        "context optimizer browser tool for private content processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/ai/context-optimizer/en/",
@@ -5859,11 +6187,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Clean Documents for AI Context",
+      "primaryQueryFamily": "clean document text for AI context windows",
       "promise": "Remove repeated headers, page numbers, broken spacing, and line wraps for cleaner AI context.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -5910,9 +6238,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "rag chunk calculator online free",
+        "rag chunk calculator without sign up",
+        "rag chunk calculator browser tool for private content processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/ai/rag-chunk-calculator/en/",
@@ -5922,11 +6254,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Calculate and Preview RAG Chunks",
+      "primaryQueryFamily": "calculate RAG chunk size and overlap with preview",
       "promise": "Set chunk size and overlap, preview sections, and export JSONL for a knowledge base.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -5973,9 +6305,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "prompt packager online free",
+        "prompt packager without sign up",
+        "prompt packager browser tool for private content processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/ai/prompt-packager/en/",
@@ -5985,11 +6321,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Package Files into an AI Prompt",
+      "primaryQueryFamily": "combine multiple files into one AI prompt package",
       "promise": "Combine requirements, documentation, code, and references with XML or Markdown boundaries.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -6099,9 +6435,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "csv to json online free",
+        "csv to json without sign up",
+        "csv to json browser tool for private data file processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/spreadsheet/csv-to-json/en/",
@@ -6111,11 +6451,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Convert CSV to JSON Free",
+      "primaryQueryFamily": "convert CSV to JSON in browser without upload",
       "promise": "Convert CSV data to JSON locally with preview, copy, and download.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -6162,9 +6502,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "json to csv online free",
+        "json to csv without sign up",
+        "json to csv browser tool for private data file processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/spreadsheet/json-to-csv/en/",
@@ -6174,11 +6518,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Convert JSON to CSV Free",
+      "primaryQueryFamily": "convert a JSON array to CSV in browser",
       "promise": "Convert a JSON array into CSV columns and download the result.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -6225,9 +6569,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "csv cleaner online free",
+        "csv cleaner without sign up",
+        "csv cleaner browser tool for private data file processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/spreadsheet/csv-cleaner/en/",
@@ -6237,11 +6585,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Clean CSV Data Free",
+      "primaryQueryFamily": "remove duplicate and empty rows from CSV",
       "promise": "Trim whitespace, remove empty rows, and deduplicate CSV data without uploading it.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -6288,9 +6636,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "merge csv online free",
+        "merge csv without sign up",
+        "merge csv browser tool for private data file processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/spreadsheet/merge-csv/en/",
@@ -6300,11 +6652,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Merge Multiple CSV Files",
+      "primaryQueryFamily": "merge multiple CSV files by matching columns",
       "promise": "Merge multiple CSV files by matching column names and download one result.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -6351,9 +6703,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "split csv online free",
+        "split csv without sign up",
+        "split csv browser tool for private data file processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/spreadsheet/split-csv/en/",
@@ -6363,11 +6719,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Split CSV by Row Count",
+      "primaryQueryFamily": "split a large CSV by row count and ZIP",
       "promise": "Split a large CSV into smaller files and download them as a ZIP.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -6414,9 +6770,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "csv to xlsx online free",
+        "csv to xlsx without sign up",
+        "csv to xlsx browser tool for private data file processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/spreadsheet/csv-to-xlsx/en/",
@@ -6426,11 +6786,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Convert CSV to Excel XLSX",
+      "primaryQueryFamily": "convert CSV to Excel XLSX in browser",
       "promise": "Convert CSV into an Excel workbook with readable headers and columns.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -6477,9 +6837,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "xlsx to csv online free",
+        "xlsx to csv without sign up",
+        "xlsx to csv browser tool for private data file processing"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/spreadsheet/xlsx-to-csv/en/",
@@ -6489,11 +6853,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Convert Excel XLSX to CSV",
+      "primaryQueryFamily": "convert an Excel worksheet to CSV in browser",
       "promise": "Select a worksheet and export it as CSV in your browser.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },
@@ -6603,9 +6967,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "convert PNG to favicon ICO with multiple sizes",
+        "generate Apple touch and PWA icons from one image",
+        "download favicon manifest and HTML package ZIP"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "verified_gsc",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/brand/favicon-generator/en/",
@@ -6615,11 +6983,11 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "Generate a favicon from an image, with every installation file",
+      "primaryQueryFamily": "generate a complete favicon ICO and PWA icon package",
       "promise": "Generate favicon.ico from PNG, JPG, WebP, or SVG. Get Apple touch, maskable, web manifest, and HTML files free without uploading your image.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
+      "evidenceSource": "gsc_page_performance_and_feature_validation_2026-09-06",
       "validatedAt": "2026-09-06",
       "migrationStatus": "stable"
     },

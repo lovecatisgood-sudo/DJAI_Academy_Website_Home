@@ -2,7 +2,7 @@
 
 **Active branch:** `codex/djai-site-restructure`  
 **Active worktree:** `website_DJAI_HOME/.worktrees/djai-site-restructure`  
-**Current phase:** R7 release candidate verification
+**Current phase:** R7 release candidate verification; English free-tool SEO complete
 
 | Work item | Status | Evidence / next action |
 | --- | --- | --- |
@@ -16,6 +16,7 @@
 | 8. Development/Service/Portfolio | COMPLETE | Development owns the proposition, Service chooses categories, and Portfolio proves work then routes to Development; Cam proof now strengthens its product page; broken hotel proof link removed |
 | 9. Tool hub taxonomy | COMPLETE | Nine unique task categories cover existing routes without URL changes; duplicate SEO self-link, live Favicon “coming soon” claim, legacy learning nav, broken hotel link, and missing Vietnamese media family corrected |
 | 10. Tool post-success routing | COMPLETE | All five tool packages build/test green; related-tool-first routes are deterministic; utility shells preserve existing classes while routing to Development, Cam PDF, or School; sensitive event contracts carry stable dimensions only |
+| 10a. English free-tool search discovery | COMPLETE_LOCAL | All 92 English working tools own one distinct long-tail primary query plus three supporting queries; 11 routes use verified Search Console evidence and 81 use directional feature/SERP evidence. Priority titles, descriptions, and hub links are improved without changing tool behavior or non-English copy. Fresh inventory has zero missing/duplicate English titles, descriptions, H1s, or canonicals and zero snippet-length outliers. |
 | 11. Cam PDF product page | COMPLETE | Re-verified against the live Play listing on 2026-09-06; current version/date/access/purchase claims, privacy/terms, tracked Play journey, image weight, sitemap freshness, build, full visual review, and zero-violation desktop/mobile axe checks pass |
 | 12. Cam PDF guides/locales | BLOCKED | Correctly withheld: detailed workflows still require version-identifiable end-to-end captures, failure/recovery evidence, and fluent review; reserved routes remain non-indexable and absent from the sitemap |
 | 13. School source reconciliation | COMPLETE | Clean School worktree `codex/djai-school-public-course-discovery` separates public `/learn` discovery from authenticated `/courses` and `/classroom`; reconciliation is recorded in the School repository |

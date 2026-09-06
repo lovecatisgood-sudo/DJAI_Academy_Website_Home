@@ -4,9 +4,9 @@ import { schoolUrlFor } from "../../lib/i18n";
 import ToolDirectorySection from "../ToolDirectorySection";
 
 export const metadata = {
-  title: "Free Online Tools | Video, Audio, PDF, Images & AI | DJAI",
+  title: "90+ Free Online Tools — No Sign-Up | DJAI Academy",
   description:
-    "Use free DJAI tools to convert, cut, compress, and manage video, audio, PDFs, images, documents, QR codes, and data. Many file workflows run in your browser.",
+    "Use 90+ free tools for video, PDFs, images, QR codes, documents, AI, and data. No account required; many files process privately in your browser.",
   alternates: {
     canonical: "/tools/en/",
     languages: {
@@ -115,22 +115,24 @@ const tools = [
 const comingSoon = ["High-fidelity Office conversion"];
 
 const popularWorkflows = [
-  ["Remove image background", "Create a transparent PNG in your browser", "https://www.djai.academy/tools/resizeimg/remove-background-image/en/"],
-  ["JPG to PNG", "Convert an image without uploading", "https://www.djai.academy/tools/resizeimg/jpg-to-png/en/"],
-  ["HEIC to JPG", "Convert an iPhone photo in your browser", "https://www.djai.academy/tools/resizeimg/heic-to-jpg/en/"],
-  ["Image to 100 KB", "Prepare an image for upload forms", "https://www.djai.academy/tools/resizeimg/image-to-100kb/en/"],
-  ["JPG to PDF", "Combine multiple images into a PDF", "https://www.djai.academy/tools/PDFTools/jpg-to-pdf/en/"],
-  ["PDF to JPG", "Export every page as an image or ZIP", "https://www.djai.academy/tools/PDFTools/pdf-to-jpg/en/"],
-  ["MP4 to MP3", "Extract video audio in your browser", "https://www.djai.academy/tools/media/mp4-to-mp3/en/"],
-  ["Compress video", "Reduce MP4, MOV, and WebM files", "https://www.djai.academy/tools/media/compress-video/en/"],
-  ["Convert video", "Switch between MP4, MOV, MKV, WebM, and AVI", "https://www.djai.academy/tools/media/video-converter/en/"],
-  ["Cut video", "Choose exact start and end times, then export MP4", "https://www.djai.academy/tools/media/video-cutter/en/"],
-  ["Extract video frames", "Create JPG or PNG images and download a ZIP", "https://www.djai.academy/tools/media/extract-frames-from-video/en/"],
-  ["Merge videos", "Order several clips and combine them into MP4", "https://www.djai.academy/tools/media/video-merger/en/"],
+  ["GIF to MP4 converter", "Make animated GIFs smaller without uploading", "https://www.djai.academy/tools/media/gif-to-mp4/en/"],
+  ["Compress video toward 10 MB", "Set an approximate 10 MB target in your browser", "https://www.djai.academy/tools/media/compress-video-to-10mb/en/"],
+  ["Compress video toward 25 MB", "Prepare video for a 25 MB upload limit", "https://www.djai.academy/tools/media/compress-video-to-25mb/en/"],
+  ["Compress video toward 50 MB", "Reduce video toward an approximate 50 MB target", "https://www.djai.academy/tools/media/compress-video-to-50mb/en/"],
+  ["Compress video toward 100 MB", "Reduce larger video without sending it to a server", "https://www.djai.academy/tools/media/compress-video-to-100mb/en/"],
+  ["Crop video to 16:9 or 9:16", "Create a centered crop for web or social video", "https://www.djai.academy/tools/media/video-cropper/en/"],
+  ["Resize video to 1080p or 720p", "Change resolution while preserving aspect ratio", "https://www.djai.academy/tools/media/video-resizer/en/"],
+  ["Extract video frames at intervals", "Save up to 100 JPG or PNG frames as a ZIP", "https://www.djai.academy/tools/media/extract-frames-from-video/en/"],
+  ["Resize an image toward 200 KB", "Meet form and email targets with an approximate result", "https://www.djai.academy/tools/resizeimg/resize-image-to-200kb/en/"],
+  ["Compress an image toward 100 KB", "Prepare an image for smaller upload limits", "https://www.djai.academy/tools/resizeimg/image-to-100kb/en/"],
+  ["Remove an image background", "Create a transparent PNG in your browser", "https://www.djai.academy/tools/resizeimg/remove-background-image/en/"],
+  ["Create an email QR code", "Prefill the recipient, subject, and message", "https://www.djai.academy/tools/qrgen/email-qr-code-generator/en/"],
+  ["Generate a complete favicon package", "Download ICO, Apple, PWA, manifest, and HTML files", "https://www.djai.academy/tools/brand/favicon-generator/en/"],
+  ["Combine JPG images into one PDF", "Build a PDF privately in your browser", "https://www.djai.academy/tools/PDFTools/jpg-to-pdf/en/"],
+  ["Convert PDF pages to JPG", "Export every page as an image or ZIP", "https://www.djai.academy/tools/PDFTools/pdf-to-jpg/en/"],
   ["Video to text", "Transcribe in your browser with no sign-up", "https://www.djai.academy/tools/video-to-text/en/"],
-  ["DOCX to PDF", "Convert Word privately in your browser", "https://www.djai.academy/tools/document/docx-to-pdf/en/"],
-  ["PDF to Text", "Extract text from selected pages", "https://www.djai.academy/tools/document/pdf-to-text/en/"],
-  ["Document Token Counter", "Check context use before AI", "https://www.djai.academy/tools/ai/token-counter/en/"],
+  ["OCR scanned PDFs and images", "Recognize Thai or English text in your browser", "https://www.djai.academy/tools/document/ocr/en/"],
+  ["Count document tokens for AI", "Check context use without uploading content", "https://www.djai.academy/tools/ai/token-counter/en/"],
   ["CSV to JSON", "Prepare data for APIs", "https://www.djai.academy/tools/spreadsheet/csv-to-json/en/"]
 ];
 

@@ -2,6 +2,8 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { enrichEnglishToolKeyword } from "./enrich-english-tool-keywords.mjs";
+
 const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const repositoryRoot = resolve(scriptDirectory, "../..");
 const ownershipPath = resolve(repositoryRoot, "data/seo/keyword-ownership.json");
@@ -93,12 +95,14 @@ const entries = inventory.routes.map((routeRecord) => {
       : "stable");
   const renderedPromise = routeRecord.description || routeRecord.h1 || routeRecord.title;
 
-  return {
+  return enrichEnglishToolKeyword({
     ...existing,
     supportingQueries: existing.supportingQueries || [],
     competingDjaiRoutes: existing.competingDjaiRoutes || [],
     evidenceStatus: existing.evidenceStatus || "strategy_only",
-    indexable: true,
+    indexable: migrationStatus === "redirect_ready_pending_school_deploy"
+      ? false
+      : (existing.indexable ?? true),
     property: "www",
     canonical: `https://www.djai.academy${routeRecord.route}`,
     route: routeRecord.route,
@@ -114,7 +118,7 @@ const entries = inventory.routes.map((routeRecord) => {
     evidenceSource: existing.evidenceSource || "rendered_route_inventory_2026-09-06",
     validatedAt: "2026-09-06",
     migrationStatus,
-  };
+  });
 });
 
 const plannedNonIndexable = ownership.entries

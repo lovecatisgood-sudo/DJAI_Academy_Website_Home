@@ -404,7 +404,7 @@ async function verify() {
 
   const toolHubFooterChecks = [
     ["/tools/", "สร้างโดยทีมที่มี product จริงและธุรกิจจริง", "ตรวจ Technical SEO, JavaScript, Canonical, Hreflang, Sitemap", "เครื่องมือออนไลน์ฟรี | วิดีโอ เสียง PDF รูปภาพ และ AI | DJAI"],
-    ["/tools/en/", "Built by connected teams with real products.", "Audit technical SEO, JavaScript, canonicals, hreflang, sitemaps", "Free Online Tools | Video, Audio, PDF, Images &amp; AI | DJAI"]
+    ["/tools/en/", "Built by connected teams with real products.", "Audit technical SEO, JavaScript, canonicals, hreflang, sitemaps", "90+ Free Online Tools — No Sign-Up | DJAI Academy"]
   ];
   for (const [route, precedingContent, seoCardCopy, title] of toolHubFooterChecks) {
     const html = await fetch(`${origin}${route}`).then((response) => response.text());

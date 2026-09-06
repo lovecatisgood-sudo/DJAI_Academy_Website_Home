@@ -8,8 +8,8 @@ const faqs = [
   { q: "Is my image uploaded to a server", a: "No. Your image is read, rendered, and packaged as a ZIP inside your browser." }
 ];
 export const metadata: Metadata = {
-  title: "Free Favicon Generator: PNG to ICO and Website Icons | DJAI",
-  description: "Generate favicon.ico from PNG, JPG, WebP, or SVG. Get Apple touch, maskable, web manifest, and HTML files free without uploading your image.",
+  title: "Free Favicon Generator — ICO, Apple & PWA Icon ZIP | DJAI",
+  description: "Generate a complete favicon ZIP from PNG, JPG, WebP, or SVG: multi-size ICO, Apple touch, PWA and maskable icons, web manifest, and HTML. Free with no upload.",
   keywords: ["favicon generator", "free favicon generator", "png to ico", "favicon.ico generator", "website icon generator", "apple touch icon generator", "maskable icon generator", "favicon package generator"],
   alternates: { canonical, languages: { th: "https://www.djai.academy/tools/brand/favicon-generator/", en: canonical, vi: "https://www.djai.academy/tools/brand/favicon-generator/vi/", "x-default": "https://www.djai.academy/tools/brand/favicon-generator/" } },
   openGraph: { title: "Free Favicon Generator", description: "Generate a complete favicon and website icon package from one image in your browser.", url: canonical, siteName: "DJAI Academy", type: "website" }

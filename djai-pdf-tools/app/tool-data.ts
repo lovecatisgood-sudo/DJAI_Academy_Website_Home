@@ -130,7 +130,7 @@ export const toolCopy: Record<Language, Record<ToolSlug, ToolCopy>> = {
     },
     "images-to-pdf": {
       label: "Images to PDF",
-      title: "Combine JPG, PNG, and WebP Images into One PDF",
+      title: "JPG, PNG & WebP to PDF",
       short: "Arrange mixed image files and combine them into one PDF.",
       description: "Combine JPG, PNG, and WebP images into one PDF for free. Reorder files and choose page size and orientation without uploading them.",
       keywords: ["combine images into one PDF", "JPG to PDF", "PNG to PDF", "images to PDF free"]

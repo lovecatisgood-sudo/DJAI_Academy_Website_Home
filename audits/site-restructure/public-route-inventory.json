@@ -1,14 +1,14 @@
 {
   "generatedAt": "2026-09-06",
   "origin": "https://www.djai.academy",
-  "count": 345,
+  "count": 339,
   "routes": [
     {
       "route": "/",
       "status": 200,
       "language": "th",
       "title": "DJAI Academy | เรียน AI สร้างซอฟต์แวร์ และพัฒนาโปรเจกต์",
-      "h1": "DJAI Academy",
+      "h1": "DJAI Academy พัฒนาซอฟต์แวร์และสร้างโปรดักต์ด้วย AI",
       "description": "DJAI Academy ช่วยให้คุณเรียน AI ใช้เครื่องมือฟรี และพัฒนาเว็บไซต์ แอป SaaS ระบบอัตโนมัติ เกม Fintech และ Web3 ได้เร็วขึ้น",
       "canonical": "https://www.djai.academy/",
       "noindex": false
@@ -18,7 +18,7 @@
       "status": 200,
       "language": "en",
       "title": "DJAI Academy | Educate, Build, Deploy",
-      "h1": "DJAI Academy",
+      "h1": "DJAI Academy Software development and practical AI products",
       "description": "DJAI Academy helps builders learn AI, create software, launch tools, and turn ideas into working products.",
       "canonical": "https://www.djai.academy/en/",
       "noindex": false
@@ -28,7 +28,7 @@
       "status": 200,
       "language": "vi",
       "title": "DJAI Academy Việt Nam | Học AI bằng cách tự tay xây sản phẩm",
-      "h1": "DJAI Academy",
+      "h1": "DJAI Academy Xây phần mềm và sản phẩm thực tế với AI",
       "description": "Bắt đầu với AI và vibe coding qua dự án thật: làm website, ứng dụng, công cụ tự động hóa và đưa sản phẩm lên chạy mà không cần chờ đến khi biết lập trình chuyên sâu.",
       "canonical": "https://www.djai.academy/vi/",
       "noindex": false
@@ -187,9 +187,9 @@
       "route": "/tools/en/",
       "status": 200,
       "language": "en",
-      "title": "Free Online Tools | Video, Audio, PDF, Images & AI | DJAI",
+      "title": "90+ Free Online Tools — No Sign-Up | DJAI Academy",
       "h1": "Free online tools for video, PDFs, images, AI, and digital work.",
-      "description": "Use free DJAI tools to convert, cut, compress, and manage video, audio, PDFs, images, documents, QR codes, and data. Many file workflows run in your browser.",
+      "description": "Use 90+ free tools for video, PDFs, images, QR codes, documents, AI, and data. No account required; many files process privately in your browser.",
       "canonical": "https://www.djai.academy/tools/en/",
       "noindex": false
     },
@@ -361,66 +361,6 @@
       "h1": "Siamese Cat Dev: Product Design, Software Development and Vibe Coding",
       "description": "Siamese Cat Dev is a product designer, project manager, and software development partner building useful digital products with Vibe Coding.",
       "canonical": "https://www.djai.academy/siamese_cat/dev/en/",
-      "noindex": false
-    },
-    {
-      "route": "/siamese_cat/dev/course/",
-      "status": 200,
-      "language": "en",
-      "title": "Free Live Vibe Coding Course | From MVP to Product",
-      "h1": "Free Live Vibe Coding Course: Turn an MVP into a Real Product",
-      "description": "Express interest in a free live Siamese Cat Dev session about turning a vibe-coded MVP into a reliable product that can be shipped and sold.",
-      "canonical": "https://www.djai.academy/siamese_cat/dev/course/",
-      "noindex": false
-    },
-    {
-      "route": "/siamese_cat/dev/course/th/",
-      "status": 200,
-      "language": "th",
-      "title": "คอร์ส Vibe Coding สดฟรี | จาก MVP สู่สินค้าจริง",
-      "h1": "คอร์ส Vibe Coding สดฟรี: พัฒนา MVP ให้เป็นสินค้าจริง",
-      "description": "แจ้งความสนใจคลาสสดฟรีกับ Siamese Cat Dev เพื่อเรียนรู้วิธีพัฒนา MVP จาก Vibe Coding ให้เป็นสินค้าที่น่าเชื่อถือ พร้อมเปิดตัวและสร้างรายได้",
-      "canonical": "https://www.djai.academy/siamese_cat/dev/course/th/",
-      "noindex": false
-    },
-    {
-      "route": "/siamese_cat/dev/courses/",
-      "status": 200,
-      "language": "en",
-      "title": "AI Coding Courses and Vibe Coding | Siamese Cat Dev",
-      "h1": "Build with AI. Understand what you ship.",
-      "description": "English AI coding courses from Siamese Cat Dev. Build a first app, make a game, or learn a clearer workflow for coding with AI.",
-      "canonical": "https://www.djai.academy/siamese_cat/dev/courses/",
-      "noindex": false
-    },
-    {
-      "route": "/siamese_cat/dev/courses/build-first-app/",
-      "status": 200,
-      "language": "en",
-      "title": "Build Your First App with AI | Siamese Cat Dev",
-      "h1": "Build Your First App with AI",
-      "description": "A beginner English course for turning a simple idea into a working app with AI, with a free 30-minute trial class by Siamese Cat Dev.",
-      "canonical": "https://www.djai.academy/siamese_cat/dev/courses/build-first-app/",
-      "noindex": false
-    },
-    {
-      "route": "/siamese_cat/dev/courses/make-a-game/",
-      "status": 200,
-      "language": "en",
-      "title": "Make a Game with AI | Siamese Cat Dev",
-      "h1": "Make a Game with AI",
-      "description": "Learn to turn a game idea into a playable project with AI. Explore rules, characters, levels, testing, and iteration in English.",
-      "canonical": "https://www.djai.academy/siamese_cat/dev/courses/make-a-game/",
-      "noindex": false
-    },
-    {
-      "route": "/siamese_cat/dev/courses/coding-with-ai/",
-      "status": 200,
-      "language": "en",
-      "title": "Coding with AI | Plan, Build and Deploy | Siamese Cat Dev",
-      "h1": "Coding with AI for Real Applications",
-      "description": "Move beyond quick demos with an English vibe coding course about planning, designing, building, checking, and deploying applications with AI.",
-      "canonical": "https://www.djai.academy/siamese_cat/dev/courses/coding-with-ai/",
       "noindex": false
     },
     {
@@ -669,7 +609,7 @@
       "language": "en",
       "title": "Free Email QR Code Generator | DJayTools",
       "h1": "Free Email QR Code Generator",
-      "description": "Create a QR code that opens an email with a recipient, subject, and optional message already filled in.",
+      "description": "Create a static email QR code with recipient, subject, and optional message prefilled. Customize it and download PNG or SVG free with no sign-up.",
       "canonical": "https://www.djai.academy/tools/qrgen/email-qr-code-generator/en/",
       "noindex": false
     },
@@ -1029,7 +969,7 @@
       "language": "en",
       "title": "Compress Image to Approximately 100 KB Free | DJAI",
       "h1": "Compress an image to approximately 100 KB",
-      "description": "Reduce a JPG, PNG, or WebP image toward 100 KB free for forms, applications, and upload limits.",
+      "description": "Compress JPG, PNG, or WebP toward 100 KB free in your browser for forms and upload limits. The 100 KB result is approximate; check the actual size before download.",
       "canonical": "https://www.djai.academy/tools/resizeimg/image-to-100kb/en/",
       "noindex": false
     },
@@ -1059,7 +999,7 @@
       "language": "en",
       "title": "Compress Image to Approximately 500 KB Free | DJAI",
       "h1": "Compress an image to approximately 500 KB",
-      "description": "Reduce a JPG, PNG, or WebP image toward 500 KB free in your browser for email, websites, and forms.",
+      "description": "Compress JPG, PNG, or WebP toward 500 KB free in your browser for email, websites, and forms. The 500 KB result is approximate; check the actual size before download.",
       "canonical": "https://www.djai.academy/tools/resizeimg/image-to-500kb/en/",
       "noindex": false
     },
@@ -1179,7 +1119,7 @@
       "language": "en",
       "title": "Resize Image to Approximately 200 KB Free | DJAI",
       "h1": "Resize an image to approximately 200 KB",
-      "description": "Reduce JPG, PNG, WebP, or AVIF images toward 200 KB free for forms, email, and websites with private browser processing.",
+      "description": "Resize JPG, PNG, WebP, or AVIF toward 200 KB free in your browser for forms, email, and websites. The 200 KB result is approximate; check the actual size before download.",
       "canonical": "https://www.djai.academy/tools/resizeimg/resize-image-to-200kb/en/",
       "noindex": false
     },
@@ -1377,8 +1317,8 @@
       "route": "/tools/PDFTools/images-to-pdf/en/",
       "status": 200,
       "language": "en",
-      "title": "Combine JPG, PNG, and WebP Images into One PDF | DJTools by DJAI Academy",
-      "h1": "Combine JPG, PNG, and WebP Images into One PDF",
+      "title": "JPG, PNG & WebP to PDF | DJTools by DJAI Academy",
+      "h1": "JPG, PNG & WebP to PDF",
       "description": "Combine JPG, PNG, and WebP images into one PDF for free. Reorder files and choose page size and orientation without uploading them.",
       "canonical": "https://www.djai.academy/tools/PDFTools/images-to-pdf/en/",
       "noindex": false
@@ -2117,9 +2057,9 @@
       "route": "/tools/media/compress-video-to-10mb/en/",
       "status": 200,
       "language": "en",
-      "title": "Compress Video to 10 MB Online | DJAI",
+      "title": "Compress Video Toward 10 MB Free — No Upload | DJAI",
       "h1": "Compress a video toward 10 MB without uploading it",
-      "description": "Compress a video toward 10 MB online. The tool estimates bitrate from duration and processes the file privately in your browser with no upload.",
+      "description": "Compress video toward 10 MB free in your browser. The target is approximate, based on duration and bitrate, with no upload or account required.",
       "canonical": "https://www.djai.academy/tools/media/compress-video-to-10mb/en/",
       "noindex": false
     },
@@ -2137,9 +2077,9 @@
       "route": "/tools/media/compress-video-to-25mb/en/",
       "status": 200,
       "language": "en",
-      "title": "Compress Video to 25 MB Online | DJAI",
+      "title": "Compress Video Toward 25 MB Free — No Upload | DJAI",
       "h1": "Compress a video toward 25 MB without uploading it",
-      "description": "Compress a video toward 25 MB online. The tool estimates bitrate from duration and processes the file privately in your browser with no upload.",
+      "description": "Compress video toward 25 MB free in your browser. The target is approximate, based on duration and bitrate, with no upload or account required.",
       "canonical": "https://www.djai.academy/tools/media/compress-video-to-25mb/en/",
       "noindex": false
     },
@@ -2157,9 +2097,9 @@
       "route": "/tools/media/compress-video-to-50mb/en/",
       "status": 200,
       "language": "en",
-      "title": "Compress Video to 50 MB Online | DJAI",
+      "title": "Compress Video Toward 50 MB Free — No Upload | DJAI",
       "h1": "Compress a video toward 50 MB without uploading it",
-      "description": "Compress a video toward 50 MB online. The tool estimates bitrate from duration and processes the file privately in your browser with no upload.",
+      "description": "Compress video toward 50 MB free in your browser. The target is approximate, based on duration and bitrate, with no upload or account required.",
       "canonical": "https://www.djai.academy/tools/media/compress-video-to-50mb/en/",
       "noindex": false
     },
@@ -2177,9 +2117,9 @@
       "route": "/tools/media/compress-video-to-100mb/en/",
       "status": 200,
       "language": "en",
-      "title": "Compress Video to 100 MB Online | DJAI",
+      "title": "Compress Video Toward 100 MB Free — No Upload | DJAI",
       "h1": "Compress a video toward 100 MB without uploading it",
-      "description": "Compress a video toward 100 MB online. The tool estimates bitrate from duration and processes the file privately in your browser with no upload.",
+      "description": "Compress video toward 100 MB free in your browser. The target is approximate, based on duration and bitrate, with no upload or account required.",
       "canonical": "https://www.djai.academy/tools/media/compress-video-to-100mb/en/",
       "noindex": false
     },
@@ -2197,9 +2137,9 @@
       "route": "/tools/media/video-cropper/en/",
       "status": 200,
       "language": "en",
-      "title": "Video Cropper Online – Crop 16:9, 9:16, 1:1 | DJAI",
+      "title": "Crop Video Online Free — 16:9, 9:16, 1:1 | DJAI",
       "h1": "Crop a video to the frame your next platform expects",
-      "description": "Crop video online to 16:9, 9:16, 1:1, 4:5 or 3:2. Create a centered crop privately in your browser for social, web or editing workflows.",
+      "description": "Crop video to 16:9, 9:16, 1:1, 4:5, or 3:2 free in your browser. Create a centered MP4 crop with no upload, account, or watermark.",
       "canonical": "https://www.djai.academy/tools/media/video-cropper/en/",
       "noindex": false
     },
@@ -2217,9 +2157,9 @@
       "route": "/tools/media/video-resizer/en/",
       "status": 200,
       "language": "en",
-      "title": "Video Resizer Online – Resize to 1080p, 720p, 480p | DJAI",
+      "title": "Resize Video Online Free — 1080p, 720p, 480p | DJAI",
       "h1": "Resize video without stretching the picture",
-      "description": "Resize video online to 1080p, 720p, 480p or smaller while keeping the aspect ratio. Process MP4 and common formats privately in your browser.",
+      "description": "Resize video to 1080p, 720p, 480p, or smaller free while preserving aspect ratio. Process privately in your browser with no upload or account.",
       "canonical": "https://www.djai.academy/tools/media/video-resizer/en/",
       "noindex": false
     },
@@ -2277,9 +2217,9 @@
       "route": "/tools/media/gif-to-mp4/en/",
       "status": 200,
       "language": "en",
-      "title": "GIF to MP4 Converter Online Free | DJAI",
+      "title": "GIF to MP4 Converter Free — No Upload | DJAI",
       "h1": "Convert a GIF to MP4 when the animation has grown too heavy",
-      "description": "Convert an animated GIF to MP4 online for a smaller, easier-to-use video file. Processing happens locally in your browser with no account.",
+      "description": "Convert animated GIF to a smaller MP4 free in your browser. No upload, account, or watermark; download a widely compatible H.264 video.",
       "canonical": "https://www.djai.academy/tools/media/gif-to-mp4/en/",
       "noindex": false
     },
@@ -2357,9 +2297,9 @@
       "route": "/tools/media/extract-frames-from-video/en/",
       "status": 200,
       "language": "en",
-      "title": "Extract Frames from Video Online – JPG or PNG | DJAI",
+      "title": "Extract Video Frames at Intervals — JPG or PNG | DJAI",
       "h1": "Pull useful still frames out of a video without scrubbing by hand",
-      "description": "Extract JPG or PNG frames from a video every 1, 2, 5 or 10 seconds. Process locally in your browser and download individual images or a ZIP.",
+      "description": "Extract JPG or PNG frames every 1, 2, 5, or 10 seconds, up to 100 images. Process locally for free and download individual frames or one ZIP.",
       "canonical": "https://www.djai.academy/tools/media/extract-frames-from-video/en/",
       "noindex": false
     },
@@ -2849,7 +2789,7 @@
       "language": "en",
       "title": "Convert CSV to JSON Free | DJTools",
       "h1": "Convert CSV to JSON Free",
-      "description": "Convert CSV data to JSON locally with preview, copy, and download.",
+      "description": "Convert CSV data to JSON locally with preview, copy, and download. Your file stays in your browser and no account is required.",
       "canonical": "https://www.djai.academy/tools/spreadsheet/csv-to-json/en/",
       "noindex": false
     },
@@ -2879,7 +2819,7 @@
       "language": "en",
       "title": "Convert JSON to CSV Free | DJTools",
       "h1": "Convert JSON to CSV Free",
-      "description": "Convert a JSON array into CSV columns and download the result.",
+      "description": "Convert a JSON array into clean CSV columns in your browser, preview the output, and download it without uploading data or creating an account.",
       "canonical": "https://www.djai.academy/tools/spreadsheet/json-to-csv/en/",
       "noindex": false
     },
@@ -2969,7 +2909,7 @@
       "language": "en",
       "title": "Split CSV by Row Count | DJTools",
       "h1": "Split CSV by Row Count",
-      "description": "Split a large CSV into smaller files and download them as a ZIP.",
+      "description": "Split a large CSV by row count in your browser and download the smaller files as one ZIP. No upload or account required.",
       "canonical": "https://www.djai.academy/tools/spreadsheet/split-csv/en/",
       "noindex": false
     },
@@ -2999,7 +2939,7 @@
       "language": "en",
       "title": "Convert CSV to Excel XLSX | DJTools",
       "h1": "Convert CSV to Excel XLSX",
-      "description": "Convert CSV into an Excel workbook with readable headers and columns.",
+      "description": "Convert CSV into an Excel XLSX workbook with readable headers and columns. Process the file in your browser with no upload or account.",
       "canonical": "https://www.djai.academy/tools/spreadsheet/csv-to-xlsx/en/",
       "noindex": false
     },
@@ -3029,7 +2969,7 @@
       "language": "en",
       "title": "Convert Excel XLSX to CSV | DJTools",
       "h1": "Convert Excel XLSX to CSV",
-      "description": "Select a worksheet and export it as CSV in your browser.",
+      "description": "Choose an Excel worksheet and export it as CSV in your browser. Preview the data and download it without uploading the workbook.",
       "canonical": "https://www.djai.academy/tools/spreadsheet/xlsx-to-csv/en/",
       "noindex": false
     },
@@ -3087,9 +3027,9 @@
       "route": "/tools/brand/favicon-generator/en/",
       "status": 200,
       "language": "en",
-      "title": "Free Favicon Generator: PNG to ICO and Website Icons | DJAI",
+      "title": "Free Favicon Generator — ICO, Apple & PWA Icon ZIP | DJAI",
       "h1": "Generate a favicon from an image, with every installation file",
-      "description": "Generate favicon.ico from PNG, JPG, WebP, or SVG. Get Apple touch, maskable, web manifest, and HTML files free without uploading your image.",
+      "description": "Generate a complete favicon ZIP from PNG, JPG, WebP, or SVG: multi-size ICO, Apple touch, PWA and maskable icons, web manifest, and HTML. Free with no upload.",
       "canonical": "https://www.djai.academy/tools/brand/favicon-generator/en/",
       "noindex": false
     },

@@ -44,7 +44,7 @@ test("tools hubs describe video and audio discovery in localized SEO metadata", 
     },
     {
       path: join(homepageRoot, "app", "tools", "en", "page.jsx"),
-      title: "Free Online Tools | Video, Audio, PDF, Images & AI | DJAI",
+      title: "90+ Free Online Tools — No Sign-Up | DJAI Academy",
       description: "convert, cut, compress",
       twitter: "Free Online Tools from DJAI"
     }
