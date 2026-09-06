@@ -123,7 +123,7 @@ test("the validator reports a deterministic ownership summary", () => {
     ownership.entries.length
   );
 
-  assert.match(summary, /Validated 110 ownership entries\./);
+  assert.match(summary, /Validated 351 ownership entries\./);
   assert.match(summary, /en:/);
   assert.match(summary, /th:/);
   assert.match(summary, /vi:/);
@@ -161,5 +161,21 @@ test("the validator enforces School ownership of future public learning discover
   assert.throws(
     () => validateKeywordOwnership(invalidMigration, routing),
     /future learning URL must use school\.djai\.academy/
+  );
+});
+
+test("the validator rejects incomplete or inconsistent route decision records", () => {
+  const missingCanonical = structuredClone(ownership);
+  delete missingCanonical.entries[0].canonical;
+  assert.throws(
+    () => validateKeywordOwnership(missingCanonical, routing),
+    /canonical must be a non-empty string/
+  );
+
+  const mismatchedCanonical = structuredClone(ownership);
+  mismatchedCanonical.entries[0].canonical = "https://www.djai.academy/wrong/";
+  assert.throws(
+    () => validateKeywordOwnership(mismatchedCanonical, routing),
+    /canonical must equal the public route/
   );
 });

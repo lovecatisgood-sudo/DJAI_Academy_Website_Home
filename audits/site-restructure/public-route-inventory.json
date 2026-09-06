@@ -1,0 +1,3457 @@
+{
+  "generatedAt": "2026-09-06",
+  "origin": "https://www.djai.academy",
+  "count": 345,
+  "routes": [
+    {
+      "route": "/",
+      "status": 200,
+      "language": "th",
+      "title": "DJAI Academy | เรียน AI สร้างซอฟต์แวร์ และพัฒนาโปรเจกต์",
+      "h1": "DJAI Academy",
+      "description": "DJAI Academy ช่วยให้คุณเรียน AI ใช้เครื่องมือฟรี และพัฒนาเว็บไซต์ แอป SaaS ระบบอัตโนมัติ เกม Fintech และ Web3 ได้เร็วขึ้น",
+      "canonical": "https://www.djai.academy/",
+      "noindex": false
+    },
+    {
+      "route": "/en/",
+      "status": 200,
+      "language": "en",
+      "title": "DJAI Academy | Educate, Build, Deploy",
+      "h1": "DJAI Academy",
+      "description": "DJAI Academy helps builders learn AI, create software, launch tools, and turn ideas into working products.",
+      "canonical": "https://www.djai.academy/en/",
+      "noindex": false
+    },
+    {
+      "route": "/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "DJAI Academy Việt Nam | Học AI bằng cách tự tay xây sản phẩm",
+      "h1": "DJAI Academy",
+      "description": "Bắt đầu với AI và vibe coding qua dự án thật: làm website, ứng dụng, công cụ tự động hóa và đưa sản phẩm lên chạy mà không cần chờ đến khi biết lập trình chuyên sâu.",
+      "canonical": "https://www.djai.academy/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/portfolio/",
+      "status": 200,
+      "language": "th",
+      "title": "ผลงาน DJAI | เว็บไซต์ เกม Web3 และซอฟต์แวร์ธุรกิจ",
+      "h1": "ผลงาน DJAI",
+      "description": "ดูผลงานที่ DJAI ได้รับอนุญาตให้แสดง ครอบคลุมเว็บไซต์ เกม mini-game NFT marketplace crypto product และ Web3 ecosystem",
+      "canonical": "https://www.djai.academy/portfolio/",
+      "noindex": false
+    },
+    {
+      "route": "/portfolio/en/",
+      "status": 200,
+      "language": "en",
+      "title": "DJAI Portfolio | Websites, Games and Web3 Product Work",
+      "h1": "DJAI Portfolio",
+      "description": "Explore selected DJAI portfolio projects across websites, games, Web3 apps, NFT marketplaces, crypto products, and business platforms.",
+      "canonical": "https://www.djai.academy/portfolio/en/",
+      "noindex": false
+    },
+    {
+      "route": "/portfolio/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Dự án DJAI | Website, ứng dụng, game và sản phẩm Web3",
+      "h1": "Sản phẩm DJAI đã tham gia xây dựng",
+      "description": "Xem các dự án DJAI được phép giới thiệu công khai: ứng dụng di động, website doanh nghiệp, game tương tác và sản phẩm Web3.",
+      "canonical": "https://www.djai.academy/portfolio/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/development/",
+      "status": 200,
+      "language": "th",
+      "title": "DJAI Development | รับทำซอฟต์แวร์ แอป และ AI Automation",
+      "h1": "ส่ง requirement มา แล้ว DJAI ช่วยพัฒนาโปรดักต์เวอร์ชันเล็กที่สุดที่ใช้งานได้จริง",
+      "description": "DJAI รับทำซอฟต์แวร์ตามความต้องการ ช่วย founder, SME และทีมงานเปลี่ยน requirement ให้เป็น scope และโปรดักต์เวอร์ชันเล็กที่สุดที่พร้อมนำไปใช้งานจริง",
+      "canonical": "https://www.djai.academy/development/",
+      "noindex": false
+    },
+    {
+      "route": "/development/en/",
+      "status": 200,
+      "language": "en",
+      "title": "DJAI Development | Custom Software, AI and Apps",
+      "h1": "Bring us your requirement. We help turn it into a working product.",
+      "description": "DJAI is a custom software development partner for founders, SMEs, and teams that need to turn a requirement into the smallest useful working product they can launch and improve.",
+      "canonical": "https://www.djai.academy/development/en/",
+      "noindex": false
+    },
+    {
+      "route": "/development/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Phát triển phần mềm theo yêu cầu | MVP, ứng dụng và AI — DJAI",
+      "h1": "Mang bài toán đến. Chúng ta sẽ xác định thứ cần xây trước.",
+      "description": "DJAI giúp làm rõ yêu cầu, thu gọn phạm vi và phát triển website, ứng dụng, SaaS, hệ thống tự động hóa AI cùng các sản phẩm số có thể đưa vào vận hành.",
+      "canonical": "https://www.djai.academy/development/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/web_promo/",
+      "status": 200,
+      "language": "th",
+      "title": "โปรโมชันพัฒนาเว็บไซต์ พร้อม AI Voice Agent | DJAI Academy",
+      "h1": "บริการพัฒนาเว็บไซต์ พร้อมเปิดตัว ติดอันดับ และสร้างลูกค้า",
+      "description": "บริการพัฒนาเว็บไซต์สำหรับธุรกิจ พร้อม Technical SEO, AI chatbot, OpenAI voice sales agent, โฮสติ้ง และบริการทั้งภาษาไทยและอังกฤษจาก DJAI Academy",
+      "canonical": "https://www.djai.academy/web_promo/",
+      "noindex": false
+    },
+    {
+      "route": "/web_promo/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Dịch vụ phát triển website và AI Voice Agent | DJAI Academy",
+      "h1": "Xây website để ra mắt, được tìm thấy và tạo khách hàng",
+      "description": "Dịch vụ thiết kế và phát triển website cho doanh nghiệp: technical SEO, giao diện responsive, hosting, AI chatbot và trợ lý tư vấn bằng giọng nói.",
+      "canonical": "https://www.djai.academy/web_promo/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/service/",
+      "status": 200,
+      "language": "th",
+      "title": "เลือกบริการพัฒนาซอฟต์แวร์ที่เหมาะกับโจทย์ | DJAI",
+      "h1": "เลือกหมวดบริการให้ตรงกับปัญหาที่ต้องแก้",
+      "description": "เลือกหมวดบริการ DJAI จากปัญหาที่ต้องแก้ สิ่งที่มักส่งมอบ และขั้นตอนถัดไป ก่อนนำ requirement ไปวาง scope กับทีม Development",
+      "canonical": "https://www.djai.academy/service/",
+      "noindex": false
+    },
+    {
+      "route": "/service/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Choose a Software Development Service | DJAI",
+      "h1": "Choose the service category closest to the problem you need to solve.",
+      "description": "Choose a DJAI service category by the business problem, typical deliverable, and next step before shaping the requirement with Development.",
+      "canonical": "https://www.djai.academy/service/en/",
+      "noindex": false
+    },
+    {
+      "route": "/service/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Chọn dịch vụ phát triển phần mềm phù hợp | DJAI",
+      "h1": "Chọn nhóm dịch vụ gần nhất với bài toán cần giải quyết.",
+      "description": "Chọn nhóm dịch vụ DJAI theo bài toán kinh doanh, sản phẩm thường được bàn giao và bước tiếp theo trước khi xác định phạm vi với Development.",
+      "canonical": "https://www.djai.academy/service/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/privacy/",
+      "status": 200,
+      "language": "th",
+      "title": "นโยบายความเป็นส่วนตัวและคุกกี้ | DJAI Academy",
+      "h1": "นโยบายความเป็นส่วนตัวและคุกกี้",
+      "description": "นโยบายความเป็นส่วนตัว คุกกี้ Google Analytics และ Google AdSense ของเว็บไซต์ DJAI Academy",
+      "canonical": "https://www.djai.academy/privacy/",
+      "noindex": false
+    },
+    {
+      "route": "/privacy/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Privacy & Cookie Policy | DJAI Academy",
+      "h1": "Privacy & Cookie Policy",
+      "description": "How the DJAI Academy website uses information, browser storage, Google Analytics, and Google AdSense cookies.",
+      "canonical": "https://www.djai.academy/privacy/en/",
+      "noindex": false
+    },
+    {
+      "route": "/privacy/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Chính sách quyền riêng tư và cookie | DJAI Academy",
+      "h1": "Chính sách quyền riêng tư và cookie",
+      "description": "Cách website DJAI Academy sử dụng thông tin, dữ liệu trình duyệt, Google Analytics và cookie Google AdSense.",
+      "canonical": "https://www.djai.academy/privacy/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/",
+      "status": 200,
+      "language": "th",
+      "title": "เครื่องมือออนไลน์ฟรี | วิดีโอ เสียง PDF รูปภาพ และ AI | DJAI",
+      "h1": "เครื่องมือออนไลน์ฟรีสำหรับวิดีโอ PDF รูปภาพ AI และงานดิจิทัล",
+      "description": "ใช้เครื่องมือออนไลน์ฟรีจาก DJAI เพื่อแปลง ตัด บีบอัด และจัดการวิดีโอ เสียง PDF รูปภาพ เอกสาร QR และข้อมูล โดยหลาย workflow ทำงานใน browser ของคุณ",
+      "canonical": "https://www.djai.academy/tools/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Free Online Tools | Video, Audio, PDF, Images & AI | DJAI",
+      "h1": "Free online tools for video, PDFs, images, AI, and digital work.",
+      "description": "Use free DJAI tools to convert, cut, compress, and manage video, audio, PDFs, images, documents, QR codes, and data. Many file workflows run in your browser.",
+      "canonical": "https://www.djai.academy/tools/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Công cụ AI, PDF, hình ảnh và dữ liệu miễn phí | DJAI",
+      "h1": "Xử lý việc nhỏ ngay, không cần cài thêm phần mềm.",
+      "description": "Bộ công cụ miễn phí của DJAI để xử lý PDF, hình ảnh, video, âm thanh, tài liệu và dữ liệu. Nhiều tác vụ chạy ngay trên trình duyệt, không cần tài khoản.",
+      "canonical": "https://www.djai.academy/tools/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/qrgen/",
+      "status": 200,
+      "language": "th",
+      "title": "สร้าง QR Code ฟรี | DJayTools by DJAI Academy",
+      "h1": "เปลี่ยนทุกลิงก์ให้เป็น QR code ที่สวยและพร้อมใช้",
+      "description": "สร้าง QR code ฟรีใน browser ดาวน์โหลดเป็น PNG หรือ SVG ได้ ไม่ต้องสมัครบัญชี ไม่มี watermark และไม่มีวันหมดอายุ",
+      "canonical": "https://www.djai.academy/tools/qrgen/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/qrgen/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Free QR Code Generator | DJayTools by DJAI Academy",
+      "h1": "Turn any link into a beautiful QR code.",
+      "description": "Create a free custom QR code in your browser. Generate PNG or SVG QR codes with no account, no watermark, and no expiry.",
+      "canonical": "https://www.djai.academy/tools/qrgen/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/seo-screaming-toad/",
+      "status": 200,
+      "language": "th",
+      "title": "SEO Crawler ฟรี พร้อม MCP สำหรับ AI | Screaming Toad",
+      "h1": "SEO Screaming Toad: SEO Crawler โอเพนซอร์สสำหรับคนไทย",
+      "description": "ใช้ SEO Screaming Toad ตรวจ Technical SEO, JavaScript, Canonical, Hreflang และ Structured Data พร้อม MCP 23 เครื่องมือสำหรับ AI Agent",
+      "canonical": "https://www.djai.academy/tools/seo-screaming-toad/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/seo-screaming-toad/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Open-Source SEO Crawler with MCP | Screaming Toad",
+      "h1": "SEO Screaming Toad: an open-source SEO crawler built for AI workflows",
+      "description": "Use SEO Screaming Toad for technical and JavaScript SEO audits, local evidence, crawl comparisons, reports, and 23 bounded MCP tools for AI agents.",
+      "canonical": "https://www.djai.academy/tools/seo-screaming-toad/en/",
+      "noindex": false
+    },
+    {
+      "route": "/course/",
+      "status": 200,
+      "language": "th",
+      "title": "AI Masterclass ออฟไลน์: สร้างโปรดักต์และจองที่นั่ง | DJAI",
+      "h1": "AI Masterclass ออฟไลน์: สร้างโปรดักต์จริงในหนึ่งวัน",
+      "description": "ประเมิน AI Masterclass ออฟไลน์หนึ่งวันในประเทศไทย ดูผลลัพธ์ ราคา สถานที่ และจองที่นั่งเพื่อสร้างโปรดักต์จริงด้วย AI",
+      "canonical": "https://www.djai.academy/course/",
+      "noindex": false
+    },
+    {
+      "route": "/course/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Offline AI Masterclass in Thailand: Build and Reserve | DJAI",
+      "h1": "Offline AI Masterclass: Build a Real Product in One Day.",
+      "description": "Evaluate DJAI&#x27;s one-day offline AI Masterclass in Thailand. Review the outcome, price, location, and seat-reservation path before you enroll.",
+      "canonical": "https://www.djai.academy/course/en/",
+      "noindex": false
+    },
+    {
+      "route": "/course/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "AI Masterclass trực tiếp tại Thái Lan: Xây và giữ chỗ | DJAI",
+      "h1": "AI Masterclass trực tiếp: xây một sản phẩm thật trong một ngày",
+      "description": "Đánh giá AI Masterclass trực tiếp một ngày của DJAI tại Thái Lan. Xem kết quả, học phí, địa điểm và quy trình giữ chỗ trước khi đăng ký.",
+      "canonical": "https://www.djai.academy/course/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/course/detail/",
+      "status": 200,
+      "language": "th",
+      "title": "หลักสูตรและตารางเรียน AI Masterclass | DJAI",
+      "h1": "หลักสูตร ตารางเรียน และผลลัพธ์ของโปรเจกต์",
+      "description": "ดูกำหนดการและหลักสูตร AI Masterclass วันที่ 22 สิงหาคม 2026 เรียน Vibe Coding วางแผน สร้าง และ launch โปรดักต์จริงด้วย AI ภายในหนึ่งวัน",
+      "canonical": "https://www.djai.academy/course/detail/",
+      "noindex": false
+    },
+    {
+      "route": "/course/detail/en/",
+      "status": 200,
+      "language": "en",
+      "title": "AI Masterclass Curriculum and Schedule | DJAI Academy",
+      "h1": "Curriculum, Schedule, and Project Outcome",
+      "description": "Explore the 22 August 2026 AI Masterclass itinerary and curriculum. Learn Vibe Coding, plan, build, and launch a real product with AI in one day.",
+      "canonical": "https://www.djai.academy/course/detail/en/",
+      "noindex": false
+    },
+    {
+      "route": "/course/detail/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Lịch học và nội dung AI Masterclass | DJAI",
+      "h1": "Lịch học, nội dung và kết quả của workshop",
+      "description": "Xem lịch trình và nội dung AI Masterclass ngày 22 tháng 8, 2026: lên kế hoạch, vibe coding, kiểm tra và đưa một sản phẩm AI lên chạy trong một ngày.",
+      "canonical": "https://www.djai.academy/course/detail/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/siamese_cat/",
+      "status": 200,
+      "language": "th",
+      "title": "DJAI Academy และ Siamese Cat | พาร์ทเนอร์ด้านธุรกิจและเทคโนโลยี",
+      "h1": "DJAI × Siamese Cat",
+      "description": "รู้จักความร่วมมือของ DJAI Academy, Siamese Cat Dev, Siamese Cat Cafe, Siamese Cat Hotel และ Creative Club ด้านเทคโนโลยี product และการเติบโตทางธุรกิจ",
+      "canonical": "https://www.djai.academy/siamese_cat/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/video-to-text/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลงวิดีโอเป็นข้อความฟรี ไม่ต้องสมัคร | DJAI",
+      "h1": "แปลงวิดีโอเป็นข้อความ โดยไม่ต้องสร้างบัญชี",
+      "description": "แปลงวิดีโอเป็นข้อความด้วย AI ใน browser ของคุณ ฟรี ไม่ต้องสมัครสมาชิก ไม่ต้องใช้อีเมล และไม่อัปโหลดไฟล์ไปยัง DJAI ส่งออกเป็น TXT, SRT, VTT หรือ JSON ได้",
+      "canonical": "https://www.djai.academy/tools/video-to-text/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/video-to-text/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Video to Text Converter — Free, No Sign-Up | DJAI",
+      "h1": "Convert video to text without creating an account.",
+      "description": "Convert video to text with AI in your browser. Free, no sign-up, no email, and no media upload to DJAI. Export editable TXT, SRT, VTT, or JSON transcripts.",
+      "canonical": "https://www.djai.academy/tools/video-to-text/en/",
+      "noindex": false
+    },
+    {
+      "route": "/siamese_cat/en/",
+      "status": 200,
+      "language": "en",
+      "title": "DJAI Academy and Siamese Cat | Business and Technology Partners",
+      "h1": "DJAI × Siamese Cat",
+      "description": "Learn how DJAI Academy, Siamese Cat Dev, Siamese Cat Cafe, Siamese Cat Hotel, and Creative Club collaborate across technology, products, and business growth.",
+      "canonical": "https://www.djai.academy/siamese_cat/en/",
+      "noindex": false
+    },
+    {
+      "route": "/siamese_cat/dev/",
+      "status": 200,
+      "language": "th",
+      "title": "Siamese Cat Dev | Product, Development และ Vibe Coding",
+      "h1": "Siamese Cat Dev: Product Design, Software Development และ Vibe Coding",
+      "description": "Siamese Cat Dev คือ product designer, project manager และ software development partner ที่สร้าง digital product คุณภาพสูงด้วย Vibe Coding และ AI-assisted development",
+      "canonical": "https://www.djai.academy/siamese_cat/dev/",
+      "noindex": false
+    },
+    {
+      "route": "/siamese_cat/dev/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Siamese Cat Dev | Product, Development & Vibe Coding",
+      "h1": "Siamese Cat Dev: Product Design, Software Development and Vibe Coding",
+      "description": "Siamese Cat Dev is a product designer, project manager, and software development partner building useful digital products with Vibe Coding.",
+      "canonical": "https://www.djai.academy/siamese_cat/dev/en/",
+      "noindex": false
+    },
+    {
+      "route": "/siamese_cat/dev/course/",
+      "status": 200,
+      "language": "en",
+      "title": "Free Live Vibe Coding Course | From MVP to Product",
+      "h1": "Free Live Vibe Coding Course: Turn an MVP into a Real Product",
+      "description": "Express interest in a free live Siamese Cat Dev session about turning a vibe-coded MVP into a reliable product that can be shipped and sold.",
+      "canonical": "https://www.djai.academy/siamese_cat/dev/course/",
+      "noindex": false
+    },
+    {
+      "route": "/siamese_cat/dev/course/th/",
+      "status": 200,
+      "language": "th",
+      "title": "คอร์ส Vibe Coding สดฟรี | จาก MVP สู่สินค้าจริง",
+      "h1": "คอร์ส Vibe Coding สดฟรี: พัฒนา MVP ให้เป็นสินค้าจริง",
+      "description": "แจ้งความสนใจคลาสสดฟรีกับ Siamese Cat Dev เพื่อเรียนรู้วิธีพัฒนา MVP จาก Vibe Coding ให้เป็นสินค้าที่น่าเชื่อถือ พร้อมเปิดตัวและสร้างรายได้",
+      "canonical": "https://www.djai.academy/siamese_cat/dev/course/th/",
+      "noindex": false
+    },
+    {
+      "route": "/siamese_cat/dev/courses/",
+      "status": 200,
+      "language": "en",
+      "title": "AI Coding Courses and Vibe Coding | Siamese Cat Dev",
+      "h1": "Build with AI. Understand what you ship.",
+      "description": "English AI coding courses from Siamese Cat Dev. Build a first app, make a game, or learn a clearer workflow for coding with AI.",
+      "canonical": "https://www.djai.academy/siamese_cat/dev/courses/",
+      "noindex": false
+    },
+    {
+      "route": "/siamese_cat/dev/courses/build-first-app/",
+      "status": 200,
+      "language": "en",
+      "title": "Build Your First App with AI | Siamese Cat Dev",
+      "h1": "Build Your First App with AI",
+      "description": "A beginner English course for turning a simple idea into a working app with AI, with a free 30-minute trial class by Siamese Cat Dev.",
+      "canonical": "https://www.djai.academy/siamese_cat/dev/courses/build-first-app/",
+      "noindex": false
+    },
+    {
+      "route": "/siamese_cat/dev/courses/make-a-game/",
+      "status": 200,
+      "language": "en",
+      "title": "Make a Game with AI | Siamese Cat Dev",
+      "h1": "Make a Game with AI",
+      "description": "Learn to turn a game idea into a playable project with AI. Explore rules, characters, levels, testing, and iteration in English.",
+      "canonical": "https://www.djai.academy/siamese_cat/dev/courses/make-a-game/",
+      "noindex": false
+    },
+    {
+      "route": "/siamese_cat/dev/courses/coding-with-ai/",
+      "status": 200,
+      "language": "en",
+      "title": "Coding with AI | Plan, Build and Deploy | Siamese Cat Dev",
+      "h1": "Coding with AI for Real Applications",
+      "description": "Move beyond quick demos with an English vibe coding course about planning, designing, building, checking, and deploying applications with AI.",
+      "canonical": "https://www.djai.academy/siamese_cat/dev/courses/coding-with-ai/",
+      "noindex": false
+    },
+    {
+      "route": "/siamese_cat/dev/blog/",
+      "status": 200,
+      "language": "th",
+      "title": "บล็อก Siamese Cat Dev | Product, Vibe Coding และ AI-assisted Development",
+      "h1": "บันทึกการสร้าง product, software และ workflow ด้วย AI",
+      "description": "บทความจาก Siamese Cat Dev เกี่ยวกับ product, software development, vibe coding, AI-assisted development และการสร้างโปรเจกต์จริง",
+      "canonical": "https://www.djai.academy/siamese_cat/dev/blog/",
+      "noindex": false
+    },
+    {
+      "route": "/siamese_cat/dev/blog/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Siamese Cat Dev Blog | Product, Vibe Coding, and AI-assisted Development",
+      "h1": "Notes on building products, software, and AI workflows.",
+      "description": "Articles from Siamese Cat Dev about product thinking, software development, Vibe Coding, AI-assisted development, and practical project building.",
+      "canonical": "https://www.djai.academy/siamese_cat/dev/blog/en/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/",
+      "status": 200,
+      "language": "th",
+      "title": "บล็อก DJAI | ข่าวสาร คู่มือ และบทความสอนใช้งาน",
+      "h1": "ข่าวสาร คู่มือ และบทความสอนใช้งานสำหรับคนสร้างงานจริง",
+      "description": "อ่านข่าวสาร คู่มือ และบทความสอนใช้งานจาก DJAI Academy เกี่ยวกับ AI เครื่องมือฟรี image optimization QR code และการสร้าง product",
+      "canonical": "https://www.djai.academy/blog/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/en/",
+      "status": 200,
+      "language": "en",
+      "title": "DJAI Blog | News, Guides, and Tutorials",
+      "h1": "News, guides, and tutorials for practical builders.",
+      "description": "Read DJAI Academy news, guides, and tutorials for AI learning, free tools, image optimization, QR codes, and practical digital product building.",
+      "canonical": "https://www.djai.academy/blog/en/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Bài viết AI, vibe coding và xây sản phẩm | DJAI Academy",
+      "h1": "Học AI bằng những quyết định bạn phải đưa ra khi xây thật.",
+      "description": "Hướng dẫn thực hành bằng tiếng Việt về AI, vibe coding, công cụ web và cách đưa một ý tưởng thành sản phẩm có thể kiểm tra.",
+      "canonical": "https://www.djai.academy/blog/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/Cam_PDF_Scan_Signer_QR-Gen/",
+      "status": 200,
+      "language": "en",
+      "title": "PDF Scanner App for Android: Scan, Sign & Create QR Codes | Cam PDF",
+      "h1": "Scan documents, sign PDFs, and create QR codes on Android",
+      "description": "Scan documents, sign and organize PDFs, create QR codes, and export without an added watermark with Cam PDF for Android.",
+      "canonical": "https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/",
+      "noindex": false
+    },
+    {
+      "route": "/Cam_PDF_Scan_Signer_QR-Gen/privacy/",
+      "status": 200,
+      "language": "en",
+      "title": "Privacy Policy | Cam PDF Scan Signer QR Gen",
+      "h1": "Privacy Policy for Cam PDF Scan Signer QR Gen",
+      "description": "How Cam PDF Scan Signer QR Gen processes account, analytics, advertising, purchase, and device data.",
+      "canonical": "https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/privacy/",
+      "noindex": false
+    },
+    {
+      "route": "/Cam_PDF_Scan_Signer_QR-Gen/terms/",
+      "status": 200,
+      "language": "en",
+      "title": "Terms of Service | Cam PDF Scan Signer QR Gen",
+      "h1": "Terms of Service",
+      "description": "Terms governing Cam PDF Scan Signer QR Gen accounts and Android application use.",
+      "canonical": "https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/terms/",
+      "noindex": false
+    },
+    {
+      "route": "/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/",
+      "status": 200,
+      "language": "th",
+      "title": "นโยบายความเป็นส่วนตัว | Cam PDF Scan Signer QR Gen",
+      "h1": "นโยบายความเป็นส่วนตัวสำหรับ Cam PDF Scan Signer QR Gen",
+      "description": "วิธีที่ Cam PDF Scan Signer QR Gen ประมวลผลข้อมูลบัญชี การวิเคราะห์ โฆษณา การซื้อ และข้อมูลอุปกรณ์",
+      "canonical": "https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/",
+      "noindex": false
+    },
+    {
+      "route": "/Cam_PDF_Scan_Signer_QR-Gen/delete-account/",
+      "status": 200,
+      "language": "en",
+      "title": "Delete Account | Cam PDF Scan Signer QR Gen",
+      "h1": "Delete your account",
+      "description": "Request deletion of a Cam PDF Scan Signer QR Gen account and associated cloud data.",
+      "canonical": "https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/delete-account/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/qrgen/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Tạo mã QR miễn phí, không cần đăng ký | DJayTools",
+      "h1": "Tạo mã QR đẹp, sẵn sàng để dùng.",
+      "description": "Tạo mã QR cho URL, Wi-Fi, danh bạ, văn bản, email và WhatsApp. Tải PNG hoặc SVG miễn phí, không cần đăng ký và không watermark.",
+      "canonical": "https://www.djai.academy/tools/qrgen/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/qrgen/url-qr-code-generator/",
+      "status": 200,
+      "language": "th",
+      "title": "สร้าง QR Code จากลิงก์ฟรี | DJayTools",
+      "h1": "สร้าง QR Code จากลิงก์ฟรี",
+      "description": "สร้าง QR Code จาก URL หรือลิงก์เว็บไซต์ฟรี ปรับสี ลาย กรอบ และดาวน์โหลด PNG หรือ SVG โดยไม่ต้องสมัคร",
+      "canonical": "https://www.djai.academy/tools/qrgen/url-qr-code-generator/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/qrgen/url-qr-code-generator/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Free URL QR Code Generator | DJayTools",
+      "h1": "Free URL QR Code Generator",
+      "description": "Create a QR code for any URL or website link. Customize colors, patterns, and frames, then download PNG or SVG free.",
+      "canonical": "https://www.djai.academy/tools/qrgen/url-qr-code-generator/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/qrgen/url-qr-code-generator/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Tạo mã QR từ URL miễn phí | DJayTools",
+      "h1": "Tạo mã QR từ URL miễn phí",
+      "description": "Chuyển URL hoặc liên kết website thành mã QR miễn phí. Tùy chỉnh màu, họa tiết và khung rồi tải PNG hoặc SVG, không cần đăng ký.",
+      "canonical": "https://www.djai.academy/tools/qrgen/url-qr-code-generator/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/qrgen/wifi-qr-code-generator/",
+      "status": 200,
+      "language": "th",
+      "title": "สร้าง Wi-Fi QR Code ฟรี | DJayTools",
+      "h1": "สร้าง Wi-Fi QR Code ฟรี",
+      "description": "สร้าง Wi-Fi QR Code จากชื่อเครือข่ายและรหัสผ่าน ให้ผู้ใช้สแกนเพื่อเชื่อมต่อ Wi-Fi ได้ง่ายโดยไม่ต้องพิมพ์รหัส",
+      "canonical": "https://www.djai.academy/tools/qrgen/wifi-qr-code-generator/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/qrgen/wifi-qr-code-generator/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Free Wi-Fi QR Code Generator | DJayTools",
+      "h1": "Free Wi-Fi QR Code Generator",
+      "description": "Create a Wi-Fi QR code from your network name and password so guests can scan and connect without typing credentials.",
+      "canonical": "https://www.djai.academy/tools/qrgen/wifi-qr-code-generator/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/qrgen/wifi-qr-code-generator/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Tạo mã QR Wi-Fi miễn phí | DJayTools",
+      "h1": "Tạo mã QR Wi-Fi miễn phí",
+      "description": "Tạo mã QR từ tên mạng và mật khẩu để khách quét và kết nối Wi-Fi mà không phải nhập thủ công.",
+      "canonical": "https://www.djai.academy/tools/qrgen/wifi-qr-code-generator/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/qrgen/vcard-qr-code-generator/",
+      "status": 200,
+      "language": "th",
+      "title": "สร้าง vCard QR Code สำหรับนามบัตรฟรี | DJayTools",
+      "h1": "สร้าง vCard QR Code สำหรับนามบัตรฟรี",
+      "description": "สร้าง vCard QR Code พร้อมชื่อ เบอร์โทร อีเมล บริษัท และเว็บไซต์ ให้ผู้รับสแกนและบันทึกผู้ติดต่อ",
+      "canonical": "https://www.djai.academy/tools/qrgen/vcard-qr-code-generator/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/qrgen/vcard-qr-code-generator/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Free vCard QR Code Generator | DJayTools",
+      "h1": "Free vCard QR Code Generator",
+      "description": "Create a vCard QR code with a name, phone, email, company, and website so people can save your contact details.",
+      "canonical": "https://www.djai.academy/tools/qrgen/vcard-qr-code-generator/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/qrgen/vcard-qr-code-generator/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Tạo mã QR vCard miễn phí | DJayTools",
+      "h1": "Tạo mã QR vCard miễn phí",
+      "description": "Tạo mã QR danh thiếp với tên, số điện thoại, email, công ty và website để người nhận lưu liên hệ nhanh.",
+      "canonical": "https://www.djai.academy/tools/qrgen/vcard-qr-code-generator/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/qrgen/text-qr-code-generator/",
+      "status": 200,
+      "language": "th",
+      "title": "สร้าง QR Code ข้อความฟรี | DJayTools",
+      "h1": "สร้าง QR Code ข้อความฟรี",
+      "description": "เปลี่ยนข้อความ หมายเลข หรือข้อมูลสั้นเป็น QR Code ฟรี ปรับรูปแบบและดาวน์โหลด PNG หรือ SVG",
+      "canonical": "https://www.djai.academy/tools/qrgen/text-qr-code-generator/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/qrgen/text-qr-code-generator/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Free Text QR Code Generator | DJayTools",
+      "h1": "Free Text QR Code Generator",
+      "description": "Turn text, reference numbers, or short information into a customizable QR code and download PNG or SVG free.",
+      "canonical": "https://www.djai.academy/tools/qrgen/text-qr-code-generator/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/qrgen/text-qr-code-generator/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Tạo mã QR từ văn bản miễn phí | DJayTools",
+      "h1": "Tạo mã QR từ văn bản miễn phí",
+      "description": "Chuyển văn bản, mã tham chiếu hoặc thông tin ngắn thành mã QR tùy chỉnh rồi tải PNG hoặc SVG miễn phí.",
+      "canonical": "https://www.djai.academy/tools/qrgen/text-qr-code-generator/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/qrgen/email-qr-code-generator/",
+      "status": 200,
+      "language": "th",
+      "title": "สร้าง Email QR Code ฟรี | DJayTools",
+      "h1": "สร้าง Email QR Code ฟรี",
+      "description": "สร้าง QR Code สำหรับเปิดอีเมลพร้อมผู้รับ หัวข้อ และข้อความที่กรอกไว้ล่วงหน้า เหมาะกับนามบัตรและโปสเตอร์",
+      "canonical": "https://www.djai.academy/tools/qrgen/email-qr-code-generator/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/qrgen/email-qr-code-generator/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Free Email QR Code Generator | DJayTools",
+      "h1": "Free Email QR Code Generator",
+      "description": "Create a QR code that opens an email with a recipient, subject, and optional message already filled in.",
+      "canonical": "https://www.djai.academy/tools/qrgen/email-qr-code-generator/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/qrgen/email-qr-code-generator/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Tạo mã QR email miễn phí | DJayTools",
+      "h1": "Tạo mã QR email miễn phí",
+      "description": "Tạo mã QR mở email với người nhận, tiêu đề và nội dung được điền sẵn, phù hợp cho danh thiếp và poster.",
+      "canonical": "https://www.djai.academy/tools/qrgen/email-qr-code-generator/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/qrgen/whatsapp-qr-code-generator/",
+      "status": 200,
+      "language": "th",
+      "title": "สร้าง WhatsApp QR Code ฟรี | DJayTools",
+      "h1": "สร้าง WhatsApp QR Code ฟรี",
+      "description": "สร้าง WhatsApp QR Code จากหมายเลขโทรศัพท์และข้อความเริ่มต้น ให้ลูกค้าสแกนเพื่อเปิดแชตได้ทันที",
+      "canonical": "https://www.djai.academy/tools/qrgen/whatsapp-qr-code-generator/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/qrgen/whatsapp-qr-code-generator/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Free WhatsApp QR Code Generator | DJayTools",
+      "h1": "Free WhatsApp QR Code Generator",
+      "description": "Create a WhatsApp QR code from a phone number and optional starting message so customers can scan and open a chat.",
+      "canonical": "https://www.djai.academy/tools/qrgen/whatsapp-qr-code-generator/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/qrgen/whatsapp-qr-code-generator/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Tạo mã QR WhatsApp miễn phí | DJayTools",
+      "h1": "Tạo mã QR WhatsApp miễn phí",
+      "description": "Tạo mã QR từ số điện thoại và lời nhắn mở đầu để khách quét và mở cuộc trò chuyện WhatsApp ngay.",
+      "canonical": "https://www.djai.academy/tools/qrgen/whatsapp-qr-code-generator/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/qrgen/qr-code-generator-with-logo/",
+      "status": 200,
+      "language": "th",
+      "title": "สร้าง QR Code ใส่โลโก้ฟรี | DJayTools",
+      "h1": "สร้าง QR Code ใส่โลโก้ฟรี",
+      "description": "สร้าง QR Code พร้อมโลโก้ตรงกลาง ปรับสีและรูปแบบ แล้วดาวน์โหลด PNG หรือ SVG ฟรีโดยรูปไม่ถูก upload",
+      "canonical": "https://www.djai.academy/tools/qrgen/qr-code-generator-with-logo/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/qrgen/qr-code-generator-with-logo/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Free QR Code Generator with Logo | DJayTools",
+      "h1": "Free QR Code Generator with Logo",
+      "description": "Create a branded QR code with your logo in the center. Customize and download PNG or SVG without uploading the image.",
+      "canonical": "https://www.djai.academy/tools/qrgen/qr-code-generator-with-logo/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/qrgen/qr-code-generator-with-logo/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Tạo mã QR có logo miễn phí | DJayTools",
+      "h1": "Tạo mã QR có logo miễn phí",
+      "description": "Đặt logo vào giữa mã QR, tùy chỉnh màu và kiểu rồi tải PNG hoặc SVG. Ảnh được xử lý trong trình duyệt và không bị tải lên.",
+      "canonical": "https://www.djai.academy/tools/qrgen/qr-code-generator-with-logo/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/",
+      "status": 200,
+      "language": "th",
+      "title": "เครื่องมือย่อรูปและแปลงไฟล์ฟรี | DJAI Image Tools",
+      "h1": "ทำให้ทุกรูป พอดีกับงานของคุณ",
+      "description": "แปลง ย่อ บีบอัด และจัดการรูป JPG, PNG, WebP, HEIC ฟรี รองรับหลายไฟล์และ ZIP โดยรูปประมวลผลใน browser ไม่อัปโหลดขึ้น server",
+      "canonical": "https://www.djai.academy/tools/resizeimg/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Free Image Converter and Resizer | DJAI Image Tools",
+      "h1": "Make every image fit perfectly.",
+      "description": "Convert, resize, and compress JPG, PNG, WebP, and HEIC images free. Process batches and ZIP downloads privately in your browser.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Công cụ chuyển đổi và resize hình ảnh miễn phí | DJAI",
+      "h1": "Làm cho mọi hình ảnh vừa đúng mục đích.",
+      "description": "Convert, resize, and compress JPG, PNG, WebP, and HEIC images free. Process batches and ZIP downloads privately in your browser.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/jpg-to-png/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง JPG เป็น PNG ฟรี ออนไลน์ | DJAI Image Tools",
+      "h1": "แปลง JPG เป็น PNG ฟรี",
+      "description": "แปลงรูป JPG เป็น PNG ฟรีใน browser โดยไม่อัปโหลดไฟล์ ไม่ต้องสมัคร และไม่มี watermark",
+      "canonical": "https://www.djai.academy/tools/resizeimg/jpg-to-png/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/jpg-to-png/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert JPG to PNG Free Online | DJAI Image Tools",
+      "h1": "Convert JPG to PNG for free",
+      "description": "Convert JPG images to PNG free in your browser with no upload, account, watermark, or server storage.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/jpg-to-png/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/jpg-to-png/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Chuyển JPG sang PNG miễn phí, không cần đăng ký | DJAI Image Tools",
+      "h1": "Chuyển JPG sang PNG miễn phí",
+      "description": "Chuyển JPG sang PNG ngay trong trình duyệt. Không cần đăng ký, không watermark và hình ảnh không bị upload lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/jpg-to-png/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/png-to-jpg/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง PNG เป็น JPG ฟรี ลดขนาดรูป | DJAI Image Tools",
+      "h1": "แปลง PNG เป็น JPG ฟรี",
+      "description": "แปลง PNG เป็น JPG ฟรี พร้อมปรับคุณภาพและลดขนาดไฟล์ใน browser โดยรูปไม่ถูกอัปโหลด",
+      "canonical": "https://www.djai.academy/tools/resizeimg/png-to-jpg/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/png-to-jpg/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert PNG to JPG Free and Reduce Size | DJAI Image Tools",
+      "h1": "Convert PNG to JPG for free",
+      "description": "Convert PNG to JPG free with quality controls and private browser processing. No upload, account, or watermark.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/png-to-jpg/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/png-to-jpg/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Chuyển PNG sang JPG miễn phí, không cần đăng ký | DJAI Image Tools",
+      "h1": "Chuyển PNG sang JPG miễn phí",
+      "description": "Chuyển PNG sang JPG ngay trong trình duyệt. Không cần đăng ký, không watermark và hình ảnh không bị upload lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/png-to-jpg/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/jpg-to-webp/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง JPG เป็น WebP ฟรี สำหรับเว็บไซต์ | DJAI Image Tools",
+      "h1": "แปลง JPG เป็น WebP ฟรี",
+      "description": "แปลง JPG เป็น WebP ฟรี เพื่อรูปเว็บไซต์ที่โหลดเร็วขึ้น พร้อมควบคุมคุณภาพใน browser",
+      "canonical": "https://www.djai.academy/tools/resizeimg/jpg-to-webp/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/jpg-to-webp/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert JPG to WebP Free for Websites | DJAI Image Tools",
+      "h1": "Convert JPG to WebP for free",
+      "description": "Convert JPG to WebP free for faster websites with private browser processing and quality control.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/jpg-to-webp/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/jpg-to-webp/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Chuyển JPG sang WebP miễn phí, không cần đăng ký | DJAI Image Tools",
+      "h1": "Chuyển JPG sang WebP miễn phí",
+      "description": "Chuyển JPG sang WebP ngay trong trình duyệt. Không cần đăng ký, không watermark và hình ảnh không bị upload lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/jpg-to-webp/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/png-to-webp/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง PNG เป็น WebP ฟรี ออนไลน์ | DJAI Image Tools",
+      "h1": "แปลง PNG เป็น WebP ฟรี",
+      "description": "แปลง PNG เป็น WebP ฟรี รักษาพื้นโปร่งใสและลดขนาดไฟล์โดยประมวลผลใน browser",
+      "canonical": "https://www.djai.academy/tools/resizeimg/png-to-webp/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/png-to-webp/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert PNG to WebP Free Online | DJAI Image Tools",
+      "h1": "Convert PNG to WebP for free",
+      "description": "Convert PNG to WebP free while preserving transparency, processed privately in your browser.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/png-to-webp/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/png-to-webp/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Chuyển PNG sang WebP miễn phí, không cần đăng ký | DJAI Image Tools",
+      "h1": "Chuyển PNG sang WebP miễn phí",
+      "description": "Chuyển PNG sang WebP ngay trong trình duyệt. Không cần đăng ký, không watermark và hình ảnh không bị upload lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/png-to-webp/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/webp-to-jpg/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง WebP เป็น JPG ฟรี ออนไลน์ | DJAI Image Tools",
+      "h1": "แปลง WebP เป็น JPG ฟรี",
+      "description": "แปลง WebP เป็น JPG ฟรีสำหรับระบบหรือโปรแกรมที่ต้องการ JPG โดยไม่อัปโหลดรูป",
+      "canonical": "https://www.djai.academy/tools/resizeimg/webp-to-jpg/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/webp-to-jpg/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert WebP to JPG Free Online | DJAI Image Tools",
+      "h1": "Convert WebP to JPG for free",
+      "description": "Convert WebP to JPG free for forms, software, and devices that require JPG. Your image stays on your device.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/webp-to-jpg/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/webp-to-jpg/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Chuyển WebP sang JPG miễn phí, không cần đăng ký | DJAI Image Tools",
+      "h1": "Chuyển WebP sang JPG miễn phí",
+      "description": "Chuyển WebP sang JPG ngay trong trình duyệt. Không cần đăng ký, không watermark và hình ảnh không bị upload lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/webp-to-jpg/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/webp-to-png/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง WebP เป็น PNG ฟรี ออนไลน์ | DJAI Image Tools",
+      "h1": "แปลง WebP เป็น PNG ฟรี",
+      "description": "แปลง WebP เป็น PNG ฟรีสำหรับงานออกแบบ โดยไฟล์อยู่ในอุปกรณ์และไม่ถูกอัปโหลด",
+      "canonical": "https://www.djai.academy/tools/resizeimg/webp-to-png/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/webp-to-png/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert WebP to PNG Free Online | DJAI Image Tools",
+      "h1": "Convert WebP to PNG for free",
+      "description": "Convert WebP to PNG free for design workflows. Files remain on your device and are never uploaded.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/webp-to-png/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/webp-to-png/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Chuyển WebP sang PNG miễn phí, không cần đăng ký | DJAI Image Tools",
+      "h1": "Chuyển WebP sang PNG miễn phí",
+      "description": "Chuyển WebP sang PNG ngay trong trình duyệt. Không cần đăng ký, không watermark và hình ảnh không bị upload lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/webp-to-png/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/compress-image/",
+      "status": 200,
+      "language": "th",
+      "title": "บีบอัดรูป ลดขนาดไฟล์ JPG PNG WebP ฟรี | DJAI",
+      "h1": "บีบอัดรูปและลดขนาดไฟล์ฟรี",
+      "description": "บีบอัดรูป JPG PNG และ WebP ให้ใกล้ขนาด KB ที่ต้องการ ฟรีและเป็นส่วนตัวใน browser",
+      "canonical": "https://www.djai.academy/tools/resizeimg/compress-image/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/compress-image/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Compress JPG PNG WebP Images Free Online | DJAI",
+      "h1": "Compress images and reduce file size",
+      "description": "Compress JPG, PNG, and WebP images toward a target KB size free with private browser processing.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/compress-image/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/compress-image/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Nén hình ảnh miễn phí, không cần đăng ký | DJAI Image Tools",
+      "h1": "Nén hình ảnh miễn phí",
+      "description": "Nén hình ảnh ngay trong trình duyệt. Không cần đăng ký, không watermark và hình ảnh không bị upload lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/compress-image/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/resize-image/",
+      "status": 200,
+      "language": "th",
+      "title": "Resize รูปตาม Pixel หรือเปอร์เซ็นต์ฟรี | DJAI",
+      "h1": "Resize และย่อรูปออนไลน์ฟรี",
+      "description": "Resize รูปตาม pixel เปอร์เซ็นต์ หรือ preset สำหรับ social media ฟรี พร้อมล็อกอัตราส่วนภาพ",
+      "canonical": "https://www.djai.academy/tools/resizeimg/resize-image/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/resize-image/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Resize Image by Pixels or Percentage Free | DJAI",
+      "h1": "Resize images online for free",
+      "description": "Resize images by pixels, percentage, or social media presets free while keeping the aspect ratio.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/resize-image/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/resize-image/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Resize hình ảnh miễn phí, không cần đăng ký | DJAI Image Tools",
+      "h1": "Resize hình ảnh miễn phí",
+      "description": "Resize hình ảnh ngay trong trình duyệt. Không cần đăng ký, không watermark và hình ảnh không bị upload lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/resize-image/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/image-to-100kb/",
+      "status": 200,
+      "language": "th",
+      "title": "ลดขนาดรูปให้ใกล้ 100 KB ฟรี | DJAI Image Tools",
+      "h1": "ลดขนาดรูปให้ใกล้ 100 KB",
+      "description": "บีบอัด JPG PNG หรือ WebP ให้ใกล้ 100 KB ฟรี เหมาะกับแบบฟอร์มสมัครงานและระบบอัปโหลดไฟล์",
+      "canonical": "https://www.djai.academy/tools/resizeimg/image-to-100kb/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/image-to-100kb/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Compress Image to Approximately 100 KB Free | DJAI",
+      "h1": "Compress an image to approximately 100 KB",
+      "description": "Reduce a JPG, PNG, or WebP image toward 100 KB free for forms, applications, and upload limits.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/image-to-100kb/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/image-to-100kb/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Nén ảnh xuống khoảng 100 KB miễn phí, không cần đăng ký | DJAI Image Tools",
+      "h1": "Nén ảnh xuống khoảng 100 KB miễn phí",
+      "description": "Nén ảnh xuống khoảng 100 KB ngay trong trình duyệt. Không cần đăng ký, không watermark và hình ảnh không bị upload lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/image-to-100kb/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/image-to-500kb/",
+      "status": 200,
+      "language": "th",
+      "title": "ลดขนาดรูปให้ใกล้ 500 KB ฟรี | DJAI Image Tools",
+      "h1": "ลดขนาดรูปให้ใกล้ 500 KB",
+      "description": "บีบอัด JPG PNG หรือ WebP ให้ใกล้ 500 KB ฟรีใน browser เหมาะกับอีเมล เว็บไซต์ และแบบฟอร์ม",
+      "canonical": "https://www.djai.academy/tools/resizeimg/image-to-500kb/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/image-to-500kb/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Compress Image to Approximately 500 KB Free | DJAI",
+      "h1": "Compress an image to approximately 500 KB",
+      "description": "Reduce a JPG, PNG, or WebP image toward 500 KB free in your browser for email, websites, and forms.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/image-to-500kb/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/image-to-500kb/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Nén ảnh xuống khoảng 500 KB miễn phí, không cần đăng ký | DJAI Image Tools",
+      "h1": "Nén ảnh xuống khoảng 500 KB miễn phí",
+      "description": "Nén ảnh xuống khoảng 500 KB ngay trong trình duyệt. Không cần đăng ký, không watermark và hình ảnh không bị upload lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/image-to-500kb/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/heic-to-jpg/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง HEIC เป็น JPG ฟรี ออนไลน์ | DJAI Image Tools",
+      "h1": "แปลง HEIC เป็น JPG ฟรี",
+      "description": "แปลงรูป HEIC และ HEIF จาก iPhone เป็น JPG ฟรีใน browser โดยไม่อัปโหลดรูป",
+      "canonical": "https://www.djai.academy/tools/resizeimg/heic-to-jpg/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/heic-to-jpg/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert HEIC to JPG Free Online | DJAI Image Tools",
+      "h1": "Convert HEIC to JPG for free",
+      "description": "Convert iPhone HEIC and HEIF photos to JPG free in your browser without uploading images to a server.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/heic-to-jpg/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/heic-to-jpg/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Chuyển HEIC sang JPG miễn phí, không cần đăng ký | DJAI Image Tools",
+      "h1": "Chuyển HEIC sang JPG miễn phí",
+      "description": "Chuyển HEIC sang JPG ngay trong trình duyệt. Không cần đăng ký, không watermark và hình ảnh không bị upload lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/heic-to-jpg/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/remove-image-metadata/",
+      "status": 200,
+      "language": "th",
+      "title": "ลบ Metadata รูปภาพฟรี แบบ Private | DJAI Image Tools",
+      "h1": "ลบ Metadata จากรูปภาพฟรี",
+      "description": "ลบ EXIF และ metadata จาก JPG PNG WebP หรือ HEIC ด้วยการสร้างสำเนาใหม่ใน browser โดยไม่ upload รูป",
+      "canonical": "https://www.djai.academy/tools/resizeimg/remove-image-metadata/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/remove-image-metadata/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Remove Image Metadata Free and Privately | DJAI Image Tools",
+      "h1": "Remove metadata from an image for free",
+      "description": "Remove EXIF and metadata from JPG, PNG, WebP, or HEIC by creating a new browser-processed copy without uploading it.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/remove-image-metadata/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/remove-image-metadata/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Xóa metadata hình ảnh miễn phí, không cần đăng ký | DJAI Image Tools",
+      "h1": "Xóa metadata hình ảnh miễn phí",
+      "description": "Xóa metadata hình ảnh ngay trong trình duyệt. Không cần đăng ký, không watermark và hình ảnh không bị upload lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/remove-image-metadata/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/remove-background-image/",
+      "status": 200,
+      "language": "th",
+      "title": "ลบพื้นหลังรูปฟรี ออนไลน์ | DJAI Image Tools",
+      "h1": "ลบพื้นหลังรูปฟรี",
+      "description": "ลบพื้นหลังรูป JPG, PNG, WebP, HEIC หรือ HEIF ฟรีใน browser แล้วดาวน์โหลด PNG พื้นหลังโปร่งใส",
+      "canonical": "https://www.djai.academy/tools/resizeimg/remove-background-image/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/remove-background-image/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Remove Image Background Free Online | DJAI Image Tools",
+      "h1": "Remove an image background for free",
+      "description": "Remove the background from JPG, PNG, WebP, HEIC, or HEIF images free in your browser and download a transparent PNG.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/remove-background-image/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/remove-background-image/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Xóa nền hình ảnh miễn phí, không cần đăng ký | DJAI Image Tools",
+      "h1": "Xóa nền hình ảnh miễn phí",
+      "description": "Xóa nền hình ảnh ngay trong trình duyệt. Không cần đăng ký, không watermark và hình ảnh không bị upload lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/remove-background-image/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/resize-image-to-200kb/",
+      "status": 200,
+      "language": "th",
+      "title": "ลดขนาดรูปให้ใกล้ 200 KB ฟรี | DJAI Image Tools",
+      "h1": "ลดขนาดรูปให้ใกล้ 200 KB",
+      "description": "ลดขนาด JPG PNG WebP หรือ AVIF ให้ใกล้ 200 KB ฟรีสำหรับแบบฟอร์ม อีเมล และเว็บไซต์ โดยประมวลผลใน browser",
+      "canonical": "https://www.djai.academy/tools/resizeimg/resize-image-to-200kb/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/resize-image-to-200kb/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Resize Image to Approximately 200 KB Free | DJAI",
+      "h1": "Resize an image to approximately 200 KB",
+      "description": "Reduce JPG, PNG, WebP, or AVIF images toward 200 KB free for forms, email, and websites with private browser processing.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/resize-image-to-200kb/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/resize-image-to-200kb/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Resize ảnh xuống khoảng 200 KB miễn phí, không cần đăng ký | DJAI Image Tools",
+      "h1": "Resize ảnh xuống khoảng 200 KB miễn phí",
+      "description": "Resize ảnh xuống khoảng 200 KB ngay trong trình duyệt. Không cần đăng ký, không watermark và hình ảnh không bị upload lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/resize-image-to-200kb/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/avif-to-jpg/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง AVIF เป็น JPG ฟรี ออนไลน์ | DJAI Image Tools",
+      "h1": "แปลง AVIF เป็น JPG ฟรี",
+      "description": "แปลงรูป AVIF เป็น JPG สำหรับแบบฟอร์ม ระบบเก่า อีเมล และเว็บไซต์ที่ต้องการไฟล์ภาพถ่ายขนาดเล็ก โดยไม่อัปโหลดรูป",
+      "canonical": "https://www.djai.academy/tools/resizeimg/avif-to-jpg/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/avif-to-jpg/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert AVIF to JPG Free Online | DJAI Image Tools",
+      "h1": "Convert AVIF to JPG for free",
+      "description": "Turn AVIF photos into smaller, widely accepted JPG files for forms, legacy software, email, and websites without uploading the image.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/avif-to-jpg/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/avif-to-jpg/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Chuyển AVIF sang JPG miễn phí, không cần đăng ký | DJAI Image Tools",
+      "h1": "Chuyển AVIF sang JPG miễn phí",
+      "description": "Chuyển AVIF sang JPG ngay trong trình duyệt. Không cần đăng ký, không watermark và hình ảnh không bị upload lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/avif-to-jpg/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/avif-to-png/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง AVIF เป็น PNG ฟรี ออนไลน์ | DJAI Image Tools",
+      "h1": "แปลง AVIF เป็น PNG ฟรี",
+      "description": "แปลง AVIF เป็น PNG สำหรับโลโก้ กราฟิก ภาพหน้าจอ และงานออกแบบที่ต้องรักษาพื้นโปร่งใส โดยประมวลผลใน browser",
+      "canonical": "https://www.djai.academy/tools/resizeimg/avif-to-png/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/avif-to-png/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert AVIF to PNG Free Online | DJAI Image Tools",
+      "h1": "Convert AVIF to PNG for free",
+      "description": "Convert AVIF artwork to PNG for logos, screenshots, graphics, and publishing workflows that need transparency, entirely in your browser.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/avif-to-png/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/avif-to-png/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Chuyển AVIF sang PNG miễn phí, không cần đăng ký | DJAI Image Tools",
+      "h1": "Chuyển AVIF sang PNG miễn phí",
+      "description": "Chuyển AVIF sang PNG ngay trong trình duyệt. Không cần đăng ký, không watermark và hình ảnh không bị upload lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/avif-to-png/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/passport-photo-resizer/",
+      "status": 200,
+      "language": "th",
+      "title": "Resize รูปพาสปอร์ต 35x45 มม. ฟรี | DJAI",
+      "h1": "Resize และครอปรูปพาสปอร์ตฟรี",
+      "description": "ครอปรูปพาสปอร์ตเป็นสัดส่วน 35 × 45 มม. ที่ 413 × 531 px หรือเลือก US 2 × 2 นิ้ว 600 × 600 px ฟรีใน browser",
+      "canonical": "https://www.djai.academy/tools/resizeimg/passport-photo-resizer/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/passport-photo-resizer/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Passport Photo Resizer 35x45 mm and 2x2 Inch | DJAI",
+      "h1": "Resize and crop a passport photo for free",
+      "description": "Crop a passport photo to 35 × 45 mm at 413 × 531 px or choose the US 2 × 2 inch 600 × 600 px preset, privately in your browser.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/passport-photo-resizer/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/resizeimg/passport-photo-resizer/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Resize ảnh hộ chiếu 35 × 45 mm miễn phí, không cần đăng ký | DJAI Image Tools",
+      "h1": "Resize ảnh hộ chiếu 35 × 45 mm miễn phí",
+      "description": "Resize ảnh hộ chiếu 35 × 45 mm ngay trong trình duyệt. Không cần đăng ký, không watermark và hình ảnh không bị upload lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/resizeimg/passport-photo-resizer/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/",
+      "status": 200,
+      "language": "th",
+      "title": "เครื่องมือ PDF ฟรี: รวม แยก บีบอัด และแปลง PDF | DJTools",
+      "h1": "เครื่องมือ PDF ระดับมืออาชีพ ใช้ฟรีทุกคน",
+      "description": "เครื่องมือ PDF ฟรี 8 รายการจาก DJAI Academy รวม PDF แยก PDF บีบอัด แปลง JPG/PDF หมุน ใส่ลายน้ำ และล็อกด้วย AES-256",
+      "canonical": "https://www.djai.academy/tools/PDFTools/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Free PDF Tools: Merge, Split, Compress and Convert PDF | DJTools",
+      "h1": "Professional PDF tools, completely free",
+      "description": "Eight free browser PDF tools by DJAI Academy: merge, split, compress, convert, rotate, watermark, and protect PDF with AES-256.",
+      "canonical": "https://www.djai.academy/tools/PDFTools/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/merge-pdf/",
+      "status": 200,
+      "language": "th",
+      "title": "รวมไฟล์ PDF ฟรี | DJTools by DJAI Academy",
+      "h1": "รวมไฟล์ PDF ฟรี",
+      "description": "รวมไฟล์ PDF หลายไฟล์เป็นเอกสารเดียวผ่าน browser ฟรี ไม่ต้อง upload ไฟล์ ไม่ต้องสมัครบัญชี และไม่มี watermark",
+      "canonical": "https://www.djai.academy/tools/PDFTools/merge-pdf/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/merge-pdf/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Merge PDF Files Online Free | DJTools by DJAI Academy",
+      "h1": "Merge PDF Files Online Free",
+      "description": "Merge multiple PDF files into one document in your browser. Free, private, no sign-up, no uploads, and no watermark.",
+      "canonical": "https://www.djai.academy/tools/PDFTools/merge-pdf/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/split-pdf/",
+      "status": 200,
+      "language": "th",
+      "title": "แยกหน้า PDF ออนไลน์ฟรี | DJTools by DJAI Academy",
+      "h1": "แยกหน้า PDF ออนไลน์ฟรี",
+      "description": "แยก PDF ตามช่วงหน้า ดึงเฉพาะหน้าที่ต้องการ หรือแบ่งเอกสารทุก N หน้าได้ฟรี โดยไฟล์ไม่ออกจากอุปกรณ์ของคุณ",
+      "canonical": "https://www.djai.academy/tools/PDFTools/split-pdf/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/split-pdf/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Split PDF Pages Online Free | DJTools by DJAI Academy",
+      "h1": "Split PDF Pages Online Free",
+      "description": "Split a PDF by ranges, extract selected pages, or divide a document every N pages. Free and processed locally in your browser.",
+      "canonical": "https://www.djai.academy/tools/PDFTools/split-pdf/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/compress-pdf/",
+      "status": 200,
+      "language": "th",
+      "title": "บีบอัด PDF ลดขนาดไฟล์ฟรี | DJTools by DJAI Academy",
+      "h1": "บีบอัด PDF ลดขนาดไฟล์ฟรี",
+      "description": "บีบอัด PDF และลดขนาดไฟล์ฟรีใน browser เลือกคุณภาพได้ 3 ระดับ พร้อมเปรียบเทียบขนาดก่อนดาวน์โหลด",
+      "canonical": "https://www.djai.academy/tools/PDFTools/compress-pdf/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/compress-pdf/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Compress PDF and Reduce File Size Free | DJTools by DJAI Academy",
+      "h1": "Compress PDF and Reduce File Size Free",
+      "description": "Compress PDF files in your browser with three quality levels and compare the size before downloading. Free and private.",
+      "canonical": "https://www.djai.academy/tools/PDFTools/compress-pdf/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/images-to-pdf/",
+      "status": 200,
+      "language": "th",
+      "title": "รวมรูป JPG, PNG และ WebP เป็น PDF ฟรี | DJTools by DJAI Academy",
+      "h1": "รวมรูป JPG, PNG และ WebP เป็น PDF ฟรี",
+      "description": "รวมรูป JPG, PNG และ WebP เป็น PDF เดียวฟรี จัดลำดับรูป เลือกขนาดกระดาษและแนวหน้าได้โดยไม่ upload รูปขึ้น server",
+      "canonical": "https://www.djai.academy/tools/PDFTools/images-to-pdf/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/images-to-pdf/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Combine JPG, PNG, and WebP Images into One PDF | DJTools by DJAI Academy",
+      "h1": "Combine JPG, PNG, and WebP Images into One PDF",
+      "description": "Combine JPG, PNG, and WebP images into one PDF for free. Reorder files and choose page size and orientation without uploading them.",
+      "canonical": "https://www.djai.academy/tools/PDFTools/images-to-pdf/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/pdf-to-images/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง PDF เป็น JPG หรือ PNG ฟรี | DJTools by DJAI Academy",
+      "h1": "แปลง PDF เป็น JPG หรือ PNG ฟรี",
+      "description": "แปลงทุกหน้า PDF เป็นรูป JPG หรือ PNG คุณภาพสูงฟรี ดาวน์โหลดไฟล์เดียวหรือ ZIP โดยประมวลผลใน browser",
+      "canonical": "https://www.djai.academy/tools/PDFTools/pdf-to-images/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/pdf-to-images/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert PDF to JPG or PNG Free | DJTools by DJAI Academy",
+      "h1": "Convert PDF to JPG or PNG Free",
+      "description": "Convert PDF pages to high-quality JPG or PNG images for free. Download one image or a ZIP, processed entirely in your browser.",
+      "canonical": "https://www.djai.academy/tools/PDFTools/pdf-to-images/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/rotate-pdf/",
+      "status": 200,
+      "language": "th",
+      "title": "หมุนหน้า PDF ออนไลน์ฟรี | DJTools by DJAI Academy",
+      "h1": "หมุนหน้า PDF ออนไลน์ฟรี",
+      "description": "หมุนหน้า PDF ออนไลน์ฟรี เลือกหมุนทุกหน้าหรือระบุหน้าได้ ไฟล์เป็นส่วนตัวและไม่ถูก upload",
+      "canonical": "https://www.djai.academy/tools/PDFTools/rotate-pdf/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/rotate-pdf/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Rotate PDF Pages Online Free | DJTools by DJAI Academy",
+      "h1": "Rotate PDF Pages Online Free",
+      "description": "Rotate every PDF page or only selected pages online for free. Your document stays private and is never uploaded.",
+      "canonical": "https://www.djai.academy/tools/PDFTools/rotate-pdf/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/watermark-pdf/",
+      "status": 200,
+      "language": "th",
+      "title": "ใส่ Watermark PDF ฟรี | DJTools by DJAI Academy",
+      "h1": "ใส่ Watermark PDF ฟรี",
+      "description": "ใส่ watermark ข้อความภาษาไทย อังกฤษ หรือโลโก้ลงใน PDF ฟรี ปรับตำแหน่ง ขนาด และความโปร่งใสได้",
+      "canonical": "https://www.djai.academy/tools/PDFTools/watermark-pdf/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/watermark-pdf/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Add a Watermark to PDF Free | DJTools by DJAI Academy",
+      "h1": "Add a Watermark to PDF Free",
+      "description": "Add a text, logo, or image watermark to a PDF for free. Control size, position, and opacity directly in your browser.",
+      "canonical": "https://www.djai.academy/tools/PDFTools/watermark-pdf/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/protect-pdf/",
+      "status": 200,
+      "language": "th",
+      "title": "ใส่รหัสผ่าน PDF ด้วย AES-256 | DJTools by DJAI Academy",
+      "h1": "ใส่รหัสผ่าน PDF ด้วย AES-256",
+      "description": "ใส่รหัสผ่าน PDF ใน browser ด้วย AES-256 พร้อมกำหนดสิทธิ์พิมพ์ คัดลอก แก้ไข และกรอกฟอร์ม",
+      "canonical": "https://www.djai.academy/tools/PDFTools/protect-pdf/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/protect-pdf/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Password Protect PDF with AES-256 | DJTools by DJAI Academy",
+      "h1": "Password Protect PDF with AES-256",
+      "description": "Password protect a PDF in your browser with AES-256 encryption and control printing, copying, editing, and form permissions.",
+      "canonical": "https://www.djai.academy/tools/PDFTools/protect-pdf/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/organize-pdf/",
+      "status": 200,
+      "language": "th",
+      "title": "เรียงและลบหน้า PDF ฟรี | DJTools by DJAI Academy",
+      "h1": "เรียงและลบหน้า PDF ฟรี",
+      "description": "เรียงหน้า PDF ใหม่หรือลบหน้าที่ไม่ต้องการใน browser ฟรี โดยระบุลำดับสุดท้าย เช่น 3, 1, 2, 5",
+      "canonical": "https://www.djai.academy/tools/PDFTools/organize-pdf/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/organize-pdf/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Reorder and Delete PDF Pages Free | DJTools by DJAI Academy",
+      "h1": "Reorder and Delete PDF Pages Free",
+      "description": "Reorder PDF pages or delete pages for free by entering the final order, such as 3, 1, 2, 5. Processing stays in your browser.",
+      "canonical": "https://www.djai.academy/tools/PDFTools/organize-pdf/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/add-page-numbers/",
+      "status": 200,
+      "language": "th",
+      "title": "ใส่เลขหน้า PDF ฟรี | DJTools by DJAI Academy",
+      "h1": "ใส่เลขหน้า PDF ฟรี",
+      "description": "เพิ่มเลขหน้าให้ PDF ฟรี เลือกตำแหน่งและเลขเริ่มต้นได้ โดยไฟล์ประมวลผลใน browser",
+      "canonical": "https://www.djai.academy/tools/PDFTools/add-page-numbers/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/add-page-numbers/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Add Page Numbers to PDF Free | DJTools by DJAI Academy",
+      "h1": "Add Page Numbers to PDF Free",
+      "description": "Add page numbers to a PDF for free with position and starting-number controls, processed privately in your browser.",
+      "canonical": "https://www.djai.academy/tools/PDFTools/add-page-numbers/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/remove-pdf-metadata/",
+      "status": 200,
+      "language": "th",
+      "title": "ลบ Metadata จาก PDF ฟรี | DJTools by DJAI Academy",
+      "h1": "ลบ Metadata จาก PDF ฟรี",
+      "description": "สร้างสำเนา PDF ที่ลบ metadata ระบุตัวตนออกแบบ private ใน browser โดยไม่ upload เอกสาร",
+      "canonical": "https://www.djai.academy/tools/PDFTools/remove-pdf-metadata/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/remove-pdf-metadata/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Remove PDF Metadata Free | DJTools by DJAI Academy",
+      "h1": "Remove PDF Metadata Free",
+      "description": "Create a privacy-safe PDF copy with identifying metadata removed locally in your browser.",
+      "canonical": "https://www.djai.academy/tools/PDFTools/remove-pdf-metadata/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/jpg-to-pdf/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง JPG เป็น PDF ออนไลน์ฟรี | DJTools by DJAI Academy",
+      "h1": "แปลง JPG เป็น PDF ออนไลน์ฟรี",
+      "description": "แปลง JPG เป็น PDF ฟรีใน browser รวมรูปหลายไฟล์ จัดลำดับ เลือก A4 หรือ Letter โดยไม่ upload รูปขึ้น server",
+      "canonical": "https://www.djai.academy/tools/PDFTools/jpg-to-pdf/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/jpg-to-pdf/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert JPG to PDF Online Free | DJTools by DJAI Academy",
+      "h1": "Convert JPG to PDF Online Free",
+      "description": "Convert JPG to PDF free in your browser. Combine and reorder images, choose A4 or Letter, and never upload files to a server.",
+      "canonical": "https://www.djai.academy/tools/PDFTools/jpg-to-pdf/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/pdf-to-jpg/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง PDF เป็น JPG ออนไลน์ฟรี | DJTools by DJAI Academy",
+      "h1": "แปลง PDF เป็น JPG ออนไลน์ฟรี",
+      "description": "แปลง PDF เป็น JPG ฟรี ส่งออกทุกหน้าเป็นรูปความละเอียดสูงและดาวน์โหลด ZIP โดยไฟล์ประมวลผลใน browser",
+      "canonical": "https://www.djai.academy/tools/PDFTools/pdf-to-jpg/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/pdf-to-jpg/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert PDF to JPG Online Free | DJTools by DJAI Academy",
+      "h1": "Convert PDF to JPG Online Free",
+      "description": "Convert PDF pages to high-quality JPG images free in your browser. Download a single image or ZIP without uploading the PDF.",
+      "canonical": "https://www.djai.academy/tools/PDFTools/pdf-to-jpg/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/png-to-pdf/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง PNG เป็น PDF ออนไลน์ฟรี | DJTools by DJAI Academy",
+      "h1": "แปลง PNG เป็น PDF ออนไลน์ฟรี",
+      "description": "แปลง PNG เป็น PDF ฟรีใน browser รวมหลายรูปเป็นเอกสารเดียวโดยไม่ upload ไฟล์และไม่ต้องสมัครบัญชี",
+      "canonical": "https://www.djai.academy/tools/PDFTools/png-to-pdf/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/png-to-pdf/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert PNG to PDF Online Free | DJTools by DJAI Academy",
+      "h1": "Convert PNG to PDF Online Free",
+      "description": "Convert PNG to PDF free in your browser. Combine multiple PNG images without uploading files or creating an account.",
+      "canonical": "https://www.djai.academy/tools/PDFTools/png-to-pdf/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/webp-to-pdf/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง WebP เป็น PDF ออนไลน์ฟรี | DJTools by DJAI Academy",
+      "h1": "แปลง WebP เป็น PDF ออนไลน์ฟรี",
+      "description": "แปลง WebP เป็น PDF ฟรีและเป็นส่วนตัวใน browser รองรับหลายรูปและไม่ upload ไฟล์ขึ้น server",
+      "canonical": "https://www.djai.academy/tools/PDFTools/webp-to-pdf/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/webp-to-pdf/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert WebP to PDF Online Free | DJTools by DJAI Academy",
+      "h1": "Convert WebP to PDF Online Free",
+      "description": "Convert WebP to PDF free and privately in your browser. Reorder multiple images without uploading them to a server.",
+      "canonical": "https://www.djai.academy/tools/PDFTools/webp-to-pdf/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/pdf-to-png/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง PDF เป็น PNG ออนไลน์ฟรี | DJTools by DJAI Academy",
+      "h1": "แปลง PDF เป็น PNG ออนไลน์ฟรี",
+      "description": "แปลง PDF เป็น PNG ฟรีใน browser เหมาะกับข้อความและกราฟิกที่ต้องการคุณภาพแบบ lossless โดยไม่ upload เอกสาร",
+      "canonical": "https://www.djai.academy/tools/PDFTools/pdf-to-png/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/pdf-to-png/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert PDF to PNG Online Free | DJTools by DJAI Academy",
+      "h1": "Convert PDF to PNG Online Free",
+      "description": "Convert PDF pages to lossless PNG images free in your browser without uploading the document.",
+      "canonical": "https://www.djai.academy/tools/PDFTools/pdf-to-png/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/extract-pdf-pages/",
+      "status": 200,
+      "language": "th",
+      "title": "ดึงเฉพาะหน้าจาก PDF ฟรี | DJTools by DJAI Academy",
+      "h1": "ดึงเฉพาะหน้าจาก PDF ฟรี",
+      "description": "ดึงเฉพาะหน้าจาก PDF ฟรี ระบุหน้า เช่น 1-3, 5, 8 แล้วดาวน์โหลดเอกสารใหม่โดยประมวลผลใน browser",
+      "canonical": "https://www.djai.academy/tools/PDFTools/extract-pdf-pages/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/extract-pdf-pages/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Extract Pages from PDF Free | DJTools by DJAI Academy",
+      "h1": "Extract Pages from PDF Free",
+      "description": "Extract selected PDF pages free in your browser. Enter pages such as 1-3, 5, 8 and download a private new document.",
+      "canonical": "https://www.djai.academy/tools/PDFTools/extract-pdf-pages/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/delete-pages-from-pdf/",
+      "status": 200,
+      "language": "th",
+      "title": "ลบหน้าจาก PDF ออนไลน์ฟรี | DJTools by DJAI Academy",
+      "h1": "ลบหน้าจาก PDF ออนไลน์ฟรี",
+      "description": "ลบหน้าจาก PDF ฟรีใน browser ระบุหน้าเดี่ยวหรือช่วงหน้าโดยไฟล์ไม่ถูก upload และต้นฉบับไม่ถูกแก้ไข",
+      "canonical": "https://www.djai.academy/tools/PDFTools/delete-pages-from-pdf/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/delete-pages-from-pdf/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Delete Pages from PDF Online Free | DJTools by DJAI Academy",
+      "h1": "Delete Pages from PDF Online Free",
+      "description": "Delete pages from a PDF free in your browser. Remove pages or ranges without uploading or modifying the original.",
+      "canonical": "https://www.djai.academy/tools/PDFTools/delete-pages-from-pdf/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/reorder-pdf-pages/",
+      "status": 200,
+      "language": "th",
+      "title": "เรียงหน้า PDF ใหม่ออนไลน์ฟรี | DJTools by DJAI Academy",
+      "h1": "เรียงหน้า PDF ใหม่ออนไลน์ฟรี",
+      "description": "เรียงหน้า PDF ใหม่ฟรีใน browser โดยไม่ upload เอกสารและไม่แก้ไขไฟล์ต้นฉบับ",
+      "canonical": "https://www.djai.academy/tools/PDFTools/reorder-pdf-pages/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/reorder-pdf-pages/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Reorder PDF Pages Online Free | DJTools by DJAI Academy",
+      "h1": "Reorder PDF Pages Online Free",
+      "description": "Reorder PDF pages free in your browser. Define the final sequence without uploading the original document.",
+      "canonical": "https://www.djai.academy/tools/PDFTools/reorder-pdf-pages/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Công cụ PDF miễn phí: ghép, tách, nén và chuyển đổi | DJTools",
+      "h1": "Bộ công cụ PDF chuyên nghiệp, hoàn toàn miễn phí",
+      "description": "11 công cụ PDF miễn phí: ghép, tách, nén, chuyển ảnh/PDF, xoay, watermark, đánh số trang, xóa metadata và khóa AES-256. Không đăng ký, không watermark.",
+      "canonical": "https://www.djai.academy/tools/PDFTools/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/merge-pdf/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Ghép file PDF miễn phí | DJTools",
+      "h1": "Ghép file PDF miễn phí",
+      "description": "Ghép nhiều file PDF thành một tài liệu ngay trong trình duyệt. Miễn phí, không cần đăng ký, không upload và không watermark.",
+      "canonical": "https://www.djai.academy/tools/PDFTools/merge-pdf/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/split-pdf/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Tách trang PDF miễn phí | DJTools",
+      "h1": "Tách trang PDF miễn phí",
+      "description": "Tách PDF theo khoảng, lấy trang cần dùng hoặc chia tài liệu mỗi N trang. File được xử lý trên thiết bị và không bị upload.",
+      "canonical": "https://www.djai.academy/tools/PDFTools/split-pdf/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/compress-pdf/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Nén PDF giảm dung lượng miễn phí | DJTools",
+      "h1": "Nén PDF giảm dung lượng miễn phí",
+      "description": "Nén file PDF trong trình duyệt với ba mức chất lượng và so sánh dung lượng trước khi tải. Miễn phí, không cần email.",
+      "canonical": "https://www.djai.academy/tools/PDFTools/compress-pdf/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/images-to-pdf/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Chuyển JPG, PNG sang PDF miễn phí | DJTools",
+      "h1": "Chuyển JPG, PNG sang PDF miễn phí",
+      "description": "Chuyển JPG, PNG và WebP sang PDF miễn phí. Sắp xếp ảnh, chọn khổ và chiều trang mà không upload file.",
+      "canonical": "https://www.djai.academy/tools/PDFTools/images-to-pdf/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/pdf-to-images/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Chuyển PDF sang JPG hoặc PNG miễn phí | DJTools",
+      "h1": "Chuyển PDF sang JPG hoặc PNG miễn phí",
+      "description": "Chuyển các trang PDF thành ảnh JPG hoặc PNG chất lượng cao ngay trong trình duyệt, không cần đăng ký.",
+      "canonical": "https://www.djai.academy/tools/PDFTools/pdf-to-images/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/rotate-pdf/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Xoay trang PDF miễn phí | DJTools",
+      "h1": "Xoay trang PDF miễn phí",
+      "description": "Xoay mọi trang hoặc chỉ các trang được chọn. Tài liệu được xử lý riêng tư và không rời khỏi thiết bị.",
+      "canonical": "https://www.djai.academy/tools/PDFTools/rotate-pdf/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/watermark-pdf/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Thêm watermark vào PDF miễn phí | DJTools",
+      "h1": "Thêm watermark vào PDF miễn phí",
+      "description": "Thêm chữ, logo hoặc ảnh watermark vào PDF miễn phí; điều chỉnh kích thước, vị trí và độ mờ trong trình duyệt.",
+      "canonical": "https://www.djai.academy/tools/PDFTools/watermark-pdf/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/protect-pdf/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Đặt mật khẩu PDF bằng AES-256 | DJTools",
+      "h1": "Đặt mật khẩu PDF bằng AES-256",
+      "description": "Đặt mật khẩu PDF bằng mã hóa AES-256 và kiểm soát quyền in, sao chép, chỉnh sửa cùng điền form.",
+      "canonical": "https://www.djai.academy/tools/PDFTools/protect-pdf/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/organize-pdf/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Sắp xếp và xóa trang PDF miễn phí | DJTools",
+      "h1": "Sắp xếp và xóa trang PDF miễn phí",
+      "description": "Đổi thứ tự hoặc xóa trang PDF miễn phí bằng cách nhập thứ tự cuối cùng, ví dụ 3, 1, 2, 5.",
+      "canonical": "https://www.djai.academy/tools/PDFTools/organize-pdf/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/add-page-numbers/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Thêm số trang vào PDF miễn phí | DJTools",
+      "h1": "Thêm số trang vào PDF miễn phí",
+      "description": "Thêm số trang vào PDF miễn phí, chọn vị trí và số bắt đầu; toàn bộ xử lý diễn ra trên thiết bị.",
+      "canonical": "https://www.djai.academy/tools/PDFTools/add-page-numbers/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/PDFTools/remove-pdf-metadata/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Xóa metadata PDF miễn phí | DJTools",
+      "h1": "Xóa metadata PDF miễn phí",
+      "description": "Tạo bản sao PDF đã xóa metadata nhận dạng ngay trong trình duyệt, không upload tài liệu.",
+      "canonical": "https://www.djai.academy/tools/PDFTools/remove-pdf-metadata/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/",
+      "status": 200,
+      "language": "th",
+      "title": "เครื่องมือวิดีโอและเสียงฟรี ออนไลน์ | DJAI Media Tools",
+      "h1": "เครื่องมือวิดีโอและเสียงฟรีใน browser",
+      "description": "แปลง ตัด บีบอัด ครอป resize รวม หมุน หรือดึง frame จากวิดีโอ และจัดการไฟล์เสียงฟรีใน browser โดยไม่ upload ไฟล์",
+      "canonical": "https://www.djai.academy/tools/media/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Free Video and Audio Tools Online | DJAI Media Tools",
+      "h1": "Free browser video and audio tools",
+      "description": "Convert, cut, compress, crop, resize, merge, rotate, or extract frames from video and manage audio files free in your browser without uploading files.",
+      "canonical": "https://www.djai.academy/tools/media/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/mp3-to-wav/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง MP3 เป็น WAV ฟรี ออนไลน์ | DJAI Media Tools",
+      "h1": "แปลง MP3 เป็น WAV ฟรี",
+      "description": "แปลงไฟล์ MP3 เป็น WAV ฟรีใน browser เหมาะกับงานตัดต่อ เสียงคุณภาพสูง และโปรแกรมที่ต้องการ WAV",
+      "canonical": "https://www.djai.academy/tools/media/mp3-to-wav/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/mp3-to-wav/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert MP3 to WAV Free Online | DJAI Media Tools",
+      "h1": "Convert MP3 to WAV for free",
+      "description": "Convert MP3 audio to WAV free in your browser for editing, lossless workflows, and software that requires WAV.",
+      "canonical": "https://www.djai.academy/tools/media/mp3-to-wav/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/wav-to-mp3/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง WAV เป็น MP3 ฟรี ออนไลน์ | DJAI Media Tools",
+      "h1": "แปลง WAV เป็น MP3 ฟรี",
+      "description": "แปลง WAV เป็น MP3 ฟรี พร้อมเลือก bitrate เพื่อลดขนาดไฟล์สำหรับแชร์ ฟัง และ upload",
+      "canonical": "https://www.djai.academy/tools/media/wav-to-mp3/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/wav-to-mp3/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert WAV to MP3 Free Online | DJAI Media Tools",
+      "h1": "Convert WAV to MP3 for free",
+      "description": "Convert WAV audio to MP3 free with a selectable bitrate for smaller files, sharing, and uploads.",
+      "canonical": "https://www.djai.academy/tools/media/wav-to-mp3/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/m4a-to-mp3/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง M4A เป็น MP3 ฟรี ออนไลน์ | DJAI Media Tools",
+      "h1": "แปลง M4A เป็น MP3 ฟรี",
+      "description": "แปลงไฟล์เสียง M4A เป็น MP3 ฟรีใน browser เพื่อใช้กับเครื่องเล่นและโปรแกรมที่รองรับ MP3",
+      "canonical": "https://www.djai.academy/tools/media/m4a-to-mp3/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/m4a-to-mp3/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert M4A to MP3 Free Online | DJAI Media Tools",
+      "h1": "Convert M4A to MP3 for free",
+      "description": "Convert M4A audio to MP3 free in your browser for players, editors, and software that supports MP3.",
+      "canonical": "https://www.djai.academy/tools/media/m4a-to-mp3/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/mp4-to-mp3/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง MP4 เป็น MP3 ฟรี ดึงเสียงจากวิดีโอ | DJAI Media Tools",
+      "h1": "แปลง MP4 เป็น MP3 ฟรี",
+      "description": "ดึงเสียงจากวิดีโอ MP4 แล้วแปลงเป็น MP3 ฟรีใน browser พร้อมเลือก bitrate",
+      "canonical": "https://www.djai.academy/tools/media/mp4-to-mp3/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/mp4-to-mp3/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert MP4 to MP3 Free and Extract Audio | DJAI Media Tools",
+      "h1": "Convert MP4 to MP3 for free",
+      "description": "Extract audio from an MP4 video and convert it to MP3 free in your browser with a selectable bitrate.",
+      "canonical": "https://www.djai.academy/tools/media/mp4-to-mp3/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/extract-audio-from-video/",
+      "status": 200,
+      "language": "th",
+      "title": "ดึงเสียงจากวิดีโอเป็น MP3 ฟรี | DJAI Media Tools",
+      "h1": "ดึงเสียงจากวิดีโอฟรี",
+      "description": "ดึง audio จากไฟล์ MP4 MOV WebM หรือ MKV แล้วดาวน์โหลดเป็น MP3 ฟรีโดยไม่ upload วิดีโอ",
+      "canonical": "https://www.djai.academy/tools/media/extract-audio-from-video/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/extract-audio-from-video/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Extract Audio from Video to MP3 Free | DJAI Media Tools",
+      "h1": "Extract audio from a video for free",
+      "description": "Extract audio from MP4, MOV, WebM, or MKV video and download MP3 without uploading the video.",
+      "canonical": "https://www.djai.academy/tools/media/extract-audio-from-video/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/video-converter/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลงวิดีโอออนไลน์ฟรี MP4 MOV MKV WebM | DJAI",
+      "h1": "แปลงวิดีโอออนไลน์ โดยไฟล์ไม่ต้องออกจากเครื่อง",
+      "description": "แปลงวิดีโอออนไลน์ระหว่าง MP4, MOV, WebM, MKV และ AVI เลือกคุณภาพและความละเอียดได้ ประมวลผลใน browser โดยไม่ต้องสมัครและไม่อัปโหลดไฟล์",
+      "canonical": "https://www.djai.academy/tools/media/video-converter/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/video-converter/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Video Converter Online – MP4, MOV, MKV, WebM | DJAI",
+      "h1": "Convert video online without sending it to a server",
+      "description": "Convert video online between MP4, MOV, WebM, MKV and AVI. Choose quality and resolution, then process the file privately in your browser with no account.",
+      "canonical": "https://www.djai.academy/tools/media/video-converter/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/mkv-to-mp4/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง MKV เป็น MP4 ออนไลน์ฟรี | DJAI",
+      "h1": "แปลง MKV เป็น MP4 เพื่อให้เปิดและแชร์ง่ายกว่าเดิม",
+      "description": "แปลง MKV เป็น MP4 ออนไลน์ใน browser เพื่อให้เปิด แชร์ และอัปโหลดง่ายขึ้น โดยไฟล์ต้นฉบับไม่ถูกส่งขึ้น server ของ DJAI",
+      "canonical": "https://www.djai.academy/tools/media/mkv-to-mp4/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/mkv-to-mp4/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert MKV to MP4 Online Free | DJAI",
+      "h1": "Convert MKV to MP4 for easier playback and sharing",
+      "description": "Convert MKV to MP4 online in your browser. Make MKV video easier to play, share and upload without sending the source file to DJAI.",
+      "canonical": "https://www.djai.academy/tools/media/mkv-to-mp4/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/avi-to-mp4/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง AVI เป็น MP4 ออนไลน์ฟรี | DJAI",
+      "h1": "แปลง AVI เป็น MP4 เพื่อไม่ต้องลาก format เก่าไปงานถัดไป",
+      "description": "แปลง AVI เป็น MP4 ออนไลน์ใน browser เปลี่ยนไฟล์วิดีโอเก่าให้เป็น MP4 ที่เปิด แชร์ และอัปโหลดง่ายกว่าโดยไม่ส่งไฟล์ขึ้น server",
+      "canonical": "https://www.djai.academy/tools/media/avi-to-mp4/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/avi-to-mp4/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert AVI to MP4 Online Free | DJAI",
+      "h1": "Convert AVI to MP4 and stop carrying an old container forward",
+      "description": "Convert AVI to MP4 online in your browser. Turn older AVI video into a modern MP4 that is easier to play, share and upload.",
+      "canonical": "https://www.djai.academy/tools/media/avi-to-mp4/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/mp4-to-mov/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง MP4 เป็น MOV ออนไลน์ฟรี | DJAI",
+      "h1": "แปลง MP4 เป็น MOV เมื่อ workflow ถัดไปต้องการ MOV จริง ๆ",
+      "description": "แปลง MP4 เป็น MOV ออนไลน์ใน browser สำหรับ workflow ของ Apple หรืองานตัดต่อ เลือกคุณภาพและความละเอียดได้โดยไม่ต้องอัปโหลดไฟล์",
+      "canonical": "https://www.djai.academy/tools/media/mp4-to-mov/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/mp4-to-mov/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert MP4 to MOV Online Free | DJAI",
+      "h1": "Convert MP4 to MOV when the next workflow expects MOV",
+      "description": "Convert MP4 to MOV online in your browser for Apple or editing workflows. Choose quality and resolution with no account and no video upload.",
+      "canonical": "https://www.djai.academy/tools/media/mp4-to-mov/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/mp4-to-webm/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง MP4 เป็น WebM ออนไลน์ฟรี | DJAI",
+      "h1": "แปลง MP4 เป็น WebM เมื่อปลายทางของวิดีโอคือเว็บ",
+      "description": "แปลง MP4 เป็น WebM ออนไลน์สำหรับงานเว็บ เลือกคุณภาพและความละเอียดได้ แล้ว encode ใน browser โดยไม่ต้องอัปโหลดวิดีโอต้นฉบับ",
+      "canonical": "https://www.djai.academy/tools/media/mp4-to-webm/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/mp4-to-webm/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert MP4 to WebM Online Free | DJAI",
+      "h1": "Convert MP4 to WebM for a web-first video file",
+      "description": "Convert MP4 to WebM online for web delivery. Choose quality and resolution, then encode locally in your browser without uploading the source video.",
+      "canonical": "https://www.djai.academy/tools/media/mp4-to-webm/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/webm-to-mp4/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง WebM เป็น MP4 ออนไลน์ฟรี | DJAI",
+      "h1": "แปลง WebM เป็น MP4 เมื่ออยากให้ไฟล์ไปต่อได้ง่ายขึ้น",
+      "description": "แปลง WebM เป็น MP4 ออนไลน์ด้วยการประมวลผลใน browser ได้ไฟล์ MP4 ที่เปิด แชร์ ตัดต่อ และอัปโหลดง่ายขึ้นโดยไม่ส่งไฟล์ขึ้น server",
+      "canonical": "https://www.djai.academy/tools/media/webm-to-mp4/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/webm-to-mp4/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert WebM to MP4 Online Free | DJAI",
+      "h1": "Convert WebM to MP4 when compatibility matters more",
+      "description": "Convert WebM to MP4 online with private browser processing. Create a widely compatible MP4 for sharing, editing or uploading without a file upload.",
+      "canonical": "https://www.djai.academy/tools/media/webm-to-mp4/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/mov-to-mp4/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง MOV เป็น MP4 ออนไลน์ฟรี | DJAI",
+      "h1": "แปลง MOV เป็น MP4 ก่อนส่งไฟล์ต่อให้คนอื่น",
+      "description": "แปลง MOV เป็น MP4 ออนไลน์เพื่อแชร์ เปิด และอัปโหลดง่ายขึ้น เลือกคุณภาพได้และประมวลผลไฟล์ใน browser โดยไม่ต้องสมัครบัญชี",
+      "canonical": "https://www.djai.academy/tools/media/mov-to-mp4/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/mov-to-mp4/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert MOV to MP4 Online Free | DJAI",
+      "h1": "Convert MOV to MP4 before the file becomes someone else's problem",
+      "description": "Convert MOV to MP4 online for easier sharing and playback. Choose video quality and process the source locally in your browser with no account.",
+      "canonical": "https://www.djai.academy/tools/media/mov-to-mp4/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/video-cutter/",
+      "status": 200,
+      "language": "th",
+      "title": "ตัดวิดีโอออนไลน์ฟรี เลือกเวลา Start End | DJAI",
+      "h1": "ตัดวิดีโอจากสิ่งที่เห็นและได้ยิน ไม่ใช่เดา timestamp",
+      "description": "ตัดวิดีโอออนไลน์ด้วย playback และ timestamp ตั้ง Start/End พรีวิวช่วงที่เลือก แล้ว export ใน browser โดยไฟล์ไม่ถูกอัปโหลด",
+      "canonical": "https://www.djai.academy/tools/media/video-cutter/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/video-cutter/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Video Cutter Online – Trim Video by Timestamp | DJAI",
+      "h1": "Cut a video by watching it, not by guessing timestamps",
+      "description": "Cut video online with playback, exact start and end timestamps, and preview. Trim MP4 and common video formats privately in your browser.",
+      "canonical": "https://www.djai.academy/tools/media/video-cutter/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/compress-video/",
+      "status": 200,
+      "language": "th",
+      "title": "บีบอัดวิดีโอออนไลน์ ลดขนาด MP4 ฟรี | DJAI",
+      "h1": "บีบอัดวิดีโอจากข้อจำกัดจริงของงาน",
+      "description": "บีบอัดวิดีโอออนไลน์ด้วยคุณภาพ ความละเอียด หรือขนาดเป้าหมาย ลดขนาด MP4 ใน browser โดยไม่ต้องสมัครและไม่อัปโหลดไฟล์ต้นฉบับ",
+      "canonical": "https://www.djai.academy/tools/media/compress-video/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/compress-video/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Video Compressor Online – Reduce Video File Size | DJAI",
+      "h1": "Compress a video around the constraint you actually have",
+      "description": "Compress video online by quality, resolution or target size. Reduce MP4 file size privately in your browser with no account or source upload.",
+      "canonical": "https://www.djai.academy/tools/media/compress-video/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/compress-video-to-10mb/",
+      "status": 200,
+      "language": "th",
+      "title": "บีบอัดวิดีโอให้ประมาณ 10 MB ออนไลน์ | DJAI",
+      "h1": "บีบอัดวิดีโอให้ใกล้ 10 MB โดยไม่ต้องอัปโหลดไฟล์",
+      "description": "บีบอัดวิดีโอให้ใกล้ 10 MB ออนไลน์ ระบบคำนวณ bitrate จากความยาวแล้วประมวลผลใน browser โดยไม่ต้องอัปโหลดไฟล์",
+      "canonical": "https://www.djai.academy/tools/media/compress-video-to-10mb/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/compress-video-to-10mb/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Compress Video to 10 MB Online | DJAI",
+      "h1": "Compress a video toward 10 MB without uploading it",
+      "description": "Compress a video toward 10 MB online. The tool estimates bitrate from duration and processes the file privately in your browser with no upload.",
+      "canonical": "https://www.djai.academy/tools/media/compress-video-to-10mb/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/compress-video-to-25mb/",
+      "status": 200,
+      "language": "th",
+      "title": "บีบอัดวิดีโอให้ประมาณ 25 MB ออนไลน์ | DJAI",
+      "h1": "บีบอัดวิดีโอให้ใกล้ 25 MB โดยไม่ต้องอัปโหลดไฟล์",
+      "description": "บีบอัดวิดีโอให้ใกล้ 25 MB ออนไลน์ ระบบคำนวณ bitrate จากความยาวแล้วประมวลผลใน browser โดยไม่ต้องอัปโหลดไฟล์",
+      "canonical": "https://www.djai.academy/tools/media/compress-video-to-25mb/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/compress-video-to-25mb/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Compress Video to 25 MB Online | DJAI",
+      "h1": "Compress a video toward 25 MB without uploading it",
+      "description": "Compress a video toward 25 MB online. The tool estimates bitrate from duration and processes the file privately in your browser with no upload.",
+      "canonical": "https://www.djai.academy/tools/media/compress-video-to-25mb/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/compress-video-to-50mb/",
+      "status": 200,
+      "language": "th",
+      "title": "บีบอัดวิดีโอให้ประมาณ 50 MB ออนไลน์ | DJAI",
+      "h1": "บีบอัดวิดีโอให้ใกล้ 50 MB โดยไม่ต้องอัปโหลดไฟล์",
+      "description": "บีบอัดวิดีโอให้ใกล้ 50 MB ออนไลน์ ระบบคำนวณ bitrate จากความยาวแล้วประมวลผลใน browser โดยไม่ต้องอัปโหลดไฟล์",
+      "canonical": "https://www.djai.academy/tools/media/compress-video-to-50mb/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/compress-video-to-50mb/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Compress Video to 50 MB Online | DJAI",
+      "h1": "Compress a video toward 50 MB without uploading it",
+      "description": "Compress a video toward 50 MB online. The tool estimates bitrate from duration and processes the file privately in your browser with no upload.",
+      "canonical": "https://www.djai.academy/tools/media/compress-video-to-50mb/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/compress-video-to-100mb/",
+      "status": 200,
+      "language": "th",
+      "title": "บีบอัดวิดีโอให้ประมาณ 100 MB ออนไลน์ | DJAI",
+      "h1": "บีบอัดวิดีโอให้ใกล้ 100 MB โดยไม่ต้องอัปโหลดไฟล์",
+      "description": "บีบอัดวิดีโอให้ใกล้ 100 MB ออนไลน์ ระบบคำนวณ bitrate จากความยาวแล้วประมวลผลใน browser โดยไม่ต้องอัปโหลดไฟล์",
+      "canonical": "https://www.djai.academy/tools/media/compress-video-to-100mb/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/compress-video-to-100mb/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Compress Video to 100 MB Online | DJAI",
+      "h1": "Compress a video toward 100 MB without uploading it",
+      "description": "Compress a video toward 100 MB online. The tool estimates bitrate from duration and processes the file privately in your browser with no upload.",
+      "canonical": "https://www.djai.academy/tools/media/compress-video-to-100mb/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/video-cropper/",
+      "status": 200,
+      "language": "th",
+      "title": "ครอปวิดีโอออนไลน์ 16:9 9:16 1:1 ฟรี | DJAI",
+      "h1": "ครอปวิดีโอให้ตรง frame ที่แพลตฟอร์มถัดไปต้องการ",
+      "description": "ครอปวิดีโอออนไลน์เป็น 16:9, 9:16, 1:1, 4:5 หรือ 3:2 ใช้ center crop สำหรับ social เว็บ และงานตัดต่อ โดยประมวลผลใน browser",
+      "canonical": "https://www.djai.academy/tools/media/video-cropper/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/video-cropper/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Video Cropper Online – Crop 16:9, 9:16, 1:1 | DJAI",
+      "h1": "Crop a video to the frame your next platform expects",
+      "description": "Crop video online to 16:9, 9:16, 1:1, 4:5 or 3:2. Create a centered crop privately in your browser for social, web or editing workflows.",
+      "canonical": "https://www.djai.academy/tools/media/video-cropper/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/video-resizer/",
+      "status": 200,
+      "language": "th",
+      "title": "ปรับขนาดวิดีโอ 1080p 720p 480p ออนไลน์ | DJAI",
+      "h1": "ปรับขนาดวิดีโอโดยไม่ยืดภาพให้เสียสัดส่วน",
+      "description": "ปรับขนาดวิดีโอออนไลน์เป็น 1080p, 720p, 480p หรือต่ำกว่าโดยรักษาอัตราส่วนเดิม ประมวลผล MP4 และ format ทั่วไปใน browser",
+      "canonical": "https://www.djai.academy/tools/media/video-resizer/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/video-resizer/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Video Resizer Online – Resize to 1080p, 720p, 480p | DJAI",
+      "h1": "Resize video without stretching the picture",
+      "description": "Resize video online to 1080p, 720p, 480p or smaller while keeping the aspect ratio. Process MP4 and common formats privately in your browser.",
+      "canonical": "https://www.djai.academy/tools/media/video-resizer/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/video-merger/",
+      "status": 200,
+      "language": "th",
+      "title": "รวมวิดีโอออนไลน์ เรียงคลิปแล้วรวมเป็น MP4 | DJAI",
+      "h1": "รวมหลายคลิปเป็นวิดีโอเดียว ตามลำดับที่คุณเลือก",
+      "description": "รวมวิดีโอหลายไฟล์ออนไลน์ เลือกคลิป เรียงลำดับ แล้ว export เป็น MP4 ไฟล์เดียว ประมวลผลใน browser โดยไม่ต้องสมัครบัญชี",
+      "canonical": "https://www.djai.academy/tools/media/video-merger/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/video-merger/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Video Merger Online – Combine Videos in Order | DJAI",
+      "h1": "Merge several video clips into one file, in the order you choose",
+      "description": "Merge videos online by choosing several clips, reordering them and exporting one MP4. Processing happens locally in your browser with no account.",
+      "canonical": "https://www.djai.academy/tools/media/video-merger/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/video-to-gif/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลงวิดีโอเป็น GIF ออนไลน์ เลือกช่วงคลิป | DJAI",
+      "h1": "เปลี่ยนไม่กี่วินาทีที่สำคัญของวิดีโอให้เป็น GIF",
+      "description": "แปลงช่วงหนึ่งของวิดีโอเป็น GIF ออนไลน์ เลือก Start/End ความกว้าง และ FPS แล้วสร้าง GIF ใน browser โดยไม่ต้องอัปโหลดไฟล์",
+      "canonical": "https://www.djai.academy/tools/media/video-to-gif/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/video-to-gif/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Video to GIF Online – Make a GIF from a Clip | DJAI",
+      "h1": "Turn the useful few seconds of a video into a GIF",
+      "description": "Turn part of a video into a GIF online. Choose start and end time, width and frame rate, preview the clip and create the GIF in your browser.",
+      "canonical": "https://www.djai.academy/tools/media/video-to-gif/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/gif-to-mp4/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง GIF เป็น MP4 ออนไลน์ฟรี | DJAI",
+      "h1": "แปลง GIF เป็น MP4 เมื่อ animation เริ่มหนักเกินเหตุ",
+      "description": "แปลง GIF เคลื่อนไหวเป็น MP4 ออนไลน์ เพื่อให้ไฟล์เล็กและใช้ง่ายขึ้น ประมวลผลใน browser โดยไม่ต้องสมัครบัญชีหรืออัปโหลดไฟล์",
+      "canonical": "https://www.djai.academy/tools/media/gif-to-mp4/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/gif-to-mp4/en/",
+      "status": 200,
+      "language": "en",
+      "title": "GIF to MP4 Converter Online Free | DJAI",
+      "h1": "Convert a GIF to MP4 when the animation has grown too heavy",
+      "description": "Convert an animated GIF to MP4 online for a smaller, easier-to-use video file. Processing happens locally in your browser with no account.",
+      "canonical": "https://www.djai.academy/tools/media/gif-to-mp4/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/remove-audio-from-video/",
+      "status": 200,
+      "language": "th",
+      "title": "ลบเสียงออกจากวิดีโอออนไลน์ ทำ MP4 ไม่มีเสียง | DJAI",
+      "h1": "ลบ audio track ออกจากวิดีโอ ไม่ใช่แค่ลด volume เป็นศูนย์",
+      "description": "ลบเสียงออกจากวิดีโอออนไลน์แล้ว export เป็น MP4 ที่ไม่มี audio stream ไฟล์ประมวลผลใน browser โดยไม่ต้องอัปโหลดหรือสมัครบัญชี",
+      "canonical": "https://www.djai.academy/tools/media/remove-audio-from-video/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/remove-audio-from-video/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Remove Audio from Video Online – Mute Video | DJAI",
+      "h1": "Remove the audio track instead of turning the volume down",
+      "description": "Remove sound from a video online and export a silent MP4. The source video is processed privately in your browser without an upload or account.",
+      "canonical": "https://www.djai.academy/tools/media/remove-audio-from-video/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/add-audio-to-video/",
+      "status": 200,
+      "language": "th",
+      "title": "ใส่เสียงในวิดีโอออนไลน์ เพิ่มเพลงหรือ Voiceover | DJAI",
+      "h1": "ใส่เสียงใหม่ในวิดีโอ โดยไม่ต้องเปิด editor เต็มตัว",
+      "description": "ใส่ MP3, WAV หรือไฟล์เสียงลงในวิดีโอออนไลน์ เลือกแทนที่เสียงเดิมหรือผสมสอง track แล้ว export MP4 ใน browser",
+      "canonical": "https://www.djai.academy/tools/media/add-audio-to-video/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/add-audio-to-video/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Add Audio to Video Online – Replace or Mix Sound | DJAI",
+      "h1": "Add a new audio track to video without opening a full editor",
+      "description": "Add an MP3, WAV or other audio file to video online. Replace the original sound or mix both tracks, then export an MP4 privately in your browser.",
+      "canonical": "https://www.djai.academy/tools/media/add-audio-to-video/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/video-speed-changer/",
+      "status": 200,
+      "language": "th",
+      "title": "ปรับความเร็ววิดีโอ 0.5x ถึง 2x ออนไลน์ | DJAI",
+      "h1": "เร่งหรือชะลอวิดีโอโดยให้ภาพกับเสียงยังไปด้วยกัน",
+      "description": "ปรับความเร็ววิดีโอออนไลน์ตั้งแต่ 0.5x ถึง 2x และซิงก์เสียงตามเมื่อมี audio track ประมวลผลใน browser แล้วดาวน์โหลดเป็น MP4",
+      "canonical": "https://www.djai.academy/tools/media/video-speed-changer/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/video-speed-changer/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Video Speed Changer Online – 0.5× to 2× | DJAI",
+      "h1": "Speed a video up or slow it down without losing sync",
+      "description": "Change video speed online from 0.5× to 2× and keep audio in sync when available. Process the video privately in your browser and download MP4.",
+      "canonical": "https://www.djai.academy/tools/media/video-speed-changer/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/extract-frames-from-video/",
+      "status": 200,
+      "language": "th",
+      "title": "ดึงภาพจากวิดีโอเป็น JPG PNG ออนไลน์ | DJAI",
+      "h1": "ดึงภาพนิ่งจากวิดีโอโดยไม่ต้องเลื่อนหา timestamp ทีละจุด",
+      "description": "ดึง frame จากวิดีโอเป็น JPG หรือ PNG ทุก 1, 2, 5 หรือ 10 วินาที ประมวลผลใน browser แล้วดาวน์โหลดทีละภาพหรือ ZIP",
+      "canonical": "https://www.djai.academy/tools/media/extract-frames-from-video/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/extract-frames-from-video/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Extract Frames from Video Online – JPG or PNG | DJAI",
+      "h1": "Pull useful still frames out of a video without scrubbing by hand",
+      "description": "Extract JPG or PNG frames from a video every 1, 2, 5 or 10 seconds. Process locally in your browser and download individual images or a ZIP.",
+      "canonical": "https://www.djai.academy/tools/media/extract-frames-from-video/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/rotate-video/",
+      "status": 200,
+      "language": "th",
+      "title": "หมุนวิดีโอ 90 หรือ 180 องศา ออนไลน์ | DJAI",
+      "h1": "หมุนวิดีโอเมื่อกล้องถือผิดด้าน แต่ moment ยังใช้ได้",
+      "description": "หมุนวิดีโอออนไลน์ 90° ตามเข็ม 90° ทวนเข็ม หรือ 180° แล้ว export MP4 ที่แก้ orientation แล้วใน browser โดยไม่อัปโหลดไฟล์",
+      "canonical": "https://www.djai.academy/tools/media/rotate-video/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/media/rotate-video/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Rotate Video Online – 90° or 180° | DJAI",
+      "h1": "Rotate a video when the camera orientation was wrong, not the moment",
+      "description": "Rotate video online 90° clockwise, 90° counter-clockwise or 180°. Export a corrected MP4 privately in your browser with no source upload.",
+      "canonical": "https://www.djai.academy/tools/media/rotate-video/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/document/",
+      "status": 200,
+      "language": "th",
+      "title": "เครื่องมือแปลงเอกสารฟรี | DJTools",
+      "h1": "เครื่องมือแปลงเอกสารฟรี",
+      "description": "แปลง DOCX, PDF, HTML, Markdown และข้อความแบบ private ใน browser โดยไม่ต้อง upload เอกสารขึ้น server",
+      "canonical": "https://www.djai.academy/tools/document/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/document/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Free Document Converter | DJTools",
+      "h1": "Free Document Converter",
+      "description": "Convert DOCX, PDF, HTML, Markdown, and text privately in your browser without uploading documents to a server.",
+      "canonical": "https://www.djai.academy/tools/document/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/document/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Công cụ chuyển đổi tài liệu miễn phí | DJTools",
+      "h1": "Công cụ chuyển đổi tài liệu miễn phí",
+      "description": "Chuyển DOCX, PDF, HTML, Markdown và văn bản ngay trong trình duyệt mà không upload tài liệu lên máy chủ.",
+      "canonical": "https://www.djai.academy/tools/document/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/document/docx-to-pdf/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง DOCX เป็น PDF ฟรี | DJTools",
+      "h1": "แปลง DOCX เป็น PDF ฟรี",
+      "description": "แปลงไฟล์ Word DOCX เป็น PDF แบบ private พร้อม preview เลือกขนาดกระดาษ margin และเลขหน้า",
+      "canonical": "https://www.djai.academy/tools/document/docx-to-pdf/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/document/docx-to-pdf/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert DOCX to PDF Free | DJTools",
+      "h1": "Convert DOCX to PDF Free",
+      "description": "Convert Word DOCX files to PDF privately with preview, paper size, margins, and optional page numbers.",
+      "canonical": "https://www.djai.academy/tools/document/docx-to-pdf/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/document/docx-to-pdf/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Chuyển DOCX sang PDF miễn phí | DJTools",
+      "h1": "Chuyển DOCX sang PDF miễn phí",
+      "description": "Chuyển DOCX sang PDF miễn phí ngay trong trình duyệt. File được xử lý cục bộ, không cần đăng ký, không watermark và không gửi lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/document/docx-to-pdf/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/document/docx-to-html/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง DOCX เป็น HTML ที่สะอาด | DJTools",
+      "h1": "แปลง DOCX เป็น HTML ที่สะอาด",
+      "description": "แปลง Word เป็น semantic HTML ที่ผ่านการ sanitize พร้อม preview, copy และดาวน์โหลด",
+      "canonical": "https://www.djai.academy/tools/document/docx-to-html/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/document/docx-to-html/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert DOCX to Clean HTML | DJTools",
+      "h1": "Convert DOCX to Clean HTML",
+      "description": "Turn Word documents into sanitized semantic HTML with preview, copy, and download.",
+      "canonical": "https://www.djai.academy/tools/document/docx-to-html/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/document/docx-to-html/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Chuyển DOCX sang HTML sạch | DJTools",
+      "h1": "Chuyển DOCX sang HTML sạch",
+      "description": "Chuyển DOCX sang HTML sạch ngay trong trình duyệt. File được xử lý cục bộ, không cần đăng ký, không watermark và không gửi lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/document/docx-to-html/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/document/docx-to-markdown/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง DOCX เป็น Markdown ฟรี | DJTools",
+      "h1": "แปลง DOCX เป็น Markdown ฟรี",
+      "description": "รักษา heading, list, link และ table แล้วส่งออก Markdown สำหรับ GitHub, Cursor, Codex และเอกสาร AI",
+      "canonical": "https://www.djai.academy/tools/document/docx-to-markdown/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/document/docx-to-markdown/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert DOCX to Markdown Free | DJTools",
+      "h1": "Convert DOCX to Markdown Free",
+      "description": "Preserve headings, lists, links, and tables in Markdown for GitHub, Cursor, Codex, and AI documentation.",
+      "canonical": "https://www.djai.academy/tools/document/docx-to-markdown/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/document/docx-to-markdown/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Chuyển DOCX sang Markdown miễn phí | DJTools",
+      "h1": "Chuyển DOCX sang Markdown miễn phí",
+      "description": "Chuyển DOCX sang Markdown miễn phí ngay trong trình duyệt. File được xử lý cục bộ, không cần đăng ký, không watermark và không gửi lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/document/docx-to-markdown/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/document/docx-to-text/",
+      "status": 200,
+      "language": "th",
+      "title": "ดึงข้อความจาก DOCX ฟรี | DJTools",
+      "h1": "ดึงข้อความจาก DOCX ฟรี",
+      "description": "ดึงข้อความล้วนจาก Word ใน browser พร้อม copy, download และนับคำ",
+      "canonical": "https://www.djai.academy/tools/document/docx-to-text/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/document/docx-to-text/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Extract Text from DOCX Free | DJTools",
+      "h1": "Extract Text from DOCX Free",
+      "description": "Extract plain text from Word documents locally with copy, download, and word count.",
+      "canonical": "https://www.djai.academy/tools/document/docx-to-text/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/document/docx-to-text/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Trích xuất văn bản từ DOCX miễn phí | DJTools",
+      "h1": "Trích xuất văn bản từ DOCX miễn phí",
+      "description": "Trích xuất văn bản từ DOCX miễn phí ngay trong trình duyệt. File được xử lý cục bộ, không cần đăng ký, không watermark và không gửi lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/document/docx-to-text/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/document/pdf-to-text/",
+      "status": 200,
+      "language": "th",
+      "title": "ดึงข้อความจาก PDF ฟรี | DJTools",
+      "h1": "ดึงข้อความจาก PDF ฟรี",
+      "description": "ดึงข้อความจาก PDF ตามช่วงหน้า ล้างบรรทัด และดาวน์โหลด TXT โดยไฟล์อยู่ในเครื่อง",
+      "canonical": "https://www.djai.academy/tools/document/pdf-to-text/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/document/pdf-to-text/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Extract Text from PDF Free | DJTools",
+      "h1": "Extract Text from PDF Free",
+      "description": "Extract text from selected PDF pages, clean line breaks, and download TXT without uploading the file.",
+      "canonical": "https://www.djai.academy/tools/document/pdf-to-text/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/document/pdf-to-text/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Trích xuất văn bản từ PDF miễn phí | DJTools",
+      "h1": "Trích xuất văn bản từ PDF miễn phí",
+      "description": "Trích xuất văn bản từ PDF miễn phí ngay trong trình duyệt. File được xử lý cục bộ, không cần đăng ký, không watermark và không gửi lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/document/pdf-to-text/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/document/pdf-to-word/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลงข้อความ PDF เป็น Word | DJTools",
+      "h1": "แปลงข้อความ PDF เป็น Word",
+      "description": "ดึงข้อความที่แก้ไขได้จาก PDF แล้วสร้าง DOCX แบบ page-by-page ใน browser",
+      "canonical": "https://www.djai.academy/tools/document/pdf-to-word/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/document/pdf-to-word/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert Editable PDF Text to Word | DJTools",
+      "h1": "Convert Editable PDF Text to Word",
+      "description": "Extract editable PDF text and rebuild it as a page-by-page DOCX in your browser.",
+      "canonical": "https://www.djai.academy/tools/document/pdf-to-word/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/document/pdf-to-word/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Chuyển văn bản PDF sang Word | DJTools",
+      "h1": "Chuyển văn bản PDF sang Word",
+      "description": "Chuyển văn bản PDF sang Word ngay trong trình duyệt. File được xử lý cục bộ, không cần đăng ký, không watermark và không gửi lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/document/pdf-to-word/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/document/ocr/",
+      "status": 200,
+      "language": "th",
+      "title": "OCR PDF และรูปภาพเป็นข้อความ | DJTools",
+      "h1": "OCR PDF และรูปภาพเป็นข้อความ",
+      "description": "อ่านข้อความจาก PDF scan, JPG และ PNG ด้วย OCR ภาษาไทยหรืออังกฤษใน browser",
+      "canonical": "https://www.djai.academy/tools/document/ocr/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/document/ocr/en/",
+      "status": 200,
+      "language": "en",
+      "title": "OCR PDF and Images to Text | DJTools",
+      "h1": "OCR PDF and Images to Text",
+      "description": "Recognize text in scanned PDFs, JPG, and PNG files with Thai or English browser OCR.",
+      "canonical": "https://www.djai.academy/tools/document/ocr/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/document/ocr/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "OCR PDF và hình ảnh thành văn bản | DJTools",
+      "h1": "OCR PDF và hình ảnh thành văn bản",
+      "description": "OCR PDF và hình ảnh thành văn bản ngay trong trình duyệt. File được xử lý cục bộ, không cần đăng ký, không watermark và không gửi lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/document/ocr/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/ai/",
+      "status": 200,
+      "language": "th",
+      "title": "เครื่องมือเตรียมเอกสารสำหรับ AI | DJTools",
+      "h1": "เครื่องมือเตรียมเอกสารสำหรับ AI",
+      "description": "นับ token ทำความสะอาด context แบ่ง chunk และจัดไฟล์สำหรับ ChatGPT, Claude, Cursor, Codex และระบบ RAG",
+      "canonical": "https://www.djai.academy/tools/ai/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/ai/en/",
+      "status": 200,
+      "language": "en",
+      "title": "AI Document Tools | DJTools",
+      "h1": "AI Document Tools",
+      "description": "Count tokens, clean context, preview chunks, and package files for ChatGPT, Claude, Cursor, Codex, and RAG systems.",
+      "canonical": "https://www.djai.academy/tools/ai/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/ai/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Công cụ chuẩn bị tài liệu cho AI | DJTools",
+      "h1": "Công cụ chuẩn bị tài liệu cho AI",
+      "description": "Đếm token, làm sạch context, chia chunk và đóng gói file cho ChatGPT, Claude, Cursor, Codex cùng hệ thống RAG.",
+      "canonical": "https://www.djai.academy/tools/ai/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/ai/token-counter/",
+      "status": 200,
+      "language": "th",
+      "title": "เครื่องมือนับ Token ฟรีสำหรับ Vibe Coding | DJTools",
+      "h1": "เครื่องมือนับ Token ฟรีสำหรับ Vibe Coding",
+      "description": "นับ AI token, คำภาษาไทยและหลายภาษา, ตัวอักษร, UTF-8 byte และ context usage จากข้อความ DOCX PDF Markdown หรือ code แบบ private ใน browser",
+      "canonical": "https://www.djai.academy/tools/ai/token-counter/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/ai/token-counter/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Free Token Counter for Vibe Coders | DJTools",
+      "h1": "Free Token Counter for Vibe Coders",
+      "description": "Count AI tokens, multilingual words, characters, UTF-8 bytes, and context usage from text, DOCX, PDF, Markdown, or code privately in your browser.",
+      "canonical": "https://www.djai.academy/tools/ai/token-counter/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/ai/token-counter/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Công cụ đếm token miễn phí cho Vibe Coding | DJTools",
+      "h1": "Công cụ đếm token miễn phí cho Vibe Coding",
+      "description": "Công cụ đếm token miễn phí cho Vibe Coding ngay trong trình duyệt. File được xử lý cục bộ, không cần đăng ký, không watermark và không gửi lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/ai/token-counter/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/ai/pdf-to-ai-markdown/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง PDF เป็น Markdown สำหรับ AI | DJTools",
+      "h1": "แปลง PDF เป็น Markdown สำหรับ AI",
+      "description": "ดึง PDF เป็น Markdown พร้อม page reference ล้าง header, footer และบรรทัดที่แตก",
+      "canonical": "https://www.djai.academy/tools/ai/pdf-to-ai-markdown/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/ai/pdf-to-ai-markdown/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert PDF to AI-Ready Markdown | DJTools",
+      "h1": "Convert PDF to AI-Ready Markdown",
+      "description": "Extract PDF into Markdown with page references and cleanup for repeated headers, footers, and broken lines.",
+      "canonical": "https://www.djai.academy/tools/ai/pdf-to-ai-markdown/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/ai/pdf-to-ai-markdown/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Chuyển PDF sang Markdown cho AI | DJTools",
+      "h1": "Chuyển PDF sang Markdown cho AI",
+      "description": "Chuyển PDF sang Markdown cho AI ngay trong trình duyệt. File được xử lý cục bộ, không cần đăng ký, không watermark và không gửi lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/ai/pdf-to-ai-markdown/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/ai/context-optimizer/",
+      "status": 200,
+      "language": "th",
+      "title": "ทำความสะอาดเอกสารสำหรับ AI | DJTools",
+      "h1": "ทำความสะอาดเอกสารสำหรับ AI",
+      "description": "ลบ header ซ้ำ เลขหน้า spacing ที่เสีย และบรรทัดแตก เพื่อสร้าง context ที่กระชับ",
+      "canonical": "https://www.djai.academy/tools/ai/context-optimizer/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/ai/context-optimizer/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Clean Documents for AI Context | DJTools",
+      "h1": "Clean Documents for AI Context",
+      "description": "Remove repeated headers, page numbers, broken spacing, and line wraps for cleaner AI context.",
+      "canonical": "https://www.djai.academy/tools/ai/context-optimizer/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/ai/context-optimizer/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Làm sạch tài liệu cho AI context | DJTools",
+      "h1": "Làm sạch tài liệu cho AI context",
+      "description": "Làm sạch tài liệu cho AI context ngay trong trình duyệt. File được xử lý cục bộ, không cần đăng ký, không watermark và không gửi lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/ai/context-optimizer/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/ai/rag-chunk-calculator/",
+      "status": 200,
+      "language": "th",
+      "title": "คำนวณและ Preview RAG Chunk | DJTools",
+      "h1": "คำนวณและ Preview RAG Chunk",
+      "description": "กำหนดขนาด chunk และ overlap ดูตัวอย่าง แล้ว export JSONL สำหรับ knowledge base",
+      "canonical": "https://www.djai.academy/tools/ai/rag-chunk-calculator/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/ai/rag-chunk-calculator/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Calculate and Preview RAG Chunks | DJTools",
+      "h1": "Calculate and Preview RAG Chunks",
+      "description": "Set chunk size and overlap, preview sections, and export JSONL for a knowledge base.",
+      "canonical": "https://www.djai.academy/tools/ai/rag-chunk-calculator/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/ai/rag-chunk-calculator/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Tính và xem trước RAG chunk | DJTools",
+      "h1": "Tính và xem trước RAG chunk",
+      "description": "Tính và xem trước RAG chunk ngay trong trình duyệt. File được xử lý cục bộ, không cần đăng ký, không watermark và không gửi lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/ai/rag-chunk-calculator/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/ai/prompt-packager/",
+      "status": 200,
+      "language": "th",
+      "title": "รวมไฟล์เป็น Prompt Package | DJTools",
+      "h1": "รวมไฟล์เป็น Prompt Package",
+      "description": "รวม requirement, documentation, code และ reference text พร้อมขอบเขต XML หรือ Markdown",
+      "canonical": "https://www.djai.academy/tools/ai/prompt-packager/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/ai/prompt-packager/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Package Files into an AI Prompt | DJTools",
+      "h1": "Package Files into an AI Prompt",
+      "description": "Combine requirements, documentation, code, and references with XML or Markdown boundaries.",
+      "canonical": "https://www.djai.academy/tools/ai/prompt-packager/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/ai/prompt-packager/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Ghép file thành gói prompt cho AI | DJTools",
+      "h1": "Ghép file thành gói prompt cho AI",
+      "description": "Ghép file thành gói prompt cho AI ngay trong trình duyệt. File được xử lý cục bộ, không cần đăng ký, không watermark và không gửi lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/ai/prompt-packager/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/spreadsheet/",
+      "status": 200,
+      "language": "th",
+      "title": "เครื่องมือ CSV และ Spreadsheet ฟรี | DJTools",
+      "h1": "เครื่องมือ CSV และ Spreadsheet ฟรี",
+      "description": "แปลง ทำความสะอาด รวม และแบ่ง CSV, JSON และ XLSX ใน browser โดยข้อมูลไม่ออกจากอุปกรณ์ของคุณ",
+      "canonical": "https://www.djai.academy/tools/spreadsheet/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/spreadsheet/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Free CSV and Spreadsheet Tools | DJTools",
+      "h1": "Free CSV and Spreadsheet Tools",
+      "description": "Convert, clean, merge, and split CSV, JSON, and XLSX files locally in your browser.",
+      "canonical": "https://www.djai.academy/tools/spreadsheet/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/spreadsheet/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Công cụ CSV và bảng tính miễn phí | DJTools",
+      "h1": "Công cụ CSV và bảng tính miễn phí",
+      "description": "Chuyển đổi, làm sạch, ghép và chia CSV, JSON, XLSX trong trình duyệt; dữ liệu không rời khỏi thiết bị.",
+      "canonical": "https://www.djai.academy/tools/spreadsheet/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/spreadsheet/csv-to-json/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง CSV เป็น JSON ฟรี | DJTools",
+      "h1": "แปลง CSV เป็น JSON ฟรี",
+      "description": "แปลง CSV เป็น JSON ใน browser พร้อม preview, copy และ download",
+      "canonical": "https://www.djai.academy/tools/spreadsheet/csv-to-json/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/spreadsheet/csv-to-json/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert CSV to JSON Free | DJTools",
+      "h1": "Convert CSV to JSON Free",
+      "description": "Convert CSV data to JSON locally with preview, copy, and download.",
+      "canonical": "https://www.djai.academy/tools/spreadsheet/csv-to-json/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/spreadsheet/csv-to-json/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Chuyển CSV sang JSON miễn phí | DJTools",
+      "h1": "Chuyển CSV sang JSON miễn phí",
+      "description": "Chuyển CSV sang JSON miễn phí ngay trong trình duyệt. File được xử lý cục bộ, không cần đăng ký, không watermark và không gửi lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/spreadsheet/csv-to-json/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/spreadsheet/json-to-csv/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง JSON เป็น CSV ฟรี | DJTools",
+      "h1": "แปลง JSON เป็น CSV ฟรี",
+      "description": "แปลง JSON array เป็น CSV พร้อมจัด column และดาวน์โหลด",
+      "canonical": "https://www.djai.academy/tools/spreadsheet/json-to-csv/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/spreadsheet/json-to-csv/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert JSON to CSV Free | DJTools",
+      "h1": "Convert JSON to CSV Free",
+      "description": "Convert a JSON array into CSV columns and download the result.",
+      "canonical": "https://www.djai.academy/tools/spreadsheet/json-to-csv/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/spreadsheet/json-to-csv/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Chuyển JSON sang CSV miễn phí | DJTools",
+      "h1": "Chuyển JSON sang CSV miễn phí",
+      "description": "Chuyển JSON sang CSV miễn phí ngay trong trình duyệt. File được xử lý cục bộ, không cần đăng ký, không watermark và không gửi lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/spreadsheet/json-to-csv/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/spreadsheet/csv-cleaner/",
+      "status": 200,
+      "language": "th",
+      "title": "ทำความสะอาด CSV ฟรี | DJTools",
+      "h1": "ทำความสะอาด CSV ฟรี",
+      "description": "ตัดช่องว่าง ลบแถวว่าง และลบข้อมูลซ้ำโดยไม่ upload ไฟล์",
+      "canonical": "https://www.djai.academy/tools/spreadsheet/csv-cleaner/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/spreadsheet/csv-cleaner/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Clean CSV Data Free | DJTools",
+      "h1": "Clean CSV Data Free",
+      "description": "Trim whitespace, remove empty rows, and deduplicate CSV data without uploading it.",
+      "canonical": "https://www.djai.academy/tools/spreadsheet/csv-cleaner/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/spreadsheet/csv-cleaner/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Làm sạch dữ liệu CSV miễn phí | DJTools",
+      "h1": "Làm sạch dữ liệu CSV miễn phí",
+      "description": "Làm sạch dữ liệu CSV miễn phí ngay trong trình duyệt. File được xử lý cục bộ, không cần đăng ký, không watermark và không gửi lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/spreadsheet/csv-cleaner/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/spreadsheet/merge-csv/",
+      "status": 200,
+      "language": "th",
+      "title": "รวมไฟล์ CSV หลายไฟล์ | DJTools",
+      "h1": "รวมไฟล์ CSV หลายไฟล์",
+      "description": "รวมหลาย CSV โดยจับคู่ชื่อ column และดาวน์โหลดไฟล์เดียว",
+      "canonical": "https://www.djai.academy/tools/spreadsheet/merge-csv/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/spreadsheet/merge-csv/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Merge Multiple CSV Files | DJTools",
+      "h1": "Merge Multiple CSV Files",
+      "description": "Merge multiple CSV files by matching column names and download one result.",
+      "canonical": "https://www.djai.academy/tools/spreadsheet/merge-csv/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/spreadsheet/merge-csv/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Ghép nhiều file CSV | DJTools",
+      "h1": "Ghép nhiều file CSV",
+      "description": "Ghép nhiều file CSV ngay trong trình duyệt. File được xử lý cục bộ, không cần đăng ký, không watermark và không gửi lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/spreadsheet/merge-csv/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/spreadsheet/split-csv/",
+      "status": 200,
+      "language": "th",
+      "title": "แบ่ง CSV ตามจำนวนแถว | DJTools",
+      "h1": "แบ่ง CSV ตามจำนวนแถว",
+      "description": "แบ่ง CSV ขนาดใหญ่เป็นหลายไฟล์แล้วดาวน์โหลด ZIP",
+      "canonical": "https://www.djai.academy/tools/spreadsheet/split-csv/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/spreadsheet/split-csv/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Split CSV by Row Count | DJTools",
+      "h1": "Split CSV by Row Count",
+      "description": "Split a large CSV into smaller files and download them as a ZIP.",
+      "canonical": "https://www.djai.academy/tools/spreadsheet/split-csv/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/spreadsheet/split-csv/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Chia CSV theo số hàng | DJTools",
+      "h1": "Chia CSV theo số hàng",
+      "description": "Chia CSV theo số hàng ngay trong trình duyệt. File được xử lý cục bộ, không cần đăng ký, không watermark và không gửi lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/spreadsheet/split-csv/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/spreadsheet/csv-to-xlsx/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง CSV เป็น Excel XLSX | DJTools",
+      "h1": "แปลง CSV เป็น Excel XLSX",
+      "description": "แปลง CSV เป็น workbook Excel พร้อม header และ column ที่อ่านง่าย",
+      "canonical": "https://www.djai.academy/tools/spreadsheet/csv-to-xlsx/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/spreadsheet/csv-to-xlsx/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert CSV to Excel XLSX | DJTools",
+      "h1": "Convert CSV to Excel XLSX",
+      "description": "Convert CSV into an Excel workbook with readable headers and columns.",
+      "canonical": "https://www.djai.academy/tools/spreadsheet/csv-to-xlsx/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/spreadsheet/csv-to-xlsx/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Chuyển CSV sang Excel XLSX | DJTools",
+      "h1": "Chuyển CSV sang Excel XLSX",
+      "description": "Chuyển CSV sang Excel XLSX ngay trong trình duyệt. File được xử lý cục bộ, không cần đăng ký, không watermark và không gửi lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/spreadsheet/csv-to-xlsx/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/spreadsheet/xlsx-to-csv/",
+      "status": 200,
+      "language": "th",
+      "title": "แปลง Excel XLSX เป็น CSV | DJTools",
+      "h1": "แปลง Excel XLSX เป็น CSV",
+      "description": "เลือก worksheet และส่งออกเป็น CSV ใน browser",
+      "canonical": "https://www.djai.academy/tools/spreadsheet/xlsx-to-csv/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/spreadsheet/xlsx-to-csv/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Convert Excel XLSX to CSV | DJTools",
+      "h1": "Convert Excel XLSX to CSV",
+      "description": "Select a worksheet and export it as CSV in your browser.",
+      "canonical": "https://www.djai.academy/tools/spreadsheet/xlsx-to-csv/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/spreadsheet/xlsx-to-csv/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Chuyển Excel XLSX sang CSV | DJTools",
+      "h1": "Chuyển Excel XLSX sang CSV",
+      "description": "Chuyển Excel XLSX sang CSV ngay trong trình duyệt. File được xử lý cục bộ, không cần đăng ký, không watermark và không gửi lên máy chủ DJAI.",
+      "canonical": "https://www.djai.academy/tools/spreadsheet/xlsx-to-csv/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/brand/",
+      "status": 200,
+      "language": "th",
+      "title": "เครื่องมือสร้าง Favicon และไอคอนเว็บไซต์ฟรี | DJAI",
+      "h1": "เตรียมไอคอนเว็บไซต์ให้ครบในครั้งเดียว",
+      "description": "สร้าง favicon และไอคอนเว็บไซต์จากรูปเดียวแบบ private ใน browser พร้อมไฟล์ ICO, PNG, Apple touch icon, maskable icon และโค้ดติดตั้ง",
+      "canonical": "https://www.djai.academy/tools/brand/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/brand/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Free Favicon and Website Icon Tools | DJAI",
+      "h1": "Prepare every website icon in one workflow",
+      "description": "Create favicons and website icons privately in your browser. Download ICO, PNG, Apple touch, maskable icon, manifest, and installation code files.",
+      "canonical": "https://www.djai.academy/tools/brand/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/brand/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Công cụ tạo Favicon và biểu tượng website miễn phí | DJAI",
+      "h1": "Chuẩn bị đầy đủ biểu tượng website trong một quy trình",
+      "description": "Tạo favicon và biểu tượng website riêng tư trong trình duyệt. Tải ICO, PNG, Apple touch icon, maskable icon, manifest và mã cài đặt.",
+      "canonical": "https://www.djai.academy/tools/brand/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/brand/favicon-generator/",
+      "status": 200,
+      "language": "th",
+      "title": "Favicon Generator ฟรี สร้าง ICO และไอคอนเว็บจากรูป | DJAI",
+      "h1": "สร้าง Favicon จากรูปภาพ พร้อมไฟล์ติดตั้งครบชุด",
+      "description": "สร้าง favicon.ico จาก PNG, JPG, WebP หรือ SVG ฟรี พร้อม Apple touch icon, maskable icon, web manifest และ HTML snippet โดยไม่อัปโหลดรูป",
+      "canonical": "https://www.djai.academy/tools/brand/favicon-generator/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/brand/favicon-generator/en/",
+      "status": 200,
+      "language": "en",
+      "title": "Free Favicon Generator: PNG to ICO and Website Icons | DJAI",
+      "h1": "Generate a favicon from an image, with every installation file",
+      "description": "Generate favicon.ico from PNG, JPG, WebP, or SVG. Get Apple touch, maskable, web manifest, and HTML files free without uploading your image.",
+      "canonical": "https://www.djai.academy/tools/brand/favicon-generator/en/",
+      "noindex": false
+    },
+    {
+      "route": "/tools/brand/favicon-generator/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Trình tạo Favicon miễn phí: PNG sang ICO và biểu tượng web | DJAI",
+      "h1": "Tạo favicon từ hình ảnh với đầy đủ tệp cài đặt",
+      "description": "Tạo favicon.ico từ PNG, JPG, WebP hoặc SVG. Nhận Apple touch icon, maskable icon, web manifest và mã HTML mà không cần tải ảnh lên.",
+      "canonical": "https://www.djai.academy/tools/brand/favicon-generator/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/en/seo-screaming-toad-open-source-crawler-launch/",
+      "status": 200,
+      "language": "en",
+      "title": "SEO Screaming Toad: Open SEO Crawler from DJAI",
+      "h1": "SEO Screaming Toad: DJAI Launches an Open SEO Crawler",
+      "description": "DJAI launches SEO Screaming Toad, an open-source SEO crawler with MCP. See 94 findings from a real DJAI Academy technical SEO audit.",
+      "canonical": "https://www.djai.academy/blog/en/seo-screaming-toad-open-source-crawler-launch/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/en/technical-seo-audit-screaming-frog-ai-search/",
+      "status": 200,
+      "language": "en",
+      "title": "Technical SEO Audit Guide: Screaming Frog and AI Search",
+      "h1": "Technical SEO for Web Developers: Lessons from Auditing and Optimizing 205 Pages",
+      "description": "Learn technical SEO from a real 205-page audit: crawlability, canonicals, hreflang, JavaScript metadata, Screaming Frog, MCP, and AI search optimization.",
+      "canonical": "https://www.djai.academy/blog/en/technical-seo-audit-screaming-frog-ai-search/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/en/skills-ai-agent-professional-seo-web-developer/",
+      "status": 200,
+      "language": "en",
+      "title": "SEO Web Developer Skills for AI Agents",
+      "h1": "Skills for AI Agent to be a professional SEO optimized web developer",
+      "description": "Learn why AI agents miss technical SEO and how an intent-first, crawler-tested SEO development skill creates dramatic operational leverage without false ranking promises.",
+      "canonical": "https://www.djai.academy/blog/en/skills-ai-agent-professional-seo-web-developer/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/en/three-seo-tools-screaming-frog-mcp/",
+      "status": 200,
+      "language": "en",
+      "title": "3 SEO Tools and the Essential Screaming Frog MCP",
+      "h1": "3 SEO tools you must know and 1 essential MCP tool with screaming frog that change the SEO game",
+      "description": "Learn how CrUX, Lighthouse, Screaming Frog, and its MCP server reveal field, lab, crawl, and agent-assisted SEO evidence—and what each tool cannot prove.",
+      "canonical": "https://www.djai.academy/blog/en/three-seo-tools-screaming-frog-mcp/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/en/how-to-use-ai-agent-skills-djai-tools-mcp/",
+      "status": 200,
+      "language": "en",
+      "title": "AI Agent Skills and MCP Guide for Codex | DJAI",
+      "h1": "How to Use AI Agent Skills With DJAI Tools MCP: A Practical Workflow Guide",
+      "description": "Install and use four open-source AI agent skills with DJAI Tools MCP for local RAG, coding context, CSV cleanup and private file workflows in Codex.",
+      "canonical": "https://www.djai.academy/blog/en/how-to-use-ai-agent-skills-djai-tools-mcp/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/en/complete-guide-djai-tools-mcp/",
+      "status": 200,
+      "language": "en",
+      "title": "DJAI Tools MCP Guide: Connect Local Tools to AI Agents",
+      "h1": "Complete Guide to Using DJAI Tools MCP With AI and Coding Agents",
+      "description": "Complete guide to installing and using DJAI Tools MCP locally with Claude, Codex, Cursor and VS Code for private RAG, CSV, context and QR workflows.",
+      "canonical": "https://www.djai.academy/blog/en/complete-guide-djai-tools-mcp/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/en/djai-community-launches-open-source-tools-mcp/",
+      "status": 200,
+      "language": "en",
+      "title": "Free Open-Source MCP Tools Released by the DJAI Community",
+      "h1": "DJAI Community Member Releases a Free Open-Source MCP Toolbox for AI Agents",
+      "description": "DJAI community launches a free MIT-licensed local MCP server for AI agents with private token, RAG, context, CSV, JSON and QR tools.",
+      "canonical": "https://www.djai.academy/blog/en/djai-community-launches-open-source-tools-mcp/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/en/when-you-need-superpower-skill-for-all-agents/",
+      "status": 200,
+      "language": "en",
+      "title": "When Do You Need Superpowers? A Skill Guide for All Coding Agents",
+      "h1": "When you need Superpower? Superpower skill for all agents",
+      "description": "Learn when to use Superpowers skills for planning, debugging, TDD, review, worktrees, and safe completion. Includes a downloadable general coding-agent skill.",
+      "canonical": "https://www.djai.academy/blog/en/when-you-need-superpower-skill-for-all-agents/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/en/giving-claude-superpower-power-up-development/",
+      "status": 200,
+      "language": "en",
+      "title": "Giving Claude SuperPower: Power Up Your Development Workflow",
+      "h1": "Giving Claude SuperPower , power up your development",
+      "description": "Learn how Superpowers improves Claude Code and other coding agents with brainstorming, planning, TDD, debugging, review, and branch finishing skills.",
+      "canonical": "https://www.djai.academy/blog/en/giving-claude-superpower-power-up-development/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/en/superpower-skills-what-is-skill-for-agents/",
+      "status": 200,
+      "language": "en",
+      "title": "SuperPower Skills: What Are Agent Skills and Why Do They Matter?",
+      "h1": "SuperPower Skills , What is skill for Agents and why do they matter?",
+      "description": "Understand agent skills, SKILL.md files, reusable workflows, and why skills matter for Claude, Codex, Cursor, Gemini, and other coding agents.",
+      "canonical": "https://www.djai.academy/blog/en/superpower-skills-what-is-skill-for-agents/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/en/claude-opus-5-cost-efficiency-news/",
+      "status": 200,
+      "language": "en",
+      "title": "Claude Opus 5: Cost Efficiency, Coding Workflows, and What Builders Should Watch",
+      "h1": "Claude Opus 5: Cost Efficiency, Coding Workflows, and What Builders Should Watch",
+      "description": "Claude Opus 5 is not only a stronger model story. For builders, the real news is cost efficiency: near-frontier capability at a price that can make daily AI coding workflows more practical.",
+      "canonical": "https://www.djai.academy/blog/en/claude-opus-5-cost-efficiency-news/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/en/how-i-built-open-source-browser-tools-with-codex-and-claude-code/",
+      "status": 200,
+      "language": "en",
+      "title": "How I Built Open-Source Browser Tools with Codex and Claude Code",
+      "h1": "How I Built Open-Source Browser Tools with Codex and Claude Code",
+      "description": "Learn how DJAI built MIT-licensed browser tools with Claude Code planning, Codex GPT-5.5 implementation, review loops, cost control, and reusable vibe coding patterns.",
+      "canonical": "https://www.djai.academy/blog/en/how-i-built-open-source-browser-tools-with-codex-and-claude-code/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/en/compress-image-to-100kb-500kb/",
+      "status": 200,
+      "language": "en",
+      "title": "How to Compress an Image to 100 KB or 500 KB Without Uploading It",
+      "h1": "How to Compress an Image to 100 KB or 500 KB Without Uploading It",
+      "description": "Step-by-step guide to compressing images to a target KB size directly in your browser with DJAI Image Tools.",
+      "canonical": "https://www.djai.academy/blog/en/compress-image-to-100kb-500kb/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/en/how-to-convert-jpg-png-webp-free/",
+      "status": 200,
+      "language": "en",
+      "title": "How to Convert JPG, PNG, and WebP Images for Free",
+      "h1": "How to Convert JPG, PNG, and WebP Images for Free",
+      "description": "Convert JPG, PNG, and WebP images for free in your browser. Learn which format to choose for websites, social content, and business files.",
+      "canonical": "https://www.djai.academy/blog/en/how-to-convert-jpg-png-webp-free/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/en/how-to-create-free-qr-code/",
+      "status": 200,
+      "language": "en",
+      "title": "How to Create a Free QR Code for a Website, Menu, or Event",
+      "h1": "How to Create a Free QR Code for a Website, Menu, or Event",
+      "description": "Step-by-step tutorial for creating a free QR code with no account, no watermark, and PNG or SVG download support.",
+      "canonical": "https://www.djai.academy/blog/en/how-to-create-free-qr-code/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/seo-screaming-toad-open-source-crawler-djai/",
+      "status": 200,
+      "language": "th",
+      "title": "SEO Screaming Toad: Open SEO Crawler จาก DJAI",
+      "h1": "เปิดตัว SEO Screaming Toad: Open SEO Crawler จากทีม DJAI",
+      "description": "DJAI เปิดตัว SEO Screaming Toad เครื่องมือ SEO Crawler แบบ Open Source พร้อม MCP และผล Technical SEO Audit เว็บไซต์จริง 94 รายการ",
+      "canonical": "https://www.djai.academy/blog/seo-screaming-toad-open-source-crawler-djai/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/technical-seo-audit-screaming-frog-ai-search/",
+      "status": 200,
+      "language": "th",
+      "title": "คู่มือ Technical SEO Audit ด้วย Screaming Frog และ AI Search",
+      "h1": "Technical SEO สำหรับ Web Developer: บทเรียนจากการ Audit และ Optimize 205 หน้า",
+      "description": "เรียนรู้ Technical SEO จาก audit 205 หน้า ทั้ง crawlability, canonical, hreflang, JavaScript metadata, Screaming Frog, MCP และ AI search",
+      "canonical": "https://www.djai.academy/blog/technical-seo-audit-screaming-frog-ai-search/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/skills-ai-agent-professional-seo-web-developer/",
+      "status": 200,
+      "language": "th",
+      "title": "SEO Web Developer Skills สำหรับ AI Agent",
+      "h1": "Skills สำหรับ AI Agent เพื่อเป็น Web Developer ที่ทำ SEO อย่างมืออาชีพ",
+      "description": "เรียนรู้ว่าทำไม AI agent พลาด Technical SEO และ skill แบบ intent-first พร้อม crawler verification ช่วยเพิ่ม leverage โดยไม่กล่าวอ้าง ranking เกินจริง",
+      "canonical": "https://www.djai.academy/blog/skills-ai-agent-professional-seo-web-developer/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/three-seo-tools-screaming-frog-mcp/",
+      "status": 200,
+      "language": "th",
+      "title": "3 เครื่องมือ SEO และ Screaming Frog MCP ที่ต้องรู้",
+      "h1": "3 เครื่องมือ SEO ที่ต้องรู้ และ 1 MCP สำคัญของ Screaming Frog ที่เปลี่ยนเกม SEO",
+      "description": "เรียนรู้ CrUX, Lighthouse, Screaming Frog และ MCP server ว่าให้ field, lab, crawl และ AI-agent evidence อย่างไร พร้อมข้อจำกัดของแต่ละเครื่องมือ",
+      "canonical": "https://www.djai.academy/blog/three-seo-tools-screaming-frog-mcp/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/how-to-use-ai-agent-skills-djai-tools-mcp/",
+      "status": 200,
+      "language": "th",
+      "title": "คู่มือ AI Agent Skills กับ MCP Tools สำหรับ Codex",
+      "h1": "วิธีใช้ AI Agent Skills กับ DJAI Tools MCP: คู่มือ Workflow แบบ Local",
+      "description": "วิธีติดตั้งและใช้ 4 AI Agent Skills กับ DJAI Tools MCP สำหรับ Local RAG, Coding Context, CSV Cleanup และ Private File Workflow ใน Codex",
+      "canonical": "https://www.djai.academy/blog/how-to-use-ai-agent-skills-djai-tools-mcp/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/complete-guide-djai-tools-mcp/",
+      "status": 200,
+      "language": "th",
+      "title": "คู่มือ DJAI Tools MCP เชื่อม Local Tools กับ AI Agent",
+      "h1": "คู่มือฉบับสมบูรณ์: วิธีใช้ DJAI Tools MCP กับ AI และ Coding Agent",
+      "description": "คู่มือใช้ DJAI Tools MCP แบบ Local กับ Claude, Codex, Cursor และ VS Code สำหรับ RAG, CSV, AI Context และ QR Code โดยไฟล์อยู่ในเครื่อง",
+      "canonical": "https://www.djai.academy/blog/complete-guide-djai-tools-mcp/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/djai-community-launches-open-source-tools-mcp/",
+      "status": 200,
+      "language": "th",
+      "title": "ชุมชน DJAI เปิดตัว MCP Tools ฟรีและโอเพนซอร์ส",
+      "h1": "สมาชิกชุมชน DJAI เปิดตัว MCP Toolbox ฟรีและโอเพนซอร์สสำหรับ AI Agent",
+      "description": "สมาชิกชุมชน DJAI เปิดตัว Local MCP Server ฟรีภายใต้ MIT License สำหรับ AI Agent พร้อม Token, RAG, Context, CSV, JSON และ QR Tools",
+      "canonical": "https://www.djai.academy/blog/djai-community-launches-open-source-tools-mcp/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/when-you-need-superpower-skill-for-all-agents-thai/",
+      "status": 200,
+      "language": "th",
+      "title": "เมื่อไรควรใช้ Superpowers? คู่มือ Skill สำหรับ Coding Agents",
+      "h1": "เมื่อไรคุณต้องใช้ Superpower? Superpower skill สำหรับทุก agent",
+      "description": "เรียนรู้ว่าเมื่อไรควรใช้ Superpowers skills สำหรับ planning, debugging, TDD, review, worktrees และ safe completion พร้อม downloadable general coding-agent skill",
+      "canonical": "https://www.djai.academy/blog/when-you-need-superpower-skill-for-all-agents-thai/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/giving-claude-superpower-power-up-development-thai/",
+      "status": 200,
+      "language": "th",
+      "title": "Giving Claude SuperPower: เพิ่มพลัง workflow การพัฒนา software",
+      "h1": "Giving Claude SuperPower: เพิ่มพลังให้การพัฒนาโปรเจกต์",
+      "description": "เรียนรู้ว่า Superpowers ช่วย Claude Code และ coding agents อย่างไรผ่าน brainstorming, planning, TDD, debugging, review และ branch finishing skills",
+      "canonical": "https://www.djai.academy/blog/giving-claude-superpower-power-up-development-thai/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/superpower-skills-skill-agent-thai/",
+      "status": 200,
+      "language": "th",
+      "title": "SuperPower Skills คืออะไร? Skill สำหรับ Agent สำคัญอย่างไร",
+      "h1": "SuperPower Skills คืออะไร? Skill สำหรับ Agent คืออะไร และทำไมถึงสำคัญ",
+      "description": "ทำความเข้าใจ agent skills, SKILL.md, reusable workflow และเหตุผลที่ skills สำคัญกับ Claude, Codex, Cursor, Gemini และ coding agents อื่นๆ",
+      "canonical": "https://www.djai.academy/blog/superpower-skills-skill-agent-thai/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/claude-opus-5-cost-efficiency-ai-news/",
+      "status": 200,
+      "language": "th",
+      "title": "Claude Opus 5: ความคุ้มค่า Workflow เขียนโค้ด และสิ่งที่นักพัฒนาควรจับตา",
+      "h1": "Claude Opus 5: ความคุ้มค่า Workflow เขียนโค้ด และสิ่งที่นักพัฒนาควรจับตา",
+      "description": "Claude Opus 5 ไม่ได้สำคัญแค่เรื่องความแรง แต่สำคัญเพราะทำให้ต้นทุนของ AI workflow สำหรับนักพัฒนาและทีมเล็กมีความเป็นไปได้มากขึ้น",
+      "canonical": "https://www.djai.academy/blog/claude-opus-5-cost-efficiency-ai-news/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/ai-vibe-coding-codex-claude-code-open-source-tools/",
+      "status": 200,
+      "language": "th",
+      "title": "วิธีสร้าง Open Source Browser Tools ด้วย Codex และ Claude Code",
+      "h1": "วิธีสร้าง Open Source Browser Tools ด้วย Codex และ Claude Code",
+      "description": "เรียนรู้ workflow การใช้ Claude Code และ Codex GPT-5.5 เพื่อสร้าง browser tools แบบ open source ลด token cost ทำ review loop และปล่อยภายใต้ MIT License",
+      "canonical": "https://www.djai.academy/blog/ai-vibe-coding-codex-claude-code-open-source-tools/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/compress-image-to-100kb-500kb/",
+      "status": 200,
+      "language": "th",
+      "title": "วิธีบีบอัดรูปให้เหลือ 100 KB หรือ 500 KB",
+      "h1": "วิธีบีบอัดรูปให้เหลือ 100 KB หรือ 500 KB โดยไม่ต้อง Upload",
+      "description": "คู่มือบีบอัดรูปให้ได้ target KB size ผ่าน browser ด้วย DJAI Image Tools โดยไม่ต้อง upload รูปขึ้น server",
+      "canonical": "https://www.djai.academy/blog/compress-image-to-100kb-500kb/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/how-to-convert-jpg-png-webp-free/",
+      "status": 200,
+      "language": "th",
+      "title": "วิธีแปลงไฟล์ JPG PNG และ WebP ฟรี",
+      "h1": "วิธีแปลงไฟล์ JPG, PNG และ WebP ฟรีผ่าน Browser",
+      "description": "แปลงรูป JPG PNG WebP ฟรีผ่าน browser พร้อมคำแนะนำว่าควรใช้ format ไหนสำหรับเว็บไซต์และงานธุรกิจ",
+      "canonical": "https://www.djai.academy/blog/how-to-convert-jpg-png-webp-free/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/how-to-create-free-qr-code/",
+      "status": 200,
+      "language": "th",
+      "title": "วิธีสร้าง QR Code ฟรีสำหรับเว็บไซต์ เมนู หรืออีเวนต์",
+      "h1": "วิธีสร้าง QR Code ฟรีสำหรับเว็บไซต์ เมนู หรืออีเวนต์",
+      "description": "คู่มือสร้าง QR code ฟรีด้วย DJAI QR Generator ไม่มี watermark ไม่ต้องสมัครบัญชี และรองรับ PNG/SVG",
+      "canonical": "https://www.djai.academy/blog/how-to-create-free-qr-code/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/vi/vibe-coding-cho-nguoi-moi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Vibe coding cho người mới: quy trình làm sản phẩm bằng AI",
+      "h1": "Vibe coding cho người mới: bắt đầu từ bài toán, không phải từ câu lệnh",
+      "description": "Quy trình vibe coding thực tế cho người mới: thu gọn ý tưởng, viết yêu cầu, chia vòng kiểm tra và đưa phiên bản đầu tiên lên chạy.",
+      "canonical": "https://www.djai.academy/blog/vi/vibe-coding-cho-nguoi-moi/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/vi/nen-chon-jpg-png-hay-webp/",
+      "status": 200,
+      "language": "vi",
+      "title": "JPG, PNG và WebP khác nhau thế nào? Cách chọn đúng",
+      "h1": "Nên chọn JPG, PNG hay WebP? Cách quyết định trước khi đổi định dạng ảnh",
+      "description": "So sánh JPG, PNG và WebP theo nhu cầu thực tế: ảnh chụp, nền trong suốt, hình giao diện và tốc độ website; kèm quy trình đổi ảnh trên trình duyệt.",
+      "canonical": "https://www.djai.academy/blog/vi/nen-chon-jpg-png-hay-webp/",
+      "noindex": false
+    },
+    {
+      "route": "/blog/vi/tao-ma-qr-cho-menu-su-kien-website/",
+      "status": 200,
+      "language": "vi",
+      "title": "Cách tạo mã QR miễn phí cho menu, sự kiện và website",
+      "h1": "Tạo mã QR cho menu, sự kiện hoặc website: làm sao để quét được ngoài đời thật",
+      "description": "Hướng dẫn tạo mã QR miễn phí, chọn đúng đường dẫn, kích thước và định dạng tệp; kèm checklist kiểm tra trước khi in.",
+      "canonical": "https://www.djai.academy/blog/vi/tao-ma-qr-cho-menu-su-kien-website/",
+      "noindex": false
+    },
+    {
+      "route": "/siamese_cat/dev/blog/en/vibe-coded-free-scanner-app-real-product/",
+      "status": 200,
+      "language": "en",
+      "title": "I Vibe Coded a Free Scanner App Into a Real Product",
+      "h1": "I Vibe Coded a Free Scanner App: From Daily Frustration to Real Product",
+      "description": "A Siamese Cat Dev article about building a free scanner and productivity app with vibe coding, AdMob monetization, product strategy, market signals, and human-in-the-loop judgment.",
+      "canonical": "https://www.djai.academy/siamese_cat/dev/blog/en/vibe-coded-free-scanner-app-real-product/",
+      "noindex": false
+    },
+    {
+      "route": "/siamese_cat/dev/blog/vibe-coded-free-scanner-app-real-product/",
+      "status": 200,
+      "language": "th",
+      "title": "ผม Vibe Coded แอปสแกนเอกสารฟรีให้เป็น Product จริง",
+      "h1": "ผม Vibe Coded แอปสแกนเอกสารฟรี: จากความหงุดหงิดสู่ Product จริง",
+      "description": "เรียนรู้วิธีคิดแบบ product builder ผ่านการสร้างแอปสแกนเอกสารฟรีด้วย vibe coding, AdMob monetization, market signal และ human-in-the-loop judgment.",
+      "canonical": "https://www.djai.academy/siamese_cat/dev/blog/vibe-coded-free-scanner-app-real-product/",
+      "noindex": false
+    }
+  ]
+}

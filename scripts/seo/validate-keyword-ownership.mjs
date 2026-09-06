@@ -21,8 +21,10 @@ const requiredRoutingClusters = [
   "pdf", "qr", "document", "ai", "spreadsheet", "seo", "image", "media", "vibe"
 ];
 const requiredStringFields = [
-  "route", "locale", "cluster", "pageRole", "audience", "primaryQueryFamily",
-  "promise", "conversionTarget", "evidenceStatus"
+  "route", "property", "canonical", "locale", "cluster", "pageRole", "audience",
+  "visitorProblem", "primaryQueryFamily", "promise", "conversionTarget",
+  "primaryConversion", "evidenceStatus", "evidenceSource", "validatedAt",
+  "migrationStatus"
 ];
 
 function readJson(path) {
@@ -74,6 +76,19 @@ export function validateKeywordOwnership(ownership, routing) {
     }
     if (typeof row.route === "string" && !row.route.startsWith("/")) {
       errors.push(`${label}: route must begin with /`);
+    }
+    if (row.property !== "www") {
+      errors.push(`${label}: current ownership property must be www`);
+    }
+    if (
+      typeof row.route === "string"
+      && typeof row.canonical === "string"
+      && row.canonical !== `https://www.djai.academy${row.route}`
+    ) {
+      errors.push(`${label}: canonical must equal the public route`);
+    }
+    if (typeof row.validatedAt === "string" && !/^\d{4}-\d{2}-\d{2}$/.test(row.validatedAt)) {
+      errors.push(`${label}: validatedAt must use YYYY-MM-DD`);
     }
     if (!allowedLocales.has(row.locale)) {
       errors.push(`${label}: unsupported locale ${row.locale}`);

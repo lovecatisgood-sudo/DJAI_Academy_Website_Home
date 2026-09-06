@@ -19,9 +19,10 @@ Each completed gate records the command or inspection result and the exact repos
 
 ## Architecture and SEO
 
-- [ ] G05 — Every public sitemap URL has one page role and primary query-family owner.
+- [x] G05 — Every public sitemap URL has one page role and primary query-family owner.
   - CHECK: ownership validator plus build-derived route coverage test.
   - EXPECT: zero missing owners, duplicate route-locale owners, or duplicate primary query owners within a locale.
+  - EVIDENCE: 351 validated records: 345 live sitemap routes plus 6 publication-gated Cam PDF guides; full `npm test` passed on 2026-09-06.
 - [ ] G06 — Main navigation and footer follow the approved five-destination architecture.
   - CHECK: source contract, browser keyboard inspection, mobile screenshot comparison.
   - EXPECT: project enquiry primary; School link crawlable; no broken locale destination.
