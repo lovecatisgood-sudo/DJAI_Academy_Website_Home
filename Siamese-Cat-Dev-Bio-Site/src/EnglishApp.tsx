@@ -18,7 +18,6 @@ import {
   Coffee,
   GitFork,
   GraduationCap,
-  Hotel,
   Layers3,
   Lightbulb,
   MapPin,
@@ -72,7 +71,7 @@ function Header() {
     ['About', '#about'],
     ['Journey', '#journey'],
     ['What I Do', '#work'],
-    ['Courses', '/siamese_cat/dev/courses/'],
+    ['Courses', 'https://school.djai.academy/en/learn'],
     ['Blog', '/siamese_cat/dev/blog/en/'],
     ['DJAI Academy', 'https://www.djai.academy/en/'],
     ['ไทย', '/siamese_cat/dev/'],
@@ -636,14 +635,6 @@ const places = [
     href: 'https://creative.siamesecat.cafe/',
     className: 'place-purple',
   },
-  {
-    icon: <Hotel />,
-    label: 'HOTEL & LEARNING',
-    title: 'Siamese Cat Hotel & Learning Center',
-    copy: 'A cat hotel and learning space near Suvarnabhumi Airport in Bangkok.',
-    href: 'https://hotel.siamesecat.cafe/',
-    className: 'place-blue',
-  },
 ];
 
 function Places() {
@@ -699,12 +690,11 @@ function Footer() {
         </div>
         <div className="footer-links">
           <a href="https://www.djai.academy/en/" target="_blank" rel="noreferrer">DJAI Academy <ArrowUpRight /></a>
-          <a href="/siamese_cat/dev/courses/">AI Coding Courses <ArrowUpRight /></a>
+          <a href="https://school.djai.academy/en/learn">AI Coding Courses <ArrowUpRight /></a>
           <a href="/siamese_cat/dev/blog/en/">Siamese Cat Dev Blog <ArrowUpRight /></a>
           <a href="https://www.djai.academy/tools/en/" target="_blank" rel="noreferrer">Free DJAI Tools <ArrowUpRight /></a>
           <a href="https://siamesecat.cafe/" target="_blank" rel="noreferrer">Siamese Cat Cafe <ArrowUpRight /></a>
           <a href="https://creative.siamesecat.cafe/" target="_blank" rel="noreferrer">Creative Club <ArrowUpRight /></a>
-          <a href="https://hotel.siamesecat.cafe/" target="_blank" rel="noreferrer">Cat Hotel & Learning Center <ArrowUpRight /></a>
         </div>
       </div>
       <div className="footer-wordmark" aria-hidden="true">SIAMESE CAT DEV</div>

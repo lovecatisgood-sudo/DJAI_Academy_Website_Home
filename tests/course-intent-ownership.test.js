@@ -70,10 +70,10 @@ test("School owns future public learning discovery while legacy pages remain fun
 
   const plannedSchoolRoutes = new Set(ownership.plannedSchoolLearningRoutes);
   for (const route of [
-    "https://school.djai.academy/th/courses",
-    "https://school.djai.academy/en/courses",
-    "https://school.djai.academy/th/courses/vibe-coding",
-    "https://school.djai.academy/en/courses/vibe-coding",
+    "https://school.djai.academy/th/learn",
+    "https://school.djai.academy/en/learn",
+    "https://school.djai.academy/th/learn/live-vibe-coding",
+    "https://school.djai.academy/en/learn/live-vibe-coding",
   ]) {
     assert.equal(plannedSchoolRoutes.has(route), true, `missing School owner: ${route}`);
   }
@@ -87,8 +87,13 @@ test("School owns future public learning discovery while legacy pages remain fun
       assert.equal(row.migrationStatus, "retained_until_equivalent", `${row.route}: migration status`);
       assert.equal(row.futureUrl, null, `${row.route}: no cross-locale redirect`);
     } else {
-      assert.equal(row.migrationStatus, "pending_school_replacement", `${row.route}: migration status`);
-      assert.match(row.futureUrl, new RegExp(`^https://school\\.djai\\.academy/${row.locale}/courses(?:/|$)`));
+      const expectedStatus = row.cluster === "vibe"
+        ? "redirect_ready_pending_school_deploy"
+        : "pending_school_replacement";
+      assert.equal(row.migrationStatus, expectedStatus, `${row.route}: migration status`);
+      if (row.cluster === "vibe") assert.equal(row.indexable, false, `${row.route}: redirect-only route`);
+      const schoolFamily = row.cluster === "vibe" ? "learn" : "courses";
+      assert.match(row.futureUrl, new RegExp(`^https://school\\.djai\\.academy/${row.locale}/${schoolFamily}(?:/|$)`));
     }
   }
 

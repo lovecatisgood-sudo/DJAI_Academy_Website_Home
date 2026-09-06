@@ -5,6 +5,7 @@ const zlib = require("node:zlib");
 const { createServiceSupervisor } = require("./service-supervisor");
 const { resolveInternalPorts } = require("./runtime-ports");
 const { COURSE_INTEREST_PATH, createCourseInterestHandler } = require("./course-interest");
+const { learningRedirectFor } = require("./learning-migration");
 
 const rootDir = __dirname;
 const homepageDir = path.join(rootDir, "djai-academy-homepage");
@@ -292,6 +293,11 @@ function serveHealth(req, res) {
 function tryServeMountedStatic(req, res, pathname) {
   if (req.method === "GET" || req.method === "HEAD") {
     const requestUrl = new URL(req.url || "/", "http://localhost");
+    const learningDestination = learningRedirectFor(pathname);
+    if (learningDestination) {
+      redirect(res, `${learningDestination}${requestUrl.search}`);
+      return true;
+    }
 
     const caseInsensitiveRouteAliases = [
       ["/cam_pdf_scan_signer_qr-gen", "/Cam_PDF_Scan_Signer_QR-Gen"],

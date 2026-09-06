@@ -25,7 +25,7 @@ QR code เป็นวิธีที่ง่ายที่สุดในก
 
 เป้าหมายคือไม่ให้คนต้องพิมพ์ URL ยาวๆ แต่ scan ครั้งเดียวแล้วไปถึงหน้าที่ต้องการทันที
 
-ตัวอย่างเช่น [Siamese Cat Cafe](https://siamesecat.cafe/) สามารถใช้ QR code สำหรับเมนู ส่วน [Siamese Cat Hotel](https://hotel.siamesecat.cafe/) สามารถใช้สำหรับข้อมูลแขก วิธีจอง หรือคำแนะนำในพื้นที่
+ตัวอย่างเช่น [Siamese Cat Cafe](https://siamesecat.cafe/) สามารถใช้ QR code สำหรับเมนู ส่วนธุรกิจที่พักสามารถใช้สำหรับข้อมูลแขก วิธีจอง หรือคำแนะนำในพื้นที่
 
 ## เครื่องมือที่ใช้
 
@@ -197,7 +197,7 @@ Format ของรูปมีผลต่อคุณภาพ ขนาดไ
 
 บางกรณีต้องรักษาขนาด pixel แต่ถ้า target size เข้มงวด ให้ยอมลด dimension เพื่อให้ไฟล์เล็กลงโดยภาพยังดูดี
 
-เช่น guest guide ของ [Siamese Cat Hotel](https://hotel.siamesecat.cafe/) ควรใช้รูปที่โหลดเร็วสำหรับ mobile ส่วน creative portfolio ของ [Siamese Cat Creative Club](https://creative.siamesecat.cafe/) อาจใช้ target สูงขึ้นเพื่อรักษารายละเอียด
+เช่น guest guide สำหรับธุรกิจที่พักควรใช้รูปที่โหลดเร็วสำหรับ mobile ส่วน creative portfolio ของ [Siamese Cat Creative Club](https://creative.siamesecat.cafe/) อาจใช้ target สูงขึ้นเพื่อรักษารายละเอียด
 
 ## ขั้นตอนที่ 4: เปรียบเทียบผลลัพธ์
 

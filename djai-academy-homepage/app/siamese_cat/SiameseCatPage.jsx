@@ -9,11 +9,6 @@ const partners = [
     image: "/portfolio/optimized/websites/Siamese_Cat_Cafe.webp"
   },
   {
-    key: "hotel",
-    href: "https://hotel.siamesecat.cafe/",
-    image: "/portfolio/optimized/websites/Siamese_Cat_Hotel.webp"
-  },
-  {
     key: "creative",
     href: "https://creative.siamesecat.cafe/",
     image: "/portfolio/optimized/websites/Siamese_Cat_Creative_Club.webp"
@@ -191,7 +186,7 @@ export default function SiameseCatPage({ locale }) {
           <div><h2>{text.finalTitle}</h2><p>{text.finalText}</p></div>
           <div className="siamese-partnership-actions">
             <a className="button primary" href={en ? "/development/en/" : "/development/"}>{text.finalPrimary}</a>
-            <a className="button secondary" href={en ? "/course/detail/en/" : "/course/detail/"}>{text.finalSecondary}</a>
+            <a className="button secondary" href={en ? "https://school.djai.academy/en/learn/coding-with-ai" : "https://school.djai.academy/th/learn/coding-with-ai"}>{text.finalSecondary}</a>
           </div>
         </section>
       </main>

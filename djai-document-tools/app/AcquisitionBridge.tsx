@@ -5,7 +5,7 @@ export default function AcquisitionBridge({ language, category, compact = false 
   const en = language === "en";
   const vi = language === "vi";
   const developmentHref = vi ? "/development/vi/" : en ? "/development/en/" : "/development/";
-  const schoolHref = language === "th" ? "https://school.djai.academy/th" : "https://school.djai.academy/en";
+  const schoolHref = language === "th" ? "https://school.djai.academy/th/learn" : "https://school.djai.academy/en/learn";
   if (category === "document") {
     return <section className={`mobile-app-callout ${compact ? "compact-acquisition" : ""}`} aria-labelledby={`document-acquisition-${language}`} data-acquisition-primary="cam_pdf">
       <div className="app-device-mark"><Smartphone /><ScanLine /></div>

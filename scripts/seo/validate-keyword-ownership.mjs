@@ -15,7 +15,7 @@ const allowedEvidenceStatuses = new Set([
   "verified_gsc", "directional_external", "strategy_only"
 ]);
 const allowedRoutingTargets = new Set([
-  "none", "cam_pdf", "development", "course", "related_guide"
+  "none", "cam_pdf", "development", "course", "school", "related_guide"
 ]);
 const requiredRoutingClusters = [
   "pdf", "qr", "document", "ai", "spreadsheet", "seo", "image", "media", "vibe"
@@ -61,7 +61,7 @@ export function validateKeywordOwnership(ownership, routing) {
     errors.push("plannedSchoolLearningRoutes must be an array");
   } else {
     for (const route of ownership.plannedSchoolLearningRoutes) {
-      if (!/^https:\/\/school\.djai\.academy\/(?:th|en)\/courses(?:\/|$)/.test(route)) {
+      if (!/^https:\/\/school\.djai\.academy\/(?:th|en)\/(?:courses|learn)(?:\/|$)/.test(route)) {
         errors.push(`invalid planned School learning route ${route}`);
       }
     }
@@ -121,12 +121,19 @@ export function validateKeywordOwnership(ownership, routing) {
           errors.push(`${label}: Vietnamese learning route must remain until an equivalent locale exists`);
         }
       } else {
-        if (row.migrationStatus !== "pending_school_replacement") {
-          errors.push(`${label}: learning migration must remain pending until its School replacement is live`);
+        const allowedMigrationStatuses = new Set([
+          "pending_school_replacement",
+          "redirect_ready_pending_school_deploy"
+        ]);
+        if (!allowedMigrationStatuses.has(row.migrationStatus)) {
+          errors.push(`${label}: unsupported learning migration status ${row.migrationStatus}`);
+        }
+        if (row.migrationStatus === "redirect_ready_pending_school_deploy" && row.indexable) {
+          errors.push(`${label}: redirect-ready learning route must not remain indexable`);
         }
         if (
           typeof row.futureUrl !== "string"
-          || !row.futureUrl.startsWith(`https://school.djai.academy/${row.locale}/courses`)
+          || !row.futureUrl.startsWith(`https://school.djai.academy/${row.locale}/${row.cluster === "vibe" ? "learn" : "courses"}`)
         ) {
           errors.push(`${label}: future learning URL must use school.djai.academy and preserve locale`);
         }

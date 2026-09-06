@@ -32,7 +32,7 @@ const corePaths = [
   "/tools/seo-screaming-toad/", "/tools/seo-screaming-toad/en/",
   "/course/", "/course/en/", "/course/vi/", "/course/detail/", "/course/detail/en/", "/course/detail/vi/", "/siamese_cat/",
   "/tools/video-to-text/", "/tools/video-to-text/en/",
-  "/siamese_cat/en/", "/siamese_cat/dev/", "/siamese_cat/dev/en/", "/siamese_cat/dev/course/", "/siamese_cat/dev/course/th/", "/siamese_cat/dev/courses/", "/siamese_cat/dev/courses/build-first-app/", "/siamese_cat/dev/courses/make-a-game/", "/siamese_cat/dev/courses/coding-with-ai/", "/siamese_cat/dev/blog/",
+  "/siamese_cat/en/", "/siamese_cat/dev/", "/siamese_cat/dev/en/", "/siamese_cat/dev/blog/",
   "/siamese_cat/dev/blog/en/", "/blog/", "/blog/en/", "/blog/vi/", "/Cam_PDF_Scan_Signer_QR-Gen/",
   "/Cam_PDF_Scan_Signer_QR-Gen/privacy/", "/Cam_PDF_Scan_Signer_QR-Gen/terms/",
   "/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/", "/Cam_PDF_Scan_Signer_QR-Gen/delete-account/"

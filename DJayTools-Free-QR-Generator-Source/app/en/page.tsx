@@ -138,7 +138,7 @@ export default function Home({ toolSlug, pageCopy }: { toolSlug?: QrToolSlug; pa
           <a href="https://www.djai.academy/tools/resizeimg/en/" target="_blank" rel="noopener noreferrer">Image tools <span className="external-mark">↗</span></a>
           <a href="https://www.djai.academy/blog/en/" target="_blank" rel="noopener noreferrer">Blog <span className="external-mark">↗</span></a>
           <a href={languageHref} hrefLang="th">ไทย</a>
-          <a className="nav-cta" href="https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/en/">Cam PDF</a>
+          <a className="nav-cta" href="https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/">Cam PDF</a>
         </nav>
       </header>
 

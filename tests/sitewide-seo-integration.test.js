@@ -7,6 +7,8 @@ const root = path.resolve(__dirname, "..");
 const read = (relativePath) => readFileSync(path.join(root, relativePath), "utf8");
 const localeMap = JSON.parse(read("audits/sitewide-seo-growth-2026-09-02/locale-map.json"));
 const ownership = JSON.parse(read("data/seo/keyword-ownership.json"));
+const { learningRedirects } = require("../learning-migration");
+const redirectedLearningRoutes = new Set(learningRedirects.map(([source]) => `${source}/`));
 
 function localeRoute(base, member, locale) {
   const stem = member ? `${base}${member}/` : base;
@@ -55,7 +57,7 @@ test("the locale map covers one owned indexable route-locale per changed public 
   const explicitlyOwned = [
     ...localeMap.equivalentGroups.flatMap((group) => Object.entries(group.variants).map(([locale, route]) => ({ locale, route }))),
     ...localeMap.singleLocaleRoutes
-  ];
+  ].filter(({ route }) => !redirectedLearningRoutes.has(route));
   for (const item of explicitlyOwned) {
     assert.ok(owned.has(`${item.route}|${item.locale}`), `missing ownership for ${item.locale} ${item.route}`);
   }
@@ -124,6 +126,7 @@ test("sitemap source includes every approved acquisition family and omits gated 
     assert.match(sitemap, new RegExp(expected));
   }
   for (const route of localeMap.singleLocaleRoutes.map((item) => item.route)) {
+    if (redirectedLearningRoutes.has(route)) continue;
     assert.match(sitemap, new RegExp(route.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
   }
   assert.doesNotMatch(sitemap, /scan-documents-to-pdf-android|sign-pdf-on-android|create-qr-code-on-android/);
@@ -138,7 +141,7 @@ test("the discovery graph exposes the required contextual journeys", () => {
   const qrJourney = read("DJayTools-Free-QR-Generator-Source/app/QrSuccessJourney.tsx");
 
   assert.match(development, /\/portfolio\/en\//);
-  assert.match(portfolio, /\/service\/en\//);
+  assert.match(portfolio, /\/development\/en\//);
   assert.match(service, /\/development\/en\//);
   assert.match(cam, /play\.google\.com\/store\/apps\/details\?id=com\.djai\.campdfscan/);
   assert.match(pdfJourney, /related/i);
@@ -157,7 +160,7 @@ test("the discovery graph exposes the required contextual journeys", () => {
   }
   const documentBridge = read("djai-document-tools/app/AcquisitionBridge.tsx");
   assert.doesNotMatch(documentBridge, /\/siamese_cat\/dev\/courses\/(?:en|vi)\//);
-  assert.match(documentBridge, /\/siamese_cat\/dev\/course\/th\//);
+  assert.match(documentBridge, /school\.djai\.academy\/(?:th|en)\/learn/);
   const qrVietnamese = read("DJayTools-Free-QR-Generator-Source/app/vi/page.tsx");
   assert.doesNotMatch(qrVietnamese, /from "next\/link"|<Link/);
   assert.match(qrVietnamese, /<a href="\/development\/vi\/"/);

@@ -153,12 +153,6 @@ const publicRoutes = [
   "/siamese_cat/en/",
   "/siamese_cat/dev/",
   "/siamese_cat/dev/en/",
-  "/siamese_cat/dev/course/",
-  "/siamese_cat/dev/course/th/",
-  "/siamese_cat/dev/courses/",
-  "/siamese_cat/dev/courses/build-first-app/",
-  "/siamese_cat/dev/courses/make-a-game/",
-  "/siamese_cat/dev/courses/coding-with-ai/",
   "/siamese_cat/dev/blog/",
   "/siamese_cat/dev/blog/en/",
   "/admin/blog/",
@@ -192,9 +186,15 @@ const redirects = [
   ["/tools/word-to-pdf/en/", "/tools/document/docx-to-pdf/en/"],
   ["/tools/document/word-to-pdf/", "/tools/document/docx-to-pdf/"],
   ["/tools/document/word-to-pdf/en/", "/tools/document/docx-to-pdf/en/"],
-  ["/siamese_cat/dev/en/course/", "/siamese_cat/dev/course/"],
-  ["/siamese_cat/dev/en/courses/", "/siamese_cat/dev/courses/"],
-  ["/siamese_cat/dev/en/courses/build-first-app/", "/siamese_cat/dev/courses/build-first-app/"]
+  ["/siamese_cat/dev/course/", "https://school.djai.academy/en/learn/live-vibe-coding"],
+  ["/siamese_cat/dev/course/th/", "https://school.djai.academy/th/learn/live-vibe-coding"],
+  ["/siamese_cat/dev/courses/", "https://school.djai.academy/en/learn"],
+  ["/siamese_cat/dev/courses/build-first-app/", "https://school.djai.academy/en/learn/build-first-app"],
+  ["/siamese_cat/dev/courses/make-a-game/", "https://school.djai.academy/en/learn/make-a-game"],
+  ["/siamese_cat/dev/courses/coding-with-ai/", "https://school.djai.academy/en/learn/coding-with-ai"],
+  ["/siamese_cat/dev/en/course/", "https://school.djai.academy/en/learn/live-vibe-coding"],
+  ["/siamese_cat/dev/en/courses/", "https://school.djai.academy/en/learn"],
+  ["/siamese_cat/dev/en/courses/build-first-app/", "https://school.djai.academy/en/learn/build-first-app"]
 ];
 const slashCanonicalPrefixes = [
   "/course/",
@@ -213,7 +213,7 @@ const slashCanonicalRoutes = publicRoutes.filter((route) =>
   && !route.startsWith("/siamese_cat/dev/blog/")
 );
 const accountOnboardingRedirects = ["/academy/", "/academy/en/", "/academy/vi/"];
-const moneyMakingProductRegistrationUrl = "/siamese_cat/dev/course/#course-interest";
+const moneyMakingProductRegistrationUrl = "https://school.djai.academy/en/learn/live-vibe-coding";
 const auditPassword = "djai-local-deployment-audit";
 const auditApiKey = "djai-local-api-key-audit";
 const auditDataDirectory = await mkdtemp(join(tmpdir(), "djai-blog-audit-"));
@@ -306,7 +306,7 @@ async function verify() {
 
   const campaignResponse = await fetch(`${origin}/MONEY_MAKING_PRODUCT/`, { redirect: "manual" });
   if (campaignResponse.status !== 307 || campaignResponse.headers.get("location") !== moneyMakingProductRegistrationUrl) {
-    failures.push("/MONEY_MAKING_PRODUCT/: expected redirect to the evergreen course-interest form");
+    failures.push("/MONEY_MAKING_PRODUCT/: expected a direct redirect to the School live-course interest owner");
   }
 
   const courseInterestMethodResponse = await fetch(`${origin}/api/course-interest`, { redirect: "manual" });
@@ -320,58 +320,6 @@ async function verify() {
   });
   if (courseInterestCrossSiteResponse.status !== 403) {
     failures.push(`/api/course-interest: expected cross-site POST to return 403, received ${courseInterestCrossSiteResponse.status}`);
-  }
-
-  const courseLandingVariants = [
-    { route: "/siamese_cat/dev/course/", language: "en", canonical: "https://www.djai.academy/siamese_cat/dev/course/", h1: "Free Live Vibe Coding Course: Turn an MVP into a Real Product" },
-    { route: "/siamese_cat/dev/course/th/", language: "th", canonical: "https://www.djai.academy/siamese_cat/dev/course/th/", h1: "คอร์ส Vibe Coding สดฟรี: พัฒนา MVP ให้เป็นสินค้าจริง" }
-  ];
-  for (const variant of courseLandingVariants) {
-    const html = await fetch(`${origin}${variant.route}`).then((response) => response.text());
-    const checks = [
-      `<html lang="${variant.language}"`,
-      `<link rel="canonical" href="${variant.canonical}"`,
-      `<h1>${variant.h1}</h1>`,
-      variant.language === "th" ? "แจ้งความสนใจคอร์ส" : "Express interest in a course",
-      'src="/siamese_cat/dev/djai-academy-logo.webp"',
-      'src="/founder-djai-display.webp"',
-      'hreflang="en"',
-      'hreflang="th"',
-      'hreflang="x-default"',
-      '"@type":"Course"',
-      '"inLanguage":["en","th"]'
-    ];
-    for (const expected of checks) {
-      if (!html.includes(expected)) failures.push(`${variant.route}: missing ${expected}`);
-    }
-    if (html.includes("chat.whatsapp.com") || html.includes("meet.google.com")) {
-      failures.push(`${variant.route}: private participant links leaked into public HTML`);
-    }
-    if (html.includes('"@type":"EducationEvent"') || html.includes('"startDate"')) {
-      failures.push(`${variant.route}: expired event structured data remains on evergreen course page`);
-    }
-  }
-
-  const courseCatalogVariants = [
-    { route: "/siamese_cat/dev/courses/", canonical: "https://www.djai.academy/siamese_cat/dev/courses/", h1: "Build with AI. Understand what you ship.", schemaType: '"@type":"CollectionPage"' },
-    { route: "/siamese_cat/dev/courses/build-first-app/", canonical: "https://www.djai.academy/siamese_cat/dev/courses/build-first-app/", h1: "Build Your First App with AI", schemaType: '"@type":"Course"' },
-    { route: "/siamese_cat/dev/courses/make-a-game/", canonical: "https://www.djai.academy/siamese_cat/dev/courses/make-a-game/", h1: "Make a Game with AI", schemaType: '"@type":"Course"' },
-    { route: "/siamese_cat/dev/courses/coding-with-ai/", canonical: "https://www.djai.academy/siamese_cat/dev/courses/coding-with-ai/", h1: "Coding with AI for Real Applications", schemaType: '"@type":"Course"' }
-  ];
-  for (const variant of courseCatalogVariants) {
-    const html = await fetch(`${origin}${variant.route}`).then((response) => response.text());
-    const checks = [
-      '<html lang="en"',
-      `<link rel="canonical" href="${variant.canonical}"`,
-      `<h1>${variant.h1}</h1>`,
-      variant.schemaType,
-      'https://wa.me/66804803802',
-      'Siamese Cat Dev'
-    ];
-    for (const expected of checks) {
-      if (!html.includes(expected)) failures.push(`${variant.route}: missing ${expected}`);
-    }
-    if (html.includes('hreflang=')) failures.push(`${variant.route}: English-only course page exposes hreflang tags`);
   }
 
   const courseRegistrationChecks = [
@@ -455,8 +403,8 @@ async function verify() {
   }
 
   const toolHubFooterChecks = [
-    ["/tools/", "สร้างโดยทีมที่มี product จริงและธุรกิจจริง", "SEO crawler โอเพนซอร์สพร้อมหลักฐาน Technical SEO", "เครื่องมือออนไลน์ฟรี | วิดีโอ เสียง PDF รูปภาพ และ AI | DJAI"],
-    ["/tools/en/", "Built by connected teams with real products.", "Open-source SEO crawler with technical evidence", "Free Online Tools | Video, Audio, PDF, Images &amp; AI | DJAI"]
+    ["/tools/", "สร้างโดยทีมที่มี product จริงและธุรกิจจริง", "ตรวจ Technical SEO, JavaScript, Canonical, Hreflang, Sitemap", "เครื่องมือออนไลน์ฟรี | วิดีโอ เสียง PDF รูปภาพ และ AI | DJAI"],
+    ["/tools/en/", "Built by connected teams with real products.", "Audit technical SEO, JavaScript, canonicals, hreflang, sitemaps", "Free Online Tools | Video, Audio, PDF, Images &amp; AI | DJAI"]
   ];
   for (const [route, precedingContent, seoCardCopy, title] of toolHubFooterChecks) {
     const html = await fetch(`${origin}${route}`).then((response) => response.text());
@@ -586,8 +534,6 @@ async function verify() {
 
   const sitemapBody = await fetch(`${origin}/sitemap.xml`).then((response) => response.text());
   for (const [path, expectedLastModified] of [
-    ["/siamese_cat/dev/course/", "2026-09-02T00:00:00.000Z"],
-    ["/siamese_cat/dev/course/th/", "2026-09-02T00:00:00.000Z"],
     ["/Cam_PDF_Scan_Signer_QR-Gen/privacy/", "2026-09-06T00:00:00.000Z"],
     ["/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/", "2026-09-06T00:00:00.000Z"],
     ["/Cam_PDF_Scan_Signer_QR-Gen/", "2026-09-06T00:00:00.000Z"],
@@ -603,19 +549,16 @@ async function verify() {
   for (const path of ["/tools/seo-screaming-toad/", "/tools/seo-screaming-toad/en/"]) {
     if (!sitemapBody.includes(`https://www.djai.academy${path}`)) failures.push(`/sitemap.xml: missing ${path}`);
   }
-  for (const path of ["/siamese_cat/dev/course/", "/siamese_cat/dev/course/th/"]) {
-    if (!sitemapBody.includes(`https://www.djai.academy${path}`)) {
-      failures.push(`/sitemap.xml: missing money-making product course landing page ${path}`);
-    }
-  }
   for (const path of [
+    "/siamese_cat/dev/course/",
+    "/siamese_cat/dev/course/th/",
     "/siamese_cat/dev/courses/",
     "/siamese_cat/dev/courses/build-first-app/",
     "/siamese_cat/dev/courses/make-a-game/",
     "/siamese_cat/dev/courses/coding-with-ai/"
   ]) {
-    if (!sitemapBody.includes(`https://www.djai.academy${path}`)) {
-      failures.push(`/sitemap.xml: missing Siamese Cat Dev English course page ${path}`);
+    if (sitemapBody.includes(`https://www.djai.academy${path}`)) {
+      failures.push(`/sitemap.xml: redirect-only learning URL must be absent ${path}`);
     }
   }
   for (const path of [
@@ -812,10 +755,13 @@ async function verify() {
   for (const [route, expectedLocation] of redirects) {
     const response = await fetch(`${origin}${route}`, { redirect: "manual" });
     const location = response.headers.get("location");
-    const normalizedLocation = location ? new URL(location, origin).pathname : "";
-    if (response.status !== 308 || normalizedLocation !== expectedLocation) {
+    const resolvedLocation = location ? new URL(location, origin) : null;
+    const locationMatches = expectedLocation.startsWith("http")
+      ? resolvedLocation?.href === expectedLocation
+      : resolvedLocation?.pathname === expectedLocation;
+    if (response.status !== 308 || !locationMatches) {
       failures.push(
-        `${route}: expected 308 to ${expectedLocation}, received ${response.status} to ${normalizedLocation || "(none)"}`
+        `${route}: expected 308 to ${expectedLocation}, received ${response.status} to ${resolvedLocation?.href || "(none)"}`
       );
     }
   }
@@ -949,7 +895,7 @@ async function verify() {
   ];
   for (const [route, developerPath] of partnershipChecks) {
     const html = await fetch(`${origin}${route}`).then((response) => response.text());
-    for (const expected of [developerPath, "https://siamesecat.cafe/", "https://hotel.siamesecat.cafe/", "https://creative.siamesecat.cafe/"]) {
+    for (const expected of [developerPath, "https://siamesecat.cafe/", "https://creative.siamesecat.cafe/"]) {
       if (!html.includes(`href="${expected}"`)) failures.push(`${route}: missing partnership link ${expected}`);
     }
     const expectedLanguage = route.includes("/en/") ? "en" : "th";

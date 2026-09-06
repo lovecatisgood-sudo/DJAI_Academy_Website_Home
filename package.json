@@ -16,7 +16,7 @@
     "test:pdf-acquisition": "node --test djai-pdf-tools/tests/acquisition-routing.test.mjs",
     "test:qr-acquisition": "node --test DJayTools-Free-QR-Generator-Source/tests/acquisition-routing.test.mjs DJayTools-Free-QR-Generator-Source/tests/qr-payload.test.mjs",
     "test:tool-acquisition": "node --test tests/tool-acquisition-routing.test.js tests/tool-shell-linking.test.js",
-    "test:course-ownership": "node --test tests/course-intent-ownership.test.js",
+    "test:course-ownership": "node --test tests/course-intent-ownership.test.js tests/learning-migration.test.js",
     "test:seo-integration": "node --test tests/sitewide-seo-integration.test.js",
     "test:cam-pdf-links": "node --test tests/cam-pdf-play-store-links.test.mjs",
     "test:cam-pdf-product": "node --test djai-academy-homepage/tests/cam-pdf-product-seo.test.mjs djai-academy-homepage/tests/cam-pdf-privacy-policy.test.mjs",
