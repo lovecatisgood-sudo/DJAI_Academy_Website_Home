@@ -18,9 +18,13 @@ export function camPdfArticleMetadata(article) {
 
 export default function CamPdfReleaseArticle({ article }) {
   const productPath = `${CAM_PDF_PATH}${article.segment}/`;
+  const articleLanguageHrefs = {
+    "zh-CN": "/blog/zh-cn/cam-pdf-scanner-app-google-play-release/",
+    "zh-TW": "/blog/zh-tw/cam-pdf-scanner-app-google-play-release/"
+  };
   return (
     <>
-      <SiteHeader locale={article.locale} currentRoute="blog" languageHref={productPath} />
+      <SiteHeader locale={article.locale} currentRoute="blog" languageHrefs={articleLanguageHrefs} />
       <main className="article-page">
         <article className="article-shell">
           <header className="article-header">

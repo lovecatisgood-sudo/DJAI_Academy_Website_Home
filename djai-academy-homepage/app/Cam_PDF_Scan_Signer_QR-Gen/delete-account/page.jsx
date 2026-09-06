@@ -12,7 +12,7 @@ export const metadata = {
 };
 
 export default function DeleteCamPdfAccountPage() {
-  return <><SiteHeader locale="en" currentRoute="home" languageHref={`${APP_PATH}delete-account/`} /><main className={styles.page}>
+  return <><SiteHeader locale="en" currentRoute="camPdf" languageHrefs={{ "zh-CN": `${APP_PATH}zh-cn/delete-account/`, "zh-TW": `${APP_PATH}zh-tw/delete-account/` }} /><main className={styles.page}>
     <header className={styles.hero}><p>Cam PDF Scan Signer QR Gen</p><h1>Delete your account</h1><span>Account and cloud-data deletion</span></header>
     <article className={styles.content}>
       <p className={styles.lead}>You can permanently delete your account from inside the Android app. This is the fastest method because it verifies the signed-in account directly.</p>

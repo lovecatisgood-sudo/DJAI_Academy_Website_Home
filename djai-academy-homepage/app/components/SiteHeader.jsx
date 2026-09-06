@@ -2,11 +2,12 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import { localeLinksFor, LOCALE_LABELS, oppositeLocale, pathFor, schoolUrlFor, urlFor } from "../lib/i18n";
+import { schoolUrlFor, urlFor } from "../lib/i18n";
+import { headerStateFor } from "../lib/header-navigation";
 
 const navCopy = {
   en: {
-    build: "Build with DJAI",
+    build: "Development",
     mainNavigation: "Main navigation",
     services: "Services",
     promo: "Web Development Promo",
@@ -14,9 +15,9 @@ const navCopy = {
     tools: "Free Tools",
     resources: "Resources",
     camPdf: "Cam PDF",
-    school: "Learn at DJAI School",
+    school: "DJAI School",
     discussProject: "Discuss a project",
-    switchLabel: "ไทย",
+    switchLabel: "Select language",
     brandLabel: "DJAI Academy"
   },
   th: {
@@ -30,7 +31,7 @@ const navCopy = {
     camPdf: "Cam PDF",
     school: "เรียนกับ DJAI School",
     discussProject: "คุยเรื่องโปรเจกต์",
-    switchLabel: "EN",
+    switchLabel: "เลือกภาษา",
     brandLabel: "DJAI Academy"
   },
   vi: {
@@ -44,7 +45,7 @@ const navCopy = {
     camPdf: "Cam PDF",
     school: "Học tại DJAI School",
     discussProject: "Trao đổi dự án",
-    switchLabel: "Ngôn ngữ",
+    switchLabel: "Chọn ngôn ngữ",
     brandLabel: "DJAI Academy"
   },
   "zh-CN": {
@@ -77,7 +78,7 @@ const navCopy = {
   }
 };
 
-function DevelopmentDropdown({ copy, locale }) {
+function DevelopmentDropdown({ active, copy, locale }) {
   const developmentLinks = [
     [copy.services, urlFor("service", locale)],
     [copy.promo, urlFor("promo", locale)],
@@ -86,7 +87,11 @@ function DevelopmentDropdown({ copy, locale }) {
 
   return (
     <div className="nav-dropdown">
-      <a className="nav-dropdown-trigger" href={urlFor("development", locale)}>
+      <a
+        className="nav-dropdown-trigger"
+        href={urlFor("development", locale)}
+        aria-current={active ? "page" : undefined}
+      >
         {copy.build}
       </a>
       <div className="dropdown-panel" aria-label={copy.build}>
@@ -103,15 +108,13 @@ function DevelopmentDropdown({ copy, locale }) {
 export default function SiteHeader({ locale = "en", currentRoute = "home", languageHref, languageHrefs }) {
   const [open, setOpen] = useState(false);
   const copy = navCopy[locale] || navCopy.en;
-  const switchLocale = oppositeLocale(locale);
-  const switchHref = languageHref || pathFor(currentRoute, switchLocale);
-  const localeLinks = languageHrefs
-    ? Object.entries(languageHrefs)
-        .filter(([candidate, href]) => candidate !== locale && href)
-        .map(([candidate, href]) => ({ locale: candidate, label: LOCALE_LABELS[candidate] || candidate.toUpperCase(), href }))
-    : languageHref
-      ? [{ locale: switchLocale, label: LOCALE_LABELS[switchLocale], href: switchHref }]
-      : localeLinksFor(currentRoute, locale);
+  const { activeItem, currentLanguage, languageOptions } = headerStateFor({
+    locale,
+    currentRoute,
+    languageHref,
+    languageHrefs
+  });
+
   return (
     <header className="site-header">
       <a className="brand" href={urlFor("home", locale)} aria-label={copy.brandLabel}>
@@ -138,18 +141,31 @@ export default function SiteHeader({ locale = "en", currentRoute = "home", langu
       </button>
 
       <nav id="site-navigation" className={open ? "nav is-open" : "nav"} aria-label={copy.mainNavigation}>
-        <DevelopmentDropdown copy={copy} locale={locale} />
-        <a href={urlFor("tools", locale)}>{copy.tools}</a>
-        <a href="/Cam_PDF_Scan_Signer_QR-Gen/">{copy.camPdf}</a>
+        <DevelopmentDropdown active={activeItem === "build"} copy={copy} locale={locale} />
+        <a href={urlFor("tools", locale)} aria-current={activeItem === "tools" ? "page" : undefined}>
+          {copy.tools}
+        </a>
+        <a href="/Cam_PDF_Scan_Signer_QR-Gen/" aria-current={activeItem === "camPdf" ? "page" : undefined}>
+          {copy.camPdf}
+        </a>
         <a href={schoolUrlFor(locale)}>{copy.school}</a>
-        <a href={urlFor("blog", locale)}>{copy.resources}</a>
-        <div className="language-options" aria-label={copy.switchLabel}>
-          {localeLinks.map((item) => (
-            <a className="language-switch" href={item.href} hrefLang={item.locale} key={item.locale}>
-              {item.label}
-            </a>
-          ))}
-        </div>
+        <a href={urlFor("blog", locale)} aria-current={activeItem === "resources" ? "page" : undefined}>
+          {copy.resources}
+        </a>
+        <details className="language-options">
+          <summary className="language-switch" aria-label={`${copy.switchLabel}: ${currentLanguage.label}`}>
+            <span>{currentLanguage.code}</span>
+            <span className="language-chevron" aria-hidden="true">⌄</span>
+          </summary>
+          <div className="header-language-panel">
+            {languageOptions.map((item) => (
+              <a className="language-choice" href={item.href} hrefLang={item.locale} key={item.locale}>
+                <span className="language-code" aria-hidden="true">{item.code}</span>
+                <span>{item.label}</span>
+              </a>
+            ))}
+          </div>
+        </details>
         <a className="nav-subscribe" href="mailto:contact@djai.academy">
           {copy.discussProject}
         </a>

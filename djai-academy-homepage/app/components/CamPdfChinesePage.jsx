@@ -24,6 +24,11 @@ export function camPdfMetadata(content) {
 
 export default function CamPdfChinesePage({ content }) {
   const legalRoot = `${CAM_PDF_PATH}${content.segment}/`;
+  const languageHrefs = {
+    en: CAM_PDF_PATH,
+    "zh-CN": `${CAM_PDF_PATH}zh-cn/`,
+    "zh-TW": `${CAM_PDF_PATH}zh-tw/`
+  };
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "MobileApplication",
@@ -39,7 +44,7 @@ export default function CamPdfChinesePage({ content }) {
 
   return (
     <>
-      <SiteHeader locale={content.locale} currentRoute="home" languageHref={legalRoot} />
+      <SiteHeader locale={content.locale} currentRoute="camPdf" languageHrefs={languageHrefs} />
       <main className={styles.page}>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
         <section className={styles.hero}>

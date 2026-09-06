@@ -18,9 +18,15 @@ export default function CamPdfChineseLegalPage({ content, type }) {
   const key = type === "delete-account" ? "deleteAccount" : type;
   const page = content.legal[key];
   const base = `${CAM_PDF_PATH}${content.segment}/`;
+  const languageHrefs = {
+    en: `${CAM_PDF_PATH}${type}/`,
+    "zh-CN": `${CAM_PDF_PATH}zh-cn/${type}/`,
+    "zh-TW": `${CAM_PDF_PATH}zh-tw/${type}/`,
+    ...(type === "privacy" ? { th: `${CAM_PDF_PATH}privacy/th/` } : {})
+  };
   return (
     <>
-      <SiteHeader locale={content.locale} currentRoute="home" languageHref={base} />
+      <SiteHeader locale={content.locale} currentRoute="camPdf" languageHrefs={languageHrefs} />
       <main className={styles.page}>
         <header className={styles.hero}><p>Cam PDF Scan Signer QR Gen</p><h1>{page.title}</h1><span>{page.updated}</span></header>
         <article className={styles.content}>

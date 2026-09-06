@@ -106,7 +106,14 @@ const structuredData = {
 export default function CamPdfAppPage() {
   return (
     <>
-      <SiteHeader locale="en" currentRoute="home" languageHref={APP_PATH} />
+      <SiteHeader
+        locale="en"
+        currentRoute="camPdf"
+        languageHrefs={{
+          "zh-CN": `${APP_PATH}zh-cn/`,
+          "zh-TW": `${APP_PATH}zh-tw/`
+        }}
+      />
       <main className={styles.page}>
         <script
           type="application/ld+json"

@@ -12,7 +12,7 @@ export const metadata = {
 };
 
 export default function CamPdfTermsPage() {
-  return <><SiteHeader locale="en" currentRoute="home" languageHref={`${APP_PATH}terms/`} /><main className={styles.page}>
+  return <><SiteHeader locale="en" currentRoute="camPdf" languageHrefs={{ "zh-CN": `${APP_PATH}zh-cn/terms/`, "zh-TW": `${APP_PATH}zh-tw/terms/` }} /><main className={styles.page}>
     <header className={styles.hero}><p>Cam PDF Scan Signer QR Gen</p><h1>Terms of Service</h1><span>Effective September 6, 2026</span></header>
     <article className={styles.content}>
       <p className={styles.lead}>These terms govern your use of the Cam PDF Scan Signer QR Gen Android app and its DJAI account services. By creating an account, you agree to these terms and the Privacy Policy.</p>

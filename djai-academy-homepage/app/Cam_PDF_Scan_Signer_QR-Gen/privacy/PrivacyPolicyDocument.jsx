@@ -484,12 +484,17 @@ function PolicySection({ number, section }) {
 
 export default function PrivacyPolicyDocument({ locale }) {
   const copy = locale === "th" ? th : en;
-  const thai = locale === "th";
   const relatedHrefs = [APP_PATH, APP_PATH + "terms/", APP_PATH + "delete-account/", "/app-ads.txt"];
+  const languageHrefs = {
+    en: PRIVACY_PATH,
+    th: THAI_PATH,
+    "zh-CN": `${APP_PATH}zh-cn/privacy/`,
+    "zh-TW": `${APP_PATH}zh-tw/privacy/`
+  };
 
   return (
     <>
-      <SiteHeader locale={locale} currentRoute="home" languageHrefs={thai ? { en: PRIVACY_PATH } : { th: THAI_PATH }} />
+      <SiteHeader locale={locale} currentRoute="camPdf" languageHrefs={languageHrefs} />
       <main className={styles.page}>
         <header className={styles.hero}>
           <p>Cam PDF Scan Signer QR Gen</p>
