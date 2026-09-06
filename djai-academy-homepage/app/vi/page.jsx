@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
+import { schoolUrlFor } from "../lib/i18n";
 
 export const metadata = {
   title: "DJAI Academy Việt Nam | Học AI bằng cách tự tay xây sản phẩm",
@@ -24,13 +25,6 @@ export const metadata = {
 
 const routes = [
   {
-    eyebrow: "HỌC",
-    title: "Bắt đầu với AI và vibe coding",
-    text: "Dành cho người có ý tưởng nhưng chưa biết nên bắt đầu từ giao diện, dữ liệu hay câu lệnh cho AI.",
-    href: "/course/vi/",
-    action: "Xem lộ trình học"
-  },
-  {
     eyebrow: "LÀM THỬ",
     title: "Dùng công cụ miễn phí ngay",
     text: "Xử lý PDF, hình ảnh, âm thanh, video và dữ liệu ngay trên trình duyệt trước khi học cách tự xây công cụ của riêng bạn.",
@@ -38,11 +32,18 @@ const routes = [
     action: "Mở bộ công cụ"
   },
   {
-    eyebrow: "XÂY DỰNG",
-    title: "Biến yêu cầu thành sản phẩm",
-    text: "Nếu dự án cần một đội ngũ thực hiện, DJAI có thể cùng bạn xác định phạm vi, làm MVP và chuẩn bị cho giai đoạn vận hành thật.",
-    href: "/development/vi/",
-    action: "Tìm hiểu cách hợp tác"
+    eyebrow: "ỨNG DỤNG ANDROID",
+    title: "Cam PDF Scan Signer QR Gen",
+    text: "Quét tài liệu, ký PDF và tạo mã QR trên Android bằng ứng dụng của DJAI.",
+    href: "/Cam_PDF_Scan_Signer_QR-Gen/",
+    action: "Xem ứng dụng Cam PDF"
+  },
+  {
+    eyebrow: "HỌC",
+    title: "Học xây sản phẩm tại DJAI School",
+    text: "Mở nền tảng học tập DJAI bằng tiếng Anh trong khi lộ trình tiếng Việt đang được chuẩn bị.",
+    href: schoolUrlFor("vi"),
+    action: "Mở DJAI School (English)"
   }
 ];
 
@@ -62,16 +63,19 @@ export default function VietnameseHomePage() {
           <div className="hero-grid">
             <div className="hero-copy">
               <p className="eyebrow">AI KHÔNG CHỈ ĐỂ HỎI — HÃY DÙNG NÓ ĐỂ XÂY</p>
-              <h1>DJAI Academy</h1>
+              <h1>
+                <span className="hero-title-brand">DJAI Academy</span>
+                <span className="hero-title-detail">Xây phần mềm và sản phẩm thực tế với AI</span>
+              </h1>
               <p className="hero-line">Từ một ý tưởng còn mơ hồ đến sản phẩm chạy được</p>
               <p className="hero-text">
                 Bạn chưa cần biết hết về lập trình mới có thể bắt đầu. DJAI giúp bạn tạo phiên bản đầu tiên,
                 nhìn thấy nó hoạt động, rồi học từng phần kỹ thuật vào đúng lúc cần dùng đến.
               </p>
               <div className="hero-actions">
-                <a className="button primary" href="/course/vi/">Bắt đầu lộ trình cho người mới</a>
-                <a className="button secondary" href="/tools/vi/">Dùng công cụ miễn phí</a>
-                <a className="button ghost" href="/development/vi/">Trao đổi về một dự án</a>
+                <a className="button primary" href="mailto:contact@djai.academy">Trao đổi về một dự án</a>
+                <a className="button secondary" href="/development/vi/">Tìm hiểu cách hợp tác</a>
+                <a className="button ghost" href={schoolUrlFor("vi")}>Học tại DJAI School (English)</a>
               </div>
             </div>
             <div className="hero-visual" aria-label="DJAI Academy — học AI bằng dự án thực tế">

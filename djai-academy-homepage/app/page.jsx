@@ -1,6 +1,7 @@
 import Image from "next/image";
 import SiteFooter from "./components/SiteFooter";
 import SiteHeader from "./components/SiteHeader";
+import { schoolUrlFor } from "./lib/i18n";
 
 export const metadata = {
   title: "DJAI Academy | เรียน AI สร้างซอฟต์แวร์ และพัฒนาโปรเจกต์",
@@ -28,25 +29,25 @@ export const metadata = {
 
 const routes = [
   {
+    eyebrow: "ลองใช้",
+    title: "เครื่องมือออนไลน์ฟรี",
+    text: "ใช้งานเครื่องมือ PDF รูปภาพ วิดีโอ QR และงานดิจิทัลได้ทันที พร้อมดูตัวอย่างงานที่ทีม DJAI พัฒนาจริง",
+    href: "/tools/",
+    action: "เปิดเครื่องมือฟรี"
+  },
+  {
+    eyebrow: "แอป Android",
+    title: "Cam PDF Scan Signer QR Gen",
+    text: "สแกนเอกสาร เซ็น PDF และสร้าง QR code บน Android ด้วยแอปของ DJAI",
+    href: "/Cam_PDF_Scan_Signer_QR-Gen/",
+    action: "ดูแอป Cam PDF"
+  },
+  {
     eyebrow: "เรียน",
-    title: "คอร์ส Vibe Coding และ AI",
-    text: "คอร์สสำหรับผู้เริ่มต้น เจ้าของธุรกิจ ครีเอเตอร์ และนักพัฒนาที่อยากสร้างงานเร็วขึ้นด้วย AI",
-    href: "https://www.djai.academy/course/",
-    action: "ดูคอร์สเรียน"
-  },
-  {
-    eyebrow: "เข้าร่วม",
-    title: "ชุมชนคนสร้างโปรเจกต์",
-    text: "ติดตามความรู้ เครื่องมือฟรี และแนวคิดการสร้างโปรดักต์สำหรับยุค AI",
-    href: "/academy/",
-    action: "เข้าร่วมชุมชน"
-  },
-  {
-    eyebrow: "สร้าง",
-    title: "ทีมพัฒนาซอฟต์แวร์",
-    text: "ให้ DJAI ช่วยสร้าง MVP เว็บไซต์ แอป ระบบอัตโนมัติ เกม SaaS และแพลตฟอร์มธุรกิจ",
-    href: "https://www.djai.academy/service/",
-    action: "ดูบริการ"
+    title: "เรียนสร้างโปรดักต์กับ DJAI School",
+    text: "ไปยังแพลตฟอร์มการเรียนของ DJAI สำหรับบทเรียนและเส้นทางการเรียนที่เปิดใช้งานแล้ว",
+    href: schoolUrlFor("th"),
+    action: "ไปที่ DJAI School"
   }
 ];
 
@@ -76,7 +77,10 @@ export default function ThaiHomePage() {
           <div className="hero-grid">
             <div className="hero-copy">
               <p className="eyebrow">AI Academy และทีมพัฒนาโปรเจกต์ในกรุงเทพ</p>
-              <h1>DJAI Academy</h1>
+              <h1>
+                <span className="hero-title-brand">DJAI Academy</span>
+                <span className="hero-title-detail">พัฒนาซอฟต์แวร์และสร้างโปรดักต์ด้วย AI</span>
+              </h1>
               <p className="hero-line">เรียนรู้ สร้าง และเปิดตัวโปรเจกต์</p>
               <p className="hero-text">
                 DJAI คือพื้นที่สำหรับคนที่อยากใช้ AI เพื่อสร้างงานจริง ไม่ว่าจะเป็นการเรียน
@@ -84,14 +88,14 @@ export default function ThaiHomePage() {
                 โปรดักต์ดิจิทัลสำหรับธุรกิจ
               </p>
               <div className="hero-actions">
-                <a className="button primary" href="/academy/">
-                  เข้าร่วมชุมชนฟรี
+                <a className="button primary" href="mailto:contact@djai.academy">
+                  คุยเรื่องโปรเจกต์
                 </a>
-                <a className="button secondary" href="https://www.djai.academy/course/">
-                  ดูคอร์สเรียน
+                <a className="button secondary" href="/development/">
+                  ดูวิธีพัฒนาโปรเจกต์
                 </a>
-                <a className="button ghost" href="https://www.djai.academy/development/">
-                  พัฒนาโปรเจกต์กับ DJAI
+                <a className="button ghost" href={schoolUrlFor("th")}>
+                  เรียนกับ DJAI School
                 </a>
               </div>
             </div>

@@ -27,9 +27,10 @@ Each completed gate records the command or inspection result and the exact repos
   - CHECK: source contract, browser keyboard inspection, mobile screenshot comparison.
   - EXPECT: project enquiry primary; School link crawlable; no broken locale destination.
   - EVIDENCE: `navigation-architecture.test.mjs`, the complete root test suite, and the 345-URL Hostinger verification passed on 2026-09-06. Local Chromium review at 1280×900 and 390×844 confirmed the original header shell, mobile menu shell, logo, and CTA remain visually intact; the rendered accessibility tree confirmed all five destinations plus contact/legal/footer links. School links use the currently live `/th` and `/en` homes until public course routes exist.
-- [ ] G07 — Homepage remains visually familiar and routes four distinct journeys.
+- [x] G07 — Homepage remains visually familiar and routes four distinct journeys.
   - CHECK: before/after desktop and mobile screenshots plus content contract.
   - EXPECT: no visual redesign; one descriptive H1; Development primary; Tools, Cam PDF, and School secondary.
+  - EVIDENCE: homepage conversion contract passed for Thai, English, and Vietnamese; full root build/test and 345-URL Hostinger audit passed on 2026-09-06. Local Chromium review at 1280×900 and 390×844 verified the original hero, founder visual, header shell, responsive typography, and cookie controls. A first capture exposed an oversized descriptive H1; the final title uses the existing brand scale plus a smaller descriptive line and was re-captured on all three locales.
 - [ ] G08 — Development, Service, and Portfolio have non-overlapping page roles.
   - CHECK: commercial intent test, rendered metadata comparison, internal-link audit.
   - EXPECT: proposition, chooser, and proof roles remain distinct.
