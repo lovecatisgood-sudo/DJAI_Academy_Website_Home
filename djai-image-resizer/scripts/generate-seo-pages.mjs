@@ -413,11 +413,8 @@ function render(template, preset, language) {
 }
 
 const templates = {
-  th: readFileSync(join(publicDir, "index.html"), "utf8")
-    .replaceAll("https://school.djai.academy/", "https://www.djai.academy/academy/"),
+  th: readFileSync(join(publicDir, "index.html"), "utf8"),
   en: readFileSync(join(publicDir, "en", "index.html"), "utf8")
-    .replaceAll("https://school.djai.academy/", "https://www.djai.academy/academy/en/")
-    .replace(/https:\/\/www\.djai\.academy\/academy(?:\/en)*\//g, "https://www.djai.academy/academy/en/")
 };
 templates.vi = vietnameseTemplate(templates.en);
 writeFileSync(join(publicDir, "index.html"), addVietnameseHubAlternate(injectDiscovery(templates.th, discoveryMarkup("th"))));

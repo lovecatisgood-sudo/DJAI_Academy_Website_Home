@@ -151,7 +151,7 @@
       "sequence": ["task_result", "related_tool", "related_guide", "development"]
     }
   },
-  "conversionTargets": ["none", "cam_pdf", "development", "course", "related_guide"],
+  "conversionTargets": ["none", "cam_pdf", "development", "school", "related_guide"],
   "migrationPolicy": {
     "requireVerifiedTarget": true,
     "requireOneToOneRedirect": true,

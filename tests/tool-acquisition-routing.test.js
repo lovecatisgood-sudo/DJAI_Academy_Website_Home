@@ -9,9 +9,9 @@ const read = (path) => readFileSync(join(root, path), "utf8");
 test("the routing manifest assigns one contextual journey per tool family", () => {
   const routing = JSON.parse(read("data/seo/acquisition-routing.json")).clusters;
   assert.deepEqual(routing.document, { primary: "cam_pdf", secondary: "development", after: "related_tool" });
-  assert.deepEqual(routing.ai, { primary: "development", secondary: "course", after: "related_tool" });
+  assert.deepEqual(routing.ai, { primary: "development", secondary: "school", after: "related_tool" });
   assert.deepEqual(routing.spreadsheet, { primary: "development", secondary: "none", after: "related_tool" });
-  assert.deepEqual(routing.seo, { primary: "development", secondary: "course", after: "related_tool" });
+  assert.deepEqual(routing.seo, { primary: "development", secondary: "school", after: "related_tool" });
   assert.deepEqual(routing.image, { primary: "related_guide", secondary: "development", after: "related_tool" });
   assert.deepEqual(routing.media, { primary: "related_guide", secondary: "development", after: "related_tool" });
 });
@@ -26,7 +26,9 @@ test("document tools put related tools before a category-specific acquisition br
   assert.match(bridge, /category === "document"[\s\S]*Cam PDF/);
   assert.match(bridge, /data-acquisition-primary="development"/);
   assert.match(bridge, /developmentHref = [\s\S]*\/development\//);
-  assert.match(bridge, /category === "ai"[\s\S]*\/siamese_cat\/dev\/courses\//);
+  assert.match(bridge, /schoolHref = [^;]*school\.djai\.academy\/th[^;]*school\.djai\.academy\/en/);
+  assert.match(bridge, /category === "ai"[\s\S]*href=\{schoolHref\}/);
+  assert.doesNotMatch(bridge, /\/siamese_cat\/dev\/(?:course|courses)/);
   assert.match(bridge, /category === "spreadsheet"/);
   assert.doesNotMatch(categoryPage, /<CamPdfAppCallout language=\{language\} \/>/);
   assert.ok(workspace.indexOf("className=\"result-next-tool\"") < workspace.indexOf("<AcquisitionBridge"));

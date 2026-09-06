@@ -4,11 +4,11 @@
     "pdf": { "primary": "cam_pdf", "secondary": "development", "after": "related_tool" },
     "qr": { "primary": "cam_pdf", "secondary": "development", "after": "related_tool" },
     "document": { "primary": "cam_pdf", "secondary": "development", "after": "related_tool" },
-    "ai": { "primary": "development", "secondary": "course", "after": "related_tool" },
+    "ai": { "primary": "development", "secondary": "school", "after": "related_tool" },
     "spreadsheet": { "primary": "development", "secondary": "none", "after": "related_tool" },
-    "seo": { "primary": "development", "secondary": "course", "after": "related_tool" },
+    "seo": { "primary": "development", "secondary": "school", "after": "related_tool" },
     "image": { "primary": "related_guide", "secondary": "development", "after": "related_tool" },
     "media": { "primary": "related_guide", "secondary": "development", "after": "related_tool" },
-    "vibe": { "primary": "course", "secondary": "development", "after": "related_guide" }
+    "vibe": { "primary": "school", "secondary": "development", "after": "related_guide" }
   }
 }

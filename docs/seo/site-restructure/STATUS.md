@@ -2,7 +2,7 @@
 
 **Active branch:** `codex/djai-site-restructure`  
 **Active worktree:** `website_DJAI_HOME/.worktrees/djai-site-restructure`  
-**Current phase:** R2 tool post-success routing
+**Current phase:** R3 Cam PDF evidence and product-page verification
 
 | Work item | Status | Evidence / next action |
 | --- | --- | --- |
@@ -15,8 +15,8 @@
 | 7. Main homepage linking hierarchy | COMPLETE | Thai, English, and Vietnamese retain the original composition while using a descriptive H1, commercial primary action, and distinct Tools/Cam PDF/School journeys; English now uses the shared shell |
 | 8. Development/Service/Portfolio | COMPLETE | Development owns the proposition, Service chooses categories, and Portfolio proves work then routes to Development; Cam proof now strengthens its product page; broken hotel proof link removed |
 | 9. Tool hub taxonomy | COMPLETE | Nine unique task categories cover existing routes without URL changes; duplicate SEO self-link, live Favicon “coming soon” claim, legacy learning nav, broken hotel link, and missing Vietnamese media family corrected |
-| 10. Tool post-success routing | IN_PROGRESS | Validate each engine, contextual next step, and sensitive-data event contract |
-| 11. Cam PDF product page | NOT_STARTED | Verify app evidence and legal consistency |
+| 10. Tool post-success routing | COMPLETE | All five tool packages build/test green; related-tool-first routes are deterministic; utility shells preserve existing classes while routing to Development, Cam PDF, or School; sensitive event contracts carry stable dimensions only |
+| 11. Cam PDF product page | IN_PROGRESS | Verify app evidence and legal consistency |
 | 12. Cam PDF guides/locales | NOT_STARTED | Requires first-party screenshots and fluent review |
 | 13. School source reconciliation | NOT_STARTED | Live locale routes differ from current local reference |
 | 14. School public course discovery | NOT_STARTED | Separate clean School worktree required |

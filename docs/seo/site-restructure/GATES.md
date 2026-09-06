@@ -35,9 +35,10 @@ Each completed gate records the command or inspection result and the exact repos
   - CHECK: commercial intent test, rendered metadata comparison, internal-link audit.
   - EXPECT: proposition, chooser, and proof roles remain distinct.
   - EVIDENCE: commercial-intent and portfolio-proof routing suites passed on 2026-09-06. Thai/English/Vietnamese Portfolio primary CTAs now route to Development, while Cam PDF proof routes through the owned product page. Current external proof destinations were checked; all returned HTTP 200 except `hotel.siamesecat.cafe`, whose broken TLS link was removed from Portfolio while retaining the screenshot-based case card. Local Chromium desktop review covered Development and Service; desktop/mobile review covered Portfolio.
-- [ ] G09 — Tools remain functional and utility-first.
+- [x] G09 — Tools remain functional and utility-first.
   - CHECK: one representative workflow per distinct tool engine, output/download checks, routing tests.
   - EXPECT: task completion unchanged; related tool precedes contextual bridge; no random promotion.
+  - EVIDENCE: package suites passed on 2026-09-06 after clean lockfile installs: PDF 12/12, QR 11/11 including a 42-route static build, image 46/46 with 85 localized pages rebuilt, media 8/8 with 116 pages rebuilt, and document 11/11. Root routing and shell-link contracts also passed. Existing header/footer classes and task controls were retained; only link destinations and labels changed. PDF/document routes lead to Cam PDF, AI/SEO learning intent leads to School, and service intent leads to Development.
 - [ ] G10 — Cam PDF acquisition claims are verified.
   - CHECK: released app behavior, first-party screenshots, policy/product diff, Play link tests.
   - EXPECT: every visible capability and privacy statement supported.

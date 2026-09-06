@@ -74,7 +74,7 @@ export default function VietnameseQrGenerator({ toolSlug, pageCopy }: { toolSlug
         <a className="brand" href="#top"><img src={assetPath("djai-academy-logo-display.webp")} alt="DJAI Academy" width="384" height="206" /><span><strong>DJayTools</strong><small>by DJAI Academy</small></span></a>
         <nav aria-label="Điều hướng chính">
           <a href="#profile">Nhà phát triển</a><a href="/vi/">DJAI Academy</a><a href="/development/vi/">Phát triển cùng DJAI</a><a href="/tools/resizeimg/vi/">Công cụ hình ảnh</a><a href="/blog/vi/">Bài viết</a>
-          <a href="/tools/qrgen/" hrefLang="th">ไทย</a><a href="/tools/qrgen/en/" hrefLang="en">EN</a><a className="nav-cta" href="/academy/vi/">Tham gia cộng đồng</a>
+          <a href="/tools/qrgen/" hrefLang="th">ไทย</a><a href="/tools/qrgen/en/" hrefLang="en">EN</a><a className="nav-cta" href="/Cam_PDF_Scan_Signer_QR-Gen/vi/">Cam PDF</a>
         </nav>
       </header>
       <section className="hero" id="top">

@@ -138,7 +138,7 @@ export default function Home({ toolSlug, pageCopy }: { toolSlug?: QrToolSlug; pa
           <a href="https://www.djai.academy/tools/resizeimg/" target="_blank" rel="noopener noreferrer">เครื่องมือรูปภาพ <span className="external-mark">↗</span></a>
           <a href="https://www.djai.academy/blog/" target="_blank" rel="noopener noreferrer">บล็อก <span className="external-mark">↗</span></a>
           <a href={languageHref} hrefLang="en">EN</a>
-          <a className="nav-cta" href="https://www.djai.academy/academy/">เข้าร่วมชุมชน</a>
+          <a className="nav-cta" href="https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/">Cam PDF</a>
         </nav>
       </header>
 
@@ -306,7 +306,7 @@ export default function Home({ toolSlug, pageCopy }: { toolSlug?: QrToolSlug; pa
             <strong>DJAI</strong>
             <a href="https://www.djai.academy/" target="_blank" rel="noopener noreferrer">DJAI Academy</a>
             <a href="https://www.djai.academy/tools/" target="_blank" rel="noopener noreferrer">เครื่องมือฟรีจาก DJAI</a>
-            <a href="https://www.djai.academy/service/" target="_blank" rel="noopener noreferrer">พัฒนาโปรเจกต์กับเรา</a>
+            <a href="https://www.djai.academy/development/" target="_blank" rel="noopener noreferrer">พัฒนาโปรเจกต์กับเรา</a>
           </div>
           <div>
             <strong>พาร์ทเนอร์ผู้พัฒนา</strong>
@@ -316,7 +316,6 @@ export default function Home({ toolSlug, pageCopy }: { toolSlug?: QrToolSlug; pa
           <div>
             <strong>Siamese Cat Group</strong>
             <a href="https://siamesecat.cafe" target="_blank" rel="noopener noreferrer">Siamese Cat Cafe</a>
-            <a href="https://hotel.siamesecat.cafe" target="_blank" rel="noopener noreferrer">Siamese Cat Hotel</a>
           </div>
         </nav>
         <p className="copyright">© 2026 DJAI Academy</p>

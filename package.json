@@ -15,7 +15,7 @@
     "test:localization": "node --test tests/chinese-localization-contract.test.mjs tests/localization-content-gates.test.mjs tests/public-route-inventory.test.mjs && node scripts/validate-localization.mjs --root .",
     "test:pdf-acquisition": "node --test djai-pdf-tools/tests/acquisition-routing.test.mjs",
     "test:qr-acquisition": "node --test DJayTools-Free-QR-Generator-Source/tests/acquisition-routing.test.mjs DJayTools-Free-QR-Generator-Source/tests/qr-payload.test.mjs",
-    "test:tool-acquisition": "node --test tests/tool-acquisition-routing.test.js",
+    "test:tool-acquisition": "node --test tests/tool-acquisition-routing.test.js tests/tool-shell-linking.test.js",
     "test:course-ownership": "node --test tests/course-intent-ownership.test.js",
     "test:seo-integration": "node --test tests/sitewide-seo-integration.test.js",
     "test:cam-pdf-links": "node --test tests/cam-pdf-play-store-links.test.mjs",
