@@ -2,7 +2,7 @@
 
 **Active branch:** `codex/djai-site-restructure`  
 **Active worktree:** `website_DJAI_HOME/.worktrees/djai-site-restructure`  
-**Current phase:** R1 site architecture and routing contract
+**Current phase:** R2 main header and footer links
 
 | Work item | Status | Evidence / next action |
 | --- | --- | --- |
@@ -10,8 +10,8 @@
 | 2. Rebase prepared implementation | COMPLETE | Rebased onto `origin/main` at `763de3f`; duplicate policy commit dropped |
 | 3. Correct public-learning ownership | COMPLETE | School is the future public owner; www routes remain live until verified replacements; Vietnamese routes cannot cross-locale redirect |
 | 4. Complete public route ownership | COMPLETE | 345 live sitemap owners plus 6 gated guides; rendered inventory has zero 200/title/H1/description/canonical gaps and zero duplicate same-language H1 groups |
-| 5. Site architecture and routing contract | IN_PROGRESS | Add navigation/page-role/tool-family manifest |
-| 6. Main header and footer links | NOT_STARTED | Preserve styling; change hierarchy/destinations only |
+| 5. Site architecture and routing contract | COMPLETE | Five navigation destinations, ten page families, nine tool families, deterministic routing and migration safeguards validate |
+| 6. Main header and footer links | IN_PROGRESS | Preserve styling; change hierarchy/destinations only |
 | 7. Main homepage linking hierarchy | NOT_STARTED | Minimal UI changes; development-first semantics |
 | 8. Development/Service/Portfolio | NOT_STARTED | Validate prepared separation and proof links |
 | 9. Tool hub taxonomy | NOT_STARTED | Group existing routes without URL migration |

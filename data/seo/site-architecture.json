@@ -1,0 +1,160 @@
+{
+  "version": 1,
+  "generatedAt": "2026-09-06",
+  "visualPolicy": "preserve_components_and_styling",
+  "primaryAction": {
+    "id": "project_enquiry",
+    "href": "mailto:contact@djai.academy",
+    "event": "enquiry_start"
+  },
+  "mainNavigation": [
+    {
+      "id": "build",
+      "property": "www",
+      "primaryIntent": "hire_djai_to_build",
+      "href": "/development/",
+      "localeRoutes": {
+        "th": "/development/",
+        "en": "/development/en/",
+        "vi": "/development/vi/",
+        "zh-CN": "/development/zh-cn/",
+        "zh-TW": "/development/zh-tw/"
+      },
+      "children": ["service", "portfolio", "promo"]
+    },
+    {
+      "id": "tools",
+      "property": "www",
+      "primaryIntent": "complete_a_task",
+      "href": "/tools/"
+    },
+    {
+      "id": "cam_pdf",
+      "property": "www",
+      "primaryIntent": "install_android_document_app",
+      "href": "/Cam_PDF_Scan_Signer_QR-Gen/"
+    },
+    {
+      "id": "school",
+      "property": "school",
+      "primaryIntent": "learn_vibe_coding",
+      "href": "https://school.djai.academy/th/courses",
+      "localeRoutes": {
+        "th": "https://school.djai.academy/th/courses",
+        "en": "https://school.djai.academy/en/courses",
+        "vi": "https://school.djai.academy/en/courses",
+        "zh-CN": "https://school.djai.academy/en/courses",
+        "zh-TW": "https://school.djai.academy/en/courses"
+      }
+    },
+    {
+      "id": "resources",
+      "property": "www",
+      "primaryIntent": "read_practical_guides",
+      "href": "/blog/"
+    }
+  ],
+  "supportingRoutes": {
+    "service": "/service/",
+    "portfolio": "/portfolio/",
+    "promo": "/web_promo/",
+    "privacy": "/privacy/"
+  },
+  "pageFamilies": {
+    "homepage": {
+      "property": "www",
+      "primaryConversion": "development_enquiry",
+      "allowedSecondaryConversions": ["tool_selection", "play_store_click", "school_course_view"]
+    },
+    "development": {
+      "property": "www",
+      "primaryConversion": "development_enquiry",
+      "allowedSecondaryConversions": ["portfolio_view", "service_selection"]
+    },
+    "service": {
+      "property": "www",
+      "primaryConversion": "service_selection",
+      "allowedSecondaryConversions": ["development_enquiry", "portfolio_view"]
+    },
+    "portfolio": {
+      "property": "www",
+      "primaryConversion": "development_enquiry",
+      "allowedSecondaryConversions": ["service_selection"]
+    },
+    "tool_hub": {
+      "property": "www",
+      "primaryConversion": "tool_selection",
+      "allowedSecondaryConversions": ["development_enquiry", "play_store_click"]
+    },
+    "working_tool": {
+      "property": "www",
+      "primaryConversion": "tool_success",
+      "allowedSecondaryConversions": ["related_tool_click", "play_store_click", "development_enquiry"]
+    },
+    "cam_pdf_product": {
+      "property": "www",
+      "primaryConversion": "play_store_click",
+      "allowedSecondaryConversions": ["workflow_guide_view", "support_resolution"]
+    },
+    "resource": {
+      "property": "www",
+      "primaryConversion": "contextual_next_step",
+      "allowedSecondaryConversions": ["related_resource_view"]
+    },
+    "school_course_hub": {
+      "property": "school",
+      "primaryConversion": "school_course_view",
+      "allowedSecondaryConversions": ["registration_start"]
+    },
+    "school_course": {
+      "property": "school",
+      "primaryConversion": "registration_start",
+      "allowedSecondaryConversions": ["related_course_view"]
+    }
+  },
+  "toolFamilies": {
+    "pdf": {
+      "contextualBridge": "cam_pdf",
+      "sequence": ["task_result", "related_tool", "cam_pdf", "development"]
+    },
+    "qr": {
+      "contextualBridge": "cam_pdf",
+      "sequence": ["task_result", "related_tool", "cam_pdf", "development"]
+    },
+    "document": {
+      "contextualBridge": "cam_pdf",
+      "sequence": ["task_result", "related_tool", "cam_pdf", "development"]
+    },
+    "image": {
+      "contextualBridge": "development",
+      "sequence": ["task_result", "related_tool", "related_guide", "development"]
+    },
+    "media": {
+      "contextualBridge": "development",
+      "sequence": ["task_result", "related_tool", "related_guide", "development"]
+    },
+    "ai": {
+      "contextualBridge": "development",
+      "sequence": ["task_result", "related_tool", "development", "school"]
+    },
+    "spreadsheet": {
+      "contextualBridge": "development",
+      "sequence": ["task_result", "related_tool", "development"]
+    },
+    "seo": {
+      "contextualBridge": "development",
+      "sequence": ["task_result", "related_tool", "development", "school"]
+    },
+    "brand": {
+      "contextualBridge": "development",
+      "sequence": ["task_result", "related_tool", "related_guide", "development"]
+    }
+  },
+  "conversionTargets": ["none", "cam_pdf", "development", "course", "related_guide"],
+  "migrationPolicy": {
+    "requireVerifiedTarget": true,
+    "requireOneToOneRedirect": true,
+    "allowHomepageFallback": false,
+    "minimumRedirectDays": 365
+  }
+}
