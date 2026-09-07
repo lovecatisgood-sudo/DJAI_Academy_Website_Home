@@ -14,7 +14,7 @@ const routing = JSON.parse(
   readFileSync(new URL("../data/seo/acquisition-routing.json", import.meta.url), "utf8")
 );
 
-const locales = new Set(["th", "en", "vi"]);
+const locales = new Set(["th", "en", "vi", "zh-CN", "zh-TW"]);
 const conversionTargets = new Set([
   "none", "tool", "cam_pdf", "development", "course", "portfolio"
 ]);
@@ -123,10 +123,12 @@ test("the validator reports a deterministic ownership summary", () => {
     ownership.entries.length
   );
 
-  assert.match(summary, /Validated 351 ownership entries\./);
+  assert.match(summary, new RegExp(`Validated ${ownership.entries.length} ownership entries\\.`));
   assert.match(summary, /en:/);
   assert.match(summary, /th:/);
   assert.match(summary, /vi:/);
+  assert.match(summary, /zh-CN:/);
+  assert.match(summary, /zh-TW:/);
   assert.match(summary, /pdf=/);
   assert.match(summary, /qr=/);
 });

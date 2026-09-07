@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-09-06",
   "origin": "https://www.djai.academy",
-  "count": 339,
+  "count": 349,
   "routes": [
     {
       "route": "/",
@@ -464,6 +464,106 @@
       "noindex": false
     },
     {
+      "route": "/Cam_PDF_Scan_Signer_QR-Gen/guides/",
+      "status": 200,
+      "language": "en",
+      "title": "Cam PDF Guides: Scanning, Signing & Clean Exports",
+      "h1": "Better scans begin with better decisions.",
+      "description": "Practical Cam PDF guides for scanning, signing, organizing, compressing, and exporting clean documents on Android and iPhone.",
+      "canonical": "https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/guides/",
+      "noindex": false
+    },
+    {
+      "route": "/Cam_PDF_Scan_Signer_QR-Gen/guides/remove-camscanner-watermark-free/",
+      "status": 200,
+      "language": "en",
+      "title": "How to Remove CamScanner Watermark for Free (2026)",
+      "h1": "How to Remove the CamScanner Watermark for Free—and Avoid It on Future Scans",
+      "description": "Learn which free CamScanner watermark options work, what to avoid, and how to make clean scans on Android or iPhone without an added app watermark.",
+      "canonical": "https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/guides/remove-camscanner-watermark-free/",
+      "noindex": false
+    },
+    {
+      "route": "/Cam_PDF_Scan_Signer_QR-Gen/guides/th/",
+      "status": 200,
+      "language": "th",
+      "title": "คู่มือ Cam PDF สำหรับการสแกน เซ็น และส่งออกไฟล์สะอาด",
+      "h1": "คู่มือ Cam PDF สำหรับการสแกน เซ็น และส่งออกไฟล์สะอาด",
+      "description": "คำแนะนำที่ใช้งานได้จริงสำหรับจัดการเอกสารบนมือถือ Android และ iPhone",
+      "canonical": "https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/guides/th/",
+      "noindex": false
+    },
+    {
+      "route": "/Cam_PDF_Scan_Signer_QR-Gen/guides/th/remove-camscanner-watermark-free/",
+      "status": 200,
+      "language": "th",
+      "title": "วิธีลบลายน้ำ CamScanner ฟรี (คู่มือ 2026)",
+      "h1": "วิธีลบลายน้ำ CamScanner ฟรี และหลีกเลี่ยงลายน้ำในการสแกนครั้งต่อไป",
+      "description": "วิธีตรวจสอบตัวเลือกลบลายน้ำ CamScanner ฟรี วิธีแก้ไฟล์เดิมอย่างปลอดภัย และทางเลือกสแกนเอกสารแบบไม่มีลายน้ำบน Android และ iPhone",
+      "canonical": "https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/guides/th/remove-camscanner-watermark-free/",
+      "noindex": false
+    },
+    {
+      "route": "/Cam_PDF_Scan_Signer_QR-Gen/guides/vi/",
+      "status": 200,
+      "language": "vi",
+      "title": "Hướng dẫn Cam PDF về scan, ký và xuất tài liệu sạch",
+      "h1": "Hướng dẫn Cam PDF về scan, ký và xuất tài liệu sạch",
+      "description": "Hướng dẫn thực tế cho quy trình tài liệu trên Android và iPhone",
+      "canonical": "https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/guides/vi/",
+      "noindex": false
+    },
+    {
+      "route": "/Cam_PDF_Scan_Signer_QR-Gen/guides/vi/remove-camscanner-watermark-free/",
+      "status": 200,
+      "language": "vi",
+      "title": "Cách xóa watermark CamScanner miễn phí (2026)",
+      "h1": "Cách xóa watermark CamScanner miễn phí và tránh watermark cho lần scan sau",
+      "description": "Kiểm tra cách xóa watermark CamScanner miễn phí, xử lý tệp cũ an toàn và chọn ứng dụng scan không chèn watermark trên Android hoặc iPhone.",
+      "canonical": "https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/guides/vi/remove-camscanner-watermark-free/",
+      "noindex": false
+    },
+    {
+      "route": "/Cam_PDF_Scan_Signer_QR-Gen/guides/zh-cn/",
+      "status": 200,
+      "language": "zh-CN",
+      "title": "Cam PDF 扫描、签名与干净导出指南",
+      "h1": "Cam PDF 扫描、签名与干净导出指南",
+      "description": "面向 Android 与 iPhone 移动文档流程的实用指南",
+      "canonical": "https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/guides/zh-cn/",
+      "noindex": false
+    },
+    {
+      "route": "/Cam_PDF_Scan_Signer_QR-Gen/guides/zh-cn/remove-camscanner-watermark-free/",
+      "status": 200,
+      "language": "zh-CN",
+      "title": "扫描全能王去水印免费方法（2026 指南）",
+      "h1": "扫描全能王去水印：免费方法与下次扫描的无水印方案",
+      "description": "了解扫描全能王去水印的免费选项、旧 PDF 的安全处理方式，以及 Android 和 iPhone 上不添加应用水印的扫描替代方案。",
+      "canonical": "https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/guides/zh-cn/remove-camscanner-watermark-free/",
+      "noindex": false
+    },
+    {
+      "route": "/Cam_PDF_Scan_Signer_QR-Gen/guides/zh-tw/",
+      "status": 200,
+      "language": "zh-TW",
+      "title": "Cam PDF 掃描、簽名與乾淨匯出指南",
+      "h1": "Cam PDF 掃描、簽名與乾淨匯出指南",
+      "description": "適用於 Android 與 iPhone 行動文件流程的實用指南",
+      "canonical": "https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/guides/zh-tw/",
+      "noindex": false
+    },
+    {
+      "route": "/Cam_PDF_Scan_Signer_QR-Gen/guides/zh-tw/remove-camscanner-watermark-free/",
+      "status": 200,
+      "language": "zh-TW",
+      "title": "CamScanner 去浮水印免費方法（2026 指南）",
+      "h1": "CamScanner 去浮水印：免費方法與下次掃描的無浮水印方案",
+      "description": "查看 CamScanner 去浮水印的免費選項、舊 PDF 的安全處理方式，以及 Android 和 iPhone 上不加 App 浮水印的掃描替代方案。",
+      "canonical": "https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/guides/zh-tw/remove-camscanner-watermark-free/",
+      "noindex": false
+    },
+    {
       "route": "/tools/qrgen/vi/",
       "status": 200,
       "language": "vi",
@@ -489,7 +589,7 @@
       "language": "en",
       "title": "Free URL QR Code Generator | DJayTools",
       "h1": "Free URL QR Code Generator",
-      "description": "Create a QR code for any URL or website link. Customize colors, patterns, and frames, then download PNG or SVG free.",
+      "description": "Create a QR code for any URL or website link. Customize colors, patterns, and frames, then download PNG or SVG free with no sign-up.",
       "canonical": "https://www.djai.academy/tools/qrgen/url-qr-code-generator/en/",
       "noindex": false
     },
@@ -549,7 +649,7 @@
       "language": "en",
       "title": "Free vCard QR Code Generator | DJayTools",
       "h1": "Free vCard QR Code Generator",
-      "description": "Create a vCard QR code with a name, phone, email, company, and website so people can save your contact details.",
+      "description": "Create a vCard QR code with your name, phone, email, company, and website for business cards. People can scan and save your contact details.",
       "canonical": "https://www.djai.academy/tools/qrgen/vcard-qr-code-generator/en/",
       "noindex": false
     },
@@ -879,7 +979,7 @@
       "language": "en",
       "title": "Convert WebP to PNG Free Online | DJAI Image Tools",
       "h1": "Convert WebP to PNG for free",
-      "description": "Convert WebP to PNG free for design workflows. Files remain on your device and are never uploaded.",
+      "description": "Convert WebP to PNG free while preserving transparency for design workflows. Files remain on your device and are never uploaded.",
       "canonical": "https://www.djai.academy/tools/resizeimg/webp-to-png/en/",
       "noindex": false
     },
@@ -1089,7 +1189,7 @@
       "language": "en",
       "title": "Remove Image Background Free Online | DJAI Image Tools",
       "h1": "Remove an image background for free",
-      "description": "Remove the background from JPG, PNG, WebP, HEIC, or HEIF images free in your browser and download a transparent PNG.",
+      "description": "Remove the background from JPG, PNG, WebP, HEIC, or HEIF images free without uploading. Browser AI creates a transparent PNG on your device.",
       "canonical": "https://www.djai.academy/tools/resizeimg/remove-background-image/en/",
       "noindex": false
     },
@@ -1559,7 +1659,7 @@
       "language": "en",
       "title": "Convert PDF to PNG Online Free | DJTools by DJAI Academy",
       "h1": "Convert PDF to PNG Online Free",
-      "description": "Convert PDF pages to lossless PNG images free in your browser without uploading the document.",
+      "description": "Convert PDF pages to lossless PNG images free without uploading. Download one PNG or all pages together in a ZIP.",
       "canonical": "https://www.djai.academy/tools/PDFTools/pdf-to-png/en/",
       "noindex": false
     },
@@ -1779,7 +1879,7 @@
       "language": "en",
       "title": "Convert MP3 to WAV Free Online | DJAI Media Tools",
       "h1": "Convert MP3 to WAV for free",
-      "description": "Convert MP3 audio to WAV free in your browser for editing, lossless workflows, and software that requires WAV.",
+      "description": "Convert MP3 audio to WAV free in your browser without upload for editing, lossless workflows, and software that requires WAV.",
       "canonical": "https://www.djai.academy/tools/media/mp3-to-wav/en/",
       "noindex": false
     },
@@ -1799,7 +1899,7 @@
       "language": "en",
       "title": "Convert WAV to MP3 Free Online | DJAI Media Tools",
       "h1": "Convert WAV to MP3 for free",
-      "description": "Convert WAV audio to MP3 free with a selectable bitrate for smaller files, sharing, and uploads.",
+      "description": "Convert WAV audio to MP3 free without upload. Choose a bitrate for smaller files, sharing, and uploads.",
       "canonical": "https://www.djai.academy/tools/media/wav-to-mp3/en/",
       "noindex": false
     },
@@ -1819,7 +1919,7 @@
       "language": "en",
       "title": "Convert M4A to MP3 Free Online | DJAI Media Tools",
       "h1": "Convert M4A to MP3 for free",
-      "description": "Convert M4A audio to MP3 free in your browser for players, editors, and software that supports MP3.",
+      "description": "Convert M4A audio to MP3 free in your browser without upload for players, editors, and software that supports MP3.",
       "canonical": "https://www.djai.academy/tools/media/m4a-to-mp3/en/",
       "noindex": false
     },
@@ -1999,7 +2099,7 @@
       "language": "en",
       "title": "Convert MOV to MP4 Online Free | DJAI",
       "h1": "Convert MOV to MP4 before the file becomes someone else's problem",
-      "description": "Convert MOV to MP4 online for easier sharing and playback. Choose video quality and process the source locally in your browser with no account.",
+      "description": "Convert MOV to MP4 free in your browser without upload. Choose video quality and create a compatible MP4 for sharing, playback, forms, or websites.",
       "canonical": "https://www.djai.academy/tools/media/mov-to-mp4/en/",
       "noindex": false
     },
@@ -2039,7 +2139,7 @@
       "language": "en",
       "title": "Video Compressor Online – Reduce Video File Size | DJAI",
       "h1": "Compress a video around the constraint you actually have",
-      "description": "Compress video online by quality, resolution or target size. Reduce MP4 file size privately in your browser with no account or source upload.",
+      "description": "Compress MP4, MOV, or WebM video by quality, resolution, or target size. Process privately in your browser with no account or source upload.",
       "canonical": "https://www.djai.academy/tools/media/compress-video/en/",
       "noindex": false
     },
@@ -2369,7 +2469,7 @@
       "language": "en",
       "title": "Convert DOCX to PDF Free | DJTools",
       "h1": "Convert DOCX to PDF Free",
-      "description": "Convert Word DOCX files to PDF privately with preview, paper size, margins, and optional page numbers.",
+      "description": "Convert Word DOCX files to PDF in your browser without uploading. Preview the result and choose paper size, margins, and optional page numbers.",
       "canonical": "https://www.djai.academy/tools/document/docx-to-pdf/en/",
       "noindex": false
     },
@@ -2459,7 +2559,7 @@
       "language": "en",
       "title": "Extract Text from DOCX Free | DJTools",
       "h1": "Extract Text from DOCX Free",
-      "description": "Extract plain text from Word documents locally with copy, download, and word count.",
+      "description": "Extract plain text from Word documents in your browser without uploading, then copy or download it with a word count.",
       "canonical": "https://www.djai.academy/tools/document/docx-to-text/en/",
       "noindex": false
     },
@@ -2639,7 +2739,7 @@
       "language": "en",
       "title": "Convert PDF to AI-Ready Markdown | DJTools",
       "h1": "Convert PDF to AI-Ready Markdown",
-      "description": "Extract PDF into Markdown with page references and cleanup for repeated headers, footers, and broken lines.",
+      "description": "Extract PDF into clean Markdown for RAG with page references and cleanup for repeated headers, footers, and broken lines.",
       "canonical": "https://www.djai.academy/tools/ai/pdf-to-ai-markdown/en/",
       "noindex": false
     },

@@ -35,7 +35,7 @@ const PRIMARY_QUERY_BY_ROUTE = {
   "/tools/PDFTools/rotate-pdf/en/": "rotate selected PDF pages in browser free",
   "/tools/PDFTools/watermark-pdf/en/": "add a text watermark to PDF in browser",
   "/tools/PDFTools/protect-pdf/en/": "password protect PDF with AES 256 encryption",
-  "/tools/PDFTools/organize-pdf/en/": "organize PDF pages visually in browser",
+  "/tools/PDFTools/organize-pdf/en/": "reorder and delete PDF pages by page number",
   "/tools/PDFTools/add-page-numbers/en/": "add page numbers to PDF in browser free",
   "/tools/PDFTools/remove-pdf-metadata/en/": "remove PDF document metadata in browser",
   "/tools/PDFTools/jpg-to-pdf/en/": "convert multiple JPG images to one PDF",
@@ -196,4 +196,3 @@ export function enrichEnglishToolKeyword(row) {
 export function assignedEnglishToolRoutes() {
   return Object.keys(PRIMARY_QUERY_BY_ROUTE).sort();
 }
-

@@ -7,7 +7,7 @@ const repositoryRoot = resolve(scriptDirectory, "../..");
 const ownershipPath = resolve(repositoryRoot, "data/seo/keyword-ownership.json");
 const routingPath = resolve(repositoryRoot, "data/seo/acquisition-routing.json");
 
-const allowedLocales = new Set(["th", "en", "vi"]);
+const allowedLocales = new Set(["th", "en", "vi", "zh-CN", "zh-TW"]);
 const allowedConversionTargets = new Set([
   "none", "tool", "cam_pdf", "development", "course", "portfolio"
 ]);

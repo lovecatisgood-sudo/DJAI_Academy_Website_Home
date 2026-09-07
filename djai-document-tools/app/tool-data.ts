@@ -46,7 +46,7 @@ export const tools: ToolDefinition[] = [
     slug: "docx-to-pdf", category: "document", input: "docx",
     label: { th: "DOCX เป็น PDF", en: "DOCX to PDF" },
     title: { th: "แปลง DOCX เป็น PDF ฟรี", en: "Convert DOCX to PDF Free" },
-    description: { th: "แปลงไฟล์ Word DOCX เป็น PDF แบบ private พร้อม preview เลือกขนาดกระดาษ margin และเลขหน้า", en: "Convert Word DOCX files to PDF privately with preview, paper size, margins, and optional page numbers." },
+    description: { th: "แปลงไฟล์ Word DOCX เป็น PDF แบบ private พร้อม preview เลือกขนาดกระดาษ margin และเลขหน้า", en: "Convert Word DOCX files to PDF in your browser without uploading. Preview the result and choose paper size, margins, and optional page numbers." },
     intent: { th: "เหมาะกับเอกสารทั่วไปที่ต้องการ PDF อย่างรวดเร็วโดยไม่ upload ไฟล์", en: "Best for ordinary documents that need a quick private PDF conversion." },
     keywords: { th: ["DOCX เป็น PDF", "Word เป็น PDF", "แปลง Word ฟรี"], en: ["DOCX to PDF", "Word to PDF free", "private Word converter"] },
     warning: { th: "เอกสารที่มี layout ซับซ้อน ตารางลอย สมการ หรือ font เฉพาะอาจต่างจาก Word ต้นฉบับ", en: "Complex layouts, floating objects, equations, and custom fonts may differ from the original Word document." }
@@ -71,7 +71,7 @@ export const tools: ToolDefinition[] = [
     slug: "docx-to-text", category: "document", input: "docx",
     label: { th: "DOCX เป็นข้อความ", en: "DOCX to Text" },
     title: { th: "ดึงข้อความจาก DOCX ฟรี", en: "Extract Text from DOCX Free" },
-    description: { th: "ดึงข้อความล้วนจาก Word ใน browser พร้อม copy, download และนับคำ", en: "Extract plain text from Word documents locally with copy, download, and word count." },
+    description: { th: "ดึงข้อความล้วนจาก Word ใน browser พร้อม copy, download และนับคำ", en: "Extract plain text from Word documents in your browser without uploading, then copy or download it with a word count." },
     intent: { th: "นำข้อความไปใช้ต่อโดยไม่ติด formatting จาก Word", en: "Reuse document content without Word formatting." },
     keywords: { th: ["ดึงข้อความ DOCX", "Word เป็น TXT"], en: ["DOCX to text", "Word to TXT", "extract Word text"] }
   },
@@ -113,7 +113,7 @@ export const tools: ToolDefinition[] = [
     slug: "pdf-to-ai-markdown", category: "ai", input: "pdf",
     label: { th: "PDF เป็น AI Markdown", en: "PDF to AI Markdown" },
     title: { th: "แปลง PDF เป็น Markdown สำหรับ AI", en: "Convert PDF to AI-Ready Markdown" },
-    description: { th: "ดึง PDF เป็น Markdown พร้อม page reference ล้าง header, footer และบรรทัดที่แตก", en: "Extract PDF into Markdown with page references and cleanup for repeated headers, footers, and broken lines." },
+    description: { th: "ดึง PDF เป็น Markdown พร้อม page reference ล้าง header, footer และบรรทัดที่แตก", en: "Extract PDF into clean Markdown for RAG with page references and cleanup for repeated headers, footers, and broken lines." },
     intent: { th: "เตรียมเอกสารสำหรับ ChatGPT, Claude, Cursor, Codex และ RAG", en: "Prepare PDFs for ChatGPT, Claude, Cursor, Codex, and RAG ingestion." },
     keywords: { th: ["PDF เป็น Markdown AI", "เตรียม PDF สำหรับ RAG"], en: ["PDF to AI Markdown", "PDF for RAG", "PDF to Markdown"] }
   },

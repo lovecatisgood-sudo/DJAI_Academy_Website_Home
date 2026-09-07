@@ -111,3 +111,53 @@ test("all rendered English tool snippets are unique and useful at search-result 
     assert.equal(row.canonical, `https://www.djai.academy${row.route}`, `${row.route}: canonical`);
   }
 });
+
+test("remaining English tool snippets expose their useful long-tail distinctions", () => {
+  assert.match(qrSource, /URL or website link[^\n]+no sign-up/i);
+  assert.match(qrSource, /vCard QR code[^\n]+business cards/i);
+
+  assert.match(imageSource, /WebP to PNG[^\n]+preserving transparency/i);
+  assert.match(imageSource, /Remove the background[^\n]+without uploading/i);
+
+  const pdfSource = readFileSync(
+    path.join(root, "djai-pdf-tools/app/seo-alias-data.ts"),
+    "utf8",
+  );
+  assert.match(pdfSource, /Convert PDF pages to lossless PNG images[^\n]+ZIP/i);
+
+  const documentSource = readFileSync(
+    path.join(root, "djai-document-tools/app/tool-data.ts"),
+    "utf8",
+  );
+  assert.match(documentSource, /Convert Word DOCX files to PDF[^\n]+without uploading/i);
+  assert.match(documentSource, /Extract plain text from Word documents[^\n]+without uploading/i);
+  assert.match(documentSource, /Extract PDF into clean Markdown[^\n]+RAG/i);
+
+  const mediaBuildSource = readFileSync(
+    path.join(root, "djai-media-tools/scripts/build.mjs"),
+    "utf8",
+  );
+  for (const pair of ["MP3 audio to WAV", "WAV audio to MP3", "M4A audio to MP3"]) {
+    assert.match(
+      mediaBuildSource,
+      new RegExp(`${pair}[^\\n]+without upload`, "i"),
+      `${pair}: missing no-upload distinction`,
+    );
+  }
+  assert.match(media("mov-to-mp4").meta, /without upload/i);
+  assert.match(media("compress-video").meta, /MP4, MOV, or WebM/i);
+  assert.match(media("compress-video").meta, /target size/i);
+});
+
+test("organize PDF and visual reorder PDF keep separate search intent", () => {
+  const organize = ownership.entries.find(
+    (row) => row.route === "/tools/PDFTools/organize-pdf/en/",
+  );
+  const reorder = ownership.entries.find(
+    (row) => row.route === "/tools/PDFTools/reorder-pdf-pages/en/",
+  );
+  assert.ok(organize);
+  assert.ok(reorder);
+  assert.equal(organize.primaryQueryFamily, "reorder and delete PDF pages by page number");
+  assert.equal(reorder.primaryQueryFamily, "reorder PDF pages by dragging in browser");
+});

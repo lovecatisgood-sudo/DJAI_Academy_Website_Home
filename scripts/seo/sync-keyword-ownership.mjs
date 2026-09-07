@@ -26,10 +26,79 @@ const localeText = {
     audience: "Người dùng muốn hoàn thành công việc này hoặc chọn bước tiếp theo phù hợp",
     problem: "Cần một trang giải quyết đúng công việc mà không bị phân tán bởi các trang DJAI khác",
   },
+  "zh-CN": {
+    audience: "希望完成当前文档任务并选择合适下一步的用户",
+    problem: "需要直接解决当前任务的页面，而不是在多个相似页面之间寻找答案",
+  },
+  "zh-TW": {
+    audience: "希望完成目前文件工作並選擇合適下一步的使用者",
+    problem: "需要直接解決目前工作的頁面，而不是在多個相似頁面之間尋找答案",
+  },
 };
 
+const camPdfGuideKeywords = {
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/remove-camscanner-watermark-free/": {
+    primaryQueryFamily: "how to remove CamScanner watermark for free",
+    supportingQueries: [
+      "remove scanned by CamScanner watermark from PDF",
+      "remove CamScanner watermark without premium",
+      "CamScanner alternative without watermark",
+      "free scanner app without watermark",
+      "CamScanner alternative Android",
+      "CamScanner alternative iPhone",
+    ],
+  },
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/th/remove-camscanner-watermark-free/": {
+    primaryQueryFamily: "ลบลายน้ำ CamScanner ฟรี",
+    supportingQueries: [
+      "วิธีลบลายน้ำ CamScanner",
+      "แอปสแกนเอกสารไม่มีลายน้ำ",
+      "สแกนเอกสาร PDF ฟรีไม่มีลายน้ำ",
+    ],
+  },
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/vi/remove-camscanner-watermark-free/": {
+    primaryQueryFamily: "cách xóa watermark CamScanner miễn phí",
+    supportingQueries: [
+      "xóa logo CamScanner",
+      "ứng dụng scan không watermark",
+      "scan tài liệu miễn phí không watermark",
+    ],
+  },
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/zh-cn/remove-camscanner-watermark-free/": {
+    primaryQueryFamily: "扫描全能王去水印",
+    supportingQueries: [
+      "扫描全能王怎么去除水印",
+      "扫描全能王免费去水印",
+      "无水印扫描软件",
+    ],
+  },
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/zh-tw/remove-camscanner-watermark-free/": {
+    primaryQueryFamily: "CamScanner 去浮水印",
+    supportingQueries: [
+      "CamScanner 浮水印移除",
+      "免費掃描 App 無浮水印",
+      "文件掃描無浮水印",
+    ],
+  },
+};
+
+function enrichCamPdfGuideKeyword(row) {
+  const keyword = camPdfGuideKeywords[row.route];
+  if (!keyword) return row;
+
+  return {
+    ...row,
+    ...keyword,
+    evidenceStatus: "directional_external",
+    evidenceSource: "localized_serp_review_2026-09-07",
+    validatedAt: "2026-09-07",
+  };
+}
+
 function routeLocale(route, renderedLanguage) {
-  if (["th", "en", "vi"].includes(renderedLanguage)) return renderedLanguage;
+  if (["th", "en", "vi", "zh-CN", "zh-TW"].includes(renderedLanguage)) return renderedLanguage;
+  if (route.includes("/zh-cn/")) return "zh-CN";
+  if (route.includes("/zh-tw/")) return "zh-TW";
   if (route === "/" || route.endsWith("/th/")) return "th";
   if (route === "/en/" || route.includes("/en/")) return "en";
   if (route === "/vi/" || route.includes("/vi/")) return "vi";
@@ -62,6 +131,10 @@ function classify(route) {
   if (route.startsWith("/siamese_cat/dev/course/")) return ["vibe", "free_live_course", "course", "course_start"];
   if (route.startsWith("/siamese_cat/dev/courses/")) return ["vibe", route === "/siamese_cat/dev/courses/" ? "course_catalog" : "course_outcome", "course", "course_start"];
   if (route.startsWith("/Cam_PDF_Scan_Signer_QR-Gen/")) {
+    if (route.includes("/guides/")) {
+      const article = route.includes("/remove-camscanner-watermark-free/");
+      return ["cam_pdf", article ? "product_guide" : "product_guide_hub", "cam_pdf", "play_store_click"];
+    }
     const legal = route !== "/Cam_PDF_Scan_Signer_QR-Gen/";
     return ["cam_pdf", legal ? "product_support" : "product_landing", legal ? "none" : "cam_pdf", legal ? "support_resolution" : "play_store_click"];
   }
@@ -78,7 +151,7 @@ function normalizeQuery(value, route, locale) {
     .replace(/\s+/g, " ")
     .trim();
   if (cleaned) return cleaned;
-  const slug = route.split("/").filter(Boolean).findLast((segment) => !["en", "vi", "th"].includes(segment));
+  const slug = route.split("/").filter(Boolean).findLast((segment) => !["en", "vi", "th", "zh-cn", "zh-tw"].includes(segment));
   return `${(slug || "DJAI Academy").replace(/-/g, " ")} ${locale}`;
 }
 
@@ -95,7 +168,7 @@ const entries = inventory.routes.map((routeRecord) => {
       : "stable");
   const renderedPromise = routeRecord.description || routeRecord.h1 || routeRecord.title;
 
-  return enrichEnglishToolKeyword({
+  return enrichCamPdfGuideKeyword(enrichEnglishToolKeyword({
     ...existing,
     supportingQueries: existing.supportingQueries || [],
     competingDjaiRoutes: existing.competingDjaiRoutes || [],
@@ -118,7 +191,7 @@ const entries = inventory.routes.map((routeRecord) => {
     evidenceSource: existing.evidenceSource || "rendered_route_inventory_2026-09-06",
     validatedAt: "2026-09-06",
     migrationStatus,
-  });
+  }));
 });
 
 const plannedNonIndexable = ownership.entries

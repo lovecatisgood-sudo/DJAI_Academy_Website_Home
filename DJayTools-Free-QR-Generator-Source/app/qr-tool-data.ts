@@ -24,7 +24,7 @@ export type QrPageCopy = {
 export const qrToolCopy: Record<QrToolSlug, Record<QrLanguage, QrPageCopy>> = {
   "url-qr-code-generator": {
     th: { mode: "url", title: "สร้าง QR Code จากลิงก์ฟรี", description: "สร้าง QR Code จาก URL หรือลิงก์เว็บไซต์ฟรี ปรับสี ลาย กรอบ และดาวน์โหลด PNG หรือ SVG โดยไม่ต้องสมัคร", keywords: ["ทำลิงก์เป็น QR Code", "สร้าง QR Code จากลิงก์", "สร้าง QR Code จาก link", "แปลง URL เป็น QR Code", "สร้าง QR Code ลิงก์ฟรี"] },
-    en: { mode: "url", title: "Free URL QR Code Generator", description: "Create a QR code for any URL or website link. Customize colors, patterns, and frames, then download PNG or SVG free.", keywords: ["URL QR code generator", "link to QR code", "free QR code"] },
+    en: { mode: "url", title: "Free URL QR Code Generator", description: "Create a QR code for any URL or website link. Customize colors, patterns, and frames, then download PNG or SVG free with no sign-up.", keywords: ["URL QR code generator", "link to QR code", "free QR code", "URL QR code without sign-up"] },
     vi: { mode: "url", title: "Tạo mã QR từ URL miễn phí", description: "Chuyển URL hoặc liên kết website thành mã QR miễn phí. Tùy chỉnh màu, họa tiết và khung rồi tải PNG hoặc SVG, không cần đăng ký.", keywords: ["tạo mã QR từ URL", "chuyển link thành mã QR", "tạo QR miễn phí", "URL sang QR code"] },
     "zh-CN": { mode: "url", title: "免费网址二维码生成器", description: "把网址或网页链接生成二维码，自定义颜色、样式和边框，并免费下载 PNG 或 SVG，无需注册。", keywords: ["二维码生成器", "网址转二维码", "免费二维码"] },
     "zh-TW": { mode: "url", title: "免費網址 QR Code 產生器", description: "將網址或網頁連結製作成 QR Code，自訂顏色、樣式與外框，免費下載 PNG 或 SVG，不必註冊。", keywords: ["QR Code 產生器", "網址轉 QR Code", "免費 QR Code"] }
@@ -38,7 +38,7 @@ export const qrToolCopy: Record<QrToolSlug, Record<QrLanguage, QrPageCopy>> = {
   },
   "vcard-qr-code-generator": {
     th: { mode: "vcard", title: "สร้าง vCard QR Code สำหรับนามบัตรฟรี", description: "สร้าง vCard QR Code พร้อมชื่อ เบอร์โทร อีเมล บริษัท และเว็บไซต์ ให้ผู้รับสแกนและบันทึกผู้ติดต่อ", keywords: ["vCard QR Code", "QR นามบัตร", "QR ผู้ติดต่อ"] },
-    en: { mode: "vcard", title: "Free vCard QR Code Generator", description: "Create a vCard QR code with a name, phone, email, company, and website so people can save your contact details.", keywords: ["vCard QR code generator", "contact QR code", "digital business card QR"] },
+    en: { mode: "vcard", title: "Free vCard QR Code Generator", description: "Create a vCard QR code with your name, phone, email, company, and website for business cards. People can scan and save your contact details.", keywords: ["vCard QR code generator", "contact QR code", "digital business card QR", "vCard QR code for business cards"] },
     vi: { mode: "vcard", title: "Tạo mã QR vCard miễn phí", description: "Tạo mã QR danh thiếp với tên, số điện thoại, email, công ty và website để người nhận lưu liên hệ nhanh.", keywords: ["tạo QR vCard", "mã QR danh bạ", "QR danh thiếp điện tử"] },
     "zh-CN": { mode: "vcard", title: "免费 vCard 联系人二维码生成器", description: "将姓名、电话、邮箱、公司和网址制作成 vCard 二维码，方便对方扫描保存联系人。", keywords: ["vCard二维码", "联系人二维码", "电子名片二维码"] },
     "zh-TW": { mode: "vcard", title: "免費 vCard 聯絡人 QR Code 產生器", description: "將姓名、電話、電子郵件、公司與網址製作成 vCard QR Code，方便對方掃描儲存聯絡人。", keywords: ["vCard QR Code", "聯絡人 QR Code", "電子名片 QR Code"] }

@@ -53,10 +53,14 @@ async function inspectRoute(url) {
     || attribute(html, /<link\b[^>]*href=["'][^"']+["'][^>]*rel=["']canonical["'][^>]*>/i, "href");
   const description = attribute(html, /<meta\b[^>]*name=["']description["'][^>]*>/i, "content")
     || attribute(html, /<meta\b[^>]*content=["'][^"']*["'][^>]*name=["']description["'][^>]*>/i, "content");
+  const renderedLanguage = attribute(html, /<html\b[^>]*>/i, "lang");
+  const language = ["zh-CN", "zh-TW"].includes(renderedLanguage)
+    ? renderedLanguage
+    : renderedLanguage.split("-")[0].toLowerCase();
   return {
     route: publicUrl.pathname,
     status: response.status,
-    language: attribute(html, /<html\b[^>]*>/i, "lang").split("-")[0].toLowerCase(),
+    language,
     title: content(html, /<title\b[^>]*>([\s\S]*?)<\/title>/i),
     h1: content(html, /<h1\b[^>]*>([\s\S]*?)<\/h1>/i),
     description: decodeHtml(description),

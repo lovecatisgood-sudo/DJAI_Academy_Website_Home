@@ -35,7 +35,7 @@ export const presets = [
   {
     slug: "webp-to-png", mode: "dimensions", format: "image/png",
     th: ["แปลง WebP เป็น PNG ฟรี ออนไลน์ | DJAI Image Tools", "แปลง WebP เป็น PNG ฟรี", "แปลง WebP เป็น PNG ฟรีสำหรับงานออกแบบ โดยไฟล์อยู่ในอุปกรณ์และไม่ถูกอัปโหลด", "วิธีแปลง WebP เป็น PNG", "PNG เหมาะกับงานกราฟิก ระบบที่ต้องการ lossless และรูปโปร่งใส เครื่องมือแปลงพร้อมลบ metadata", ["เลือกไฟล์ WebP", "ตรวจสอบ PNG ที่ตั้งไว้", "ประมวลผลและดาวน์โหลด PNG"]],
-    en: ["Convert WebP to PNG Free Online | DJAI Image Tools", "Convert WebP to PNG for free", "Convert WebP to PNG free for design workflows. Files remain on your device and are never uploaded.", "How to convert WebP to PNG", "PNG is useful for graphics, lossless workflows, and transparency. Conversion also removes image metadata.", ["Choose a WebP image", "Confirm PNG output", "Process and download the PNG"]]
+    en: ["Convert WebP to PNG Free Online | DJAI Image Tools", "Convert WebP to PNG for free", "Convert WebP to PNG free while preserving transparency for design workflows. Files remain on your device and are never uploaded.", "How to convert WebP to PNG", "PNG is useful for graphics, lossless workflows, and transparency. Conversion also removes image metadata.", ["Choose a WebP image", "Confirm PNG output", "Process and download the PNG"]]
   },
   {
     slug: "compress-image", mode: "target", targetKb: 200,
@@ -111,7 +111,7 @@ export const presets = [
       ]
     },
     th: ["ลบพื้นหลังรูปฟรี ออนไลน์ | DJAI Image Tools", "ลบพื้นหลังรูปฟรี", "ลบพื้นหลังรูป JPG, PNG, WebP, HEIC หรือ HEIF ฟรีใน browser แล้วดาวน์โหลด PNG พื้นหลังโปร่งใส", "วิธีลบพื้นหลังรูป", "เลือกภาพสินค้า โปรไฟล์ หรือคอนเทนต์ social แล้วเครื่องมือจะใช้ AI segmentation ใน browser เพื่อสร้างไฟล์ PNG พื้นหลังโปร่งใส", ["เลือกรูปจากอุปกรณ์", "รอ AI ลบพื้นหลังใน browser", "ตรวจผลลัพธ์และดาวน์โหลด PNG โปร่งใส"]],
-    en: ["Remove Image Background Free Online | DJAI Image Tools", "Remove an image background for free", "Remove the background from JPG, PNG, WebP, HEIC, or HEIF images free in your browser and download a transparent PNG.", "How to remove an image background", "Choose a product photo, profile image, or social content image and the tool uses browser-based AI segmentation to create a transparent PNG.", ["Choose an image from your device", "Let browser AI remove the background", "Review and download the transparent PNG"]]
+    en: ["Remove Image Background Free Online | DJAI Image Tools", "Remove an image background for free", "Remove the background from JPG, PNG, WebP, HEIC, or HEIF images free without uploading. Browser AI creates a transparent PNG on your device.", "How to remove an image background", "Choose a product photo, profile image, or social content image and the tool uses browser-based AI segmentation to create a transparent PNG.", ["Choose an image from your device", "Let browser AI remove the background", "Review and download the transparent PNG"]]
   },
   {
     slug: "remove-image-metadata", mode: "dimensions",
