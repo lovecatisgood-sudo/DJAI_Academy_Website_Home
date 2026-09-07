@@ -15,6 +15,7 @@ const CAM_PDF_PRIVACY_LAST_MODIFIED = new Date("2026-09-06T00:00:00.000Z");
 const CAM_PDF_PRIVACY_THAI_LAST_MODIFIED = new Date("2026-09-06T00:00:00.000Z");
 const CAM_PDF_PRODUCT_LAST_MODIFIED = new Date("2026-09-06T00:00:00.000Z");
 const CAM_PDF_TERMS_LAST_MODIFIED = new Date("2026-09-06T00:00:00.000Z");
+const CAM_PDF_GUIDES_LAST_MODIFIED = new Date("2026-09-07T00:00:00.000Z");
 const SEO_GROWTH_LAST_MODIFIED = new Date("2026-09-02T00:00:00.000Z");
 // The background-removal tool was rebuilt on its own first-party engine and
 // its pages rewritten. Dated separately so the other static pages keep an
@@ -35,7 +36,9 @@ const corePaths = [
   "/siamese_cat/en/", "/siamese_cat/dev/", "/siamese_cat/dev/en/", "/siamese_cat/dev/blog/",
   "/siamese_cat/dev/blog/en/", "/blog/", "/blog/en/", "/blog/vi/", "/Cam_PDF_Scan_Signer_QR-Gen/",
   "/Cam_PDF_Scan_Signer_QR-Gen/privacy/", "/Cam_PDF_Scan_Signer_QR-Gen/terms/",
-  "/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/", "/Cam_PDF_Scan_Signer_QR-Gen/delete-account/"
+  "/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/", "/Cam_PDF_Scan_Signer_QR-Gen/delete-account/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/remove-camscanner-watermark-free/"
 ];
 
 const imageTools = [
@@ -134,7 +137,9 @@ export default async function sitemap() {
 
   const staticEntries = [...new Set(staticPaths)].map((path) => entry(
     path,
-    path === "/Cam_PDF_Scan_Signer_QR-Gen/privacy/"
+    path.startsWith("/Cam_PDF_Scan_Signer_QR-Gen/guides/")
+      ? CAM_PDF_GUIDES_LAST_MODIFIED
+      : path === "/Cam_PDF_Scan_Signer_QR-Gen/privacy/"
       ? CAM_PDF_PRIVACY_LAST_MODIFIED
       : path === "/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/"
       ? CAM_PDF_PRIVACY_THAI_LAST_MODIFIED

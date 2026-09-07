@@ -162,6 +162,8 @@ const publicRoutes = [
   "/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/",
   "/Cam_PDF_Scan_Signer_QR-Gen/terms/",
   "/Cam_PDF_Scan_Signer_QR-Gen/delete-account/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/remove-camscanner-watermark-free/",
   "/app-ads.txt",
   "/favicon.svg",
   "/robots.txt",
@@ -537,7 +539,10 @@ async function verify() {
     ["/Cam_PDF_Scan_Signer_QR-Gen/privacy/", "2026-09-06T00:00:00.000Z"],
     ["/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/", "2026-09-06T00:00:00.000Z"],
     ["/Cam_PDF_Scan_Signer_QR-Gen/", "2026-09-06T00:00:00.000Z"],
-    ["/Cam_PDF_Scan_Signer_QR-Gen/terms/", "2026-09-06T00:00:00.000Z"]
+    ["/Cam_PDF_Scan_Signer_QR-Gen/terms/", "2026-09-06T00:00:00.000Z"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/guides/", "2026-09-07T00:00:00.000Z"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/guides/remove-camscanner-watermark-free/", "2026-09-07T00:00:00.000Z"],
+    ["/development/en/", "2026-09-02T00:00:00.000Z"]
   ]) {
     const actualLastModified = getSitemapLastModified(sitemapBody, path);
     if (actualLastModified !== expectedLastModified) {
@@ -741,7 +746,9 @@ async function verify() {
     ["/Cam_PDF_Scan_Signer_QR-Gen/privacy/", "Privacy Policy", "en"],
     ["/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/", "นโยบายความเป็นส่วนตัว", "th"],
     ["/Cam_PDF_Scan_Signer_QR-Gen/terms/", "Terms of Service", "en"],
-    ["/Cam_PDF_Scan_Signer_QR-Gen/delete-account/", "Delete your account", "en"]
+    ["/Cam_PDF_Scan_Signer_QR-Gen/delete-account/", "Delete your account", "en"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/guides/", "Better scans begin with better decisions", "en"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/guides/remove-camscanner-watermark-free/", "How to Remove the CamScanner Watermark for Free", "en"]
   ];
   for (const [route, heading, language] of camPdfChecks) {
     const html = await fetch(`${origin}${route}`).then((response) => response.text());

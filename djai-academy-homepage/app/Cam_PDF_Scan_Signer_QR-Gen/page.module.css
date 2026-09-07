@@ -140,6 +140,16 @@
   font-size: 0.92rem;
 }
 
+.guideLink {
+  display: inline-block;
+  margin-top: 4px;
+  color: #d8f4ef;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
 .releaseStrip {
   display: grid;
   width: min(1180px, calc(100% - 40px));

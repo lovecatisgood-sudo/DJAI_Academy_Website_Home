@@ -181,6 +181,12 @@ export default function CamPdfAppPage() {
             <p className={styles.heroPromise}>
               No added watermark on exported files. Account and usage conditions apply.
             </p>
+            <a
+              className={styles.guideLink}
+              href="/Cam_PDF_Scan_Signer_QR-Gen/guides/remove-camscanner-watermark-free/"
+            >
+              Read: how to remove a scanner watermark safely
+            </a>
           </div>
         </section>
 
