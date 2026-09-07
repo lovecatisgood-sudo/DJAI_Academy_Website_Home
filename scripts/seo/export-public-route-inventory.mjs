@@ -100,7 +100,7 @@ try {
 
   mkdirSync(dirname(outputPath), { recursive: true });
   writeFileSync(outputPath, `${JSON.stringify({
-    generatedAt: "2026-09-06",
+    generatedAt: new Date().toISOString(),
     origin: "https://www.djai.academy",
     count: routes.length,
     routes,

@@ -1,0 +1,74 @@
+brief_version: 1
+date: 2026-09-07
+property: https://www.djai.academy
+locale: en
+page_family: working_tools
+scope:
+  routes: all_92_indexable_english_working_tools
+  new_urls: false
+  layout_change: false
+goals:
+  - improve relevance for specific task, format, constraint, and use-case searches
+  - preserve one canonical owner for each real tool workflow
+  - lead qualified users to a related tool and then the approved Cam PDF or Development journey
+audience:
+  primary:
+    - people who need to complete a file task immediately without uploading
+    - people searching by input and output format, such as Word to PDF or JPG background removal
+    - people with a concrete constraint, such as a target upload size or a required output format
+  secondary:
+    - prospective development clients evaluating DJAI through working product proof
+intent_model:
+  primary: transactional_tool_use
+  secondary: commercial_product_or_service_discovery_after_task_completion
+keyword_rules:
+  - one route owns one distinct primary long-tail family
+  - supporting queries must describe that route's specific input, output, constraint, or use case
+  - familiar synonyms belong on the same canonical page when they describe the same workflow
+  - do not create separate thin pages for JPG, PNG, Word, DOCX, iPhone, Android, or similar variants alone
+  - do not promise unlimited use, exact target size, perfect formatting, or other unverified outcomes
+  - meta keywords may be retained for compatibility but are not treated as a Google ranking lever
+priority_visible_updates:
+  - route: /tools/resizeimg/remove-background-image/en/
+    primary: remove an image background free without uploading
+    variants:
+      - remove JPG background and download transparent PNG
+      - remove PNG background online free
+      - remove WebP background in browser
+  - route: /tools/document/docx-to-pdf/en/
+    primary: convert Word DOCX to PDF in browser without upload
+    variants:
+      - Word to PDF converter free
+      - convert DOCX file to PDF privately
+      - save a Word document as PDF online
+  - route: /tools/PDFTools/protect-pdf/en/
+    primary: password protect PDF with AES 256 encryption
+    variants:
+      - lock PDF with a password online
+      - encrypt PDF in browser without upload
+      - add password protection to a PDF free
+  - route: /tools/spreadsheet/csv-cleaner/en/
+    primary: remove duplicate and empty rows from CSV
+    variants:
+      - clean CSV data online without upload
+      - remove duplicate CSV rows in browser
+      - delete blank rows from a CSV file
+conversion_routing:
+  document_pdf_qr_tasks: related_tool_then_cam_pdf
+  image_media_spreadsheet_ai_tasks: related_tool_then_development
+evidence:
+  status: directional_external
+  source: feature_validation_and_live_serp_review_2026-09-07
+  limitations:
+    - no Search Console export supplied in repository
+    - no paid keyword-volume provider supplied
+    - no precise search-volume or difficulty claims will be made
+acceptance:
+  - all 92 English tools have at least three route-specific supporting queries
+  - primary query families remain unique
+  - no generic supporting-query fallback remains
+  - no untraceable verified_gsc labels remain
+  - priority visible pages contain their natural synonym coverage
+  - no URL, canonical, sitemap, header, footer, or layout regressions
+  - full tests and production build pass
+  - deployed commit is verified live and remains reversible to 31f0865

@@ -92,7 +92,7 @@ const tools = [
   {
     label: "Document Tools",
     title: "DJAI Document Converter",
-    text: "Convert DOCX to PDF, HTML, Markdown, and text, extract PDF text, or run Thai and English OCR in your browser.",
+    text: "Convert Word (DOCX) to PDF, HTML, Markdown, and text, extract PDF text, or run Thai and English OCR in your browser.",
     href: "https://www.djai.academy/tools/document/en/",
     tags: ["DOCX", "OCR", "Private"]
   },
@@ -125,7 +125,8 @@ const popularWorkflows = [
   ["Extract video frames at intervals", "Save up to 100 JPG or PNG frames as a ZIP", "https://www.djai.academy/tools/media/extract-frames-from-video/en/"],
   ["Resize an image toward 200 KB", "Meet form and email targets with an approximate result", "https://www.djai.academy/tools/resizeimg/resize-image-to-200kb/en/"],
   ["Compress an image toward 100 KB", "Prepare an image for smaller upload limits", "https://www.djai.academy/tools/resizeimg/image-to-100kb/en/"],
-  ["Remove an image background", "Create a transparent PNG in your browser", "https://www.djai.academy/tools/resizeimg/remove-background-image/en/"],
+  ["Remove JPG, PNG or WebP backgrounds", "Create a transparent PNG in your browser", "https://www.djai.academy/tools/resizeimg/remove-background-image/en/"],
+  ["Convert Word (DOCX) to PDF", "Create a private PDF with paper, margin, and page-number controls", "https://www.djai.academy/tools/document/docx-to-pdf/en/"],
   ["Create an email QR code", "Prefill the recipient, subject, and message", "https://www.djai.academy/tools/qrgen/email-qr-code-generator/en/"],
   ["Generate a complete favicon package", "Download ICO, Apple, PWA, manifest, and HTML files", "https://www.djai.academy/tools/brand/favicon-generator/en/"],
   ["Combine JPG images into one PDF", "Build a PDF privately in your browser", "https://www.djai.academy/tools/PDFTools/jpg-to-pdf/en/"],

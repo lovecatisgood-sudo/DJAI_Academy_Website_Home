@@ -160,7 +160,7 @@ export const toolCopy: Record<Language, Record<ToolSlug, ToolCopy>> = {
       label: "Protect PDF",
       title: "Password Protect PDF with AES-256",
       short: "Secure a PDF with a password and document permissions.",
-      description: "Password protect a PDF in your browser with AES-256 encryption and control printing, copying, editing, and form permissions.",
+      description: "Lock and encrypt the PDF with a password in your browser using AES-256, with controls for printing, copying, editing, and form permissions.",
       keywords: ["password protect PDF", "lock PDF", "encrypt PDF AES-256"]
     },
     "organize-pdf": {

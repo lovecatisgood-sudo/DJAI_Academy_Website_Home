@@ -69,6 +69,27 @@ test("English image, email QR, and favicon snippets lead with verified different
   assert.match(faviconSource, /multi-size ICO, Apple touch, PWA and maskable icons, web manifest, and HTML/);
 });
 
+test("priority tool pages expose natural format and task synonyms in visible copy", () => {
+  assert.match(imageSource, /Remove JPG, PNG or WebP Backgrounds Free/);
+  assert.match(imageSource, /Remove a JPG, PNG or WebP background for free/);
+  assert.match(imageSource, /JPG cannot store transparency/);
+
+  const documentSource = readFileSync(
+    path.join(root, "djai-document-tools/app/tool-data.ts"),
+    "utf8",
+  );
+  assert.match(documentSource, /en: "Convert Word \(DOCX\) to PDF Free"/);
+  assert.match(documentSource, /en: "Convert Word \(DOCX\) to Clean HTML"/);
+  assert.match(documentSource, /en: "Convert Word \(DOCX\) to Markdown Free"/);
+  assert.match(documentSource, /en: "Extract Text from Word \(DOCX\) Free"/);
+  assert.match(documentSource, /en: "Remove Duplicate and Empty CSV Rows"/);
+  const pdfSource = readFileSync(
+    path.join(root, "djai-pdf-tools/app/tool-data.ts"),
+    "utf8",
+  );
+  assert.match(pdfSource, /lock and encrypt the PDF with a password/i);
+});
+
 test("the English hub directly links every proven-opportunity workflow", () => {
   const priorityRoutes = [
     "/tools/media/gif-to-mp4/en/",
@@ -88,6 +109,8 @@ test("the English hub directly links every proven-opportunity workflow", () => {
   }
   assert.match(hubSource, /90\+ free tools/);
   assert.match(hubSource, /No account required; many files process privately in your browser\./);
+  assert.match(hubSource, /Remove JPG, PNG or WebP backgrounds/);
+  assert.match(hubSource, /Convert Word \(DOCX\) to PDF/);
 });
 
 test("all rendered English tool snippets are unique and useful at search-result length", () => {
@@ -117,7 +140,7 @@ test("remaining English tool snippets expose their useful long-tail distinctions
   assert.match(qrSource, /vCard QR code[^\n]+business cards/i);
 
   assert.match(imageSource, /WebP to PNG[^\n]+preserving transparency/i);
-  assert.match(imageSource, /Remove the background[^\n]+without uploading/i);
+  assert.match(imageSource, /Remove backgrounds[^\n]+without uploading/i);
 
   const pdfSource = readFileSync(
     path.join(root, "djai-pdf-tools/app/seo-alias-data.ts"),

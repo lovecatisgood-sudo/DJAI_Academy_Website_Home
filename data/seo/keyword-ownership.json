@@ -728,9 +728,9 @@
     },
     {
       "supportingQueries": [
-        "video to text online free",
-        "video to text without sign up",
-        "video to text browser tool for private media file processing"
+        "convert MP4 speech to text privately",
+        "browser video transcription with timestamps",
+        "turn a recorded video into editable text"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -747,8 +747,8 @@
       "promise": "Convert video to text with AI in your browser. Free, no sign-up, no email, and no media upload to DJAI. Export editable TXT, SRT, VTT, or JSON transcripts.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -1301,9 +1301,9 @@
     },
     {
       "supportingQueries": [
-        "url qr code generator online free",
-        "url qr code generator without sign up",
-        "url qr code generator browser tool for private content processing"
+        "turn a website link into a QR code",
+        "download a link QR code as PNG or SVG",
+        "make a static website QR code in browser"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -1320,8 +1320,8 @@
       "canonical": "https://www.djai.academy/tools/qrgen/url-qr-code-generator/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -1368,9 +1368,9 @@
     },
     {
       "supportingQueries": [
-        "wifi qr code generator online free",
-        "wifi qr code generator without sign up",
-        "wifi qr code generator browser tool for private content processing"
+        "make a QR code to join a Wi-Fi network",
+        "WPA Wi-Fi QR code generator for visitors",
+        "share Wi-Fi credentials with a scannable code"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -1387,8 +1387,8 @@
       "canonical": "https://www.djai.academy/tools/qrgen/wifi-qr-code-generator/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -1435,9 +1435,9 @@
     },
     {
       "supportingQueries": [
-        "vcard qr code generator online free",
-        "vcard qr code generator without sign up",
-        "vcard qr code generator browser tool for private content processing"
+        "make a QR code that saves contact details",
+        "download a vCard QR code as SVG",
+        "digital business card contact QR generator"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -1454,8 +1454,8 @@
       "canonical": "https://www.djai.academy/tools/qrgen/vcard-qr-code-generator/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -1502,9 +1502,9 @@
     },
     {
       "supportingQueries": [
-        "text qr code generator online free",
-        "text qr code generator without sign up",
-        "text qr code generator browser tool for private content processing"
+        "create a plain text QR code for offline reading",
+        "download a text QR code as PNG or SVG",
+        "encode a message in a static QR code"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -1521,8 +1521,8 @@
       "canonical": "https://www.djai.academy/tools/qrgen/text-qr-code-generator/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -1571,10 +1571,10 @@
       "supportingQueries": [
         "mailto QR code with recipient subject and body",
         "static email QR code PNG or SVG",
-        "email QR code generator without sign up"
+        "prefill an email from a QR code"
       ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "verified_gsc",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/qrgen/email-qr-code-generator/en/",
       "locale": "en",
@@ -1588,8 +1588,8 @@
       "canonical": "https://www.djai.academy/tools/qrgen/email-qr-code-generator/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "gsc_page_performance_and_feature_validation_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -1636,9 +1636,9 @@
     },
     {
       "supportingQueries": [
-        "whatsapp qr code generator online free",
-        "whatsapp qr code generator without sign up",
-        "whatsapp qr code generator browser tool for private content processing"
+        "make a WhatsApp QR code for a phone number",
+        "open a WhatsApp conversation from a QR code",
+        "download a WhatsApp message QR code"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -1655,8 +1655,8 @@
       "canonical": "https://www.djai.academy/tools/qrgen/whatsapp-qr-code-generator/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -1703,9 +1703,9 @@
     },
     {
       "supportingQueries": [
-        "qr code generator with logo online free",
-        "qr code generator with logo without sign up",
-        "qr code generator with logo browser tool for private content processing"
+        "add a business logo to a QR code",
+        "custom color QR code with transparent logo",
+        "download a branded QR code as PNG or SVG"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -1722,8 +1722,8 @@
       "canonical": "https://www.djai.academy/tools/qrgen/qr-code-generator-with-logo/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -1833,9 +1833,9 @@
     },
     {
       "supportingQueries": [
-        "jpg to png online free",
-        "jpg to png without sign up",
-        "jpg to png browser tool for private image processing"
+        "change a JPEG image into PNG format",
+        "convert multiple JPG files to PNG locally",
+        "download converted JPEG images as PNG files"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -1852,8 +1852,8 @@
       "promise": "Convert JPG images to PNG free in your browser with no upload, account, watermark, or server storage.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -1900,9 +1900,9 @@
     },
     {
       "supportingQueries": [
-        "png to jpg online free",
-        "png to jpg without sign up",
-        "png to jpg browser tool for private image processing"
+        "change PNG images to smaller JPEG files",
+        "convert multiple PNG files to JPG in browser",
+        "replace PNG transparency with a JPG background"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -1919,8 +1919,8 @@
       "promise": "Convert PNG to JPG free with quality controls and private browser processing. No upload, account, or watermark.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -1967,9 +1967,9 @@
     },
     {
       "supportingQueries": [
-        "jpg to webp online free",
-        "jpg to webp without sign up",
-        "jpg to webp browser tool for private image processing"
+        "change JPEG images into smaller WebP files",
+        "batch convert JPG to WebP in browser",
+        "prepare JPG photos as WebP for web pages"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -1986,8 +1986,8 @@
       "promise": "Convert JPG to WebP free for faster websites with private browser processing and quality control.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -2034,9 +2034,9 @@
     },
     {
       "supportingQueries": [
-        "png to webp online free",
-        "png to webp without sign up",
-        "png to webp browser tool for private image processing"
+        "change PNG files to WebP with transparency",
+        "batch convert PNG images to WebP locally",
+        "reduce transparent image size with WebP"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -2053,8 +2053,8 @@
       "promise": "Convert PNG to WebP free while preserving transparency, processed privately in your browser.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -2101,9 +2101,9 @@
     },
     {
       "supportingQueries": [
-        "webp to jpg online free",
-        "webp to jpg without sign up",
-        "webp to jpg browser tool for private image processing"
+        "change a WebP image into a JPEG file",
+        "batch convert WebP pictures to JPG locally",
+        "make WebP photos compatible with JPG-only forms"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -2120,8 +2120,8 @@
       "promise": "Convert WebP to JPG free for forms, software, and devices that require JPG. Your image stays on your device.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -2168,9 +2168,9 @@
     },
     {
       "supportingQueries": [
-        "webp to png online free",
-        "webp to png without sign up",
-        "webp to png browser tool for private image processing"
+        "change transparent WebP images into PNG files",
+        "batch convert WebP to PNG in browser",
+        "save a WebP graphic as a transparent PNG"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -2187,8 +2187,8 @@
       "promise": "Convert WebP to PNG free for design workflows. Files remain on your device and are never uploaded.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -2235,9 +2235,9 @@
     },
     {
       "supportingQueries": [
-        "compress image online free",
-        "compress image without sign up",
-        "compress image browser tool for private image processing"
+        "reduce image file size for an upload limit",
+        "compress several photos toward a chosen size",
+        "make an image smaller without uploading it"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -2254,8 +2254,8 @@
       "promise": "Compress JPG, PNG, and WebP images toward a target KB size free with private browser processing.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -2302,9 +2302,9 @@
     },
     {
       "supportingQueries": [
-        "resize image online free",
-        "resize image without sign up",
-        "resize image browser tool for private image processing"
+        "change photo width and height in browser",
+        "resize several images to the same dimensions",
+        "scale an image by percentage while keeping aspect ratio"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -2321,8 +2321,8 @@
       "promise": "Resize images by pixels, percentage, or social media presets free while keeping the aspect ratio.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -2370,8 +2370,8 @@
     {
       "supportingQueries": [
         "image compressor for a 100 KB upload limit",
-        "reduce image toward 100 KB in browser",
-        "compress an image to approximately 100 KB online free online"
+        "reduce a photo toward 100 KB in browser",
+        "make a JPG PNG or WebP close to 100 KB"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -2388,8 +2388,8 @@
       "promise": "Reduce a JPG, PNG, or WebP image toward 100 KB free for forms, applications, and upload limits.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -2437,8 +2437,8 @@
     {
       "supportingQueries": [
         "image compressor for a 500 KB upload limit",
-        "reduce image toward 500 KB in browser",
-        "compress an image to approximately 500 KB online free online"
+        "reduce a photo toward 500 KB in browser",
+        "make a JPG PNG or WebP close to 500 KB"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -2455,8 +2455,8 @@
       "promise": "Reduce a JPG, PNG, or WebP image toward 500 KB free in your browser for email, websites, and forms.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -2503,9 +2503,9 @@
     },
     {
       "supportingQueries": [
-        "heic to jpg online free",
-        "heic to jpg without sign up",
-        "heic to jpg browser tool for private image processing"
+        "change iPhone HEIC photos into JPEG files",
+        "batch convert HEIC images to JPG locally",
+        "make an HEIC photo compatible with JPG uploads"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -2522,8 +2522,8 @@
       "promise": "Convert iPhone HEIC and HEIF photos to JPG free in your browser without uploading images to a server.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -2570,9 +2570,9 @@
     },
     {
       "supportingQueries": [
-        "remove image metadata online free",
-        "remove image metadata without sign up",
-        "remove image metadata browser tool for private image processing"
+        "strip GPS location data from a photo",
+        "delete camera details from JPG PNG or WebP",
+        "clean image metadata before sharing a photo"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -2589,8 +2589,8 @@
       "promise": "Remove EXIF and metadata from JPG, PNG, WebP, or HEIC by creating a new browser-processed copy without uploading it.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -2637,9 +2637,9 @@
     },
     {
       "supportingQueries": [
-        "remove background image online free",
-        "remove background image without sign up",
-        "remove background image browser tool for private image processing"
+        "remove JPG background and download transparent PNG",
+        "remove PNG background with browser AI",
+        "remove WebP background in browser"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -2656,8 +2656,8 @@
       "promise": "Remove the background from JPG, PNG, WebP, HEIC, or HEIF images free in your browser and download a transparent PNG.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -2705,11 +2705,11 @@
     {
       "supportingQueries": [
         "image compressor for a 200 KB upload limit",
-        "reduce image toward 200 KB in browser",
-        "resize an image to approximately 200 KB online free online"
+        "reduce a photo toward 200 KB in browser",
+        "make a JPG PNG or WebP close to 200 KB"
       ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "verified_gsc",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/resize-image-to-200kb/en/",
@@ -2723,8 +2723,8 @@
       "promise": "Reduce JPG, PNG, WebP, or AVIF images toward 200 KB free for forms, email, and websites with private browser processing.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "gsc_page_performance_and_feature_validation_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -2771,9 +2771,9 @@
     },
     {
       "supportingQueries": [
-        "avif to jpg online free",
-        "avif to jpg without sign up",
-        "avif to jpg browser tool for private image processing"
+        "change an AVIF picture into a JPEG file",
+        "batch convert AVIF images to JPG locally",
+        "make AVIF photos compatible with JPG-only uploads"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -2790,8 +2790,8 @@
       "promise": "Turn AVIF photos into smaller, widely accepted JPG files for forms, legacy software, email, and websites without uploading the image.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -2838,9 +2838,9 @@
     },
     {
       "supportingQueries": [
-        "avif to png online free",
-        "avif to png without sign up",
-        "avif to png browser tool for private image processing"
+        "change transparent AVIF images into PNG files",
+        "batch convert AVIF to PNG in browser",
+        "save an AVIF graphic as a transparent PNG"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -2857,8 +2857,8 @@
       "promise": "Convert AVIF artwork to PNG for logos, screenshots, graphics, and publishing workflows that need transparency, entirely in your browser.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -2905,9 +2905,9 @@
     },
     {
       "supportingQueries": [
-        "passport photo resizer online free",
-        "passport photo resizer without sign up",
-        "passport photo resizer browser tool for private image processing"
+        "crop an ID photo to a 35 by 45 mm ratio",
+        "prepare a passport photo at 300 DPI",
+        "download a print-ready passport photo sheet"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -2924,8 +2924,8 @@
       "promise": "Crop a passport photo to 35 × 45 mm at 413 × 531 px or choose the US 2 × 2 inch 600 × 600 px preset, privately in your browser.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -3014,9 +3014,9 @@
     },
     {
       "supportingQueries": [
-        "merge pdf online free",
-        "merge pdf without sign up",
-        "merge pdf browser tool for private PDF processing"
+        "combine several PDFs into one document privately",
+        "join PDF files in a chosen order",
+        "merge PDF documents on the device"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -3033,8 +3033,8 @@
       "canonical": "https://www.djai.academy/tools/PDFTools/merge-pdf/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -3062,9 +3062,9 @@
     },
     {
       "supportingQueries": [
-        "split pdf online free",
-        "split pdf without sign up",
-        "split pdf browser tool for private PDF processing"
+        "divide a PDF into page ranges",
+        "save multiple PDF page groups as separate files",
+        "split a long PDF by selected ranges privately"
       ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/extract-pdf-pages/"
@@ -3083,8 +3083,8 @@
       "canonical": "https://www.djai.academy/tools/PDFTools/split-pdf/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -3110,9 +3110,9 @@
     },
     {
       "supportingQueries": [
-        "compress pdf online free",
-        "compress pdf without sign up",
-        "compress pdf browser tool for private PDF processing"
+        "compress a PDF for an email attachment",
+        "make a PDF smaller for an upload limit",
+        "reduce scanned PDF size without uploading"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -3129,8 +3129,8 @@
       "canonical": "https://www.djai.academy/tools/PDFTools/compress-pdf/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -3160,9 +3160,9 @@
     },
     {
       "supportingQueries": [
-        "images to pdf online free",
-        "images to pdf without sign up",
-        "images to pdf browser tool for private PDF processing"
+        "turn mixed image formats into an ordered PDF",
+        "create one PDF from photos in a chosen order",
+        "combine different image types into a PDF privately"
       ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/jpg-to-pdf/",
@@ -3183,8 +3183,8 @@
       "canonical": "https://www.djai.academy/tools/PDFTools/images-to-pdf/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -3213,9 +3213,9 @@
     },
     {
       "supportingQueries": [
-        "pdf to images online free",
-        "pdf to images without sign up",
-        "pdf to images browser tool for private PDF processing"
+        "export PDF pages as image files",
+        "turn every page of a PDF into downloadable pictures",
+        "convert a PDF to images without uploading it"
       ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/pdf-to-jpg/",
@@ -3235,8 +3235,8 @@
       "canonical": "https://www.djai.academy/tools/PDFTools/pdf-to-images/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -3262,9 +3262,9 @@
     },
     {
       "supportingQueries": [
-        "rotate pdf online free",
-        "rotate pdf without sign up",
-        "rotate pdf browser tool for private PDF processing"
+        "turn sideways PDF pages 90 degrees",
+        "fix upside-down pages in a PDF privately",
+        "rotate individual pages without uploading the PDF"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -3281,8 +3281,8 @@
       "canonical": "https://www.djai.academy/tools/PDFTools/rotate-pdf/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -3308,9 +3308,9 @@
     },
     {
       "supportingQueries": [
-        "watermark pdf online free",
-        "watermark pdf without sign up",
-        "watermark pdf browser tool for private PDF processing"
+        "place a custom watermark on PDF pages",
+        "add confidential text across a PDF privately",
+        "watermark selected pages of a PDF file"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -3327,8 +3327,8 @@
       "canonical": "https://www.djai.academy/tools/PDFTools/watermark-pdf/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -3354,9 +3354,9 @@
     },
     {
       "supportingQueries": [
-        "protect pdf online free",
-        "protect pdf without sign up",
-        "protect pdf browser tool for private PDF processing"
+        "lock PDF with a password online",
+        "encrypt PDF in browser without upload",
+        "add password protection to a PDF free"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -3373,8 +3373,8 @@
       "canonical": "https://www.djai.academy/tools/PDFTools/protect-pdf/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -3403,9 +3403,9 @@
     },
     {
       "supportingQueries": [
-        "organize pdf online free",
-        "organize pdf without sign up",
-        "organize pdf browser tool for private PDF processing"
+        "organize PDF pages with a typed page sequence",
+        "remove and rearrange pages in one PDF task",
+        "change PDF page order by entering page numbers"
       ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/delete-pages-from-pdf/",
@@ -3425,8 +3425,8 @@
       "canonical": "https://www.djai.academy/tools/PDFTools/organize-pdf/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -3452,9 +3452,9 @@
     },
     {
       "supportingQueries": [
-        "add page numbers online free",
-        "add page numbers without sign up",
-        "add page numbers browser tool for private PDF processing"
+        "number PDF pages from a chosen starting page",
+        "place page numbers at the top or bottom of a PDF",
+        "add pagination to a PDF without uploading it"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -3471,8 +3471,8 @@
       "canonical": "https://www.djai.academy/tools/PDFTools/add-page-numbers/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -3498,9 +3498,9 @@
     },
     {
       "supportingQueries": [
-        "remove pdf metadata online free",
-        "remove pdf metadata without sign up",
-        "remove pdf metadata browser tool for private PDF processing"
+        "delete PDF author title and subject fields",
+        "clean PDF properties before sharing",
+        "strip document information from a PDF privately"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -3517,8 +3517,8 @@
       "canonical": "https://www.djai.academy/tools/PDFTools/remove-pdf-metadata/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -3546,9 +3546,9 @@
     },
     {
       "supportingQueries": [
-        "jpg to pdf online free",
-        "jpg to pdf without sign up",
-        "jpg to pdf browser tool for private PDF processing"
+        "combine JPEG photos into an ordered PDF",
+        "turn several JPG files into one document",
+        "make a PDF from JPG images without upload"
       ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/images-to-pdf/"
@@ -3567,8 +3567,8 @@
       "canonical": "https://www.djai.academy/tools/PDFTools/jpg-to-pdf/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -3596,9 +3596,9 @@
     },
     {
       "supportingQueries": [
-        "pdf to jpg online free",
-        "pdf to jpg without sign up",
-        "pdf to jpg browser tool for private PDF processing"
+        "export a PDF as JPEG images",
+        "download all PDF pages as a JPG ZIP",
+        "turn PDF pages into JPG files privately"
       ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/pdf-to-images/"
@@ -3617,8 +3617,8 @@
       "canonical": "https://www.djai.academy/tools/PDFTools/pdf-to-jpg/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -3646,9 +3646,9 @@
     },
     {
       "supportingQueries": [
-        "png to pdf online free",
-        "png to pdf without sign up",
-        "png to pdf browser tool for private PDF processing"
+        "turn transparent PNG files into an ordered PDF",
+        "make one PDF from several PNG images",
+        "convert PNG pictures to PDF without upload"
       ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/images-to-pdf/"
@@ -3667,8 +3667,8 @@
       "canonical": "https://www.djai.academy/tools/PDFTools/png-to-pdf/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -3696,9 +3696,9 @@
     },
     {
       "supportingQueries": [
-        "webp to pdf online free",
-        "webp to pdf without sign up",
-        "webp to pdf browser tool for private PDF processing"
+        "combine WebP pictures into an ordered document",
+        "make one PDF from several WebP files",
+        "turn WebP images into PDF without upload"
       ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/images-to-pdf/"
@@ -3717,8 +3717,8 @@
       "canonical": "https://www.djai.academy/tools/PDFTools/webp-to-pdf/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -3746,9 +3746,9 @@
     },
     {
       "supportingQueries": [
-        "pdf to png online free",
-        "pdf to png without sign up",
-        "pdf to png browser tool for private PDF processing"
+        "export every PDF page as a lossless PNG",
+        "download PDF pages as transparent-capable PNG files",
+        "turn a PDF into PNG images privately"
       ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/pdf-to-images/"
@@ -3767,8 +3767,8 @@
       "canonical": "https://www.djai.academy/tools/PDFTools/pdf-to-png/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -3796,9 +3796,9 @@
     },
     {
       "supportingQueries": [
-        "extract pdf pages online free",
-        "extract pdf pages without sign up",
-        "extract pdf pages browser tool for private PDF processing"
+        "save chosen PDF pages as one separate document",
+        "pull a page range out of a PDF privately",
+        "create a smaller PDF from selected pages"
       ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/split-pdf/"
@@ -3817,8 +3817,8 @@
       "canonical": "https://www.djai.academy/tools/PDFTools/extract-pdf-pages/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -3846,9 +3846,9 @@
     },
     {
       "supportingQueries": [
-        "delete pages from pdf online free",
-        "delete pages from pdf without sign up",
-        "delete pages from pdf browser tool for private PDF processing"
+        "remove unwanted pages from a PDF file",
+        "save a PDF after deleting chosen pages",
+        "take pages out of a PDF without uploading it"
       ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/organize-pdf/"
@@ -3867,8 +3867,8 @@
       "canonical": "https://www.djai.academy/tools/PDFTools/delete-pages-from-pdf/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -3896,9 +3896,9 @@
     },
     {
       "supportingQueries": [
-        "reorder pdf pages online free",
-        "reorder pdf pages without sign up",
-        "reorder pdf pages browser tool for private PDF processing"
+        "change PDF page order with visual thumbnails",
+        "drag and rearrange pages in a PDF privately",
+        "move individual PDF pages into a new order"
       ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/organize-pdf/"
@@ -3917,8 +3917,8 @@
       "canonical": "https://www.djai.academy/tools/PDFTools/reorder-pdf-pages/en/",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -4250,9 +4250,9 @@
     },
     {
       "supportingQueries": [
-        "mp3 to wav online free",
-        "mp3 to wav without sign up",
-        "mp3 to wav browser tool for private media file processing"
+        "change MP3 audio into an uncompressed WAV file",
+        "convert an MP3 recording to WAV locally",
+        "make a WAV copy of an MP3 for audio editing"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -4269,8 +4269,8 @@
       "promise": "Convert MP3 audio to WAV free in your browser for editing, lossless workflows, and software that requires WAV.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -4296,9 +4296,9 @@
     },
     {
       "supportingQueries": [
-        "wav to mp3 online free",
-        "wav to mp3 without sign up",
-        "wav to mp3 browser tool for private media file processing"
+        "make a WAV audio file smaller as MP3",
+        "convert a WAV recording to MP3 locally",
+        "change uncompressed WAV audio into MP3"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -4315,8 +4315,8 @@
       "promise": "Convert WAV audio to MP3 free with a selectable bitrate for smaller files, sharing, and uploads.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -4342,9 +4342,9 @@
     },
     {
       "supportingQueries": [
-        "m4a to mp3 online free",
-        "m4a to mp3 without sign up",
-        "m4a to mp3 browser tool for private media file processing"
+        "change an iPhone M4A recording to MP3",
+        "make an M4A audio file compatible as MP3",
+        "convert M4A voice audio to MP3 locally"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -4361,8 +4361,8 @@
       "promise": "Convert M4A audio to MP3 free in your browser for players, editors, and software that supports MP3.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -4388,9 +4388,9 @@
     },
     {
       "supportingQueries": [
-        "mp4 to mp3 online free",
-        "mp4 to mp3 without sign up",
-        "mp4 to mp3 browser tool for private media file processing"
+        "convert an MP4 video soundtrack to MP3",
+        "save speech or music from MP4 as audio",
+        "turn an MP4 file into MP3 without upload"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -4407,8 +4407,8 @@
       "promise": "Extract audio from an MP4 video and convert it to MP3 free in your browser with a selectable bitrate.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -4434,9 +4434,9 @@
     },
     {
       "supportingQueries": [
-        "extract audio from video online free",
-        "extract audio from video without sign up",
-        "extract audio from video browser tool for private media file processing"
+        "save a video soundtrack as an audio file",
+        "separate spoken audio from a video locally",
+        "download only the audio track from a video"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -4453,8 +4453,8 @@
       "promise": "Extract audio from MP4, MOV, WebM, or MKV video and download MP3 without uploading the video.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -4480,9 +4480,9 @@
     },
     {
       "supportingQueries": [
-        "video converter online free",
-        "video converter without sign up",
-        "video converter browser tool for private media file processing"
+        "change a video file to a browser-compatible format",
+        "convert video with local FFmpeg processing",
+        "choose a new output format for a video file"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -4499,8 +4499,8 @@
       "promise": "Convert video online between MP4, MOV, WebM, MKV and AVI. Choose quality and resolution, then process the file privately in your browser with no account.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -4526,9 +4526,9 @@
     },
     {
       "supportingQueries": [
-        "mkv to mp4 online free",
-        "mkv to mp4 without sign up",
-        "mkv to mp4 browser tool for private media file processing"
+        "change an MKV video into a compatible MP4",
+        "make MKV video playable as MP4 locally",
+        "convert Matroska video to MP4 on the device"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -4545,8 +4545,8 @@
       "promise": "Convert MKV to MP4 online in your browser. Make MKV video easier to play, share and upload without sending the source file to DJAI.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -4572,9 +4572,9 @@
     },
     {
       "supportingQueries": [
-        "avi to mp4 online free",
-        "avi to mp4 without sign up",
-        "avi to mp4 browser tool for private media file processing"
+        "change an AVI video into a compatible MP4",
+        "make an old AVI file playable as MP4",
+        "convert AVI video locally with browser FFmpeg"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -4591,8 +4591,8 @@
       "promise": "Convert AVI to MP4 online in your browser. Turn older AVI video into a modern MP4 that is easier to play, share and upload.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -4618,9 +4618,9 @@
     },
     {
       "supportingQueries": [
-        "mp4 to mov online free",
-        "mp4 to mov without sign up",
-        "mp4 to mov browser tool for private media file processing"
+        "change an MP4 video into a MOV file",
+        "make a MOV copy of MP4 video locally",
+        "convert MP4 for a MOV-based editing workflow"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -4637,8 +4637,8 @@
       "promise": "Convert MP4 to MOV online in your browser for Apple or editing workflows. Choose quality and resolution with no account and no video upload.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -4664,9 +4664,9 @@
     },
     {
       "supportingQueries": [
-        "mp4 to webm online free",
-        "mp4 to webm without sign up",
-        "mp4 to webm browser tool for private media file processing"
+        "change an MP4 video into browser-friendly WebM",
+        "prepare an MP4 as WebM without upload",
+        "convert MP4 video for HTML5 web playback"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -4683,8 +4683,8 @@
       "promise": "Convert MP4 to WebM online for web delivery. Choose quality and resolution, then encode locally in your browser without uploading the source video.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -4710,9 +4710,9 @@
     },
     {
       "supportingQueries": [
-        "webm to mp4 online free",
-        "webm to mp4 without sign up",
-        "webm to mp4 browser tool for private media file processing"
+        "change a WebM recording into MP4",
+        "make WebM video playable on more devices",
+        "convert WebM to MP4 locally in browser"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -4729,8 +4729,8 @@
       "promise": "Convert WebM to MP4 online with private browser processing. Create a widely compatible MP4 for sharing, editing or uploading without a file upload.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -4756,9 +4756,9 @@
     },
     {
       "supportingQueries": [
-        "mov to mp4 online free",
-        "mov to mp4 without sign up",
-        "mov to mp4 browser tool for private media file processing"
+        "change an iPhone MOV video into MP4",
+        "make QuickTime video easier to share as MP4",
+        "convert MOV footage to MP4 locally"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -4775,8 +4775,8 @@
       "promise": "Convert MOV to MP4 online for easier sharing and playback. Choose video quality and process the source locally in your browser with no account.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -4802,9 +4802,9 @@
     },
     {
       "supportingQueries": [
-        "video cutter online free",
-        "video cutter without sign up",
-        "video cutter browser tool for private media file processing"
+        "trim an MP4 video to a selected time range",
+        "remove the beginning or end of a video locally",
+        "make a shorter clip without uploading the video"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -4821,8 +4821,8 @@
       "promise": "Cut video online with playback, exact start and end timestamps, and preview. Trim MP4 and common video formats privately in your browser.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -4848,9 +4848,9 @@
     },
     {
       "supportingQueries": [
-        "compress video online free",
-        "compress video without sign up",
-        "compress video browser tool for private media file processing"
+        "reduce video file size for an upload limit",
+        "make a large video smaller in browser",
+        "compress video locally with adjustable quality"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -4867,8 +4867,8 @@
       "promise": "Compress video online by quality, resolution or target size. Reduce MP4 file size privately in your browser with no account or source upload.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -4895,11 +4895,11 @@
     {
       "supportingQueries": [
         "video compressor for a 10 MB upload limit",
-        "reduce video toward 10 MB in browser",
-        "compress video toward 10 MB without upload free online"
+        "reduce MP4 MOV or WebM toward 10 MB",
+        "make a video close to 10 MB in browser"
       ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "verified_gsc",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/compress-video-to-10mb/en/",
@@ -4913,8 +4913,8 @@
       "promise": "Compress a video toward 10 MB online. The tool estimates bitrate from duration and processes the file privately in your browser with no upload.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "gsc_page_performance_and_feature_validation_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -4941,11 +4941,11 @@
     {
       "supportingQueries": [
         "video compressor for a 25 MB upload limit",
-        "reduce video toward 25 MB in browser",
-        "compress video toward 25 MB without upload free online"
+        "reduce MP4 MOV or WebM toward 25 MB",
+        "make a video close to 25 MB in browser"
       ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "verified_gsc",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/compress-video-to-25mb/en/",
@@ -4959,8 +4959,8 @@
       "promise": "Compress a video toward 25 MB online. The tool estimates bitrate from duration and processes the file privately in your browser with no upload.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "gsc_page_performance_and_feature_validation_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -4987,11 +4987,11 @@
     {
       "supportingQueries": [
         "video compressor for a 50 MB upload limit",
-        "reduce video toward 50 MB in browser",
-        "compress video toward 50 MB without upload free online"
+        "reduce MP4 MOV or WebM toward 50 MB",
+        "make a video close to 50 MB in browser"
       ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "verified_gsc",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/compress-video-to-50mb/en/",
@@ -5005,8 +5005,8 @@
       "promise": "Compress a video toward 50 MB online. The tool estimates bitrate from duration and processes the file privately in your browser with no upload.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "gsc_page_performance_and_feature_validation_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -5033,11 +5033,11 @@
     {
       "supportingQueries": [
         "video compressor for a 100 MB upload limit",
-        "reduce video toward 100 MB in browser",
-        "compress video toward 100 MB without upload free online"
+        "reduce MP4 MOV or WebM toward 100 MB",
+        "make a video close to 100 MB in browser"
       ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "verified_gsc",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/compress-video-to-100mb/en/",
@@ -5051,8 +5051,8 @@
       "promise": "Compress a video toward 100 MB online. The tool estimates bitrate from duration and processes the file privately in your browser with no upload.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "gsc_page_performance_and_feature_validation_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -5078,12 +5078,12 @@
     },
     {
       "supportingQueries": [
-        "video cropper online free",
-        "video cropper without sign up",
-        "video cropper browser tool for private media file processing"
+        "make a vertical 9:16 crop from a video",
+        "crop video to square 1:1 for social media",
+        "center crop an MP4 video without upload"
       ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "verified_gsc",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/video-cropper/en/",
@@ -5097,8 +5097,8 @@
       "promise": "Crop video online to 16:9, 9:16, 1:1, 4:5 or 3:2. Create a centered crop privately in your browser for social, web or editing workflows.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "gsc_page_performance_and_feature_validation_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -5124,12 +5124,12 @@
     },
     {
       "supportingQueries": [
-        "video resizer online free",
-        "video resizer without sign up",
-        "video resizer browser tool for private media file processing"
+        "change video resolution while keeping aspect ratio",
+        "scale an MP4 video down to 720p locally",
+        "resize video dimensions without uploading"
       ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "verified_gsc",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/video-resizer/en/",
@@ -5143,8 +5143,8 @@
       "promise": "Resize video online to 1080p, 720p, 480p or smaller while keeping the aspect ratio. Process MP4 and common formats privately in your browser.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "gsc_page_performance_and_feature_validation_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -5170,9 +5170,9 @@
     },
     {
       "supportingQueries": [
-        "video merger online free",
-        "video merger without sign up",
-        "video merger browser tool for private media file processing"
+        "combine MP4 clips into one video locally",
+        "join several video files in a chosen order",
+        "make one video from multiple short clips"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -5189,8 +5189,8 @@
       "promise": "Merge videos online by choosing several clips, reordering them and exporting one MP4. Processing happens locally in your browser with no account.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -5216,9 +5216,9 @@
     },
     {
       "supportingQueries": [
-        "video to gif online free",
-        "video to gif without sign up",
-        "video to gif browser tool for private media file processing"
+        "turn part of an MP4 video into an animated GIF",
+        "make a GIF from a selected video time range",
+        "create an animated GIF without uploading video"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -5235,8 +5235,8 @@
       "promise": "Turn part of a video into a GIF online. Choose start and end time, width and frame rate, preview the clip and create the GIF in your browser.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -5264,10 +5264,10 @@
       "supportingQueries": [
         "free GIF to MP4 converter no watermark",
         "make an animated GIF smaller as MP4",
-        "browser GIF to MP4 converter no sign up"
+        "turn a GIF animation into a shareable MP4"
       ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "verified_gsc",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/gif-to-mp4/en/",
@@ -5281,8 +5281,8 @@
       "promise": "Convert an animated GIF to MP4 online for a smaller, easier-to-use video file. Processing happens locally in your browser with no account.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "gsc_page_performance_and_feature_validation_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -5308,9 +5308,9 @@
     },
     {
       "supportingQueries": [
-        "remove audio from video online free",
-        "remove audio from video without sign up",
-        "remove audio from video browser tool for private media file processing"
+        "mute an MP4 video without uploading it",
+        "delete sound from a video file locally",
+        "make a silent copy of a video clip"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -5327,8 +5327,8 @@
       "promise": "Remove sound from a video online and export a silent MP4. The source video is processed privately in your browser without an upload or account.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -5354,9 +5354,9 @@
     },
     {
       "supportingQueries": [
-        "add audio to video online free",
-        "add audio to video without sign up",
-        "add audio to video browser tool for private media file processing"
+        "put music over an MP4 video locally",
+        "replace video sound with another audio file",
+        "combine a silent video with an audio track"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -5373,8 +5373,8 @@
       "promise": "Add an MP3, WAV or other audio file to video online. Replace the original sound or mix both tracks, then export an MP4 privately in your browser.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -5400,9 +5400,9 @@
     },
     {
       "supportingQueries": [
-        "video speed changer online free",
-        "video speed changer without sign up",
-        "video speed changer browser tool for private media file processing"
+        "change MP4 playback speed without uploading",
+        "make a video play at 0.5x or 2x speed",
+        "create a faster or slower copy of a video"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -5419,8 +5419,8 @@
       "promise": "Change video speed online from 0.5× to 2× and keep audio in sync when available. Process the video privately in your browser and download MP4.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -5446,12 +5446,12 @@
     },
     {
       "supportingQueries": [
-        "extract JPG frames from video at intervals",
-        "save PNG frames from video as ZIP",
+        "save JPG frames from video at intervals",
+        "export PNG still images from a video as ZIP",
         "video frame extractor every 1 2 5 or 10 seconds"
       ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "verified_gsc",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/extract-frames-from-video/en/",
@@ -5465,8 +5465,8 @@
       "promise": "Extract JPG or PNG frames from a video every 1, 2, 5 or 10 seconds. Process locally in your browser and download individual images or a ZIP.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "gsc_page_performance_and_feature_validation_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -5492,9 +5492,9 @@
     },
     {
       "supportingQueries": [
-        "rotate video online free",
-        "rotate video without sign up",
-        "rotate video browser tool for private media file processing"
+        "fix a sideways MP4 video locally",
+        "turn a video clockwise or counterclockwise",
+        "rotate an upside-down video on the device"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -5511,8 +5511,8 @@
       "promise": "Rotate video online 90° clockwise, 90° counter-clockwise or 180°. Export a corrected MP4 privately in your browser with no source upload.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -5601,9 +5601,9 @@
     },
     {
       "supportingQueries": [
-        "docx to pdf online free",
-        "docx to pdf without sign up",
-        "docx to pdf browser tool for private document processing"
+        "Word to PDF converter free",
+        "convert a DOCX file to PDF privately",
+        "save a Word document as PDF online"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -5616,12 +5616,12 @@
       "pageRole": "working_tool",
       "audience": "Visitor who wants to complete this task or choose the relevant next step",
       "visitorProblem": "Needs a page that directly resolves this job without competing DJAI destinations",
-      "primaryQueryFamily": "convert DOCX to PDF in browser without upload",
+      "primaryQueryFamily": "convert Word DOCX to PDF in browser without upload",
       "promise": "Convert Word DOCX files to PDF privately with preview, paper size, margins, and optional page numbers.",
       "conversionTarget": "cam_pdf",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -5668,9 +5668,9 @@
     },
     {
       "supportingQueries": [
-        "docx to html online free",
-        "docx to html without sign up",
-        "docx to html browser tool for private document processing"
+        "turn a Word document into HTML for a website",
+        "convert DOCX headings lists and links to HTML",
+        "create sanitized HTML from a Word file"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -5687,8 +5687,8 @@
       "promise": "Turn Word documents into sanitized semantic HTML with preview, copy, and download.",
       "conversionTarget": "cam_pdf",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -5735,9 +5735,9 @@
     },
     {
       "supportingQueries": [
-        "docx to markdown online free",
-        "docx to markdown without sign up",
-        "docx to markdown browser tool for private document processing"
+        "turn a Word document into Markdown text",
+        "convert DOCX headings lists and tables to Markdown",
+        "prepare a Word file as Markdown for a repository"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -5754,8 +5754,8 @@
       "promise": "Preserve headings, lists, links, and tables in Markdown for GitHub, Cursor, Codex, and AI documentation.",
       "conversionTarget": "cam_pdf",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -5802,9 +5802,9 @@
     },
     {
       "supportingQueries": [
-        "docx to text online free",
-        "docx to text without sign up",
-        "docx to text browser tool for private document processing"
+        "convert a Word document to TXT without upload",
+        "copy text out of a DOCX file",
+        "remove Word formatting and download plain text"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -5821,8 +5821,8 @@
       "promise": "Extract plain text from Word documents locally with copy, download, and word count.",
       "conversionTarget": "cam_pdf",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -5869,9 +5869,9 @@
     },
     {
       "supportingQueries": [
-        "pdf to text online free",
-        "pdf to text without sign up",
-        "pdf to text browser tool for private document processing"
+        "convert a selectable PDF to a TXT file",
+        "copy text from a chosen PDF page range",
+        "clean PDF line breaks and download plain text"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -5888,8 +5888,8 @@
       "promise": "Extract text from selected PDF pages, clean line breaks, and download TXT without uploading the file.",
       "conversionTarget": "cam_pdf",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -5936,9 +5936,9 @@
     },
     {
       "supportingQueries": [
-        "pdf to word online free",
-        "pdf to word without sign up",
-        "pdf to word browser tool for private document processing"
+        "turn a text-based PDF into an editable DOCX",
+        "extract PDF text into a page-by-page Word file",
+        "convert PDF content to Word without exact layout claims"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -5955,8 +5955,8 @@
       "promise": "Extract editable PDF text and rebuild it as a page-by-page DOCX in your browser.",
       "conversionTarget": "cam_pdf",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -6003,9 +6003,9 @@
     },
     {
       "supportingQueries": [
-        "ocr online free",
-        "ocr without sign up",
-        "ocr browser tool for private document processing"
+        "extract text from a scanned PDF privately",
+        "convert JPG or PNG document photos to text",
+        "recognize Thai or English text from an image"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -6022,8 +6022,8 @@
       "promise": "Recognize text in scanned PDFs, JPG, and PNG files with Thai or English browser OCR.",
       "conversionTarget": "cam_pdf",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -6133,9 +6133,9 @@
     },
     {
       "supportingQueries": [
-        "token counter online free",
-        "token counter without sign up",
-        "token counter browser tool for private content processing"
+        "estimate prompt context usage from a document",
+        "count tokens words and characters in a file",
+        "check code or Markdown length for an AI context window"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -6152,8 +6152,8 @@
       "promise": "Count AI tokens, multilingual words, characters, UTF-8 bytes, and context usage from text, DOCX, PDF, Markdown, or code privately in your browser.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -6200,9 +6200,9 @@
     },
     {
       "supportingQueries": [
-        "pdf to ai markdown online free",
-        "pdf to ai markdown without sign up",
-        "pdf to ai markdown browser tool for private content processing"
+        "prepare a PDF as Markdown for AI ingestion",
+        "extract PDF pages with references into Markdown",
+        "clean repeated PDF headers for a RAG knowledge base"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -6219,8 +6219,8 @@
       "promise": "Extract PDF into Markdown with page references and cleanup for repeated headers, footers, and broken lines.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -6267,9 +6267,9 @@
     },
     {
       "supportingQueries": [
-        "context optimizer online free",
-        "context optimizer without sign up",
-        "context optimizer browser tool for private content processing"
+        "remove repeated headers and broken lines before ChatGPT",
+        "reduce unnecessary document tokens for AI",
+        "prepare cleaner source text for RAG ingestion"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -6286,8 +6286,8 @@
       "promise": "Remove repeated headers, page numbers, broken spacing, and line wraps for cleaner AI context.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -6334,9 +6334,9 @@
     },
     {
       "supportingQueries": [
-        "rag chunk calculator online free",
-        "rag chunk calculator without sign up",
-        "rag chunk calculator browser tool for private content processing"
+        "preview how a document splits into retrieval chunks",
+        "estimate embedding count from chunk size",
+        "export document chunks as JSONL for a knowledge base"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -6353,8 +6353,8 @@
       "promise": "Set chunk size and overlap, preview sections, and export JSONL for a knowledge base.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -6401,9 +6401,9 @@
     },
     {
       "supportingQueries": [
-        "prompt packager online free",
-        "prompt packager without sign up",
-        "prompt packager browser tool for private content processing"
+        "bundle code requirements and references for an AI prompt",
+        "add XML or Markdown boundaries between context files",
+        "prepare multi-file context for Codex or ChatGPT"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -6420,8 +6420,8 @@
       "promise": "Combine requirements, documentation, code, and references with XML or Markdown boundaries.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -6531,9 +6531,9 @@
     },
     {
       "supportingQueries": [
-        "csv to json online free",
-        "csv to json without sign up",
-        "csv to json browser tool for private data file processing"
+        "turn CSV rows into a JSON array locally",
+        "preview and copy JSON generated from CSV",
+        "prepare a CSV file as JSON for an API"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -6550,8 +6550,8 @@
       "promise": "Convert CSV data to JSON locally with preview, copy, and download.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -6598,9 +6598,9 @@
     },
     {
       "supportingQueries": [
-        "json to csv online free",
-        "json to csv without sign up",
-        "json to csv browser tool for private data file processing"
+        "turn API JSON data into spreadsheet columns",
+        "preview and download CSV generated from JSON",
+        "convert JSON objects to CSV without uploading data"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -6617,8 +6617,8 @@
       "promise": "Convert a JSON array into CSV columns and download the result.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -6665,9 +6665,9 @@
     },
     {
       "supportingQueries": [
-        "csv cleaner online free",
-        "csv cleaner without sign up",
-        "csv cleaner browser tool for private data file processing"
+        "clean CSV data online without upload",
+        "remove duplicate CSV rows in browser",
+        "delete blank rows from a CSV file"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -6684,8 +6684,8 @@
       "promise": "Trim whitespace, remove empty rows, and deduplicate CSV data without uploading it.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -6732,9 +6732,9 @@
     },
     {
       "supportingQueries": [
-        "merge csv online free",
-        "merge csv without sign up",
-        "merge csv browser tool for private data file processing"
+        "combine daily CSV exports into one file",
+        "join CSV files with the same headers locally",
+        "merge several CSV datasets without uploading them"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -6751,8 +6751,8 @@
       "promise": "Merge multiple CSV files by matching column names and download one result.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -6799,9 +6799,9 @@
     },
     {
       "supportingQueries": [
-        "split csv online free",
-        "split csv without sign up",
-        "split csv browser tool for private data file processing"
+        "divide CSV into smaller files for an import limit",
+        "chunk a CSV into a chosen number of rows",
+        "download split CSV parts in one ZIP"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -6818,8 +6818,8 @@
       "promise": "Split a large CSV into smaller files and download them as a ZIP.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -6866,9 +6866,9 @@
     },
     {
       "supportingQueries": [
-        "csv to xlsx online free",
-        "csv to xlsx without sign up",
-        "csv to xlsx browser tool for private data file processing"
+        "turn a CSV file into an Excel workbook",
+        "open CSV data as readable XLSX columns",
+        "convert CSV to Excel without uploading data"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -6885,8 +6885,8 @@
       "promise": "Convert CSV into an Excel workbook with readable headers and columns.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -6933,9 +6933,9 @@
     },
     {
       "supportingQueries": [
-        "xlsx to csv online free",
-        "xlsx to csv without sign up",
-        "xlsx to csv browser tool for private data file processing"
+        "choose an XLSX sheet and export it as CSV",
+        "turn Excel workbook data into a CSV file",
+        "convert XLSX to CSV without uploading the workbook"
       ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
@@ -6952,8 +6952,8 @@
       "promise": "Select a worksheet and export it as CSV in your browser.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "feature_validation_and_long_tail_serp_patterns_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {
@@ -7068,7 +7068,7 @@
         "download favicon manifest and HTML package ZIP"
       ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "verified_gsc",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/brand/favicon-generator/en/",
@@ -7082,8 +7082,8 @@
       "promise": "Generate favicon.ico from PNG, JPG, WebP, or SVG. Get Apple touch, maskable, web manifest, and HTML files free without uploading your image.",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "gsc_page_performance_and_feature_validation_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_serp_review_2026-09-07",
+      "validatedAt": "2026-09-07",
       "migrationStatus": "stable"
     },
     {

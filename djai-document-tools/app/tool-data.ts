@@ -44,33 +44,33 @@ export const categories: Record<Category, {
 export const tools: ToolDefinition[] = [
   {
     slug: "docx-to-pdf", category: "document", input: "docx",
-    label: { th: "DOCX เป็น PDF", en: "DOCX to PDF" },
-    title: { th: "แปลง DOCX เป็น PDF ฟรี", en: "Convert DOCX to PDF Free" },
+    label: { th: "DOCX เป็น PDF", en: "Word (DOCX) to PDF" },
+    title: { th: "แปลง DOCX เป็น PDF ฟรี", en: "Convert Word (DOCX) to PDF Free" },
     description: { th: "แปลงไฟล์ Word DOCX เป็น PDF แบบ private พร้อม preview เลือกขนาดกระดาษ margin และเลขหน้า", en: "Convert Word DOCX files to PDF in your browser without uploading. Preview the result and choose paper size, margins, and optional page numbers." },
-    intent: { th: "เหมาะกับเอกสารทั่วไปที่ต้องการ PDF อย่างรวดเร็วโดยไม่ upload ไฟล์", en: "Best for ordinary documents that need a quick private PDF conversion." },
+    intent: { th: "เหมาะกับเอกสารทั่วไปที่ต้องการ PDF อย่างรวดเร็วโดยไม่ upload ไฟล์", en: "Best for ordinary Word documents that need a quick private PDF conversion." },
     keywords: { th: ["DOCX เป็น PDF", "Word เป็น PDF", "แปลง Word ฟรี"], en: ["DOCX to PDF", "Word to PDF free", "private Word converter"] },
     warning: { th: "เอกสารที่มี layout ซับซ้อน ตารางลอย สมการ หรือ font เฉพาะอาจต่างจาก Word ต้นฉบับ", en: "Complex layouts, floating objects, equations, and custom fonts may differ from the original Word document." }
   },
   {
     slug: "docx-to-html", category: "document", input: "docx",
-    label: { th: "DOCX เป็น HTML", en: "DOCX to HTML" },
-    title: { th: "แปลง DOCX เป็น HTML ที่สะอาด", en: "Convert DOCX to Clean HTML" },
+    label: { th: "DOCX เป็น HTML", en: "Word (DOCX) to HTML" },
+    title: { th: "แปลง DOCX เป็น HTML ที่สะอาด", en: "Convert Word (DOCX) to Clean HTML" },
     description: { th: "แปลง Word เป็น semantic HTML ที่ผ่านการ sanitize พร้อม preview, copy และดาวน์โหลด", en: "Turn Word documents into sanitized semantic HTML with preview, copy, and download." },
     intent: { th: "เตรียมเนื้อหาสำหรับเว็บไซต์ blog CMS และ knowledge base", en: "Prepare content for websites, blogs, CMS platforms, and knowledge bases." },
     keywords: { th: ["DOCX เป็น HTML", "Word เป็น HTML", "แปลงเอกสารลงเว็บ"], en: ["DOCX to HTML", "Word to HTML", "clean Word HTML"] }
   },
   {
     slug: "docx-to-markdown", category: "document", input: "docx",
-    label: { th: "DOCX เป็น Markdown", en: "DOCX to Markdown" },
-    title: { th: "แปลง DOCX เป็น Markdown ฟรี", en: "Convert DOCX to Markdown Free" },
+    label: { th: "DOCX เป็น Markdown", en: "Word (DOCX) to Markdown" },
+    title: { th: "แปลง DOCX เป็น Markdown ฟรี", en: "Convert Word (DOCX) to Markdown Free" },
     description: { th: "รักษา heading, list, link และ table แล้วส่งออก Markdown สำหรับ GitHub, Cursor, Codex และเอกสาร AI", en: "Preserve headings, lists, links, and tables in Markdown for GitHub, Cursor, Codex, and AI documentation." },
     intent: { th: "เปลี่ยน specification และคู่มือ Word ให้พร้อมใช้กับ developer workflow", en: "Make Word specifications and guides ready for developer workflows." },
     keywords: { th: ["DOCX เป็น Markdown", "Word เป็น MD"], en: ["DOCX to Markdown", "Word to Markdown", "convert Word to MD"] }
   },
   {
     slug: "docx-to-text", category: "document", input: "docx",
-    label: { th: "DOCX เป็นข้อความ", en: "DOCX to Text" },
-    title: { th: "ดึงข้อความจาก DOCX ฟรี", en: "Extract Text from DOCX Free" },
+    label: { th: "DOCX เป็นข้อความ", en: "Word (DOCX) to Text" },
+    title: { th: "ดึงข้อความจาก DOCX ฟรี", en: "Extract Text from Word (DOCX) Free" },
     description: { th: "ดึงข้อความล้วนจาก Word ใน browser พร้อม copy, download และนับคำ", en: "Extract plain text from Word documents in your browser without uploading, then copy or download it with a word count." },
     intent: { th: "นำข้อความไปใช้ต่อโดยไม่ติด formatting จาก Word", en: "Reuse document content without Word formatting." },
     keywords: { th: ["ดึงข้อความ DOCX", "Word เป็น TXT"], en: ["DOCX to text", "Word to TXT", "extract Word text"] }
@@ -157,7 +157,7 @@ export const tools: ToolDefinition[] = [
   },
   {
     slug: "csv-cleaner", category: "spreadsheet", input: "csv",
-    label: { th: "ทำความสะอาด CSV", en: "CSV Cleaner" }, title: { th: "ทำความสะอาด CSV ฟรี", en: "Clean CSV Data Free" },
+    label: { th: "ทำความสะอาด CSV", en: "CSV Cleaner" }, title: { th: "ทำความสะอาด CSV ฟรี", en: "Remove Duplicate and Empty CSV Rows" },
     description: { th: "ตัดช่องว่าง ลบแถวว่าง และลบข้อมูลซ้ำโดยไม่ upload ไฟล์", en: "Trim whitespace, remove empty rows, and deduplicate CSV data without uploading it." },
     intent: { th: "แก้ข้อมูลก่อน import เข้า CRM, database หรือ dashboard", en: "Prepare data before importing it into a CRM, database, or dashboard." },
     keywords: { th: ["ล้างข้อมูล CSV", "ลบข้อมูลซ้ำ CSV"], en: ["CSV cleaner", "remove CSV duplicates"] }
