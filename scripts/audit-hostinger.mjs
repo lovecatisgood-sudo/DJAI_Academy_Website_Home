@@ -164,6 +164,14 @@ const publicRoutes = [
   "/Cam_PDF_Scan_Signer_QR-Gen/delete-account/",
   "/Cam_PDF_Scan_Signer_QR-Gen/guides/",
   "/Cam_PDF_Scan_Signer_QR-Gen/guides/remove-camscanner-watermark-free/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/th/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/th/remove-camscanner-watermark-free/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/vi/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/vi/remove-camscanner-watermark-free/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/zh-cn/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/zh-cn/remove-camscanner-watermark-free/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/zh-tw/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/zh-tw/remove-camscanner-watermark-free/",
   "/app-ads.txt",
   "/favicon.svg",
   "/robots.txt",
@@ -542,6 +550,14 @@ async function verify() {
     ["/Cam_PDF_Scan_Signer_QR-Gen/terms/", "2026-09-06T00:00:00.000Z"],
     ["/Cam_PDF_Scan_Signer_QR-Gen/guides/", "2026-09-07T00:00:00.000Z"],
     ["/Cam_PDF_Scan_Signer_QR-Gen/guides/remove-camscanner-watermark-free/", "2026-09-07T00:00:00.000Z"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/guides/th/", "2026-09-07T00:00:00.000Z"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/guides/th/remove-camscanner-watermark-free/", "2026-09-07T00:00:00.000Z"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/guides/vi/", "2026-09-07T00:00:00.000Z"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/guides/vi/remove-camscanner-watermark-free/", "2026-09-07T00:00:00.000Z"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/guides/zh-cn/", "2026-09-07T00:00:00.000Z"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/guides/zh-cn/remove-camscanner-watermark-free/", "2026-09-07T00:00:00.000Z"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/guides/zh-tw/", "2026-09-07T00:00:00.000Z"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/guides/zh-tw/remove-camscanner-watermark-free/", "2026-09-07T00:00:00.000Z"],
     ["/development/en/", "2026-09-02T00:00:00.000Z"]
   ]) {
     const actualLastModified = getSitemapLastModified(sitemapBody, path);
@@ -636,9 +652,14 @@ async function verify() {
     if (headings.length !== 1) failures.push(`${route}: expected one non-empty H1, received ${headings.length}`);
 
     const htmlTag = html.match(/<html\b[^>]*>/i)?.[0] || "";
-    const documentLanguage = getHtmlAttribute(htmlTag, "lang").toLowerCase().split("-")[0];
-    if (!["th", "en", "vi"].includes(documentLanguage)) {
-      failures.push(`${route}: missing a valid Thai, English, or Vietnamese html lang`);
+    const rawDocumentLanguage = getHtmlAttribute(htmlTag, "lang").toLowerCase();
+    const documentLanguage = rawDocumentLanguage.startsWith("zh-cn")
+      ? "zh-cn"
+      : rawDocumentLanguage.startsWith("zh-tw")
+        ? "zh-tw"
+        : rawDocumentLanguage.split("-")[0];
+    if (!["th", "en", "vi", "zh-cn", "zh-tw"].includes(documentLanguage)) {
+      failures.push(`${route}: missing a valid supported html lang`);
     }
 
     const linkTags = [...html.matchAll(/<link\b[^>]*>/gi)].map((match) => match[0]);
@@ -748,7 +769,15 @@ async function verify() {
     ["/Cam_PDF_Scan_Signer_QR-Gen/terms/", "Terms of Service", "en"],
     ["/Cam_PDF_Scan_Signer_QR-Gen/delete-account/", "Delete your account", "en"],
     ["/Cam_PDF_Scan_Signer_QR-Gen/guides/", "Better scans begin with better decisions", "en"],
-    ["/Cam_PDF_Scan_Signer_QR-Gen/guides/remove-camscanner-watermark-free/", "How to Remove the CamScanner Watermark for Free", "en"]
+    ["/Cam_PDF_Scan_Signer_QR-Gen/guides/remove-camscanner-watermark-free/", "How to Remove the CamScanner Watermark for Free", "en"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/guides/th/", "คู่มือ Cam PDF", "th"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/guides/th/remove-camscanner-watermark-free/", "วิธีลบลายน้ำ CamScanner ฟรี", "th"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/guides/vi/", "Hướng dẫn Cam PDF", "vi"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/guides/vi/remove-camscanner-watermark-free/", "Cách xóa watermark CamScanner miễn phí", "vi"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/guides/zh-cn/", "Cam PDF 扫描", "zh-CN"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/guides/zh-cn/remove-camscanner-watermark-free/", "扫描全能王去水印", "zh-CN"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/guides/zh-tw/", "Cam PDF 掃描", "zh-TW"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/guides/zh-tw/remove-camscanner-watermark-free/", "CamScanner 去浮水印", "zh-TW"]
   ];
   for (const [route, heading, language] of camPdfChecks) {
     const html = await fetch(`${origin}${route}`).then((response) => response.text());

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "../../../components/SiteFooter";
 import SiteHeader from "../../../components/SiteHeader";
+import { articleHeaderHrefs, articleLanguageHrefs } from "../guideRoutes";
 import styles from "./page.module.css";
 
 const APP_PATH = "/Cam_PDF_Scan_Signer_QR-Gen/";
@@ -14,7 +15,7 @@ export const metadata = {
   title: "How to Remove CamScanner Watermark for Free (2026)",
   description:
     "Learn which free CamScanner watermark options work, what to avoid, and how to make clean scans on Android or iPhone without an added app watermark.",
-  alternates: { canonical: ARTICLE_PATH },
+  alternates: { canonical: ARTICLE_PATH, languages: articleLanguageHrefs },
   openGraph: {
     title: "How to Remove the CamScanner Watermark for Free",
     description:
@@ -163,7 +164,7 @@ function SourceLink({ href, children }) {
 export default function RemoveCamScannerWatermarkGuidePage() {
   return (
     <>
-      <SiteHeader locale="en" currentRoute="camPdf" />
+      <SiteHeader locale="en" currentRoute="camPdf" languageHrefs={articleHeaderHrefs} />
       <main className={styles.page}>
         <script
           type="application/ld+json"

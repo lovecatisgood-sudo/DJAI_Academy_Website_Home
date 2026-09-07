@@ -144,6 +144,12 @@ export function languageForPath(pathname = "/") {
     return "th";
   }
   if (
+    pathname === "/Cam_PDF_Scan_Signer_QR-Gen/guides/th" ||
+    pathname.startsWith("/Cam_PDF_Scan_Signer_QR-Gen/guides/th/")
+  ) {
+    return "th";
+  }
+  if (
     pathname === "/Cam_PDF_Scan_Signer_QR-Gen" ||
     pathname.startsWith("/Cam_PDF_Scan_Signer_QR-Gen/")
   ) {

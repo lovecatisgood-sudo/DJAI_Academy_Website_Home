@@ -38,7 +38,15 @@ const corePaths = [
   "/Cam_PDF_Scan_Signer_QR-Gen/privacy/", "/Cam_PDF_Scan_Signer_QR-Gen/terms/",
   "/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/", "/Cam_PDF_Scan_Signer_QR-Gen/delete-account/",
   "/Cam_PDF_Scan_Signer_QR-Gen/guides/",
-  "/Cam_PDF_Scan_Signer_QR-Gen/guides/remove-camscanner-watermark-free/"
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/remove-camscanner-watermark-free/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/th/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/th/remove-camscanner-watermark-free/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/vi/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/vi/remove-camscanner-watermark-free/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/zh-cn/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/zh-cn/remove-camscanner-watermark-free/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/zh-tw/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/zh-tw/remove-camscanner-watermark-free/"
 ];
 
 const imageTools = [

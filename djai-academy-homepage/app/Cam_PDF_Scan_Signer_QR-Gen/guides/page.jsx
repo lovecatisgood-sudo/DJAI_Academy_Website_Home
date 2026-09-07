@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "../../components/SiteFooter";
 import SiteHeader from "../../components/SiteHeader";
+import { hubHeaderHrefs, hubLanguageHrefs } from "./guideRoutes";
 import styles from "./page.module.css";
 
 const APP_PATH = "/Cam_PDF_Scan_Signer_QR-Gen/";
@@ -13,7 +14,7 @@ export const metadata = {
   title: "Cam PDF Guides: Scanning, Signing & Clean Exports",
   description:
     "Practical Cam PDF guides for scanning, signing, organizing, compressing, and exporting clean documents on Android and iPhone.",
-  alternates: { canonical: GUIDES_PATH },
+  alternates: { canonical: GUIDES_PATH, languages: hubLanguageHrefs },
   openGraph: {
     title: "Cam PDF Guides",
     description: "Practical help for cleaner mobile document workflows.",
@@ -61,7 +62,7 @@ const structuredData = {
 export default function CamPdfGuidesPage() {
   return (
     <>
-      <SiteHeader locale="en" currentRoute="camPdf" />
+      <SiteHeader locale="en" currentRoute="camPdf" languageHrefs={hubHeaderHrefs} />
       <main className={styles.page}>
         <script
           type="application/ld+json"
