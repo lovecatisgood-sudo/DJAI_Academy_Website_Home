@@ -23,7 +23,7 @@ export type QrPageCopy = {
 
 export const qrToolCopy: Record<QrToolSlug, Record<QrLanguage, QrPageCopy>> = {
   "url-qr-code-generator": {
-    th: { mode: "url", title: "สร้าง QR Code จากลิงก์ฟรี", description: "สร้าง QR Code จาก URL หรือลิงก์เว็บไซต์ฟรี ปรับสี ลาย กรอบ และดาวน์โหลด PNG หรือ SVG โดยไม่ต้องสมัคร", keywords: ["ทำลิงก์เป็น QR Code", "สร้าง QR Code จากลิงก์", "สร้าง QR Code จาก link", "แปลง URL เป็น QR Code", "สร้าง QR Code ลิงก์ฟรี"] },
+    th: { mode: "url", title: "สร้าง QR Code จากลิงก์ฟรี ไม่ต้องสมัคร", description: "สร้าง QR Code จาก URL หรือลิงก์เว็บไซต์ฟรี ปรับสี ลาย กรอบ และดาวน์โหลด PNG หรือ SVG โดยไม่ต้องสมัคร", keywords: ["ทำลิงก์เป็น QR Code", "สร้าง QR Code จากลิงก์", "สร้าง QR Code จาก link", "แปลง URL เป็น QR Code", "สร้าง QR Code ลิงก์ฟรี"] },
     en: { mode: "url", title: "Free URL QR Code Generator", description: "Create a QR code for any URL or website link. Customize colors, patterns, and frames, then download PNG or SVG free with no sign-up.", keywords: ["URL QR code generator", "link to QR code", "free QR code", "URL QR code without sign-up"] },
     vi: { mode: "url", title: "Tạo mã QR từ URL miễn phí", description: "Chuyển URL hoặc liên kết website thành mã QR miễn phí. Tùy chỉnh màu, họa tiết và khung rồi tải PNG hoặc SVG, không cần đăng ký.", keywords: ["tạo mã QR từ URL", "chuyển link thành mã QR", "tạo QR miễn phí", "URL sang QR code"] },
     "zh-CN": { mode: "url", title: "免费网址二维码生成器", description: "把网址或网页链接生成二维码，自定义颜色、样式和边框，并免费下载 PNG 或 SVG，无需注册。", keywords: ["二维码生成器", "网址转二维码", "免费二维码"] },

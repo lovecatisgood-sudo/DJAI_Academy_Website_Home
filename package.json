@@ -23,7 +23,7 @@
     "test:commercial-intent": "node --test djai-academy-homepage/tests/commercial-intent-separation.test.mjs djai-academy-homepage/tests/portfolio-proof-routing.test.mjs",
     "test:course-interest": "node --test tests/course-interest.test.js",
     "test:seo-events": "node --test tests/seo-conversion-events.test.mjs",
-    "test:seo-program": "node --test tests/seo-program-contract.test.js tests/english-tool-search-contract.test.js tests/english-tool-metadata-opportunities.test.js",
+    "test:seo-program": "node --test tests/seo-program-contract.test.js tests/english-tool-search-contract.test.js tests/english-tool-metadata-opportunities.test.js tests/thai-tool-search-contract.test.js tests/thai-tool-metadata-opportunities.test.js",
     "test:seo-coverage": "node --test tests/keyword-ownership-coverage.test.js",
     "test:site-architecture": "node --test tests/site-architecture-contract.test.js djai-academy-homepage/tests/tool-hub-taxonomy.test.mjs && node scripts/seo/validate-site-architecture.mjs",
     "test:navigation": "node --test djai-academy-homepage/tests/header-navigation-state.test.mjs djai-academy-homepage/tests/navigation-architecture.test.mjs djai-academy-homepage/tests/homepage-conversion-hierarchy.test.mjs",

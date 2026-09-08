@@ -3,6 +3,7 @@ import { dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { enrichEnglishToolKeyword } from "./enrich-english-tool-keywords.mjs";
+import { enrichThaiToolKeyword } from "./enrich-thai-tool-keywords.mjs";
 
 const scriptDirectory = dirname(fileURLToPath(import.meta.url));
 const repositoryRoot = resolve(scriptDirectory, "../..");
@@ -168,7 +169,7 @@ const entries = inventory.routes.map((routeRecord) => {
       : "stable");
   const renderedPromise = routeRecord.description || routeRecord.h1 || routeRecord.title;
 
-  return enrichCamPdfGuideKeyword(enrichEnglishToolKeyword({
+  return enrichCamPdfGuideKeyword(enrichThaiToolKeyword(enrichEnglishToolKeyword({
     ...existing,
     supportingQueries: existing.supportingQueries || [],
     competingDjaiRoutes: existing.competingDjaiRoutes || [],
@@ -191,7 +192,7 @@ const entries = inventory.routes.map((routeRecord) => {
     evidenceSource: existing.evidenceSource || "rendered_route_inventory_2026-09-06",
     validatedAt: "2026-09-06",
     migrationStatus,
-  }));
+  })));
 });
 
 const plannedNonIndexable = ownership.entries

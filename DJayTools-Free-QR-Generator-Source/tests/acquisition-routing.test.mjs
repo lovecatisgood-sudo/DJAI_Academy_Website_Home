@@ -9,7 +9,7 @@ const vietnameseSource = await readFile(new URL("../app/vi/page.tsx", import.met
 const successSource = await readFile(new URL("../app/QrSuccessJourney.tsx", import.meta.url), "utf8").catch(() => "");
 
 test("the Thai URL page owns the link-to-QR query family with truthful output details", () => {
-  assert.match(dataSource, /title:\s*"สร้าง QR Code จากลิงก์ฟรี"/);
+  assert.match(dataSource, /title:\s*"สร้าง QR Code จากลิงก์ฟรี ไม่ต้องสมัคร"/);
   assert.match(dataSource, /description:\s*"[^"]*PNG หรือ SVG[^"]*ไม่ต้องสมัคร[^"]*"/);
   for (const query of ["ทำลิงก์เป็น QR Code", "สร้าง QR Code จาก link", "แปลง URL เป็น QR Code", "สร้าง QR Code ลิงก์ฟรี"]) {
     assert.ok(dataSource.includes(query), `missing supported variant: ${query}`);

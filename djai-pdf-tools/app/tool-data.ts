@@ -44,9 +44,9 @@ export const toolCopy: Record<Language, Record<ToolSlug, ToolCopy>> = {
     },
     "compress-pdf": {
       label: "บีบอัด PDF",
-      title: "บีบอัด PDF ลดขนาดไฟล์ฟรี",
+      title: "บีบอัด PDF ออนไลน์ ลดขนาดไฟล์ฟรี",
       short: "ลดขนาด PDF ด้วยระดับ Light, Recommended หรือ Strong",
-      description: "บีบอัด PDF และลดขนาดไฟล์ฟรีใน browser เลือกคุณภาพได้ 3 ระดับ พร้อมเปรียบเทียบขนาดก่อนดาวน์โหลด",
+      description: "บีบอัด PDF และลดขนาดไฟล์ฟรีใน browser เลือกคุณภาพได้ 3 ระดับ พร้อมเปรียบเทียบขนาดก่อนดาวน์โหลด โดยไฟล์ไม่ออกจากอุปกรณ์ของคุณ",
       keywords: ["บีบอัด PDF", "ลดขนาด PDF", "compress PDF"]
     },
     "images-to-pdf": {

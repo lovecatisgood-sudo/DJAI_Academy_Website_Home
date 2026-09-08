@@ -45,8 +45,8 @@ export const tools: ToolDefinition[] = [
   {
     slug: "docx-to-pdf", category: "document", input: "docx",
     label: { th: "DOCX เป็น PDF", en: "Word (DOCX) to PDF" },
-    title: { th: "แปลง DOCX เป็น PDF ฟรี", en: "Convert Word (DOCX) to PDF Free" },
-    description: { th: "แปลงไฟล์ Word DOCX เป็น PDF แบบ private พร้อม preview เลือกขนาดกระดาษ margin และเลขหน้า", en: "Convert Word DOCX files to PDF in your browser without uploading. Preview the result and choose paper size, margins, and optional page numbers." },
+    title: { th: "แปลง Word (DOCX) เป็น PDF ฟรี", en: "Convert Word (DOCX) to PDF Free" },
+    description: { th: "แปลงไฟล์ Word DOCX เป็น PDF ใน browser โดยไม่อัปโหลด พร้อม preview เลือกขนาดกระดาษ margin และเลขหน้า", en: "Convert Word DOCX files to PDF in your browser without uploading. Preview the result and choose paper size, margins, and optional page numbers." },
     intent: { th: "เหมาะกับเอกสารทั่วไปที่ต้องการ PDF อย่างรวดเร็วโดยไม่ upload ไฟล์", en: "Best for ordinary Word documents that need a quick private PDF conversion." },
     keywords: { th: ["DOCX เป็น PDF", "Word เป็น PDF", "แปลง Word ฟรี"], en: ["DOCX to PDF", "Word to PDF free", "private Word converter"] },
     warning: { th: "เอกสารที่มี layout ซับซ้อน ตารางลอย สมการ หรือ font เฉพาะอาจต่างจาก Word ต้นฉบับ", en: "Complex layouts, floating objects, equations, and custom fonts may differ from the original Word document." }
@@ -95,8 +95,8 @@ export const tools: ToolDefinition[] = [
   {
     slug: "ocr", category: "document", input: "mixed",
     label: { th: "OCR เอกสาร", en: "Document OCR" },
-    title: { th: "OCR PDF และรูปภาพเป็นข้อความ", en: "OCR PDF and Images to Text" },
-    description: { th: "อ่านข้อความจาก PDF scan, JPG และ PNG ด้วย OCR ภาษาไทยหรืออังกฤษใน browser", en: "Recognize text in scanned PDFs, JPG, and PNG files with Thai or English browser OCR." },
+    title: { th: "OCR ภาษาไทย: แปลง PDF สแกนและรูปเป็นข้อความ", en: "OCR PDF and Images to Text" },
+    description: { th: "ใช้ OCR ภาษาไทยหรืออังกฤษ แปลง PDF สแกน JPG และ PNG เป็นข้อความที่ค้นหาและ copy ได้ใน browser", en: "Recognize text in scanned PDFs, JPG, and PNG files with Thai or English browser OCR." },
     intent: { th: "แปลงเอกสาร scan ใบเสร็จ และรูปถ่ายให้ค้นหาและ copy ข้อความได้", en: "Turn scans, receipts, and document photos into searchable, copyable text." },
     keywords: { th: ["OCR ภาษาไทย", "PDF scan เป็นข้อความ", "รูปเป็นข้อความ"], en: ["PDF OCR", "image to text", "Thai OCR", "scanned PDF to text"] },
     warning: { th: "OCR ใช้ CPU ของอุปกรณ์และความแม่นยำขึ้นกับความคมชัดของต้นฉบับ", en: "OCR uses device CPU and accuracy depends on source image quality." }

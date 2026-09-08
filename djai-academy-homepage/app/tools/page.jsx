@@ -115,12 +115,12 @@ const tools = [
 const comingSoon = ["High-fidelity Office conversion"];
 
 const popularWorkflows = [
-  ["ลบพื้นหลังรูป", "สร้าง PNG โปร่งใสใน browser", "https://www.djai.academy/tools/resizeimg/remove-background-image/"],
+  ["ลบพื้นหลัง JPG PNG หรือ WebP", "ดาวน์โหลด PNG พื้นหลังโปร่งใส ไม่มีลายน้ำ", "https://www.djai.academy/tools/resizeimg/remove-background-image/"],
   ["JPG เป็น PNG", "แปลงไฟล์รูปโดยไม่ upload", "https://www.djai.academy/tools/resizeimg/jpg-to-png/"],
   ["HEIC เป็น JPG", "แปลงรูปจาก iPhone ใน browser", "https://www.djai.academy/tools/resizeimg/heic-to-jpg/"],
   ["ลดรูปใกล้ 100 KB", "เตรียมรูปสำหรับแบบฟอร์ม", "https://www.djai.academy/tools/resizeimg/image-to-100kb/"],
-  ["JPG เป็น PDF", "รวมรูปหลายหน้าเป็น PDF", "https://www.djai.academy/tools/PDFTools/jpg-to-pdf/"],
-  ["PDF เป็น JPG", "ส่งออกทุกหน้าเป็นรูปหรือ ZIP", "https://www.djai.academy/tools/PDFTools/pdf-to-jpg/"],
+  ["บีบอัด PDF และลดขนาดไฟล์", "เลือกคุณภาพและเปรียบเทียบขนาดก่อนดาวน์โหลด", "https://www.djai.academy/tools/PDFTools/compress-pdf/"],
+  ["สร้าง QR Code จากลิงก์", "ปรับรูปแบบแล้วดาวน์โหลด PNG หรือ SVG", "https://www.djai.academy/tools/qrgen/url-qr-code-generator/"],
   ["MP4 เป็น MP3", "ดึงเสียงจากวิดีโอใน browser", "https://www.djai.academy/tools/media/mp4-to-mp3/"],
   ["บีบอัดวิดีโอ", "ลดขนาด MP4 MOV และ WebM", "https://www.djai.academy/tools/media/compress-video/"],
   ["แปลงวิดีโอ", "เปลี่ยนระหว่าง MP4 MOV MKV WebM และ AVI", "https://www.djai.academy/tools/media/video-converter/"],
@@ -128,8 +128,8 @@ const popularWorkflows = [
   ["ดึงภาพจากวิดีโอ", "สร้าง JPG หรือ PNG พร้อมดาวน์โหลด ZIP", "https://www.djai.academy/tools/media/extract-frames-from-video/"],
   ["รวมวิดีโอ", "เรียงหลายคลิปแล้วรวมเป็น MP4", "https://www.djai.academy/tools/media/video-merger/"],
   ["แปลงวิดีโอเป็นข้อความ", "ถอดเสียงด้วย AI ใน browser ไม่ต้องสมัคร", "https://www.djai.academy/tools/video-to-text/"],
-  ["DOCX เป็น PDF", "แปลง Word แบบ private", "https://www.djai.academy/tools/document/docx-to-pdf/"],
-  ["PDF เป็นข้อความ", "ดึงข้อความตามช่วงหน้า", "https://www.djai.academy/tools/document/pdf-to-text/"],
+  ["แปลง Word (DOCX) เป็น PDF", "ดูตัวอย่างและตั้งค่าหน้าก่อนดาวน์โหลด", "https://www.djai.academy/tools/document/docx-to-pdf/"],
+  ["OCR ภาษาไทยจาก PDF สแกนหรือรูปภาพ", "ดึงข้อความไทยหรืออังกฤษจาก JPG PNG และ PDF", "https://www.djai.academy/tools/document/ocr/"],
   ["นับ Token เอกสาร", "ตรวจ context ก่อนใช้กับ AI", "https://www.djai.academy/tools/ai/token-counter/"],
   ["CSV เป็น JSON", "เตรียมข้อมูลสำหรับ API", "https://www.djai.academy/tools/spreadsheet/csv-to-json/"]
 ];

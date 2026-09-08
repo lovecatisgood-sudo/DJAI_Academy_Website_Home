@@ -706,9 +706,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "ถอดเสียงจากวิดีโอเป็นข้อความภาษาไทย",
+        "แปลงไฟล์ MP4 เป็นข้อความออนไลน์",
+        "ถอดคำพูดจากคลิปวิดีโอโดยไม่ต้องสร้างบัญชี"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/video-to-text/",
@@ -718,12 +722,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "แปลงวิดีโอเป็นข้อความ โดยไม่ต้องสร้างบัญชี",
+      "primaryQueryFamily": "แปลงวิดีโอเป็นข้อความภาษาไทยออนไลน์ฟรี",
       "promise": "แปลงวิดีโอเป็นข้อความด้วย AI ใน browser ของคุณ ฟรี ไม่ต้องสมัครสมาชิก ไม่ต้องใช้อีเมล และไม่อัปโหลดไฟล์ไปยัง DJAI ส่งออกเป็น TXT, SRT, VTT หรือ JSON ได้",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -1279,7 +1283,11 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยน URL เว็บไซต์เป็น QR Code",
+        "ทำลิงก์เป็นคิวอาร์โค้ดแล้วดาวน์โหลด PNG",
+        "สร้าง QR Code จาก link เป็นไฟล์ SVG"
+      ],
       "competingDjaiRoutes": [],
       "evidenceStatus": "directional_external",
       "indexable": true,
@@ -1288,15 +1296,15 @@
       "cluster": "qr",
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการสร้าง QR Code ประเภทนี้และดาวน์โหลดทันที",
-      "primaryQueryFamily": "ทำลิงก์เป็น QR Code",
+      "primaryQueryFamily": "สร้าง QR Code จากลิงก์ฟรีโดยไม่ต้องสมัคร",
       "promise": "Create a downloadable QR code for a website link.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/qrgen/url-qr-code-generator/",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -1346,24 +1354,28 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "ทำคิวอาร์โค้ดรหัส WiFi ให้แขกสแกน",
+        "สร้าง QR WiFi ฟรีสำหรับร้านหรือบ้าน",
+        "แชร์รหัสผ่าน WiFi ด้วย QR Code"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/qrgen/wifi-qr-code-generator/",
       "locale": "th",
       "cluster": "qr",
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการสร้าง QR Code ประเภทนี้และดาวน์โหลดทันที",
-      "primaryQueryFamily": "สร้าง QR Code WiFi",
+      "primaryQueryFamily": "สร้าง QR Code WiFi จากชื่อเครือข่ายและรหัสผ่าน",
       "promise": "Create a scannable Wi-Fi connection code.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/qrgen/wifi-qr-code-generator/",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -1413,24 +1425,28 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "ทำ QR Code บันทึกเบอร์โทรและอีเมล",
+        "สร้างคิวอาร์โค้ดข้อมูลผู้ติดต่อ",
+        "ทำ QR นามบัตรให้สแกนบันทึกรายชื่อ"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/qrgen/vcard-qr-code-generator/",
       "locale": "th",
       "cluster": "qr",
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการสร้าง QR Code ประเภทนี้และดาวน์โหลดทันที",
-      "primaryQueryFamily": "สร้าง vCard QR Code",
+      "primaryQueryFamily": "สร้าง vCard QR Code สำหรับนามบัตรดิจิทัลฟรี",
       "promise": "Create a QR code that saves contact details.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/qrgen/vcard-qr-code-generator/",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -1480,24 +1496,28 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยนข้อความเป็นคิวอาร์โค้ด",
+        "ทำ QR Code สำหรับข้อความหรือหมายเลขอ้างอิง",
+        "สร้าง text QR Code แล้วดาวน์โหลด PNG"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/qrgen/text-qr-code-generator/",
       "locale": "th",
       "cluster": "qr",
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการสร้าง QR Code ประเภทนี้และดาวน์โหลดทันที",
-      "primaryQueryFamily": "สร้าง QR Code จากข้อความ",
+      "primaryQueryFamily": "สร้าง QR Code จากข้อความฟรีออนไลน์",
       "promise": "Create a downloadable QR code from short text.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/qrgen/text-qr-code-generator/",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -1547,24 +1567,28 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "ทำ QR Code เปิดอีเมลถึงผู้รับที่กำหนด",
+        "สร้าง mailto QR Code สำหรับนามบัตร",
+        "ทำคิวอาร์โค้ดส่งอีเมลพร้อมข้อความสำเร็จรูป"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/qrgen/email-qr-code-generator/",
       "locale": "th",
       "cluster": "qr",
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการสร้าง QR Code ประเภทนี้และดาวน์โหลดทันที",
-      "primaryQueryFamily": "สร้าง Email QR Code",
+      "primaryQueryFamily": "สร้าง Email QR Code พร้อมหัวข้อและข้อความฟรี",
       "promise": "Create a QR code that opens a prepared email.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/qrgen/email-qr-code-generator/",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -1614,24 +1638,28 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "ทำคิวอาร์โค้ด WhatsApp จากเบอร์โทร",
+        "เปลี่ยนลิงก์ wa.me เป็น QR Code",
+        "สร้าง QR เปิดแชต WhatsApp สำหรับลูกค้า"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/qrgen/whatsapp-qr-code-generator/",
       "locale": "th",
       "cluster": "qr",
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการสร้าง QR Code ประเภทนี้และดาวน์โหลดทันที",
-      "primaryQueryFamily": "สร้าง WhatsApp QR Code",
+      "primaryQueryFamily": "สร้าง WhatsApp QR Code เปิดแชตพร้อมข้อความ",
       "promise": "Create a QR code that opens a WhatsApp conversation.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/qrgen/whatsapp-qr-code-generator/",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -1681,24 +1709,28 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "ทำคิวอาร์โค้ดแบรนด์พร้อมโลโก้ตรงกลาง",
+        "สร้าง custom QR Code ดาวน์โหลด PNG หรือ SVG",
+        "ใส่โลโก้ใน QR Code โดยประมวลผลในเบราว์เซอร์"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/qrgen/qr-code-generator-with-logo/",
       "locale": "th",
       "cluster": "qr",
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการสร้าง QR Code ประเภทนี้และดาวน์โหลดทันที",
-      "primaryQueryFamily": "สร้าง QR Code ใส่โลโก้",
+      "primaryQueryFamily": "สร้าง QR Code ใส่โลโก้ฟรีออนไลน์",
       "promise": "Create and download a branded QR code with a centered logo.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/qrgen/qr-code-generator-with-logo/",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -1811,9 +1843,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยนไฟล์ JPEG เป็น PNG ออนไลน์",
+        "แปลง JPG เป็น PNG โดยไม่ต้องอัปโหลด",
+        "JPG to PNG converter ภาษาไทยฟรี"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/jpg-to-png/",
@@ -1823,12 +1859,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "แปลง JPG เป็น PNG ฟรี",
+      "primaryQueryFamily": "แปลงรูป JPG เป็น PNG ฟรีในเบราว์เซอร์",
       "promise": "แปลงรูป JPG เป็น PNG ฟรีใน browser โดยไม่อัปโหลดไฟล์ ไม่ต้องสมัคร และไม่มี watermark",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -1878,9 +1914,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยนรูป PNG เป็น JPEG พื้นหลังสีขาว",
+        "แปลง PNG โปร่งใสเป็น JPG ออนไลน์",
+        "PNG to JPG ปรับคุณภาพก่อนดาวน์โหลด"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/png-to-jpg/",
@@ -1890,12 +1930,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "แปลง PNG เป็น JPG ฟรี",
+      "primaryQueryFamily": "แปลง PNG เป็น JPG ฟรีพร้อมลดขนาดไฟล์",
       "promise": "แปลง PNG เป็น JPG ฟรี พร้อมปรับคุณภาพและลดขนาดไฟล์ใน browser โดยรูปไม่ถูกอัปโหลด",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -1945,9 +1985,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยน JPEG เป็น WebP ฟรีออนไลน์",
+        "แปลงรูป JPG เป็น WebP พร้อมปรับคุณภาพ",
+        "JPG to WebP converter สำหรับเว็บ"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/jpg-to-webp/",
@@ -1957,12 +2001,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "แปลง JPG เป็น WebP ฟรี",
+      "primaryQueryFamily": "แปลง JPG เป็น WebP เพื่อลดขนาดรูปเว็บไซต์",
       "promise": "แปลง JPG เป็น WebP ฟรี เพื่อรูปเว็บไซต์ที่โหลดเร็วขึ้น พร้อมควบคุมคุณภาพใน browser",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -2012,9 +2056,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยนไฟล์ PNG เป็น WebP ฟรีออนไลน์",
+        "ลดขนาด PNG ด้วยการแปลงเป็น WebP",
+        "PNG to WebP converter สำหรับเว็บไซต์"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/png-to-webp/",
@@ -2024,12 +2072,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "แปลง PNG เป็น WebP ฟรี",
+      "primaryQueryFamily": "แปลง PNG เป็น WebP โดยรักษาพื้นหลังโปร่งใส",
       "promise": "แปลง PNG เป็น WebP ฟรี รักษาพื้นโปร่งใสและลดขนาดไฟล์โดยประมวลผลใน browser",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -2079,9 +2127,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยนรูป WebP เป็น JPEG ฟรี",
+        "แปลงไฟล์ WebP เป็น JPG พร้อมปรับคุณภาพ",
+        "WebP to JPG converter ภาษาไทย"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/webp-to-jpg/",
@@ -2091,12 +2143,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "แปลง WebP เป็น JPG ฟรี",
+      "primaryQueryFamily": "แปลง WebP เป็น JPG สำหรับแบบฟอร์มออนไลน์",
       "promise": "แปลง WebP เป็น JPG ฟรีสำหรับระบบหรือโปรแกรมที่ต้องการ JPG โดยไม่อัปโหลดรูป",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -2146,9 +2198,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยนรูป WebP เป็น PNG ฟรีออนไลน์",
+        "แปลง WebP เป็น PNG สำหรับงานออกแบบ",
+        "WebP to PNG converter ไม่ต้องอัปโหลด"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/webp-to-png/",
@@ -2158,12 +2214,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "แปลง WebP เป็น PNG ฟรี",
+      "primaryQueryFamily": "แปลง WebP เป็น PNG พร้อมรักษาพื้นโปร่งใส",
       "promise": "แปลง WebP เป็น PNG ฟรีสำหรับงานออกแบบ โดยไฟล์อยู่ในอุปกรณ์และไม่ถูกอัปโหลด",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -2213,9 +2269,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "ลดขนาดไฟล์รูปสำหรับอัปโหลดแบบฟอร์ม",
+        "ย่อไฟล์ภาพออนไลน์พร้อมกำหนดขนาด KB",
+        "บีบอัดรูปให้ไฟล์เล็กลงโดยปรับคุณภาพ"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/compress-image/",
@@ -2225,12 +2285,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "บีบอัดรูปและลดขนาดไฟล์ฟรี",
+      "primaryQueryFamily": "บีบอัดรูป JPG PNG WebP ให้ใกล้ขนาด KB ที่ต้องการ",
       "promise": "บีบอัดรูป JPG PNG และ WebP ให้ใกล้ขนาด KB ที่ต้องการ ฟรีและเป็นส่วนตัวใน browser",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -2280,9 +2340,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "ย่อรูปโดยไม่ทำให้ภาพเสียสัดส่วน",
+        "resize รูปตามความกว้างและความสูง pixel",
+        "ปรับขนาดภาพสำหรับโซเชียลมีเดีย"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/resize-image/",
@@ -2292,12 +2356,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "Resize และย่อรูปออนไลน์ฟรี",
+      "primaryQueryFamily": "ปรับขนาดรูปตามพิกเซลหรือเปอร์เซ็นต์ออนไลน์ฟรี",
       "promise": "Resize รูปตาม pixel เปอร์เซ็นต์ หรือ preset สำหรับ social media ฟรี พร้อมล็อกอัตราส่วนภาพ",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -2347,9 +2411,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "บีบอัด JPG ให้ไม่เกินประมาณ 100 KB",
+        "ย่อรูป PNG ใกล้ 100 KB ออนไลน์",
+        "ลดไฟล์ภาพสำหรับแบบฟอร์มจำกัด 100 KB"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/image-to-100kb/",
@@ -2359,12 +2427,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "ลดขนาดรูปให้ใกล้ 100 KB",
+      "primaryQueryFamily": "ลดขนาดรูปให้ใกล้ 100 KB สำหรับสมัครงาน",
       "promise": "บีบอัด JPG PNG หรือ WebP ให้ใกล้ 100 KB ฟรี เหมาะกับแบบฟอร์มสมัครงานและระบบอัปโหลดไฟล์",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -2414,9 +2482,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "บีบอัด JPG ให้ไม่เกินประมาณ 500 KB",
+        "ย่อรูป PNG ใกล้ 500 KB ออนไลน์",
+        "ลดไฟล์ภาพสำหรับอีเมลจำกัด 500 KB"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/image-to-500kb/",
@@ -2426,12 +2498,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "ลดขนาดรูปให้ใกล้ 500 KB",
+      "primaryQueryFamily": "ลดขนาดรูปให้ใกล้ 500 KB สำหรับอัปโหลด",
       "promise": "บีบอัด JPG PNG หรือ WebP ให้ใกล้ 500 KB ฟรีใน browser เหมาะกับอีเมล เว็บไซต์ และแบบฟอร์ม",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -2481,9 +2553,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยนไฟล์ HEIF เป็น JPEG ออนไลน์",
+        "แปลง HEIC เป็น JPG สำหรับอัปโหลดแบบฟอร์ม",
+        "เปิดและแปลงรูป iPhone เป็น JPG ในเบราว์เซอร์"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/heic-to-jpg/",
@@ -2493,12 +2569,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "แปลง HEIC เป็น JPG ฟรี",
+      "primaryQueryFamily": "แปลงรูป HEIC จาก iPhone เป็น JPG ฟรี",
       "promise": "แปลงรูป HEIC และ HEIF จาก iPhone เป็น JPG ฟรีใน browser โดยไม่อัปโหลดรูป",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -2548,9 +2624,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "ลบ EXIF GPS ออกจากไฟล์ JPG",
+        "ลบข้อมูลกล้องจากรูปก่อนแชร์",
+        "ตรวจและลบ metadata รูป PNG WebP HEIC"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/remove-image-metadata/",
@@ -2560,12 +2640,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "ลบ Metadata จากรูปภาพฟรี",
+      "primaryQueryFamily": "ลบ metadata และข้อมูลตำแหน่งจากรูปภาพฟรี",
       "promise": "ลบ EXIF และ metadata จาก JPG PNG WebP หรือ HEIC ด้วยการสร้างสำเนาใหม่ใน browser โดยไม่ upload รูป",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -2615,9 +2695,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "ลบพื้นหลัง PNG ออนไลน์แล้วดาวน์โหลดพื้นโปร่งใส",
+        "ลบพื้นหลัง JPG ฟรีไม่มีลายน้ำ",
+        "ตัดพื้นหลังรูปสินค้าเป็น PNG โปร่งใส"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/remove-background-image/",
@@ -2627,12 +2711,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "ลบพื้นหลังรูปฟรี",
+      "primaryQueryFamily": "ลบพื้นหลังรูป JPG PNG หรือ WebP ฟรีไม่ต้องอัปโหลด",
       "promise": "ลบพื้นหลังรูป JPG, PNG, WebP, HEIC หรือ HEIF ฟรีใน browser แล้วดาวน์โหลด PNG พื้นหลังโปร่งใส",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -2682,9 +2766,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "บีบอัด JPG ให้ไม่เกินประมาณ 200 KB",
+        "ย่อรูป PNG ใกล้ 200 KB ออนไลน์",
+        "ปรับขนาดไฟล์ภาพสำหรับระบบจำกัด 200 KB"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/resize-image-to-200kb/",
@@ -2694,12 +2782,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "ลดขนาดรูปให้ใกล้ 200 KB",
+      "primaryQueryFamily": "ลดขนาดรูปให้ใกล้ 200 KB สำหรับแบบฟอร์มออนไลน์",
       "promise": "ลดขนาด JPG PNG WebP หรือ AVIF ให้ใกล้ 200 KB ฟรีสำหรับแบบฟอร์ม อีเมล และเว็บไซต์ โดยประมวลผลใน browser",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -2749,9 +2837,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยนรูป AVIF เป็น JPEG ฟรีออนไลน์",
+        "แปลง AVIF เป็น JPG พร้อมปรับคุณภาพ",
+        "AVIF to JPG converter ในเบราว์เซอร์"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/avif-to-jpg/",
@@ -2761,12 +2853,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "แปลง AVIF เป็น JPG ฟรี",
+      "primaryQueryFamily": "แปลง AVIF เป็น JPG สำหรับโปรแกรมที่ไม่รองรับ",
       "promise": "แปลงรูป AVIF เป็น JPG สำหรับแบบฟอร์ม ระบบเก่า อีเมล และเว็บไซต์ที่ต้องการไฟล์ภาพถ่ายขนาดเล็ก โดยไม่อัปโหลดรูป",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -2816,9 +2908,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยนรูป AVIF เป็น PNG ฟรีออนไลน์",
+        "แปลง AVIF เป็น PNG สำหรับโลโก้และกราฟิก",
+        "AVIF to PNG converter ในเบราว์เซอร์"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/avif-to-png/",
@@ -2828,12 +2924,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "แปลง AVIF เป็น PNG ฟรี",
+      "primaryQueryFamily": "แปลง AVIF เป็น PNG พร้อมรักษาพื้นโปร่งใส",
       "promise": "แปลง AVIF เป็น PNG สำหรับโลโก้ กราฟิก ภาพหน้าจอ และงานออกแบบที่ต้องรักษาพื้นโปร่งใส โดยประมวลผลใน browser",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -2883,9 +2979,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "ครอปรูปถ่ายเอกสารให้ได้สัดส่วน 35x45",
+        "resize รูป passport ฟรีก่อนพิมพ์",
+        "จัดรูปถ่ายวีซ่าพื้นหลังตามไฟล์ต้นฉบับ"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/resizeimg/passport-photo-resizer/",
@@ -2895,12 +2995,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "Resize และครอปรูปพาสปอร์ตฟรี",
+      "primaryQueryFamily": "ปรับขนาดรูปพาสปอร์ต 35 คูณ 45 มม ออนไลน์",
       "promise": "ครอปรูปพาสปอร์ตเป็นสัดส่วน 35 × 45 มม. ที่ 413 × 531 px หรือเลือก US 2 × 2 นิ้ว 600 × 600 px ฟรีใน browser",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -2992,24 +3092,28 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "รวม PDF ออนไลน์ตามลำดับที่เลือก",
+        "ต่อไฟล์ PDF โดยไม่ต้องอัปโหลดเอกสาร",
+        "merge PDF หลายเอกสารในเบราว์เซอร์"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/merge-pdf/",
       "locale": "th",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงาน PDF นี้ให้เสร็จใน browser",
-      "primaryQueryFamily": "รวมไฟล์ PDF",
+      "primaryQueryFamily": "รวมไฟล์ PDF หลายไฟล์เป็นไฟล์เดียวฟรี",
       "promise": "Combine several PDFs in a chosen order.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/merge-pdf/",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -3038,26 +3142,30 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "แบ่ง PDF เป็นหลายไฟล์ออนไลน์ฟรี",
+        "split PDF ตามเลขหน้าที่กำหนด",
+        "แยกเอกสาร PDF ยาวเป็นชุดหน้า"
+      ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/extract-pdf-pages/"
       ],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/split-pdf/",
       "locale": "th",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงาน PDF นี้ให้เสร็จใน browser",
-      "primaryQueryFamily": "แยกหน้า PDF",
+      "primaryQueryFamily": "แยกไฟล์ PDF ตามช่วงหน้าหรือทุก N หน้า",
       "promise": "Split a PDF by ranges or selected pages.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/split-pdf/",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -3088,24 +3196,28 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "ลดขนาดไฟล์ PDF สำหรับอีเมลหรืออัปโหลด",
+        "ทำ PDF ให้ไฟล์เล็กลงออนไลน์ฟรี",
+        "compress PDF พร้อมเลือกระดับคุณภาพ"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/compress-pdf/",
       "locale": "th",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงาน PDF นี้ให้เสร็จใน browser",
-      "primaryQueryFamily": "ลดขนาดไฟล์ PDF",
+      "primaryQueryFamily": "บีบอัด PDF และลดขนาดไฟล์ฟรีในเบราว์เซอร์",
       "promise": "Reduce PDF file size with selectable compression levels.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/compress-pdf/",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -3134,7 +3246,11 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "แปลงหลายรูปเป็น PDF ออนไลน์ฟรี",
+        "สร้าง PDF จากรูปพร้อมเรียงลำดับหน้า",
+        "รวมภาพถ่ายเอกสารเป็น PDF ในเบราว์เซอร์"
+      ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/jpg-to-pdf/",
         "/tools/PDFTools/png-to-pdf/",
@@ -3147,15 +3263,15 @@
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงาน PDF นี้ให้เสร็จใน browser",
-      "primaryQueryFamily": "รวมรูปเป็น PDF",
+      "primaryQueryFamily": "รวมรูป JPG PNG หรือ WebP เป็น PDF ไฟล์เดียว",
       "promise": "Arrange several images and create one PDF without sending the files to DJAI.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/images-to-pdf/",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -3188,27 +3304,31 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยน PDF เป็นรูปภาพหลายหน้าแล้วโหลด ZIP",
+        "ส่งออกหน้า PDF เป็นภาพความละเอียดสูง",
+        "PDF to images converter ฟรีออนไลน์"
+      ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/pdf-to-jpg/",
         "/tools/PDFTools/pdf-to-png/"
       ],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/pdf-to-images/",
       "locale": "th",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงาน PDF นี้ให้เสร็จใน browser",
-      "primaryQueryFamily": "แปลง PDF เป็นรูปภาพ",
+      "primaryQueryFamily": "แปลงทุกหน้า PDF เป็นรูป JPG หรือ PNG",
       "promise": "Export PDF pages as JPG or PNG images.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/pdf-to-images/",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -3240,24 +3360,28 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "หมุน PDF เฉพาะหน้าที่เลือก 90 องศา",
+        "แก้หน้าเอกสาร PDF เอียงหรือกลับหัว",
+        "rotate PDF pages ในเบราว์เซอร์"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/rotate-pdf/",
       "locale": "th",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงาน PDF นี้ให้เสร็จใน browser",
-      "primaryQueryFamily": "หมุนหน้า PDF",
+      "primaryQueryFamily": "หมุนหน้า PDF ที่กลับด้านออนไลน์ฟรี",
       "promise": "Rotate all or selected PDF pages.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/rotate-pdf/",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -3286,24 +3410,28 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เพิ่ม watermark รูปภาพลงบนหน้า PDF",
+        "ใส่ชื่อบริษัทใน PDF ปรับตำแหน่งและความโปร่งใส",
+        "ประทับลายน้ำ PDF ออนไลน์ทุกหน้า"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/watermark-pdf/",
       "locale": "th",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงาน PDF นี้ให้เสร็จใน browser",
-      "primaryQueryFamily": "ใส่ลายน้ำใน PDF",
+      "primaryQueryFamily": "ใส่ลายน้ำข้อความหรือโลโก้ใน PDF ฟรี",
       "promise": "Place a text or image watermark on a PDF.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/watermark-pdf/",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -3332,24 +3460,28 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "ล็อก PDF ด้วย password ออนไลน์ฟรี",
+        "ป้องกันการพิมพ์คัดลอกหรือแก้ไข PDF",
+        "เข้ารหัส PDF ในเบราว์เซอร์โดยไม่อัปโหลด"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/protect-pdf/",
       "locale": "th",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงาน PDF นี้ให้เสร็จใน browser",
-      "primaryQueryFamily": "ใส่รหัสผ่าน PDF",
+      "primaryQueryFamily": "ใส่รหัสผ่านและเข้ารหัสไฟล์ PDF ด้วย AES 256",
       "promise": "Protect a PDF with a password and document permissions.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/protect-pdf/",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -3378,27 +3510,31 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "จัดหน้า PDF ใหม่ด้วยภาพตัวอย่าง",
+        "organize PDF pages ก่อนดาวน์โหลดไฟล์ใหม่",
+        "แก้ลำดับหน้าเอกสาร PDF ออนไลน์"
+      ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/delete-pages-from-pdf/",
         "/tools/PDFTools/reorder-pdf-pages/"
       ],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/organize-pdf/",
       "locale": "th",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงาน PDF นี้ให้เสร็จใน browser",
-      "primaryQueryFamily": "จัดเรียงหน้า PDF",
+      "primaryQueryFamily": "จัดเรียงลบและหมุนหน้า PDF ในหน้าจอเดียว",
       "promise": "Reorder PDF pages and omit unwanted pages.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/organize-pdf/",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -3430,24 +3566,28 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เพิ่มหมายเลขหน้าที่หัวหรือท้าย PDF",
+        "ใส่ page number เริ่มจากเลขที่กำหนด",
+        "เพิ่มเลขหน้าทุกหน้าหรือช่วงหน้า PDF"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/add-page-numbers/",
       "locale": "th",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงาน PDF นี้ให้เสร็จใน browser",
-      "primaryQueryFamily": "ใส่เลขหน้า PDF",
+      "primaryQueryFamily": "ใส่เลขหน้าในไฟล์ PDF ออนไลน์ฟรี",
       "promise": "Add page numbers with position and starting-number controls.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/add-page-numbers/",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -3476,24 +3616,28 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "ตรวจและลบข้อมูลส่วนตัวใน PDF ฟรี",
+        "ลบ author และ application จากไฟล์ PDF",
+        "ทำความสะอาด PDF metadata ก่อนแชร์"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/remove-pdf-metadata/",
       "locale": "th",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงาน PDF นี้ให้เสร็จใน browser",
-      "primaryQueryFamily": "ลบข้อมูล Metadata PDF",
+      "primaryQueryFamily": "ลบ metadata ผู้สร้างและชื่อเรื่องออกจาก PDF",
       "promise": "Create a copy with identifying PDF metadata removed.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/remove-pdf-metadata/",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -3522,26 +3666,30 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยนรูป JPEG เป็น PDF ออนไลน์ฟรี",
+        "สร้าง PDF หนึ่งหน้าจากรูป JPG",
+        "JPG to PDF converter ไม่ต้องอัปโหลด"
+      ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/images-to-pdf/"
       ],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/jpg-to-pdf/",
       "locale": "th",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ค้นหางาน PDF ด้วยรูปแบบหรือผลลัพธ์เฉพาะ",
-      "primaryQueryFamily": "แปลง JPG เป็น PDF",
+      "primaryQueryFamily": "แปลง JPG เป็น PDF พร้อมเลือกขนาดหน้ากระดาษ",
       "promise": "Convert and arrange JPG images as a PDF.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/jpg-to-pdf/",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -3572,26 +3720,30 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยน PDF เป็น JPEG ออนไลน์ฟรี",
+        "ส่งออกแต่ละหน้า PDF เป็น JPG",
+        "PDF to JPG converter ในเบราว์เซอร์"
+      ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/pdf-to-images/"
       ],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/pdf-to-jpg/",
       "locale": "th",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ค้นหางาน PDF ด้วยรูปแบบหรือผลลัพธ์เฉพาะ",
-      "primaryQueryFamily": "แปลง PDF เป็น JPG",
+      "primaryQueryFamily": "แปลงหน้า PDF เป็นรูป JPG คุณภาพสูง",
       "promise": "Export PDF pages specifically as JPG images.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/pdf-to-jpg/",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -3622,26 +3774,30 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยนรูป PNG เป็น PDF ออนไลน์ฟรี",
+        "สร้าง PDF จากภาพ PNG โปร่งใส",
+        "PNG to PDF converter ไม่ต้องอัปโหลด"
+      ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/images-to-pdf/"
       ],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/png-to-pdf/",
       "locale": "th",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ค้นหางาน PDF ด้วยรูปแบบหรือผลลัพธ์เฉพาะ",
-      "primaryQueryFamily": "แปลง PNG เป็น PDF",
+      "primaryQueryFamily": "แปลง PNG เป็น PDF พร้อมรักษาสัดส่วนรูป",
       "promise": "Convert and arrange PNG images as a PDF.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/png-to-pdf/",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -3672,26 +3828,30 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยน WebP เป็นเอกสาร PDF หนึ่งหน้า",
+        "สร้าง PDF จากรูป WebP ในเบราว์เซอร์",
+        "WebP to PDF converter ภาษาไทย"
+      ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/images-to-pdf/"
       ],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/webp-to-pdf/",
       "locale": "th",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ค้นหางาน PDF ด้วยรูปแบบหรือผลลัพธ์เฉพาะ",
-      "primaryQueryFamily": "แปลง WebP เป็น PDF",
+      "primaryQueryFamily": "แปลงรูป WebP เป็น PDF ออนไลน์ฟรี",
       "promise": "Convert and arrange WebP images as a PDF.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/webp-to-pdf/",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -3722,26 +3882,30 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยน PDF เป็นรูป PNG ออนไลน์ฟรี",
+        "ส่งออกแต่ละหน้า PDF เป็น PNG",
+        "PDF to PNG converter ในเบราว์เซอร์"
+      ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/pdf-to-images/"
       ],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/pdf-to-png/",
       "locale": "th",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ค้นหางาน PDF ด้วยรูปแบบหรือผลลัพธ์เฉพาะ",
-      "primaryQueryFamily": "แปลง PDF เป็น PNG",
+      "primaryQueryFamily": "แปลงหน้า PDF เป็น PNG สำหรับงานออกแบบ",
       "promise": "Export PDF pages specifically as PNG images.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/pdf-to-png/",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -3772,26 +3936,30 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "แยกบางหน้า PDF โดยไม่เปลี่ยนหน้าต้นฉบับ",
+        "บันทึกหน้าที่เลือกจาก PDF ออนไลน์",
+        "extract PDF pages ตามเลขหน้า"
+      ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/split-pdf/"
       ],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/extract-pdf-pages/",
       "locale": "th",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ค้นหางาน PDF ด้วยรูปแบบหรือผลลัพธ์เฉพาะ",
-      "primaryQueryFamily": "ดึงเฉพาะหน้าจาก PDF",
+      "primaryQueryFamily": "ดึงเฉพาะหน้าที่ต้องการออกจาก PDF เป็นไฟล์ใหม่",
       "promise": "Create a new PDF from selected pages or ranges.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/extract-pdf-pages/",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -3822,26 +3990,30 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เลือกและลบหน้า PDF ด้วยภาพตัวอย่าง",
+        "เอาหน้าว่างออกจาก PDF ออนไลน์",
+        "delete PDF pages แล้วดาวน์โหลดไฟล์ใหม่"
+      ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/organize-pdf/"
       ],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/delete-pages-from-pdf/",
       "locale": "th",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ค้นหางาน PDF ด้วยรูปแบบหรือผลลัพธ์เฉพาะ",
-      "primaryQueryFamily": "ลบหน้าจาก PDF",
+      "primaryQueryFamily": "ลบหน้าที่ไม่ต้องการออกจากไฟล์ PDF",
       "promise": "Create a new PDF without selected pages.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/delete-pages-from-pdf/",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -3872,26 +4044,30 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "สลับหน้าเอกสาร PDF ออนไลน์ฟรี",
+        "จัดลำดับ PDF pages จากภาพตัวอย่าง",
+        "reorder PDF pages ในเบราว์เซอร์"
+      ],
       "competingDjaiRoutes": [
         "/tools/PDFTools/organize-pdf/"
       ],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "route": "/tools/PDFTools/reorder-pdf-pages/",
       "locale": "th",
       "cluster": "pdf",
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ค้นหางาน PDF ด้วยรูปแบบหรือผลลัพธ์เฉพาะ",
-      "primaryQueryFamily": "เรียงหน้า PDF ใหม่",
+      "primaryQueryFamily": "เรียงลำดับหน้า PDF ใหม่ด้วยการลากวาง",
       "promise": "Create a new PDF in a specified page order.",
       "conversionTarget": "cam_pdf",
       "property": "www",
       "canonical": "https://www.djai.academy/tools/PDFTools/reorder-pdf-pages/",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -4228,9 +4404,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยนไฟล์ MP3 เป็น WAV ฟรี",
+        "แปลงเพลง MP3 เป็นเสียง WAV ในเบราว์เซอร์",
+        "MP3 to WAV converter ภาษาไทย"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/mp3-to-wav/",
@@ -4240,12 +4420,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "แปลง MP3 เป็น WAV ฟรี",
+      "primaryQueryFamily": "แปลง MP3 เป็น WAV สำหรับตัดต่อเสียงออนไลน์",
       "promise": "แปลงไฟล์ MP3 เป็น WAV ฟรีใน browser เหมาะกับงานตัดต่อ เสียงคุณภาพสูง และโปรแกรมที่ต้องการ WAV",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -4274,9 +4454,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยนไฟล์ WAV เป็น MP3 ฟรีออนไลน์",
+        "บีบอัดเสียง WAV ด้วยการแปลงเป็น MP3",
+        "WAV to MP3 converter ในเบราว์เซอร์"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/wav-to-mp3/",
@@ -4286,12 +4470,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "แปลง WAV เป็น MP3 ฟรี",
+      "primaryQueryFamily": "แปลง WAV เป็น MP3 เพื่อลดขนาดไฟล์เสียง",
       "promise": "แปลง WAV เป็น MP3 ฟรี พร้อมเลือก bitrate เพื่อลดขนาดไฟล์สำหรับแชร์ ฟัง และ upload",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -4320,9 +4504,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยนไฟล์เสียง M4A เป็น MP3 ฟรี",
+        "แปลง voice memo M4A เป็น MP3 ออนไลน์",
+        "M4A to MP3 converter ภาษาไทย"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/m4a-to-mp3/",
@@ -4332,12 +4520,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "แปลง M4A เป็น MP3 ฟรี",
+      "primaryQueryFamily": "แปลง M4A เป็น MP3 สำหรับเปิดได้หลายอุปกรณ์",
       "promise": "แปลงไฟล์เสียง M4A เป็น MP3 ฟรีใน browser เพื่อใช้กับเครื่องเล่นและโปรแกรมที่รองรับ MP3",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -4366,9 +4554,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "ดึงเสียงจาก MP4 แล้วบันทึกเป็น MP3",
+        "เปลี่ยนคลิป MP4 เป็นเพลง MP3 ออนไลน์",
+        "MP4 to MP3 converter ในเบราว์เซอร์"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/mp4-to-mp3/",
@@ -4378,12 +4570,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "แปลง MP4 เป็น MP3 ฟรี",
+      "primaryQueryFamily": "แปลงวิดีโอ MP4 เป็นไฟล์เสียง MP3 ฟรี",
       "promise": "ดึงเสียงจากวิดีโอ MP4 แล้วแปลงเป็น MP3 ฟรีใน browser พร้อมเลือก bitrate",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -4412,9 +4604,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "แยก audio track ออกจากไฟล์วิดีโอ",
+        "extract audio จาก MOV MKV หรือ WebM",
+        "บันทึกเฉพาะเสียงจากคลิปออนไลน์ฟรี"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/extract-audio-from-video/",
@@ -4424,12 +4620,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "ดึงเสียงจากวิดีโอฟรี",
+      "primaryQueryFamily": "ดึงเสียงจากวิดีโอเป็น MP3 WAV หรือ M4A",
       "promise": "ดึง audio จากไฟล์ MP4 MOV WebM หรือ MKV แล้วดาวน์โหลดเป็น MP3 ฟรีโดยไม่ upload วิดีโอ",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -4458,9 +4654,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยนนามสกุลวิดีโอเป็น MP4 MOV หรือ WebM",
+        "video converter สำหรับไฟล์ที่เปิดไม่ได้",
+        "แปลงวิดีโอในเบราว์เซอร์โดยไม่ส่งไฟล์ไปเซิร์ฟเวอร์"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/video-converter/",
@@ -4470,12 +4670,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "แปลงวิดีโอออนไลน์ โดยไฟล์ไม่ต้องออกจากเครื่อง",
+      "primaryQueryFamily": "แปลงไฟล์วิดีโอหลายรูปแบบออนไลน์ฟรี",
       "promise": "แปลงวิดีโอออนไลน์ระหว่าง MP4, MOV, WebM, MKV และ AVI เลือกคุณภาพและความละเอียดได้ ประมวลผลใน browser โดยไม่ต้องสมัครและไม่อัปโหลดไฟล์",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -4504,9 +4704,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยนไฟล์วิดีโอ MKV เป็น MP4 ออนไลน์",
+        "MKV to MP4 converter ฟรีในเบราว์เซอร์",
+        "แปลงหนัง MKV เป็น MP4 สำหรับมือถือ"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/mkv-to-mp4/",
@@ -4516,12 +4720,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "แปลง MKV เป็น MP4 เพื่อให้เปิดและแชร์ง่ายกว่าเดิม",
+      "primaryQueryFamily": "แปลง MKV เป็น MP4 เพื่อเปิดและแชร์ง่ายขึ้น",
       "promise": "แปลง MKV เป็น MP4 ออนไลน์ใน browser เพื่อให้เปิด แชร์ และอัปโหลดง่ายขึ้น โดยไฟล์ต้นฉบับไม่ถูกส่งขึ้น server ของ DJAI",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -4550,9 +4754,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยนไฟล์ AVI เก่าเป็น MP4 ออนไลน์",
+        "AVI to MP4 converter ฟรีในเบราว์เซอร์",
+        "แปลงวิดีโอ AVI ให้แชร์ง่ายขึ้น"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/avi-to-mp4/",
@@ -4562,12 +4770,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "แปลง AVI เป็น MP4 เพื่อไม่ต้องลาก format เก่าไปงานถัดไป",
+      "primaryQueryFamily": "แปลง AVI เป็น MP4 สำหรับมือถือและเว็บไซต์",
       "promise": "แปลง AVI เป็น MP4 ออนไลน์ใน browser เปลี่ยนไฟล์วิดีโอเก่าให้เป็น MP4 ที่เปิด แชร์ และอัปโหลดง่ายกว่าโดยไม่ส่งไฟล์ขึ้น server",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -4596,9 +4804,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยนไฟล์ MP4 เป็น MOV ออนไลน์ฟรี",
+        "MP4 to MOV converter ในเบราว์เซอร์",
+        "แปลงคลิป MP4 เป็น QuickTime MOV"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/mp4-to-mov/",
@@ -4608,12 +4820,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "แปลง MP4 เป็น MOV เมื่อ workflow ถัดไปต้องการ MOV จริง ๆ",
+      "primaryQueryFamily": "แปลง MP4 เป็น MOV สำหรับงานตัดต่อวิดีโอ",
       "promise": "แปลง MP4 เป็น MOV ออนไลน์ใน browser สำหรับ workflow ของ Apple หรืองานตัดต่อ เลือกคุณภาพและความละเอียดได้โดยไม่ต้องอัปโหลดไฟล์",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -4642,9 +4854,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยนไฟล์ MP4 เป็น WebM ออนไลน์ฟรี",
+        "MP4 to WebM converter พร้อมปรับคุณภาพ",
+        "ลดขนาดวิดีโอเว็บด้วยไฟล์ WebM"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/mp4-to-webm/",
@@ -4654,12 +4870,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "แปลง MP4 เป็น WebM เมื่อปลายทางของวิดีโอคือเว็บ",
+      "primaryQueryFamily": "แปลง MP4 เป็น WebM สำหรับวิดีโอบนเว็บไซต์",
       "promise": "แปลง MP4 เป็น WebM ออนไลน์สำหรับงานเว็บ เลือกคุณภาพและความละเอียดได้ แล้ว encode ใน browser โดยไม่ต้องอัปโหลดวิดีโอต้นฉบับ",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -4688,9 +4904,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยนไฟล์ WebM เป็น MP4 ออนไลน์ฟรี",
+        "WebM to MP4 converter ในเบราว์เซอร์",
+        "แปลงวิดีโอจากเว็บเป็น MP4 สำหรับแชร์"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/webm-to-mp4/",
@@ -4700,12 +4920,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "แปลง WebM เป็น MP4 เมื่ออยากให้ไฟล์ไปต่อได้ง่ายขึ้น",
+      "primaryQueryFamily": "แปลง WebM เป็น MP4 เพื่อใช้งานได้หลายอุปกรณ์",
       "promise": "แปลง WebM เป็น MP4 ออนไลน์ด้วยการประมวลผลใน browser ได้ไฟล์ MP4 ที่เปิด แชร์ ตัดต่อ และอัปโหลดง่ายขึ้นโดยไม่ส่งไฟล์ขึ้น server",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -4734,9 +4954,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยนไฟล์ QuickTime MOV เป็น MP4 ออนไลน์",
+        "MOV to MP4 converter ฟรีในเบราว์เซอร์",
+        "แปลงวิดีโอ MOV ให้เปิดบน Android ได้ง่ายขึ้น"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/mov-to-mp4/",
@@ -4746,12 +4970,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "แปลง MOV เป็น MP4 ก่อนส่งไฟล์ต่อให้คนอื่น",
+      "primaryQueryFamily": "แปลง MOV จาก iPhone เป็น MP4 สำหรับแชร์",
       "promise": "แปลง MOV เป็น MP4 ออนไลน์เพื่อแชร์ เปิด และอัปโหลดง่ายขึ้น เลือกคุณภาพได้และประมวลผลไฟล์ใน browser โดยไม่ต้องสมัครบัญชี",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -4780,9 +5004,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "ตัดคลิป MP4 ตามเวลาเริ่มและจบ",
+        "video cutter ฟรีโดยไม่ต้องติดตั้งโปรแกรม",
+        "เลือกและตัดบางช่วงจากไฟล์วิดีโอ"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/video-cutter/",
@@ -4792,12 +5020,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "ตัดวิดีโอจากสิ่งที่เห็นและได้ยิน ไม่ใช่เดา timestamp",
+      "primaryQueryFamily": "ตัดช่วงวิดีโอออนไลน์ด้วยภาพตัวอย่างและเสียง",
       "promise": "ตัดวิดีโอออนไลน์ด้วย playback และ timestamp ตั้ง Start/End พรีวิวช่วงที่เลือก แล้ว export ใน browser โดยไฟล์ไม่ถูกอัปโหลด",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -4826,9 +5054,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "ย่อไฟล์ MP4 สำหรับส่ง LINE หรืออีเมล",
+        "ลดขนาดวิดีโอพร้อมเลือกความละเอียดและคุณภาพ",
+        "video compressor ในเบราว์เซอร์"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/compress-video/",
@@ -4838,12 +5070,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "บีบอัดวิดีโอจากข้อจำกัดจริงของงาน",
+      "primaryQueryFamily": "บีบอัดวิดีโอและลดขนาดไฟล์ออนไลน์ฟรี",
       "promise": "บีบอัดวิดีโอออนไลน์ด้วยคุณภาพ ความละเอียด หรือขนาดเป้าหมาย ลดขนาด MP4 ใน browser โดยไม่ต้องสมัครและไม่อัปโหลดไฟล์ต้นฉบับ",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -4872,9 +5104,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "ลดขนาด MP4 ให้ประมาณ 10 MB ออนไลน์",
+        "ย่อวิดีโอสำหรับระบบจำกัดไฟล์ 10 MB",
+        "compress video toward 10MB ในเบราว์เซอร์"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/compress-video-to-10mb/",
@@ -4884,12 +5120,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "บีบอัดวิดีโอให้ใกล้ 10 MB โดยไม่ต้องอัปโหลดไฟล์",
+      "primaryQueryFamily": "บีบอัดวิดีโอให้ใกล้ 10 MB สำหรับส่งไฟล์",
       "promise": "บีบอัดวิดีโอให้ใกล้ 10 MB ออนไลน์ ระบบคำนวณ bitrate จากความยาวแล้วประมวลผลใน browser โดยไม่ต้องอัปโหลดไฟล์",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -4918,9 +5154,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "ลดขนาด MP4 ให้ประมาณ 25 MB ออนไลน์",
+        "ย่อวิดีโอสำหรับระบบจำกัดไฟล์ 25 MB",
+        "compress video toward 25MB ในเบราว์เซอร์"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/compress-video-to-25mb/",
@@ -4930,12 +5170,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "บีบอัดวิดีโอให้ใกล้ 25 MB โดยไม่ต้องอัปโหลดไฟล์",
+      "primaryQueryFamily": "บีบอัดวิดีโอให้ใกล้ 25 MB สำหรับอัปโหลด",
       "promise": "บีบอัดวิดีโอให้ใกล้ 25 MB ออนไลน์ ระบบคำนวณ bitrate จากความยาวแล้วประมวลผลใน browser โดยไม่ต้องอัปโหลดไฟล์",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -4964,9 +5204,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "ลดขนาด MP4 ให้ประมาณ 50 MB ออนไลน์",
+        "ย่อวิดีโอสำหรับระบบจำกัดไฟล์ 50 MB",
+        "compress video toward 50MB ในเบราว์เซอร์"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/compress-video-to-50mb/",
@@ -4976,12 +5220,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "บีบอัดวิดีโอให้ใกล้ 50 MB โดยไม่ต้องอัปโหลดไฟล์",
+      "primaryQueryFamily": "บีบอัดวิดีโอให้ใกล้ 50 MB สำหรับอีเมลหรือเว็บ",
       "promise": "บีบอัดวิดีโอให้ใกล้ 50 MB ออนไลน์ ระบบคำนวณ bitrate จากความยาวแล้วประมวลผลใน browser โดยไม่ต้องอัปโหลดไฟล์",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -5010,9 +5254,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "ลดขนาด MP4 ให้ประมาณ 100 MB ออนไลน์",
+        "ย่อวิดีโอสำหรับระบบจำกัดไฟล์ 100 MB",
+        "compress video toward 100MB ในเบราว์เซอร์"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/compress-video-to-100mb/",
@@ -5022,12 +5270,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "บีบอัดวิดีโอให้ใกล้ 100 MB โดยไม่ต้องอัปโหลดไฟล์",
+      "primaryQueryFamily": "บีบอัดวิดีโอให้ใกล้ 100 MB สำหรับอัปโหลด",
       "promise": "บีบอัดวิดีโอให้ใกล้ 100 MB ออนไลน์ ระบบคำนวณ bitrate จากความยาวแล้วประมวลผลใน browser โดยไม่ต้องอัปโหลดไฟล์",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -5056,9 +5304,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "ตัดขอบคลิป MP4 ให้เป็นแนวตั้งหรือสี่เหลี่ยม",
+        "video cropper ออนไลน์พร้อม preview",
+        "ปรับกรอบวิดีโอโดยไม่ยืดภาพ"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/video-cropper/",
@@ -5068,12 +5320,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "ครอปวิดีโอให้ตรง frame ที่แพลตฟอร์มถัดไปต้องการ",
+      "primaryQueryFamily": "ครอปวิดีโอตามอัตราส่วนสำหรับโซเชียลมีเดีย",
       "promise": "ครอปวิดีโอออนไลน์เป็น 16:9, 9:16, 1:1, 4:5 หรือ 3:2 ใช้ center crop สำหรับ social เว็บ และงานตัดต่อ โดยประมวลผลใน browser",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -5102,9 +5354,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "resize คลิป MP4 โดยรักษาอัตราส่วน",
+        "เปลี่ยน resolution วิดีโอสำหรับอัปโหลด",
+        "video resizer ฟรีในเบราว์เซอร์"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/video-resizer/",
@@ -5114,12 +5370,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "ปรับขนาดวิดีโอโดยไม่ยืดภาพให้เสียสัดส่วน",
+      "primaryQueryFamily": "ปรับขนาดวิดีโอตามความกว้างและความสูงออนไลน์",
       "promise": "ปรับขนาดวิดีโอออนไลน์เป็น 1080p, 720p, 480p หรือต่ำกว่าโดยรักษาอัตราส่วนเดิม ประมวลผล MP4 และ format ทั่วไปใน browser",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -5148,9 +5404,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "ต่อคลิป MP4 ตามลำดับที่เลือก",
+        "video merger ฟรีโดยไม่ต้องติดตั้งโปรแกรม",
+        "รวมไฟล์วิดีโอสำหรับแชร์เป็นคลิปเดียว"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/video-merger/",
@@ -5160,12 +5420,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "รวมหลายคลิปเป็นวิดีโอเดียว ตามลำดับที่คุณเลือก",
+      "primaryQueryFamily": "รวมวิดีโอหลายคลิปเป็นไฟล์เดียวออนไลน์",
       "promise": "รวมวิดีโอหลายไฟล์ออนไลน์ เลือกคลิป เรียงลำดับ แล้ว export เป็น MP4 ไฟล์เดียว ประมวลผลใน browser โดยไม่ต้องสมัครบัญชี",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -5194,9 +5454,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยนคลิป MP4 สั้นเป็นภาพ GIF",
+        "เลือกเวลาเริ่มจบแล้วทำ animated GIF",
+        "video to GIF converter ในเบราว์เซอร์"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/video-to-gif/",
@@ -5206,12 +5470,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "เปลี่ยนไม่กี่วินาทีที่สำคัญของวิดีโอให้เป็น GIF",
+      "primaryQueryFamily": "แปลงช่วงวิดีโอเป็น GIF ออนไลน์ฟรี",
       "promise": "แปลงช่วงหนึ่งของวิดีโอเป็น GIF ออนไลน์ เลือก Start/End ความกว้าง และ FPS แล้วสร้าง GIF ใน browser โดยไม่ต้องอัปโหลดไฟล์",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -5240,9 +5504,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยน animated GIF เป็นวิดีโอ MP4",
+        "GIF to MP4 converter ออนไลน์ฟรี",
+        "แปลงภาพเคลื่อนไหว GIF สำหรับโซเชียล"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/gif-to-mp4/",
@@ -5252,12 +5520,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "แปลง GIF เป็น MP4 เมื่อ animation เริ่มหนักเกินเหตุ",
+      "primaryQueryFamily": "แปลง GIF เป็น MP4 เพื่อลดขนาดและแชร์ง่ายขึ้น",
       "promise": "แปลง GIF เคลื่อนไหวเป็น MP4 ออนไลน์ เพื่อให้ไฟล์เล็กและใช้ง่ายขึ้น ประมวลผลใน browser โดยไม่ต้องสมัครบัญชีหรืออัปโหลดไฟล์",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -5286,9 +5554,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "ทำวิดีโอ MP4 ไม่มีเสียงออนไลน์",
+        "mute video โดยไม่เหลือแทร็กเสียง",
+        "remove audio from video ฟรีในเบราว์เซอร์"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/remove-audio-from-video/",
@@ -5298,12 +5570,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "ลบ audio track ออกจากวิดีโอ ไม่ใช่แค่ลด volume เป็นศูนย์",
+      "primaryQueryFamily": "ลบเสียงออกจากวิดีโอโดยเอา audio track ออก",
       "promise": "ลบเสียงออกจากวิดีโอออนไลน์แล้ว export เป็น MP4 ที่ไม่มี audio stream ไฟล์ประมวลผลใน browser โดยไม่ต้องอัปโหลดหรือสมัครบัญชี",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -5332,9 +5604,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เพิ่มเพลง MP3 ให้คลิป MP4",
+        "รวม audio track กับวิดีโอโดยไม่เปิด editor",
+        "add audio to video ฟรีในเบราว์เซอร์"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/add-audio-to-video/",
@@ -5344,12 +5620,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "ใส่เสียงใหม่ในวิดีโอ โดยไม่ต้องเปิด editor เต็มตัว",
+      "primaryQueryFamily": "ใส่ไฟล์เสียงใหม่ลงในวิดีโอออนไลน์",
       "promise": "ใส่ MP3, WAV หรือไฟล์เสียงลงในวิดีโอออนไลน์ เลือกแทนที่เสียงเดิมหรือผสมสอง track แล้ว export MP4 ใน browser",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -5378,9 +5654,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "ปรับ speed คลิป MP4 ออนไลน์ฟรี",
+        "ทำวิดีโอ slow motion หรือ fast motion",
+        "video speed changer ในเบราว์เซอร์"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/video-speed-changer/",
@@ -5390,12 +5670,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "เร่งหรือชะลอวิดีโอโดยให้ภาพกับเสียงยังไปด้วยกัน",
+      "primaryQueryFamily": "เร่งหรือชะลอความเร็ววิดีโอพร้อมเสียง",
       "promise": "ปรับความเร็ววิดีโอออนไลน์ตั้งแต่ 0.5x ถึง 2x และซิงก์เสียงตามเมื่อมี audio track ประมวลผลใน browser แล้วดาวน์โหลดเป็น MP4",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -5424,9 +5704,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "แคปภาพจากคลิป MP4 ทุก interval ที่เลือก",
+        "บันทึกหลายเฟรมจากวิดีโอเป็นรูปภาพ",
+        "extract video frames ตามวินาทีออนไลน์"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/extract-frames-from-video/",
@@ -5436,12 +5720,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "ดึงภาพนิ่งจากวิดีโอโดยไม่ต้องเลื่อนหา timestamp ทีละจุด",
+      "primaryQueryFamily": "ดึงภาพนิ่งจากวิดีโอตามช่วงเวลาที่กำหนด",
       "promise": "ดึง frame จากวิดีโอเป็น JPG หรือ PNG ทุก 1, 2, 5 หรือ 10 วินาที ประมวลผลใน browser แล้วดาวน์โหลดทีละภาพหรือ ZIP",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -5470,9 +5754,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "rotate คลิป MP4 90 หรือ 180 องศา",
+        "แก้วิดีโอแนวตั้งแนวนอนผิดด้าน",
+        "หมุนไฟล์วิดีโอในเบราว์เซอร์"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/media/rotate-video/",
@@ -5482,12 +5770,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "หมุนวิดีโอเมื่อกล้องถือผิดด้าน แต่ moment ยังใช้ได้",
+      "primaryQueryFamily": "หมุนวิดีโอที่ถ่ายกลับด้านออนไลน์ฟรี",
       "promise": "หมุนวิดีโอออนไลน์ 90° ตามเข็ม 90° ทวนเข็ม หรือ 180° แล้ว export MP4 ที่แก้ orientation แล้วใน browser โดยไม่อัปโหลดไฟล์",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -5579,9 +5867,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยนไฟล์ Word เป็น PDF ออนไลน์",
+        "แปลง DOCX เป็น PDF พร้อม preview และเลือกขนาดกระดาษ",
+        "บันทึกเอกสาร Word เป็น PDF ในเบราว์เซอร์"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/document/docx-to-pdf/",
@@ -5591,12 +5883,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "แปลง DOCX เป็น PDF ฟรี",
+      "primaryQueryFamily": "แปลง Word DOCX เป็น PDF ฟรีโดยไม่ต้องอัปโหลด",
       "promise": "แปลงไฟล์ Word DOCX เป็น PDF แบบ private พร้อม preview เลือกขนาดกระดาษ margin และเลขหน้า",
       "conversionTarget": "cam_pdf",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -5646,9 +5938,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยนเอกสาร Word เป็นโค้ด HTML",
+        "แปลง DOCX เป็น HTML สำหรับเว็บไซต์",
+        "ดึงเนื้อหา Word เป็น semantic HTML"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/document/docx-to-html/",
@@ -5658,12 +5954,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "แปลง DOCX เป็น HTML ที่สะอาด",
+      "primaryQueryFamily": "แปลง Word DOCX เป็น HTML ที่สะอาดออนไลน์",
       "promise": "แปลง Word เป็น semantic HTML ที่ผ่านการ sanitize พร้อม preview, copy และดาวน์โหลด",
       "conversionTarget": "cam_pdf",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -5713,9 +6009,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยนเอกสาร Word เป็นไฟล์ MD ฟรี",
+        "แปลง DOCX เป็น Markdown โดยรักษาหัวข้อและรายการ",
+        "Word to Markdown converter ออนไลน์"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/document/docx-to-markdown/",
@@ -5725,12 +6025,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "แปลง DOCX เป็น Markdown ฟรี",
+      "primaryQueryFamily": "แปลง Word DOCX เป็น Markdown สำหรับ GitHub หรือ AI",
       "promise": "รักษา heading, list, link และ table แล้วส่งออก Markdown สำหรับ GitHub, Cursor, Codex และเอกสาร AI",
       "conversionTarget": "cam_pdf",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -5780,9 +6080,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "แปลงเอกสาร Word เป็นข้อความล้วนออนไลน์",
+        "extract text from DOCX ฟรี",
+        "คัดข้อความออกจากไฟล์ DOCX ในเบราว์เซอร์"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/document/docx-to-text/",
@@ -5792,12 +6096,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "ดึงข้อความจาก DOCX ฟรี",
+      "primaryQueryFamily": "ดึงข้อความจาก Word DOCX เป็นไฟล์ TXT",
       "promise": "ดึงข้อความล้วนจาก Word ใน browser พร้อม copy, download และนับคำ",
       "conversionTarget": "cam_pdf",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -5847,9 +6151,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "แปลง PDF text เป็นไฟล์ TXT",
+        "copy ข้อความจาก PDF ตามช่วงหน้า",
+        "extract text from PDF ในเบราว์เซอร์"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/document/pdf-to-text/",
@@ -5859,12 +6167,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "ดึงข้อความจาก PDF ฟรี",
+      "primaryQueryFamily": "ดึงข้อความที่เลือกได้จาก PDF ออนไลน์ฟรี",
       "promise": "ดึงข้อความจาก PDF ตามช่วงหน้า ล้างบรรทัด และดาวน์โหลด TXT โดยไฟล์อยู่ในเครื่อง",
       "conversionTarget": "cam_pdf",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -5914,9 +6222,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยน PDF ที่มี selectable text เป็น Word",
+        "PDF to Word converter เน้นข้อความออนไลน์",
+        "ดึงข้อความ PDF ลงเอกสาร DOCX"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/document/pdf-to-word/",
@@ -5926,12 +6238,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "แปลงข้อความ PDF เป็น Word",
+      "primaryQueryFamily": "แปลงข้อความจาก PDF เป็น Word DOCX เพื่อแก้ไข",
       "promise": "ดึงข้อความที่แก้ไขได้จาก PDF แล้วสร้าง DOCX แบบ page-by-page ใน browser",
       "conversionTarget": "cam_pdf",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -5981,9 +6293,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "แปลงรูป JPG ภาษาไทยเป็นข้อความออนไลน์",
+        "อ่านตัวหนังสือจาก PDF scan ด้วย OCR",
+        "ดึงข้อความไทยหรืออังกฤษจากภาพ PNG"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/document/ocr/",
@@ -5993,12 +6309,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "OCR PDF และรูปภาพเป็นข้อความ",
+      "primaryQueryFamily": "OCR ภาษาไทยจาก PDF สแกนหรือรูปภาพเป็นข้อความ",
       "promise": "อ่านข้อความจาก PDF scan, JPG และ PNG ด้วย OCR ภาษาไทยหรืออังกฤษใน browser",
       "conversionTarget": "cam_pdf",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -6111,9 +6427,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "คำนวณจำนวนโทเคนก่อนส่ง prompt",
+        "token counter ฟรีสำหรับเอกสารยาว",
+        "เช็กขนาด context window จากข้อความ"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/ai/token-counter/",
@@ -6123,12 +6443,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "เครื่องมือนับ Token ฟรีสำหรับ Vibe Coding",
+      "primaryQueryFamily": "นับ token ข้อความสำหรับ ChatGPT Claude และ AI",
       "promise": "นับ AI token, คำภาษาไทยและหลายภาษา, ตัวอักษร, UTF-8 byte และ context usage จากข้อความ DOCX PDF Markdown หรือ code แบบ private ใน browser",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -6178,9 +6498,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "ดึงเนื้อหา PDF เป็นไฟล์ MD สำหรับ LLM",
+        "เตรียมเอกสาร PDF สำหรับ ChatGPT เป็น Markdown",
+        "PDF to AI Markdown converter ออนไลน์"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/ai/pdf-to-ai-markdown/",
@@ -6190,12 +6514,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "แปลง PDF เป็น Markdown สำหรับ AI",
+      "primaryQueryFamily": "แปลง PDF เป็น Markdown สำหรับป้อนให้ AI",
       "promise": "ดึง PDF เป็น Markdown พร้อม page reference ล้าง header, footer และบรรทัดที่แตก",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -6245,9 +6569,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "ลดข้อความซ้ำและช่องว่างจาก prompt ยาว",
+        "เตรียมข้อความสำหรับ ChatGPT หรือ Claude",
+        "ปรับเอกสารให้ใช้ token น้อยลงก่อนส่ง AI"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/ai/context-optimizer/",
@@ -6257,12 +6585,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "ทำความสะอาดเอกสารสำหรับ AI",
+      "primaryQueryFamily": "ทำความสะอาดเอกสารก่อนใส่ใน AI context",
       "promise": "ลบ header ซ้ำ เลขหน้า spacing ที่เสีย และบรรทัดแตก เพื่อสร้าง context ที่กระชับ",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -6312,9 +6640,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "แบ่งเอกสารเป็น RAG chunks พร้อม preview",
+        "เช็กจำนวน token ต่อ chunk สำหรับ vector database",
+        "RAG chunk size calculator ออนไลน์"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/ai/rag-chunk-calculator/",
@@ -6324,12 +6656,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "คำนวณและ Preview RAG Chunk",
+      "primaryQueryFamily": "คำนวณขนาด chunk และ overlap สำหรับ RAG",
       "promise": "กำหนดขนาด chunk และ overlap ดูตัวอย่าง แล้ว export JSONL สำหรับ knowledge base",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -6379,9 +6711,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "แพ็กโค้ดและเอกสารใส่ prompt เดียว",
+        "รวมไฟล์เป็น Markdown พร้อมแบ่งขอบเขต",
+        "เตรียม project context สำหรับ ChatGPT หรือ Claude"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/ai/prompt-packager/",
@@ -6391,12 +6727,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "รวมไฟล์เป็น Prompt Package",
+      "primaryQueryFamily": "รวมหลายไฟล์เป็น prompt package สำหรับ AI",
       "promise": "รวม requirement, documentation, code และ reference text พร้อมขอบเขต XML หรือ Markdown",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -6509,9 +6845,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยนข้อมูลตาราง CSV เป็น JSON",
+        "CSV to JSON converter ในเบราว์เซอร์",
+        "แปลงหัวคอลัมน์ CSV เป็น key ใน JSON"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/spreadsheet/csv-to-json/",
@@ -6521,12 +6861,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "แปลง CSV เป็น JSON ฟรี",
+      "primaryQueryFamily": "แปลง CSV เป็น JSON พร้อม preview ออนไลน์ฟรี",
       "promise": "แปลง CSV เป็น JSON ใน browser พร้อม preview, copy และ download",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -6576,9 +6916,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยน array ข้อมูล JSON เป็นตาราง CSV",
+        "JSON to CSV converter ออนไลน์ฟรี",
+        "ดาวน์โหลดข้อมูล JSON เป็นไฟล์ CSV"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/spreadsheet/json-to-csv/",
@@ -6588,12 +6932,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "แปลง JSON เป็น CSV ฟรี",
+      "primaryQueryFamily": "แปลง JSON เป็น CSV สำหรับเปิดใน Excel",
       "promise": "แปลง JSON array เป็น CSV พร้อมจัด column และดาวน์โหลด",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -6643,9 +6987,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "ทำความสะอาด CSV ก่อนนำเข้าระบบ",
+        "remove duplicate rows from CSV ออนไลน์",
+        "ตัดช่องว่างหัวท้ายในข้อมูล CSV"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/spreadsheet/csv-cleaner/",
@@ -6655,12 +7003,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "ทำความสะอาด CSV ฟรี",
+      "primaryQueryFamily": "ลบแถวซ้ำและแถวว่างออกจากไฟล์ CSV",
       "promise": "ตัดช่องว่าง ลบแถวว่าง และลบข้อมูลซ้ำโดยไม่ upload ไฟล์",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -6710,9 +7058,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "ต่อข้อมูลหลาย CSV เป็นไฟล์เดียว",
+        "merge CSV files ออนไลน์ฟรี",
+        "รวมตาราง CSV โดยไม่เปิด Excel"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/spreadsheet/merge-csv/",
@@ -6722,12 +7074,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "รวมไฟล์ CSV หลายไฟล์",
+      "primaryQueryFamily": "รวมไฟล์ CSV หลายไฟล์ที่มีหัวคอลัมน์ตรงกัน",
       "promise": "รวมหลาย CSV โดยจับคู่ชื่อ column และดาวน์โหลดไฟล์เดียว",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -6777,9 +7129,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "แยก CSV เป็นหลายไฟล์ขนาดเล็ก",
+        "split CSV every N rows ออนไลน์",
+        "แบ่งข้อมูล CSV สำหรับอัปโหลดเป็นชุด"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/spreadsheet/split-csv/",
@@ -6789,12 +7145,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "แบ่ง CSV ตามจำนวนแถว",
+      "primaryQueryFamily": "แบ่งไฟล์ CSV ใหญ่ตามจำนวนแถวที่กำหนด",
       "promise": "แบ่ง CSV ขนาดใหญ่เป็นหลายไฟล์แล้วดาวน์โหลด ZIP",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -6844,9 +7200,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยนไฟล์ CSV เป็น workbook Excel",
+        "CSV to XLSX converter ออนไลน์ฟรี",
+        "เปิดข้อมูล CSV ภาษาไทยในไฟล์ Excel"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/spreadsheet/csv-to-xlsx/",
@@ -6856,12 +7216,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "แปลง CSV เป็น Excel XLSX",
+      "primaryQueryFamily": "แปลง CSV เป็น Excel XLSX พร้อมเลือก delimiter",
       "promise": "แปลง CSV เป็น workbook Excel พร้อม header และ column ที่อ่านง่าย",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -6911,9 +7271,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "เปลี่ยนไฟล์ Excel เป็น CSV ออนไลน์ฟรี",
+        "XLSX to CSV converter ในเบราว์เซอร์",
+        "ส่งออกชีต Excel เป็นข้อมูล CSV"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/spreadsheet/xlsx-to-csv/",
@@ -6923,12 +7287,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "แปลง Excel XLSX เป็น CSV",
+      "primaryQueryFamily": "แปลง Excel XLSX เป็น CSV โดยเลือก worksheet",
       "promise": "เลือก worksheet และส่งออกเป็น CSV ใน browser",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {
@@ -7041,9 +7405,13 @@
       "migrationStatus": "stable"
     },
     {
-      "supportingQueries": [],
+      "supportingQueries": [
+        "แปลงโลโก้เป็น favicon ICO และไอคอนเว็บ",
+        "favicon generator ฟรีพร้อม manifest",
+        "สร้างไอคอนเว็บไซต์หลายขนาดจากรูปเดียว"
+      ],
       "competingDjaiRoutes": [],
-      "evidenceStatus": "strategy_only",
+      "evidenceStatus": "directional_external",
       "indexable": true,
       "property": "www",
       "canonical": "https://www.djai.academy/tools/brand/favicon-generator/",
@@ -7053,12 +7421,12 @@
       "pageRole": "working_tool",
       "audience": "ผู้ใช้ที่ต้องการทำงานนี้ให้สำเร็จหรือเลือกขั้นตอนถัดไปที่เกี่ยวข้อง",
       "visitorProblem": "ต้องการคำตอบหรือเครื่องมือที่ตรงกับงานโดยไม่ต้องลองหลายหน้าที่คล้ายกัน",
-      "primaryQueryFamily": "สร้าง Favicon จากรูปภาพ พร้อมไฟล์ติดตั้งครบชุด",
+      "primaryQueryFamily": "สร้าง favicon จากรูป PNG พร้อมไฟล์ติดตั้งเว็บไซต์",
       "promise": "สร้าง favicon.ico จาก PNG, JPG, WebP หรือ SVG ฟรี พร้อม Apple touch icon, maskable icon, web manifest และ HTML snippet โดยไม่อัปโหลดรูป",
       "conversionTarget": "development",
       "primaryConversion": "tool_success",
-      "evidenceSource": "rendered_route_inventory_2026-09-06",
-      "validatedAt": "2026-09-06",
+      "evidenceSource": "feature_validation_and_live_thai_serp_review_2026-09-08",
+      "validatedAt": "2026-09-08",
       "migrationStatus": "stable"
     },
     {

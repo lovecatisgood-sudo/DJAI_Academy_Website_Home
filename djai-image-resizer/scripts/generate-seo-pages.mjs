@@ -110,7 +110,7 @@ export const presets = [
         ["นำผลลัพธ์ไปใช้เชิงพาณิชย์ได้ไหม", "ได้ รูปที่คุณประมวลผลเป็นของคุณ เครื่องมือไม่ใส่ลายน้ำและไม่อ้างสิทธิ์ใด ๆ ในไฟล์ของคุณ"]
       ]
     },
-    th: ["ลบพื้นหลังรูปฟรี ออนไลน์ | DJAI Image Tools", "ลบพื้นหลังรูปฟรี", "ลบพื้นหลังรูป JPG, PNG, WebP, HEIC หรือ HEIF ฟรีใน browser แล้วดาวน์โหลด PNG พื้นหลังโปร่งใส", "วิธีลบพื้นหลังรูป", "เลือกภาพสินค้า โปรไฟล์ หรือคอนเทนต์ social แล้วเครื่องมือจะใช้ AI segmentation ใน browser เพื่อสร้างไฟล์ PNG พื้นหลังโปร่งใส", ["เลือกรูปจากอุปกรณ์", "รอ AI ลบพื้นหลังใน browser", "ตรวจผลลัพธ์และดาวน์โหลด PNG โปร่งใส"]],
+    th: ["ลบพื้นหลัง JPG, PNG หรือ WebP ฟรี | DJAI Image Tools", "ลบพื้นหลังรูป JPG, PNG หรือ WebP ฟรี", "ลบพื้นหลังรูป JPG, PNG, WebP, HEIC หรือ HEIF ฟรีโดยไม่อัปโหลด แล้วดาวน์โหลด PNG พื้นหลังโปร่งใส ไม่มีลายน้ำ", "วิธีลบพื้นหลังรูป JPG, PNG หรือ WebP", "เลือกภาพสินค้า โปรไฟล์ หรือคอนเทนต์ social แล้วเครื่องมือจะใช้ AI segmentation ใน browser เพื่อสร้างไฟล์ PNG พื้นหลังโปร่งใส", ["เลือกรูป JPG, PNG, WebP, HEIC หรือ HEIF จากอุปกรณ์", "รอ AI ลบพื้นหลังใน browser", "ตรวจผลลัพธ์และดาวน์โหลด PNG พื้นหลังโปร่งใส"]],
     en: ["Remove JPG, PNG or WebP Backgrounds Free | DJAI Image Tools", "Remove a JPG, PNG or WebP background for free", "Remove backgrounds from JPG, PNG, WebP, HEIC, or HEIF images free without uploading. Browser AI creates a transparent PNG on your device.", "How to remove a JPG, PNG or WebP background", "Choose a product photo, profile image, or social content image and the tool uses browser-based AI segmentation to create a transparent PNG.", ["Choose a JPG, PNG, WebP, HEIC, or HEIF image", "Let browser AI remove the background", "Review and download the transparent PNG"]]
   },
   {
