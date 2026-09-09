@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "../../components/SiteFooter";
 import SiteHeader from "../../components/SiteHeader";
-import { hubHeaderHrefs, hubLanguageHrefs } from "./guideRoutes";
+import { guideArticlePaths, hubHeaderHrefs, hubLanguageHrefs } from "./guideRoutes";
 import styles from "./page.module.css";
 
 const APP_PATH = "/Cam_PDF_Scan_Signer_QR-Gen/";
@@ -115,6 +115,37 @@ export default function CamPdfGuidesPage() {
               </p>
             </div>
           </article>
+        </section>
+
+        <section className={styles.guideGridSection} aria-labelledby="workflow-guides">
+          <header>
+            <p className={styles.eyebrow}>Choose the job</p>
+            <h2 id="workflow-guides">Guides for the next document task</h2>
+            <p>
+              Each guide owns a different search intent: combine pages, share a PDF by QR code, or
+              sign and send a finished document. Start with the task in front of you.
+            </p>
+          </header>
+          <div className={styles.guideGrid}>
+            <article>
+              <span>Multi-page PDFs</span>
+              <h3>Scan multiple pages into one PDF</h3>
+              <p>Capture a stack, check page order, correct crops, and export one readable file.</p>
+              <Link href={guideArticlePaths.multiPage}>Read the multi-page guide</Link>
+            </article>
+            <article>
+              <span>PDF sharing</span>
+              <h3>Share a PDF with a QR code</h3>
+              <p>Turn a stable PDF link into a scannable website QR code from your phone.</p>
+              <Link href={guideArticlePaths.pdfQr}>Read the QR-code guide</Link>
+            </article>
+            <article>
+              <span>Signed documents</span>
+              <h3>Scan, sign, and send a PDF</h3>
+              <p>Place a signature, review the export, and choose where the finished file goes.</p>
+              <Link href={guideArticlePaths.scanSign}>Read the signing guide</Link>
+            </article>
+          </div>
         </section>
 
         <section className={styles.more} aria-labelledby="more-resources">

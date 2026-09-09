@@ -1,0 +1,87 @@
+brief_version: 1
+date: 2026-09-09
+property: https://www.djai.academy
+locale: en
+page_family: cam_pdf_guides
+scope:
+  routes:
+    - /Cam_PDF_Scan_Signer_QR-Gen/guides/scan-multiple-pages-to-pdf-android/
+    - /Cam_PDF_Scan_Signer_QR-Gen/guides/share-pdf-with-qr-code/
+    - /Cam_PDF_Scan_Signer_QR-Gen/guides/scan-sign-send-pdf-android/
+  new_urls: true
+  layout_change: false
+goals:
+  - capture distinct, high-intent document workflows without creating variants for every device or synonym
+  - move qualified readers to the Cam PDF product page and verified Google Play listing
+  - strengthen the existing Cam PDF guide hub without competing with the watermark-removal guide
+audience:
+  primary:
+    - Android users who need to turn several paper pages into one PDF
+    - people who need to share a PDF through a QR code from a phone
+    - people who need to scan or import a document, sign it, and send it back
+  secondary:
+    - iPhone readers who can follow the platform-neutral workflow while the public App Store CTA is pending
+intent_model:
+  primary: informational_task_completion
+  secondary: transactional_app_discovery
+keyword_rules:
+  - one canonical URL owns each workflow and its close synonyms
+  - the existing remove-camscanner-watermark-free URL remains the owner of watermark-removal intent
+  - do not create separate Android, iPhone, free, or watermark variants for these guides
+  - do not claim unlimited use, direct PDF hosting through QR Studio, certificate-based e-signatures, or an App Store download before verified evidence exists
+pages:
+  - route: /Cam_PDF_Scan_Signer_QR-Gen/guides/scan-multiple-pages-to-pdf-android/
+    primary: scan multiple pages into one PDF on Android
+    variants:
+      - scan multiple pages to PDF
+      - how to scan multiple pages into one PDF
+      - combine scanned pages into one PDF on a phone
+    intent: informational with strong app-install follow-on
+    job_to_be_done: capture a stack, verify order and crops, export one readable PDF
+    unique_evidence: Cam PDF multi-page capture, page correction, named export, and compression workflow
+    parent_hub: /Cam_PDF_Scan_Signer_QR-Gen/guides/
+    money_page: /Cam_PDF_Scan_Signer_QR-Gen/
+    cta: verified Google Play listing
+    measurement: play_store_click with source_path set to the guide URL
+  - route: /Cam_PDF_Scan_Signer_QR-Gen/guides/share-pdf-with-qr-code/
+    primary: how to share a PDF with a QR code from your phone
+    variants:
+      - create a QR code for a PDF
+      - PDF to QR code
+      - QR code for document
+    intent: informational/commercial task completion
+    job_to_be_done: create and test a QR code that opens a hosted PDF link
+    unique_evidence: honest link-first explanation plus Cam PDF website QR flow
+    parent_hub: /Cam_PDF_Scan_Signer_QR-Gen/guides/
+    money_page: /Cam_PDF_Scan_Signer_QR-Gen/
+    cta: verified Google Play listing
+    measurement: play_store_click with source_path set to the guide URL
+  - route: /Cam_PDF_Scan_Signer_QR-Gen/guides/scan-sign-send-pdf-android/
+    primary: how to scan, sign, and send a PDF on Android
+    variants:
+      - scan and sign a PDF
+      - sign a PDF on Android
+      - sign and send a PDF
+    intent: informational workflow with high install intent
+    job_to_be_done: create or import a PDF, place a signature annotation, verify export, share it
+    unique_evidence: Cam PDF capture/import, signature placement, export verification, and sharing boundaries
+    parent_hub: /Cam_PDF_Scan_Signer_QR-Gen/guides/
+    money_page: /Cam_PDF_Scan_Signer_QR-Gen/
+    cta: verified Google Play listing
+    measurement: play_store_click with source_path set to the guide URL
+serp_and_evidence:
+  status: directional_external
+  source: Google Trends comparisons and live English SERP review on 2026-09-09
+  limitations:
+    - Google Trends is a relative index and does not provide raw volume or keyword difficulty
+    - no Search Console or paid keyword-provider export is available
+    - current platform and usage claims are checked against repository product copy
+  observations:
+    - multi-page related queries show strong normalized interest within the workflow comparison
+    - PDF QR queries show stronger normalized interest than the tested CamScanner-alternative phrases
+    - generic PDF-signing results contain established publishers, so the page uses the narrower scan-sign-send job
+    - CamScanner alternative and watermark variants remain owned by the existing comparison/removal guide
+visuals:
+  - /apps/cam-pdf/guides/multi-page-scan-hero.png
+  - /apps/cam-pdf/guides/pdf-qr-code-hero.png
+  - /apps/cam-pdf/guides/scan-sign-send-hero.png

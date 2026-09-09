@@ -2,7 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import SiteFooter from "../../components/SiteFooter";
 import SiteHeader from "../../components/SiteHeader";
-import { articlePaths, hubHeaderHrefs, hubLanguageHrefs, hubPaths } from "./guideRoutes";
+import { articlePaths, hubHeaderHrefs, hubLanguageHrefs, hubPaths, workflowGuidePaths } from "./guideRoutes";
+import { localizedWorkflowGuideContent, localizedWorkflowHubCards } from "./localizedWorkflowGuideContent";
 import styles from "./page.module.css";
 
 const APP_PATH = "/Cam_PDF_Scan_Signer_QR-Gen/";
@@ -47,6 +48,7 @@ export function generateLocalizedHubMetadata(content, locale) {
 
 export default function LocalizedGuideHub({ content, locale }) {
   const productPath = productPaths[locale];
+  const workflowCards = localizedWorkflowHubCards[locale];
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
@@ -83,6 +85,24 @@ export default function LocalizedGuideHub({ content, locale }) {
               <Link href={articlePaths[locale]}>{content.cardCta}</Link>
             </div>
           </article>
+        </section>
+
+        <section className={styles.guideGridSection} aria-labelledby={`workflow-guides-${locale}`}>
+          <header>
+            <p className={styles.eyebrow}>{workflowCards.sectionEyebrow}</p>
+            <h2 id={`workflow-guides-${locale}`}>{workflowCards.sectionTitle}</h2>
+            <p>{workflowCards.sectionBody}</p>
+          </header>
+          <div className={styles.guideGrid}>
+            {Object.entries(workflowCards.cards).map(([key, card]) => (
+              <article key={key}>
+                <span>{card.label}</span>
+                <h3>{localizedWorkflowGuideContent[locale][key].title}</h3>
+                <p>{card.body}</p>
+                <Link href={workflowGuidePaths[key][locale]}>{card.cta}</Link>
+              </article>
+            ))}
+          </div>
         </section>
 
         <section className={styles.more} aria-label="Cam PDF resources">

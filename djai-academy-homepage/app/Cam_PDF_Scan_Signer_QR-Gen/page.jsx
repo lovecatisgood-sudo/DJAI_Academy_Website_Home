@@ -187,6 +187,17 @@ export default function CamPdfAppPage() {
             >
               Read: how to remove a scanner watermark safely
             </a>
+            <nav className={styles.guideLinks} aria-label="Cam PDF workflow guides">
+              <a href="/Cam_PDF_Scan_Signer_QR-Gen/guides/scan-multiple-pages-to-pdf-android/">
+                Scan multiple pages into one PDF
+              </a>
+              <a href="/Cam_PDF_Scan_Signer_QR-Gen/guides/share-pdf-with-qr-code/">
+                Share a PDF with a QR code
+              </a>
+              <a href="/Cam_PDF_Scan_Signer_QR-Gen/guides/scan-sign-send-pdf-android/">
+                Scan, sign, and send a PDF
+              </a>
+            </nav>
           </div>
         </section>
 

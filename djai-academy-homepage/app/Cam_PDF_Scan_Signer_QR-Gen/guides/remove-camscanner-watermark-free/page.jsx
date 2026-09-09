@@ -498,6 +498,9 @@ export default function RemoveCamScannerWatermarkGuidePage() {
                 </div>
                 <div>
                   <Link href={GUIDES_PATH}>Browse Cam PDF guides</Link>
+                  <Link href="/Cam_PDF_Scan_Signer_QR-Gen/guides/scan-multiple-pages-to-pdf-android/">Scan multiple pages into one PDF</Link>
+                  <Link href="/Cam_PDF_Scan_Signer_QR-Gen/guides/share-pdf-with-qr-code/">Share a PDF with a QR code</Link>
+                  <Link href="/Cam_PDF_Scan_Signer_QR-Gen/guides/scan-sign-send-pdf-android/">Scan, sign, and send a PDF</Link>
                   <Link href={APP_PATH}>Explore Cam PDF features</Link>
                   <Link href={`${APP_PATH}privacy/`}>Review Cam PDF privacy</Link>
                   <a href="mailto:contact@djai.academy">Contact Cam PDF support</a>

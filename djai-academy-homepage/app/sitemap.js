@@ -15,7 +15,7 @@ const CAM_PDF_PRIVACY_LAST_MODIFIED = new Date("2026-09-06T00:00:00.000Z");
 const CAM_PDF_PRIVACY_THAI_LAST_MODIFIED = new Date("2026-09-06T00:00:00.000Z");
 const CAM_PDF_PRODUCT_LAST_MODIFIED = new Date("2026-09-06T00:00:00.000Z");
 const CAM_PDF_TERMS_LAST_MODIFIED = new Date("2026-09-06T00:00:00.000Z");
-const CAM_PDF_GUIDES_LAST_MODIFIED = new Date("2026-09-07T00:00:00.000Z");
+const CAM_PDF_GUIDES_LAST_MODIFIED = new Date("2026-09-09T00:00:00.000Z");
 const SEO_GROWTH_LAST_MODIFIED = new Date("2026-09-02T00:00:00.000Z");
 // The background-removal tool was rebuilt on its own first-party engine and
 // its pages rewritten. Dated separately so the other static pages keep an
@@ -39,6 +39,21 @@ const corePaths = [
   "/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/", "/Cam_PDF_Scan_Signer_QR-Gen/delete-account/",
   "/Cam_PDF_Scan_Signer_QR-Gen/guides/",
   "/Cam_PDF_Scan_Signer_QR-Gen/guides/remove-camscanner-watermark-free/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/scan-multiple-pages-to-pdf-android/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/share-pdf-with-qr-code/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/scan-sign-send-pdf-android/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/th/scan-multiple-pages-to-pdf-android/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/th/share-pdf-with-qr-code/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/th/scan-sign-send-pdf-android/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/vi/scan-multiple-pages-to-pdf-android/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/vi/share-pdf-with-qr-code/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/vi/scan-sign-send-pdf-android/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/zh-cn/scan-multiple-pages-to-pdf-android/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/zh-cn/share-pdf-with-qr-code/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/zh-cn/scan-sign-send-pdf-android/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/zh-tw/scan-multiple-pages-to-pdf-android/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/zh-tw/share-pdf-with-qr-code/",
+  "/Cam_PDF_Scan_Signer_QR-Gen/guides/zh-tw/scan-sign-send-pdf-android/",
   "/Cam_PDF_Scan_Signer_QR-Gen/guides/th/",
   "/Cam_PDF_Scan_Signer_QR-Gen/guides/th/remove-camscanner-watermark-free/",
   "/Cam_PDF_Scan_Signer_QR-Gen/guides/vi/",

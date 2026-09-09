@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "node scripts/build-root-hostinger.mjs",
-    "build:app": "next build && node scripts/set-export-language.mjs",
+    "build:app": "next build --webpack && node scripts/set-export-language.mjs",
     "build:hostinger": "node scripts/build-root-hostinger.mjs",
     "start": "node scripts/start-root-hostinger.mjs",
     "test": "npm run test:hostinger",

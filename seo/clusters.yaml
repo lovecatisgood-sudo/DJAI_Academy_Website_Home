@@ -1,0 +1,30 @@
+clusters:
+  - id: cam-pdf-watermark-removal
+    pillar: /Cam_PDF_Scan_Signer_QR-Gen/
+    owner: /Cam_PDF_Scan_Signer_QR-Gen/guides/remove-camscanner-watermark-free/
+    status: keep
+    purpose: Existing-file watermark rescue and safe clean-export alternatives.
+  - id: cam-pdf-multi-page-scanning
+    pillar: /Cam_PDF_Scan_Signer_QR-Gen/
+    owner: /Cam_PDF_Scan_Signer_QR-Gen/guides/scan-multiple-pages-to-pdf-android/
+    status: create
+    purpose: Capture a stack of pages, verify order and crops, and export one PDF.
+    siblings:
+      - /Cam_PDF_Scan_Signer_QR-Gen/guides/scan-sign-send-pdf-android/
+      - /Cam_PDF_Scan_Signer_QR-Gen/guides/share-pdf-with-qr-code/
+  - id: cam-pdf-pdf-qr-sharing
+    pillar: /Cam_PDF_Scan_Signer_QR-Gen/
+    owner: /Cam_PDF_Scan_Signer_QR-Gen/guides/share-pdf-with-qr-code/
+    status: create
+    purpose: Share a hosted PDF link through a tested website QR code.
+    siblings:
+      - /Cam_PDF_Scan_Signer_QR-Gen/guides/scan-multiple-pages-to-pdf-android/
+      - /Cam_PDF_Scan_Signer_QR-Gen/guides/scan-sign-send-pdf-android/
+  - id: cam-pdf-scan-sign-send
+    pillar: /Cam_PDF_Scan_Signer_QR-Gen/
+    owner: /Cam_PDF_Scan_Signer_QR-Gen/guides/scan-sign-send-pdf-android/
+    status: create
+    purpose: Scan or import, add a signature annotation, verify, and send a PDF.
+    siblings:
+      - /Cam_PDF_Scan_Signer_QR-Gen/guides/scan-multiple-pages-to-pdf-android/
+      - /Cam_PDF_Scan_Signer_QR-Gen/guides/share-pdf-with-qr-code/
