@@ -778,7 +778,7 @@ async function verify() {
   }
 
   const camPdfChecks = [
-    ["/Cam_PDF_Scan_Signer_QR-Gen/", "Cam PDF Scan Signer QR Gen", "en"],
+    ["/Cam_PDF_Scan_Signer_QR-Gen/", "Cam PDF Scanner: Sign & QR", "en"],
     ["/Cam_PDF_Scan_Signer_QR-Gen/privacy/", "Privacy Policy", "en"],
     ["/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/", "นโยบายความเป็นส่วนตัว", "th"],
     ["/Cam_PDF_Scan_Signer_QR-Gen/terms/", "Terms of Service", "en"],

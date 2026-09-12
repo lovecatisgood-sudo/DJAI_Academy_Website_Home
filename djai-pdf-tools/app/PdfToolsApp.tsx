@@ -301,10 +301,10 @@ function CamPdfAppCallout({ language, sourcePath, toolSlug }: { language: Langua
         <p className="eyebrow">{vi ? "ỨNG DỤNG DI ĐỘNG" : en ? "MOBILE APP" : "แอปมือถือ"}</p>
         <h2 id="cam-pdf-app-title">{vi ? "Cần dùng các công cụ này trên điện thoại?" : en ? "Need these tools on your phone?" : "อยากใช้เครื่องมือเหล่านี้บนมือถือ?"}</h2>
         <p>
-          {vi ? "Cam PDF Scan, Signer & QR Generator kết hợp quét tài liệu, ký PDF, tạo QR và các quy trình năng suất trong một ứng dụng di động."
+          {vi ? "Cam PDF Scanner: Sign & QR kết hợp quét tài liệu, ký PDF, tạo QR và các quy trình năng suất trong một ứng dụng di động."
             : en
-            ? "Cam PDF Scan, Signer & QR Generator brings document scanning, PDF signing, QR tools, and advanced productivity features into one mobile app."
-            : "Cam PDF Scan, Signer & QR Generator รวมการสแกนเอกสาร เซ็น PDF เครื่องมือ QR และฟีเจอร์ productivity ขั้นสูงไว้ในแอปมือถือเดียว"}
+            ? "Cam PDF Scanner: Sign & QR brings document scanning, PDF signing, QR tools, and advanced productivity features into one mobile app."
+            : "Cam PDF Scanner: Sign & QR รวมการสแกนเอกสาร เซ็น PDF เครื่องมือ QR และฟีเจอร์ productivity ขั้นสูงไว้ในแอปมือถือเดียว"}
         </p>
       </div>
       <a

@@ -37,7 +37,7 @@ const routes = [
   },
   {
     eyebrow: "แอป Android",
-    title: "Cam PDF Scan Signer QR Gen",
+    title: "Cam PDF Scanner: Sign & QR",
     text: "สแกนเอกสาร เซ็น PDF และสร้าง QR code บน Android ด้วยแอปของ DJAI",
     href: "/Cam_PDF_Scan_Signer_QR-Gen/",
     action: "ดูแอป Cam PDF"

@@ -5,9 +5,9 @@ const PRIVACY_PATH = `${APP_PATH}privacy/`;
 const THAI_PATH = `${PRIVACY_PATH}th/`;
 
 export const metadata = {
-  title: "นโยบายความเป็นส่วนตัว | Cam PDF Scan Signer QR Gen",
+  title: "นโยบายความเป็นส่วนตัว | Cam PDF Scanner: Sign & QR",
   description:
-    "วิธีที่ Cam PDF Scan Signer QR Gen ประมวลผลข้อมูลบัญชี การวิเคราะห์ โฆษณา การซื้อ และข้อมูลอุปกรณ์",
+    "วิธีที่ Cam PDF Scanner: Sign & QR ประมวลผลข้อมูลบัญชี การวิเคราะห์ โฆษณา การซื้อ และข้อมูลอุปกรณ์",
   alternates: {
     canonical: THAI_PATH,
     languages: { en: PRIVACY_PATH, th: THAI_PATH, "x-default": PRIVACY_PATH }

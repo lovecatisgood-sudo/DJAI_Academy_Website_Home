@@ -29,7 +29,7 @@ export const camPdfContent = {
     description: "用 Android 手机扫描文档、编辑和签署 PDF、整理文件并生成二维码；免费版导出也不加水印。",
     eyebrow: "DJAI Android 文档工具",
     hero: "从拍照扫描到签名导出，一款应用完成整套文档流程",
-    intro: "Cam PDF Scan Signer QR Gen 已在 Google Play 上线。扫描、校正、整理、编辑、签名、压缩和导出都集中在同一处，免费版导出的文档同样不会添加 Cam PDF 水印。",
+    intro: "Cam PDF Scanner: Sign & QR 已在 Google Play 上线。扫描、校正、整理、编辑、签名、压缩和导出都集中在同一处，免费版导出的文档同样不会添加 Cam PDF 水印。",
     watermarkMessage: "免费版导出也不加水印，让合同、申请材料、学校表格和证件复印件保持整洁可用。",
     primaryDownload: {
       kind: "availability-notice",
@@ -90,7 +90,7 @@ export const camPdfContent = {
     description: "用 Android 手機掃描文件、編輯與簽署 PDF、整理檔案並產生 QR Code；免費版匯出也不加浮水印。",
     eyebrow: "DJAI Android 文件工具",
     hero: "從拍照掃描到簽名匯出，一款 App 完成整套文件流程",
-    intro: "Cam PDF Scan Signer QR Gen 已在 Google Play 上架。掃描、校正、整理、編輯、簽名、壓縮與匯出都集中在同一處，免費版匯出的文件也不會加上 Cam PDF 浮水印。",
+    intro: "Cam PDF Scanner: Sign & QR 已在 Google Play 上架。掃描、校正、整理、編輯、簽名、壓縮與匯出都集中在同一處，免費版匯出的文件也不會加上 Cam PDF 浮水印。",
     watermarkMessage: "免費版匯出也不加浮水印，讓合約、申請資料、學校表單和證件影本維持整潔、可直接使用。",
     primaryDownload: { kind: "play-store", label: "前往 Google Play 下載", href: CAM_PDF_PLAY_URL },
     androidUrl: CAM_PDF_PLAY_URL,

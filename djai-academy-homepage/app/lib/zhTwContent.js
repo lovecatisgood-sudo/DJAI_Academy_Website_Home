@@ -90,7 +90,7 @@ export const zhTwMarketingContent = {
     },
     "highlights": [
       {
-        "title": "Cam PDF Scan",
+        "title": "Cam PDF Scanner: Sign & QR",
         "text": "Android 文件掃描、整理、簽名與 QR 工作空間。"
       },
       {

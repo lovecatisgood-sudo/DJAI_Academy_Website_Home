@@ -420,7 +420,7 @@ export default function RemoveCamScannerWatermarkGuidePage() {
                   <p className={styles.eyebrow}>For the next document</p>
                   <h2>Use a scanner that starts with a clean export</h2>
                   <p>
-                    Cam PDF Scan Signer QR Gen is a DJAI product, so this is our own alternative—not
+                    Cam PDF Scanner: Sign & QR is a DJAI product, so this is our own alternative—not
                     an independent recommendation. It is available on Android and iPhone and does
                     not add a Cam PDF watermark to documents exported from the free version.
                   </p>

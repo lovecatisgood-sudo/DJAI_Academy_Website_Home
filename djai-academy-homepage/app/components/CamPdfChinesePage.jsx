@@ -32,7 +32,7 @@ export default function CamPdfChinesePage({ content }) {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "MobileApplication",
-    name: "Cam PDF Scan Signer QR Gen",
+    name: "Cam PDF Scanner: Sign & QR",
     operatingSystem: "Android",
     applicationCategory: "UtilitiesApplication",
     inLanguage: content.locale,
@@ -99,7 +99,7 @@ export default function CamPdfChinesePage({ content }) {
 
         <section className={styles.finalCta}>
           <Image src="/apps/cam-pdf/icon.webp" alt="Cam PDF App 圖示" width={92} height={92} />
-          <p className={styles.kicker}>Cam PDF Scan Signer QR Gen</p>
+          <p className={styles.kicker}>Cam PDF Scanner: Sign &amp; QR</p>
           <h2>{content.availabilityTitle}</h2>
           <p>{content.watermarkMessage}</p>
           <a href={content.androidUrl}>{content.androidLabel}</a>

@@ -9,7 +9,7 @@ const policySource = await readFile(
 
 test("English Cam PDF policy contains the authoritative September 6 revision", () => {
   const requiredText = [
-    "Privacy Policy for Cam PDF Scan Signer QR Gen",
+    "Privacy Policy for Cam PDF Scanner: Sign & QR",
     "Effective date: September 6, 2026 · Last updated: September 6, 2026",
     "This revision describes the Android release",
     "your age bracket;",

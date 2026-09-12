@@ -247,7 +247,7 @@ export default function ThaiToolsPage() {
         <div>
           <p className="eyebrow">แอปมือถือ</p>
           <h2 id="cam-pdf-app-title">ใช้เครื่องมือเอกสารขั้นสูงบนมือถือ</h2>
-          <p>Cam PDF Scan, Signer & QR Generator รวม scanner, PDF signer, QR generator และ workflow productivity สำหรับงานเอกสารในแอปเดียว</p>
+          <p>Cam PDF Scanner: Sign &amp; QR รวม scanner, PDF signer, QR generator และ workflow productivity สำหรับงานเอกสารในแอปเดียว</p>
         </div>
         <a className="button" href="/Cam_PDF_Scan_Signer_QR-Gen/">ดูแอป Cam PDF</a>
       </section>

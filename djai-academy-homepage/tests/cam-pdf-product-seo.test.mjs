@@ -22,8 +22,10 @@ const pageStyles = await readFile(
 test("Cam PDF owns the Android scanner, signer, and QR intent", () => {
   assert.match(
     pageSource,
-    /title:\s*"PDF Scanner App for Android: Scan, Sign & Create QR Codes \| Cam PDF"/
+    /title:\s*"Cam PDF Scanner: Sign & QR \| PDF Scanner App for Android"/
   );
+  assert.match(pageSource, /name:\s*"Cam PDF Scanner: Sign & QR"/);
+  assert.doesNotMatch(pageSource, /Cam PDF Scan Signer QR Gen/);
   assert.match(
     pageSource,
     /<h1[^>]*>\s*Scan documents, sign PDFs, and create QR codes on Android\s*<\/h1>/

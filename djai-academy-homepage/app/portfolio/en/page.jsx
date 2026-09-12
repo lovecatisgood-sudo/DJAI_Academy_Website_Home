@@ -34,7 +34,7 @@ const categories = [
       "DJAI mobile products that combine scanning, file management, PDF editing and signing, controlled exports, and QR workflows in one focused experience.",
     projects: [
       {
-        name: "Cam PDF Scan Signer QR Gen",
+        name: "Cam PDF Scanner: Sign & QR",
         image: "/apps/cam-pdf/home.png",
         images: [
           "/apps/cam-pdf/editor.png",

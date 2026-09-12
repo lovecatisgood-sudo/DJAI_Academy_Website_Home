@@ -15,12 +15,12 @@ const playStoreEventParams = {
 };
 
 export const metadata = {
-  title: "PDF Scanner App for Android: Scan, Sign & Create QR Codes | Cam PDF",
+  title: "Cam PDF Scanner: Sign & QR | PDF Scanner App for Android",
   description:
     "Scan documents, sign and organize PDFs, create QR codes, and export without an added watermark with Cam PDF for Android.",
   alternates: { canonical: APP_PATH },
   openGraph: {
-    title: "Cam PDF Scanner, PDF Signer & QR Generator for Android",
+    title: "Cam PDF Scanner: Sign & QR | PDF Scanner, Signer & QR Generator for Android",
     description:
       "Scan documents, sign and organize PDFs, create QR codes, and control exports in one Android app by DJAI.",
     url: APP_PATH,
@@ -30,14 +30,14 @@ export const metadata = {
         url: "/apps/cam-pdf/home.png",
         width: 390,
         height: 844,
-        alt: "Cam PDF Scan Signer QR Gen document home screen"
+        alt: "Cam PDF Scanner: Sign & QR document home screen"
       }
     ],
     type: "website"
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cam PDF Scanner, PDF Signer & QR Generator for Android",
+    title: "Cam PDF Scanner: Sign & QR | PDF Scanner, Signer & QR Generator for Android",
     description: "Scan documents, sign PDFs, create QR codes, and control exports on Android.",
     images: ["/apps/cam-pdf/home.png"]
   }
@@ -87,7 +87,7 @@ const screens = [
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "MobileApplication",
-  name: "Cam PDF Scan Signer QR Gen",
+  name: "Cam PDF Scanner: Sign & QR",
   operatingSystem: "Android",
   applicationCategory: "UtilitiesApplication",
   softwareVersion: "2.0.1",
@@ -125,7 +125,7 @@ export default function CamPdfAppPage() {
             <Image
               className={styles.heroScreenLeft}
               src="/apps/cam-pdf/editor.png"
-              alt="Cam PDF Scan Signer document edge correction screen"
+              alt="Cam PDF Scanner: Sign & QR document edge correction screen"
               width={390}
               height={844}
               priority
@@ -133,7 +133,7 @@ export default function CamPdfAppPage() {
             <Image
               className={styles.heroScreenMain}
               src="/apps/cam-pdf/home.png"
-              alt="Cam PDF Scan Signer document library home screen"
+              alt="Cam PDF Scanner: Sign & QR document library home screen"
               width={390}
               height={844}
               priority
@@ -141,7 +141,7 @@ export default function CamPdfAppPage() {
             <Image
               className={styles.heroScreenRight}
               src="/apps/cam-pdf/qr.png"
-              alt="Cam PDF Scan Signer QR code generator screen"
+              alt="Cam PDF Scanner: Sign & QR — QR code generator screen"
               width={390}
               height={844}
               priority
@@ -152,7 +152,7 @@ export default function CamPdfAppPage() {
             <div className={styles.productLockup}>
               <Image
                 src="/apps/cam-pdf/icon.webp"
-                alt="Cam PDF Scan Signer QR Gen app icon"
+                alt="Cam PDF Scanner: Sign & QR app icon"
                 width={72}
                 height={72}
               />
@@ -269,7 +269,7 @@ export default function CamPdfAppPage() {
                 <div className={styles.screenFrame}>
                   <Image
                     src={`/apps/cam-pdf/${image}`}
-                    alt={`${title} screen in Cam PDF Scan Signer QR Gen`}
+                    alt={`${title} screen in Cam PDF Scanner: Sign & QR`}
                     width={390}
                     height={844}
                   />
@@ -334,7 +334,7 @@ export default function CamPdfAppPage() {
         <section className={styles.finalCta}>
           <Image src="/apps/cam-pdf/icon.webp" alt="Cam PDF app icon" width={92} height={92} />
           <p className={styles.kicker}>Available on Google Play</p>
-          <h2>Cam PDF Scan Signer QR Gen</h2>
+          <h2>Cam PDF Scanner: Sign & QR</h2>
           <p>
             Download the Android app from Google Play. An account is required, free access uses a
             weekly export allowance, and the one-time Remove Ads purchase includes unlimited

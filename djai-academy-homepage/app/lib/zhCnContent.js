@@ -90,7 +90,7 @@ export const zhCnMarketingContent = {
     },
     "highlights": [
       {
-        "title": "Cam PDF Scan",
+        "title": "Cam PDF Scanner: Sign & QR",
         "text": "面向 Android 的文档扫描、整理、签名与 QR 工作空间。"
       },
       {

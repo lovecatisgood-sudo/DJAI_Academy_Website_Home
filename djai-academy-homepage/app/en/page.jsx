@@ -41,7 +41,7 @@ const routes = [
   },
   {
     eyebrow: "Android app",
-    title: "Cam PDF Scan Signer QR Gen",
+    title: "Cam PDF Scanner: Sign & QR",
     text: "Scan documents, sign PDFs, and create QR codes on Android with an app released by DJAI.",
     href: links.camPdf,
     action: "See Cam PDF"

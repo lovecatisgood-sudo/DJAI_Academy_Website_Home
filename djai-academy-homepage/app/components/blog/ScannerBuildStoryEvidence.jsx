@@ -59,7 +59,7 @@ export function ScannerBuildStoryEvidence({ locale = "en" }) {
           <figure key={src}>
             <Image
               src={`/apps/cam-pdf/${src}`}
-              alt={`${title} — Cam PDF Scan Signer QR Gen`}
+              alt={`${title} — Cam PDF Scanner: Sign & QR`}
               width={390}
               height={844}
               sizes="(max-width: 760px) 78vw, 240px"

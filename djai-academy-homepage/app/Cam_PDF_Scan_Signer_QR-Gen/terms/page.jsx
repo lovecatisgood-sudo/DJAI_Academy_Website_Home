@@ -5,17 +5,17 @@ import styles from "../privacy/page.module.css";
 const APP_PATH = "/Cam_PDF_Scan_Signer_QR-Gen/";
 
 export const metadata = {
-  title: "Terms of Service | Cam PDF Scan Signer QR Gen",
-  description: "Terms governing Cam PDF Scan Signer QR Gen accounts and Android application use.",
+  title: "Terms of Service | Cam PDF Scanner: Sign & QR",
+  description: "Terms governing Cam PDF Scanner: Sign & QR accounts and Android application use.",
   alternates: { canonical: `${APP_PATH}terms/` },
   robots: { index: true, follow: true }
 };
 
 export default function CamPdfTermsPage() {
   return <><SiteHeader locale="en" currentRoute="camPdf" languageHrefs={{ "zh-CN": `${APP_PATH}zh-cn/terms/`, "zh-TW": `${APP_PATH}zh-tw/terms/` }} /><main className={styles.page}>
-    <header className={styles.hero}><p>Cam PDF Scan Signer QR Gen</p><h1>Terms of Service</h1><span>Effective September 6, 2026</span></header>
+    <header className={styles.hero}><p>Cam PDF Scanner: Sign &amp; QR</p><h1>Terms of Service</h1><span>Effective September 6, 2026</span></header>
     <article className={styles.content}>
-      <p className={styles.lead}>These terms govern your use of the Cam PDF Scan Signer QR Gen Android app and its DJAI account services. By creating an account, you agree to these terms and the Privacy Policy.</p>
+      <p className={styles.lead}>These terms govern your use of the Cam PDF Scanner: Sign &amp; QR Android app and its DJAI account services. By creating an account, you agree to these terms and the Privacy Policy.</p>
       <section><h2>Eligibility and accounts</h2><p>You must be at least 13 years old and able to enter a binding agreement, or use the service with permission from a parent or guardian where required. Provide accurate account information, protect your credentials, and notify us of suspected unauthorized access.</p></section>
       <section><h2>Local document responsibility</h2><p>Documents, signatures, QR payloads, images, video, audio, and generated files are stored and processed on your device. You are responsible for backups, reviewing output accuracy, obtaining permission to process content, and deciding where files are shared. The app is not a substitute for legal, medical, financial, archival, or identity-verification advice.</p></section>
       <section><h2>Weekly uses and quests</h2><p>Free accounts receive the weekly export allowance shown in the app and may be able to add uses through displayed quests or eligible rewarded ads. The app shows the current allowance, reset timing, and available reward conditions. A failed or cancelled export is not intended to consume a use. Quest availability, advertising inventory, and promotional limits may change prospectively to protect service quality and prevent abuse.</p></section>

@@ -34,7 +34,7 @@ const categories = [
       "โปรดักต์มือถือของ DJAI ที่รวมการสแกน จัดการไฟล์ แก้ไขและเซ็น PDF ส่งออกเอกสาร และสร้าง QR code ไว้ใน workflow เดียว",
     projects: [
       {
-        name: "Cam PDF Scan Signer QR Gen",
+        name: "Cam PDF Scanner: Sign & QR",
         image: "/apps/cam-pdf/home.png",
         images: [
           "/apps/cam-pdf/editor.png",

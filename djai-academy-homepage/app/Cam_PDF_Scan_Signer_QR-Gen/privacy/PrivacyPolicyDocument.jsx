@@ -7,10 +7,10 @@ const PRIVACY_PATH = APP_PATH + "privacy/";
 const THAI_PATH = PRIVACY_PATH + "th/";
 
 const en = {
-  title: "Privacy Policy for Cam PDF Scan Signer QR Gen",
+  title: "Privacy Policy for Cam PDF Scanner: Sign & QR",
   date: "Effective date: September 6, 2026 · Last updated: September 6, 2026",
   intro: [
-    "DEEJAI LAB Co ., Ltd, company registration number 0105569117953, operating under the brand DJAI Academy (\"DJAI\", \"we\", \"us\", or \"our\"), provides Cam PDF Scan Signer QR Gen (the \"App\"). This policy explains what information is processed when you use the App, why it is processed, who may receive it, how long it is kept, and the controls available to you.",
+    "DEEJAI LAB Co ., Ltd, company registration number 0105569117953, operating under the brand DJAI Academy (\"DJAI\", \"we\", \"us\", or \"our\"), provides Cam PDF Scanner: Sign & QR (the \"App\"). This policy explains what information is processed when you use the App, why it is processed, who may receive it, how long it is kept, and the controls available to you.",
     "This revision describes the Android release distributed through Google Play under package name com.djai.campdfscan. It does not claim coverage for an iOS release or platform features that have not been verified in the current production source."
   ],
   sections: [
@@ -223,10 +223,10 @@ const en = {
 };
 
 const th = {
-  title: "นโยบายความเป็นส่วนตัวสำหรับ Cam PDF Scan Signer QR Gen",
+  title: "นโยบายความเป็นส่วนตัวสำหรับ Cam PDF Scanner: Sign & QR",
   date: "วันที่มีผลบังคับใช้: 6 กันยายน 2026 · ปรับปรุงล่าสุด: 6 กันยายน 2026",
   intro: [
-    "DEEJAI LAB Co ., Ltd เลขทะเบียนนิติบุคคล 0105569117953 ซึ่งดำเนินงานภายใต้แบรนด์ DJAI Academy (\"DJAI\", \"เรา\" หรือ \"ของเรา\") เป็นผู้ให้บริการ Cam PDF Scan Signer QR Gen (\"แอป\") นโยบายนี้อธิบายว่าแอปประมวลผลข้อมูลใด เหตุใดจึงประมวลผล ใครอาจได้รับข้อมูล เก็บข้อมูลไว้นานเพียงใด และคุณมีวิธีควบคุมข้อมูลอย่างไร",
+    "DEEJAI LAB Co ., Ltd เลขทะเบียนนิติบุคคล 0105569117953 ซึ่งดำเนินงานภายใต้แบรนด์ DJAI Academy (\"DJAI\", \"เรา\" หรือ \"ของเรา\") เป็นผู้ให้บริการ Cam PDF Scanner: Sign & QR (\"แอป\") นโยบายนี้อธิบายว่าแอปประมวลผลข้อมูลใด เหตุใดจึงประมวลผล ใครอาจได้รับข้อมูล เก็บข้อมูลไว้นานเพียงใด และคุณมีวิธีควบคุมข้อมูลอย่างไร",
     "นโยบายฉบับนี้อธิบายรุ่น Android ที่เผยแพร่ผ่าน Google Play ภายใต้ชื่อแพ็กเกจ com.djai.campdfscan และไม่ได้อ้างว่าครอบคลุมรุ่น iOS หรือความสามารถของแพลตฟอร์มที่ยังไม่ได้รับการยืนยันใน source code ของรุ่นเผยแพร่ปัจจุบัน"
   ],
   sections: [
@@ -497,7 +497,7 @@ export default function PrivacyPolicyDocument({ locale }) {
       <SiteHeader locale={locale} currentRoute="camPdf" languageHrefs={languageHrefs} />
       <main className={styles.page}>
         <header className={styles.hero}>
-          <p>Cam PDF Scan Signer QR Gen</p>
+          <p>Cam PDF Scanner: Sign &amp; QR</p>
           <h1>{copy.title}</h1>
           <span>{copy.date}</span>
         </header>

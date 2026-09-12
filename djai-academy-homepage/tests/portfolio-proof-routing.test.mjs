@@ -23,7 +23,7 @@ test("Portfolio sends its primary proof journey to Development rather than Servi
 
 test("Cam PDF portfolio proof strengthens the owned product page before the store", () => {
   for (const [locale, source] of pages) {
-    const camBlock = source.match(/Cam PDF Scan Signer QR Gen[\s\S]{0,900}/)?.[0] || "";
+    const camBlock = source.match(/Cam PDF Scanner: Sign & QR[\s\S]{0,900}/)?.[0] || "";
     assert.match(camBlock, /\/Cam_PDF_Scan_Signer_QR-Gen\//, `${locale}: Cam PDF proof bypasses the product page`);
     assert.doesNotMatch(camBlock, /play\.google\.com/, `${locale}: Cam PDF proof should not skip directly to Google Play`);
   }

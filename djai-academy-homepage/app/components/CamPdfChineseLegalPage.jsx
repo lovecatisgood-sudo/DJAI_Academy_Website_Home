@@ -28,7 +28,7 @@ export default function CamPdfChineseLegalPage({ content, type }) {
     <>
       <SiteHeader locale={content.locale} currentRoute="camPdf" languageHrefs={languageHrefs} />
       <main className={styles.page}>
-        <header className={styles.hero}><p>Cam PDF Scan Signer QR Gen</p><h1>{page.title}</h1><span>{page.updated}</span></header>
+        <header className={styles.hero}><p>Cam PDF Scanner: Sign &amp; QR</p><h1>{page.title}</h1><span>{page.updated}</span></header>
         <article className={styles.content}>
           <p className={styles.lead}>{page.lead}</p>
           {page.sections.map(([title, body]) => <section key={title}><h2>{title}</h2><p>{body}</p></section>)}
