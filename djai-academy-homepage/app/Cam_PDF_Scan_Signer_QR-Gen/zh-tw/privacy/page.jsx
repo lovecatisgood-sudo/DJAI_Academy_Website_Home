@@ -1,6 +1,3 @@
-import CamPdfChineseLegalPage, { camPdfLegalMetadata } from "../../../components/CamPdfChineseLegalPage";
-import { camPdfContent } from "../../../lib/camPdfChineseContent";
-
-const content = { ...camPdfContent["zh-TW"], indexable: false };
-export const metadata = camPdfLegalMetadata(content, "privacy");
-export default function Page() { return <CamPdfChineseLegalPage content={content} type="privacy" />; }
+import PrivacyPolicyDocument from "../../privacy/PrivacyPolicyDocument";
+export const metadata = { title: "Privacy Policy | Cam PDF Scanner: Sign & QR", alternates: { canonical: "/Cam_PDF_Scan_Signer_QR-Gen/privacy/" }, robots: { index: false, follow: true } };
+export default function Page() { return <PrivacyPolicyDocument locale="zh-TW" />; }

@@ -128,3 +128,11 @@
     grid-column: 1;
   }
 }
+
+.notice { padding: 20px; margin-bottom: 32px; background: #e8f3ef; border-left: 4px solid #087f77; line-height: 1.8; }
+.sectionBody { min-width: 0; }
+.sectionBody h3 { margin: 10px 0 0; color: #152426; }
+.tableWrap { overflow-x: auto; }
+.tableWrap table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+.tableWrap th, .tableWrap td { padding: 12px; border: 1px solid #ccd9d6; text-align: left; vertical-align: top; }
+.content a { overflow-wrap: anywhere; }

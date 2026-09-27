@@ -1,57 +1,27 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
+const base = new URL("../app/Cam_PDF_Scan_Signer_QR-Gen/", import.meta.url);
+const policy = JSON.parse(await readFile(new URL("privacy/policy-content.json", base), "utf8"));
+const text = JSON.stringify(policy);
 
-const policySource = await readFile(
-  new URL("../app/Cam_PDF_Scan_Signer_QR-Gen/privacy/PrivacyPolicyDocument.jsx", import.meta.url),
-  "utf8"
-);
-
-test("English Cam PDF policy contains the authoritative September 6 revision", () => {
-  const requiredText = [
-    "Privacy Policy for Cam PDF Scanner: Sign & QR",
-    "Effective date: September 6, 2026 · Last updated: September 6, 2026",
-    "This revision describes the Android release",
-    "your age bracket;",
-    "your gender selection;",
-    "your country or region;",
-    "your broad profession;",
-    "whether you drive;",
-    "your vehicle preference;",
-    "may incidentally contain a local file path, file URI, or filename",
-    "The current Android release does not send a separate purchase record to DJAI's backend.",
-    "Deleting your App account does not cancel, refund, or erase Google Play's transaction record."
-  ];
-
-  for (const text of requiredText) {
-    assert.match(policySource, new RegExp(text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
-  }
+test("current policy covers both platforms and discloses actual telemetry controls", () => {
+  assert.equal(policy.date, "Revision date: September 28, 2026");
+  assert.equal(policy.sections.length, 14);
+  for (const expected of ["DEEJAI LAB Co., Ltd", "0105569117953", "Android and iOS", "Signing in does not add uses", "does not currently provide a separate Firebase Analytics switch", "these events can be linked to your account", "App Attest", "contact@djai.academy"]) assert.ok(text.includes(expected), expected);
+  assert.doesNotMatch(text, /does not claim coverage for an iOS|Siamese Cat Cafe Company|TODO|TBD/);
 });
-
-test("Cam PDF policy omits unverified platform and backend claims", () => {
-  assert.doesNotMatch(policySource, /Sign in with Apple/);
-  assert.doesNotMatch(policySource, /App Attest/);
-  assert.doesNotMatch(policySource, /Railway/);
-  assert.doesNotMatch(policySource, /deletion guard/i);
-  assert.doesNotMatch(policySource, /server-restricted purchase record/i);
-  assert.doesNotMatch(policySource, /Real-time Developer Notifications/i);
-  assert.doesNotMatch(policySource, /saniti[sz]es telemetry to remove local file/i);
+test("retention and deletion do not promise immediate erasure", () => {
+  assert.ok(text.includes("expiry target is not a guarantee of immediate physical deletion"));
+  assert.ok(text.includes("Apple sign-in accounts may require fresh Apple authentication"));
+  assert.ok(text.includes("does not delete documents on your device"));
+  assert.doesNotMatch(text, /deleted within 24 hours|processed immediately/);
 });
-
-test("Thai Cam PDF policy mirrors the corrected material disclosures", () => {
-  const requiredText = [
-    "วันที่มีผลบังคับใช้: 6 กันยายน 2026 · ปรับปรุงล่าสุด: 6 กันยายน 2026",
-    "ช่วงอายุที่คุณเลือก",
-    "เพศที่คุณเลือก",
-    "ประเทศหรือภูมิภาค",
-    "กลุ่มอาชีพ",
-    "คุณขับรถหรือไม่",
-    "ประเภทยานพาหนะที่ชอบ",
-    "อาจมีเส้นทางไฟล์ URI ของไฟล์ หรือชื่อไฟล์ติดไปโดยไม่ตั้งใจ",
-    "รุ่น Android ปัจจุบันไม่ส่งบันทึกการซื้อแยกต่างหากไปยัง backend ของ DJAI"
-  ];
-
-  for (const text of requiredText) {
-    assert.match(policySource, new RegExp(text.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+test("all linked privacy locales render the same current policy and disclose language", async () => {
+  for (const path of ["privacy/page.jsx", "privacy/th/page.jsx", "zh-cn/privacy/page.jsx", "zh-tw/privacy/page.jsx"]) {
+    assert.match(await readFile(new URL(path, base), "utf8"), /PrivacyPolicyDocument/);
   }
+  const component = await readFile(new URL("privacy/PrivacyPolicyDocument.jsx", base), "utf8");
+  assert.match(component, /lang="en"/);
+  for (const locale of ['th:', '"zh-CN":', '"zh-TW":']) assert.ok(component.includes(locale));
 });

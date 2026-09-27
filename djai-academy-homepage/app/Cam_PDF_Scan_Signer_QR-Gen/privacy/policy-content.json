@@ -1,0 +1,362 @@
+{
+  "title": "Privacy Policy for Cam PDF Scanner: Sign & QR",
+  "date": "Revision date: September 28, 2026",
+  "intro": [
+    {
+      "type": "paragraph",
+      "text": "DEEJAI LAB Co., Ltd, company registration number **0105569117953**, operating under the brand **DJAI Academy** (“we,” “us,” or “our”), is responsible for the processing described in this Privacy Policy."
+    },
+    {
+      "type": "paragraph",
+      "text": "This policy covers **Cam PDF Scanner: Sign & QR** on Android and iOS, including iPadOS, and its connected account and support services. The Android package name and iOS bundle identifier are **com.djai.campdfscan**. Features and data processing differ between platforms, as explained below. App availability is shown on the relevant store listing."
+    },
+    {
+      "type": "paragraph",
+      "text": "Contact us about privacy at **contact@djai.academy**. Our website is [djai.academy](https://www.djai.academy/)."
+    }
+  ],
+  "sections": [
+    {
+      "title": "1. Privacy at a glance",
+      "blocks": [
+        {
+          "type": "list",
+          "items": [
+            "Scanning, document editing, signatures, optical character recognition (OCR), QR-code processing, and file generation take place on your device. Our account service does not provide cloud storage for your document content.",
+            "Files may leave your device when you choose to share, print, export, back up, or open them using another service. That service handles the files under its own privacy practices.",
+            "In iOS V1, you can select **Skip** and use the document tools without creating an account. The two-output weekly allowance is stored on your device and is shared by guests and signed-in users. Signing in does not add uses or synchronize that allowance across devices.",
+            "iOS V1 does not offer advertisements, purchases, reward surveys, quests, usage refills, or push-notification registration. Android includes separate advertising, account, reward, notification, and purchase features.",
+            "Optional sign-in, analytics, diagnostics, and security services can process information separately from your documents. Using the app without an account does not mean that no technical information is processed.",
+            "You can initiate account deletion inside the app or contact us through our [account-deletion page](https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/delete-account/)."
+          ]
+        }
+      ]
+    },
+    {
+      "title": "2. Documents and information stored on your device",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The app uses local storage to process and retain scans, imported photos and files, page images, thumbnails, signatures, annotations, OCR text, QR-code contents and history, generated files, project indexes, preferences, and temporary working files."
+        },
+        {
+          "type": "paragraph",
+          "text": "We do not use the account database to upload or store your document pages, signatures, OCR text, QR contents, or exported documents. We do not intentionally include this content in analytics or diagnostic reports. Technical reporting and its safeguards are described in Section 5."
+        },
+        {
+          "type": "paragraph",
+          "text": "When you use the system share sheet, a file picker, a print service, a photo library, a cloud drive, or another app, your selected destination may receive the content. We do not control copies held by those services or recipients. Your operating system and backup settings may also determine whether local app data is backed up. Android app backup is disabled by the app; iOS device and iCloud backups depend on Apple's services and your settings."
+        },
+        {
+          "type": "paragraph",
+          "text": "Local documents and exported copies remain until removed through the app, device storage, or the destination service. Uninstalling generally removes app-controlled storage, but does not necessarily remove exported files, operating-system backups, or third-party copies. Account deletion does not automatically erase local documents or shared files."
+        }
+      ]
+    },
+    {
+      "title": "3. Accounts and sign-in",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "If you choose to create or use an account, Firebase Authentication and our connected services may process:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "your email address, verification status, and optional display name;",
+            "your unique account identifier and sign-in provider;",
+            "profile information made available by Google or Apple when you choose that sign-in method;",
+            "authentication tokens, sign-in and account timestamps, password-reset activity, IP addresses, device information, and security signals;",
+            "the versions and acceptance times of applicable terms and privacy notices; and",
+            "account preferences and records associated with connected features you use."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Firebase Authentication handles passwords. We do not receive or store your plain-text password. Apple may provide a private relay email address if you choose Hide My Email."
+        },
+        {
+          "type": "paragraph",
+          "text": "On iOS V1, sign-in is optional and is not required to access the base document tools. Existing accounts may still contain records from earlier app versions or Android activity. These records do not increase the local iOS V1 allowance."
+        }
+      ]
+    },
+    {
+      "title": "4. Usage allowances, surveys, rewards, notifications, and purchases",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "iOS V1"
+        },
+        {
+          "type": "paragraph",
+          "text": "The app stores the weekly allowance, reservations, completed-output usage, and reset information on your device. Sign-in does not grant additional uses. The app does not offer advertising or reward refills, preference-survey rewards, purchases, or push registration in this release. Technical analytics about a feature or completed operation are separate from the local allowance record."
+        },
+        {
+          "type": "heading",
+          "text": "Android and historical records"
+        },
+        {
+          "type": "paragraph",
+          "text": "Connected Android features may process account-linked allowance periods, export reservations and completion status, quest progress, reward balances, ad-verification transactions, timestamps, and synchronization information. Google Mobile Ads may receive a pseudonymous account value and reward-purpose information to support reward verification. Our service uses signed reward callbacks to validate rewards and prevent duplicate credits."
+        },
+        {
+          "type": "paragraph",
+          "text": "Where an Android survey is offered, we collect the answers you choose to submit. Survey fields depend on the Android version and may include your intended use, personal/work/education context, and how you found the app. Versions with the longer survey may also collect display name, age bracket, gender, country or region, profession, driving status, and vehicle preference. Those historical responses may remain associated with your account until deleted. Survey information supports product planning and aggregated analysis; it is not document content."
+        },
+        {
+          "type": "paragraph",
+          "text": "If you enable Android notifications, Firebase Cloud Messaging and our service may process your notification token, account identifier, platform, permission status, preferences, and update timestamps. Marketing preferences are optional. You can change available preferences in the app and revoke notification permission in device settings. Essential account and security messages are separate from promotional communications."
+        },
+        {
+          "type": "paragraph",
+          "text": "Google Play processes Android purchases and payment details. The app processes product and purchase identifiers, entitlement and acknowledgement status, and purchase tokens needed to recognize or restore a purchase. Connected purchase verification, where used, also processes account binding and verification status. We do not receive your full payment-card or bank-account details. Deleting an app account does not cancel, refund, or erase Google Play's transaction records."
+        }
+      ]
+    },
+    {
+      "title": "5. Analytics, diagnostics, and security",
+      "blocks": [
+        {
+          "type": "heading",
+          "text": "Analytics"
+        },
+        {
+          "type": "paragraph",
+          "text": "We use Firebase Analytics to understand feature usage and improve the app. It may process app-instance or installation identifiers, your account identifier when signed in, device and operating-system information, app version, language or region, session information, approximate geographic information derived by the provider, and interaction events such as feature access, sign-in, or export completion."
+        },
+        {
+          "type": "paragraph",
+          "text": "Analytics is enabled in the app configuration described by this revision. The app does not currently provide a separate Firebase Analytics switch. Selecting Skip, signing out, or changing advertising preferences does not by itself turn off analytics. You can contact us to request access, deletion, restriction, or objection as described in Section 10. Such a request does not itself change the app's on-device collection setting."
+        },
+        {
+          "type": "heading",
+          "text": "Diagnostics"
+        },
+        {
+          "type": "paragraph",
+          "text": "When configured, Sentry receives technical error and reliability information, such as error messages, stack traces, timestamps, app and operating-system versions, device information, session information, and operation context. A signed-in account identifier may be attached to diagnostic events, so these events can be linked to your account."
+        },
+        {
+          "type": "paragraph",
+          "text": "The iOS V1 app filters recognized local file paths, file URLs, filenames, and common direct identifiers from Sentry events before transmission. These filters reduce accidental disclosure of local file information. We do not intentionally send document contents, signatures, OCR text, QR payloads, passwords, or authentication tokens as analytics events or diagnostic attachments. Diagnostic reporting is active only in releases configured to send reports to Sentry."
+        },
+        {
+          "type": "heading",
+          "text": "Security and infrastructure"
+        },
+        {
+          "type": "paragraph",
+          "text": "Firebase App Check uses platform integrity services, including Apple App Attest for iOS and Google Play Integrity for Android, to help protect connected services. These services process app and installation signals, attestation material, tokens, timestamps, and security information."
+        },
+        {
+          "type": "paragraph",
+          "text": "Our backend and infrastructure providers may process IP addresses, request metadata, user agents, authentication information, response codes, timestamps, and security logs for authentication, abuse prevention, service operation, and troubleshooting. We use security checks to protect connected services; they do not upload local document contents to our account database."
+        }
+      ]
+    },
+    {
+      "title": "6. Advertising on Android",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Android uses Google Mobile Ads and Google's consent tools. Depending on region, consent, device settings, and available features, Google may process advertising and installation identifiers, IP address and approximate location, device and network information, ad requests, impressions and interactions, consent choices, diagnostics, and fraud-prevention signals."
+        },
+        {
+          "type": "paragraph",
+          "text": "This processing supports advertising delivery, measurement, frequency limits, security, reward verification, and personalization where permitted. Contextual or non-personalized ads can still involve data processing. Available advertising choices can be reviewed through the app's advertising privacy controls and device or Google account settings."
+        },
+        {
+          "type": "paragraph",
+          "text": "iOS V1 disables ad initialization and ad requests. Android advertising features described here do not describe an active iOS V1 advertising service. We do not intentionally provide scanned documents, signatures, OCR text, or QR contents to advertising services."
+        }
+      ]
+    },
+    {
+      "title": "7. Purposes, permissions, and legal grounds",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "We process information to provide requested features; create, secure, recover, and delete accounts; operate connected Android allowances and rewards; recognize purchases; deliver requested notifications; understand usage; diagnose failures; prevent abuse; respond to support and privacy requests; and meet applicable legal obligations."
+        },
+        {
+          "type": "paragraph",
+          "text": "The app requests access to device resources for the feature you choose, such as the camera for scanning and system photo or document pickers for selected imports. Optional device authentication is handled by the operating system; the app does not receive your biometric template. You can change permissions in device settings. Declining a permission may prevent its related feature from working, but does not grant us access to the protected resource."
+        },
+        {
+          "type": "paragraph",
+          "text": "Where applicable law requires a legal basis, processing may be necessary to provide a service you request, comply with a legal obligation, pursue a legitimate interest subject to your rights, or act on your consent. Consent is used where required for the relevant processing. Optional consent can be withdrawn, without affecting earlier lawful processing. Contact us if you want to understand or challenge the basis for a particular use of your information."
+        },
+        {
+          "type": "paragraph",
+          "text": "We do not request precise-location access, contacts, or health data for these document features. Information you type into a QR code remains local unless you choose to share or open it. If you contact support, we receive the message, contact details, and attachments you send; please avoid sending sensitive documents unless necessary and specifically requested through an appropriate channel."
+        }
+      ]
+    },
+    {
+      "title": "8. Service providers, disclosures, and international transfers",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Depending on platform and features used, recipients include:"
+        },
+        {
+          "type": "table",
+          "rows": [
+            [
+              "Recipient",
+              "Role"
+            ],
+            [
+              "Google and Firebase",
+              "Authentication, account records, analytics, Google sign-in, app integrity, functions, and Android messaging"
+            ],
+            [
+              "Google Mobile Ads and Google's consent services",
+              "Android advertising, consent handling, measurement, fraud prevention, and reward verification"
+            ],
+            [
+              "Google Play",
+              "Android distribution, billing, and purchase restoration"
+            ],
+            [
+              "Apple",
+              "Apple sign-in, iOS distribution, platform integrity, and operating-system services you use"
+            ],
+            [
+              "Sentry",
+              "Configured error reporting and reliability diagnostics"
+            ],
+            [
+              "Railway",
+              "Hosting and routing for connected backend services"
+            ]
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "We require service providers acting on our behalf to protect personal information consistently with this policy and applicable privacy requirements, including protection at least equivalent to the commitments applicable to the information we share. Providers may also act independently for their own platform, security, or legal purposes, as explained in their privacy notices."
+        },
+        {
+          "type": "paragraph",
+          "text": "We may disclose limited information to professional advisers under appropriate confidentiality duties; to authorities or other parties when legally required or necessary to protect rights, safety, or security; or in a business transfer subject to applicable privacy protections. We do not sell your document content, account profile, or survey responses for money. Some laws classify certain advertising disclosures as sharing or targeted advertising even without payment."
+        },
+        {
+          "type": "paragraph",
+          "text": "Providers may process information outside your country, including in the United States. Where required, we rely on applicable contractual safeguards or other recognized transfer mechanisms. You may contact us for information about safeguards relevant to your data."
+        },
+        {
+          "type": "paragraph",
+          "text": "Provider information: [Google](https://policies.google.com/privacy), [Google advertising](https://policies.google.com/technologies/ads), [Firebase](https://firebase.google.com/support/privacy), [Apple](https://www.apple.com/legal/privacy/), [Sentry](https://sentry.io/privacy/), and [Railway](https://railway.com/legal/privacy)."
+        }
+      ]
+    },
+    {
+      "title": "9. Retention",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "We retain information according to its purpose and the circumstances of the service:"
+        },
+        {
+          "type": "list",
+          "items": [
+            "**Local documents and settings:** until removed from the relevant app storage, device, backup, or destination. We cannot remotely delete copies held by recipients.",
+            "**Active account records:** while needed to operate your account and connected features. Successful account deletion removes active account records under our control, subject to the limited exceptions below.",
+            "**Usage and reward records:** while needed to apply allowances, validate rewards, prevent duplicate transactions, and resolve associated disputes. Temporary verification records are subject to expiry and cleanup processes.",
+            "**Deletion safeguards:** limited identifiers, status, and timestamps may be retained to complete deletion and prevent delayed requests from recreating account data. An expiry target is not a guarantee of immediate physical deletion; failed deletion work and asynchronous cleanup can require additional time.",
+            "**Analytics, diagnostic, and infrastructure records:** according to the relevant configured retention and provider cleanup processes. Their lifecycle can differ from account deletion. We consider service reliability, security, applicable requests, legal obligations, and whether information remains identifiable when determining continued retention.",
+            "**Support and privacy correspondence:** as needed to answer the request, establish that it was handled, resolve disputes, and meet applicable obligations.",
+            "**Legally required or security records:** only for the relevant legal, fraud-prevention, security, or dispute purpose. Access is limited accordingly."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "text": "Backups and provider-managed records may be removed on a different schedule from active databases. We do not promise that deleting an account instantly removes every provider log or backup. We will explain applicable retained categories or restrictions when responding to a verified deletion request, where permitted by law."
+        }
+      ]
+    },
+    {
+      "title": "10. Account deletion and your privacy choices",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "To initiate deletion in the app, open **Me → Account and consent → Delete account**. Recent sign-in may be required to protect your account. Apple sign-in accounts may require fresh Apple authentication to revoke the app's authorization during deletion."
+        },
+        {
+          "type": "paragraph",
+          "text": "You can also use our [account-deletion page](https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/delete-account/) or email **contact@djai.academy** with the subject **Cam PDF account deletion**. Use the account email address where possible. Do not send your password. We may request proportionate information to verify account ownership."
+        },
+        {
+          "type": "paragraph",
+          "text": "Deletion removes the authentication account and active account-linked records under our control, including profile and consent records, synchronized usage, survey answers, notification records, and reward records where held. Associated service entitlements or account bindings are removed or unlinked where applicable. Limited security, deletion, legal, provider, and backup records may remain as described in Section 9."
+        },
+        {
+          "type": "paragraph",
+          "text": "Deleting an account does not delete documents on your device, exported or shared copies, or Apple or Google transaction records. Manage those copies and platform records with the relevant device or provider. If deletion fails or cannot be completed in the app, contact us so we can investigate and complete a verified request."
+        },
+        {
+          "type": "paragraph",
+          "text": "Depending on applicable law, you may request access, correction, deletion, portability, restriction, or objection; withdraw consent; or raise a complaint with the relevant data-protection authority. Email **contact@djai.academy** and describe your request and the account or app installation concerned. For a guest installation, we may need limited technical details to locate identifiable service records. Please do not send document contents as proof of identity."
+        },
+        {
+          "type": "paragraph",
+          "text": "We respond within the time required by applicable law and explain any lawful limitation or extension. We may retain information when required or permitted for a specific legal or security purpose. Truly anonymized information that can no longer identify you may not be retrievable as an individual record."
+        },
+        {
+          "type": "paragraph",
+          "text": "You can also manage camera and other permissions in device settings, remove local documents, change available marketing preferences, and adjust Android advertising privacy choices. These controls affect their respective features; they do not automatically disable every analytics or security service."
+        }
+      ]
+    },
+    {
+      "title": "11. Security",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "We use measures such as encrypted network transport, managed authentication, access controls, account-scoped server operations, integrity checks, and diagnostic filtering to reduce unauthorized access and accidental disclosure. No storage or transmission method is completely secure. Protect your device, review destinations before sharing sensitive files, and avoid sending passwords or authentication tokens to support."
+        }
+      ]
+    },
+    {
+      "title": "12. Children",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "The app is a general-purpose productivity tool and is not directed to children under 13. Children below the age required by local law should not create an account or submit personal information without the permission required by that law. If you believe a child has provided information improperly, contact **contact@djai.academy** so we can investigate and take appropriate deletion or protection steps."
+        }
+      ]
+    },
+    {
+      "title": "13. Website use and changes to this policy",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Visiting our website may involve website cookies or similar technologies managed through the site's cookie controls and website privacy notice. Website cookie settings do not change the mobile app's analytics configuration."
+        },
+        {
+          "type": "paragraph",
+          "text": "We will publish revisions at the policy URL below and identify their revision date. Where required, we will provide additional notice or obtain consent for a material change. A policy revision does not by itself activate a new app feature or authorize processing for an incompatible purpose."
+        }
+      ]
+    },
+    {
+      "title": "14. Contact and useful links",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "**DEEJAI LAB Co., Ltd** **Company registration number:** 0105569117953 **Operating brand:** DJAI Academy **Privacy and support:** [contact@djai.academy](mailto:contact@djai.academy)"
+        },
+        {
+          "type": "list",
+          "items": [
+            "[Privacy policy](https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/privacy/)",
+            "[Account deletion](https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/delete-account/)",
+            "[App information and support](https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/)",
+            "[Terms of service](https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/terms/)"
+          ]
+        }
+      ]
+    }
+  ]
+}
