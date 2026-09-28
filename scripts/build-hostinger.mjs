@@ -303,6 +303,10 @@ function prepareRuntimeArtifact(project) {
   const nodeModules = join(cwd, "node_modules");
   const nextBuild = join(cwd, ".next");
 
+  // The homepage is handled by Next in the public server process.
+  // Keep its production dependencies and build output for that handler.
+  if (project.dir === "djai-academy-homepage") return;
+
   if (project.runtime) {
     const standaloneDir = join(nextBuild, "standalone");
     const tracedNodeModules = join(standaloneDir, "node_modules");

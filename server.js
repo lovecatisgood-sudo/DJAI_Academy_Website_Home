@@ -11,15 +11,16 @@ const rootDir = __dirname;
 const homepageDir = path.join(rootDir, "djai-academy-homepage");
 const voicePromoDir = path.join(rootDir, "djai-web-promo-voice");
 const packageMetadata = require(path.join(rootDir, "package.json"));
+const createHomepageApp = require(path.join(homepageDir, "node_modules", "next"));
 
 const port = Number(process.env.PORT || 3000);
 const hostname = process.env.HOST || "0.0.0.0";
 // Hosting providers do not always set NODE_ENV. Default to the production
 // server and opt into development mode only when it is requested explicitly.
 // Hostinger may overlap old and new application instances during a rolling
-// deploy. Deriving child ports from the process ID prevents those instances
-// from competing for the same fixed PORT+1/PORT+2 pair.
-const { homepagePort, voicePromoPort } = resolveInternalPorts({
+// deploy. Deriving the voice promo port from the process ID prevents those
+// instances from competing for the same fixed child port.
+const { voicePromoPort } = resolveInternalPorts({
   processId: process.pid,
   rootPort: port,
   homepageOverride: process.env.DJAI_HOMEPAGE_PORT,
@@ -474,17 +475,18 @@ function waitForServer(internalPort, attempts = 100) {
 
 const services = {};
 let rootServer;
+let homepageHandle = null;
 const handleCourseInterest = createCourseInterestHandler();
 
 async function start() {
-  services.homepage = createStandaloneService("DJAI homepage", homepageDir, homepagePort);
+  const homepageApp = createHomepageApp({ dev: false, dir: homepageDir });
+  void homepageApp.prepare().then(() => {
+    homepageHandle = homepageApp.getRequestHandler();
+    console.log("DJAI homepage request handler is ready.");
+  }).catch((error) => console.error("DJAI homepage request handler failed to initialize.", error));
   services.voicePromo = createStandaloneService("DJAI voice promo", voicePromoDir, voicePromoPort);
-  services.homepage.start();
   services.voicePromo.start();
-  void Promise.all([
-    services.homepage.waitUntilReady(),
-    services.voicePromo.waitUntilReady()
-  ]).catch((error) => console.error("A child service is still starting.", error));
+  void services.voicePromo.waitUntilReady().catch((error) => console.error("Voice promo is still starting.", error));
 
   return http
     .createServer((req, res) => {
@@ -564,7 +566,16 @@ async function start() {
         return;
       }
 
-      proxyRequest(req, res, homepagePort);
+      if (!homepageHandle) {
+        res.writeHead(503, { "Content-Type": "text/plain; charset=utf-8", "Retry-After": "2" });
+        res.end("Website is starting");
+        return;
+      }
+      Promise.resolve(homepageHandle(req, res)).catch((error) => {
+        console.error(`Unable to render ${pathname}.`, error);
+        if (!res.headersSent) res.writeHead(500, { "Content-Type": "text/plain; charset=utf-8" });
+        res.end("Website request failed");
+      });
     })
     .listen(port, hostname, () => {
       console.log(`DJAI Academy website and voice promo running at http://${hostname}:${port}`);

@@ -6,7 +6,7 @@ const rootDir = new URL("..", import.meta.url).pathname;
 
 const requiredOutputs = [
   "djai-academy-homepage/.next/BUILD_ID",
-  "djai-academy-homepage/.next/standalone/server.js",
+  "djai-academy-homepage/node_modules/next/package.json",
   "djai-web-promo-voice/.next/BUILD_ID",
   "djai-web-promo-voice/.next/standalone/server.js",
   "djai-academy-course/out/index.html",
