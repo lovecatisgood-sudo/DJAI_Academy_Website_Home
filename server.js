@@ -477,10 +477,10 @@ async function start() {
   services.voicePromo = createStandaloneService("DJAI voice promo", voicePromoDir, voicePromoPort);
   services.homepage.start();
   services.voicePromo.start();
-  await Promise.all([
+  void Promise.all([
     services.homepage.waitUntilReady(),
     services.voicePromo.waitUntilReady()
-  ]);
+  ]).catch((error) => console.error("A child service is still starting.", error));
 
   return http
     .createServer((req, res) => {
