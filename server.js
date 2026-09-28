@@ -47,6 +47,10 @@ const mimeTypes = {
 
 const staticMounts = [
   {
+    prefix: "/Cam_PDF_Scan_Signer_QR-Gen/privacy",
+    dir: path.join(rootDir, "static-fallback", "Cam_PDF_Scan_Signer_QR-Gen", "privacy")
+  },
+  {
     prefix: "/_next/static",
     dir: path.join(homepageDir, ".next", "static")
   },

@@ -3,7 +3,7 @@ import { join } from 'node:path';
 
 const root = new URL('..', import.meta.url).pathname;
 const source = join(root, 'djai-academy-homepage/app/Cam_PDF_Scan_Signer_QR-Gen/privacy/policy-content.json');
-const targetDir = join(root, 'djai-academy-homepage/public/Cam_PDF_Scan_Signer_QR-Gen/privacy');
+const targetDir = join(root, 'static-fallback/Cam_PDF_Scan_Signer_QR-Gen/privacy');
 const policy = JSON.parse(readFileSync(source, 'utf8'));
 const escape = (value) => String(value).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const inline = (value) => escape(value)
