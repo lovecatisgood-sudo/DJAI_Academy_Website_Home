@@ -123,11 +123,11 @@
         },
         {
           "type": "paragraph",
-          "text": "We use Firebase Analytics to understand feature usage and improve the app. It may process app-instance or installation identifiers, your account identifier when signed in, device and operating-system information, app version, language or region, session information, approximate geographic information derived by the provider, and interaction events such as feature access, sign-in, or export completion."
+          "text": "We use Firebase Analytics to understand feature usage and improve the app. When collection is enabled, it may process app-instance or installation identifiers, device and operating-system information, app version, language or region, session information, approximate geographic information derived by the provider, and interaction events such as feature access, sign-in, or export completion. Android may associate a signed-in account identifier with Analytics. iOS V1 build 70 does not attach the authentication account ID to Analytics."
         },
         {
           "type": "paragraph",
-          "text": "Analytics is enabled in the app configuration described by this revision. The app does not currently provide a separate Firebase Analytics switch. Selecting Skip, signing out, or changing advertising preferences does not by itself turn off analytics. You can contact us to request access, deletion, restriction, or objection as described in Section 10. Such a request does not itself change the app's on-device collection setting."
+          "text": "On iOS V1 build 70, usage analytics is off by default. You may opt in or withdraw at any time using the Optional usage analytics switch in Me. This choice is stored on your device and does not change access to document tools or the weekly output allowance. Withdrawing stops new usage events and resets local Firebase Analytics data; it does not automatically erase information already received by a provider. Older iOS test builds enabled Analytics without this switch, so upgrading from one of those builds may retain its native setting until the new app initializes. On Android, the iOS switch is unavailable and the existing Android analytics configuration applies. Selecting Skip, signing out, or changing Android advertising preferences does not itself change analytics consent. Contact us for access, deletion, restriction, or objection as described in Section 10."
         },
         {
           "type": "heading",
@@ -305,7 +305,7 @@
         },
         {
           "type": "paragraph",
-          "text": "You can also manage camera and other permissions in device settings, remove local documents, change available marketing preferences, and adjust Android advertising privacy choices. These controls affect their respective features; they do not automatically disable every analytics or security service."
+          "text": "On iOS V1 build 70, you can change the Optional usage analytics switch in Me without signing in. This controls Firebase usage analytics on that device; it does not disable Sentry diagnostics, authentication, App Check, or necessary security processing. You can also manage camera and other permissions in device settings, remove local documents, change available marketing preferences, and adjust Android advertising privacy choices. Each control affects its respective feature."
         }
       ]
     },
