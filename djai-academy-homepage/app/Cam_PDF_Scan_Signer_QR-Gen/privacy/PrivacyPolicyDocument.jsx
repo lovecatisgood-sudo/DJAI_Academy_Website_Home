@@ -4,9 +4,9 @@ import copy from "./policy-content.json";
 import styles from "./page.module.css";
 const APP_PATH = "/Cam_PDF_Scan_Signer_QR-Gen/";
 const notices = {
-  th: "นโยบายฉบับปัจจุบันลงวันที่ 28 กันยายน 2026 แสดงเป็นภาษาอังกฤษด้านล่าง และครอบคลุม Android และ iOS ข้อความนี้ใช้แทนคำแปลฉบับเก่าที่ครอบคลุมเฉพาะ Android หากต้องการคำอธิบายภาษาไทย โปรดติดต่อ contact@djai.academy",
-  "zh-CN": "下方为2026年9月28日修订的完整英文隐私政策，涵盖 Android 和 iOS，并取代之前仅适用于 Android 的旧译文。如需中文说明，请联系 contact@djai.academy。",
-  "zh-TW": "下方為2026年9月28日修訂的完整英文隱私權政策，涵蓋 Android 和 iOS，並取代先前僅適用於 Android 的舊譯文。如需中文說明，請聯絡 contact@djai.academy。"
+  th: "นโยบายฉบับปัจจุบันลงวันที่ 11 ตุลาคม 2026 แสดงเป็นภาษาอังกฤษด้านล่าง และครอบคลุม Android และ iOS ข้อความนี้ใช้แทนคำแปลฉบับเก่าที่ครอบคลุมเฉพาะ Android หากต้องการคำอธิบายภาษาไทย โปรดติดต่อ contact@djai.academy",
+  "zh-CN": "下方为2026年10月11日修订的完整英文隐私政策，涵盖 Android 和 iOS，并取代之前仅适用于 Android 的旧译文。如需中文说明，请联系 contact@djai.academy。",
+  "zh-TW": "下方為2026年10月11日修訂的完整英文隱私權政策，涵蓋 Android 和 iOS，並取代先前僅適用於 Android 的舊譯文。如需中文說明，請聯絡 contact@djai.academy。"
 };
 function Inline({ text }) {
   return text.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g).map((part, index) => {

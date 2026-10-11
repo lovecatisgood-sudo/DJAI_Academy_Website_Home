@@ -6,7 +6,7 @@ const policy = JSON.parse(await readFile(new URL("privacy/policy-content.json", 
 const text = JSON.stringify(policy);
 
 test("current policy covers both platforms and discloses actual telemetry controls", () => {
-  assert.equal(policy.date, "Revision date: September 28, 2026");
+  assert.equal(policy.date, "Revision date: October 11, 2026");
   assert.equal(policy.sections.length, 14);
   for (const expected of ["DEEJAI LAB Co., Ltd", "0105569117953", "Android and iOS", "Signing in does not add uses", "does not currently provide a separate Firebase Analytics switch", "these events can be linked to your account", "App Attest", "contact@djai.academy"]) assert.ok(text.includes(expected), expected);
   assert.doesNotMatch(text, /does not claim coverage for an iOS|Siamese Cat Cafe Company|TODO|TBD/);

@@ -1,6 +1,6 @@
 {
   "title": "Privacy Policy for Cam PDF Scanner: Sign & QR",
-  "date": "Revision date: September 28, 2026",
+  "date": "Revision date: October 11, 2026",
   "intro": [
     {
       "type": "paragraph",
@@ -269,6 +269,10 @@
             "**Support and privacy correspondence:** as needed to answer the request, establish that it was handled, resolve disputes, and meet applicable obligations.",
             "**Legally required or security records:** only for the relevant legal, fraud-prevention, security, or dispute purpose. Access is limited accordingly."
           ]
+        },
+        {
+          "type": "paragraph",
+          "text": "New identified usage and reward transaction receipts have an expiry target of 90 days after the operation begins and are removed by asynchronous cleanup. A reward proof can be claimed for 24 hours after verification. Older transaction records may remain while needed to prevent duplicate rewards or resolve disputes and are removed through successful account deletion, subject to the security, legal and provider exceptions described here. Local recovery records retain file metadata and operation status; they do not upload or contain your document text or file contents."
         },
         {
           "type": "paragraph",
