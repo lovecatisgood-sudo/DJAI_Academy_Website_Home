@@ -1,0 +1,141 @@
+{
+  "checkedAt": "2026-10-26T09:53:16.727Z",
+  "results": [
+    {
+      "url": "http://djai.academy/ads.txt",
+      "chain": [
+        {
+          "url": "http://djai.academy/ads.txt",
+          "status": 301,
+          "location": "https://djai.academy/ads.txt",
+          "type": "text/html",
+          "cache": null,
+          "robots": null,
+          "bytes": 795,
+          "correctRecord": false,
+          "asciiOnly": true
+        },
+        {
+          "url": "https://djai.academy/ads.txt",
+          "status": 308,
+          "location": "https://www.djai.academy/ads.txt",
+          "type": null,
+          "cache": "public, max-age=31536000, immutable",
+          "robots": null,
+          "bytes": 0,
+          "correctRecord": false,
+          "asciiOnly": true
+        },
+        {
+          "url": "https://www.djai.academy/ads.txt",
+          "status": 200,
+          "location": null,
+          "type": "text/plain; charset=utf-8",
+          "cache": "public, max-age=86400, must-revalidate, stale-while-revalidate=604800",
+          "robots": null,
+          "bytes": 59,
+          "correctRecord": true,
+          "asciiOnly": true
+        }
+      ]
+    },
+    {
+      "url": "http://www.djai.academy/ads.txt",
+      "chain": [
+        {
+          "url": "http://www.djai.academy/ads.txt",
+          "status": 301,
+          "location": "https://www.djai.academy/ads.txt",
+          "type": "text/html",
+          "cache": null,
+          "robots": null,
+          "bytes": 795,
+          "correctRecord": false,
+          "asciiOnly": true
+        },
+        {
+          "url": "https://www.djai.academy/ads.txt",
+          "status": 200,
+          "location": null,
+          "type": "text/plain; charset=utf-8",
+          "cache": "public, max-age=86400, must-revalidate, stale-while-revalidate=604800",
+          "robots": null,
+          "bytes": 59,
+          "correctRecord": true,
+          "asciiOnly": true
+        }
+      ]
+    },
+    {
+      "url": "https://djai.academy/ads.txt",
+      "chain": [
+        {
+          "url": "https://djai.academy/ads.txt",
+          "status": 308,
+          "location": "https://www.djai.academy/ads.txt",
+          "type": null,
+          "cache": "public, max-age=31536000, immutable",
+          "robots": null,
+          "bytes": 0,
+          "correctRecord": false,
+          "asciiOnly": true
+        },
+        {
+          "url": "https://www.djai.academy/ads.txt",
+          "status": 200,
+          "location": null,
+          "type": "text/plain; charset=utf-8",
+          "cache": "public, max-age=86400, must-revalidate, stale-while-revalidate=604800",
+          "robots": null,
+          "bytes": 59,
+          "correctRecord": true,
+          "asciiOnly": true
+        }
+      ]
+    },
+    {
+      "url": "https://www.djai.academy/ads.txt",
+      "chain": [
+        {
+          "url": "https://www.djai.academy/ads.txt",
+          "status": 200,
+          "location": null,
+          "type": "text/plain; charset=utf-8",
+          "cache": "public, max-age=86400, must-revalidate, stale-while-revalidate=604800",
+          "robots": null,
+          "bytes": 59,
+          "correctRecord": true,
+          "asciiOnly": true
+        }
+      ]
+    },
+    {
+      "simulatedUserAgent": "Googlebot",
+      "path": "/ads.txt",
+      "status": 200,
+      "body": "google.com, pub-3624708289866566, DIRECT, f08c47fec0942fa0\n",
+      "limitation": "Header simulation is not a real Google crawler fetch or Google IP test."
+    },
+    {
+      "simulatedUserAgent": "Googlebot",
+      "path": "/robots.txt",
+      "status": 200,
+      "body": "User-agent: *\nAllow: /\n\nSitemap: https://www.djai.academy/sitemap.xml\n",
+      "limitation": "Header simulation is not a real Google crawler fetch or Google IP test."
+    },
+    {
+      "simulatedUserAgent": "Mediapartners-Google",
+      "path": "/ads.txt",
+      "status": 200,
+      "body": "google.com, pub-3624708289866566, DIRECT, f08c47fec0942fa0\n",
+      "limitation": "Header simulation is not a real Google crawler fetch or Google IP test."
+    },
+    {
+      "simulatedUserAgent": "Mediapartners-Google",
+      "path": "/robots.txt",
+      "status": 200,
+      "body": "User-agent: *\nAllow: /\n\nSitemap: https://www.djai.academy/sitemap.xml\n",
+      "limitation": "Header simulation is not a real Google crawler fetch or Google IP test."
+    }
+  ]
+}

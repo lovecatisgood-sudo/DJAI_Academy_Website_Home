@@ -1,0 +1,40 @@
+action: OPTIMIZE
+property: https://www.djai.academy
+purpose: Correct verified help-content defects without changing established search ownership or tool workflows.
+reader: A person processing a specific document, CSV, or AI-context task in a browser.
+intent_evidence: Existing canonical tool names, controls, accepted file types, and implemented processors; no new keyword targets or demand estimates.
+page_type: Existing utility pages, with the tool first and factual help afterward.
+canonical_policy: Preserve all existing canonical URLs, titles, descriptions, locale alternates, and indexing decisions.
+primary_topics:
+  document: [docx-to-pdf, docx-to-html, docx-to-markdown, docx-to-text, pdf-to-text, pdf-to-word, ocr]
+  ai: [pdf-to-ai-markdown, context-optimizer, rag-chunk-calculator, prompt-packager]
+  spreadsheet: [csv-to-json, json-to-csv, csv-cleaner, merge-csv, split-csv, csv-to-xlsx, xlsx-to-csv]
+url_pattern: /tools/{category}/{slug}/en/
+locale_scope:
+  english: Distinct, behavior-specific instructions and FAQs on 18 existing pages.
+  thai_vietnamese: Correct generic file/paste instructions and omit irrelevant document-layout FAQ on non-document tasks; preserve existing translations otherwise.
+  chinese: Preserve existing review-gated locale templates and noindex state.
+verified_defects:
+  - File-only tools incorrectly tell readers they can paste text.
+  - Spreadsheet and AI tools reuse a Word-layout FAQ unrelated to their task.
+  - Shared HowTo schema asserts an unverified three-minute duration.
+  - RAG workspace is paste-only; generic file-selection instructions do not match its controls.
+original_value:
+  - Explain input shape, actual output, preservation behavior, and a realistic failure or review step for each operation.
+  - Use synthetic CSV fixtures to verify quotes, leading zeros, headers, duplicates, merge, split, and XLSX conversion behavior.
+  - Verify the existing paste-only RAG workflow and JSONL output locally.
+  - Keep existing useful Markdown/plain-text guidance, correcting unsupported table preservation language.
+outline: Existing workspace -> task-specific steps -> input/output or limitations -> existing related links -> task-specific FAQs.
+conversion: Successful tool completion followed by the existing relevant related-tool or product/service path.
+internal_links: Preserve existing category, related-tool, acquisition and ecosystem links; do not add generic sales links.
+sources: [djai-document-tools/app/processors.ts, djai-document-tools/app/ToolWorkspace.tsx, djai-document-tools/app/tool-data.ts]
+constraints:
+  - No keyword stuffing, arbitrary word targets, fabricated tests, new synonym pages, URL changes, or mass noindex.
+  - No header, footer, CSS, pricing, course offers, upload/storage, or RAG input-workflow changes.
+  - Course date is a separate owner-input item; never invent a new date.
+acceptance:
+  - Original tool-control markup remains unchanged.
+  - Help matches actual inputs, options, outputs and limitations.
+  - Visible help and structured data agree.
+  - Synthetic processor tests, package export tests, root regressions, and route audit pass.
+  - Publish only after reviewing the scoped patch; Google approval remains external and unguaranteed.

@@ -15,6 +15,7 @@ const CAM_PDF_PRIVACY_LAST_MODIFIED = new Date("2026-09-06T00:00:00.000Z");
 const CAM_PDF_PRODUCT_LAST_MODIFIED = new Date("2026-09-06T00:00:00.000Z");
 const CAM_PDF_TERMS_LAST_MODIFIED = new Date("2026-09-06T00:00:00.000Z");
 const CAM_PDF_GUIDES_LAST_MODIFIED = new Date("2026-09-09T00:00:00.000Z");
+const TOOL_HELP_LAST_MODIFIED = new Date("2026-10-26T00:00:00.000Z");
 const WEBSITE_PRIVACY_LAST_MODIFIED = new Date("2026-10-26T00:00:00.000Z");
 const SEO_GROWTH_LAST_MODIFIED = new Date("2026-09-02T00:00:00.000Z");
 // The background-removal tool was rebuilt on its own first-party engine and
@@ -103,6 +104,12 @@ const suiteTools = {
   ai: ["token-counter", "pdf-to-ai-markdown", "context-optimizer", "rag-chunk-calculator", "prompt-packager"],
   spreadsheet: ["csv-to-json", "json-to-csv", "csv-cleaner", "merge-csv", "split-csv", "csv-to-xlsx", "xlsx-to-csv"]
 };
+const TOOL_HELP_PATHS = new Set([
+  ...Object.entries(suiteTools).flatMap(([category, slugs]) => slugs
+    .filter((slug) => slug !== "token-counter")
+    .flatMap((slug) => ["", "en/", "vi/"].map((suffix) => `/tools/${category}/${slug}/${suffix}`))),
+  "/tools/ai/token-counter/vi/"
+]);
 const brandTools = ["favicon-generator"];
 
 function bilingual(base, slugs = []) {
@@ -170,6 +177,8 @@ export default async function sitemap() {
       ? CAM_PDF_PRODUCT_LAST_MODIFIED
       : path === "/Cam_PDF_Scan_Signer_QR-Gen/terms/"
       ? CAM_PDF_TERMS_LAST_MODIFIED
+      : TOOL_HELP_PATHS.has(path)
+      ? TOOL_HELP_LAST_MODIFIED
       : isSeoGrowthRoute(path)
       ? SEO_GROWTH_LAST_MODIFIED
       : BACKGROUND_REMOVAL_PATHS.has(path)

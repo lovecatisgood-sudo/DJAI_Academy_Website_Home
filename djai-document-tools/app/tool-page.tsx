@@ -1,5 +1,6 @@
 import { ArrowLeft, ArrowRight, ShieldCheck } from "lucide-react";
 import AdSenseAd from "./AdSenseAd";
+import { englishToolHelp } from "./tool-help";
 import ShareButtons from "./ShareButtons";
 import AcquisitionBridge from "./AcquisitionBridge";
 import { SuiteFooter, SuiteHeader, ToolEcosystemDirectory } from "./category-page";
@@ -9,13 +10,14 @@ import { categoryHref, toolHref, toolsFor, type Language, type ToolDefinition } 
 export default function ToolPage({ tool, language }: { tool: ToolDefinition; language: Language }) {
   const en = language === "en";
   const vi = language === "vi";
-  const specializedGuidance = vi ? null : ({
+  const help = en ? englishToolHelp[tool.slug] : undefined;
+  const specializedGuidance = help?.guidance ? { eyebrow: "INPUT AND OUTPUT", ...help.guidance } : vi ? null : ({
     "docx-to-markdown": en
       ? {
           eyebrow: "STRUCTURED OUTPUT",
           title: "Choose Markdown when document structure still matters",
           copy:
-            "Markdown keeps useful authoring structure such as headings, ordered and unordered lists, links, emphasis, and compatible tables as readable plain-text syntax. It is the stronger output for Git repositories, README files, developer specifications, static-site content, Cursor or Codex context, and AI documentation workflows.",
+            "Markdown keeps useful authoring structure such as headings, ordered and unordered lists, links, emphasis, as readable plain-text syntax. It is the stronger output for Git repositories, README files, developer specifications, static-site content, Cursor or Codex context, and AI documentation workflows.",
           limit:
             "Word-only presentation details such as exact pagination, floating objects, text boxes, custom fonts, and complex visual layout are not Markdown concepts. Review tables and image references after conversion before committing the file to a documentation project."
         }
@@ -23,7 +25,7 @@ export default function ToolPage({ tool, language }: { tool: ToolDefinition; lan
           eyebrow: "ผลลัพธ์แบบมีโครงสร้าง",
           title: "เลือก Markdown เมื่อต้องรักษาโครงสร้างเอกสาร",
           copy:
-            "Markdown เก็บ heading, list, link, emphasis และ table ที่รองรับไว้เป็น syntax ข้อความที่อ่านได้ เหมาะกับ README, Git repository, specification สำหรับนักพัฒนา, static site, context สำหรับ Cursor หรือ Codex และเอกสาร AI",
+            "Markdown เก็บ heading, list, link และ emphasis ไว้เป็น syntax ข้อความที่อ่านได้ เหมาะกับ README, Git repository, specification สำหรับนักพัฒนา, static site, context สำหรับ Cursor หรือ Codex และเอกสาร AI",
           limit:
             "รูปแบบเฉพาะของ Word เช่น pagination, floating object, text box, font และ layout ซับซ้อนไม่ใช่ส่วนหนึ่งของ Markdown ควรตรวจ table และ image reference ก่อนนำไฟล์ไปใช้จริง"
         },
@@ -47,10 +49,11 @@ export default function ToolPage({ tool, language }: { tool: ToolDefinition; lan
   }[tool.slug]);
   const canonical = `https://www.djai.academy${toolHref(tool, language)}`;
   const tokenCounter = tool.slug === "token-counter";
-  const steps = vi ? ["Chọn file được hỗ trợ hoặc dán văn bản", "Kiểm tra các thiết lập phù hợp với kết quả cần dùng", "Xử lý cục bộ rồi tải hoặc sao chép kết quả"] : tokenCounter
+  const supportsPastedText = ["token-counter", "context-optimizer", "rag-chunk-calculator", "prompt-packager"].includes(tool.slug);
+  const steps = help?.steps ?? (vi ? [tool.slug === "rag-chunk-calculator" ? "Dán văn bản cần chia thành RAG chunk" : supportsPastedText ? "Chọn file được hỗ trợ hoặc dán văn bản" : "Chọn file được hỗ trợ", "Kiểm tra các thiết lập phù hợp với kết quả cần dùng", "Xử lý cục bộ rồi tải hoặc sao chép kết quả"] : tokenCounter
     ? (en ? ["Paste text or import a supported document", "Choose a tokenizer encoding and context size", "Review live tokens, words, characters, context use, and cost"] : ["วางข้อความหรือนำเข้าเอกสารที่รองรับ", "เลือก tokenizer encoding และขนาด context", "ดู token คำ ตัวอักษร context และค่าใช้จ่ายแบบ live"])
-    : (en ? ["Choose a supported file or paste text", "Review the relevant settings", "Process locally and download or copy the result"] : ["เลือกไฟล์ที่รองรับหรือวางข้อความ", "ตรวจตัวเลือกที่เกี่ยวข้อง", "ประมวลผลในเครื่องแล้วดาวน์โหลดหรือคัดลอกผลลัพธ์"]);
-  const faq = vi ? [
+    : (en ? [supportsPastedText ? "Choose a supported file or paste text" : "Choose a supported file", "Review the relevant settings", "Process locally and download or copy the result"] : [tool.slug === "rag-chunk-calculator" ? "วางเอกสารที่ต้องการแบ่งเป็น RAG chunk" : supportsPastedText ? "เลือกไฟล์ที่รองรับหรือวางข้อความ" : "เลือกไฟล์ที่รองรับ", "ตรวจตัวเลือกที่เกี่ยวข้อง", "ประมวลผลในเครื่องแล้วดาวน์โหลดหรือคัดลอกผลลัพธ์"]));
+  const genericFaq = vi ? [
     ["File hoặc văn bản có bị upload không?", "Không. Dữ liệu được đọc và xử lý trong bộ nhớ trình duyệt trên thiết bị của bạn."],
     ["Công cụ có miễn phí không?", "Có. Xử lý cốt lõi miễn phí, không cần tài khoản và không thêm watermark."],
     ["Tại sao định dạng có thể thay đổi?", "Mỗi định dạng lưu cấu trúc khác nhau. Hãy kiểm tra kết quả trước khi dùng cho tài liệu quan trọng."]
@@ -73,10 +76,12 @@ export default function ToolPage({ tool, language }: { tool: ToolDefinition; lan
     ["ใช้งานฟรีหรือไม่?", "ใช้งานฟรี ไม่ต้องสมัคร และไม่มี watermark"],
     ["ทำไม formatting อาจเปลี่ยน?", "แต่ละ format เก็บ layout ต่างกัน การแปลงใน browser เน้น privacy และผลลัพธ์ที่ใช้งานได้มากกว่าการจำลองต้นฉบับแบบสมบูรณ์"]
   ]);
+  const faq = help ? [...genericFaq.slice(0, 2), ...help.faq]
+    : tool.category !== "document" && (!tokenCounter || vi) ? genericFaq.slice(0, 2) : genericFaq;
   const related = toolsFor(tool.category).filter((candidate) => candidate.slug !== tool.slug).slice(0, 6);
   const structuredData = [
     { "@context": "https://schema.org", "@type": "SoftwareApplication", name: tool.title[language], description: tool.description[language], url: canonical, applicationCategory: "UtilitiesApplication", operatingSystem: "Web browser", isAccessibleForFree: true, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, publisher: { "@type": "Organization", name: "DJAI Academy", url: "https://www.djai.academy/" } },
-    { "@context": "https://schema.org", "@type": "HowTo", name: tool.title[language], totalTime: "PT3M", step: steps.map((text, index) => ({ "@type": "HowToStep", position: index + 1, name: text, text })) },
+    { "@context": "https://schema.org", "@type": "HowTo", name: tool.title[language], step: steps.map((text, index) => ({ "@type": "HowToStep", position: index + 1, name: text, text })) },
     { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: faq.map(([question, answer]) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) },
     { "@context": "https://schema.org", "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "DJAI Academy", item: vi ? "https://www.djai.academy/vi/" : en ? "https://www.djai.academy/en/" : "https://www.djai.academy/" }, { "@type": "ListItem", position: 2, name: vi ? "Tất cả công cụ" : en ? "All Tools" : "เครื่องมือทั้งหมด", item: vi ? "https://www.djai.academy/tools/vi/" : en ? "https://www.djai.academy/tools/en/" : "https://www.djai.academy/tools/" }, { "@type": "ListItem", position: 3, name: tool.category, item: `https://www.djai.academy${categoryHref(tool.category, language)}` }, { "@type": "ListItem", position: 4, name: tool.title[language], item: canonical }] }
   ];

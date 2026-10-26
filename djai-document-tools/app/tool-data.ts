@@ -46,7 +46,7 @@ export const tools: ToolDefinition[] = [
     slug: "docx-to-pdf", category: "document", input: "docx",
     label: { th: "DOCX เป็น PDF", en: "Word (DOCX) to PDF" },
     title: { th: "แปลง Word (DOCX) เป็น PDF ฟรี", en: "Convert Word (DOCX) to PDF Free" },
-    description: { th: "แปลงไฟล์ Word DOCX เป็น PDF ใน browser โดยไม่อัปโหลด พร้อม preview เลือกขนาดกระดาษ margin และเลขหน้า", en: "Convert Word DOCX files to PDF in your browser without uploading. Preview the result and choose paper size, margins, and optional page numbers." },
+    description: { th: "แปลงไฟล์ Word DOCX เป็น PDF ใน browser โดยไม่อัปโหลด เลือกขนาดกระดาษ margin และเลขหน้า แล้วดาวน์โหลดเพื่อตรวจผลลัพธ์", en: "Convert Word DOCX files to PDF in your browser without uploading. Choose paper size, margins and optional page numbers, then download and check the result." },
     intent: { th: "เหมาะกับเอกสารทั่วไปที่ต้องการ PDF อย่างรวดเร็วโดยไม่ upload ไฟล์", en: "Best for ordinary Word documents that need a quick private PDF conversion." },
     keywords: { th: ["DOCX เป็น PDF", "Word เป็น PDF", "แปลง Word ฟรี"], en: ["DOCX to PDF", "Word to PDF free", "private Word converter"] },
     warning: { th: "เอกสารที่มี layout ซับซ้อน ตารางลอย สมการ หรือ font เฉพาะอาจต่างจาก Word ต้นฉบับ", en: "Complex layouts, floating objects, equations, and custom fonts may differ from the original Word document." }
@@ -63,7 +63,7 @@ export const tools: ToolDefinition[] = [
     slug: "docx-to-markdown", category: "document", input: "docx",
     label: { th: "DOCX เป็น Markdown", en: "Word (DOCX) to Markdown" },
     title: { th: "แปลง DOCX เป็น Markdown ฟรี", en: "Convert Word (DOCX) to Markdown Free" },
-    description: { th: "รักษา heading, list, link และ table แล้วส่งออก Markdown สำหรับ GitHub, Cursor, Codex และเอกสาร AI", en: "Preserve headings, lists, links, and tables in Markdown for GitHub, Cursor, Codex, and AI documentation." },
+    description: { th: "รักษา heading, list และ link แล้วส่งออก Markdown สำหรับ GitHub, Cursor, Codex และเอกสาร AI", en: "Preserve headings, lists, and links in Markdown for GitHub, Cursor, Codex, and AI documentation." },
     intent: { th: "เปลี่ยน specification และคู่มือ Word ให้พร้อมใช้กับ developer workflow", en: "Make Word specifications and guides ready for developer workflows." },
     keywords: { th: ["DOCX เป็น Markdown", "Word เป็น MD"], en: ["DOCX to Markdown", "Word to Markdown", "convert Word to MD"] }
   },
@@ -113,7 +113,7 @@ export const tools: ToolDefinition[] = [
     slug: "pdf-to-ai-markdown", category: "ai", input: "pdf",
     label: { th: "PDF เป็น AI Markdown", en: "PDF to AI Markdown" },
     title: { th: "แปลง PDF เป็น Markdown สำหรับ AI", en: "Convert PDF to AI-Ready Markdown" },
-    description: { th: "ดึง PDF เป็น Markdown พร้อม page reference ล้าง header, footer และบรรทัดที่แตก", en: "Extract PDF into clean Markdown for RAG with page references and cleanup for repeated headers, footers, and broken lines." },
+    description: { th: "ดึงข้อความที่เลือกได้จาก PDF เป็น Markdown พร้อมหัวข้อแบ่งหน้าและปรับบรรทัด โดยไม่อัปโหลดไฟล์", en: "Extract selectable PDF text into Markdown for RAG, with page headings and basic line-break cleanup. No document upload." },
     intent: { th: "เตรียมเอกสารสำหรับ ChatGPT, Claude, Cursor, Codex และ RAG", en: "Prepare PDFs for ChatGPT, Claude, Cursor, Codex, and RAG ingestion." },
     keywords: { th: ["PDF เป็น Markdown AI", "เตรียม PDF สำหรับ RAG"], en: ["PDF to AI Markdown", "PDF for RAG", "PDF to Markdown"] }
   },
@@ -121,7 +121,7 @@ export const tools: ToolDefinition[] = [
     slug: "context-optimizer", category: "ai", input: "document",
     label: { th: "Context Optimizer", en: "Context Optimizer" },
     title: { th: "ทำความสะอาดเอกสารสำหรับ AI", en: "Clean Documents for AI Context" },
-    description: { th: "ลบ header ซ้ำ เลขหน้า spacing ที่เสีย และบรรทัดแตก เพื่อสร้าง context ที่กระชับ", en: "Remove repeated headers, page numbers, broken spacing, and line wraps for cleaner AI context." },
+    description: { th: "ปรับเลขหน้า ช่องว่าง และบรรทัดที่แตก โดยตรวจข้อความซ้ำเมื่อมีตัวแบ่งหน้าที่อ่านได้", en: "Clean page labels, spacing and line wraps locally. Repeated lines can be removed when recognizable page boundaries are present." },
     intent: { th: "ลด token ที่ไม่จำเป็นก่อนส่งเอกสารให้ AI หรือ RAG", en: "Reduce unnecessary tokens before using documents with AI or RAG." },
     keywords: { th: ["AI context optimizer", "ทำความสะอาดเอกสาร AI"], en: ["AI context optimizer", "clean document for ChatGPT", "RAG document cleaner"] }
   },

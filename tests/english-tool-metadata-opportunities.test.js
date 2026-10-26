@@ -154,7 +154,7 @@ test("remaining English tool snippets expose their useful long-tail distinctions
   );
   assert.match(documentSource, /Convert Word DOCX files to PDF[^\n]+without uploading/i);
   assert.match(documentSource, /Extract plain text from Word documents[^\n]+without uploading/i);
-  assert.match(documentSource, /Extract PDF into clean Markdown[^\n]+RAG/i);
+  assert.match(documentSource, /Extract selectable PDF text into Markdown[^\n]+RAG/i);
 
   const mediaBuildSource = readFileSync(
     path.join(root, "djai-media-tools/scripts/build.mjs"),

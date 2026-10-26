@@ -284,7 +284,7 @@ async function spreadsheetTool(tool: ToolDefinition, files: File[], options: Too
     return { text: output, blob: textBlob(output, "text/csv;charset=utf-8"), fileName: `${safeBaseName(files[0].name)}.csv`, note: "JSON array converted", stats: [["Rows", formatNumber(value.length)]] };
   }
   if (tool.slug === "xlsx-to-csv") {
-    const ExcelJS = await import("exceljs");
+    const { default: ExcelJS } = await import("exceljs");
     const workbook = new ExcelJS.Workbook();
     await workbook.xlsx.load(await files[0].arrayBuffer());
     const sheet = workbook.worksheets[Math.min(options.worksheet, workbook.worksheets.length - 1)] || workbook.worksheets[0];
@@ -301,7 +301,7 @@ async function spreadsheetTool(tool: ToolDefinition, files: File[], options: Too
     return { text: output, blob: textBlob(output, "application/json;charset=utf-8"), fileName: `${safeBaseName(files[0].name)}.json`, note: "Structured JSON array", stats: [["Rows", formatNumber(parsed[0].rows.length)], ["Columns", String(parsed[0].fields.length)]] };
   }
   if (tool.slug === "csv-to-xlsx") {
-    const ExcelJS = await import("exceljs");
+    const { default: ExcelJS } = await import("exceljs");
     const workbook = new ExcelJS.Workbook();
     const sheet = workbook.addWorksheet("Data");
     sheet.columns = parsed[0].fields.map((field) => ({ header: field, key: field, width: Math.min(40, Math.max(12, field.length + 2)) }));
