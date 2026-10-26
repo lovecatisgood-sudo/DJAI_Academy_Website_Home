@@ -1,4 +1,4 @@
-import { cpSync, existsSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { existsSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { spawnSync } from "node:child_process";
 import { createHash } from "node:crypto";
@@ -16,6 +16,7 @@ const projects = [
     clean: [".next"],
     outputs: [
       ".next/BUILD_ID",
+      "public/analytics-consent.js",
       "public/djai-logo-display.webp",
       "public/djai-logo-small.webp",
       "public/founder-djai-display.webp",
@@ -303,27 +304,12 @@ function prepareRuntimeArtifact(project) {
   const nodeModules = join(cwd, "node_modules");
   const nextBuild = join(cwd, ".next");
 
-  // The homepage is handled by Next in the public server process.
-  // Keep its production dependencies and build output for that handler.
-  if (project.dir === "djai-academy-homepage") return;
-
+  // Both Next applications run in the public process on Hostinger.
+  // Preserve each application's own Next runtime and production build.
   if (project.runtime) {
-    const standaloneDir = join(nextBuild, "standalone");
-    const tracedNodeModules = join(standaloneDir, "node_modules");
-    if (!existsSync(join(tracedNodeModules, "next", "package.json"))) {
-      throw new Error(`${project.name} did not generate a self-contained Next.js standalone runtime`);
-    }
-
-    // The generated standalone server contains exactly the dependencies traced
-    // by Next.js. Keep it intact and remove the multi-GB build dependency tree.
-    // Static and public assets are copied beside the standalone server because
-    // Next intentionally leaves them out of that directory.
-    rmSync(join(standaloneDir, "public"), { recursive: true, force: true });
-    cpSync(join(cwd, "public"), join(standaloneDir, "public"), { recursive: true });
-    rmSync(join(standaloneDir, ".next", "static"), { recursive: true, force: true });
-    cpSync(join(nextBuild, "static"), join(standaloneDir, ".next", "static"), { recursive: true });
-    rmSync(nodeModules, { recursive: true, force: true });
+    // In-process handlers use the normal build, not a duplicated standalone tree.
     rmSync(join(nextBuild, "cache"), { recursive: true, force: true });
+    rmSync(join(nextBuild, "standalone"), { recursive: true, force: true });
     return;
   }
 

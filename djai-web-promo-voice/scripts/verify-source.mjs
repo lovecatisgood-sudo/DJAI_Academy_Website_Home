@@ -25,6 +25,7 @@ const conversationRoute = read("src/app/api/conversation/route.ts");
 const settingsCache = read("src/lib/settings-cache.ts");
 const rootLayout = read("src/app/layout.tsx");
 const publicLocales = read("src/lib/public-locales.ts");
+const analyticsConsent = read("src/lib/analytics-consent.ts");
 const middlewareSource = read("src/middleware.ts");
 const dependencies = {
   ...packageJson.dependencies,
@@ -35,12 +36,7 @@ assert(publicLocales.includes('"zh-CN"') && publicLocales.includes('"zh-TW"'), "
 assert(middlewareSource.includes('publicLocaleFromPath'), "Middleware must derive public locale from the request path.");
 assert(!middlewareSource.includes('voice_admin'), "Chinese public locale routing must not change the voice admin surface.");
 
-assert(
-  rootLayout.includes('const GA_ID = "G-CGJ5BTR44T"') &&
-    rootLayout.includes("https://www.googletagmanager.com/gtag/js?id=${GA_ID}") &&
-    rootLayout.includes("gtag('config', '${GA_ID}', { cookie_domain: 'auto' })"),
-  "Public web promotion pages must include the shared DJAI Google Analytics tag.",
-);
+
 
 const forbiddenDependencyPatterns = [
   /redis/i,
@@ -58,12 +54,7 @@ for (const dependency of Object.keys(dependencies)) {
   }
 }
 
-assert(
-  rootLayout.includes('const GA_ID = "G-CGJ5BTR44T"') &&
-    rootLayout.includes("https://www.googletagmanager.com/gtag/js?id=${GA_ID}") &&
-    rootLayout.includes("gtag('config', '${GA_ID}', { cookie_domain: 'auto' })"),
-  "Public web promotion pages must include the shared DJAI Google Analytics tag.",
-);
+
 
 assert(!browserWidget.includes("OPENAI_API_KEY"), "Browser widget references OPENAI_API_KEY.");
 assert(!browserWidget.includes("sk-"), "Browser widget appears to contain an OpenAI secret key.");
@@ -186,6 +177,8 @@ assert(
   "Prompt is missing core sales/safety/tool behavior.",
 );
 
-if (!process.exitCode) {
-  console.log("Source invariants verified.");
-}
+
+assert(rootLayout.includes('analyticsConsentScript(GA_ID)') && !rootLayout.includes('src={`https://www.googletagmanager.com'), "Promotion Analytics must use the consent gate.");
+assert(analyticsConsent.includes("choice.analytics!==true") && analyticsConsent.includes("age>15552000000") && analyticsConsent.includes("ad_storage:'denied'"), "Promotion Analytics must require current analytics consent and deny ads.");
+
+if (!process.exitCode) console.log("Source invariants verified.");

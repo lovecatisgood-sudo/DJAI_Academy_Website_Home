@@ -46,6 +46,11 @@ This repository contains several apps:
 Hostinger must not deploy one subfolder directly. The root `server.js` is the production entry point
 that serves the main Next.js app and mounts the static tools at their public paths.
 
+Both the homepage and promotion app execute inside that public process. The root
+build must keep both applications' `node_modules/next` packages and `.next` build
+directories. Do not apply the old voice-app dependency cleanup or launch the
+promotion app as a child server. Internal port overrides are no longer required.
+
 ## Public routes
 
 - `/`
@@ -113,3 +118,18 @@ On the live domain, open `/healthz`. A correct root deployment returns HTTP 200 
 ```json
 {"status":"ok","app":"djai-academy-website","version":"1.0.0","buildsReady":true}
 ```
+
+Confirm `servicesReady` is also `true`, both `homepage` and `voicePromo` service
+snapshots have `mode: "in-process"`, and `/web_promo/` plus `/web_promo/vi/` return
+200 with their localized content. The public server can bind before preparation;
+an initial 503 is retryable, but persistent 503 or 502 responses are a failed deployment.
+
+Run `npm run audit:adsense -- --report audits/adsense-recovery-2026-10-26/live-check.json`
+with a fresh report filename for the passive public-site check after publication.
+This HTTP audit cannot confirm Google's AdSense account status or submit a review.
+
+### AdSense recovery runtime release checks (2026-10-26)
+
+The root production entry point enforces `NODE_ENV=production` before loading either Next app. Each handler gets at most three preparation attempts with a fresh app; `/healthz` reports attempts, actual retry count and readiness. Preparation is capped at 45 seconds and close at 5 seconds; process shutdown has a 10-second hard limit. A persistent failure or uncancelable preparation timeout exits the public process with status 1 and requires provider/operator recovery. `restartCount` remains zero for compatibility; `retryCount` reports preparation retries. Fatal process failures rely on the hosting process lifecycle; verify Hostinger restart behavior rather than assuming an application-level process supervisor remains.
+
+Keep both apps' runtime dependencies and normal `.next` outputs. Build caches and duplicate standalone outputs are discarded. Check provider disk limits before release; local artifact sizes do not prove the account's quota. After release, check health, both promotion locales, the shared `/analytics-consent.js` asset, and the existing API authentication boundary. The separate promotion package's `hostinger:build` performs database migrations; the root website build intentionally uses `next:build` and does not authorize a database migration.

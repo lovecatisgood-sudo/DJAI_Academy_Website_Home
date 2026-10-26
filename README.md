@@ -14,10 +14,11 @@ npm run build
 npm start
 ```
 
-The production entry file is `server.js`. It supervises the homepage and voice-promo Next.js
-processes and restarts either process with capped exponential backoff if it exits. After deployment,
+The production entry file is `server.js`. It prepares the homepage and voice-promo Next.js
+handlers inside the public Node process, without child servers or internal listening ports. After deployment,
 `GET /healthz` must return JSON with `"app":"djai-academy-website"`, `"buildsReady":true`, and
-`"servicesReady":true`. A missing build or unavailable child process returns HTTP 503.
+`"servicesReady":true`. Both service snapshots must report `"mode":"in-process"` and the same
+process ID. A missing build or unprepared handler returns HTTP 503. Startup responses are retryable.
 
 Run the supervisor regression tests with:
 

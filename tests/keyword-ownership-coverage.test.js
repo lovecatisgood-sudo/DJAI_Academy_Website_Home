@@ -53,7 +53,12 @@ test("every ownership row carries the complete decision record", () => {
       assert.ok(row[field].trim().length > 0, `${row.route}: ${field} must not be empty`);
     }
     assert.equal(row.property, "www", `${row.route}: current sitemap owner`);
-    assert.equal(row.canonical, `https://www.djai.academy${row.route}`, `${row.route}: canonical`);
+    if (row.indexable) {
+      assert.equal(row.canonical, `https://www.djai.academy${row.route}`, `${row.route}: canonical`);
+    } else if (row.canonical !== `https://www.djai.academy${row.route}`) {
+      assert.ok(row.canonicalizationReason?.trim(), `${row.route}: noncanonical route needs a reason`);
+      assert.ok(ownership.entries.some((target) => target.indexable && target.canonical === row.canonical), `${row.route}: canonical must name an indexable owner`);
+    }
     assert.match(row.validatedAt, /^\d{4}-\d{2}-\d{2}$/);
   }
 });

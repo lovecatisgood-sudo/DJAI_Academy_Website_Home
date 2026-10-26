@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
+import { analyticsConsentScript } from "../lib/analytics-consent";
 import "./globals.css";
 
 const GA_ID = "G-CGJ5BTR44T";
@@ -68,16 +69,10 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <head>
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} />
         <script
           id="google-analytics"
           dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${GA_ID}', { cookie_domain: 'auto' });
-            `,
+            __html: analyticsConsentScript(GA_ID),
           }}
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />

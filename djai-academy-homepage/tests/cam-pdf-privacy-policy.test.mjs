@@ -8,7 +8,7 @@ const text = JSON.stringify(policy);
 test("current policy covers both platforms and discloses actual telemetry controls", () => {
   assert.equal(policy.date, "Revision date: October 11, 2026");
   assert.equal(policy.sections.length, 14);
-  for (const expected of ["DEEJAI LAB Co., Ltd", "0105569117953", "Android and iOS", "Signing in does not add uses", "does not currently provide a separate Firebase Analytics switch", "these events can be linked to your account", "App Attest", "contact@djai.academy"]) assert.ok(text.includes(expected), expected);
+  for (const expected of ["DEEJAI LAB Co., Ltd", "0105569117953", "Android and iOS", "Signing in does not add uses", "On iOS V1 build 70, usage analytics is off by default", "Optional usage analytics switch in Me", "On Android, the iOS switch is unavailable", "these events can be linked to your account", "App Attest", "contact@djai.academy"]) assert.ok(text.includes(expected), expected);
   assert.doesNotMatch(text, /does not claim coverage for an iOS|Siamese Cat Cafe Company|TODO|TBD/);
 });
 test("retention and deletion do not promise immediate erasure", () => {

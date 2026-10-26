@@ -2,6 +2,23 @@
 
 Use this as the shared AdSense reference for DJAI sites and tool pages.
 
+## Current operating state
+
+Ad serving is paused for approval recovery. The site retains publisher verification
+metadata and `ads.txt`; it intentionally emits no loader or manual ad units. This
+pause is an engineering setting, not proof of Google's current approval decision.
+The account's site status, issue details, Auto ads setting and Policy center must
+be read in AdSense before making account changes or requesting another review.
+
+Run `npm run audit:adsense -- --report audits/adsense-recovery-2026-10-26/live-check.json`
+for a passive public-site crawl. Use a new report filename for each run. The report
+checks access, page metadata, canonical links, locale reciprocity, discovery, and
+publisher configuration. It cannot certify content quality, a certified CMP,
+account ownership, review submission, or actual ad delivery.
+
+The loader and ad unit examples below are reference configuration for a future
+controlled rollout. Do not paste them into the recovery build.
+
 ## Account
 
 - AdSense client ID: `ca-pub-3624708289866566`
@@ -20,7 +37,8 @@ Add this meta tag in the document head:
 <meta name="google-adsense-account" content="ca-pub-3624708289866566">
 ```
 
-Load the AdSense script once per page:
+After the site is confirmed `Ready` and the required consent setup is verified,
+load the AdSense script once on each deliberately approved monetized page:
 
 ```html
 <script async
@@ -89,11 +107,19 @@ After each ad unit is mounted client-side, call:
 - Keep ads away from course checkout, payment, login, account, admin, and other conversion-critical pages unless there is a deliberate reason.
 - Good pages for ads: blog articles, blog indexes, free tool hubs, and free tool result/support sections.
 
-## Recommended Auto Ads Targeting
+## Approval review and later rollout
 
-In AdSense, turn Auto ads on for the site, then use Page exclusions to keep Auto ads off pages where ads would hurt conversions or user trust.
+Keep Auto ads off during recovery and the initial controlled rollout. Do not
+restore the former site-wide ad pattern. After `Ready` and consent verification,
+start with one manual responsive unit on a reviewed public page, after substantive
+article content or the completed tool task. Keep the School subdomain ad-free.
 
-Recommended allowed sections:
+Google accepts publisher connection through a meta tag or ads.txt as well as the
+AdSense script; a recovery pause does not by itself prevent ownership verification.
+Ad units can only serve once the account/site is eligible. If the site says
+`Getting ready`, do not remove and re-add it or repeatedly request review.
+
+Candidate sections for a later page-specific review (not a blanket allowlist):
 
 - `/blog/`
 - `/blog/en/`
@@ -114,3 +140,10 @@ Recommended excluded sections:
 - `/portfolio/`
 - `/admin/`
 - checkout/payment/login/account paths
+
+Official references:
+
+- [Site statuses](https://support.google.com/adsense/answer/12170222)
+- [Connecting a site](https://support.google.com/adsense/answer/12169212)
+- [Site approval troubleshooting](https://support.google.com/adsense/answer/12176698)
+- [Publisher policies](https://support.google.com/adsense/answer/10502938)

@@ -492,7 +492,7 @@ export const zhCnMarketingContent = {
       },
       {
         "title": "Cookie 与第三方服务",
-        "intro": "只有在适用的同意与配置下，网站才会启用分析、广告或其他非必要服务。第三方服务可能依据其政策处理数据。",
+        "intro": "Google Analytics 仅在你同意分析 Cookie 后加载。Google AdSense 广告和广告 Cookie 目前已关闭，接受分析 Cookie 不会启用广告。现有的第三方 Cookie 可通过浏览器或 Google 设置管理。",
         "items": []
       },
       {

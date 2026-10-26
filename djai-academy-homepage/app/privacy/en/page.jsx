@@ -2,7 +2,7 @@ import PrivacyContent from "../PrivacyContent";
 
 export const metadata = {
   title: "Privacy & Cookie Policy | DJAI Academy",
-  description: "How the DJAI Academy website uses information, browser storage, Google Analytics, and Google AdSense cookies.",
+  description: "How DJAI Academy uses information, browser storage and optional Google Analytics, with advertising currently disabled.",
   alternates: {
     canonical: "/privacy/en/",
     languages: { th: "/privacy/", en: "/privacy/en/", vi: "/privacy/vi/", "x-default": "/privacy/" }

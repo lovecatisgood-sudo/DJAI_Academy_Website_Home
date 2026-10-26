@@ -85,7 +85,11 @@ export function validateKeywordOwnership(ownership, routing) {
       && typeof row.canonical === "string"
       && row.canonical !== `https://www.djai.academy${row.route}`
     ) {
-      errors.push(`${label}: canonical must equal the public route`);
+      const justifiedNonindexable = row.indexable === false
+        && typeof row.canonicalizationReason === "string"
+        && row.canonicalizationReason.trim()
+        && ownership.entries.some((owner) => owner.indexable === true && owner.canonical === row.canonical && owner.canonical === `https://www.djai.academy${owner.route}`);
+      if (!justifiedNonindexable) errors.push(`${label}: canonical must equal the public route or a documented indexable owner for a noindex route`);
     }
     if (typeof row.validatedAt === "string" && !/^\d{4}-\d{2}-\d{2}$/.test(row.validatedAt)) {
       errors.push(`${label}: validatedAt must use YYYY-MM-DD`);

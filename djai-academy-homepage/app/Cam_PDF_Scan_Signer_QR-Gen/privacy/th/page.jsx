@@ -8,8 +8,7 @@ export const metadata = {
   description:
     "วิธีที่ Cam PDF Scanner: Sign & QR ประมวลผลข้อมูลบัญชี การวิเคราะห์ โฆษณา การซื้อ และข้อมูลอุปกรณ์",
   alternates: {
-    canonical: PRIVACY_PATH,
-    languages: { en: PRIVACY_PATH, "x-default": PRIVACY_PATH }
+    canonical: PRIVACY_PATH
   },
   robots: { index: false, follow: true }
 };

@@ -3,7 +3,6 @@ import Script from "next/script";
 import "./globals.css";
 
 const BASE_PATH = "/tools/qrgen";
-const GA_ID = "G-CGJ5BTR44T";
 const ADSENSE_CLIENT = "ca-pub-3624708289866566";
 
 export const metadata: Metadata = {
@@ -59,15 +58,7 @@ export default function RootLayout({
       <body>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@graph": [{ "@type": "SoftwareApplication", name: "DJAI Free QR Code Generator", url: "https://www.djai.academy/tools/qrgen/", applicationCategory: "UtilitiesApplication", operatingSystem: "Web browser", isAccessibleForFree: true, offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, publisher: { "@type": "Organization", name: "DJAI Academy", url: "https://www.djai.academy/" } }, { "@type": "BreadcrumbList", itemListElement: [{ "@type": "ListItem", position: 1, name: "DJAI Academy", item: "https://www.djai.academy/" }, { "@type": "ListItem", position: 2, name: "Free QR Code Generator", item: "https://www.djai.academy/tools/qrgen/" }] }] }) }} />
         {children}
-        <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`} strategy="lazyOnload" />
-        <Script id="google-analytics" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_ID}');
-          `}
-        </Script>
+        <Script id="djai-analytics-consent" src="/analytics-consent.js" strategy="lazyOnload" />
       </body>
     </html>
   );

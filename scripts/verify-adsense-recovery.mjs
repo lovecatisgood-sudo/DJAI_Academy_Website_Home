@@ -92,6 +92,7 @@ for (const outputRoot of outputRoots) {
       if (html.includes(marker)) fail(`${displayPath} still emits ad-serving marker: ${marker}`);
     }
     if (!html.includes(publisherMeta)) fail(`${displayPath} lost the publisher ownership meta tag`);
+    if (html.includes("googletagmanager.com/gtag/js")) fail(`${displayPath} bypasses the shared Analytics consent gate`);
     checkedPages += 1;
   }
 }

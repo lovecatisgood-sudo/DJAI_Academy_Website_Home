@@ -492,7 +492,7 @@ export const zhTwMarketingContent = {
       },
       {
         "title": "Cookie 與第三方服務",
-        "intro": "網站只會在適用的同意與設定下啟用分析、廣告或其他非必要服務。第三方可能依其政策處理資料。",
+        "intro": "Google Analytics 只會在你同意分析 Cookie 後載入。Google AdSense 廣告和廣告 Cookie 目前已關閉，接受分析 Cookie 不會啟用廣告。既有的第三方 Cookie 可透過瀏覽器或 Google 設定管理。",
         "items": []
       },
       {

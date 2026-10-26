@@ -22,10 +22,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       </head>
       <body>
         {children}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-CGJ5BTR44T" strategy="lazyOnload" />
-        <Script id="google-analytics" strategy="lazyOnload">
-          {`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-CGJ5BTR44T',{anonymize_ip:true});`}
-        </Script>
+        <Script id="djai-analytics-consent" src="/analytics-consent.js" strategy="lazyOnload" />
       </body>
     </html>
   );

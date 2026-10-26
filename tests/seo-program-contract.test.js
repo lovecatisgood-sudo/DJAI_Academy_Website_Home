@@ -14,6 +14,18 @@ const routing = JSON.parse(
   readFileSync(new URL("../data/seo/acquisition-routing.json", import.meta.url), "utf8")
 );
 
+test("noindex aliases require a documented, existing indexable canonical owner", () => {
+  const copy = structuredClone(ownership);
+  const alias = copy.entries.find((row) => row.route === "/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/");
+  assert.equal(alias.indexable, false);
+  assert.doesNotThrow(() => validateKeywordOwnership(copy, routing));
+  alias.canonical = "https://www.djai.academy/nonexistent/";
+  assert.throws(() => validateKeywordOwnership(copy, routing), /canonical/);
+  alias.canonical = "https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/privacy/";
+  alias.indexable = true;
+  assert.throws(() => validateKeywordOwnership(copy, routing), /canonical/);
+});
+
 const locales = new Set(["th", "en", "vi", "zh-CN", "zh-TW"]);
 const conversionTargets = new Set([
   "none", "tool", "cam_pdf", "development", "course", "portfolio"

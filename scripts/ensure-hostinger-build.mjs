@@ -6,9 +6,10 @@ const rootDir = new URL("..", import.meta.url).pathname;
 
 const requiredOutputs = [
   "djai-academy-homepage/.next/BUILD_ID",
+  "djai-academy-homepage/public/analytics-consent.js",
   "djai-academy-homepage/node_modules/next/package.json",
   "djai-web-promo-voice/.next/BUILD_ID",
-  "djai-web-promo-voice/.next/standalone/server.js",
+  "djai-web-promo-voice/node_modules/next/package.json",
   "djai-academy-course/out/index.html",
   "djai-academy-course/out/en/index.html",
   "djai-academy-course/out/vi/index.html",

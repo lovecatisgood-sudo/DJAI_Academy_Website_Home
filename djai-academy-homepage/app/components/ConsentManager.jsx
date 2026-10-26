@@ -78,6 +78,7 @@ function readStoredConsent() {
       typeof value.analytics !== "boolean" ||
       typeof value.advertising !== "boolean" ||
       !Number.isFinite(value.savedAt) ||
+      Date.now() - value.savedAt < 0 ||
       Date.now() - value.savedAt > MAX_AGE_MS
     ) {
       window.localStorage.removeItem(STORAGE_KEY);

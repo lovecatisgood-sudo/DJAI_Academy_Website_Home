@@ -545,7 +545,6 @@ async function verify() {
   const sitemapBody = await fetch(`${origin}/sitemap.xml`).then((response) => response.text());
   for (const [path, expectedLastModified] of [
     ["/Cam_PDF_Scan_Signer_QR-Gen/privacy/", "2026-09-06T00:00:00.000Z"],
-    ["/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/", "2026-09-06T00:00:00.000Z"],
     ["/Cam_PDF_Scan_Signer_QR-Gen/", "2026-09-06T00:00:00.000Z"],
     ["/Cam_PDF_Scan_Signer_QR-Gen/terms/", "2026-09-06T00:00:00.000Z"],
     ["/Cam_PDF_Scan_Signer_QR-Gen/guides/", "2026-09-09T00:00:00.000Z"],
@@ -797,11 +796,18 @@ async function verify() {
   for (const [route, heading, language] of camPdfChecks) {
     const html = await fetch(`${origin}${route}`).then((response) => response.text());
     if (!html.includes(`<html lang="${language}"`)) failures.push(`${route}: expected html lang=${language}`);
-    if (!html.includes(`<link rel="canonical" href="https://www.djai.academy${route}"`)) {
-      failures.push(`${route}: missing self-canonical`);
+    const expectedCanonical = route === "/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/"
+      ? "https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/privacy/"
+      : `https://www.djai.academy${route}`;
+    if (!html.includes(`<link rel="canonical" href="${expectedCanonical}"`)) {
+      failures.push(`${route}: missing intended canonical`);
     }
     if (!html.includes(`<h1`) || !html.includes(heading)) failures.push(`${route}: missing expected H1 content`);
   }
+
+  const thaiPolicyHtml = await fetch(`${origin}/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/`).then((response) => response.text());
+  if (!thaiPolicyHtml.includes('content="noindex, follow"')) failures.push("Thai app policy must retain its review-gated noindex");
+  if (sitemapBody.includes("<loc>https://www.djai.academy/Cam_PDF_Scan_Signer_QR-Gen/privacy/th/</loc>")) failures.push("Noindex Thai app policy must not be in the sitemap");
 
   for (const [route, expectedLocation] of redirects) {
     const response = await fetch(`${origin}${route}`, { redirect: "manual" });
