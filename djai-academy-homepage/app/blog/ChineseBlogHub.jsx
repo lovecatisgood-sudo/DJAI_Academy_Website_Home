@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CryptoEssayCard } from "../components/blog/CryptoEssay";
 import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
 import { camPdfReleaseArticles } from "../lib/camPdfChineseContent";
@@ -33,12 +34,13 @@ export default function ChineseBlogHub({ locale }) {
         <section className="blog-layout">
           <aside className="blog-sidebar" aria-label={traditional ? "文章主題" : "文章主题"}>
             <h2>{traditional ? "主題" : "主题"}</h2>
-            <Link className="active" href={`/blog/${article.segment}/`}>{traditional ? "全部文章" : "全部文章"}<strong>1</strong></Link>
+            <Link className="active" href={`/blog/${article.segment}/`}>{traditional ? "全部文章" : "全部文章"}<strong>2</strong></Link>
             <a href={`/tools/${article.segment}/`}>{traditional ? "免費線上工具" : "免费在线工具"}</a>
           </aside>
           <div className="blog-list">
             <div className="blog-list-heading"><div><p className="eyebrow">{traditional ? "最新發布" : "最新发布"}</p><h2>{traditional ? "產品與實作文章" : "产品与实践文章"}</h2></div></div>
             <div className="post-grid">
+              <CryptoEssayCard locale={locale} />
               <article className="post-card">
                 <div className="post-meta"><span>{traditional ? "產品發布" : "产品发布"}</span><span>{article.readingTime}</span></div>
                 <h3><Link href={href}>{article.articleTitle}</Link></h3>

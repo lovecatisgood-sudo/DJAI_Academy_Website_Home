@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { addCryptoEssay } from "../../lib/cryptoEssay";
 import SiteFooter from "../../components/SiteFooter";
 import SiteHeader from "../../components/SiteHeader";
 import AdSenseAd from "../../components/AdSenseAd";
@@ -87,7 +88,7 @@ function postHref(post) {
 export default async function BlogPage({ searchParams }) {
   const params = await searchParams;
   const selectedCategory = BLOG_CATEGORIES.includes(params?.category) ? params.category : "All";
-  const posts = await getAllPosts({ locale: "en" });
+  const posts = addCryptoEssay(await getAllPosts({ locale: "en" }), "en");
   const visiblePosts =
     selectedCategory === "All" ? posts : posts.filter((post) => post.category === selectedCategory);
   const categoryCounts = BLOG_CATEGORIES.reduce(

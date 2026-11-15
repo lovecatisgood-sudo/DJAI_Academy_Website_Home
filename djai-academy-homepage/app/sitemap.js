@@ -2,6 +2,7 @@ import { SIAMESE_CAT_DEV_CATEGORY, getAllPosts, getPostsByCategory } from "./lib
 import { getAllThaiPosts } from "./lib/thBlogPosts";
 import { viBlogPosts } from "./lib/viBlogPosts";
 import { videoToolSlugs } from "./lib/videoToolSlugs";
+import { cryptoEssayDate, cryptoEssayIndexableLocales, cryptoEssayPaths } from "./lib/cryptoEssay";
 
 export const revalidate = 3600;
 
@@ -191,6 +192,7 @@ export default async function sitemap() {
     ["/", "/en/", "/vi/"].includes(path) ? 1 : path.startsWith("/siamese_cat/dev/courses/") || path.startsWith("/siamese_cat/dev/course/") ? 0.9 : path.startsWith("/tools/") ? 0.8 : 0.7
   ));
   const articleEntries = [
+    ...cryptoEssayIndexableLocales.map((locale) => entry(cryptoEssayPaths[locale], new Date(cryptoEssayDate), "monthly", 0.8)),
     ...englishPosts
       .filter((post) => post.categoryKey !== SIAMESE_CAT_DEV_CATEGORY)
       .map((post) => entry(`/blog/en/${post.slug}/`, post.updatedAt || post.publishedAt, "monthly", 0.8)),
