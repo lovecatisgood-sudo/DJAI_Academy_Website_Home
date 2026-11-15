@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { addCryptoEssay } from "../lib/cryptoEssay";
 import SiteFooter from "../components/SiteFooter";
 import SiteHeader from "../components/SiteHeader";
 import AdSenseAd from "../components/AdSenseAd";
@@ -74,7 +75,7 @@ function postHref(post) {
 export default async function ThaiBlogPage({ searchParams }) {
   const params = await searchParams;
   const selectedCategory = TH_BLOG_CATEGORIES.includes(params?.category) ? params.category : "ทั้งหมด";
-  const posts = await getAllThaiPosts();
+  const posts = addCryptoEssay(await getAllThaiPosts(), "th");
   const visiblePosts =
     selectedCategory === "ทั้งหมด"
       ? posts

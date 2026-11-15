@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 import { runInNewContext } from "node:vm";
+import { cryptoEssayDate, cryptoEssayIndexableLocales, cryptoEssayPaths } from "../app/lib/cryptoEssay.js";
 
 const read = (path) => readFile(new URL(path, import.meta.url), "utf8");
 const [sitemap, viPosts, viArticle, promoThai, promoVietnamese, releaseAudit] = await Promise.all([
@@ -52,7 +53,8 @@ test("only the 55 repaired suite pages receive the new help timestamp", async ()
   const executable = sitemap.replace(/^import .*;$/gm, "").replace("export default async function sitemap", "async function sitemap").replace("export const revalidate", "const revalidate");
   const entries = await runInNewContext(executable + ";sitemap()", {
     getAllPosts: async () => [], getAllThaiPosts: async () => [], getPostsByCategory: async () => [],
-    SIAMESE_CAT_DEV_CATEGORY: "Siamese Cat Dev", viBlogPosts: [], videoToolSlugs: []
+    SIAMESE_CAT_DEV_CATEGORY: "Siamese Cat Dev", viBlogPosts: [], videoToolSlugs: [],
+    cryptoEssayDate, cryptoEssayIndexableLocales, cryptoEssayPaths
   });
   const groups = {
     document: ["docx-to-pdf", "docx-to-html", "docx-to-markdown", "docx-to-text", "pdf-to-text", "pdf-to-word", "ocr"],

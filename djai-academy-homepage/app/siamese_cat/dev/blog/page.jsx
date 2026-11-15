@@ -40,7 +40,7 @@ function formatDate(value) {
 }
 
 export default async function SiameseCatDevBlogPage() {
-  const posts = await getPostsByCategory(SIAMESE_CAT_DEV_CATEGORY, { locale: "th" });
+  const posts = addCryptoEssay(await getPostsByCategory(SIAMESE_CAT_DEV_CATEGORY, { locale: "th" }), "th");
 
   const structuredData = {
     "@context": "https://schema.org",
@@ -137,3 +137,4 @@ export default async function SiameseCatDevBlogPage() {
   );
 }
 import Link from "next/link";
+import { addCryptoEssay } from "../../../lib/cryptoEssay";
